@@ -11,10 +11,13 @@ import Foundation
 
 class DefaultAppDependencies: AppDependencies {
     
+    let cdStack: CDStackType
     let tripsStore: TripsStoreType
     
     init() {
-        self.tripsStore = TripsStore()
+        let cdStack = DefaultCDStack(modelName: "TravelWeather")
+        self.cdStack = cdStack
+        self.tripsStore = TripsStore(context: cdStack.storeContext, dispatch: cdStack.dispatch(_:))
     }
     
 }

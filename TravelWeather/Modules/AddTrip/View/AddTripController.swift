@@ -1,5 +1,5 @@
 //
-//  LocationsListController.swift
+//  AddTripController.swift
 //  TravelWeather
 //
 //  Created by Claudio Hinz on 05.08.22.
@@ -9,15 +9,15 @@ import UIKit
 
 
 
-class LocationsListController: UIViewController {
+class AddTripController: UIViewController {
     
-    let viewModel: LocationsListViewModelType
+    let viewModel: AddTripViewModelType
     
     // MARK: - Views
-    // TODO...
     
     
-    init(viewModel: LocationsListViewModelType) {
+    
+    init(viewModel: AddTripViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -27,7 +27,7 @@ class LocationsListController: UIViewController {
     }
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -47,8 +47,8 @@ class LocationsListController: UIViewController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Locations"
-        view.backgroundColor = .lightGray
+        navigationItem.title = "Add Trip"
+        view.backgroundColor = Colors.defaultBackground
     }
     
     private func setAutoLayout() {

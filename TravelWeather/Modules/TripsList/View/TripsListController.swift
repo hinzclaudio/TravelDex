@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import RxSwift
 
 
 
 class TripsListController: UIViewController {
     
     let viewModel: TripsListViewModelType
+    let bag = DisposeBag()
     
     // MARK: - Views
-    // TODO...
+    let addButton = UIBarButtonItem(systemItem: .add)
+    let editButton = UIBarButtonItem(systemItem: .edit)
+    let searchController = UISearchController()
     
     
     init(viewModel: TripsListViewModelType) {
@@ -31,6 +35,7 @@ class TripsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     
@@ -40,19 +45,28 @@ class TripsListController: UIViewController {
         addViews()
         configureViews()
         setAutoLayout()
+        setupBinding()
     }
     
     private func addViews() {
-        
+        navigationItem.setLeftBarButton(editButton, animated: false)
+        navigationItem.setRightBarButton(addButton, animated: false)
+        navigationItem.searchController = searchController
     }
     
     private func configureViews() {
         navigationItem.title = "Trips"
-        view.backgroundColor = .lightGray
+        view.backgroundColor = Colors.defaultBackground
     }
     
     private func setAutoLayout() {
         
+    }
+    
+    private func setupBinding() {
+        viewModel
+            .addTapped(addButton.rx.tap.asObservable())
+            .disposed(by: bag)
     }
     
 }

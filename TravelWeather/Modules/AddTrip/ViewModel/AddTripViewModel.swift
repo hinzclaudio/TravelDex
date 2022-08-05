@@ -1,20 +1,16 @@
 //
-//  LocationsListViewModel.swift
+//  AddTripViewModel.swift
 //  TravelWeather
 //
 //  Created by Claudio Hinz on 05.08.22.
 //
 
 import Foundation
+import RxSwift
 
 
 
-protocol LocationsListViewModelType {
-    
-}
-
-
-class LocationsListViewModel: LocationsListViewModelType {
+class AddTripViewModel: AddTripViewModelType {
     
     typealias Dependencies = HasTripsStore
     private let dependencies: Dependencies

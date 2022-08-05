@@ -72,7 +72,7 @@ extension CDMigrationStep {
 
 extension NSManagedObjectModel {
     static func load(from version: CDMigrationVersion) -> NSManagedObjectModel {
-        let dirURL = Bundle.main.url(forResource: "PostsAndComments", withExtension: "momd")!
+        let dirURL = Bundle.main.url(forResource: "TravelWeather", withExtension: "momd")!
         let versionURL = dirURL.appendingPathComponent(String(format: "%@.mom", version.rawValue))
         
         guard let model = NSManagedObjectModel(contentsOf: versionURL)

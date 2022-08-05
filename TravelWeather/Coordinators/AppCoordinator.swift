@@ -13,7 +13,7 @@ class AppCoordinator: CoordinatorType {
     
     let window: UIWindow?
     var childCoordinators = [CoordinatorType]()
-    var navigationController = UINavigationController()
+    var navigationController: UINavigationController = BaseNavigationController()
     
     typealias Dependencies = AppDependencies
     private let dependencies: Dependencies
@@ -29,10 +29,23 @@ class AppCoordinator: CoordinatorType {
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.modalPresentationStyle = .automatic
         
+        GeneralStyleManager.style(navigationController.navigationBar)
         let viewModel = TripsListVieModel(dependencies: dependencies)
         let controller = TripsListController(viewModel: viewModel)
         viewModel.coordinator = self
         navigationController.pushViewController(controller, animated: false)
+    }
+    
+    
+    func goToAddTrip() {
+        let viewModel = AddTripViewModel(dependencies: dependencies)
+        let controller = AddTripController(viewModel: viewModel)
+        let modalContainer = ModalNavigationContainer(rootViewController: controller)
+        
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        
+        modalContainer.modalPresentationStyle = .automatic
+        navigationController.present(modalContainer, animated: true)
     }
     
 }

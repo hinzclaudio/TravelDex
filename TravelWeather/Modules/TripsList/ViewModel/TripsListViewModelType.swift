@@ -6,9 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 
 
 protocol TripsListViewModelType {
+    
+    // MARK: - Input
+    func addTapped(_ tap: Observable<Void>) -> Disposable
+    
+    
+    // MARK: - Output
     
 }

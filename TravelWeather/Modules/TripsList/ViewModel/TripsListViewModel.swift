@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 
 
@@ -21,9 +22,18 @@ class TripsListVieModel: TripsListViewModelType {
     }
     
     
+    
     // MARK: - Input
+    func addTapped(_ tap: Observable<Void>) -> Disposable {
+        tap.subscribe(
+            onNext: { [weak self] in self?.coordinator?.goToAddTrip() }
+        )
+    }
     
     
+
     // MARK: - Output
+    
+    
     
 }
