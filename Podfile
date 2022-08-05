@@ -9,6 +9,7 @@ target 'TravelWeather' do
   pod 'SwiftGen'
   pod 'CryptoSwift'
   pod 'PureLayout'
+  pod 'IQKeyboardManager'
 
   target 'TravelWeatherTests' do
     inherit! :search_paths

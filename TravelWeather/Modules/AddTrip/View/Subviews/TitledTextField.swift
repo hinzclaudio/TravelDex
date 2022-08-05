@@ -52,6 +52,8 @@ class TitledTextField: UIView {
         tf.font = Fonts.text
         tf.backgroundColor = Colors.defaultWhite
         tf.textColor = Colors.defaultBackground
+        tf.returnKeyType = .done
+        tf.delegate = self
     }
     
     private func setAutoLayout() {
@@ -73,6 +75,18 @@ class TitledTextField: UIView {
         tf.autoPinEdge(.right, to: .right, of: containerView)
         tf.autoPinEdge(.bottom, to: .bottom, of: containerView)
         tf.autoSetDimension(.height, toSize: Sizes.defaultTextFieldHeight)
+    }
+    
+}
+
+
+
+// MARK: - Delegate
+extension TitledTextField: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        tf.resignFirstResponder()
+        return true
     }
     
 }

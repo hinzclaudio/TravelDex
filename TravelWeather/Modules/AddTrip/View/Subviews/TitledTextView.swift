@@ -51,6 +51,7 @@ class TitledTextView: UIView {
         textView.backgroundColor = Colors.defaultWhite
         textView.textColor = Colors.defaultBackground
         textView.roundCorners()
+        textView.delegate = self
     }
     
     private func setAutoLayout() {
@@ -72,6 +73,18 @@ class TitledTextView: UIView {
         textView.autoPinEdge(.right, to: .right, of: containerView)
         textView.autoPinEdge(.bottom, to: .bottom, of: containerView)
         textView.autoSetDimension(.height, toSize: Sizes.defaultTextViewHeight)
+    }
+    
+}
+
+
+
+// MARK: - Delegate
+extension TitledTextView: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // TODO: Enforce a max character limit
+        return true
     }
     
 }
