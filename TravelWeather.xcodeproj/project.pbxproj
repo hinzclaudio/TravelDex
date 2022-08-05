@@ -12,6 +12,15 @@
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
 		122D4BA7289D6F8700BA627F /* AutoQueryTests.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA4289D6F8700BA627F /* AutoQueryTests.stencil */; };
 		122D4BA8289D6F8700BA627F /* AutoBuilder.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA5289D6F8700BA627F /* AutoBuilder.stencil */; };
+		123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B62289DBAA20008444D /* ScrollableVStackController.swift */; };
+		123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B64289DBB6D0008444D /* UIStackViewExt.swift */; };
+		123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B67289DBBD60008444D /* TitledTextField.swift */; };
+		123F7B6A289DBC0A0008444D /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B69289DBC0A0008444D /* UILabelExt.swift */; };
+		123F7B6E289DBC640008444D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B6D289DBC640008444D /* Fonts.swift */; };
+		123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B6F289DC61E0008444D /* TitledTextView.swift */; };
+		123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B71289DC69F0008444D /* UIViewExt.swift */; };
+		123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B73289DC7C30008444D /* PaddedTextField.swift */; };
+		123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B75289DC9110008444D /* UIButtonExt.swift */; };
 		125511A1289C590D0088B38B /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A0289C590D0088B38B /* CDStackType.swift */; };
 		125511A3289C5A690088B38B /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A2289C5A690088B38B /* CDAction.swift */; };
 		1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED60289D6D710008C9EE /* DefaultCDStack.swift */; };
@@ -89,6 +98,15 @@
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
 		122D4BA4289D6F8700BA627F /* AutoQueryTests.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoQueryTests.stencil; sourceTree = "<group>"; };
 		122D4BA5289D6F8700BA627F /* AutoBuilder.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoBuilder.stencil; sourceTree = "<group>"; };
+		123F7B62289DBAA20008444D /* ScrollableVStackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableVStackController.swift; sourceTree = "<group>"; };
+		123F7B64289DBB6D0008444D /* UIStackViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExt.swift; sourceTree = "<group>"; };
+		123F7B67289DBBD60008444D /* TitledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextField.swift; sourceTree = "<group>"; };
+		123F7B69289DBC0A0008444D /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
+		123F7B6D289DBC640008444D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		123F7B6F289DC61E0008444D /* TitledTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextView.swift; sourceTree = "<group>"; };
+		123F7B71289DC69F0008444D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		123F7B73289DC7C30008444D /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		123F7B75289DC9110008444D /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		125511A0289C590D0088B38B /* CDStackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStackType.swift; sourceTree = "<group>"; };
 		125511A2289C5A690088B38B /* CDAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAction.swift; sourceTree = "<group>"; };
 		1260ED60289D6D710008C9EE /* DefaultCDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCDStack.swift; sourceTree = "<group>"; };
@@ -183,6 +201,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		123F7B66289DBBC90008444D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				123F7B67289DBBD60008444D /* TitledTextField.swift */,
+				123F7B6F289DC61E0008444D /* TitledTextView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		1255119C289C58D10088B38B /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				1260ED63289D6DBE0008C9EE /* FileManagerExt.swift */,
+				123F7B64289DBB6D0008444D /* UIStackViewExt.swift */,
+				123F7B69289DBC0A0008444D /* UILabelExt.swift */,
+				123F7B75289DC9110008444D /* UIButtonExt.swift */,
+				123F7B71289DC69F0008444D /* UIViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				12F134FB289D922700363CF6 /* Sizes.swift */,
+				123F7B6D289DBC640008444D /* Fonts.swift */,
 				12F134FD289D925500363CF6 /* Colors.swift */,
 				12F13506289D9AB500363CF6 /* SFSymbols.swift */,
 			);
@@ -461,6 +493,8 @@
 			children = (
 				12F13504289D98C800363CF6 /* BaseNavigationController.swift */,
 				12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */,
+				123F7B62289DBAA20008444D /* ScrollableVStackController.swift */,
+				123F7B73289DC7C30008444D /* PaddedTextField.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -487,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				12F1350F289D9CE800363CF6 /* AddTripController.swift */,
+				123F7B66289DBBC90008444D /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -820,7 +855,10 @@
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				12F1350C289D9C9E00363CF6 /* AddTripViewModelType.swift in Sources */,
 				12F134BC289D795C00363CF6 /* CoordinatorType.swift in Sources */,
+				123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
+				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
+				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,
 				12F134D7289D843200363CF6 /* VisitedPlace.swift in Sources */,
 				1260ED64289D6DBE0008C9EE /* FileManagerExt.swift in Sources */,
@@ -832,15 +870,18 @@
 				12F134D9289D846500363CF6 /* Location.swift in Sources */,
 				1260ED6A289D6E140008C9EE /* CDMigrationVersion.swift in Sources */,
 				12F134BE289D79C700363CF6 /* AppCoordinator.swift in Sources */,
+				123F7B6A289DBC0A0008444D /* UILabelExt.swift in Sources */,
 				12F134E6289D896300363CF6 /* CDWeather+CoreDataClass.swift in Sources */,
 				125511A1289C590D0088B38B /* CDStackType.swift in Sources */,
 				12F134EA289D896300363CF6 /* CDLocation+CoreDataClass.swift in Sources */,
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
 				12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
+				123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */,
 				1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */,
 				1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */,
 				12F134F2289D89D200363CF6 /* TripsListViewModelType.swift in Sources */,
+				123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */,
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
 				12F1350E289D9CB400363CF6 /* AddTripViewModel.swift in Sources */,
 				12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */,
@@ -849,12 +890,15 @@
 				12F134EC289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
 				125511A3289C5A690088B38B /* CDAction.swift in Sources */,
 				12F134F9289D8B6600363CF6 /* CDObservable.swift in Sources */,
+				123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */,
 				1260ED68289D6E070008C9EE /* CDMigrationStep.swift in Sources */,
 				12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */,
+				123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,
+				123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */,
 				12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1025,6 +1069,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1053,6 +1098,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelWeather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

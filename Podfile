@@ -8,6 +8,7 @@ target 'TravelWeather' do
   pod 'Sourcery'
   pod 'SwiftGen'
   pod 'CryptoSwift'
+  pod 'PureLayout'
 
   target 'TravelWeatherTests' do
     inherit! :search_paths

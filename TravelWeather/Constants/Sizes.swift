@@ -12,4 +12,8 @@ import CoreGraphics
 struct Sizes {
     static let defaultMargin: CGFloat = 15
     static let defaultCornerRadius: CGFloat = 10
+    static let defaultTextViewHeight: CGFloat = 150
+    static let defaultTextFieldHeight: CGFloat = 40
+    static let defaultButtonHeight: CGFloat = 25
+    static let defaultBorderButtonHeight: CGFloat = 50
 }
