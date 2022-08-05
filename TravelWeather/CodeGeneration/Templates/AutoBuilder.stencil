@@ -1,0 +1,88 @@
+{% for type in types.implementing.WithAutoBuilder %}
+
+    // sourcery:inline:auto:{{ type.name }}.AutoBuilderInit
+    // MARK: - Init Buildable
+    init(
+    {% for property in type.storedVariables %}
+        {{property.name}}: {{property.typeName}}{% if property.typeName|hasSuffix:"?" %} = nil{% endif %}{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    )
+    {
+        {% for property in type.storedVariables %}
+        self.{{property.name}} = {{property.name}}
+        {% endfor %}
+    }
+    
+    static var builder: {{ type.name }}Builder {
+        {{ type.name }}Builder()
+    }
+    
+    func cloneBuilder() -> {{ type.name }}Builder {
+        {{ type.name }}.builder
+            {% for property in type.storedVariables %}
+            .with({{property.name}}: self.{{property.name}})
+            {% endfor %}
+    }
+    
+// sourcery:end
+{% endfor %}
+
+
+
+{% for type in types.implementing.WithAutoBuilder %}
+// sourcery:inline:after-auto:{{ type.name }}.AutoBuilder-Builder
+// MARK: - Builder
+class {{ type.name }}Builder {
+
+{% for property in type.storedVariables %}
+
+{% if property|!annotated:"nonDefaultBuilderProperty" %}
+    {% if property.typeName|hasSuffix:"]" %}
+    private(set) var {{property.name}}: {{property.typeName}} = []
+    {% elif property.typeName|hasSuffix:"?" %}
+    private(set) var {{property.name}}: {{property.typeName}} = nil
+    {% else %}
+    private(set) var {{property.name}}: {{property.typeName}} = {{property.typeName}}()
+    {% endif %}
+{% else %}
+    private(set) var {{property.name}}: {{property.typeName}}?
+{% endif %}
+
+{% endfor %}
+    
+    {% for property in type.storedVariables %}
+    func with({{property.name}}: {{property.typeName}}) -> {{type.name}}Builder {
+        self.{{property.name}} = {{property.name}}; return self
+    }
+    {% endfor %}
+    
+    func build() -> {{type.name}}? {
+        {% for property in type.storedVariables|annotated:"nonDefaultBuilderProperty" %}
+        
+        {% if forloop.first %}
+        guard
+        {% endif %}
+        
+        {% if not forloop.last %}
+            let {{property.name}} = self.{{property.name}},
+        {% else %}
+            let {{property.name}} = self.{{property.name}}
+        else { return nil }
+        {% endif %}
+        
+        {% endfor %}
+        
+        return {{type.name}}(
+            {% for property in type.storedVariables %}
+            {% if not forloop.last %}
+            {{property.name}}: {{property.name}},
+            {% else %}
+            {{property.name}}: {{property.name}}
+            {% endif %}
+            {% endfor %}
+        )
+    }
+    
+}
+// sourcery:end
+{% endfor %}

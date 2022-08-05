@@ -5,6 +5,8 @@ target 'TravelWeather' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Sourcery'
+  pod 'SwiftGen'
 
   target 'TravelWeatherTests' do
     inherit! :search_paths
