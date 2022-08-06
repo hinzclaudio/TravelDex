@@ -17,5 +17,6 @@ protocol TripsStoreType {
     
     // MARK: - Output
     func trips(forSearch query: String) -> Observable<[Trip]>
+    func trip(identifiedBy id: Observable<UUID>) -> Observable<Trip?>
     
 }

@@ -10,11 +10,16 @@ import Foundation
 
 
 protocol AppDependencies:
-    HasTripsStore
+    HasTripsStore &
+    HasPlacesStore
 {}
 
 
 // MARK: - Stores
 protocol HasTripsStore {
     var tripsStore: TripsStoreType { get }
+}
+
+protocol HasPlacesStore {
+    var placesStore: PlacesStoreType { get }
 }

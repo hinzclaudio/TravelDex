@@ -43,8 +43,13 @@
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
 		12EF8811289E5C0500E3EA07 /* CDHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF8810289E5C0500E3EA07 /* CDHelperExt.swift */; };
 		12EF8814289E621000E3EA07 /* CDUpdateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF8813289E621000E3EA07 /* CDUpdateTrip.swift */; };
-		12EF8817289E6EA500E3EA07 /* TripsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF8816289E6EA500E3EA07 /* TripsListCell.swift */; };
+		12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF8816289E6EA500E3EA07 /* TripsListTableCell.swift */; };
 		12F05EA7289E7B6D00A0C4AB /* RxString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EA6289E7B6D00A0C4AB /* RxString.swift */; };
+		12F05EAC289E803400A0C4AB /* AddPlacesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EAB289E803400A0C4AB /* AddPlacesViewModelType.swift */; };
+		12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EAD289E804700A0C4AB /* AddPlacesViewModel.swift */; };
+		12F05EB0289E809100A0C4AB /* AddPlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EAF289E809100A0C4AB /* AddPlacesController.swift */; };
+		12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EB2289E815100A0C4AB /* PlacesStoreType.swift */; };
+		12F05EB5289E815C00A0C4AB /* PlacesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F05EB4289E815C00A0C4AB /* PlacesStore.swift */; };
 		12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134AB289D70E100363CF6 /* AutoInitializable.generated.swift */; };
 		12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134B2289D723500363CF6 /* DependencyProtocols.swift */; };
 		12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134B5289D726B00363CF6 /* DefaultAppDependencies.swift */; };
@@ -77,6 +82,7 @@
 		12F1350E289D9CB400363CF6 /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350D289D9CB400363CF6 /* AddTripViewModel.swift */; };
 		12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350F289D9CE800363CF6 /* AddTripController.swift */; };
 		12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */; };
+		12F75607289E971C00773D46 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75606289E971C00773D46 /* TripCell.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -140,8 +146,13 @@
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
 		12EF8810289E5C0500E3EA07 /* CDHelperExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHelperExt.swift; sourceTree = "<group>"; };
 		12EF8813289E621000E3EA07 /* CDUpdateTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateTrip.swift; sourceTree = "<group>"; };
-		12EF8816289E6EA500E3EA07 /* TripsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListCell.swift; sourceTree = "<group>"; };
+		12EF8816289E6EA500E3EA07 /* TripsListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListTableCell.swift; sourceTree = "<group>"; };
 		12F05EA6289E7B6D00A0C4AB /* RxString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxString.swift; sourceTree = "<group>"; };
+		12F05EAB289E803400A0C4AB /* AddPlacesViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesViewModelType.swift; sourceTree = "<group>"; };
+		12F05EAD289E804700A0C4AB /* AddPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesViewModel.swift; sourceTree = "<group>"; };
+		12F05EAF289E809100A0C4AB /* AddPlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesController.swift; sourceTree = "<group>"; };
+		12F05EB2289E815100A0C4AB /* PlacesStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStoreType.swift; sourceTree = "<group>"; };
+		12F05EB4289E815C00A0C4AB /* PlacesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStore.swift; sourceTree = "<group>"; };
 		12F134AB289D70E100363CF6 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
 		12F134AC289D70E200363CF6 /* AutoQueryTests.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoQueryTests.generated.swift; sourceTree = "<group>"; };
 		12F134B2289D723500363CF6 /* DependencyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProtocols.swift; sourceTree = "<group>"; };
@@ -176,6 +187,7 @@
 		12F1350D289D9CB400363CF6 /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
 		12F1350F289D9CE800363CF6 /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
 		12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationContainer.swift; sourceTree = "<group>"; };
+		12F75606289E971C00773D46 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +257,7 @@
 				12F13501289D972500363CF6 /* GeneralStyleManager.swift */,
 				12F134EE289D89A700363CF6 /* TripsList */,
 				12F13508289D9C1800363CF6 /* AddTrip */,
+				12F05EA8289E800800A0C4AB /* AddPlaces */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -252,6 +265,7 @@
 		1255119E289C58E50088B38B /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				12F05EB1289E813D00A0C4AB /* PlacesStore */,
 				12F134CD289D823900363CF6 /* TripsStore */,
 			);
 			path = Stores;
@@ -408,9 +422,46 @@
 		12EF8815289E6E9700E3EA07 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				12EF8816289E6EA500E3EA07 /* TripsListCell.swift */,
+				12F75606289E971C00773D46 /* TripCell.swift */,
+				12EF8816289E6EA500E3EA07 /* TripsListTableCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		12F05EA8289E800800A0C4AB /* AddPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				12F05EAA289E802600A0C4AB /* ViewModel */,
+				12F05EA9289E802100A0C4AB /* View */,
+			);
+			path = AddPlaces;
+			sourceTree = "<group>";
+		};
+		12F05EA9289E802100A0C4AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12F05EAF289E809100A0C4AB /* AddPlacesController.swift */,
+				12F75605289E966700773D46 /* Views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12F05EAA289E802600A0C4AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12F05EAB289E803400A0C4AB /* AddPlacesViewModelType.swift */,
+				12F05EAD289E804700A0C4AB /* AddPlacesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12F05EB1289E813D00A0C4AB /* PlacesStore */ = {
+			isa = PBXGroup;
+			children = (
+				12F05EB2289E815100A0C4AB /* PlacesStoreType.swift */,
+				12F05EB4289E815C00A0C4AB /* PlacesStore.swift */,
+			);
+			path = PlacesStore;
 			sourceTree = "<group>";
 		};
 		12F134B0289D721F00363CF6 /* Dependencies */ = {
@@ -561,6 +612,13 @@
 				123F7B66289DBBC90008444D /* Subviews */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		12F75605289E966700773D46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1405F96A8FCD85676501E1C7 /* Frameworks */ = {
@@ -884,6 +942,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F05EAC289E803400A0C4AB /* AddPlacesViewModelType.swift in Sources */,
 				12EF8811289E5C0500E3EA07 /* CDHelperExt.swift in Sources */,
 				12F134EB289D896300363CF6 /* CDLocation+CoreDataProperties.swift in Sources */,
 				12F134D5289D83C800363CF6 /* Trip.swift in Sources */,
@@ -892,13 +951,14 @@
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				12F1350C289D9C9E00363CF6 /* AddTripViewModelType.swift in Sources */,
-				12EF8817289E6EA500E3EA07 /* TripsListCell.swift in Sources */,
+				12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */,
 				12F134BC289D795C00363CF6 /* CoordinatorType.swift in Sources */,
 				123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,
+				12F75607289E971C00773D46 /* TripCell.swift in Sources */,
 				12F134D7289D843200363CF6 /* VisitedPlace.swift in Sources */,
 				1260ED64289D6DBE0008C9EE /* FileManagerExt.swift in Sources */,
 				12F134CF289D824200363CF6 /* TripsStore.swift in Sources */,
@@ -929,18 +989,22 @@
 				12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */,
 				12F134E7289D896300363CF6 /* CDWeather+CoreDataProperties.swift in Sources */,
 				12F134FE289D925500363CF6 /* Colors.swift in Sources */,
+				12F05EB5289E815C00A0C4AB /* PlacesStore.swift in Sources */,
 				12F134EC289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
 				125511A3289C5A690088B38B /* CDAction.swift in Sources */,
 				12F134F9289D8B6600363CF6 /* CDObservable.swift in Sources */,
+				12F05EB0289E809100A0C4AB /* AddPlacesController.swift in Sources */,
 				123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */,
 				1260ED68289D6E070008C9EE /* CDMigrationStep.swift in Sources */,
 				12EF8814289E621000E3EA07 /* CDUpdateTrip.swift in Sources */,
 				12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */,
 				123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */,
+				12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
+				12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,
 				123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */,
 				12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */,

@@ -15,6 +15,7 @@ protocol TripsListViewModelType {
     
     // MARK: - Input
     func addTapped(_ tap: Observable<Void>) -> Disposable
+    func select(_ trip: Observable<Trip>) -> Disposable
     
     
     // MARK: - Output

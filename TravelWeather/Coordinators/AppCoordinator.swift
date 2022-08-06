@@ -56,4 +56,12 @@ class AppCoordinator: CoordinatorType {
         modalController?.dismiss(animated: true)
     }
     
+    
+    func select(_ trip: Trip) {
+        let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
+        vm.coordinator = self
+        let controller = AddPlacesController(viewModel: vm)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
 }

@@ -62,4 +62,19 @@ class TripsStore: TripsStoreType {
             }
     }
     
+    func trip(identifiedBy id: Observable<UUID>) -> Observable<Trip?> {
+        return id
+            .map { tripId -> NSFetchRequest<CDTrip> in
+                let query = CDTrip.fetchRequest()
+                query.predicate = NSPredicate(format: "id == %@", tripId as CVarArg)
+                query.fetchLimit = 1
+                return query
+            }
+            .flatMapLatest { [weak self] query -> Observable<Trip?> in
+                guard let self = self else { return .just(nil) }
+                return CDObservable(fetchRequest: query, context: self.context)
+                    .map { $0.first?.pureRepresentation }
+            }
+    }
+    
 }

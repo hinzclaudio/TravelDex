@@ -58,7 +58,7 @@ class TripsListController: UIViewController {
         navigationItem.title = "Trips"
         view.backgroundColor = Colors.veryDark
         tableView.backgroundColor = .clear
-        tableView.register(TripsListCell.self, forCellReuseIdentifier: TripsListCell.identifier)
+        tableView.register(TripsListTableCell.self, forCellReuseIdentifier: TripsListTableCell.identifier)
     }
     
     private func setAutoLayout() {
@@ -78,10 +78,18 @@ class TripsListController: UIViewController {
         trips
             .drive(
                 tableView.rx.items(
-                    cellIdentifier: TripsListCell.identifier,
-                    cellType: TripsListCell.self
+                    cellIdentifier: TripsListTableCell.identifier,
+                    cellType: TripsListTableCell.self
                 )
-            ) { i, trip, cell in cell.configure(for: trip) }
+            ) { i, trip, cell in
+                cell.configure(for: trip)
+            }
+            .disposed(by: bag)
+        
+        let tripSelection = tableView.rx.modelSelected(Trip.self)
+            .asObservable()
+        viewModel
+            .select(tripSelection)
             .disposed(by: bag)
     }
     
