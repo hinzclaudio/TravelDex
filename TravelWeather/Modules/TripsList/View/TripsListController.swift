@@ -17,7 +17,6 @@ class TripsListController: UIViewController {
     
     // MARK: - Views
     let addButton = UIBarButtonItem(systemItem: .add)
-    let editButton = UIBarButtonItem(systemItem: .edit)
     let searchController = UISearchController()
     let tableView = UITableView()
     
@@ -50,7 +49,6 @@ class TripsListController: UIViewController {
     }
     
     private func addViews() {
-        navigationItem.setLeftBarButton(editButton, animated: false)
         navigationItem.setRightBarButton(addButton, animated: false)
         navigationItem.searchController = searchController
         view.addSubview(tableView)
