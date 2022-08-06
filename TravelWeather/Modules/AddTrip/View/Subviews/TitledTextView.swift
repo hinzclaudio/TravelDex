@@ -45,11 +45,11 @@ class TitledTextView: UIView {
     }
     
     private func configureViews() {
-        titleLabel.stlyeHeadline2()
+        titleLabel.styleHeadline2()
         descrLabel.styleSmall()
         textView.font = Fonts.text
         textView.backgroundColor = Colors.defaultWhite
-        textView.textColor = Colors.defaultBackground
+        textView.textColor = Colors.veryDark
         textView.roundCorners()
         textView.delegate = self
     }

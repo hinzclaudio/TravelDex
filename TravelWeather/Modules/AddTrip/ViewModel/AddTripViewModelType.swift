@@ -11,9 +11,5 @@ import RxSwift
 
 
 protocol AddTripViewModelType {
-    
-    // MARK: Input
-    
-    // MARK: - Output
-    
+    func add(_ trip: Observable<Trip>) -> Disposable
 }

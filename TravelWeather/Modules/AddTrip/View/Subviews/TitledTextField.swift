@@ -46,12 +46,12 @@ class TitledTextField: UIView {
     }
     
     private func configureViews() {
-        titleLabel.stlyeHeadline2()
+        titleLabel.styleHeadline2()
         descrLabel.styleSmall()
         tf.roundCorners()
         tf.font = Fonts.text
         tf.backgroundColor = Colors.defaultWhite
-        tf.textColor = Colors.defaultBackground
+        tf.textColor = Colors.veryDark
         tf.returnKeyType = .done
         tf.delegate = self
     }

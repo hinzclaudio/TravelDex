@@ -16,12 +16,12 @@ extension CDTrip {
         return NSFetchRequest<CDTrip>(entityName: "CDTrip")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var title: String?
+    @NSManaged public var id: UUID
+    @NSManaged public var title: String
     @NSManaged public var descr: String?
-    @NSManaged public var pictureData: Data?
     @NSManaged public var members: String?
-    @NSManaged public var visitedPlaces: NSSet?
+    @NSManaged public var pictureData: Data?
+    @NSManaged public var visitedPlaces: NSSet
 
 }
 

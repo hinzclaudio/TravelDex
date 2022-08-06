@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 
 
@@ -33,7 +34,11 @@ class TripsListVieModel: TripsListViewModelType {
     
 
     // MARK: - Output
-    
+    func trips(for search: Observable<String>) -> Driver<[Trip]> {
+        search
+            .flatMapLatest { [weak self] query in self?.dependencies.tripsStore.trips(forSearch: query) ?? .just([]) }
+            .asDriver(onErrorJustReturn: [])
+    }
     
     
 }

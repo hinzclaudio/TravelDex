@@ -11,12 +11,15 @@ import CryptoSwift
 
 
 struct Colors {
-    static let defaultBackground = UIColor(hex: "00182d")!
+    static let veryDark = UIColor(hex: "00182d")!
+    static let mediumDark = UIColor(hex: "4C5D6C")!
     static let defaultWhite = UIColor(hex: "ecf3f0")!
     static let darkGreen = UIColor(hex: "3d5f5d")!
     static let lightGreen = UIColor(hex: "ADC4BD")!
     static let darkRed = UIColor(hex: "671d26")!
     static let darkSandRose = UIColor(hex: "95888a")!
+    
+    static var navBarColor: UIColor { mediumDark }
 }
         
         

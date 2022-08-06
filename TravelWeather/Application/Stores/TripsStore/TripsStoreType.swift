@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import RxSwift
 
 
 
 protocol TripsStoreType {
     
     // MARK: - Input
+    func addTrip(_ trip: Observable<Trip>) -> Disposable
     
     // MARK: - Output
+    func trips(forSearch query: String) -> Observable<[Trip]>
     
 }

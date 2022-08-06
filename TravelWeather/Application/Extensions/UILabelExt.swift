@@ -11,7 +11,7 @@ import UIKit
 
 extension UILabel {
     
-    func stlyeHeadline1(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline1(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline2
@@ -19,7 +19,7 @@ extension UILabel {
     }
     
     
-    func stlyeHeadline2(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline2(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline2
@@ -27,7 +27,7 @@ extension UILabel {
     }
     
     
-    func stlyeHeadline3(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline3(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline3

@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
 class AddTripController: ScrollableVStackController {
     
     let viewModel: AddTripViewModelType
+    let bag = DisposeBag()
     
     // MARK: - Views
     let vSpacer = UIView()
@@ -45,6 +48,7 @@ class AddTripController: ScrollableVStackController {
         addViews()
         configureViews()
         setAutoLayout()
+        setupRx()
     }
     
     private func addViews() {
@@ -57,7 +61,7 @@ class AddTripController: ScrollableVStackController {
     
     private func configureViews() {
         navigationItem.title = "Add Trip"
-        view.backgroundColor = Colors.defaultBackground
+        view.backgroundColor = Colors.veryDark
         contentStack.spacing = 2 * Sizes.defaultMargin
         titleTf.titleLabel.text = "Title"
         descrTf.titleLabel.text = "Description"
@@ -75,6 +79,20 @@ class AddTripController: ScrollableVStackController {
         membersTf.autoMatch(.width, to: .width, of: view)
         contentStack.setCustomSpacing(2 * Sizes.defaultMargin, after: membersTf)
         confirmButton.autoMatch(.width, to: .width, of: view, withOffset: -2 * Sizes.defaultMargin)
+    }
+    
+    private func setupRx() {
+        let title = titleTf.tf.rx.text
+            .compactMap { $0 }
+        let descr = descrTf.textView.rx.text.asObservable().nilIfEmpty
+        let members = membersTf.textView.rx.text.asObservable().nilIfEmpty
+        let currentTrip = Observable.combineLatest(title, descr, members)
+            .map { t, d, m in Trip(id: UUID(), title: t, descr: d, members: m, visitedLocations: []) }
+        let confirmedTrip = confirmButton.rx.tap
+            .withLatestFrom(currentTrip)
+        viewModel
+            .add(confirmedTrip)
+            .disposed(by: bag)
     }
     
 }

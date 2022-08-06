@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+
+
+// MARK: - CD AutoInit
+extension CDTrip: AutoInitializable {}
+extension CDLocation: AutoInitializable {}
+extension CDWeather: AutoInitializable {}
+extension CDVisitedPlace: AutoInitializable {}

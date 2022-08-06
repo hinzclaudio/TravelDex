@@ -22,4 +22,44 @@ class TripsStore: TripsStoreType {
     }
     
     
+    // MARK: - Input
+    func addTrip(_ trip: Observable<Trip>) -> Disposable {
+        trip
+            .map { CDUpdateTrip(trip: $0) }
+            .subscribe(onNext: { [weak self] in self?.dispatch($0) } )
+    }
+    
+    
+    // MARK: - Output
+    func trips(forSearch query: String = "") -> Observable<[Trip]> {
+        let tripsQuery = CDTrip.fetchRequest()
+        if !query.isEmpty {
+            tripsQuery.predicate = NSPredicate(
+                format: "title CONTAINS[cd] %@ OR descr CONTAINS[cd] %@ OR members CONTAINS[cd] %@",
+                query, query, query
+            )
+        }
+        
+        return CDObservable(fetchRequest: tripsQuery, context: context)
+            .map { trips in
+                trips
+                    .sorted { cdTrip0, cdTrip1 in
+                        let start0 = cdTrip0.startDate
+                        let start1 = cdTrip1.startDate
+                        if let start0 = start0, let start1 = start1 {
+                            return start0 < start1
+                        } else if start0 != nil {
+                            return true
+                        } else if start1 != nil {
+                            return false
+                        } else {
+                            return cdTrip0.title.localizedStandardCompare(cdTrip1.title) == .orderedAscending
+                        }
+                    }
+                    .map { trip in
+                        trip.pureRepresentation
+                    }
+            }
+    }
+    
 }

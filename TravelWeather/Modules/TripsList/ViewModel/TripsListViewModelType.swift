@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 
 
@@ -17,5 +18,6 @@ protocol TripsListViewModelType {
     
     
     // MARK: - Output
+    func trips(for search: Observable<String>) -> Driver<[Trip]>
     
 }

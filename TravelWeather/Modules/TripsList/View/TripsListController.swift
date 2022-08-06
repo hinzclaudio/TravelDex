@@ -19,6 +19,7 @@ class TripsListController: UIViewController {
     let addButton = UIBarButtonItem(systemItem: .add)
     let editButton = UIBarButtonItem(systemItem: .edit)
     let searchController = UISearchController()
+    let tableView = UITableView()
     
     
     init(viewModel: TripsListViewModelType) {
@@ -52,20 +53,37 @@ class TripsListController: UIViewController {
         navigationItem.setLeftBarButton(editButton, animated: false)
         navigationItem.setRightBarButton(addButton, animated: false)
         navigationItem.searchController = searchController
+        view.addSubview(tableView)
     }
     
     private func configureViews() {
         navigationItem.title = "Trips"
-        view.backgroundColor = Colors.defaultBackground
+        view.backgroundColor = Colors.veryDark
+        tableView.backgroundColor = .clear
+        tableView.register(TripsListCell.self, forCellReuseIdentifier: TripsListCell.identifier)
     }
     
     private func setAutoLayout() {
-        
+        tableView.autoPinEdge(toSuperviewSafeArea: .top)
+        tableView.autoPinEdge(.left, to: .left, of: view)
+        tableView.autoPinEdge(.right, to: .right, of: view)
+        tableView.autoPinEdge(.bottom, to: .bottom, of: view)
     }
     
     private func setupBinding() {
         viewModel
             .addTapped(addButton.rx.tap.asObservable())
+            .disposed(by: bag)
+        
+        let searchQuery = searchController.searchBar.rx.text.orEmpty.asObservable()
+        let trips = viewModel.trips(for: searchQuery)
+        trips
+            .drive(
+                tableView.rx.items(
+                    cellIdentifier: TripsListCell.identifier,
+                    cellType: TripsListCell.self
+                )
+            ) { i, trip, cell in cell.configure(for: trip) }
             .disposed(by: bag)
     }
     

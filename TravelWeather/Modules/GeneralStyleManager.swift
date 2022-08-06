@@ -13,17 +13,7 @@ class GeneralStyleManager {
     
     static func largeNavigationBarTitleAppearance() -> UINavigationBarAppearance {
         let appearance = UINavigationBarAppearance()
-        appearance.largeTitleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : Colors.defaultWhite
-        ]
-        appearance.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : Colors.defaultWhite
-        ]
-        return appearance
-    }
-    
-    static func compactNavigationBarTitleAppearance() -> UINavigationBarAppearance {
-        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = Colors.navBarColor
         appearance.largeTitleTextAttributes = [
             NSAttributedString.Key.foregroundColor : Colors.defaultWhite
         ]
@@ -35,15 +25,13 @@ class GeneralStyleManager {
     
     static func style(_ navigationBar: UINavigationBar) {
         navigationBar.standardAppearance = largeNavigationBarTitleAppearance()
-        navigationBar.compactAppearance = compactNavigationBarTitleAppearance()
         navigationBar.tintColor = Colors.lightGreen
     }
     
     static func styleModal(_ navigationBar: UINavigationBar) {
         navigationBar.standardAppearance = largeNavigationBarTitleAppearance()
-        navigationBar.compactAppearance = compactNavigationBarTitleAppearance()
         navigationBar.tintColor = Colors.defaultWhite
-        navigationBar.backgroundColor = Colors.darkGreen
+        navigationBar.backgroundColor = Colors.navBarColor
     }
     
 }

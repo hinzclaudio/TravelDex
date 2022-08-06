@@ -14,6 +14,7 @@ class AppCoordinator: CoordinatorType {
     let window: UIWindow?
     var childCoordinators = [CoordinatorType]()
     var navigationController: UINavigationController = BaseNavigationController()
+    weak var modalController: UIViewController?
     
     typealias Dependencies = AppDependencies
     private let dependencies: Dependencies
@@ -39,6 +40,7 @@ class AppCoordinator: CoordinatorType {
     
     func goToAddTrip() {
         let viewModel = AddTripViewModel(dependencies: dependencies)
+        viewModel.coordinator = self
         let controller = AddTripController(viewModel: viewModel)
         let modalContainer = ModalNavigationContainer(rootViewController: controller)
         
@@ -46,6 +48,12 @@ class AppCoordinator: CoordinatorType {
         
         modalContainer.modalPresentationStyle = .automatic
         navigationController.present(modalContainer, animated: true)
+        modalController = modalContainer
+    }
+    
+    
+    func didAdd(_ trip: Trip) {
+        modalController?.dismiss(animated: true)
     }
     
 }
