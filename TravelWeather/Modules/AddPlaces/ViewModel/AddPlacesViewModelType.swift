@@ -14,6 +14,7 @@ import RxCocoa
 protocol AddPlacesViewModelType {
     
     // MARK: - Input
+    func addLocation(_ tapped: Observable<Void>) -> Disposable
     
     
     // MARK: - Output

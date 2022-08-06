@@ -19,6 +19,7 @@ class LocationSearchController: UIViewController {
     
     // MARK: - Views
     let searchController = UISearchController()
+    let tableView = UITableView()
     
     
     
@@ -37,6 +38,13 @@ class LocationSearchController: UIViewController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            self.searchController.searchBar.becomeFirstResponder()
+        }
+    }
+    
     
     
     // MARK: - Setup
@@ -47,17 +55,40 @@ class LocationSearchController: UIViewController {
     }
     
     private func addViews() {
-        
+        navigationItem.searchController = searchController
+        view.addSubview(tableView)
     }
     
     private func configureViews() {
         navigationItem.title = "Search Locations"
-        navigationItem.searchController = searchController
+        searchController.searchBar.styleDefault()
         view.backgroundColor = Colors.veryDark
+        
+        tableView.backgroundColor = .clear
+        tableView.register(LocationSearchCell.self, forCellReuseIdentifier: LocationSearchCell.identifier)
     }
     
     private func setAutoLayout() {
-        
+        tableView.autoPinEdge(toSuperviewSafeArea: .top)
+        tableView.autoPinEdge(.left, to: .left, of: view)
+        tableView.autoPinEdge(.right, to: .right, of: view)
+        tableView.autoPinEdge(.bottom, to: .bottom, of: view)
+    }
+    
+    private func setupBinding() {
+        let searchQuery = searchController.searchBar.rx.text.orEmpty
+            .asObservable()
+        let results = viewModel.searchResults(for: searchQuery)
+        results
+            .drive(
+                tableView.rx.items(
+                    cellIdentifier: LocationSearchCell.identifier,
+                    cellType: LocationSearchCell.self
+                )
+            ) { i, location, cell in
+                cell.titleLabel.text = location.name
+            }
+            .disposed(by: bag)
     }
     
 }

@@ -47,7 +47,9 @@ class AppCoordinator: CoordinatorType {
     
     
     func didAdd(_ trip: Trip) {
-        modalController?.dismiss(animated: true)
+        modalController?.dismiss(animated: true) { [weak self] in
+            self?.select(trip)
+        }
     }
     
     

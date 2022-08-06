@@ -27,6 +27,13 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     
     // MARK: - Input
+    func addLocation(_ tapped: Observable<Void>) -> Disposable {
+        tapped
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?
+                    .searchLocation(completion: { location in print("LOCATION: \(location)") })
+            })
+    }
     
     
     // MARK: - Output

@@ -74,6 +74,11 @@ class AddPlacesController: ScrollableVStackController {
             .distinctUntilChanged()
             .drive(placesStack.rx.isHidden)
             .disposed(by: bag)
+        
+        let tappedAdd = addButton.rx.tap.asObservable()
+        viewModel
+            .addLocation(tappedAdd)
+            .disposed(by: bag)
     }
     
 }

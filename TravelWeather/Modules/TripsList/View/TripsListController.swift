@@ -56,6 +56,7 @@ class TripsListController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = "Trips"
+        searchController.searchBar.styleDefault()
         view.backgroundColor = Colors.veryDark
         tableView.backgroundColor = .clear
         tableView.register(TripsListTableCell.self, forCellReuseIdentifier: TripsListTableCell.identifier)

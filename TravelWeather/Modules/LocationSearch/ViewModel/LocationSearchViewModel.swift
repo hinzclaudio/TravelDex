@@ -17,17 +17,20 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     
     typealias Dependencies = HasLocationsStore
     private let dependencies: Dependencies
+    private let bag = DisposeBag()
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
     
     
-    
-    // MARK: - Input
-    
-    
-    
-    // MARK: - Output
+    func searchResults(for query: Observable<String>) -> Driver<[Location]> {
+        let apiResults = query
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .filter { !$0.isEmpty }
+            .map { $0.lowercased() }
+        
+        return .just([])
+    }
     
 }

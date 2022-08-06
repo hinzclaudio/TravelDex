@@ -82,12 +82,13 @@ class AddTripController: ScrollableVStackController {
     }
     
     private func setupRx() {
+        let tripId = UUID()
         let title = titleTf.tf.rx.text
             .compactMap { $0 }
         let descr = descrTf.textView.rx.text.asObservable().nilIfEmpty
         let members = membersTf.textView.rx.text.asObservable().nilIfEmpty
         let currentTrip = Observable.combineLatest(title, descr, members)
-            .map { t, d, m in Trip(id: UUID(), title: t, descr: d, members: m, visitedLocations: []) }
+            .map { t, d, m in Trip(id: tripId, title: t, descr: d, members: m, visitedLocations: []) }
         let confirmedTrip = confirmButton.rx.tap
             .withLatestFrom(currentTrip)
         viewModel

@@ -89,6 +89,8 @@
 		12F75613289EA17300773D46 /* LocationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75612289EA17300773D46 /* LocationSearchController.swift */; };
 		12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75615289EA2E500773D46 /* LocationsStoreType.swift */; };
 		12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75617289EA2ED00773D46 /* LocationsStore.swift */; };
+		12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75619289EA8EF00773D46 /* UISearchBarExt.swift */; };
+		12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7561C289EAB4000773D46 /* LocationSearchCell.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -200,6 +202,8 @@
 		12F75612289EA17300773D46 /* LocationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController.swift; sourceTree = "<group>"; };
 		12F75615289EA2E500773D46 /* LocationsStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStoreType.swift; sourceTree = "<group>"; };
 		12F75617289EA2ED00773D46 /* LocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStore.swift; sourceTree = "<group>"; };
+		12F75619289EA8EF00773D46 /* UISearchBarExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExt.swift; sourceTree = "<group>"; };
+		12F7561C289EAB4000773D46 /* LocationSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				123F7B69289DBC0A0008444D /* UILabelExt.swift */,
 				123F7B75289DC9110008444D /* UIButtonExt.swift */,
 				123F7B71289DC69F0008444D /* UIViewExt.swift */,
+				12F75619289EA8EF00773D46 /* UISearchBarExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 			isa = PBXGroup;
 			children = (
 				12F75612289EA17300773D46 /* LocationSearchController.swift */,
+				12F7561B289EAB3400773D46 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +675,14 @@
 				12F75617289EA2ED00773D46 /* LocationsStore.swift */,
 			);
 			path = LocationsStore;
+			sourceTree = "<group>";
+		};
+		12F7561B289EAB3400773D46 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				12F7561C289EAB4000773D46 /* LocationSearchCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		1405F96A8FCD85676501E1C7 /* Frameworks */ = {
@@ -1028,6 +1042,7 @@
 				125511A1289C590D0088B38B /* CDStackType.swift in Sources */,
 				12F134EA289D896300363CF6 /* CDLocation+CoreDataClass.swift in Sources */,
 				12F05EA7289E7B6D00A0C4AB /* RxString.swift in Sources */,
+				12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */,
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
 				12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
@@ -1059,6 +1074,7 @@
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
+				12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */,
 				12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */,
 				12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,
