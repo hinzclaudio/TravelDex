@@ -11,7 +11,8 @@ import Foundation
 
 protocol AppDependencies:
     HasTripsStore &
-    HasPlacesStore
+    HasPlacesStore &
+    HasLocationsStore
 {}
 
 
@@ -22,4 +23,8 @@ protocol HasTripsStore {
 
 protocol HasPlacesStore {
     var placesStore: PlacesStoreType { get }
+}
+
+protocol HasLocationsStore {
+    var locationsStore: LocationsStoreType { get }
 }

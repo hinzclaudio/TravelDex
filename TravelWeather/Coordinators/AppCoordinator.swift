@@ -42,13 +42,7 @@ class AppCoordinator: CoordinatorType {
         let viewModel = AddTripViewModel(dependencies: dependencies)
         viewModel.coordinator = self
         let controller = AddTripController(viewModel: viewModel)
-        let modalContainer = ModalNavigationContainer(rootViewController: controller)
-        
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
-        
-        modalContainer.modalPresentationStyle = .automatic
-        navigationController.present(modalContainer, animated: true)
-        modalController = modalContainer
+        presentModally(controller)
     }
     
     
@@ -62,6 +56,24 @@ class AppCoordinator: CoordinatorType {
         vm.coordinator = self
         let controller = AddPlacesController(viewModel: vm)
         navigationController.pushViewController(controller, animated: true)
+    }
+    
+    
+    func searchLocation(completion: @escaping (Location) -> Void) {
+        let viewModel = LocationSearchViewModel(dependencies: dependencies)
+        viewModel.coordinator = self
+        let controller = LocationSearchController(viewModel: viewModel)
+        presentModally(controller)
+    }
+    
+    
+    private func presentModally(_ viewController: UIViewController) {
+        let modalContainer = ModalNavigationContainer(rootViewController: viewController)
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        modalContainer.modalPresentationStyle = .automatic
+        navigationController.present(modalContainer, animated: true)
+        modalController = modalContainer
+        
     }
     
 }

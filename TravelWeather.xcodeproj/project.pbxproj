@@ -83,6 +83,12 @@
 		12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350F289D9CE800363CF6 /* AddTripController.swift */; };
 		12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */; };
 		12F75607289E971C00773D46 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75606289E971C00773D46 /* TripCell.swift */; };
+		12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75609289E9F1D00773D46 /* EditPlaceCell.swift */; };
+		12F7560F289EA0D300773D46 /* LocationSearchViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7560E289EA0D300773D46 /* LocationSearchViewModelType.swift */; };
+		12F75611289EA0DB00773D46 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75610289EA0DB00773D46 /* LocationSearchViewModel.swift */; };
+		12F75613289EA17300773D46 /* LocationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75612289EA17300773D46 /* LocationSearchController.swift */; };
+		12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75615289EA2E500773D46 /* LocationsStoreType.swift */; };
+		12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75617289EA2ED00773D46 /* LocationsStore.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -188,6 +194,12 @@
 		12F1350F289D9CE800363CF6 /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
 		12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationContainer.swift; sourceTree = "<group>"; };
 		12F75606289E971C00773D46 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
+		12F75609289E9F1D00773D46 /* EditPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceCell.swift; sourceTree = "<group>"; };
+		12F7560E289EA0D300773D46 /* LocationSearchViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModelType.swift; sourceTree = "<group>"; };
+		12F75610289EA0DB00773D46 /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		12F75612289EA17300773D46 /* LocationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController.swift; sourceTree = "<group>"; };
+		12F75615289EA2E500773D46 /* LocationsStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStoreType.swift; sourceTree = "<group>"; };
+		12F75617289EA2ED00773D46 /* LocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStore.swift; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +270,7 @@
 				12F134EE289D89A700363CF6 /* TripsList */,
 				12F13508289D9C1800363CF6 /* AddTrip */,
 				12F05EA8289E800800A0C4AB /* AddPlaces */,
+				12F7560B289EA0AE00773D46 /* LocationSearch */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -265,6 +278,7 @@
 		1255119E289C58E50088B38B /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				12F75614289EA2DD00773D46 /* LocationsStore */,
 				12F05EB1289E813D00A0C4AB /* PlacesStore */,
 				12F134CD289D823900363CF6 /* TripsStore */,
 			);
@@ -617,8 +631,44 @@
 		12F75605289E966700773D46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				12F75609289E9F1D00773D46 /* EditPlaceCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		12F7560B289EA0AE00773D46 /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				12F7560D289EA0C800773D46 /* ViewModel */,
+				12F7560C289EA0C400773D46 /* View */,
+			);
+			path = LocationSearch;
+			sourceTree = "<group>";
+		};
+		12F7560C289EA0C400773D46 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12F75612289EA17300773D46 /* LocationSearchController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12F7560D289EA0C800773D46 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12F7560E289EA0D300773D46 /* LocationSearchViewModelType.swift */,
+				12F75610289EA0DB00773D46 /* LocationSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12F75614289EA2DD00773D46 /* LocationsStore */ = {
+			isa = PBXGroup;
+			children = (
+				12F75615289EA2E500773D46 /* LocationsStoreType.swift */,
+				12F75617289EA2ED00773D46 /* LocationsStore.swift */,
+			);
+			path = LocationsStore;
 			sourceTree = "<group>";
 		};
 		1405F96A8FCD85676501E1C7 /* Frameworks */ = {
@@ -942,11 +992,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F75611289EA0DB00773D46 /* LocationSearchViewModel.swift in Sources */,
 				12F05EAC289E803400A0C4AB /* AddPlacesViewModelType.swift in Sources */,
 				12EF8811289E5C0500E3EA07 /* CDHelperExt.swift in Sources */,
 				12F134EB289D896300363CF6 /* CDLocation+CoreDataProperties.swift in Sources */,
 				12F134D5289D83C800363CF6 /* Trip.swift in Sources */,
 				12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */,
+				12F75613289EA17300773D46 /* LocationSearchController.swift in Sources */,
 				12F134E9289D896300363CF6 /* CDTrip+CoreDataProperties.swift in Sources */,
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
@@ -966,6 +1018,7 @@
 				12F13507289D9AB500363CF6 /* SFSymbols.swift in Sources */,
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
 				12F134FC289D922700363CF6 /* Sizes.swift in Sources */,
+				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
 				12F134F4289D89E100363CF6 /* TripsListViewModel.swift in Sources */,
 				12F134D9289D846500363CF6 /* Location.swift in Sources */,
 				1260ED6A289D6E140008C9EE /* CDMigrationVersion.swift in Sources */,
@@ -987,8 +1040,10 @@
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
 				12F1350E289D9CB400363CF6 /* AddTripViewModel.swift in Sources */,
 				12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */,
+				12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */,
 				12F134E7289D896300363CF6 /* CDWeather+CoreDataProperties.swift in Sources */,
 				12F134FE289D925500363CF6 /* Colors.swift in Sources */,
+				12F7560F289EA0D300773D46 /* LocationSearchViewModelType.swift in Sources */,
 				12F05EB5289E815C00A0C4AB /* PlacesStore.swift in Sources */,
 				12F134EC289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
 				125511A3289C5A690088B38B /* CDAction.swift in Sources */,
@@ -1004,6 +1059,7 @@
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
+				12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */,
 				12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,
 				123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */,

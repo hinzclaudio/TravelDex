@@ -17,6 +17,7 @@ class AddPlacesController: ScrollableVStackController {
     
     // MARK: - Views
     let headerView = TripCell()
+    let placesStack = UIStackView.defaultContentStack()
     let addButton = UIButton()
     
     
@@ -47,6 +48,7 @@ class AddPlacesController: ScrollableVStackController {
     
     private func addViews() {
         contentStack.addArrangedSubview(headerView)
+        contentStack.addArrangedSubview(placesStack)
         contentStack.addArrangedSubview(addButton)
     }
     
@@ -66,6 +68,11 @@ class AddPlacesController: ScrollableVStackController {
     private func setupBinding() {
         viewModel.trip
             .drive(onNext: { [weak self] trip in self?.headerView.configure(for: trip) })
+            .disposed(by: bag)
+        viewModel.trip
+            .map { $0.visitedLocations.count == 0 }
+            .distinctUntilChanged()
+            .drive(placesStack.rx.isHidden)
             .disposed(by: bag)
     }
     
