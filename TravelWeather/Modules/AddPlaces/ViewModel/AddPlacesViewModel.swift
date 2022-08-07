@@ -15,7 +15,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     weak var coordinator: AppCoordinator?
 
-    typealias Dependencies = HasTripsStore
+    typealias Dependencies = HasTripsStore & HasPlacesStore
     private let dependencies: Dependencies
     private let initialTrip: Trip
     
@@ -29,9 +29,12 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     // MARK: - Input
     func addLocation(_ tapped: Observable<Void>) -> Disposable {
         tapped
-            .subscribe(onNext: { [weak self] in
+            .withLatestFrom(trip)
+            .subscribe(onNext: { [weak self] trip in
                 self?.coordinator?
-                    .searchLocation(completion: { location in print("LOCATION: \(location)") })
+                    .searchLocation(completion: { location in
+                        self?.dependencies.placesStore.add(location, to: trip)
+                    })
             })
     }
     
@@ -42,6 +45,12 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             .trip(identifiedBy: .just(initialTrip.id))
             .compactMap { $0 }
             .asDriver(onErrorJustReturn: initialTrip)
+    }()
+    
+    lazy var addedPlaces: Driver<[AddedPlaceItem]> = {
+        dependencies.placesStore
+            .addedPlaces(for: .just(initialTrip.id))
+            .asDriver(onErrorJustReturn: [])
     }()
     
 }

@@ -14,13 +14,15 @@ import RxCocoa
 class LocationSearchViewModel: LocationSearchViewModelType {
     
     weak var coordinator: AppCoordinator?
+    let selection: (Location) -> Void
     
     typealias Dependencies = HasLocationsStore
     private let dependencies: Dependencies
     private let bag = DisposeBag()
     
-    init(dependencies: Dependencies) {
+    init(dependencies: Dependencies, selection: @escaping (Location) -> Void) {
         self.dependencies = dependencies
+        self.selection = selection
     }
     
     
@@ -32,6 +34,11 @@ class LocationSearchViewModel: LocationSearchViewModelType {
         return dependencies.locationsStore
             .locations(for: query)
             .asDriver(onErrorJustReturn: [])
+    }
+    
+    func select(_ location: Observable<Location>) -> Disposable {
+        location
+            .subscribe(onNext: { [weak self] in self?.selection($0) })
     }
     
 }

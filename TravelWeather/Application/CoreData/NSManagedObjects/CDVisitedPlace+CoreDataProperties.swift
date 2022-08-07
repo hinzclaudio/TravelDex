@@ -22,7 +22,9 @@ extension CDVisitedPlace {
     @NSManaged public var pictureData: Data?
     @NSManaged public var start: Date
     @NSManaged public var end: Date
+    // sourcery: relationship
     @NSManaged public var location: CDLocation
+    // sourcery: relationship
     @NSManaged public var trip: CDTrip
 
 }

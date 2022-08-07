@@ -12,4 +12,7 @@ import RxSwift
 
 protocol PlacesStoreType {
     
+    func add(_ location: Location, to trip: Trip)
+    func addedPlaces(for trip: Observable<UUID>) -> Observable<[AddedPlaceItem]>
+    
 }

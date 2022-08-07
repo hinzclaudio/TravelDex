@@ -17,7 +17,7 @@ class AddPlacesController: ScrollableVStackController {
     
     // MARK: - Views
     let headerView = TripCell()
-    let placesStack = UIStackView.defaultContentStack()
+    let placesStack = UIStackView.defaultContentStack(withSpacing: 0)
     let addButton = UIButton()
     
     
@@ -61,6 +61,8 @@ class AddPlacesController: ScrollableVStackController {
     
     private func setAutoLayout() {
         headerView.autoMatch(.width, to: .width, of: view)
+        placesStack.autoMatch(.width, to: .width, of: contentStack)
+        contentStack.setCustomSpacing(1.5 * Sizes.defaultMargin, after: placesStack)
         addButton.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
         addButton.autoMatch(.width, to: .width, of: view, withOffset: -2 * Sizes.defaultMargin)
     }
@@ -73,6 +75,23 @@ class AddPlacesController: ScrollableVStackController {
             .map { $0.visitedLocations.count == 0 }
             .distinctUntilChanged()
             .drive(placesStack.rx.isHidden)
+            .disposed(by: bag)
+
+        viewModel.addedPlaces
+            .drive(onNext: { [weak self] places in
+                guard let self = self else { return }
+                self.placesStack.removeAllArrangedSubviews()
+                places
+                    .map { item -> EditPlaceCell in
+                        let cell = EditPlaceCell()
+                        cell.configure(for: item)
+                        return cell
+                    }
+                    .forEach { cell in
+                        self.placesStack.addArrangedSubview(cell)
+                        cell.autoMatch(.width, to: .width, of: self.placesStack)
+                    }
+            })
             .disposed(by: bag)
         
         let tappedAdd = addButton.rx.tap.asObservable()

@@ -62,7 +62,10 @@ class AppCoordinator: CoordinatorType {
     
     
     func searchLocation(completion: @escaping (Location) -> Void) {
-        let viewModel = LocationSearchViewModel(dependencies: dependencies)
+        let viewModel = LocationSearchViewModel(dependencies: dependencies) { [weak self] loc in
+            self?.modalController?.dismiss(animated: true)
+            completion(loc)
+        }
         viewModel.coordinator = self
         let controller = LocationSearchController(viewModel: viewModel)
         presentModally(controller)

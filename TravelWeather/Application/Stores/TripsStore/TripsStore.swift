@@ -22,6 +22,7 @@ class TripsStore: TripsStoreType {
     }
     
     
+    
     // MARK: - Input
     func addTrip(_ trip: Observable<Trip>) -> Disposable {
         trip

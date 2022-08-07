@@ -90,6 +90,13 @@ class LocationSearchController: UIViewController {
                 cell.configure(for: location)
             }
             .disposed(by: bag)
+        
+        let locationSelection = tableView.rx
+            .modelSelected(Location.self)
+            .asObservable()
+        viewModel
+            .select(locationSelection)
+            .disposed(by: bag)
     }
     
 }

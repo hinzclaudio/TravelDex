@@ -14,5 +14,6 @@ import RxCocoa
 protocol LocationSearchViewModelType {
     
     func searchResults(for query: Observable<String>) -> Driver<[Location]>
+    func select(_ location: Observable<Location>) -> Disposable
     
 }

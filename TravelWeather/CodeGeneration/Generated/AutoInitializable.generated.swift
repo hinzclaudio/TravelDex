@@ -124,9 +124,7 @@ extension CDVisitedPlace {
         descr: String?,
         pictureData: Data?,
         start: Date,
-        end: Date,
-        location: CDLocation,
-        trip: CDTrip
+        end: Date
     ) {
         self.id = id
         self.name = name
@@ -134,8 +132,6 @@ extension CDVisitedPlace {
         self.pictureData = pictureData
         self.start = start
         self.end = end
-        self.location = location
-        self.trip = trip
     }
 }
 
