@@ -1,5 +1,5 @@
 //
-//  AddTripViewModel.swift
+//  EditTripViewModel.swift
 //  TravelWeather
 //
 //  Created by Claudio Hinz on 05.08.22.
@@ -10,7 +10,7 @@ import RxSwift
 
 
 
-class AddTripViewModel: AddTripViewModelType {
+class EditTripViewModel: EditTripViewModelType {
     
     weak var coordinator: AppCoordinator?
     
@@ -22,7 +22,7 @@ class AddTripViewModel: AddTripViewModelType {
     }
     
     
-    func add(_ trip: Observable<Trip>) -> Disposable {
+    func update(_ trip: Observable<Trip>) -> Disposable {
         let coordinatorAction = trip.subscribe(
             onNext: { [weak self] trip in self?.coordinator?.didAdd(trip) })
         let storeAction = dependencies.tripsStore

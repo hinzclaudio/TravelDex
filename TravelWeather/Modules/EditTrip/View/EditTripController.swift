@@ -1,5 +1,5 @@
 //
-//  AddTripController.swift
+//  EditTripController.swift
 //  TravelWeather
 //
 //  Created by Claudio Hinz on 05.08.22.
@@ -11,9 +11,9 @@ import RxCocoa
 
 
 
-class AddTripController: ScrollableVStackController {
+class EditTripController: ScrollableVStackController {
     
-    let viewModel: AddTripViewModelType
+    let viewModel: EditTripViewModelType
     let bag = DisposeBag()
     
     // MARK: - Views
@@ -25,7 +25,7 @@ class AddTripController: ScrollableVStackController {
     
     
     
-    init(viewModel: AddTripViewModelType) {
+    init(viewModel: EditTripViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -92,7 +92,7 @@ class AddTripController: ScrollableVStackController {
         let confirmedTrip = confirmButton.rx.tap
             .withLatestFrom(currentTrip)
         viewModel
-            .add(confirmedTrip)
+            .update(confirmedTrip)
             .disposed(by: bag)
     }
     

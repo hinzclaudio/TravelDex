@@ -88,9 +88,9 @@
 		12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13501289D972500363CF6 /* GeneralStyleManager.swift */; };
 		12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13504289D98C800363CF6 /* BaseNavigationController.swift */; };
 		12F13507289D9AB500363CF6 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13506289D9AB500363CF6 /* SFSymbols.swift */; };
-		12F1350C289D9C9E00363CF6 /* AddTripViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350B289D9C9E00363CF6 /* AddTripViewModelType.swift */; };
-		12F1350E289D9CB400363CF6 /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350D289D9CB400363CF6 /* AddTripViewModel.swift */; };
-		12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350F289D9CE800363CF6 /* AddTripController.swift */; };
+		12F1350C289D9C9E00363CF6 /* EditTripViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350B289D9C9E00363CF6 /* EditTripViewModelType.swift */; };
+		12F1350E289D9CB400363CF6 /* EditTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350D289D9CB400363CF6 /* EditTripViewModel.swift */; };
+		12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F1350F289D9CE800363CF6 /* EditTripController.swift */; };
 		12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */; };
 		12F75607289E971C00773D46 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75606289E971C00773D46 /* TripCell.swift */; };
 		12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75609289E9F1D00773D46 /* EditPlaceCell.swift */; };
@@ -211,9 +211,9 @@
 		12F13501289D972500363CF6 /* GeneralStyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStyleManager.swift; sourceTree = "<group>"; };
 		12F13504289D98C800363CF6 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		12F13506289D9AB500363CF6 /* SFSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
-		12F1350B289D9C9E00363CF6 /* AddTripViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModelType.swift; sourceTree = "<group>"; };
-		12F1350D289D9CB400363CF6 /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
-		12F1350F289D9CE800363CF6 /* AddTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripController.swift; sourceTree = "<group>"; };
+		12F1350B289D9C9E00363CF6 /* EditTripViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewModelType.swift; sourceTree = "<group>"; };
+		12F1350D289D9CB400363CF6 /* EditTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewModel.swift; sourceTree = "<group>"; };
+		12F1350F289D9CE800363CF6 /* EditTripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripController.swift; sourceTree = "<group>"; };
 		12F13511289D9D1000363CF6 /* ModalNavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationContainer.swift; sourceTree = "<group>"; };
 		12F75606289E971C00773D46 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		12F75609289E9F1D00773D46 /* EditPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceCell.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 			children = (
 				12F13501289D972500363CF6 /* GeneralStyleManager.swift */,
 				12F134EE289D89A700363CF6 /* TripsList */,
-				12F13508289D9C1800363CF6 /* AddTrip */,
+				12F13508289D9C1800363CF6 /* EditTrip */,
 				12F05EA8289E800800A0C4AB /* AddPlaces */,
 				12F7560B289EA0AE00773D46 /* LocationSearch */,
 			);
@@ -684,20 +684,20 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		12F13508289D9C1800363CF6 /* AddTrip */ = {
+		12F13508289D9C1800363CF6 /* EditTrip */ = {
 			isa = PBXGroup;
 			children = (
 				12F13509289D9C7E00363CF6 /* ViewModel */,
 				12F1350A289D9C8200363CF6 /* View */,
 			);
-			path = AddTrip;
+			path = EditTrip;
 			sourceTree = "<group>";
 		};
 		12F13509289D9C7E00363CF6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12F1350B289D9C9E00363CF6 /* AddTripViewModelType.swift */,
-				12F1350D289D9CB400363CF6 /* AddTripViewModel.swift */,
+				12F1350B289D9C9E00363CF6 /* EditTripViewModelType.swift */,
+				12F1350D289D9CB400363CF6 /* EditTripViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -705,7 +705,7 @@
 		12F1350A289D9C8200363CF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12F1350F289D9CE800363CF6 /* AddTripController.swift */,
+				12F1350F289D9CE800363CF6 /* EditTripController.swift */,
 				123F7B66289DBBC90008444D /* Subviews */,
 			);
 			path = View;
@@ -1096,7 +1096,7 @@
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */,
 				120A231A289FB9C50092A2D5 /* WeatherAPIType.swift in Sources */,
-				12F1350C289D9C9E00363CF6 /* AddTripViewModelType.swift in Sources */,
+				12F1350C289D9C9E00363CF6 /* EditTripViewModelType.swift in Sources */,
 				12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */,
 				120A2326289FC0390092A2D5 /* WeatherAPI.Search.swift in Sources */,
 				12F134BC289D795C00363CF6 /* CoordinatorType.swift in Sources */,
@@ -1129,7 +1129,7 @@
 				12F05EA7289E7B6D00A0C4AB /* RxString.swift in Sources */,
 				12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */,
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
-				12F13510289D9CE800363CF6 /* AddTripController.swift in Sources */,
+				12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
 				12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */,
 				123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */,
@@ -1138,7 +1138,7 @@
 				12F134F2289D89D200363CF6 /* TripsListViewModelType.swift in Sources */,
 				123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */,
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
-				12F1350E289D9CB400363CF6 /* AddTripViewModel.swift in Sources */,
+				12F1350E289D9CB400363CF6 /* EditTripViewModel.swift in Sources */,
 				12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */,
 				12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */,
 				12F134E7289D896300363CF6 /* CDWeather+CoreDataProperties.swift in Sources */,

@@ -39,9 +39,9 @@ class AppCoordinator: CoordinatorType {
     
     
     func goToAddTrip() {
-        let viewModel = AddTripViewModel(dependencies: dependencies)
+        let viewModel = EditTripViewModel(dependencies: dependencies)
         viewModel.coordinator = self
-        let controller = AddTripController(viewModel: viewModel)
+        let controller = EditTripController(viewModel: viewModel)
         presentModally(controller)
     }
     
