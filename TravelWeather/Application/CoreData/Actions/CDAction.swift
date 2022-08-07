@@ -46,6 +46,25 @@ extension CDAction {
     }
     
     
+    func fetchSimilarLocation(to loc: Location, in context: NSManagedObjectContext) -> CDLocation? {
+        let query = CDLocation.fetchRequest()
+        query.fetchLimit = 1
+        query.predicate = NSPredicate(
+            format: "abs(latitude - %f) < 0.001 AND abs(longitude - %f) < 0.001",
+            loc.coordinate.latitude,
+            loc.coordinate.longitude
+        )
+        
+        do {
+            let similarLocations = try context.fetch(query)
+            return similarLocations.first
+        } catch {
+            handleCD(error)
+            return nil
+        }
+    }
+    
+    
     func handleCD(_ error: Error) {
         assertionFailure("Something's wrong: \(error)")
     }

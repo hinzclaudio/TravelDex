@@ -28,6 +28,8 @@ struct CDUpdateLocations: CDAction {
                         country: loc.country,
                         queryParameter: loc.queryParameter
                     )
+                } else if let cdLoc = fetchSimilarLocation(to: loc, in: context) {
+                    return
                 } else {
                     let cdLoc = CDLocation(context: context)
                     cdLoc.safeInit(
