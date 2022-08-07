@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 
 
 class EditPlaceCell: UIView {
     
+    private let cellExpanded = BehaviorSubject(value: false)
+    private let cellTapRecognizer = UITapGestureRecognizer()
+    private let bag = DisposeBag()
+    
+    // MARK: - Views
     private let containerView = UIView()
+    private let cellStack = UIStackView.defaultContentStack()
     private let titleLabel = UILabel()
     private let secLabel = UILabel()
-    
+    private let controlStack = UIStackView.defaultContentStack()
     
     
     override init(frame: CGRect = .zero) {
@@ -37,15 +45,44 @@ class EditPlaceCell: UIView {
     
     private func addViews() {
         addSubview(containerView)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(secLabel)
+        containerView.addSubview(cellStack)
+        cellStack.addArrangedSubview(titleLabel)
+        cellStack.addArrangedSubview(secLabel)
+        cellStack.addArrangedSubview(controlStack)
     }
     
     private func configureViews() {
+        containerView.addGestureRecognizer(cellTapRecognizer)
+        cellTapRecognizer.rx.tap
+            .withLatestFrom(cellExpanded)
+            .map { !$0 }
+            .bind(to: cellExpanded)
+            .disposed(by: bag)
+        
+        cellExpanded
+            .map { !$0 }
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] hidden in
+                UIView
+                    .animate(
+                        withDuration: AnimationConstants.defaultDuration,
+                        delay: 0,
+                        options: AnimationConstants.defaultOption) {
+                            self?.controlStack.isHidden = hidden
+                        }
+            })
+            .disposed(by: bag)
+            
         titleLabel.styleHeadline2()
         secLabel.styleSmall()
         containerView.roundCorners()
         containerView.backgroundColor = Colors.darkSandRose
+        
+        let label = UILabel()
+        label.styleHeadline1(colored: .red)
+        controlStack.removeAllArrangedSubviews()
+        controlStack.addArrangedSubview(label)
+        label.text = "TESTLABEL"
     }
     
     private func setAutoLayout() {
@@ -54,14 +91,14 @@ class EditPlaceCell: UIView {
         containerView.autoPinEdge(.right, to: .right, of: self, withOffset: -Sizes.defaultMargin)
         containerView.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -0.5 * Sizes.defaultMargin)
         
-        titleLabel.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
-        titleLabel.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
-        titleLabel.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
-
-        secLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: 0.5 * Sizes.defaultMargin)
-        secLabel.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
-        secLabel.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
-        secLabel.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        cellStack.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
+        cellStack.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
+        cellStack.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
+        cellStack.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        
+        titleLabel.autoMatch(.width, to: .width, of: cellStack)
+        secLabel.autoMatch(.width, to: .width, of: cellStack)
+        controlStack.autoMatch(.width, to: .width, of: cellStack)
     }
     
     func configure(for addedPlace: AddedPlaceItem) {

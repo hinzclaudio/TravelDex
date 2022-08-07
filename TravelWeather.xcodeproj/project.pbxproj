@@ -17,6 +17,8 @@
 		120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A232A289FC5A70092A2D5 /* CDUpdateLocations.swift */; };
 		1211078428A00F4C0046E8A9 /* AddedPlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078328A00F4C0046E8A9 /* AddedPlaceItem.swift */; };
 		1211078728A016EE0046E8A9 /* CDUpdatePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078628A016EE0046E8A9 /* CDUpdatePlace.swift */; };
+		1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078A28A0382F0046E8A9 /* RxTapGesture.swift */; };
+		1211078D28A03AB90046E8A9 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078C28A03AB90046E8A9 /* AnimationConstants.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -134,6 +136,8 @@
 		120A232A289FC5A70092A2D5 /* CDUpdateLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateLocations.swift; sourceTree = "<group>"; };
 		1211078328A00F4C0046E8A9 /* AddedPlaceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlaceItem.swift; sourceTree = "<group>"; };
 		1211078628A016EE0046E8A9 /* CDUpdatePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdatePlace.swift; sourceTree = "<group>"; };
+		1211078A28A0382F0046E8A9 /* RxTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTapGesture.swift; sourceTree = "<group>"; };
+		1211078C28A03AB90046E8A9 /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -657,6 +661,7 @@
 			children = (
 				12F134F8289D8B6600363CF6 /* CDObservable.swift */,
 				12F05EA6289E7B6D00A0C4AB /* RxString.swift */,
+				1211078A28A0382F0046E8A9 /* RxTapGesture.swift */,
 				120A2327289FC40C0092A2D5 /* ActivityIndicator.swift */,
 			);
 			path = RxSwift;
@@ -666,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				12F134FB289D922700363CF6 /* Sizes.swift */,
+				1211078C28A03AB90046E8A9 /* AnimationConstants.swift */,
 				123F7B6D289DBC640008444D /* Fonts.swift */,
 				12F134FD289D925500363CF6 /* Colors.swift */,
 				12F13506289D9AB500363CF6 /* SFSymbols.swift */,
@@ -1130,6 +1136,7 @@
 				12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */,
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
 				12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */,
+				1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
 				12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */,
 				123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */,
@@ -1159,6 +1166,7 @@
 				12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */,
 				120A2328289FC40C0092A2D5 /* ActivityIndicator.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
+				1211078D28A03AB90046E8A9 /* AnimationConstants.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
