@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120A231A289FB9C50092A2D5 /* WeatherAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A2319289FB9C50092A2D5 /* WeatherAPIType.swift */; };
+		120A231C289FB9D90092A2D5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A231B289FB9D90092A2D5 /* WeatherAPI.swift */; };
+		120A231E289FBA400092A2D5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A231D289FBA400092A2D5 /* HTTPMethod.swift */; };
+		120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A231F289FBA510092A2D5 /* Endpoint.swift */; };
+		120A2324289FBEB60092A2D5 /* WeatherAPILocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A2323289FBEB60092A2D5 /* WeatherAPILocation.swift */; };
+		120A2326289FC0390092A2D5 /* WeatherAPI.Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A2325289FC0390092A2D5 /* WeatherAPI.Search.swift */; };
+		120A2328289FC40C0092A2D5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A2327289FC40C0092A2D5 /* ActivityIndicator.swift */; };
+		120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A232A289FC5A70092A2D5 /* CDUpdateLocations.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -114,6 +122,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		120A2319289FB9C50092A2D5 /* WeatherAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIType.swift; sourceTree = "<group>"; };
+		120A231B289FB9D90092A2D5 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		120A231D289FBA400092A2D5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		120A231F289FBA510092A2D5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		120A2323289FBEB60092A2D5 /* WeatherAPILocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPILocation.swift; sourceTree = "<group>"; };
+		120A2325289FC0390092A2D5 /* WeatherAPI.Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.Search.swift; sourceTree = "<group>"; };
+		120A2327289FC40C0092A2D5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		120A232A289FC5A70092A2D5 /* CDUpdateLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateLocations.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -243,6 +259,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120A2317289FB9AA0092A2D5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				120A231D289FBA400092A2D5 /* HTTPMethod.swift */,
+				120A231F289FBA510092A2D5 /* Endpoint.swift */,
+				120A2318289FB9B20092A2D5 /* WeatherAPI */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		120A2318289FB9B20092A2D5 /* WeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				120A2319289FB9C50092A2D5 /* WeatherAPIType.swift */,
+				120A231B289FB9D90092A2D5 /* WeatherAPI.swift */,
+				120A2322289FBEAA0092A2D5 /* Models */,
+				120A2321289FBC960092A2D5 /* Endpoints */,
+			);
+			path = WeatherAPI;
+			sourceTree = "<group>";
+		};
+		120A2321289FBC960092A2D5 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				120A2325289FC0390092A2D5 /* WeatherAPI.Search.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		120A2322289FBEAA0092A2D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				120A2323289FBEB60092A2D5 /* WeatherAPILocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		120A2329289FC59D0092A2D5 /* LocationActions */ = {
+			isa = PBXGroup;
+			children = (
+				120A232A289FC5A70092A2D5 /* CDUpdateLocations.swift */,
+			);
+			path = LocationActions;
+			sourceTree = "<group>";
+		};
 		123F7B66289DBBC90008444D /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +322,7 @@
 				12F134F7289D8B2900363CF6 /* RxSwift */,
 				12F134B0289D721F00363CF6 /* Dependencies */,
 				12F134D3289D83BA00363CF6 /* Models */,
+				120A2317289FB9AA0092A2D5 /* Networking */,
 				1255119E289C58E50088B38B /* Stores */,
 				1260ED62289D6DAE0008C9EE /* Extensions */,
 			);
@@ -320,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				125511A2289C5A690088B38B /* CDAction.swift */,
+				120A2329289FC59D0092A2D5 /* LocationActions */,
 				12EF8812289E620400E3EA07 /* TripActions */,
 			);
 			path = Actions;
@@ -580,6 +643,7 @@
 			children = (
 				12F134F8289D8B6600363CF6 /* CDObservable.swift */,
 				12F05EA6289E7B6D00A0C4AB /* RxString.swift */,
+				120A2327289FC40C0092A2D5 /* ActivityIndicator.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -1016,11 +1080,15 @@
 				12F134E9289D896300363CF6 /* CDTrip+CoreDataProperties.swift in Sources */,
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
+				120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */,
+				120A231A289FB9C50092A2D5 /* WeatherAPIType.swift in Sources */,
 				12F1350C289D9C9E00363CF6 /* AddTripViewModelType.swift in Sources */,
 				12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */,
+				120A2326289FC0390092A2D5 /* WeatherAPI.Search.swift in Sources */,
 				12F134BC289D795C00363CF6 /* CoordinatorType.swift in Sources */,
 				123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
+				120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */,
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,
@@ -1030,6 +1098,8 @@
 				12F134CF289D824200363CF6 /* TripsStore.swift in Sources */,
 				12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */,
 				12F13507289D9AB500363CF6 /* SFSymbols.swift in Sources */,
+				120A231C289FB9D90092A2D5 /* WeatherAPI.swift in Sources */,
+				120A2324289FBEB60092A2D5 /* WeatherAPILocation.swift in Sources */,
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
 				12F134FC289D922700363CF6 /* Sizes.swift in Sources */,
 				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
@@ -1062,6 +1132,7 @@
 				12F05EB5289E815C00A0C4AB /* PlacesStore.swift in Sources */,
 				12F134EC289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
 				125511A3289C5A690088B38B /* CDAction.swift in Sources */,
+				120A231E289FBA400092A2D5 /* HTTPMethod.swift in Sources */,
 				12F134F9289D8B6600363CF6 /* CDObservable.swift in Sources */,
 				12F05EB0289E809100A0C4AB /* AddPlacesController.swift in Sources */,
 				123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */,
@@ -1070,6 +1141,7 @@
 				12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */,
 				123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */,
 				12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */,
+				120A2328289FC40C0092A2D5 /* ActivityIndicator.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,

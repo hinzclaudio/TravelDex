@@ -32,6 +32,20 @@ extension CDAction {
     }
     
     
+    func fetchLocation(by id: Int, in context: NSManagedObjectContext) -> CDLocation? {
+        let query = CDLocation.fetchRequest()
+        query.predicate = NSPredicate(format: "id == %d", id)
+        query.fetchLimit = 1
+        do {
+            let fetched = try context.fetch(query)
+            return fetched.first
+        } catch {
+            handleCD(error)
+            return nil
+        }
+    }
+    
+    
     func handleCD(_ error: Error) {
         assertionFailure("Something's wrong: \(error)")
     }

@@ -12,18 +12,18 @@ import Foundation
 struct VisitedPlace: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
     let id: UUID
-    let location: UUID
+    let locationId: Int
     // sourcery:end: nonDefaultBuilderProperty
 
 // sourcery:inline:auto:VisitedPlace.AutoBuilderInit
     // MARK: - Init Buildable
     init(
         id: UUID, 
-        location: UUID
+        locationId: Int
     )
     {
         self.id = id
-        self.location = location
+        self.locationId = locationId
     }
     static var builder: VisitedPlaceBuilder {
         VisitedPlaceBuilder()
@@ -31,7 +31,7 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
     func cloneBuilder() -> VisitedPlaceBuilder {
         VisitedPlace.builder
             .with(id: self.id)
-            .with(location: self.location)
+            .with(locationId: self.locationId)
     }
 // sourcery:end
 }
@@ -43,22 +43,22 @@ class VisitedPlaceBuilder {
     private(set) var id: UUID?
 
 
-    private(set) var location: UUID?
+    private(set) var locationId: Int?
 
     func with(id: UUID) -> VisitedPlaceBuilder {
         self.id = id; return self
     }
-    func with(location: UUID) -> VisitedPlaceBuilder {
-        self.location = location; return self
+    func with(locationId: Int) -> VisitedPlaceBuilder {
+        self.locationId = locationId; return self
     }
     func build() -> VisitedPlace? {
         guard
             let id = self.id,
-            let location = self.location
+            let locationId = self.locationId
         else { return nil }
         return VisitedPlace(
             id: id,
-            location: location
+            locationId: locationId
         )
     }
 }

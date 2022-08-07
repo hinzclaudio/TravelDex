@@ -13,15 +13,15 @@ extension CDLocation {
     
     var pureRepresentation: Location {
         Location(
-            id: id,
+            id: Int(id),
             name: name,
             region: region,
             country: country,
-            timezone: timezone,
             coordinate: Coordinate(
                 latitude: latitude,
                 longitude: longitude
-            )
+            ),
+            queryParameter: queryParameter
         )
     }
     

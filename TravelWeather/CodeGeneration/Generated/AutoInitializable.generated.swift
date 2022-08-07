@@ -9,13 +9,13 @@ extension CDLocation {
     /// have been set correctly.
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
-        id: UUID,
+        id: Int64,
         latitude: Double,
         longitude: Double,
         name: String,
         region: String?,
         country: String,
-        timezone: String,
+        queryParameter: String,
         visitedPlaces: NSSet,
         weather: CDWeather?
     ) {
@@ -25,7 +25,7 @@ extension CDLocation {
         self.name = name
         self.region = region
         self.country = country
-        self.timezone = timezone
+        self.queryParameter = queryParameter
         self.visitedPlaces = visitedPlaces
         self.weather = weather
     }
@@ -33,15 +33,13 @@ extension CDLocation {
     /// have been set correctly.
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
-        id: UUID,
+        id: Int64,
         latitude: Double,
         longitude: Double,
         name: String,
         region: String?,
         country: String,
-        timezone: String,
-        visitedPlaces: NSSet,
-        weather: CDWeather?
+        queryParameter: String
     ) {
         self.id = id
         self.latitude = latitude
@@ -49,9 +47,7 @@ extension CDLocation {
         self.name = name
         self.region = region
         self.country = country
-        self.timezone = timezone
-        self.visitedPlaces = visitedPlaces
-        self.weather = weather
+        self.queryParameter = queryParameter
     }
 }
 

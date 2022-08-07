@@ -2,12 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CDLocation" representedClassName="CDLocation" syncable="YES">
         <attribute name="country" attributeType="String"/>
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="queryParameter" attributeType="String"/>
         <attribute name="region" optional="YES" attributeType="String"/>
-        <attribute name="timezone" attributeType="String"/>
         <relationship name="visitedPlaces" toMany="YES" deletionRule="Cascade" destinationEntity="CDVisitedPlace" inverseName="location" inverseEntity="CDVisitedPlace"/>
         <relationship name="weather" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CDWeather" inverseName="location" inverseEntity="CDWeather"/>
     </entity>

@@ -52,6 +52,7 @@ class LocationSearchController: UIViewController {
         addViews()
         configureViews()
         setAutoLayout()
+        setupBinding()
     }
     
     private func addViews() {
@@ -86,7 +87,7 @@ class LocationSearchController: UIViewController {
                     cellType: LocationSearchCell.self
                 )
             ) { i, location, cell in
-                cell.titleLabel.text = location.name
+                cell.configure(for: location)
             }
             .disposed(by: bag)
     }

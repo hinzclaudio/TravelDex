@@ -16,14 +16,16 @@ extension CDLocation {
         return NSFetchRequest<CDLocation>(entityName: "CDLocation")
     }
 
-    @NSManaged public var id: UUID
+    @NSManaged public var id: Int64
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     @NSManaged public var name: String
     @NSManaged public var region: String?
     @NSManaged public var country: String
-    @NSManaged public var timezone: String
+    @NSManaged public var queryParameter: String
+    // sourcery: relationship
     @NSManaged public var visitedPlaces: NSSet
+    // sourcery: relationship
     @NSManaged public var weather: CDWeather?
 
 }

@@ -13,7 +13,7 @@ class LocationSearchCell: UITableViewCell {
     static let identifier = "LocationSearchTableViewCell"
     
     private let containerView = UIView()
-    let titleLabel = UILabel()
+    private let labelStack = UIStackView.defaultContentStack(withSpacing: 5)
     
     
     
@@ -36,7 +36,7 @@ class LocationSearchCell: UITableViewCell {
     
     private func addViews() {
         contentView.addSubview(containerView)
-        containerView.addSubview(titleLabel)
+        containerView.addSubview(labelStack)
     }
     
     private func configureViews() {
@@ -44,7 +44,6 @@ class LocationSearchCell: UITableViewCell {
         backgroundColor = .clear
         containerView.roundCorners()
         containerView.backgroundColor = Colors.darkGreen
-        titleLabel.styleHeadline1()
     }
     
     private func setAutoLayout() {
@@ -53,10 +52,28 @@ class LocationSearchCell: UITableViewCell {
         containerView.autoPinEdge(.right, to: .right, of: contentView, withOffset: -Sizes.defaultMargin)
         containerView.autoPinEdge(.bottom, to: .bottom, of: contentView, withOffset: -0.5 * Sizes.defaultMargin)
         
-        titleLabel.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
-        titleLabel.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
-        titleLabel.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
-        titleLabel.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        labelStack.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
+        labelStack.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
+        labelStack.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
+        labelStack.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+    }
+    
+    func configure(for loc: Location) {
+        labelStack.removeAllArrangedSubviews()
+        
+        let titleLabel = UILabel()
+        titleLabel.styleText()
+        titleLabel.text = loc.name
+        labelStack.addArrangedSubview(titleLabel)
+        
+        let secLabel = UILabel()
+        secLabel.styleSmall()
+        labelStack.addArrangedSubview(secLabel)
+        if let reg = loc.region {
+            secLabel.text = "\(loc.country), \(reg)"
+        } else {
+            secLabel.text = loc.country
+        }
     }
     
 }

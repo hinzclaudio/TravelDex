@@ -14,7 +14,7 @@ extension CDVisitedPlace {
     var pureRepresentation: VisitedPlace {
         VisitedPlace(
             id: id,
-            location: location.id
+            locationId: Int(location.id)
         )
     }
     

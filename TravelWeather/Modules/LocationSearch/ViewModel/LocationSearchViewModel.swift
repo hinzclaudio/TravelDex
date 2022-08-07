@@ -25,12 +25,13 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     
     
     func searchResults(for query: Observable<String>) -> Driver<[Location]> {
-        let apiResults = query
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
-            .filter { !$0.isEmpty }
-            .map { $0.lowercased() }
+        dependencies.locationsStore
+            .updateLocations(with: query)
+            .disposed(by: bag)
         
-        return .just([])
+        return dependencies.locationsStore
+            .locations(for: query)
+            .asDriver(onErrorJustReturn: [])
     }
     
 }

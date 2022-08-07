@@ -6,11 +6,19 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 
 
 protocol LocationsStoreType {
     
+    var isLoading: ActivityIndicator { get }
     
+    var error: Observable<Error> { get }
+    
+    func updateLocations(with query: Observable<String>) -> Disposable
+    
+    func locations(for query: Observable<String>) -> Observable<[Location]>
     
 }
