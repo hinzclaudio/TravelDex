@@ -84,6 +84,17 @@ class AddPlacesController: ScrollableVStackController {
                 places.forEach { item in
                     let cell = EditPlaceCell()
                     cell.configure(for: item, menu: self.viewModel.menu(for: item))
+                    self.viewModel.expandedItems
+                        .map { $0.contains(item.visitedPlace.id) }
+                        .drive(cell.cellExpanded)
+                        .disposed(by: cell.bag)
+                    cell.cellTapRecognizer.rx.tap
+                        .withLatestFrom(self.viewModel.expandedItems)
+                        .map { $0.contains(item.visitedPlace.id) }
+                        .subscribe(
+                            onNext: { isExp in self.viewModel.set(item, expanded: !isExp) }
+                        )
+                        .disposed(by: cell.bag)
                     self.placesStack.addArrangedSubview(cell)
                     cell.autoMatch(.width, to: .width, of: self.placesStack)
                 }

@@ -25,7 +25,6 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     }
     
     
-    
     // MARK: - Input
     func addLocation(_ tapped: Observable<Void>) -> Disposable {
         tapped
@@ -36,6 +35,16 @@ class AddPlacesViewModel: AddPlacesViewModelType {
                         self?.dependencies.placesStore.add(location, to: trip)
                     })
             })
+    }
+    
+    func set(_ item: AddedPlaceItem, expanded: Bool) {
+        var newItems = _expandedItems.value
+        if expanded {
+            newItems.insert(item.visitedPlace.id)
+        } else {
+            newItems.remove(item.visitedPlace.id)
+        }
+        _expandedItems.accept(newItems)
     }
     
     
@@ -51,6 +60,12 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         dependencies.placesStore
             .addedPlaces(for: .just(initialTrip.id))
             .asDriver(onErrorJustReturn: [])
+    }()
+    
+    let _expandedItems = BehaviorRelay<Set<VisitedPlaceID>>(value: [])
+    lazy var expandedItems: Driver<Set<VisitedPlaceID>> = {
+        _expandedItems
+            .asDriver()
     }()
     
     
@@ -98,12 +113,17 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             image: SFSymbol.trash.image,
             attributes: .destructive
         ) { [weak self] _ in
-            self?.dependencies.placesStore.delete(item.visitedPlace)
+            self?.delete(item)
         }
         return UIMenu(
             title: item.location.name,
             children: [addImgAction, showOnMapAction, editMenu, delAction]
         )
+    }
+    
+    private func delete(_ item: AddedPlaceItem) {
+        set(item, expanded: false)
+        dependencies.placesStore.delete(item.visitedPlace)
     }
     
 }

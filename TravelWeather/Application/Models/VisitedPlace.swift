@@ -9,6 +9,7 @@ import Foundation
 
 
 
+typealias VisitedPlaceID = UUID
 struct VisitedPlace: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
     let id: UUID

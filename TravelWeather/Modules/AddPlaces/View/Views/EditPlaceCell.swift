@@ -13,9 +13,9 @@ import RxCocoa
 
 class EditPlaceCell: UIView {
     
-    private let cellExpanded = BehaviorSubject(value: false)
-    private let cellTapRecognizer = UITapGestureRecognizer()
-    private let bag = DisposeBag()
+    let cellTapRecognizer = UITapGestureRecognizer()
+    let cellExpanded: PublishSubject<Bool> = .init()
+    let bag = DisposeBag()
     
     // MARK: - Views
     private let containerView = UIView()
@@ -74,12 +74,6 @@ class EditPlaceCell: UIView {
     
     private func configureViews() {
         containerView.addGestureRecognizer(cellTapRecognizer)
-        cellTapRecognizer.rx.tap
-            .withLatestFrom(cellExpanded)
-            .map { !$0 }
-            .bind(to: cellExpanded)
-            .disposed(by: bag)
-        
         cellExpanded
             .map { !$0 }
             .distinctUntilChanged()
