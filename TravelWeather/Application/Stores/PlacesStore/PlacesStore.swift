@@ -43,6 +43,10 @@ class PlacesStore: PlacesStoreType {
         )
     }
     
+    func update(_ visitedPlace: VisitedPlace) {
+        dispatch(CDUpdatePlace(place: visitedPlace))
+    }
+    
     
     // MARK: - Output
     func addedPlaces(for trip: Observable<UUID>) -> Observable<[AddedPlaceItem]> {

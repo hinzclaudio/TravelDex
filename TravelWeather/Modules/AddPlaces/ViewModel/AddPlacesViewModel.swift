@@ -47,6 +47,20 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         _expandedItems.accept(newItems)
     }
     
+    func setStart(of item: AddedPlaceItem, to date: Date) {
+        let newPlace = item.visitedPlace.cloneBuilder()
+            .with(start: date)
+            .build()!
+        dependencies.placesStore.update(newPlace)
+    }
+    
+    func setEnd(of item: AddedPlaceItem, to date: Date) {
+        let newPlace = item.visitedPlace.cloneBuilder()
+            .with(end: date)
+            .build()!
+        dependencies.placesStore.update(newPlace)
+    }
+    
     
     // MARK: - Output
     lazy var trip: Driver<Trip> = {
@@ -83,31 +97,12 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         ) { _ in
             // TODO: Implement
         }
-        
         let editTextAction = UIAction(
             title: "Edit Text",
             image: SFSymbol.pencil.image
         ) { _ in
             // TODO: Implement
         }
-        let editStartAction = UIAction(
-            title: "Edit Start",
-            image: SFSymbol.calendar.image
-        ) { _ in
-            // TODO: Implement
-        }
-        let editEndAction = UIAction(
-            title: "Edit End",
-            image: SFSymbol.calendar.image
-        ) { _ in
-            // TODO: Implement
-        }
-        let editMenu = UIMenu(
-            title: "Edit...",
-            options: .displayInline,
-            children: [editTextAction, editStartAction, editEndAction]
-        )
-        
         let delAction = UIAction(
             title: "Delete",
             image: SFSymbol.trash.image,
@@ -117,7 +112,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         }
         return UIMenu(
             title: item.location.name,
-            children: [addImgAction, showOnMapAction, editMenu, delAction]
+            children: [addImgAction, showOnMapAction, editTextAction, delAction]
         )
     }
     

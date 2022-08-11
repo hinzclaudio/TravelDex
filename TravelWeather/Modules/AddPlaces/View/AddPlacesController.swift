@@ -84,6 +84,16 @@ class AddPlacesController: ScrollableVStackController {
                 places.forEach { item in
                     let cell = EditPlaceCell()
                     cell.configure(for: item, menu: self.viewModel.menu(for: item))
+                    
+                    cell.startPicker.rx.date
+                        .filter { $0 != item.visitedPlace.start }
+                        .subscribe(onNext: { d in self.viewModel.setStart(of: item, to: d) })
+                        .disposed(by: cell.bag)
+                    cell.endPicker.rx.date
+                        .filter { $0 != item.visitedPlace.end }
+                        .subscribe(onNext: { d in self.viewModel.setEnd(of: item, to: d) })
+                        .disposed(by: cell.bag)
+
                     self.viewModel.expandedItems
                         .map { $0.contains(item.visitedPlace.id) }
                         .drive(cell.cellExpanded)
@@ -95,6 +105,7 @@ class AddPlacesController: ScrollableVStackController {
                             onNext: { isExp in self.viewModel.set(item, expanded: !isExp) }
                         )
                         .disposed(by: cell.bag)
+                    
                     self.placesStack.addArrangedSubview(cell)
                     cell.autoMatch(.width, to: .width, of: self.placesStack)
                 }

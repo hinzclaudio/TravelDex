@@ -32,7 +32,9 @@ class EditPlaceCell: UIView {
     private let datesPictureContainer = UIView()
     private let picturePreview = UIImageView()
     private let startLabel = UILabel()
+    let startPicker = UIDatePicker()
     private let endLabel = UILabel()
+    let endPicker = UIDatePicker()
     private let customTextLabel = UILabel()
     
     
@@ -68,7 +70,9 @@ class EditPlaceCell: UIView {
         detailsStack.addArrangedSubview(datesPictureContainer)
         datesPictureContainer.addSubview(picturePreview)
         datesPictureContainer.addSubview(startLabel)
+        datesPictureContainer.addSubview(startPicker)
         datesPictureContainer.addSubview(endLabel)
+        datesPictureContainer.addSubview(endPicker)
         detailsStack.addArrangedSubview(customTextLabel)
     }
     
@@ -88,26 +92,28 @@ class EditPlaceCell: UIView {
             })
             .disposed(by: bag)
             
-        titleLabel.styleHeadline2()
-        secLabel.styleSmall()
+        titleLabel.styleHeadline2(colored: Colors.black)
+        secLabel.styleSmall(colored: Colors.black)
         containerView.roundCorners()
-        containerView.backgroundColor = Colors.darkSandRose
+        containerView.backgroundColor = Colors.lightSandRose
         
-        optionsButton.tintColor = Colors.defaultWhite
+        optionsButton.tintColor = Colors.black
         optionsButton.setImage(SFSymbol.gear.image, for: .normal)
         optionsButton.showsMenuAsPrimaryAction = true
         
-        startLabel.styleSmall()
-        endLabel.styleSmall()
-        startLabel.text = "Start: 01.01.2000"
-        endLabel.text = "End: 02.02.2000"
+        startLabel.text = "Start"
+        startLabel.styleSmall(colored: Colors.black)
+        startPicker.styleDayMonthYear()
         
-        picturePreview.tintColor = Colors.defaultWhite
+        endLabel.text = "End"
+        endLabel.styleSmall(colored: Colors.black)
+        endPicker.styleDayMonthYear()
+        
+        picturePreview.tintColor = Colors.black
         picturePreview.image = SFSymbol.emptyImage.image
         picturePreview.contentMode = .scaleAspectFit
         
-        customTextLabel.styleText()
-        customTextLabel.text = "Das ist ein etwas längerer Text den ich über meine wunderbaren Reiseerlebnisse schreiben werde. Ach mein Gott was habe ich dort viel erlebt."
+        customTextLabel.styleText(colored: Colors.black)
     }
     
     private func setAutoLayout() {
@@ -140,18 +146,22 @@ class EditPlaceCell: UIView {
         picturePreview.autoPinEdge(.top, to: .top, of: datesPictureContainer)
         picturePreview.autoPinEdge(.left, to: .left, of: datesPictureContainer)
         picturePreview.autoPinEdge(.bottom, to: .bottom, of: datesPictureContainer)
-        picturePreview.autoMatch(.width, to: .width, of: datesPictureContainer, withMultiplier: 0.2)
+        picturePreview.autoMatch(.width, to: .width, of: datesPictureContainer, withMultiplier: 0.25)
         picturePreview.autoMatch(.height, to: .width, of: picturePreview)
         
         startLabel.autoPinEdge(.top, to: .top, of: datesPictureContainer)
         startLabel.autoPinEdge(.left, to: .right, of: picturePreview, withOffset: Sizes.defaultMargin)
-        startLabel.autoPinEdge(.right, to: .right, of: datesPictureContainer)
         
-        endLabel.autoPinEdge(.top, to: .bottom, of: startLabel)
+        startPicker.autoPinEdge(.left, to: .right, of: startLabel, withOffset: Sizes.defaultMargin)
+        startPicker.autoAlignAxis(.horizontal, toSameAxisOf: startLabel)
+        
+        endLabel.autoPinEdge(.top, to: .bottom, of: startLabel, withOffset: Sizes.defaultMargin)
         endLabel.autoPinEdge(.left, to: .right, of: picturePreview, withOffset: Sizes.defaultMargin)
-        endLabel.autoPinEdge(.right, to: .right, of: datesPictureContainer)
         endLabel.autoPinEdge(.bottom, to: .bottom, of: datesPictureContainer)
         endLabel.autoMatch(.height, to: .height, of: startLabel)
+        
+        endPicker.autoPinEdge(.left, to: .right, of: endLabel, withOffset: Sizes.defaultMargin)
+        endPicker.autoAlignAxis(.horizontal, toSameAxisOf: endLabel)
     }
     
     func configure(for addedPlace: AddedPlaceItem, menu: UIMenu) {
@@ -162,9 +172,9 @@ class EditPlaceCell: UIView {
             secLabel.text = addedPlace.location.country
         }
         
-        startLabel.text = "Start: \(addedPlace.visitedPlace.start.dayMonthYearString)"
-        endLabel.text = "End: \(addedPlace.visitedPlace.end.dayMonthYearString)"
         customTextLabel.text = addedPlace.visitedPlace.text
+        startPicker.date = addedPlace.visitedPlace.start
+        endPicker.date = addedPlace.visitedPlace.end
         optionsButton.menu = menu
     }
     

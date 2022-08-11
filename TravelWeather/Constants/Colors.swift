@@ -17,6 +17,8 @@ struct Colors {
     static let darkGreen = UIColor(hex: "3d5f5d")!
     static let lightGreen = UIColor(hex: "ADC4BD")!
     static let darkRed = UIColor(hex: "671d26")!
+    static let black = UIColor(hex: "000000")!
+    static let lightSandRose = UIColor(hex: "DCD8D9")!
     static let darkSandRose = UIColor(hex: "95888a")!
     
     static var navBarColor: UIColor { mediumDark }
