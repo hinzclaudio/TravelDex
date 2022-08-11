@@ -19,8 +19,7 @@ struct CDUpdatePlace: CDAction {
         if let cdPlace = fetchVisitedPlace(by: place.id, in: context) {
             cdPlace.safeInitNeglectRelationShips(
                 id: place.id,
-                name: place.name,
-                descr: place.descr,
+                text: place.text,
                 pictureData: place.picture,
                 start: place.start,
                 end: place.end
@@ -30,8 +29,7 @@ struct CDUpdatePlace: CDAction {
             let cdPlace = CDVisitedPlace(context: context)
             cdPlace.safeInit(
                 id: place.id,
-                name: place.name,
-                descr: place.descr,
+                text: place.text,
                 pictureData: place.picture,
                 start: place.start,
                 end: place.end,

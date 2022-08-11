@@ -98,8 +98,7 @@ extension CDVisitedPlace {
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
         id: UUID,
-        name: String,
-        descr: String?,
+        text: String?,
         pictureData: Data?,
         start: Date,
         end: Date,
@@ -107,8 +106,7 @@ extension CDVisitedPlace {
         trip: CDTrip
     ) {
         self.id = id
-        self.name = name
-        self.descr = descr
+        self.text = text
         self.pictureData = pictureData
         self.start = start
         self.end = end
@@ -120,15 +118,13 @@ extension CDVisitedPlace {
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
         id: UUID,
-        name: String,
-        descr: String?,
+        text: String?,
         pictureData: Data?,
         start: Date,
         end: Date
     ) {
         self.id = id
-        self.name = name
-        self.descr = descr
+        self.text = text
         self.pictureData = pictureData
         self.start = start
         self.end = end

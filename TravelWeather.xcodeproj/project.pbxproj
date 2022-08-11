@@ -42,6 +42,7 @@
 		1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED6B289D6E380008C9EE /* CDMigrator.swift */; };
 		1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED71289D6EDA0008C9EE /* MarkterProtocols.swift */; };
 		1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED73289D6EE40008C9EE /* MarkerConformances.swift */; };
+		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
 		12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E0639A289C541F007B09BE /* SceneDelegate.swift */; };
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
@@ -161,6 +162,7 @@
 		1260ED6B289D6E380008C9EE /* CDMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMigrator.swift; sourceTree = "<group>"; };
 		1260ED71289D6EDA0008C9EE /* MarkterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkterProtocols.swift; sourceTree = "<group>"; };
 		1260ED73289D6EE40008C9EE /* MarkerConformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerConformances.swift; sourceTree = "<group>"; };
+		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E06398289C541F007B09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E0639A289C541F007B09BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				1211078628A016EE0046E8A9 /* CDUpdatePlace.swift */,
+				12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */,
 			);
 			name = PlacesActions;
 			sourceTree = "<group>";
@@ -1171,6 +1174,7 @@
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
 				12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */,
+				12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */,
 				12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */,
 				12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,

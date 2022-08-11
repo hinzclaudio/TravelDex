@@ -14,6 +14,10 @@ enum SFSymbol: String {
     case plusCircle = "plus.circle"
     case gear
     case pencil
+    case trash
+    case emptyImage = "doc.text.image"
+    case calendar
+    case map
     
     var image: UIImage {
         UIImage(systemName: rawValue)!

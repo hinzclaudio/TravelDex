@@ -14,8 +14,7 @@ extension CDVisitedPlace {
     var pureRepresentation: VisitedPlace {
         VisitedPlace(
             id: id,
-            name: name,
-            descr: descr,
+            text: text,
             picture: pictureData,
             start: start,
             end: end,

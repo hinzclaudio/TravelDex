@@ -17,8 +17,7 @@ extension CDVisitedPlace {
     }
 
     @NSManaged public var id: UUID
-    @NSManaged public var name: String
-    @NSManaged public var descr: String?
+    @NSManaged public var text: String?
     @NSManaged public var pictureData: Data?
     @NSManaged public var start: Date
     @NSManaged public var end: Date

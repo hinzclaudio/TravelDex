@@ -53,4 +53,57 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             .asDriver(onErrorJustReturn: [])
     }()
     
+    
+    // MARK: - Menu
+    func menu(for item: AddedPlaceItem) -> UIMenu {
+        let addImgAction = UIAction(
+            title: "Add Image",
+            image: SFSymbol.plus.image
+        ) { _ in
+            // TODO: Implement
+        }
+        let showOnMapAction = UIAction(
+            title: "Show on Map",
+            image: SFSymbol.map.image
+        ) { _ in
+            // TODO: Implement
+        }
+        
+        let editTextAction = UIAction(
+            title: "Edit Text",
+            image: SFSymbol.pencil.image
+        ) { _ in
+            // TODO: Implement
+        }
+        let editStartAction = UIAction(
+            title: "Edit Start",
+            image: SFSymbol.calendar.image
+        ) { _ in
+            // TODO: Implement
+        }
+        let editEndAction = UIAction(
+            title: "Edit End",
+            image: SFSymbol.calendar.image
+        ) { _ in
+            // TODO: Implement
+        }
+        let editMenu = UIMenu(
+            title: "Edit...",
+            options: .displayInline,
+            children: [editTextAction, editStartAction, editEndAction]
+        )
+        
+        let delAction = UIAction(
+            title: "Delete",
+            image: SFSymbol.trash.image,
+            attributes: .destructive
+        ) { [weak self] _ in
+            self?.dependencies.placesStore.delete(item.visitedPlace)
+        }
+        return UIMenu(
+            title: item.location.name,
+            children: [addImgAction, showOnMapAction, editMenu, delAction]
+        )
+    }
+    
 }

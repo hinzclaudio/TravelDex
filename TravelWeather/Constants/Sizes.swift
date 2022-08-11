@@ -16,4 +16,5 @@ struct Sizes {
     static let defaultTextFieldHeight: CGFloat = 40
     static let defaultButtonHeight: CGFloat = 25
     static let defaultBorderButtonHeight: CGFloat = 50
+    static let defaultIconButtonSIze = CGSize(width: 20, height: 20)
 }

@@ -14,5 +14,6 @@ protocol PlacesStoreType {
     
     func add(_ location: Location, to trip: Trip)
     func addedPlaces(for trip: Observable<UUID>) -> Observable<[AddedPlaceItem]>
+    func delete(_ visitedPlace: VisitedPlace)
     
 }

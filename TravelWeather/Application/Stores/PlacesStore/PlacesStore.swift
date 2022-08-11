@@ -27,8 +27,7 @@ class PlacesStore: PlacesStoreType {
     func add(_ location: Location, to trip: Trip) {
         let place = VisitedPlace(
             id: UUID(),
-            name: location.name,
-            descr: nil,
+            text: nil,
             picture: nil,
             start: .now,
             end: .now,
@@ -36,6 +35,12 @@ class PlacesStore: PlacesStoreType {
             locationId: location.id
         )
         dispatch(CDUpdatePlace(place: place))
+    }
+    
+    func delete(_ visitedPlace: VisitedPlace) {
+        dispatch(
+            CDDeleteVisitedPlace(visitedPlaceId: visitedPlace.id)
+        )
     }
     
     
@@ -47,7 +52,7 @@ class PlacesStore: PlacesStoreType {
                 query.predicate = NSPredicate(format: "trip.id == %@", tripId as CVarArg)
                 query.sortDescriptors = [
                     NSSortDescriptor(key: "start", ascending: true),
-                    NSSortDescriptor(key: "name", ascending: true)
+                    NSSortDescriptor(key: "location.name", ascending: true)
                 ]
                 return query
             }

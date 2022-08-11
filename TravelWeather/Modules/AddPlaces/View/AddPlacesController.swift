@@ -81,16 +81,12 @@ class AddPlacesController: ScrollableVStackController {
             .drive(onNext: { [weak self] places in
                 guard let self = self else { return }
                 self.placesStack.removeAllArrangedSubviews()
-                places
-                    .map { item -> EditPlaceCell in
-                        let cell = EditPlaceCell()
-                        cell.configure(for: item)
-                        return cell
-                    }
-                    .forEach { cell in
-                        self.placesStack.addArrangedSubview(cell)
-                        cell.autoMatch(.width, to: .width, of: self.placesStack)
-                    }
+                places.forEach { item in
+                    let cell = EditPlaceCell()
+                    cell.configure(for: item, menu: self.viewModel.menu(for: item))
+                    self.placesStack.addArrangedSubview(cell)
+                    cell.autoMatch(.width, to: .width, of: self.placesStack)
+                }
             })
             .disposed(by: bag)
         

@@ -20,12 +20,11 @@
         <relationship name="visitedPlaces" toMany="YES" deletionRule="Cascade" destinationEntity="CDVisitedPlace" inverseName="trip" inverseEntity="CDVisitedPlace"/>
     </entity>
     <entity name="CDVisitedPlace" representedClassName="CDVisitedPlace" syncable="YES">
-        <attribute name="descr" optional="YES" attributeType="String"/>
         <attribute name="end" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="name" attributeType="String"/>
         <attribute name="pictureData" optional="YES" attributeType="Binary"/>
         <attribute name="start" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="location" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="visitedPlaces" inverseEntity="CDLocation"/>
         <relationship name="trip" maxCount="1" deletionRule="Nullify" destinationEntity="CDTrip" inverseName="visitedPlaces" inverseEntity="CDTrip"/>
     </entity>
@@ -48,7 +47,7 @@
     <elements>
         <element name="CDLocation" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="CDTrip" positionX="-54" positionY="45" width="128" height="119"/>
-        <element name="CDVisitedPlace" positionX="-36" positionY="54" width="128" height="149"/>
+        <element name="CDVisitedPlace" positionX="-36" positionY="54" width="128" height="134"/>
         <element name="CDWeather" positionX="-9" positionY="117" width="128" height="239"/>
     </elements>
 </model>

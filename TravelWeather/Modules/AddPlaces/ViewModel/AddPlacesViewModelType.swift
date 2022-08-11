@@ -16,8 +16,11 @@ protocol AddPlacesViewModelType {
     // MARK: - Input
     func addLocation(_ tapped: Observable<Void>) -> Disposable
     
+    
     // MARK: - Output
     var trip: Driver<Trip> { get }
     var addedPlaces: Driver<[AddedPlaceItem]> { get }
+    
+    func menu(for item: AddedPlaceItem) -> UIMenu
     
 }
