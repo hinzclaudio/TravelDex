@@ -155,13 +155,17 @@ class EditPlaceCell: UIView {
     }
     
     func configure(for addedPlace: AddedPlaceItem, menu: UIMenu) {
-        optionsButton.menu = menu
         titleLabel.text = addedPlace.location.name
         if let region = addedPlace.location.region {
             secLabel.text = "\(addedPlace.location.country), \(region)"
         } else {
             secLabel.text = addedPlace.location.country
         }
+        
+        startLabel.text = "Start: \(addedPlace.visitedPlace.start.dayMonthYearString)"
+        endLabel.text = "End: \(addedPlace.visitedPlace.end.dayMonthYearString)"
+        customTextLabel.text = addedPlace.visitedPlace.text
+        optionsButton.menu = menu
     }
     
 }

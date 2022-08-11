@@ -42,6 +42,7 @@
 		1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED6B289D6E380008C9EE /* CDMigrator.swift */; };
 		1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED71289D6EDA0008C9EE /* MarkterProtocols.swift */; };
 		1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED73289D6EE40008C9EE /* MarkerConformances.swift */; };
+		1267F13428A591580025071C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13328A591580025071C /* DateExt.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
 		12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E0639A289C541F007B09BE /* SceneDelegate.swift */; };
@@ -162,6 +163,7 @@
 		1260ED6B289D6E380008C9EE /* CDMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMigrator.swift; sourceTree = "<group>"; };
 		1260ED71289D6EDA0008C9EE /* MarkterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkterProtocols.swift; sourceTree = "<group>"; };
 		1260ED73289D6EE40008C9EE /* MarkerConformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerConformances.swift; sourceTree = "<group>"; };
+		1267F13328A591580025071C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E06398289C541F007B09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				123F7B75289DC9110008444D /* UIButtonExt.swift */,
 				123F7B71289DC69F0008444D /* UIViewExt.swift */,
 				12F75619289EA8EF00773D46 /* UISearchBarExt.swift */,
+				1267F13328A591580025071C /* DateExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1140,6 +1143,7 @@
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
 				12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */,
 				1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */,
+				1267F13428A591580025071C /* DateExt.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
 				12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */,
 				123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */,
