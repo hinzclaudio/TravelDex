@@ -110,8 +110,7 @@ class EditPlaceCell: UIView {
         endPicker.styleDayMonthYear()
         
         picturePreview.tintColor = Colors.black
-        picturePreview.image = SFSymbol.camera.image
-        picturePreview.contentMode = .scaleAspectFit
+        picturePreview.clipsToBounds = true
         
         customTextLabel.styleText(colored: Colors.black)
     }
@@ -164,12 +163,23 @@ class EditPlaceCell: UIView {
         endPicker.autoAlignAxis(.horizontal, toSameAxisOf: endLabel)
     }
     
-    func configure(for addedPlace: AddedPlaceItem, menu: UIMenu) {
+    func configure(for addedPlace: AddedPlaceItem, menu: UIMenu?) {
         titleLabel.text = addedPlace.location.name
         if let region = addedPlace.location.region {
             secLabel.text = "\(addedPlace.location.country), \(region)"
         } else {
             secLabel.text = addedPlace.location.country
+        }
+        
+        if let imgData = addedPlace.visitedPlace.picture,
+           let img = UIImage(data: imgData) {
+            picturePreview.image = img
+            picturePreview.clipsToBounds = true
+            picturePreview.contentMode = .scaleAspectFill
+        } else {
+            picturePreview.image = SFSymbol.camera.image
+            picturePreview.clipsToBounds = false
+            picturePreview.contentMode = .scaleAspectFit
         }
         
         customTextLabel.text = addedPlace.visitedPlace.text

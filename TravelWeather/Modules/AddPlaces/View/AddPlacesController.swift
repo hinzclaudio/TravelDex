@@ -85,35 +85,34 @@ class AddPlacesController: ScrollableVStackController {
 
         viewModel.addedPlaces
             .drive(onNext: { [weak self] places in
-                guard let self = self else { return }
-                self.placesStack.removeAllArrangedSubviews()
+                self?.placesStack.removeAllArrangedSubviews()
                 places.forEach { item in
                     let cell = EditPlaceCell()
-                    cell.configure(for: item, menu: self.viewModel.menu(for: item))
-                    
+                    cell.configure(for: item, menu: self?.viewModel.menu(for: item))
+
                     cell.startPicker.rx.date
                         .filter { $0 != item.visitedPlace.start }
-                        .subscribe(onNext: { d in self.viewModel.setStart(of: item, to: d) })
+                        .subscribe(onNext: { d in self?.viewModel.setStart(of: item, to: d) })
                         .disposed(by: cell.bag)
                     cell.endPicker.rx.date
                         .filter { $0 != item.visitedPlace.end }
-                        .subscribe(onNext: { d in self.viewModel.setEnd(of: item, to: d) })
+                        .subscribe(onNext: { d in self?.viewModel.setEnd(of: item, to: d) })
                         .disposed(by: cell.bag)
 
-                    self.viewModel.expandedItems
+                    self?.viewModel.expandedItems
                         .map { $0.contains(item.visitedPlace.id) }
                         .drive(cell.cellExpanded)
                         .disposed(by: cell.bag)
                     cell.cellTapRecognizer.rx.tap
-                        .withLatestFrom(self.viewModel.expandedItems)
+                        .withLatestFrom(self?.viewModel.expandedItems ?? .just([]))
                         .map { $0.contains(item.visitedPlace.id) }
                         .subscribe(
-                            onNext: { isExp in self.viewModel.set(item, expanded: !isExp) }
+                            onNext: { isExp in self?.viewModel.set(item, expanded: !isExp) }
                         )
                         .disposed(by: cell.bag)
-                    
-                    self.placesStack.addArrangedSubview(cell)
-                    cell.autoMatch(.width, to: .width, of: self.placesStack)
+
+                    self?.placesStack.addArrangedSubview(cell)
+                    cell.autoMatch(.width, to: .width, of: self?.placesStack ?? UIView())
                 }
             })
             .disposed(by: bag)

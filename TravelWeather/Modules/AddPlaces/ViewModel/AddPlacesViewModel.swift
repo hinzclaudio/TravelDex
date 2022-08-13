@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import PhotosUI
 
 
 
@@ -16,8 +17,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     weak var coordinator: AppCoordinator?
 
     typealias Dependencies = HasTripsStore & HasPlacesStore
-    private let dependencies: Dependencies
-    private let initialTrip: Trip
+    let dependencies: Dependencies
+    let initialTrip: Trip
     
     init(dependencies: Dependencies, trip: Trip) {
         self.dependencies = dependencies
@@ -93,8 +94,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         let addImgAction = UIAction(
             title: "Add Image",
             image: SFSymbol.plus.image
-        ) { _ in
-            // TODO: Implement
+        ) { [weak self] _ in
+            self?.addImage(to: item)
         }
         let showOnMapAction = UIAction(
             title: "Show on Map",
@@ -121,13 +122,57 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         )
     }
     
+    let pickingForItem = BehaviorRelay<AddedPlaceItem?>(value: nil)
+    private func addImage(to item: AddedPlaceItem) {
+        pickingForItem.accept(item)
+        coordinator?.pickPhoto(self, for: item.visitedPlace)
+    }
+    
+    private func display(_ item: AddedPlaceItem) {
+        coordinator?.displayMap(for: item.visitedPlace)
+    }
+    
     private func delete(_ item: AddedPlaceItem) {
         set(item, expanded: false)
         dependencies.placesStore.delete(item.visitedPlace)
     }
     
-    private func display(_ item: AddedPlaceItem) {
-        coordinator?.displayMap(for: item.visitedPlace)
+}
+
+
+
+// MARK: - PhotoPickerViewModel
+extension AddPlacesViewModel: PhotoPickerViewModelType {
+    
+    var configuration: PHPickerConfiguration {
+        var config = PHPickerConfiguration()
+        config.selection = .default
+        config.selectionLimit = 1
+        config.filter = nil
+        return config
+    }
+    
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        defer { picker.dismiss(animated: true) }
+
+        guard let place = pickingForItem.value?.visitedPlace, let result = results.first
+        else { return }
+        
+        result.itemProvider
+            .loadObject(ofClass: UIImage.self) { [weak self] object, error in
+                if let error = error {
+                    assertionFailure("Error: \(error)")
+                } else if let img = object as? UIImage {
+                    let updatedPlace = place.cloneBuilder()
+                        .with(picture: img.jpegData(compressionQuality: 0.5))
+                        .build()!
+                    self?.dependencies.placesStore.update(updatedPlace)
+                } else {
+                    assertionFailure("Something's wrong.")
+                }
+            }
+        
     }
     
 }

@@ -11,7 +11,7 @@ import CoreData
 
 
 protocol CDAction {
-    func execute(in context: NSManagedObjectContext)
+    func execute(in context: NSManagedObjectContext) throws
 }
 
 

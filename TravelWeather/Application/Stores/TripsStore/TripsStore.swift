@@ -71,9 +71,8 @@ class TripsStore: TripsStoreType {
                 query.fetchLimit = 1
                 return query
             }
-            .flatMapLatest { [weak self] query -> Observable<Trip?> in
-                guard let self = self else { return .just(nil) }
-                return CDObservable(fetchRequest: query, context: self.context)
+            .flatMapLatest { [unowned self] query -> Observable<Trip?> in
+                CDObservable(fetchRequest: query, context: self.context)
                     .map { $0.first?.pureRepresentation }
             }
     }

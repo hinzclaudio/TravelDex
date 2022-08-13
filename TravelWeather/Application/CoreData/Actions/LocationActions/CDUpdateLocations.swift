@@ -28,7 +28,7 @@ struct CDUpdateLocations: CDAction {
                         country: loc.country,
                         queryParameter: loc.queryParameter
                     )
-                } else if let cdLoc = fetchSimilarLocation(to: loc, in: context) {
+                } else if fetchSimilarLocation(to: loc, in: context) != nil {
                     return
                 } else {
                     let cdLoc = CDLocation(context: context)

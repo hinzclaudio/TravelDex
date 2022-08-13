@@ -79,9 +79,8 @@ class PlacesStore: PlacesStoreType {
                 ]
                 return query
             }
-            .flatMapLatest { [weak self] query -> Observable<[AddedPlaceItem]> in
-                guard let self = self else { return .just([]) }
-                return CDObservable(fetchRequest: query, context: self.context)
+            .flatMapLatest { [unowned self] query -> Observable<[AddedPlaceItem]> in
+                CDObservable(fetchRequest: query, context: self.context)
                     .map { cdPlaces in
                         cdPlaces
                             .map { cdPlace in
@@ -102,9 +101,8 @@ class PlacesStore: PlacesStoreType {
                 query.fetchLimit = 1
                 return query
             }
-            .flatMapLatest { [weak self] query -> Observable<AddedPlaceItem?> in
-                guard let self = self else { return .just(nil) }
-                return CDObservable(fetchRequest: query, context: self.context)
+            .flatMapLatest { [unowned self] query -> Observable<AddedPlaceItem?> in
+                CDObservable(fetchRequest: query, context: self.context)
                     .map { cdPlaces in cdPlaces.first }
                     .map { cdPlace in
                         if let cdPlace = cdPlace {

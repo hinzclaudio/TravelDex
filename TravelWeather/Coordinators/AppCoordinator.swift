@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 
 
@@ -15,6 +16,7 @@ class AppCoordinator: CoordinatorType {
     var childCoordinators = [CoordinatorType]()
     var navigationController: UINavigationController = BaseNavigationController()
     weak var modalController: UIViewController?
+    private var pickerViewModel: PhotoPickerViewModelType?
     
     typealias Dependencies = AppDependencies
     private let dependencies: Dependencies
@@ -87,6 +89,14 @@ class AppCoordinator: CoordinatorType {
     func displayMap() {
         let vm = AllPlacesDisplayViewModel(dependencies: dependencies)
         presentMap(for: vm)
+    }
+    
+    
+    func pickPhoto(_ viewModel: PhotoPickerViewModelType, for visitedPlace: VisitedPlace) {
+        let controller = PHPickerViewController(configuration: viewModel.configuration)
+        controller.delegate = viewModel
+        modalController = controller
+        navigationController.present(controller, animated: true)
     }
     
     

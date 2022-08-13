@@ -35,9 +35,8 @@ class LocationsStore: LocationsStoreType {
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .filter { !$0.isEmpty }
             .map { $0.lowercased() }
-            .flatMapLatest { [weak self] query -> Observable<Event<[WeatherAPILocation]>> in
-                guard let self = self else { return .just(.completed) }
-                return self.weatherAPI.searchLocations(query)
+            .flatMapLatest { [unowned self] query -> Observable<Event<[WeatherAPILocation]>> in
+                self.weatherAPI.searchLocations(query)
                     .trackActivity(self.isLoading)
                     .materialize()
             }
@@ -91,9 +90,8 @@ class LocationsStore: LocationsStoreType {
                 }
                 return cdQuery
             }
-            .flatMapLatest { [weak self] cdQuery -> Observable<[Location]> in
-                guard let self = self else { return .just([]) }
-                return CDObservable(fetchRequest: cdQuery, context: self.context)
+            .flatMapLatest { [unowned self] cdQuery -> Observable<[Location]> in
+                CDObservable(fetchRequest: cdQuery, context: self.context)
                     .map { cdLocs in cdLocs.map { $0.pureRepresentation } }
             }
     }
