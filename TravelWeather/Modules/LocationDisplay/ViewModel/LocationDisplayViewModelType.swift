@@ -13,12 +13,7 @@ import MapKit
 
 protocol LocationDisplayViewModelType {
     
-    // MARK: - Input
-    // TODO
-    
-    
-    // MARK: - Output
-    var tripName: Driver<String> { get }
+    var controllerTitle: Driver<String> { get }
     var annotations: Driver<[MKAnnotation]> { get }
     
 }

@@ -12,23 +12,30 @@ import MapKit
 
 class LocationDisplayAnnotation: NSObject, MKAnnotation {
     
-    let title: String?
-    let img: UIImage?
-    let highlighted: Bool
-    let coordinate: CLLocationCoordinate2D
+    let item: AddedPlaceItem
     
-    init(for item: AddedPlaceItem, highlighted: Bool) {
-        self.title = item.location.name
+    var title: String? {
+        item.location.name
+    }
+    
+    var img: UIImage? {
         if let data = item.visitedPlace.picture {
-            self.img = UIImage(data: data)
+            return UIImage(data: data)
         } else {
-            self.img = nil
+            return nil
         }
-        self.highlighted = highlighted
-        self.coordinate = .init(
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(
             latitude: item.location.coordinate.latitude,
             longitude: item.location.coordinate.longitude
         )
+    }
+    
+    
+    init(for item: AddedPlaceItem) {
+        self.item = item
         super.init()
     }
     

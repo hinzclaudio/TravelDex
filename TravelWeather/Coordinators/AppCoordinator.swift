@@ -72,13 +72,20 @@ class AppCoordinator: CoordinatorType {
     }
     
     
-    func display(_ location: Location, in tripId: TripID) {
-        let vm = LocationDisplayViewModel(
-            dependencies: dependencies,
-            tripId: tripId,
-            highlight: location.id
-        )
-        let controller = LocationDisplayController(viewModel: vm)
+    func displayMap(for trip: Trip) {
+        let vm = TripLocationDisplayViewModel(dependencies: dependencies, tripId: trip.id)
+        presentMap(for: vm)
+    }
+    
+    
+    func displayMap(for visitedPlace: VisitedPlace) {
+        let vm = PlaceDisplayViewModel(dependencies: dependencies, visitedPlaceId: visitedPlace.id)
+        presentMap(for: vm)
+    }
+    
+    
+    private func presentMap(for viewModel: LocationDisplayViewModelType) {
+        let controller = LocationDisplayController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
     

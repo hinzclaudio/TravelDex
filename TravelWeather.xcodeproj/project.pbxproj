@@ -45,7 +45,7 @@
 		1267F13428A591580025071C /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13328A591580025071C /* DateExt.swift */; };
 		1267F13928A59BCD0025071C /* DatePickerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13828A59BCD0025071C /* DatePickerExt.swift */; };
 		1267F13E28A5A21D0025071C /* LocationDisplayViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */; };
-		1267F14028A5A2350025071C /* LocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13F28A5A2350025071C /* LocationDisplayViewModel.swift */; };
+		1267F14028A5A2350025071C /* TripLocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */; };
 		1267F14228A5A23E0025071C /* LocationDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F14128A5A23E0025071C /* LocationDisplayController.swift */; };
 		12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12747D4D28A6EC36005893B9 /* RxMapView.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
@@ -113,6 +113,7 @@
 		12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7561C289EAB4000773D46 /* LocationSearchCell.swift */; };
 		12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */; };
 		12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */; };
+		12F781DA28A821410061AE51 /* PlaceDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -174,7 +175,7 @@
 		1267F13328A591580025071C /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		1267F13828A59BCD0025071C /* DatePickerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerExt.swift; sourceTree = "<group>"; };
 		1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayViewModelType.swift; sourceTree = "<group>"; };
-		1267F13F28A5A2350025071C /* LocationDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayViewModel.swift; sourceTree = "<group>"; };
+		1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLocationDisplayViewModel.swift; sourceTree = "<group>"; };
 		1267F14128A5A23E0025071C /* LocationDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayController.swift; sourceTree = "<group>"; };
 		12747D4D28A6EC36005893B9 /* RxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapView.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 		12F7561C289EAB4000773D46 /* LocationSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
 		12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlaceAnnotationView.swift; sourceTree = "<group>"; };
 		12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocaitonDisplay_ MapDelegate.swift"; sourceTree = "<group>"; };
+		12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDisplayViewModel.swift; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -513,7 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */,
-				1267F13F28A5A2350025071C /* LocationDisplayViewModel.swift */,
+				1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */,
+				12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				12F134CF289D824200363CF6 /* TripsStore.swift in Sources */,
 				12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */,
 				12F13507289D9AB500363CF6 /* SFSymbols.swift in Sources */,
+				12F781DA28A821410061AE51 /* PlaceDisplayViewModel.swift in Sources */,
 				120A231C289FB9D90092A2D5 /* WeatherAPI.swift in Sources */,
 				120A2324289FBEB60092A2D5 /* WeatherAPILocation.swift in Sources */,
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
@@ -1198,7 +1202,7 @@
 				12F134F4289D89E100363CF6 /* TripsListViewModel.swift in Sources */,
 				12F134D9289D846500363CF6 /* Location.swift in Sources */,
 				12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */,
-				1267F14028A5A2350025071C /* LocationDisplayViewModel.swift in Sources */,
+				1267F14028A5A2350025071C /* TripLocationDisplayViewModel.swift in Sources */,
 				1260ED6A289D6E140008C9EE /* CDMigrationVersion.swift in Sources */,
 				12F134BE289D79C700363CF6 /* AppCoordinator.swift in Sources */,
 				123F7B6A289DBC0A0008444D /* UILabelExt.swift in Sources */,

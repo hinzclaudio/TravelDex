@@ -16,6 +16,7 @@ class AddPlacesController: ScrollableVStackController {
     let bag = DisposeBag()
     
     // MARK: - Views
+    let mapButton = UIBarButtonItem()
     let headerView = TripCell()
     let placesStack = UIStackView.defaultContentStack(withSpacing: 0)
     let addButton = UIButton()
@@ -47,6 +48,7 @@ class AddPlacesController: ScrollableVStackController {
     }
     
     private func addViews() {
+        navigationItem.setRightBarButton(mapButton, animated: false)
         contentStack.addArrangedSubview(headerView)
         contentStack.addArrangedSubview(placesStack)
         contentStack.addArrangedSubview(addButton)
@@ -55,6 +57,7 @@ class AddPlacesController: ScrollableVStackController {
     private func configureViews() {
         navigationItem.title = "Add Places"
         view.backgroundColor = Colors.veryDark
+        mapButton.image = SFSymbol.map.image
         addButton.styleBorderedButton()
         addButton.setTitle("Add Place", for: .normal)
     }
@@ -68,6 +71,9 @@ class AddPlacesController: ScrollableVStackController {
     }
     
     private func setupBinding() {
+        viewModel.mapButton(mapButton.rx.tap.asObservable())
+            .disposed(by: bag)
+        
         viewModel.trip
             .drive(onNext: { [weak self] trip in self?.headerView.configure(for: trip) })
             .disposed(by: bag)

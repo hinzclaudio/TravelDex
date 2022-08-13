@@ -26,6 +26,11 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     
     // MARK: - Input
+    func mapButton(_ tapped: Observable<Void>) -> Disposable {
+        tapped.withLatestFrom(trip)
+            .subscribe(onNext: { [weak self] trip in self?.coordinator?.displayMap(for: trip) })
+    }
+    
     func addLocation(_ tapped: Observable<Void>) -> Disposable {
         tapped
             .withLatestFrom(trip)
@@ -95,7 +100,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             title: "Show on Map",
             image: SFSymbol.map.image
         ) { [weak self] _ in
-            self?.display(item.location, in: item.visitedPlace.tripId)
+            self?.display(item)
         }
         let editTextAction = UIAction(
             title: "Edit Text",
@@ -121,8 +126,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         dependencies.placesStore.delete(item.visitedPlace)
     }
     
-    private func display(_ location: Location, in tripId: TripID) {
-        coordinator?.display(location, in: tripId)
+    private func display(_ item: AddedPlaceItem) {
+        coordinator?.displayMap(for: item.visitedPlace)
     }
     
 }

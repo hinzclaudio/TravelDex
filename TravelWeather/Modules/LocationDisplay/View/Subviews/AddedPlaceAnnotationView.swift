@@ -10,11 +10,9 @@ import MapKit
 
 
 
-class AddedPlaceAnnotationView: MKAnnotationView {
+class AddedPlaceAnnotationView: MKMarkerAnnotationView {
     
     // MARK: - Views
-    private let pinView = UIImageView()
-    
     private let calloutContainer = UIView()
     private let imgContainer = UIView()
     private let imgView = UIImageView()
@@ -39,20 +37,11 @@ class AddedPlaceAnnotationView: MKAnnotationView {
     }
     
     private func addViews() {
-        addSubview(pinView)
         calloutContainer.addSubview(imgContainer)
         imgContainer.addSubview(imgView)
     }
     
     private func configureViews() {
-        pinView.isUserInteractionEnabled = true
-        pinView.image = SFSymbol.filledMappin.image
-        pinView.contentMode = .scaleAspectFit
-        pinView.frame = CGRect(
-            origin: .init(x: 0 - Sizes.mapPinSize.width / 2, y: 0 - Sizes.mapPinSize.height),
-            size: Sizes.mapPinSize
-        )
-        
         calloutContainer.frame = CGRect(
             origin: .zero,
             size: Sizes.smallImgPreview
@@ -83,10 +72,9 @@ class AddedPlaceAnnotationView: MKAnnotationView {
     
     
     func configure(for annotation: MKAnnotation) {
+        self.annotation = annotation
         if let annotation = annotation as? LocationDisplayAnnotation {
             imgView.image = annotation.img ?? SFSymbol.camera.image
-            pinView.tintColor = annotation.highlighted ? Colors.orange : Colors.darkRed
-            
         } else {
             assertionFailure("Someting's wrong!")
         }

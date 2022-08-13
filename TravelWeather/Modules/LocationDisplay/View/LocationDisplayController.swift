@@ -69,7 +69,7 @@ class LocationDisplayController: UIViewController {
     }
     
     private func setupBinding() {
-        viewModel.tripName
+        viewModel.controllerTitle
             .drive(navigationItem.rx.title)
             .disposed(by: bag)
         

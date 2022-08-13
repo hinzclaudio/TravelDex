@@ -1,5 +1,5 @@
 //
-//  LocationDisplayViewModel.swift
+//  TripLocationDisplayViewModel.swift
 //  TravelWeather
 //
 //  Created by Claudio Hinz on 11.08.22.
@@ -12,25 +12,20 @@ import MapKit
 
 
 
-class LocationDisplayViewModel: LocationDisplayViewModelType {
+class TripLocationDisplayViewModel: LocationDisplayViewModelType {
     
     typealias Dependencies = HasPlacesStore & HasTripsStore
     private let dependencies: Dependencies
     private let tripId: TripID
-    private let locationId: LocationID?
     
-    init(dependencies: Dependencies, tripId: TripID, highlight locationId: LocationID? = nil) {
+    init(dependencies: Dependencies, tripId: TripID) {
         self.dependencies = dependencies
         self.tripId = tripId
-        self.locationId = locationId
     }
     
     
-    // MARK: - Input
     
-    
-    // MARK: - Output
-    lazy var tripName: Driver<String> = {
+    lazy var controllerTitle: Driver<String> = {
         dependencies.tripsStore
             .trip(identifiedBy: .just(tripId))
             .compactMap { $0?.title }
@@ -40,15 +35,7 @@ class LocationDisplayViewModel: LocationDisplayViewModelType {
     lazy var annotations: Driver<[MKAnnotation]> = {
         dependencies.placesStore
             .addedPlaces(for: .just(tripId))
-            .map { [weak self ] places in
-                places
-                    .map { place in
-                        LocationDisplayAnnotation(
-                            for: place,
-                            highlighted: place.location.id == self?.locationId
-                        )
-                    }
-            }
+            .map { [weak self ] places in places.map { place in LocationDisplayAnnotation(for: place) } }
             .asDriver(onErrorJustReturn: [])
     }()
     

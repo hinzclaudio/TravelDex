@@ -14,6 +14,7 @@ import RxCocoa
 protocol AddPlacesViewModelType {
     
     // MARK: - Input
+    func mapButton(_ tapped: Observable<Void>) -> Disposable
     func addLocation(_ tapped: Observable<Void>) -> Disposable
     func set(_ item: AddedPlaceItem, expanded: Bool)
     func setStart(of item: AddedPlaceItem, to date: Date)

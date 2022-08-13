@@ -75,4 +75,29 @@ class PlacesStore: PlacesStoreType {
             }
     }
     
+    func place(identifiedBy id: Observable<VisitedPlaceID>) -> Observable<AddedPlaceItem?> {
+        id
+            .map { placeId -> NSFetchRequest<CDVisitedPlace> in
+                let query = CDVisitedPlace.fetchRequest()
+                query.predicate = NSPredicate(format: "id == %@", placeId as CVarArg)
+                query.fetchLimit = 1
+                return query
+            }
+            .flatMapLatest { [weak self] query -> Observable<AddedPlaceItem?> in
+                guard let self = self else { return .just(nil) }
+                return CDObservable(fetchRequest: query, context: self.context)
+                    .map { cdPlaces in cdPlaces.first }
+                    .map { cdPlace in
+                        if let cdPlace = cdPlace {
+                            return AddedPlaceItem(
+                                visitedPlace: cdPlace.pureRepresentation,
+                                location: cdPlace.location.pureRepresentation
+                            )
+                        } else {
+                            return nil
+                        }
+                    }
+            }
+    }
+    
 }
