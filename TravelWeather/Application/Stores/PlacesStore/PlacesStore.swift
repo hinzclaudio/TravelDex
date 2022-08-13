@@ -49,7 +49,26 @@ class PlacesStore: PlacesStoreType {
     
     
     // MARK: - Output
-    func addedPlaces(for trip: Observable<UUID>) -> Observable<[AddedPlaceItem]> {
+    func allPlaces() -> Observable<[AddedPlaceItem]> {
+        let query = CDVisitedPlace.fetchRequest()
+        query.sortDescriptors = [
+            NSSortDescriptor(key: "start", ascending: true),
+            NSSortDescriptor(key: "location.name", ascending: true)
+        ]
+        
+        return CDObservable(fetchRequest: query, context: context)
+            .map { cdPlaces in
+                cdPlaces
+                    .map { cdPlace in
+                        AddedPlaceItem(
+                            visitedPlace: cdPlace.pureRepresentation,
+                            location: cdPlace.location.pureRepresentation
+                        )
+                    }
+            }
+    }
+    
+    func places(for trip: Observable<UUID>) -> Observable<[AddedPlaceItem]> {
         trip
             .map { tripId -> NSFetchRequest<CDVisitedPlace> in
                 let query = CDVisitedPlace.fetchRequest()

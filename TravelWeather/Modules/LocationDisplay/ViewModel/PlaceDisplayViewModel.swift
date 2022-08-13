@@ -14,7 +14,7 @@ import MapKit
 
 class PlaceDisplayViewModel: LocationDisplayViewModelType {
     
-    typealias Dependencies = HasPlacesStore & HasTripsStore
+    typealias Dependencies = HasPlacesStore
     private let dependencies: Dependencies
     private let visistedPlaceId: VisitedPlaceID
     

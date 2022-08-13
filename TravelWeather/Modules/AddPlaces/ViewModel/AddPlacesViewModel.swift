@@ -77,7 +77,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     lazy var addedPlaces: Driver<[AddedPlaceItem]> = {
         dependencies.placesStore
-            .addedPlaces(for: .just(initialTrip.id))
+            .places(for: .just(initialTrip.id))
             .asDriver(onErrorJustReturn: [])
     }()
     

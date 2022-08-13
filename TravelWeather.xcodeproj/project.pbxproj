@@ -114,6 +114,7 @@
 		12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */; };
 		12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */; };
 		12F781DA28A821410061AE51 /* PlaceDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */; };
+		12F781DC28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781DB28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -250,6 +251,7 @@
 		12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlaceAnnotationView.swift; sourceTree = "<group>"; };
 		12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocaitonDisplay_ MapDelegate.swift"; sourceTree = "<group>"; };
 		12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDisplayViewModel.swift; sourceTree = "<group>"; };
+		12F781DB28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPlacesDisplayViewModel.swift; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */,
 				1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */,
 				12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */,
+				12F781DB28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1184,6 +1187,7 @@
 				1211078428A00F4C0046E8A9 /* AddedPlaceItem.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
 				120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */,
+				12F781DC28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift in Sources */,
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,

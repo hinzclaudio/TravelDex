@@ -34,7 +34,7 @@ class TripLocationDisplayViewModel: LocationDisplayViewModelType {
     
     lazy var annotations: Driver<[MKAnnotation]> = {
         dependencies.placesStore
-            .addedPlaces(for: .just(tripId))
+            .places(for: .just(tripId))
             .map { [weak self ] places in places.map { place in LocationDisplayAnnotation(for: place) } }
             .asDriver(onErrorJustReturn: [])
     }()

@@ -16,6 +16,7 @@ class TripsListController: UIViewController {
     let bag = DisposeBag()
     
     // MARK: - Views
+    let mapButton = UIBarButtonItem()
     let addButton = UIBarButtonItem(systemItem: .add)
     let searchController = UISearchController()
     let tableView = UITableView()
@@ -49,13 +50,14 @@ class TripsListController: UIViewController {
     }
     
     private func addViews() {
-        navigationItem.setRightBarButton(addButton, animated: false)
+        navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         navigationItem.searchController = searchController
         view.addSubview(tableView)
     }
     
     private func configureViews() {
         navigationItem.title = "Trips"
+        mapButton.image = SFSymbol.map.image
         searchController.searchBar.styleDefault()
         view.backgroundColor = Colors.veryDark
         tableView.backgroundColor = .clear
@@ -70,6 +72,10 @@ class TripsListController: UIViewController {
     }
     
     private func setupBinding() {
+        viewModel
+            .mapTapped(mapButton.rx.tap.asObservable())
+            .disposed(by: bag)
+        
         viewModel
             .addTapped(addButton.rx.tap.asObservable())
             .disposed(by: bag)

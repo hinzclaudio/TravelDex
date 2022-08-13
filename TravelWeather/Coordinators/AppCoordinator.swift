@@ -84,6 +84,12 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func displayMap() {
+        let vm = AllPlacesDisplayViewModel(dependencies: dependencies)
+        presentMap(for: vm)
+    }
+    
+    
     private func presentMap(for viewModel: LocationDisplayViewModelType) {
         let controller = LocationDisplayController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
