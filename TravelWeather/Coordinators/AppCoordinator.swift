@@ -72,13 +72,23 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func display(_ location: Location, in tripId: TripID) {
+        let vm = LocationDisplayViewModel(
+            dependencies: dependencies,
+            tripId: tripId,
+            highlight: location.id
+        )
+        let controller = LocationDisplayController(viewModel: vm)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    
     private func presentModally(_ viewController: UIViewController) {
         let modalContainer = ModalNavigationContainer(rootViewController: viewController)
         GeneralStyleManager.styleModal(modalContainer.navigationBar)
         modalContainer.modalPresentationStyle = .automatic
         navigationController.present(modalContainer, animated: true)
         modalController = modalContainer
-        
     }
     
 }

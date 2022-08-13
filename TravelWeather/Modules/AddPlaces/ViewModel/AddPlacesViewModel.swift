@@ -94,8 +94,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         let showOnMapAction = UIAction(
             title: "Show on Map",
             image: SFSymbol.map.image
-        ) { _ in
-            // TODO: Implement
+        ) { [weak self] _ in
+            self?.display(item.location, in: item.visitedPlace.tripId)
         }
         let editTextAction = UIAction(
             title: "Edit Text",
@@ -119,6 +119,10 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     private func delete(_ item: AddedPlaceItem) {
         set(item, expanded: false)
         dependencies.placesStore.delete(item.visitedPlace)
+    }
+    
+    private func display(_ location: Location, in tripId: TripID) {
+        coordinator?.display(location, in: tripId)
     }
     
 }

@@ -9,9 +9,10 @@ import Foundation
 
 
 
+typealias LocationID = Int 
 struct Location: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
-    let id: Int
+    let id: LocationID
     let name: String
     let region: String?
     let country: String
@@ -22,7 +23,7 @@ struct Location: Equatable, WithAutoBuilder {
 // sourcery:inline:auto:Location.AutoBuilderInit
     // MARK: - Init Buildable
     init(
-        id: Int, 
+        id: LocationID, 
         name: String, 
         region: String? = nil, 
         country: String, 
@@ -56,7 +57,7 @@ struct Location: Equatable, WithAutoBuilder {
 class LocationBuilder {
 
 
-    private(set) var id: Int?
+    private(set) var id: LocationID?
 
 
     private(set) var name: String?
@@ -73,7 +74,7 @@ class LocationBuilder {
 
     private(set) var queryParameter: String?
 
-    func with(id: Int) -> LocationBuilder {
+    func with(id: LocationID) -> LocationBuilder {
         self.id = id; return self
     }
     func with(name: String) -> LocationBuilder {

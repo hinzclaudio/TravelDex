@@ -47,7 +47,9 @@
 		1267F13E28A5A21D0025071C /* LocationDisplayViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */; };
 		1267F14028A5A2350025071C /* LocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13F28A5A2350025071C /* LocationDisplayViewModel.swift */; };
 		1267F14228A5A23E0025071C /* LocationDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F14128A5A23E0025071C /* LocationDisplayController.swift */; };
+		12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12747D4D28A6EC36005893B9 /* RxMapView.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
+		12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
 		12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E0639A289C541F007B09BE /* SceneDelegate.swift */; };
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
@@ -109,6 +111,8 @@
 		12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75617289EA2ED00773D46 /* LocationsStore.swift */; };
 		12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75619289EA8EF00773D46 /* UISearchBarExt.swift */; };
 		12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7561C289EAB4000773D46 /* LocationSearchCell.swift */; };
+		12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */; };
+		12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */; };
 		37CA7AF07F5B1B566E8EBB1C /* Pods_TravelWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC59DB4A591DBCDD17CA51A9 /* Pods_TravelWeatherTests.framework */; };
 		87DEA3960E60B66AB17FA273 /* Pods_TravelWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC2D7312A64B1EB9E83C62 /* Pods_TravelWeather.framework */; };
 		C08AAB43B23257A9FC8F15C0 /* Pods_TravelWeather_TravelWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */; };
@@ -172,7 +176,9 @@
 		1267F13D28A5A21D0025071C /* LocationDisplayViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayViewModelType.swift; sourceTree = "<group>"; };
 		1267F13F28A5A2350025071C /* LocationDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayViewModel.swift; sourceTree = "<group>"; };
 		1267F14128A5A23E0025071C /* LocationDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayController.swift; sourceTree = "<group>"; };
+		12747D4D28A6EC36005893B9 /* RxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapView.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
+		12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayAnnotation.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E06398289C541F007B09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E0639A289C541F007B09BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 		12F75617289EA2ED00773D46 /* LocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStore.swift; sourceTree = "<group>"; };
 		12F75619289EA8EF00773D46 /* UISearchBarExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExt.swift; sourceTree = "<group>"; };
 		12F7561C289EAB4000773D46 /* LocationSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
+		12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlaceAnnotationView.swift; sourceTree = "<group>"; };
+		12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocaitonDisplay_ MapDelegate.swift"; sourceTree = "<group>"; };
 		315F8EA95E9D7107A554B746 /* Pods_TravelWeather_TravelWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelWeather_TravelWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelWeather-TravelWeatherUITests/Pods-TravelWeather-TravelWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AD2BEA456E38C87CDEF158A /* Pods-TravelWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelWeatherTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelWeatherTests/Pods-TravelWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -484,6 +492,7 @@
 		1267F13A28A5A1C70025071C /* LocationDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */,
 				1267F13C28A5A20D0025071C /* ViewModel */,
 				1267F13B28A5A2010025071C /* View */,
 			);
@@ -494,6 +503,8 @@
 			isa = PBXGroup;
 			children = (
 				1267F14128A5A23E0025071C /* LocationDisplayController.swift */,
+				12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */,
+				12F781D428A7E4890061AE51 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,6 +726,7 @@
 				12F05EA6289E7B6D00A0C4AB /* RxString.swift */,
 				1211078A28A0382F0046E8A9 /* RxTapGesture.swift */,
 				120A2327289FC40C0092A2D5 /* ActivityIndicator.swift */,
+				12747D4D28A6EC36005893B9 /* RxMapView.swift */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -815,6 +827,14 @@
 			isa = PBXGroup;
 			children = (
 				12F7561C289EAB4000773D46 /* LocationSearchCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		12F781D428A7E4890061AE51 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1151,6 +1171,7 @@
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */,
+				12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */,
 				120A231A289FB9C50092A2D5 /* WeatherAPIType.swift in Sources */,
 				12F1350C289D9C9E00363CF6 /* EditTripViewModelType.swift in Sources */,
 				12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */,
@@ -1176,6 +1197,7 @@
 				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
 				12F134F4289D89E100363CF6 /* TripsListViewModel.swift in Sources */,
 				12F134D9289D846500363CF6 /* Location.swift in Sources */,
+				12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */,
 				1267F14028A5A2350025071C /* LocationDisplayViewModel.swift in Sources */,
 				1260ED6A289D6E140008C9EE /* CDMigrationVersion.swift in Sources */,
 				12F134BE289D79C700363CF6 /* AppCoordinator.swift in Sources */,
@@ -1198,6 +1220,7 @@
 				1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */,
 				1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */,
 				12F134F2289D89D200363CF6 /* TripsListViewModelType.swift in Sources */,
+				12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */,
 				123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */,
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
 				12F1350E289D9CB400363CF6 /* EditTripViewModel.swift in Sources */,
@@ -1220,6 +1243,7 @@
 				123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */,
 				12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */,
 				120A2328289FC40C0092A2D5 /* ActivityIndicator.swift in Sources */,
+				12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
 				1211078D28A03AB90046E8A9 /* AnimationConstants.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,

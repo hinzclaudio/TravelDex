@@ -8,10 +8,10 @@
 import Foundation
 
 
-
+typealias TripID = UUID
 struct Trip: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
-    let id: UUID
+    let id: TripID
     let title: String
     let descr: String?
     let members: String?
@@ -23,7 +23,7 @@ struct Trip: Equatable, WithAutoBuilder {
 // sourcery:inline:auto:Trip.AutoBuilderInit
     // MARK: - Init Buildable
     init(
-        id: UUID, 
+        id: TripID, 
         title: String, 
         descr: String? = nil, 
         members: String? = nil, 
@@ -60,7 +60,7 @@ struct Trip: Equatable, WithAutoBuilder {
 class TripBuilder {
 
 
-    private(set) var id: UUID?
+    private(set) var id: TripID?
 
 
     private(set) var title: String?
@@ -80,7 +80,7 @@ class TripBuilder {
 
     private(set) var end: Date??
 
-    func with(id: UUID) -> TripBuilder {
+    func with(id: TripID) -> TripBuilder {
         self.id = id; return self
     }
     func with(title: String) -> TripBuilder {

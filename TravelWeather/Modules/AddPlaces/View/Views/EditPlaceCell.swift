@@ -110,7 +110,7 @@ class EditPlaceCell: UIView {
         endPicker.styleDayMonthYear()
         
         picturePreview.tintColor = Colors.black
-        picturePreview.image = SFSymbol.emptyImage.image
+        picturePreview.image = SFSymbol.camera.image
         picturePreview.contentMode = .scaleAspectFit
         
         customTextLabel.styleText(colored: Colors.black)

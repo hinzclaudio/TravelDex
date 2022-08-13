@@ -16,6 +16,7 @@ struct Colors {
     static let defaultWhite = UIColor(hex: "ecf3f0")!
     static let darkGreen = UIColor(hex: "3d5f5d")!
     static let lightGreen = UIColor(hex: "ADC4BD")!
+    static let orange = UIColor(hex: "fdb14d")!
     static let darkRed = UIColor(hex: "671d26")!
     static let black = UIColor(hex: "000000")!
     static let lightSandRose = UIColor(hex: "DCD8D9")!

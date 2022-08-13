@@ -18,6 +18,8 @@ enum SFSymbol: String {
     case emptyImage = "doc.text.image"
     case calendar
     case map
+    case camera
+    case filledMappin = "pin.fill"
     
     var image: UIImage {
         UIImage(systemName: rawValue)!

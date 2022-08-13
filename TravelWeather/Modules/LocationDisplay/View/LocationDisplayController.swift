@@ -7,12 +7,15 @@
 
 import UIKit
 import MapKit
+import RxSwift
+import RxCocoa
 
 
 
 class LocationDisplayController: UIViewController {
     
     let viewModel: LocationDisplayViewModelType
+    let bag = DisposeBag()
     
     // MARK: - Views
     let mapView = MKMapView()
@@ -28,6 +31,14 @@ class LocationDisplayController: UIViewController {
     }
     
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    
+    
     // MARK: - Setup
     private func setup() {
         addViews()
@@ -37,19 +48,34 @@ class LocationDisplayController: UIViewController {
     }
     
     private func addViews() {
-        
+        view.addSubview(mapView)
     }
     
     private func configureViews() {
+        view.backgroundColor = Colors.veryDark
         
+        mapView.delegate = self
+        mapView.register(
+            AddedPlaceAnnotationView.self,
+            forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier
+        )
     }
     
     private func setAutoLayout() {
-        
+        mapView.autoPinEdge(toSuperviewSafeArea: .top)
+        mapView.autoPinEdge(.left, to: .left, of: view)
+        mapView.autoPinEdge(.right, to: .right, of: view)
+        mapView.autoPinEdge(.bottom, to: .bottom, of: view)
     }
     
     private func setupBinding() {
+        viewModel.tripName
+            .drive(navigationItem.rx.title)
+            .disposed(by: bag)
         
+        viewModel.annotations
+            .drive(mapView.rx.animatedAnnotations)
+            .disposed(by: bag)
     }
     
 }
