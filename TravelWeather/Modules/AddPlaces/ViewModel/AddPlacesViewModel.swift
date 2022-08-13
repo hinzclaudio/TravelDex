@@ -91,12 +91,42 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     // MARK: - Menu
     func menu(for item: AddedPlaceItem) -> UIMenu {
-        let addImgAction = UIAction(
-            title: "Add Image",
-            image: SFSymbol.plus.image
-        ) { [weak self] _ in
-            self?.addImage(to: item)
+        
+        let imgMenu: UIMenu
+        
+        if item.visitedPlace.picture != nil {
+            let updateImgAction = UIAction(
+                title: "Change Image",
+                image: SFSymbol.squareAndPencil.image
+            ) { [weak self] _ in
+                self?.addOrChangeImage(to: item)
+            }
+            let delImgAction = UIAction(
+                title: "Remove Image",
+                image: SFSymbol.trash.image,
+                attributes: .destructive
+            ) { [weak self] _ in
+                self?.deleteImage(of: item)
+            }
+            imgMenu = UIMenu(
+                title: "Image",
+                options: .displayInline,
+                children: [updateImgAction, delImgAction]
+            )
+        } else {
+            let addImgAction = UIAction(
+                title: "Add Image",
+                image: SFSymbol.plus.image
+            ) { [weak self] _ in
+                self?.addOrChangeImage(to: item)
+            }
+            imgMenu = UIMenu(
+                title: "Image",
+                options: .displayInline,
+                children: [addImgAction]
+            )
         }
+        
         let showOnMapAction = UIAction(
             title: "Show on Map",
             image: SFSymbol.map.image
@@ -118,14 +148,21 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         }
         return UIMenu(
             title: item.location.name,
-            children: [addImgAction, showOnMapAction, editTextAction, delAction]
+            children: [imgMenu, showOnMapAction, editTextAction, delAction]
         )
     }
     
     let pickingForItem = BehaviorRelay<AddedPlaceItem?>(value: nil)
-    private func addImage(to item: AddedPlaceItem) {
+    private func addOrChangeImage(to item: AddedPlaceItem) {
         pickingForItem.accept(item)
         coordinator?.pickPhoto(self, for: item.visitedPlace)
+    }
+    
+    private func deleteImage(of item: AddedPlaceItem) {
+        let updatedPlace = item.visitedPlace.cloneBuilder()
+            .with(picture: nil)
+            .build()!
+        dependencies.placesStore.update(updatedPlace)
     }
     
     private func display(_ item: AddedPlaceItem) {

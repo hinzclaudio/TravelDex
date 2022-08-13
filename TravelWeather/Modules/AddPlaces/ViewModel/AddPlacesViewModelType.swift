@@ -25,7 +25,6 @@ protocol AddPlacesViewModelType {
     var trip: Driver<Trip> { get }
     var addedPlaces: Driver<[AddedPlaceItem]> { get }
     var expandedItems: Driver<Set<VisitedPlaceID>> { get }
-    
     func menu(for item: AddedPlaceItem) -> UIMenu
     
 }
