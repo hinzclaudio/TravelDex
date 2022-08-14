@@ -13,7 +13,13 @@ import RxCocoa
 
 protocol LocationSearchViewModelType {
     
-    func searchResults(for query: Observable<String>) -> Driver<[Location]>
+    // MARK: - Input
     func select(_ location: Observable<Location>) -> Disposable
+    
+    
+    // MARK: - Output
+    var isLoading: Driver<Bool> { get }
+    var errorController: Driver<UIAlertController> { get }
+    func searchResults(for query: Observable<String>) -> Driver<[Location]>
     
 }

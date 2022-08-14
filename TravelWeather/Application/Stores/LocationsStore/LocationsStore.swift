@@ -53,7 +53,6 @@ class LocationsStore: LocationsStoreType {
             .flatMapLatest { [unowned self] search -> Observable<Event<[Location]>> in
                 if search.isEmpty {
                     return self.allLocations()
-                        .trackActivity(self.isLoading)
                         .materialize()
                 } else {
                     return self.geoCoder.rx.locations(for: search)

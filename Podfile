@@ -22,10 +22,4 @@ target 'TravelWeather' do
   target 'TravelWeatherUITests' do
   end
 
-  plugin 'cocoapods-keys', {
-  :project => "TravelWeather",
-  :keys => [
-    "WeatherAPIKey"
-  ]}
-
 end

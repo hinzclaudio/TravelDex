@@ -19,6 +19,9 @@ class LocationSearchController: UIViewController {
     
     // MARK: - Views
     let searchController = UISearchController()
+    
+    let contentStack = UIStackView.defaultContentStack(withSpacing: Sizes.defaultMargin)
+    let loadingView = UIActivityIndicatorView()
     let tableView = UITableView()
     
     
@@ -58,6 +61,7 @@ class LocationSearchController: UIViewController {
     private func addViews() {
         navigationItem.searchController = searchController
         view.addSubview(tableView)
+        view.addSubview(loadingView)
     }
     
     private func configureViews() {
@@ -74,9 +78,36 @@ class LocationSearchController: UIViewController {
         tableView.autoPinEdge(.left, to: .left, of: view)
         tableView.autoPinEdge(.right, to: .right, of: view)
         tableView.autoPinEdge(.bottom, to: .bottom, of: view)
+        
+        loadingView.autoCenterInSuperview()
+        loadingView.transform = .init(scaleX: 1.5, y: 1.5)
+        loadingView.tintColor = Colors.defaultWhite
     }
     
     private func setupBinding() {
+        viewModel.isLoading
+            .drive(onNext: { [weak self] isLoading in
+                UIView
+                    .animate(
+                        withDuration: AnimationConstants.defaultDuration,
+                        delay: 0,
+                        options: AnimationConstants.defaultOption) {
+                            self?.loadingView.isHidden = !isLoading
+                            self?.tableView.isHidden = isLoading
+                        } completion: { [weak self] _ in
+                            if isLoading{
+                                self?.loadingView.startAnimating()
+                            } else {
+                                self?.loadingView.stopAnimating()
+                            }
+                        }
+            })
+            .disposed(by: bag)
+        
+        viewModel.errorController
+            .drive(onNext: { [weak self] errorInfo in self?.present(errorInfo, animated: true) })
+            .disposed(by: bag)
+        
         let searchQuery = searchController.searchBar.rx.text.orEmpty
             .asObservable()
         let results = viewModel.searchResults(for: searchQuery)
