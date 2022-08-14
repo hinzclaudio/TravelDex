@@ -22,6 +22,9 @@ struct CDDeleteVisitedPlace: CDAction {
         }
         
         context.delete(cdPlace)
+        
+        fetchUnusedLocations(in: context)
+            .forEach(context.delete(_:))
     }
     
 }

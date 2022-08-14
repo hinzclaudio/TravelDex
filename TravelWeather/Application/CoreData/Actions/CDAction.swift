@@ -62,6 +62,18 @@ extension CDAction {
         }
     }
     
+    func fetchUnusedLocations(in context: NSManagedObjectContext) -> [CDLocation] {
+        let query = CDLocation.fetchRequest()
+        query.predicate = NSPredicate(format: "visitedPlaces.@count == %d", 0)
+        do {
+            let locs = try context.fetch(query)
+            return locs
+        } catch {
+            handleCD(error)
+            return []
+        }
+    }
+    
     func fetchVisitedPlace(by id: UUID, in context: NSManagedObjectContext) -> CDVisitedPlace? {
         let query = CDVisitedPlace.fetchRequest()
         query.predicate = NSPredicate(format: "id == %@", id as CVarArg)

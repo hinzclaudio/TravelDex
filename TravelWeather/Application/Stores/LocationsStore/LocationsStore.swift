@@ -37,12 +37,57 @@ class LocationsStore: LocationsStoreType {
             .subscribe(onNext: { [weak self] in self?.dispatch($0) })
     }
     
+    func allLocations() -> Observable<[Location]> {
+        let query = CDLocation.fetchRequest()
+        query.sortDescriptors = [
+            NSSortDescriptor(key: "country", ascending: true),
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
+        
+        return CDObservable(fetchRequest: query, context: context)
+            .map { cdLocs in cdLocs.map { $0.pureRepresentation } }
+    }
+    
     func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]> {
         let result = query
-            .flatMapLatest { [unowned self] search in
-                self.geoCoder.rx.locations(for: search)
-                    .trackActivity(self.isLoading)
-                    .materialize()
+            .flatMapLatest { [unowned self] search -> Observable<Event<[Location]>> in
+                if search.isEmpty {
+                    return self.allLocations()
+                        .trackActivity(self.isLoading)
+                        .materialize()
+                } else {
+                    return self.geoCoder.rx.locations(for: search)
+                        .trackActivity(self.isLoading)
+                        .map { placemarks in
+                            placemarks
+                                .filter { $0.location != nil }
+                                .map { mark -> Location in
+                                    let regionString: String?
+                                    if let locality = mark.locality {
+                                        if let subLoc = mark.subLocality {
+                                            regionString = "\(locality), \(subLoc)"
+                                        } else{
+                                            regionString = locality
+                                        }
+                                    } else {
+                                        regionString = mark.subLocality
+                                    }
+                                    
+                                    return Location(
+                                        id: LocationID(),
+                                        name: mark.name ?? "",
+                                        region: regionString,
+                                        country: mark.country,
+                                        coordinate: Coordinate(
+                                            latitude: mark.location!.coordinate.latitude,
+                                            longitude: mark.location!.coordinate.longitude
+                                        ),
+                                        timezoneIdentifier: mark.timeZone?.identifier
+                                    )
+                                }
+                        }
+                        .materialize()
+                }
             }
             .share()
         
@@ -55,31 +100,7 @@ class LocationsStore: LocationsStoreType {
             .compactMap { $0.event.element }
             .map { placemarks -> [Location] in
                 placemarks
-                    .filter { $0.location != nil }
-                    .map { mark in
-                        let regionString: String?
-                        if let locality = mark.locality {
-                            if let subLoc = mark.subLocality {
-                                regionString = "\(locality), \(subLoc)"
-                            } else{
-                                regionString = locality
-                            }
-                        } else {
-                            regionString = mark.subLocality
-                        }
-                        
-                        return Location(
-                            id: LocationID(),
-                            name: mark.name ?? "",
-                            region: regionString,
-                            country: mark.country,
-                            coordinate: Coordinate(
-                                latitude: mark.location!.coordinate.latitude,
-                                longitude: mark.location!.coordinate.longitude
-                            ),
-                            timezoneIdentifier: mark.timeZone?.identifier
-                        )
-                    }
+                    
             }
     }
     
