@@ -19,7 +19,7 @@ extension CDVisitedPlace {
             start: start,
             end: end,
             tripId: trip.id,
-            locationId: Int(location.id)
+            locationId: location.id
         )
     }
     

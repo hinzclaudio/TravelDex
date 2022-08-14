@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 
 class DefaultAppDependencies: AppDependencies {
     
     let cdStack: CDStackType
-    let weatherAPI: WeatherAPI
+    let geoCoder: CLGeocoder
     
     let tripsStore: TripsStoreType
     let placesStore: PlacesStoreType
@@ -20,9 +21,10 @@ class DefaultAppDependencies: AppDependencies {
     
     init() {
         let cdStack = DefaultCDStack(modelName: "TravelWeather")
-        let weatherAPI = WeatherAPI()
+        let geoCoder = CLGeocoder()
+        
         self.cdStack = cdStack
-        self.weatherAPI = weatherAPI
+        self.geoCoder = geoCoder
         
         self.tripsStore = TripsStore(
             context: cdStack.storeContext,
@@ -35,7 +37,7 @@ class DefaultAppDependencies: AppDependencies {
         self.locationsStore = LocationsStore(
             context: cdStack.storeContext,
             dispatch: cdStack.dispatch(_:),
-            api: weatherAPI
+            geoCoder: geoCoder
         )
     }
     

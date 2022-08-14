@@ -31,9 +31,9 @@ extension CDAction {
         }
     }
     
-    func fetchLocation(by id: Int, in context: NSManagedObjectContext) -> CDLocation? {
+    func fetchLocation(by id: UUID, in context: NSManagedObjectContext) -> CDLocation? {
         let query = CDLocation.fetchRequest()
-        query.predicate = NSPredicate(format: "id == %d", id)
+        query.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         query.fetchLimit = 1
         do {
             let fetched = try context.fetch(query)

@@ -12,25 +12,25 @@ import Foundation
 typealias VisitedPlaceID = UUID
 struct VisitedPlace: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
-    let id: UUID
+    let id: VisitedPlaceID
     let text: String?
     let picture: Data?
     let start: Date
     let end: Date
     let tripId: UUID
-    let locationId: Int
+    let locationId: LocationID
     // sourcery:end: nonDefaultBuilderProperty
 
 // sourcery:inline:auto:VisitedPlace.AutoBuilderInit
     // MARK: - Init Buildable
     init(
-        id: UUID, 
+        id: VisitedPlaceID, 
         text: String? = nil, 
         picture: Data? = nil, 
         start: Date, 
         end: Date, 
         tripId: UUID, 
-        locationId: Int
+        locationId: LocationID
     )
     {
         self.id = id
@@ -61,7 +61,7 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
 class VisitedPlaceBuilder {
 
 
-    private(set) var id: UUID?
+    private(set) var id: VisitedPlaceID?
 
 
     private(set) var text: String??
@@ -79,9 +79,9 @@ class VisitedPlaceBuilder {
     private(set) var tripId: UUID?
 
 
-    private(set) var locationId: Int?
+    private(set) var locationId: LocationID?
 
-    func with(id: UUID) -> VisitedPlaceBuilder {
+    func with(id: VisitedPlaceID) -> VisitedPlaceBuilder {
         self.id = id; return self
     }
     func with(text: String?) -> VisitedPlaceBuilder {
@@ -99,7 +99,7 @@ class VisitedPlaceBuilder {
     func with(tripId: UUID) -> VisitedPlaceBuilder {
         self.tripId = tripId; return self
     }
-    func with(locationId: Int) -> VisitedPlaceBuilder {
+    func with(locationId: LocationID) -> VisitedPlaceBuilder {
         self.locationId = locationId; return self
     }
     func build() -> VisitedPlace? {

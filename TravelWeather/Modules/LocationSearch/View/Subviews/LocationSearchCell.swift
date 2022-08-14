@@ -68,12 +68,8 @@ class LocationSearchCell: UITableViewCell {
         
         let secLabel = UILabel()
         secLabel.styleSmall()
+        secLabel.text = loc.supplementaryString
         labelStack.addArrangedSubview(secLabel)
-        if let reg = loc.region {
-            secLabel.text = "\(loc.country), \(reg)"
-        } else {
-            secLabel.text = loc.country
-        }
     }
     
 }

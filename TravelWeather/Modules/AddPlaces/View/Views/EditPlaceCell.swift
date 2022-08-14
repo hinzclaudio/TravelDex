@@ -165,11 +165,7 @@ class EditPlaceCell: UIView {
     
     func configure(for addedPlace: AddedPlaceItem, menu: UIMenu?) {
         titleLabel.text = addedPlace.location.name
-        if let region = addedPlace.location.region {
-            secLabel.text = "\(addedPlace.location.country), \(region)"
-        } else {
-            secLabel.text = addedPlace.location.country
-        }
+        secLabel.text = addedPlace.location.supplementaryString
         
         if let imgData = addedPlace.visitedPlace.picture,
            let img = UIImage(data: imgData) {

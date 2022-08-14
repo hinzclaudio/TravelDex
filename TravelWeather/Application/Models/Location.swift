@@ -9,15 +9,15 @@ import Foundation
 
 
 
-typealias LocationID = Int 
+typealias LocationID = UUID
 struct Location: Equatable, WithAutoBuilder {
     // sourcery:begin: nonDefaultBuilderProperty
     let id: LocationID
     let name: String
     let region: String?
-    let country: String
+    let country: String?
     let coordinate: Coordinate
-    let queryParameter: String
+    let timezoneIdentifier: String?
     // sourcery:end: nonDefaultBuilderProperty
 
 // sourcery:inline:auto:Location.AutoBuilderInit
@@ -26,9 +26,9 @@ struct Location: Equatable, WithAutoBuilder {
         id: LocationID, 
         name: String, 
         region: String? = nil, 
-        country: String, 
+        country: String? = nil, 
         coordinate: Coordinate, 
-        queryParameter: String
+        timezoneIdentifier: String? = nil
     )
     {
         self.id = id
@@ -36,7 +36,7 @@ struct Location: Equatable, WithAutoBuilder {
         self.region = region
         self.country = country
         self.coordinate = coordinate
-        self.queryParameter = queryParameter
+        self.timezoneIdentifier = timezoneIdentifier
     }
     static var builder: LocationBuilder {
         LocationBuilder()
@@ -48,7 +48,7 @@ struct Location: Equatable, WithAutoBuilder {
             .with(region: self.region)
             .with(country: self.country)
             .with(coordinate: self.coordinate)
-            .with(queryParameter: self.queryParameter)
+            .with(timezoneIdentifier: self.timezoneIdentifier)
     }
 // sourcery:end
 }
@@ -66,13 +66,13 @@ class LocationBuilder {
     private(set) var region: String??
 
 
-    private(set) var country: String?
+    private(set) var country: String??
 
 
     private(set) var coordinate: Coordinate?
 
 
-    private(set) var queryParameter: String?
+    private(set) var timezoneIdentifier: String??
 
     func with(id: LocationID) -> LocationBuilder {
         self.id = id; return self
@@ -83,14 +83,14 @@ class LocationBuilder {
     func with(region: String?) -> LocationBuilder {
         self.region = region; return self
     }
-    func with(country: String) -> LocationBuilder {
+    func with(country: String?) -> LocationBuilder {
         self.country = country; return self
     }
     func with(coordinate: Coordinate) -> LocationBuilder {
         self.coordinate = coordinate; return self
     }
-    func with(queryParameter: String) -> LocationBuilder {
-        self.queryParameter = queryParameter; return self
+    func with(timezoneIdentifier: String?) -> LocationBuilder {
+        self.timezoneIdentifier = timezoneIdentifier; return self
     }
     func build() -> Location? {
         guard
@@ -99,7 +99,7 @@ class LocationBuilder {
             let region = self.region,
             let country = self.country,
             let coordinate = self.coordinate,
-            let queryParameter = self.queryParameter
+            let timezoneIdentifier = self.timezoneIdentifier
         else { return nil }
         return Location(
             id: id,
@@ -107,8 +107,26 @@ class LocationBuilder {
             region: region,
             country: country,
             coordinate: coordinate,
-            queryParameter: queryParameter
+            timezoneIdentifier: timezoneIdentifier
         )
     }
 }
 // sourcery:end
+
+
+
+extension Location {
+    
+    var supplementaryString: String? {
+        if let country = country {
+            if let region = region {
+                return "\(country), \(region)"
+            } else {
+                return country
+            }
+        } else {
+            return region
+        }
+    }
+    
+}

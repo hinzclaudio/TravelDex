@@ -18,30 +18,28 @@ struct CDUpdateLocations: CDAction {
     func execute(in context: NSManagedObjectContext) {
         locations
             .forEach { loc in
-                if let cdLoc = fetchLocation(by: loc.id, in: context) {
+                if let cdLoc = fetchLocation(by: loc.id, in: context) ??
+                               fetchSimilarLocation(to: loc, in: context) {
                     cdLoc.safeInitNeglectRelationShips(
-                        id: Int64(loc.id),
+                        id: loc.id,
                         latitude: loc.coordinate.latitude,
                         longitude: loc.coordinate.longitude,
                         name: loc.name,
                         region: loc.region,
                         country: loc.country,
-                        queryParameter: loc.queryParameter
+                        timezoneIdentifier: loc.timezoneIdentifier
                     )
-                } else if fetchSimilarLocation(to: loc, in: context) != nil {
-                    return
                 } else {
                     let cdLoc = CDLocation(context: context)
                     cdLoc.safeInit(
-                        id: Int64(loc.id),
+                        id: loc.id,
                         latitude: loc.coordinate.latitude,
                         longitude: loc.coordinate.longitude,
                         name: loc.name,
                         region: loc.region,
                         country: loc.country,
-                        queryParameter: loc.queryParameter,
-                        visitedPlaces: .init(),
-                        weather: nil
+                        timezoneIdentifier: loc.timezoneIdentifier,
+                        visitedPlaces: .init()
                     )
                 }
             }

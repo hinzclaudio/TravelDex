@@ -9,15 +9,14 @@ extension CDLocation {
     /// have been set correctly.
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
-        id: Int64,
+        id: UUID,
         latitude: Double,
         longitude: Double,
         name: String,
         region: String?,
-        country: String,
-        queryParameter: String,
-        visitedPlaces: NSSet,
-        weather: CDWeather?
+        country: String?,
+        timezoneIdentifier: String?,
+        visitedPlaces: NSSet
     ) {
         self.id = id
         self.latitude = latitude
@@ -25,21 +24,20 @@ extension CDLocation {
         self.name = name
         self.region = region
         self.country = country
-        self.queryParameter = queryParameter
+        self.timezoneIdentifier = timezoneIdentifier
         self.visitedPlaces = visitedPlaces
-        self.weather = weather
     }
     /// Acts as a proper initializer that forces the compiler to check if all attributes
     /// have been set correctly.
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
-        id: Int64,
+        id: UUID,
         latitude: Double,
         longitude: Double,
         name: String,
         region: String?,
-        country: String,
-        queryParameter: String
+        country: String?,
+        timezoneIdentifier: String?
     ) {
         self.id = id
         self.latitude = latitude
@@ -47,7 +45,7 @@ extension CDLocation {
         self.name = name
         self.region = region
         self.country = country
-        self.queryParameter = queryParameter
+        self.timezoneIdentifier = timezoneIdentifier
     }
 }
 
@@ -128,78 +126,6 @@ extension CDVisitedPlace {
         self.pictureData = pictureData
         self.start = start
         self.end = end
-    }
-}
-
-extension CDWeather {
-
-    /// Acts as a proper initializer that forces the compiler to check if all attributes
-    /// have been set correctly.
-    /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
-    func safeInit(
-        lastUpdate: Date?,
-        tempC: Int64,
-        feelslikeC: Int64,
-        conditionCode: String?,
-        conditionText: String?,
-        conditionIcon: String?,
-        windKph: Double,
-        windDegree: Int64,
-        pressureMb: Double,
-        precipMm: Double,
-        humidity: Int64,
-        cloudCoverage: Int64,
-        uvIndex: Double,
-        location: CDLocation?
-    ) {
-        self.lastUpdate = lastUpdate
-        self.tempC = tempC
-        self.feelslikeC = feelslikeC
-        self.conditionCode = conditionCode
-        self.conditionText = conditionText
-        self.conditionIcon = conditionIcon
-        self.windKph = windKph
-        self.windDegree = windDegree
-        self.pressureMb = pressureMb
-        self.precipMm = precipMm
-        self.humidity = humidity
-        self.cloudCoverage = cloudCoverage
-        self.uvIndex = uvIndex
-        self.location = location
-    }
-    /// Acts as a proper initializer that forces the compiler to check if all attributes
-    /// have been set correctly.
-    /// - note: This init does not concern itself with relationships. You will have to set these yourself.
-    func safeInitNeglectRelationShips(
-        lastUpdate: Date?,
-        tempC: Int64,
-        feelslikeC: Int64,
-        conditionCode: String?,
-        conditionText: String?,
-        conditionIcon: String?,
-        windKph: Double,
-        windDegree: Int64,
-        pressureMb: Double,
-        precipMm: Double,
-        humidity: Int64,
-        cloudCoverage: Int64,
-        uvIndex: Double,
-        location: CDLocation?
-    ) {
-        self.lastUpdate = lastUpdate
-        self.tempC = tempC
-        self.feelslikeC = feelslikeC
-        self.conditionCode = conditionCode
-        self.conditionText = conditionText
-        self.conditionIcon = conditionIcon
-        self.windKph = windKph
-        self.windDegree = windDegree
-        self.pressureMb = pressureMb
-        self.precipMm = precipMm
-        self.humidity = humidity
-        self.cloudCoverage = cloudCoverage
-        self.uvIndex = uvIndex
-        self.location = location
     }
 }
 

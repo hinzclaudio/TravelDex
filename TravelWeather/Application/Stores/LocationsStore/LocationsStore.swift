@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 import RxSwift
 import RxCocoa
+import CoreLocation
 
 
 
@@ -16,12 +17,12 @@ class LocationsStore: LocationsStoreType {
     
     private let context: NSManagedObjectContext
     private let dispatch: (CDAction) -> Void
-    private let weatherAPI: WeatherAPIType
+    private let geoCoder: CLGeocoder
     
-    init(context: NSManagedObjectContext, dispatch: @escaping (CDAction) -> Void, api: WeatherAPIType) {
+    init(context: NSManagedObjectContext, dispatch: @escaping (CDAction) -> Void, geoCoder: CLGeocoder) {
         self.context = context
         self.dispatch = dispatch
-        self.weatherAPI = api
+        self.geoCoder = geoCoder
     }
     
     
@@ -30,69 +31,55 @@ class LocationsStore: LocationsStoreType {
     var error: Observable<Error> { apiError }
     
     
-    func updateLocations(with query: Observable<String>) -> Disposable {
+    func add(_ location: Observable<Location>) -> Disposable {
+        location
+            .map { CDUpdateLocations(locations: [$0]) }
+            .subscribe(onNext: { [weak self] in self?.dispatch($0) })
+    }
+    
+    func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]> {
         let result = query
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
-            .filter { !$0.isEmpty }
-            .map { $0.lowercased() }
-            .flatMapLatest { [unowned self] query -> Observable<Event<[WeatherAPILocation]>> in
-                self.weatherAPI.searchLocations(query)
+            .flatMapLatest { [unowned self] search in
+                self.geoCoder.rx.locations(for: search)
                     .trackActivity(self.isLoading)
                     .materialize()
             }
             .share()
         
-        let onSuccess = result
-            .compactMap { response in response.event.element }
-            .map { apiLocations -> [Location] in
-                apiLocations
-                    .map { apiLoc in
-                        Location(
-                            id: apiLoc.id,
-                            name: apiLoc.name,
-                            region: apiLoc.region,
-                            country: apiLoc.country,
+        result
+            .compactMap { $0.event.error }
+            .bind(to: apiError)
+            .disposed(by: bag)
+        
+        return result
+            .compactMap { $0.event.element }
+            .map { placemarks -> [Location] in
+                placemarks
+                    .filter { $0.location != nil }
+                    .map { mark in
+                        let regionString: String?
+                        if let locality = mark.locality {
+                            if let subLoc = mark.subLocality {
+                                regionString = "\(locality), \(subLoc)"
+                            } else{
+                                regionString = locality
+                            }
+                        } else {
+                            regionString = mark.subLocality
+                        }
+                        
+                        return Location(
+                            id: LocationID(),
+                            name: mark.name ?? "",
+                            region: regionString,
+                            country: mark.country,
                             coordinate: Coordinate(
-                                latitude: apiLoc.lat,
-                                longitude: apiLoc.lon
+                                latitude: mark.location!.coordinate.latitude,
+                                longitude: mark.location!.coordinate.longitude
                             ),
-                            queryParameter: apiLoc.queryParameter
+                            timezoneIdentifier: mark.timeZone?.identifier
                         )
                     }
-            }
-            .map { CDUpdateLocations(locations: $0) }
-            .subscribe(onNext: { [weak self] in self?.dispatch($0) })
-
-        let onError = result
-            .compactMap { response in response.event.error }
-            .bind(to: apiError)
-
-        return Disposables.create {
-            onSuccess.dispose()
-            onError.dispose()
-        }
-    }
-    
-    func locations(for query: Observable<String>) -> Observable<[Location]> {
-        query
-            .map { query -> NSFetchRequest<CDLocation> in
-                let cdQuery = CDLocation.fetchRequest()
-                cdQuery.sortDescriptors = [
-                    NSSortDescriptor(key: "name", ascending: true),
-                    NSSortDescriptor(key: "region", ascending: true),
-                    NSSortDescriptor(key: "country", ascending: true)
-                ]
-                if !query.isEmpty {
-                    cdQuery.predicate = NSPredicate(
-                        format: "name CONTAINS[cd] %@ OR region CONTAINS[cd] %@ OR country CONTAINS[cd] %@",
-                        query, query, query
-                    )
-                }
-                return cdQuery
-            }
-            .flatMapLatest { [unowned self] cdQuery -> Observable<[Location]> in
-                CDObservable(fetchRequest: cdQuery, context: self.context)
-                    .map { cdLocs in cdLocs.map { $0.pureRepresentation } }
             }
     }
     

@@ -13,12 +13,13 @@ import RxCocoa
 
 protocol LocationsStoreType {
     
+    // MARK: - Input
+    func add(_ location: Observable<Location>) -> Disposable
+    
+    
+    // MARK: - Output
     var isLoading: ActivityIndicator { get }
-    
     var error: Observable<Error> { get }
-    
-    func updateLocations(with query: Observable<String>) -> Disposable
-    
-    func locations(for query: Observable<String>) -> Observable<[Location]>
+    func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]>
     
 }

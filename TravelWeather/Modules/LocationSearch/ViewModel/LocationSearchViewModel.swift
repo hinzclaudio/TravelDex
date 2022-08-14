@@ -27,18 +27,24 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     
     
     func searchResults(for query: Observable<String>) -> Driver<[Location]> {
-        dependencies.locationsStore
-            .updateLocations(with: query)
-            .disposed(by: bag)
-        
+        let search = query
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
         return dependencies.locationsStore
-            .locations(for: query)
+            .locations(for: search, bag: bag)
             .asDriver(onErrorJustReturn: [])
     }
     
     func select(_ location: Observable<Location>) -> Disposable {
-        location
+        let addLocationAction = dependencies.locationsStore
+            .add(location)
+        
+        let selectionAction = location
             .subscribe(onNext: { [weak self] in self?.selection($0) })
+        
+        return Disposables.create {
+            addLocationAction.dispose()
+            selectionAction.dispose()
+        }
     }
     
 }
