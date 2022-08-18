@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import MapKit
 
 
 
@@ -25,29 +26,23 @@ class LocationSearchViewModel: LocationSearchViewModelType {
         self.selection = selection
     }
     
-    lazy var isLoading: Driver<Bool> = {
-        dependencies.locationsStore.isLoading
-            .asDriver(onErrorJustReturn: false)
-    }()
     
     lazy var errorController: Driver<UIAlertController> = {
         dependencies.locationsStore.error
-            .map { error in
-                UIAlertController(
-                    title: "Error",
-                    message: "An unknown error occured.",
-                    preferredStyle: .alert
-                )
-            }
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-            .asDriver(onErrorJustReturn: UIAlertController(title: nil, message: nil, preferredStyle: .alert))
+            .map { error in InfoManager.defaultErrorInfo(for: error) }
+            .asDriver(onErrorJustReturn: InfoManager.makeFallbackErrorController())
     }()
     
-    func searchResults(for query: Observable<String>) -> Driver<[Location]> {
+    func annotations(for query: Observable<String>) -> Driver<[MKAnnotation]> {
         let search = query
-            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
+        
         return dependencies.locationsStore
             .locations(for: search, bag: bag)
+            .map { locations in
+                locations
+                    .map { loc in LocationSearchAnnotation(loc: loc) }
+            }
             .asDriver(onErrorJustReturn: [])
     }
     

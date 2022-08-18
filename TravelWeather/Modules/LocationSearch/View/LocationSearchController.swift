@@ -8,21 +8,22 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import MapKit
 
 
 
 class LocationSearchController: UIViewController {
     
     let viewModel: LocationSearchViewModelType
+    
+    let selection = PublishSubject<Location>()
     let bag = DisposeBag()
     
     
     // MARK: - Views
     let searchController = UISearchController()
-    
-    let contentStack = UIStackView.defaultContentStack(withSpacing: Sizes.defaultMargin)
+    let mapView = MKMapView()
     let loadingView = UIActivityIndicatorView()
-    let tableView = UITableView()
     
     
     
@@ -41,13 +42,6 @@ class LocationSearchController: UIViewController {
         setup()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.async {
-            self.searchController.searchBar.becomeFirstResponder()
-        }
-    }
-    
     
     
     // MARK: - Setup
@@ -60,73 +54,35 @@ class LocationSearchController: UIViewController {
     
     private func addViews() {
         navigationItem.searchController = searchController
-        view.addSubview(tableView)
-        view.addSubview(loadingView)
+        view.addSubview(mapView)
     }
     
     private func configureViews() {
         navigationItem.title = "Search Locations"
+        mapView.delegate = self
         searchController.searchBar.styleDefault()
-        view.backgroundColor = Colors.veryDark
-        
-        tableView.backgroundColor = .clear
-        tableView.register(LocationSearchCell.self, forCellReuseIdentifier: LocationSearchCell.identifier)
+        searchController.hidesNavigationBarDuringPresentation = false
     }
     
     private func setAutoLayout() {
-        tableView.autoPinEdge(toSuperviewSafeArea: .top)
-        tableView.autoPinEdge(.left, to: .left, of: view)
-        tableView.autoPinEdge(.right, to: .right, of: view)
-        tableView.autoPinEdge(.bottom, to: .bottom, of: view)
-        
-        loadingView.autoCenterInSuperview()
-        loadingView.transform = .init(scaleX: 1.5, y: 1.5)
-        loadingView.tintColor = Colors.defaultWhite
+        mapView.autoPinEdge(toSuperviewSafeArea: .top)
+        mapView.autoPinEdge(.left, to: .left, of: view)
+        mapView.autoPinEdge(.right, to: .right, of: view)
+        mapView.autoPinEdge(.bottom, to: .bottom, of: view)
     }
     
     private func setupBinding() {
-        viewModel.isLoading
-            .drive(onNext: { [weak self] isLoading in
-                UIView
-                    .animate(
-                        withDuration: AnimationConstants.defaultDuration,
-                        delay: 0,
-                        options: AnimationConstants.defaultOption) {
-                            self?.loadingView.isHidden = !isLoading
-                            self?.tableView.isHidden = isLoading
-                        } completion: { [weak self] _ in
-                            if isLoading{
-                                self?.loadingView.startAnimating()
-                            } else {
-                                self?.loadingView.stopAnimating()
-                            }
-                        }
-            })
-            .disposed(by: bag)
-        
         viewModel.errorController
             .drive(onNext: { [weak self] errorInfo in self?.present(errorInfo, animated: true) })
             .disposed(by: bag)
         
-        let searchQuery = searchController.searchBar.rx.text.orEmpty
-            .asObservable()
-        let results = viewModel.searchResults(for: searchQuery)
-        results
-            .drive(
-                tableView.rx.items(
-                    cellIdentifier: LocationSearchCell.identifier,
-                    cellType: LocationSearchCell.self
-                )
-            ) { i, location, cell in
-                cell.configure(for: location)
-            }
+        viewModel.select(selection)
             .disposed(by: bag)
         
-        let locationSelection = tableView.rx
-            .modelSelected(Location.self)
+        let searchQuery = searchController.searchBar.rx.text.orEmpty
             .asObservable()
-        viewModel
-            .select(locationSelection)
+        viewModel.annotations(for: searchQuery)
+            .drive(mapView.rx.animatedAnnotations)
             .disposed(by: bag)
     }
     

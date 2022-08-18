@@ -18,7 +18,6 @@ protocol LocationsStoreType {
     
     
     // MARK: - Output
-    var isLoading: ActivityIndicator { get }
     var error: Observable<Error> { get }
     
     func allLocations() -> Observable<[Location]>

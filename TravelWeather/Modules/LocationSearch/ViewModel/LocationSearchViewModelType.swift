@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
-
+import MapKit
 
 
 protocol LocationSearchViewModelType {
@@ -18,8 +18,7 @@ protocol LocationSearchViewModelType {
     
     
     // MARK: - Output
-    var isLoading: Driver<Bool> { get }
     var errorController: Driver<UIAlertController> { get }
-    func searchResults(for query: Observable<String>) -> Driver<[Location]>
+    func annotations(for query: Observable<String>) -> Driver<[MKAnnotation]>
     
 }

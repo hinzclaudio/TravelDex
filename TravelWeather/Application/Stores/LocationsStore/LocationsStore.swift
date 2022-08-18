@@ -25,8 +25,6 @@ class LocationsStore: LocationsStoreType {
         self.geoCoder = geoCoder
     }
     
-    
-    let isLoading = ActivityIndicator()
     var apiError = PublishSubject<Error>()
     var error: Observable<Error> { apiError }
     
@@ -97,10 +95,6 @@ class LocationsStore: LocationsStoreType {
         
         return result
             .compactMap { $0.event.element }
-            .map { placemarks -> [Location] in
-                placemarks
-                    
-            }
     }
     
 }

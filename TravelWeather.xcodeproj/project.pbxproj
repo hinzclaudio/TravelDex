@@ -16,6 +16,9 @@
 		1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078A28A0382F0046E8A9 /* RxTapGesture.swift */; };
 		1211078D28A03AB90046E8A9 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211078C28A03AB90046E8A9 /* AnimationConstants.swift */; };
 		1219EF7228A90A10001AEED7 /* RxGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219EF7128A90A10001AEED7 /* RxGeocoder.swift */; };
+		1227677C28AED67B00207EEA /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227677B28AED67B00207EEA /* InfoManager.swift */; };
+		1227677E28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */; };
+		1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -105,7 +108,6 @@
 		12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75615289EA2E500773D46 /* LocationsStoreType.swift */; };
 		12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75617289EA2ED00773D46 /* LocationsStore.swift */; };
 		12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F75619289EA8EF00773D46 /* UISearchBarExt.swift */; };
-		12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F7561C289EAB4000773D46 /* LocationSearchCell.swift */; };
 		12F781D628A7E4950061AE51 /* AddedPlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */; };
 		12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */; };
 		12F781DA28A821410061AE51 /* PlaceDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */; };
@@ -143,6 +145,9 @@
 		1211078A28A0382F0046E8A9 /* RxTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTapGesture.swift; sourceTree = "<group>"; };
 		1211078C28A03AB90046E8A9 /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		1219EF7128A90A10001AEED7 /* RxGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGeocoder.swift; sourceTree = "<group>"; };
+		1227677B28AED67B00207EEA /* InfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManager.swift; sourceTree = "<group>"; };
+		1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController_MapDelegate.swift; sourceTree = "<group>"; };
+		1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchAnnotation.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -238,7 +243,6 @@
 		12F75615289EA2E500773D46 /* LocationsStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStoreType.swift; sourceTree = "<group>"; };
 		12F75617289EA2ED00773D46 /* LocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStore.swift; sourceTree = "<group>"; };
 		12F75619289EA8EF00773D46 /* UISearchBarExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExt.swift; sourceTree = "<group>"; };
-		12F7561C289EAB4000773D46 /* LocationSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCell.swift; sourceTree = "<group>"; };
 		12F781D528A7E4950061AE51 /* AddedPlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedPlaceAnnotationView.swift; sourceTree = "<group>"; };
 		12F781D728A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocaitonDisplay_ MapDelegate.swift"; sourceTree = "<group>"; };
 		12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDisplayViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +311,14 @@
 				12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */,
 			);
 			name = PlacesActions;
+			sourceTree = "<group>";
+		};
+		1227677A28AED66A00207EEA /* AlertControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1227677B28AED67B00207EEA /* InfoManager.swift */,
+			);
+			path = AlertControllers;
 			sourceTree = "<group>";
 		};
 		123F7B66289DBBC90008444D /* Subviews */ = {
@@ -716,8 +728,9 @@
 		12F13503289D98BD00363CF6 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				1267F13528A595DA0025071C /* ViewControllers */,
 				123F7B73289DC7C30008444D /* PaddedTextField.swift */,
+				1227677A28AED66A00207EEA /* AlertControllers */,
+				1267F13528A595DA0025071C /* ViewControllers */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -760,6 +773,7 @@
 		12F7560B289EA0AE00773D46 /* LocationSearch */ = {
 			isa = PBXGroup;
 			children = (
+				1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */,
 				12F7560D289EA0C800773D46 /* ViewModel */,
 				12F7560C289EA0C400773D46 /* View */,
 			);
@@ -770,7 +784,7 @@
 			isa = PBXGroup;
 			children = (
 				12F75612289EA17300773D46 /* LocationSearchController.swift */,
-				12F7561B289EAB3400773D46 /* Subviews */,
+				1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -791,14 +805,6 @@
 				12F75617289EA2ED00773D46 /* LocationsStore.swift */,
 			);
 			path = LocationsStore;
-			sourceTree = "<group>";
-		};
-		12F7561B289EAB3400773D46 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-				12F7561C289EAB4000773D46 /* LocationSearchCell.swift */,
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		12F781D428A7E4890061AE51 /* Subviews */ = {
@@ -1169,9 +1175,11 @@
 				12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */,
 				12F13507289D9AB500363CF6 /* SFSymbols.swift in Sources */,
 				12F781DA28A821410061AE51 /* PlaceDisplayViewModel.swift in Sources */,
+				1227677C28AED67B00207EEA /* InfoManager.swift in Sources */,
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
 				12F134FC289D922700363CF6 /* Sizes.swift in Sources */,
 				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
+				1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */,
 				1219EF7228A90A10001AEED7 /* RxGeocoder.swift in Sources */,
 				12F134F4289D89E100363CF6 /* TripsListViewModel.swift in Sources */,
 				12F134D9289D846500363CF6 /* Location.swift in Sources */,
@@ -1183,7 +1191,6 @@
 				125511A1289C590D0088B38B /* CDStackType.swift in Sources */,
 				12F134EA289D896300363CF6 /* CDLocation+CoreDataClass.swift in Sources */,
 				12F05EA7289E7B6D00A0C4AB /* RxString.swift in Sources */,
-				12F7561D289EAB4000773D46 /* LocationSearchCell.swift in Sources */,
 				12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */,
 				12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */,
 				1267F13E28A5A21D0025071C /* LocationDisplayViewModelType.swift in Sources */,
@@ -1197,6 +1204,7 @@
 				1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */,
 				1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */,
 				12F134F2289D89D200363CF6 /* TripsListViewModelType.swift in Sources */,
+				1227677E28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift in Sources */,
 				12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */,
 				123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */,
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
