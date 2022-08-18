@@ -54,7 +54,6 @@ class LocationsStore: LocationsStoreType {
                         .materialize()
                 } else {
                     return self.geoCoder.rx.locations(for: search)
-                        .trackActivity(self.isLoading)
                         .map { placemarks in
                             placemarks
                                 .filter { $0.location != nil }
