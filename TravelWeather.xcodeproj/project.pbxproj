@@ -33,6 +33,10 @@
 		123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B71289DC69F0008444D /* UIViewExt.swift */; };
 		123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B73289DC7C30008444D /* PaddedTextField.swift */; };
 		123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123F7B75289DC9110008444D /* UIButtonExt.swift */; };
+		1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1244568F28B293F8008C9FCE /* TestableCDStack.swift */; };
+		1244569628B29786008C9FCE /* TripsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1244569528B29786008C9FCE /* TripsStoreTests.swift */; };
+		1244569828B299B9008C9FCE /* TravelWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1244569728B299B9008C9FCE /* TravelWeatherUITests.swift */; };
+		1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1244569928B2A038008C9FCE /* PlacesStoreTests.swift */; };
 		125511A1289C590D0088B38B /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A0289C590D0088B38B /* CDStackType.swift */; };
 		125511A3289C5A690088B38B /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A2289C5A690088B38B /* CDAction.swift */; };
 		1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED60289D6D710008C9EE /* DefaultCDStack.swift */; };
@@ -55,9 +59,6 @@
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
 		12E063A5289C5422007B09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A4289C5422007B09BE /* Assets.xcassets */; };
 		12E063A8289C5422007B09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A6289C5422007B09BE /* LaunchScreen.storyboard */; };
-		12E063B3289C5422007B09BE /* TravelWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E063B2289C5422007B09BE /* TravelWeatherTests.swift */; };
-		12E063BD289C5422007B09BE /* TravelWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E063BC289C5422007B09BE /* TravelWeatherUITests.swift */; };
-		12E063BF289C5422007B09BE /* TravelWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E063BE289C5422007B09BE /* TravelWeatherUITestsLaunchTests.swift */; };
 		12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880A289E5B6100E3EA07 /* CDTripExt.swift */; };
 		12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */; };
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
@@ -162,6 +163,10 @@
 		123F7B71289DC69F0008444D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		123F7B73289DC7C30008444D /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		123F7B75289DC9110008444D /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		1244568F28B293F8008C9FCE /* TestableCDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableCDStack.swift; sourceTree = "<group>"; };
+		1244569528B29786008C9FCE /* TripsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsStoreTests.swift; sourceTree = "<group>"; };
+		1244569728B299B9008C9FCE /* TravelWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelWeatherUITests.swift; sourceTree = "<group>"; };
+		1244569928B2A038008C9FCE /* PlacesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStoreTests.swift; sourceTree = "<group>"; };
 		125511A0289C590D0088B38B /* CDStackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStackType.swift; sourceTree = "<group>"; };
 		125511A2289C5A690088B38B /* CDAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAction.swift; sourceTree = "<group>"; };
 		1260ED60289D6D710008C9EE /* DefaultCDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCDStack.swift; sourceTree = "<group>"; };
@@ -187,10 +192,7 @@
 		12E063A7289C5422007B09BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12E063A9289C5422007B09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E063AE289C5422007B09BE /* TravelWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12E063B2289C5422007B09BE /* TravelWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelWeatherTests.swift; sourceTree = "<group>"; };
 		12E063B8289C5422007B09BE /* TravelWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12E063BC289C5422007B09BE /* TravelWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelWeatherUITests.swift; sourceTree = "<group>"; };
-		12E063BE289C5422007B09BE /* TravelWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		12EF880A289E5B6100E3EA07 /* CDTripExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
@@ -328,6 +330,62 @@
 				123F7B6F289DC61E0008444D /* TitledTextView.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		1244568C28B293C9008C9FCE /* MockDependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1244569128B29717008C9FCE /* CoreData */,
+				1244569228B29720008C9FCE /* MockStores */,
+				1244569428B2973D008C9FCE /* MockNetworking */,
+				1244569328B2972F008C9FCE /* MockViewModels */,
+			);
+			path = MockDependencies;
+			sourceTree = "<group>";
+		};
+		1244568D28B293D1008C9FCE /* StoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				1244569528B29786008C9FCE /* TripsStoreTests.swift */,
+				1244569928B2A038008C9FCE /* PlacesStoreTests.swift */,
+			);
+			path = StoreTests;
+			sourceTree = "<group>";
+		};
+		1244568E28B293DA008C9FCE /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		1244569128B29717008C9FCE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1244568F28B293F8008C9FCE /* TestableCDStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1244569228B29720008C9FCE /* MockStores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockStores;
+			sourceTree = "<group>";
+		};
+		1244569328B2972F008C9FCE /* MockViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockViewModels;
+			sourceTree = "<group>";
+		};
+		1244569428B2973D008C9FCE /* MockNetworking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockNetworking;
 			sourceTree = "<group>";
 		};
 		1255119C289C58D10088B38B /* Application */ = {
@@ -542,7 +600,9 @@
 		12E063B1289C5422007B09BE /* TravelWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				12E063B2289C5422007B09BE /* TravelWeatherTests.swift */,
+				1244568C28B293C9008C9FCE /* MockDependencies */,
+				1244568D28B293D1008C9FCE /* StoreTests */,
+				1244568E28B293DA008C9FCE /* ViewModelTests */,
 			);
 			path = TravelWeatherTests;
 			sourceTree = "<group>";
@@ -550,8 +610,7 @@
 		12E063BB289C5422007B09BE /* TravelWeatherUITests */ = {
 			isa = PBXGroup;
 			children = (
-				12E063BC289C5422007B09BE /* TravelWeatherUITests.swift */,
-				12E063BE289C5422007B09BE /* TravelWeatherUITestsLaunchTests.swift */,
+				1244569728B299B9008C9FCE /* TravelWeatherUITests.swift */,
 			);
 			path = TravelWeatherUITests;
 			sourceTree = "<group>";
@@ -925,10 +984,12 @@
 					};
 					12E063AD289C5422007B09BE = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 12E06394289C541F007B09BE;
 					};
 					12E063B7289C5422007B09BE = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 						TestTargetID = 12E06394289C541F007B09BE;
 					};
 				};
@@ -1247,7 +1308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E063B3289C5422007B09BE /* TravelWeatherTests.swift in Sources */,
+				1244569628B29786008C9FCE /* TripsStoreTests.swift in Sources */,
+				1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */,
+				1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1255,8 +1318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E063BD289C5422007B09BE /* TravelWeatherUITests.swift in Sources */,
-				12E063BF289C5422007B09BE /* TravelWeatherUITestsLaunchTests.swift in Sources */,
+				1244569828B299B9008C9FCE /* TravelWeatherUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1465,14 +1527,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TravelWeather.app/TravelWeather";
@@ -1485,10 +1554,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1504,13 +1579,20 @@
 			baseConfigurationReference = C58011BB187E34E966F39A3C /* Pods-TravelWeather-TravelWeatherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TravelWeather;
@@ -1522,9 +1604,15 @@
 			baseConfigurationReference = 459FD75C035C2DF8060F39B2 /* Pods-TravelWeather-TravelWeatherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
