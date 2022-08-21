@@ -172,9 +172,7 @@ class PlacesStoreTests: XCTestCase {
     }
     
     func prepareLocations() throws -> [Location] {
-        
-        
-        let action = CDUpdateLocations(locations: [berlin, hamburg, bremen])
+        let action = CDUpdateLocations(locations: MockLocationAPI.mockedLocations)
         cdStack.dispatch(action)
         
         let query = CDLocation.fetchRequest()
