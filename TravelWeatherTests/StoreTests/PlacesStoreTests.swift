@@ -172,21 +172,7 @@ class PlacesStoreTests: XCTestCase {
     }
     
     func prepareLocations() throws -> [Location] {
-        let berlin = Location(
-            id: LocationID(),
-            name: "Berlin",
-            coordinate: Coordinate(latitude: 52.529, longitude: 13.381)
-        )
-        let hamburg = Location(
-            id: LocationID(),
-            name: "Hamburg",
-            coordinate: Coordinate(latitude: 53.548, longitude: 9.991)
-        )
-        let bremen = Location(
-            id: LocationID(),
-            name: "Bremen",
-            coordinate: Coordinate(latitude: 53.082, longitude: 8.816)
-        )
+        
         
         let action = CDUpdateLocations(locations: [berlin, hamburg, bremen])
         cdStack.dispatch(action)
