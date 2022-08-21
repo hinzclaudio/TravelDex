@@ -29,7 +29,6 @@ class AppCoordinator: CoordinatorType {
     
     func start() {
         window?.rootViewController = navigationController
-        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.modalPresentationStyle = .automatic
         
         GeneralStyleManager.style(navigationController.navigationBar)
