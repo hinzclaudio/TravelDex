@@ -13,7 +13,7 @@ import RxSwift
 
 extension Reactive where Base == CLGeocoder {
     
-    func locations(for search: String) -> Observable<[CLPlacemark]> {
+    func clPlacemarks(for search: String) -> Observable<[CLPlacemark]> {
         Observable.create { observer in
             base.geocodeAddressString(search) { (placemarks, error) in
                 if let error = error {
@@ -30,6 +30,44 @@ extension Reactive where Base == CLGeocoder {
                 base.cancelGeocode()
             }
         }
+    }
+    
+}
+
+
+
+extension Observable where Element == [CLPlacemark] {
+    
+    var asLocations: Observable<[Location]> {
+        self
+            .map { placemarks in
+                placemarks
+                    .filter { $0.location != nil }
+                    .map { mark -> Location in
+                        let regionString: String?
+                        if let locality = mark.locality {
+                            if let subLoc = mark.subLocality {
+                                regionString = "\(locality), \(subLoc)"
+                            } else{
+                                regionString = locality
+                            }
+                        } else {
+                            regionString = mark.subLocality
+                        }
+                        
+                        return Location(
+                            id: LocationID(),
+                            name: mark.name ?? "",
+                            region: regionString,
+                            country: mark.country,
+                            coordinate: Coordinate(
+                                latitude: mark.location!.coordinate.latitude,
+                                longitude: mark.location!.coordinate.longitude
+                            ),
+                            timezoneIdentifier: mark.timeZone?.identifier
+                        )
+                    }
+            }
     }
     
 }

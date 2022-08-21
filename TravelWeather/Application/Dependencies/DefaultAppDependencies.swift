@@ -37,7 +37,7 @@ class DefaultAppDependencies: AppDependencies {
         self.locationsStore = LocationsStore(
             context: cdStack.storeContext,
             dispatch: cdStack.dispatch(_:),
-            geoCoder: geoCoder
+            locationAPI: geoCoder
         )
     }
     

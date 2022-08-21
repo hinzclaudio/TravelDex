@@ -39,6 +39,9 @@
 		1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1244569928B2A038008C9FCE /* PlacesStoreTests.swift */; };
 		125511A1289C590D0088B38B /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A0289C590D0088B38B /* CDStackType.swift */; };
 		125511A3289C5A690088B38B /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125511A2289C5A690088B38B /* CDAction.swift */; };
+		125C1A1B28B2BF9E008B495D /* LocationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C1A1A28B2BF9E008B495D /* LocationsStoreTests.swift */; };
+		125C1A1E28B2C4EE008B495D /* LocationAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C1A1D28B2C4EE008B495D /* LocationAPIType.swift */; };
+		125C1A2028B2C5A1008B495D /* CLGeocoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C1A1F28B2C5A1008B495D /* CLGeocoderExtension.swift */; };
 		1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED60289D6D710008C9EE /* DefaultCDStack.swift */; };
 		1260ED64289D6DBE0008C9EE /* FileManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED63289D6DBE0008C9EE /* FileManagerExt.swift */; };
 		1260ED68289D6E070008C9EE /* CDMigrationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1260ED67289D6E070008C9EE /* CDMigrationStep.swift */; };
@@ -169,6 +172,9 @@
 		1244569928B2A038008C9FCE /* PlacesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesStoreTests.swift; sourceTree = "<group>"; };
 		125511A0289C590D0088B38B /* CDStackType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDStackType.swift; sourceTree = "<group>"; };
 		125511A2289C5A690088B38B /* CDAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAction.swift; sourceTree = "<group>"; };
+		125C1A1A28B2BF9E008B495D /* LocationsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStoreTests.swift; sourceTree = "<group>"; };
+		125C1A1D28B2C4EE008B495D /* LocationAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPIType.swift; sourceTree = "<group>"; };
+		125C1A1F28B2C5A1008B495D /* CLGeocoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLGeocoderExtension.swift; sourceTree = "<group>"; };
 		1260ED60289D6D710008C9EE /* DefaultCDStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCDStack.swift; sourceTree = "<group>"; };
 		1260ED63289D6DBE0008C9EE /* FileManagerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExt.swift; sourceTree = "<group>"; };
 		1260ED67289D6E070008C9EE /* CDMigrationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMigrationStep.swift; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 			children = (
 				1244569528B29786008C9FCE /* TripsStoreTests.swift */,
 				1244569928B2A038008C9FCE /* PlacesStoreTests.swift */,
+				125C1A1A28B2BF9E008B495D /* LocationsStoreTests.swift */,
 			);
 			path = StoreTests;
 			sourceTree = "<group>";
@@ -440,6 +447,15 @@
 				12F134DD289D856A00363CF6 /* Extensions */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		125C1A1C28B2C4E3008B495D /* LocationAPI */ = {
+			isa = PBXGroup;
+			children = (
+				125C1A1D28B2C4EE008B495D /* LocationAPIType.swift */,
+				125C1A1F28B2C5A1008B495D /* CLGeocoderExtension.swift */,
+			);
+			path = LocationAPI;
 			sourceTree = "<group>";
 		};
 		1260ED62289D6DAE0008C9EE /* Extensions */ = {
@@ -860,6 +876,7 @@
 		12F75614289EA2DD00773D46 /* LocationsStore */ = {
 			isa = PBXGroup;
 			children = (
+				125C1A1C28B2C4E3008B495D /* LocationAPI */,
 				12F75615289EA2E500773D46 /* LocationsStoreType.swift */,
 				12F75617289EA2ED00773D46 /* LocationsStore.swift */,
 			);
@@ -1221,9 +1238,11 @@
 				12F1350C289D9C9E00363CF6 /* EditTripViewModelType.swift in Sources */,
 				12EF8817289E6EA500E3EA07 /* TripsListTableCell.swift in Sources */,
 				12F134BC289D795C00363CF6 /* CoordinatorType.swift in Sources */,
+				125C1A1E28B2C4EE008B495D /* LocationAPIType.swift in Sources */,
 				123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */,
 				1211078428A00F4C0046E8A9 /* AddedPlaceItem.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
+				125C1A2028B2C5A1008B495D /* CLGeocoderExtension.swift in Sources */,
 				120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */,
 				12F781DC28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift in Sources */,
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
@@ -1308,6 +1327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125C1A1B28B2BF9E008B495D /* LocationsStoreTests.swift in Sources */,
 				1244569628B29786008C9FCE /* TripsStoreTests.swift in Sources */,
 				1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */,
 				1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */,

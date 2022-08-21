@@ -17,12 +17,16 @@ class LocationsStore: LocationsStoreType {
     
     private let context: NSManagedObjectContext
     private let dispatch: (CDAction) -> Void
-    private let geoCoder: CLGeocoder
+    private let locationAPI: LocationAPIType
     
-    init(context: NSManagedObjectContext, dispatch: @escaping (CDAction) -> Void, geoCoder: CLGeocoder) {
+    init(
+        context: NSManagedObjectContext,
+        dispatch: @escaping (CDAction) -> Void,
+        locationAPI: LocationAPIType
+    ) {
         self.context = context
         self.dispatch = dispatch
-        self.geoCoder = geoCoder
+        self.locationAPI = locationAPI
     }
     
     var apiError = PublishSubject<Error>()
@@ -53,35 +57,8 @@ class LocationsStore: LocationsStoreType {
                     return self.allLocations()
                         .materialize()
                 } else {
-                    return self.geoCoder.rx.locations(for: search)
-                        .map { placemarks in
-                            placemarks
-                                .filter { $0.location != nil }
-                                .map { mark -> Location in
-                                    let regionString: String?
-                                    if let locality = mark.locality {
-                                        if let subLoc = mark.subLocality {
-                                            regionString = "\(locality), \(subLoc)"
-                                        } else{
-                                            regionString = locality
-                                        }
-                                    } else {
-                                        regionString = mark.subLocality
-                                    }
-                                    
-                                    return Location(
-                                        id: LocationID(),
-                                        name: mark.name ?? "",
-                                        region: regionString,
-                                        country: mark.country,
-                                        coordinate: Coordinate(
-                                            latitude: mark.location!.coordinate.latitude,
-                                            longitude: mark.location!.coordinate.longitude
-                                        ),
-                                        timezoneIdentifier: mark.timeZone?.identifier
-                                    )
-                                }
-                        }
+                    return self.locationAPI
+                        .getLocations(search: search)
                         .materialize()
                 }
             }
