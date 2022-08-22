@@ -65,6 +65,7 @@ class TripsListController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         view.backgroundColor = Colors.veryDark
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         tableView.register(TripsListTableCell.self, forCellReuseIdentifier: TripsListTableCell.identifier)
     }
     

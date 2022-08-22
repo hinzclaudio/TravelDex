@@ -14,7 +14,7 @@ class TripsListTableCell: UITableViewCell {
     static let identifier = "TripsListTableViewCell"
     
     // MARK: - Views
-    private let view = TripCell()
+    let view = TripCell()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -44,6 +44,7 @@ class TripsListTableCell: UITableViewCell {
     }
     
     private func setAutoLayout() {
+        contentView.backgroundColor = .clear
         view.autoPinEdge(.top, to: .top, of: contentView)
         view.autoPinEdge(.left, to: .left, of: contentView)
         view.autoPinEdge(.right, to: .right, of: contentView)

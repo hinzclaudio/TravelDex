@@ -53,7 +53,9 @@ class AppCoordinator: CoordinatorType {
     
     
     func select(_ trip: Trip) {
-        let controller = preview(for: trip)
+        let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
+        vm.coordinator = self
+        let controller = AddPlacesController(viewModel: vm)
         navigationController.pushViewController(controller, animated: true)
     }
     
@@ -63,13 +65,6 @@ class AppCoordinator: CoordinatorType {
         vm.coordinator = self
         let controller = EditTripController(viewModel: vm)
         presentModally(controller)
-    }
-    
-    
-    func preview(for trip: Trip) -> UIViewController {
-        let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
-        vm.coordinator = self
-        return AddPlacesController(viewModel: vm)
     }
     
     

@@ -75,7 +75,6 @@
 		12EDDEE228B3751C00D57DB2 /* MockLocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */; };
 		12EDDEE428B3878100D57DB2 /* TripsListController_TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE328B3878100D57DB2 /* TripsListController_TableDelegate.swift */; };
 		12EDDEE628B3891500D57DB2 /* CDDeleteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE528B3891500D57DB2 /* CDDeleteTrip.swift */; };
-		12EDDEE828B38AA700D57DB2 /* DummyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE728B38AA700D57DB2 /* DummyController.swift */; };
 		12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880A289E5B6100E3EA07 /* CDTripExt.swift */; };
 		12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */; };
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
@@ -226,7 +225,6 @@
 		12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationsStore.swift; sourceTree = "<group>"; };
 		12EDDEE328B3878100D57DB2 /* TripsListController_TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListController_TableDelegate.swift; sourceTree = "<group>"; };
 		12EDDEE528B3891500D57DB2 /* CDDeleteTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteTrip.swift; sourceTree = "<group>"; };
-		12EDDEE728B38AA700D57DB2 /* DummyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyController.swift; sourceTree = "<group>"; };
 		12EF880A289E5B6100E3EA07 /* CDTripExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
@@ -804,7 +802,6 @@
 				12F134F5289D8A1900363CF6 /* TripsListController.swift */,
 				12EDDEE328B3878100D57DB2 /* TripsListController_TableDelegate.swift */,
 				12EF8815289E6E9700E3EA07 /* Subviews */,
-				12EDDEE728B38AA700D57DB2 /* DummyController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1352,7 +1349,6 @@
 				12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */,
 				12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */,
 				12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */,
-				12EDDEE828B38AA700D57DB2 /* DummyController.swift in Sources */,
 				12F05EAE289E804700A0C4AB /* AddPlacesViewModel.swift in Sources */,
 				12F13512289D9D1000363CF6 /* ModalNavigationContainer.swift in Sources */,
 				123F7B76289DC9110008444D /* UIButtonExt.swift in Sources */,

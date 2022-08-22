@@ -12,8 +12,8 @@ import UIKit
 class TripCell: UIView {
     
     // MARK: - Views
-    private let containerView = UIView()
-    private let labelStack = UIStackView.defaultContentStack(withSpacing: 0.5 * Sizes.defaultMargin)
+    let containerView = UIView()
+    let labelStack = UIStackView.defaultContentStack(withSpacing: 0.5 * Sizes.defaultMargin)
     
     
     override init(frame: CGRect = .zero) {

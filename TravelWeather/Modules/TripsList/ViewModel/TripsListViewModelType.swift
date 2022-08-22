@@ -23,6 +23,5 @@ protocol TripsListViewModelType {
     
     // MARK: - Output
     func trips(for search: Observable<String>) -> Driver<[Trip]>
-    func preview(for trip: Trip) -> UIViewController?
     
 }

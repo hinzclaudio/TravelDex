@@ -61,9 +61,4 @@ class TripsListVieModel: TripsListViewModelType {
             .asDriver(onErrorJustReturn: [])
     }
     
-    func preview(for trip: Trip) -> UIViewController? {
-        coordinator?.preview(for: trip)
-    }
-    
-    
 }
