@@ -24,7 +24,7 @@ class TripsStore: TripsStoreType {
     
     
     // MARK: - Input
-    func addTrip(_ trip: Observable<Trip>) -> Disposable {
+    func update(_ trip: Observable<Trip>) -> Disposable {
         trip
             .map { CDUpdateTrip(trip: $0) }
             .subscribe(onNext: { [weak self] in self?.dispatch($0) } )

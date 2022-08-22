@@ -13,7 +13,7 @@ import RxSwift
 protocol TripsStoreType {
     
     // MARK: - Input
-    func addTrip(_ trip: Observable<Trip>) -> Disposable
+    func update(_ trip: Observable<Trip>) -> Disposable
     func delete(_ trip: Observable<Trip>) -> Disposable
     
     

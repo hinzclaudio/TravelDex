@@ -81,10 +81,22 @@ class EditTripController: ScrollableVStackController {
     }
     
     private func setupRx() {
+        // Here, a simple binding by using .rx.text is not possible as the control
+        // state is always reset when setting a new value. We can prevent this by also binding
+        // to our own relay.
+        let titleTextRelay = BehaviorRelay(value: "")
         viewModel.trip
             .map { $0?.title }
             .drive(titleTf.tf.rx.text)
             .disposed(by: bag)
+        viewModel.trip
+            .compactMap { $0?.title }
+            .drive(titleTextRelay)
+            .disposed(by: bag)
+        titleTf.tf.rx.text.orEmpty
+            .bind(to: titleTextRelay)
+            .disposed(by: bag)
+        
         viewModel.trip
             .map { $0?.descr }
             .drive(descrTf.textView.rx.text)
@@ -98,13 +110,12 @@ class EditTripController: ScrollableVStackController {
             .disposed(by: bag)
         
         let tripId = TripID()
-        let title = titleTf.tf.rx.text.compactMap { $0 }
         let descr = descrTf.textView.rx.text.asObservable().nilIfEmpty
         let members = membersTf.textView.rx.text.asObservable().nilIfEmpty
         
         let editedTrip = Observable.combineLatest(
             viewModel.trip.asObservable(),
-            title,
+            titleTextRelay,
             descr,
             members
         )

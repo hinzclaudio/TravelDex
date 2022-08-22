@@ -65,7 +65,7 @@ class TripsStoreTests: XCTestCase {
         let updatedTrip = addedTrip.cloneBuilder()
             .with(title: "Different Mocked Title")
             .build()!
-        let _ = store.addTrip(.just(updatedTrip))
+        let _ = store.update(.just(updatedTrip))
         
         let fetchedTrips = try store.trips(forSearch: "")
             .filter { $0.first?.title == updatedTrip.title }
@@ -195,7 +195,7 @@ class TripsStoreTests: XCTestCase {
     
     // MARK: - Helper
     func add(mockedTrip: Trip) throws -> Trip {
-        let _ = store.addTrip(.just(mockedTrip))
+        let _ = store.update(.just(mockedTrip))
         let addedTrip = try store.trips(forSearch: mockedTrip.title)
             .compactMap { $0.first }
             .toBlocking(timeout: 5)

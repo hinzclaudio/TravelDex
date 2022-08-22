@@ -29,7 +29,7 @@ class EditTripViewModel: EditTripViewModelType {
         let coordinatorAction = trip
             .subscribe( onNext: { [weak self] trip in self?.coordinator?.didUpdate(trip) })
         let storeAction = dependencies.tripsStore
-            .addTrip(trip)
+            .update(trip)
         return Disposables.create {
             coordinatorAction.dispose()
             storeAction.dispose()
