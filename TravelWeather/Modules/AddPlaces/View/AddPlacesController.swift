@@ -17,9 +17,12 @@ class AddPlacesController: ScrollableVStackController {
     
     // MARK: - Views
     let mapButton = UIBarButtonItem()
+    let addButton = UIBarButtonItem(systemItem: .add)
+    
     let headerView = TripCell()
     let placesStack = UIStackView.defaultContentStack(withSpacing: 0)
-    let addButton = UIButton()
+    let saveButton = UIButton(type: .system)
+    
     
     
     init(viewModel: AddPlacesViewModelType) {
@@ -48,26 +51,20 @@ class AddPlacesController: ScrollableVStackController {
     }
     
     private func addViews() {
-        navigationItem.setRightBarButton(mapButton, animated: false)
+        navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         contentStack.addArrangedSubview(headerView)
         contentStack.addArrangedSubview(placesStack)
-        contentStack.addArrangedSubview(addButton)
     }
     
     private func configureViews() {
         navigationItem.title = "Add Places"
         view.backgroundColor = Colors.veryDark
         mapButton.image = SFSymbol.map.image
-        addButton.styleBorderedButton()
-        addButton.setTitle("Add Place", for: .normal)
     }
     
     private func setAutoLayout() {
         headerView.autoMatch(.width, to: .width, of: view)
         placesStack.autoMatch(.width, to: .width, of: contentStack)
-        contentStack.setCustomSpacing(1.5 * Sizes.defaultMargin, after: placesStack)
-        addButton.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
-        addButton.autoMatch(.width, to: .width, of: view, withOffset: -2 * Sizes.defaultMargin)
     }
     
     private func setupBinding() {
@@ -76,11 +73,6 @@ class AddPlacesController: ScrollableVStackController {
         
         viewModel.trip
             .drive(onNext: { [weak self] trip in self?.headerView.configure(for: trip) })
-            .disposed(by: bag)
-        viewModel.trip
-            .map { $0.visitedLocations.count == 0 }
-            .distinctUntilChanged()
-            .drive(placesStack.rx.isHidden)
             .disposed(by: bag)
 
         viewModel.addedPlaces
