@@ -66,6 +66,7 @@ class LocationsStore: LocationsStoreType {
         
         result
             .compactMap { $0.event.error }
+            .debug("ERROR")
             .bind(to: apiError)
             .disposed(by: bag)
         

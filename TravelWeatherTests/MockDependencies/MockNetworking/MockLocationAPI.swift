@@ -37,12 +37,31 @@ class MockLocationAPI: LocationAPIType {
     }
     
     
+    
     // MARK: - Instance
     func getLocations(search: String) -> Observable<[Location]> {
         .just(MockLocationAPI.mockedLocations)
         .map { allLocations in
             allLocations
-                .filter { loc in loc.name.lowercased().contains(search) }
+                .filter { loc in loc.name.lowercased().contains(search.lowercased()) }
+        }
+    }
+    
+}
+
+
+
+class MockLocationErrorAPI: LocationAPIType {
+    
+    enum MockError: Error {
+        case mockedErrorCase
+    }
+    
+    // MARK: - Instance
+    func getLocations(search: String) -> Observable<[Location]> {
+        Observable.create { observer in
+            observer.onError(MockError.mockedErrorCase)
+            return Disposables.create()
         }
     }
     

@@ -8,8 +8,9 @@
 import Foundation
 import XCTest
 import RxBlocking
+import RxSwift
+import RxRelay
 @testable import TravelWeather
-
 
 
 
@@ -30,13 +31,73 @@ class LocationsStoreTests: XCTestCase {
     }
     
     
-    func testExample() throws {
-        // TODO: Implement.
+    func testAllLocationsIsEmptyInitially() throws {
+        let locs = try store.allLocations()
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNotNil(locs)
+        XCTAssertEqual(locs?.count, 0)
     }
     
+    func testAddLocationProducesCorrectResult() throws {
+        let berlin = MockLocationAPI.berlin
+        let _ = store.add(.just(berlin))
+        let fetchedLocation = try store
+            .allLocations()
+            .compactMap { $0.first }
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNotNil(fetchedLocation)
+        XCTAssertEqual(fetchedLocation, berlin)
+    }
     
-//    [ ] var error: Observable<Error> { get }
-//    [ ] func add(_ location: Observable<Location>) -> Disposable
-//    [ ] func allLocations() -> Observable<[Location]>
-//    [ ] func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]>
+    func testLocationsWithEmptyQueryReturnsAllLocations() throws {
+        let _ = store.add(.of(MockLocationAPI.berlin, MockLocationAPI.bremen))
+        let fetchedLocations = try store
+            .locations(for: .just(""), bag: DisposeBag())
+            .filter { $0.count == 2 }
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNotNil(fetchedLocations)
+        XCTAssertEqual(fetchedLocations, [MockLocationAPI.berlin, MockLocationAPI.bremen])
+    }
+    
+    func testSearchForLocationProducesAPIResult() throws {
+        let fetchedLocations = try store
+            .locations(for: .just("Hamburg"), bag: DisposeBag())
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(fetchedLocations)
+        XCTAssertEqual(fetchedLocations, [MockLocationAPI.hamburg])
+    }
+    
+    func testSearchWithErrorIsPublished() throws {
+        self.store = LocationsStore(
+            context: cdStack.storeContext,
+            dispatch: cdStack.dispatch(_:),
+            locationAPI: MockLocationErrorAPI()
+        )
+        
+        let bag = DisposeBag()
+        
+        let recordedErrors = BehaviorRelay<Error?>(value: nil)
+        store.error.bind(to: recordedErrors)
+            .disposed(by: bag)
+        
+        let locations = try store.locations(for: .just("TEST"), bag: bag)
+            .toBlocking(timeout: 5)
+            .first()
+        
+        let publishedError = try recordedErrors
+            .compactMap { $0 }
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNil(locations)
+        XCTAssertNotNil(publishedError)
+    }
+    
 }
