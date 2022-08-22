@@ -63,6 +63,16 @@
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
 		12E063A5289C5422007B09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A4289C5422007B09BE /* Assets.xcassets */; };
 		12E063A8289C5422007B09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A6289C5422007B09BE /* LaunchScreen.storyboard */; };
+		12EDDED028B36C2900D57DB2 /* AddPlacesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */; };
+		12EDDED228B36C3800D57DB2 /* EditTripViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */; };
+		12EDDED428B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */; };
+		12EDDED628B36C4D00D57DB2 /* LocationSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */; };
+		12EDDED828B36C5700D57DB2 /* TripsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */; };
+		12EDDEDA28B36D4F00D57DB2 /* MockLocationErrorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED928B36D4F00D57DB2 /* MockLocationErrorAPI.swift */; };
+		12EDDEDC28B36D7A00D57DB2 /* MockDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEDB28B36D7A00D57DB2 /* MockDependencies.swift */; };
+		12EDDEDE28B370D400D57DB2 /* MockTripsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEDD28B370D400D57DB2 /* MockTripsStore.swift */; };
+		12EDDEE028B3728800D57DB2 /* MockPlacesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEDF28B3728800D57DB2 /* MockPlacesStore.swift */; };
+		12EDDEE228B3751C00D57DB2 /* MockLocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */; };
 		12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880A289E5B6100E3EA07 /* CDTripExt.swift */; };
 		12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */; };
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
@@ -201,6 +211,16 @@
 		12E063A9289C5422007B09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E063AE289C5422007B09BE /* TravelWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E063B8289C5422007B09BE /* TravelWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesViewModelTests.swift; sourceTree = "<group>"; };
+		12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewModelTests.swift; sourceTree = "<group>"; };
+		12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDisplayViewModelTests.swift; sourceTree = "<group>"; };
+		12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModelTests.swift; sourceTree = "<group>"; };
+		12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListViewModelTests.swift; sourceTree = "<group>"; };
+		12EDDED928B36D4F00D57DB2 /* MockLocationErrorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationErrorAPI.swift; sourceTree = "<group>"; };
+		12EDDEDB28B36D7A00D57DB2 /* MockDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDependencies.swift; sourceTree = "<group>"; };
+		12EDDEDD28B370D400D57DB2 /* MockTripsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTripsStore.swift; sourceTree = "<group>"; };
+		12EDDEDF28B3728800D57DB2 /* MockPlacesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlacesStore.swift; sourceTree = "<group>"; };
+		12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationsStore.swift; sourceTree = "<group>"; };
 		12EF880A289E5B6100E3EA07 /* CDTripExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
@@ -343,10 +363,10 @@
 		1244568C28B293C9008C9FCE /* MockDependencies */ = {
 			isa = PBXGroup;
 			children = (
+				12EDDEDB28B36D7A00D57DB2 /* MockDependencies.swift */,
 				1244569128B29717008C9FCE /* CoreData */,
 				1244569228B29720008C9FCE /* MockStores */,
 				1244569428B2973D008C9FCE /* MockNetworking */,
-				1244569328B2972F008C9FCE /* MockViewModels */,
 			);
 			path = MockDependencies;
 			sourceTree = "<group>";
@@ -364,6 +384,11 @@
 		1244568E28B293DA008C9FCE /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */,
+				12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */,
+				12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */,
+				12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */,
+				12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -379,21 +404,18 @@
 		1244569228B29720008C9FCE /* MockStores */ = {
 			isa = PBXGroup;
 			children = (
+				12EDDEDD28B370D400D57DB2 /* MockTripsStore.swift */,
+				12EDDEDF28B3728800D57DB2 /* MockPlacesStore.swift */,
+				12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */,
 			);
 			path = MockStores;
-			sourceTree = "<group>";
-		};
-		1244569328B2972F008C9FCE /* MockViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MockViewModels;
 			sourceTree = "<group>";
 		};
 		1244569428B2973D008C9FCE /* MockNetworking */ = {
 			isa = PBXGroup;
 			children = (
 				125C1A2128B2C718008B495D /* MockLocationAPI.swift */,
+				12EDDED928B36D4F00D57DB2 /* MockLocationErrorAPI.swift */,
 			);
 			path = MockNetworking;
 			sourceTree = "<group>";
@@ -1330,11 +1352,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12EDDED628B36C4D00D57DB2 /* LocationSearchViewModelTests.swift in Sources */,
+				12EDDED428B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift in Sources */,
+				12EDDED028B36C2900D57DB2 /* AddPlacesViewModelTests.swift in Sources */,
+				12EDDED228B36C3800D57DB2 /* EditTripViewModelTests.swift in Sources */,
 				125C1A2228B2C718008B495D /* MockLocationAPI.swift in Sources */,
+				12EDDEE228B3751C00D57DB2 /* MockLocationsStore.swift in Sources */,
 				125C1A1B28B2BF9E008B495D /* LocationsStoreTests.swift in Sources */,
+				12EDDEDC28B36D7A00D57DB2 /* MockDependencies.swift in Sources */,
+				12EDDEDA28B36D4F00D57DB2 /* MockLocationErrorAPI.swift in Sources */,
 				1244569628B29786008C9FCE /* TripsStoreTests.swift in Sources */,
+				12EDDEE028B3728800D57DB2 /* MockPlacesStore.swift in Sources */,
+				12EDDEDE28B370D400D57DB2 /* MockTripsStore.swift in Sources */,
 				1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */,
 				1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */,
+				12EDDED828B36C5700D57DB2 /* TripsListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

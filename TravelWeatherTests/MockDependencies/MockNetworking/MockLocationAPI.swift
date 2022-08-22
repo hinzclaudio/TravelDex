@@ -48,21 +48,3 @@ class MockLocationAPI: LocationAPIType {
     }
     
 }
-
-
-
-class MockLocationErrorAPI: LocationAPIType {
-    
-    enum MockError: Error {
-        case mockedErrorCase
-    }
-    
-    // MARK: - Instance
-    func getLocations(search: String) -> Observable<[Location]> {
-        Observable.create { observer in
-            observer.onError(MockError.mockedErrorCase)
-            return Disposables.create()
-        }
-    }
-    
-}
