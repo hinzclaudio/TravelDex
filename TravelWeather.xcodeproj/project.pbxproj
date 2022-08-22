@@ -75,6 +75,9 @@
 		12EDDEE228B3751C00D57DB2 /* MockLocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */; };
 		12EDDEE428B3878100D57DB2 /* TripsListController_TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE328B3878100D57DB2 /* TripsListController_TableDelegate.swift */; };
 		12EDDEE628B3891500D57DB2 /* CDDeleteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEE528B3891500D57DB2 /* CDDeleteTrip.swift */; };
+		12EDDEEB28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEEA28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift */; };
+		12EDDEED28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEEC28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift */; };
+		12EDDEF128B3DBE900D57DB2 /* CustomLocationEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */; };
 		12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880A289E5B6100E3EA07 /* CDTripExt.swift */; };
 		12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */; };
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
@@ -225,6 +228,9 @@
 		12EDDEE128B3751C00D57DB2 /* MockLocationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationsStore.swift; sourceTree = "<group>"; };
 		12EDDEE328B3878100D57DB2 /* TripsListController_TableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListController_TableDelegate.swift; sourceTree = "<group>"; };
 		12EDDEE528B3891500D57DB2 /* CDDeleteTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteTrip.swift; sourceTree = "<group>"; };
+		12EDDEEA28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryViewModel.swift; sourceTree = "<group>"; };
+		12EDDEEC28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryViewModelType.swift; sourceTree = "<group>"; };
+		12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryController.swift; sourceTree = "<group>"; };
 		12EF880A289E5B6100E3EA07 /* CDTripExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
@@ -445,6 +451,7 @@
 			children = (
 				12F13501289D972500363CF6 /* GeneralStyleManager.swift */,
 				12F05EA8289E800800A0C4AB /* AddPlaces */,
+				12EDDEE928B3DAFD00D57DB2 /* CustomLocationEntry */,
 				12F13508289D9C1800363CF6 /* EditTrip */,
 				1267F13A28A5A1C70025071C /* LocationDisplay */,
 				12F7560B289EA0AE00773D46 /* LocationSearch */,
@@ -658,6 +665,32 @@
 				1244569728B299B9008C9FCE /* TravelWeatherUITests.swift */,
 			);
 			path = TravelWeatherUITests;
+			sourceTree = "<group>";
+		};
+		12EDDEE928B3DAFD00D57DB2 /* CustomLocationEntry */ = {
+			isa = PBXGroup;
+			children = (
+				12EDDEEE28B3DB2800D57DB2 /* ViewModel */,
+				12EDDEEF28B3DB2F00D57DB2 /* View */,
+			);
+			path = CustomLocationEntry;
+			sourceTree = "<group>";
+		};
+		12EDDEEE28B3DB2800D57DB2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12EDDEEA28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift */,
+				12EDDEEC28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12EDDEEF28B3DB2F00D57DB2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		12EF8812289E620400E3EA07 /* TripActions */ = {
@@ -1280,6 +1313,7 @@
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,
+				12EDDEED28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift in Sources */,
 				12F75607289E971C00773D46 /* TripCell.swift in Sources */,
 				12F134D7289D843200363CF6 /* VisitedPlace.swift in Sources */,
 				1260ED64289D6DBE0008C9EE /* FileManagerExt.swift in Sources */,
@@ -1292,6 +1326,7 @@
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
 				12F134FC289D922700363CF6 /* Sizes.swift in Sources */,
 				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
+				12EDDEEB28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift in Sources */,
 				1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */,
 				1219EF7228A90A10001AEED7 /* RxGeocoder.swift in Sources */,
 				12F134F4289D89E100363CF6 /* TripsListViewModel.swift in Sources */,
@@ -1343,6 +1378,7 @@
 				12F781D828A7F7FD0061AE51 /* LocaitonDisplay_ MapDelegate.swift in Sources */,
 				12E06399289C541F007B09BE /* AppDelegate.swift in Sources */,
 				1211078D28A03AB90046E8A9 /* AnimationConstants.swift in Sources */,
+				12EDDEF128B3DBE900D57DB2 /* CustomLocationEntryController.swift in Sources */,
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
