@@ -13,14 +13,33 @@ import XCTest
 
 class LocationsDisplayViewModelTests: XCTestCase {
     
+    var mockDependencies: MockDependencies!
+    var viewModel: LocationDisplayViewModelType!
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
-        // TODO: Create Dependencies
+        self.mockDependencies = MockDependencies()
+        self.viewModel = TripLocationDisplayViewModel(
+            dependencies: mockDependencies,
+            tripId: TripID()
+        )
     }
     
     
-    func testExample() throws {
-        // TODO: Implement.
+    func testControllerTitleReturnsTripTitleFromStore() throws {
+        let controllerTitle = try viewModel.controllerTitle
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertEqual(controllerTitle, "Mocked Trip")
+        XCTAssertTrue(mockDependencies.mockTripStore.tripIdentifiedByCalled)
+    }
+    
+    func testAnnotationsIsUpdatedFromStore() throws {
+        let annotations = try viewModel.annotations
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(annotations)
+        XCTAssertTrue(mockDependencies.mockPlacesStore.placesForTripCalled)
     }
     
 }

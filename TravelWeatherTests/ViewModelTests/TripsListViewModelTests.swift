@@ -13,14 +13,23 @@ import XCTest
 
 class TripsListViewModelTests: XCTestCase {
     
+    var mockDependencies: MockDependencies!
+    var viewModel: TripsListViewModelType!
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
-        // TODO: Create Dependencies
+        self.mockDependencies = MockDependencies()
+        self.viewModel = TripsListVieModel(dependencies: mockDependencies)
     }
     
     
-    func testExample() throws {
-        // TODO: Implement.
+    func testTripsForSearchIsForwardedFromStore() throws {
+        let trips = try viewModel
+            .trips(for: .just(""))
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(trips)
+        XCTAssertTrue(mockDependencies.mockTripStore.tripsForSearchCalled)
     }
     
 }
