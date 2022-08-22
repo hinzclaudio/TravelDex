@@ -50,6 +50,55 @@ class TripsStoreTests: XCTestCase {
         let _ = try add(mockedTrip: mockedTrip)
     }
     
+    func testAddTripTwiceIsOnlyUpdated() throws {
+        let mockedTrip = Trip(
+            id: TripID(),
+            title: "Mocked Trip",
+            descr: "Mocked Description",
+            members: "Mocked Members",
+            visitedLocations: [],
+            start: .now.addingTimeInterval(-86400),
+            end: .now
+        )
+        
+        let addedTrip = try add(mockedTrip: mockedTrip)
+        let updatedTrip = addedTrip.cloneBuilder()
+            .with(title: "Different Mocked Title")
+            .build()!
+        let _ = store.addTrip(.just(updatedTrip))
+        
+        let fetchedTrips = try store.trips(forSearch: "")
+            .filter { $0.first?.title == updatedTrip.title }
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(fetchedTrips)
+        XCTAssertEqual(fetchedTrips?.count, 1)
+        XCTAssertEqual(fetchedTrips?.first?.id, updatedTrip.id)
+    }
+    
+    func testDeleteTripProducesCorrectResult() throws {
+        let mockedTrip = Trip(
+            id: TripID(),
+            title: "Mocked Trip",
+            descr: "Mocked Description",
+            members: "Mocked Members",
+            visitedLocations: [],
+            start: .now.addingTimeInterval(-86400),
+            end: .now
+        )
+        
+        let addedTrip = try add(mockedTrip: mockedTrip)
+        
+        let _ = store.delete(.just(addedTrip))
+        let fetchedTrips = try store.trips(forSearch: addedTrip.title)
+            .filter { $0.isEmpty }
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNotNil(fetchedTrips)
+        XCTAssertEqual(fetchedTrips?.count, 0)
+    }
+    
     func testSearchProducesCorrectResult() throws {
         let trip1 = Trip(
             id: TripID(),

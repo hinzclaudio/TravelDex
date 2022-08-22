@@ -47,18 +47,29 @@ class AppCoordinator: CoordinatorType {
     }
     
     
-    func didAdd(_ trip: Trip) {
-        modalController?.dismiss(animated: true) { [weak self] in
-            self?.select(trip)
-        }
+    func didUpdate(_ trip: Trip) {
+        modalController?.dismiss(animated: true)
     }
     
     
     func select(_ trip: Trip) {
+        let controller = preview(for: trip)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    
+    func edit(_ trip: Trip) {
+        let vm = EditTripViewModel(dependencies: dependencies, tripId: trip.id)
+        vm.coordinator = self
+        let controller = EditTripController(viewModel: vm)
+        presentModally(controller)
+    }
+    
+    
+    func preview(for trip: Trip) -> UIViewController {
         let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
         vm.coordinator = self
-        let controller = AddPlacesController(viewModel: vm)
-        navigationController.pushViewController(controller, animated: true)
+        return AddPlacesController(viewModel: vm)
     }
     
     

@@ -13,6 +13,9 @@ import RxSwift
 class TripsListController: UIViewController {
     
     let viewModel: TripsListViewModelType
+    
+    let editingIP = PublishSubject<IndexPath>()
+    let deletionIP = PublishSubject<IndexPath>()
     let bag = DisposeBag()
     
     // MARK: - Views
@@ -93,11 +96,26 @@ class TripsListController: UIViewController {
                 cell.configure(for: trip)
             }
             .disposed(by: bag)
+    
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: bag)
         
         let tripSelection = tableView.rx.modelSelected(Trip.self)
             .asObservable()
         viewModel
             .select(tripSelection)
+            .disposed(by: bag)
+        
+        let tripDeletion = deletionIP
+            .withLatestFrom(trips) { i, trips in trips[i.row] }
+            .asObservable()
+        viewModel.delete(tripDeletion)
+            .disposed(by: bag)
+        
+        let tripEditing = editingIP
+            .withLatestFrom(trips) { i, trips in trips[i.row] }
+        viewModel.edit(tripEditing)
             .disposed(by: bag)
     }
     

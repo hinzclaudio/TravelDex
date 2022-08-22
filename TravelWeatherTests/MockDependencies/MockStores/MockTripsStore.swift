@@ -18,6 +18,11 @@ class MockTripsStore: TripsStoreType {
         trip.subscribe(onNext: { [weak self] _ in self?.addTripCalled = true })
     }
     
+    private(set) var deleteTripCalled = false
+    func delete(_ trip: Observable<Trip>) -> Disposable {
+        trip.subscribe(onNext: { [weak self] _ in self?.deleteTripCalled = true })
+    }
+    
     private(set) var tripsForSearchCalled = false
     func trips(forSearch query: String) -> Observable<[Trip]> {
         self.tripsForSearchCalled = true

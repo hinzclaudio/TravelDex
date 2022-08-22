@@ -32,4 +32,14 @@ class TripsListViewModelTests: XCTestCase {
         XCTAssertTrue(mockDependencies.mockTripStore.tripsForSearchCalled)
     }
     
+    func testDeleteTripsIsForwardedToStore() throws {
+        let trip = Trip(
+            id: TripID(),
+            title: "Mocked Title",
+            visitedLocations: []
+        )
+        let _ = viewModel.delete(.just(trip))
+        XCTAssertTrue(mockDependencies.mockTripStore.deleteTripCalled)
+    }
+    
 }

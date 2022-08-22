@@ -30,6 +30,12 @@ class TripsStore: TripsStoreType {
             .subscribe(onNext: { [weak self] in self?.dispatch($0) } )
     }
     
+    func delete(_ trip: Observable<Trip>) -> Disposable {
+        trip
+            .map { CDDeleteTrip(trip: $0) }
+            .subscribe(onNext: { [weak self] in self?.dispatch($0) })
+    }
+    
     
     // MARK: - Output
     func trips(forSearch query: String = "") -> Observable<[Trip]> {

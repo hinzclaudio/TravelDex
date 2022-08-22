@@ -68,7 +68,6 @@ class EditTripController: ScrollableVStackController {
         descrTf.descrLabel.text = "What was your trip about? (optional)"
         membersTf.titleLabel.text = "Fellow Travelers"
         membersTf.descrLabel.text = "Who was travelling with you? (optional)"
-        confirmButton.setTitle("Add Trip", for: .normal)
         confirmButton.styleBorderedButton()
     }
     
@@ -82,15 +81,45 @@ class EditTripController: ScrollableVStackController {
     }
     
     private func setupRx() {
-        let tripId = UUID()
-        let title = titleTf.tf.rx.text
-            .compactMap { $0 }
+        viewModel.trip
+            .map { $0?.title }
+            .drive(titleTf.tf.rx.text)
+            .disposed(by: bag)
+        viewModel.trip
+            .map { $0?.descr }
+            .drive(descrTf.textView.rx.text)
+            .disposed(by: bag)
+        viewModel.trip
+            .map { $0?.members }
+            .drive(membersTf.textView.rx.text)
+            .disposed(by: bag)
+        viewModel.confirmButtonTitle
+            .drive(confirmButton.rx.title(for: .normal))
+            .disposed(by: bag)
+        
+        let tripId = TripID()
+        let title = titleTf.tf.rx.text.compactMap { $0 }
         let descr = descrTf.textView.rx.text.asObservable().nilIfEmpty
         let members = membersTf.textView.rx.text.asObservable().nilIfEmpty
-        let currentTrip = Observable.combineLatest(title, descr, members)
-            .map { t, d, m in Trip(id: tripId, title: t, descr: d, members: m, visitedLocations: []) }
+        
+        let editedTrip = Observable.combineLatest(
+            viewModel.trip.asObservable(),
+            title,
+            descr,
+            members
+        )
+            .map { trip, t, d, m in
+                Trip(
+                    id: trip?.id ?? tripId,
+                    title: t,
+                    descr: d,
+                    members: m,
+                    visitedLocations: trip?.visitedLocations ?? []
+                )
+            }
+        
         let confirmedTrip = confirmButton.rx.tap
-            .withLatestFrom(currentTrip)
+            .withLatestFrom(editedTrip)
         viewModel
             .update(confirmedTrip)
             .disposed(by: bag)

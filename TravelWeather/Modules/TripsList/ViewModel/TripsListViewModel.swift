@@ -37,7 +37,17 @@ class TripsListVieModel: TripsListViewModelType {
     
     func select(_ trip: Observable<Trip>) -> Disposable {
         trip
-            .subscribe(onNext: { [weak self] trip in self?.coordinator?.select(trip) })
+            .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
+    }
+    
+    func edit(_ trip: Observable<Trip>) -> Disposable {
+        trip
+            .subscribe(onNext: { [weak self] in self?.coordinator?.edit($0) })
+    }
+    
+    func delete(_ trip: Observable<Trip>) -> Disposable {
+        dependencies.tripsStore
+            .delete(trip)
     }
     
     
@@ -49,6 +59,10 @@ class TripsListVieModel: TripsListViewModelType {
                 self?.dependencies.tripsStore.trips(forSearch: query) ?? .just([])
             }
             .asDriver(onErrorJustReturn: [])
+    }
+    
+    func preview(for trip: Trip) -> UIViewController? {
+        coordinator?.preview(for: trip)
     }
     
     
