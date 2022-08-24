@@ -31,15 +31,12 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     
     func confirm(_ tapped: Observable<Void>) -> Disposable {
         tapped
-            .debug("TAP")
             .withLatestFrom(comment.nilIfEmpty)
-            .debug("COM")
             .withLatestFrom(addedPlace) { c, place in
                 place.visitedPlace.cloneBuilder()
                     .with(text: c)
                     .build()!
             }
-            .debug("PLA")
             .subscribe(onNext: { [weak self] in
                 self?.coordinator?.modalController?.dismiss(animated: true)
                 self?.dependencies.placesStore.update($0)

@@ -7,9 +7,10 @@ target 'TravelWeather' do
   pod 'RxCocoa'
   pod 'Sourcery'
   pod 'SwiftGen'
-  pod 'CryptoSwift'
   pod 'PureLayout'
+  pod 'CryptoSwift'
   pod 'IQKeyboardManager'
+  pod 'DTPhotoViewerController'
 
   target 'TravelWeatherTests' do
     inherit! :search_paths
