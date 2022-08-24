@@ -119,7 +119,7 @@ final class DefaultCDStack: CDStackType {
             }
             do {
                 try self.saveContext.save()
-                print("CDStack: SAVED TO SQLITE")
+                print("CDStack: Saved TO SQLITE")
                 completion(nil)
             } catch {
                 completion(error)
@@ -153,7 +153,6 @@ final class DefaultCDStack: CDStackType {
     
     // MARK: - Actions
     func dispatch(_ action: CDAction) {
-        print("CDStack: Dispatching \(type(of: action))")
         reducerContext.perform {
             do {
                 try action.execute(in: self.reducerContext)
