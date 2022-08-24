@@ -56,6 +56,10 @@
 		1267F14028A5A2350025071C /* TripLocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */; };
 		1267F14228A5A23E0025071C /* LocationDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1267F14128A5A23E0025071C /* LocationDisplayController.swift */; };
 		12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12747D4D28A6EC36005893B9 /* RxMapView.swift */; };
+		1278602428B6281F00CAC061 /* AddPlacesCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602328B6281F00CAC061 /* AddPlacesCommentController.swift */; };
+		1278602728B6286400CAC061 /* AddPlacesCommentViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602628B6286400CAC061 /* AddPlacesCommentViewModelType.swift */; };
+		1278602928B6286F00CAC061 /* AddPlacesCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602828B6286F00CAC061 /* AddPlacesCommentViewModel.swift */; };
+		1278602B28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
 		12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
@@ -202,6 +206,10 @@
 		1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLocationDisplayViewModel.swift; sourceTree = "<group>"; };
 		1267F14128A5A23E0025071C /* LocationDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayController.swift; sourceTree = "<group>"; };
 		12747D4D28A6EC36005893B9 /* RxMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxMapView.swift; sourceTree = "<group>"; };
+		1278602328B6281F00CAC061 /* AddPlacesCommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentController.swift; sourceTree = "<group>"; };
+		1278602628B6286400CAC061 /* AddPlacesCommentViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelType.swift; sourceTree = "<group>"; };
+		1278602828B6286F00CAC061 /* AddPlacesCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModel.swift; sourceTree = "<group>"; };
+		1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelTests.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayAnnotation.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,6 +401,7 @@
 				12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */,
 				12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */,
 				12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */,
+				1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -445,6 +454,7 @@
 			children = (
 				12F13501289D972500363CF6 /* GeneralStyleManager.swift */,
 				12F05EA8289E800800A0C4AB /* AddPlaces */,
+				1278602128B6280600CAC061 /* AddPlacesComment */,
 				12F13508289D9C1800363CF6 /* EditTrip */,
 				1267F13A28A5A1C70025071C /* LocationDisplay */,
 				12F7560B289EA0AE00773D46 /* LocationSearch */,
@@ -600,6 +610,32 @@
 				1267F13F28A5A2350025071C /* TripLocationDisplayViewModel.swift */,
 				12F781D928A821410061AE51 /* PlaceDisplayViewModel.swift */,
 				12F781DB28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1278602128B6280600CAC061 /* AddPlacesComment */ = {
+			isa = PBXGroup;
+			children = (
+				1278602528B6285700CAC061 /* ViewModel */,
+				1278602228B6281500CAC061 /* View */,
+			);
+			path = AddPlacesComment;
+			sourceTree = "<group>";
+		};
+		1278602228B6281500CAC061 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1278602328B6281F00CAC061 /* AddPlacesCommentController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1278602528B6285700CAC061 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1278602628B6286400CAC061 /* AddPlacesCommentViewModelType.swift */,
+				1278602828B6286F00CAC061 /* AddPlacesCommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1253,6 +1289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1278602728B6286400CAC061 /* AddPlacesCommentViewModelType.swift in Sources */,
 				12F75611289EA0DB00773D46 /* LocationSearchViewModel.swift in Sources */,
 				12F05EAC289E803400A0C4AB /* AddPlacesViewModelType.swift in Sources */,
 				12EF8811289E5C0500E3EA07 /* CDHelperExt.swift in Sources */,
@@ -1265,6 +1302,7 @@
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
 				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */,
+				1278602428B6281F00CAC061 /* AddPlacesCommentController.swift in Sources */,
 				12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */,
 				12F1350C289D9C9E00363CF6 /* EditTripViewModelType.swift in Sources */,
 				12EDDEE628B3891500D57DB2 /* CDDeleteTrip.swift in Sources */,
@@ -1310,6 +1348,7 @@
 				1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */,
 				1267F13428A591580025071C /* DateExt.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
+				1278602928B6286F00CAC061 /* AddPlacesCommentViewModel.swift in Sources */,
 				12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */,
 				123F7B72289DC69F0008444D /* UIViewExt.swift in Sources */,
 				1267F14228A5A23E0025071C /* LocationDisplayController.swift in Sources */,
@@ -1362,6 +1401,7 @@
 			files = (
 				12EDDED628B36C4D00D57DB2 /* LocationSearchViewModelTests.swift in Sources */,
 				12EDDED428B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift in Sources */,
+				1278602B28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift in Sources */,
 				12EDDED028B36C2900D57DB2 /* AddPlacesViewModelTests.swift in Sources */,
 				12EDDED228B36C3800D57DB2 /* EditTripViewModelTests.swift in Sources */,
 				125C1A2228B2C718008B495D /* MockLocationAPI.swift in Sources */,

@@ -134,10 +134,10 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             self?.display(item)
         }
         let editTextAction = UIAction(
-            title: "Edit Text",
+            title: "Edit Comment",
             image: SFSymbol.pencil.image
-        ) { _ in
-            // TODO: Implement
+        ) { [weak self] _ in
+            self?.coordinator?.comment(on: item)
         }
         let delAction = UIAction(
             title: "Delete",
