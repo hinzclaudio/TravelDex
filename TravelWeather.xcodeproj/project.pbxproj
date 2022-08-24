@@ -78,6 +78,8 @@
 		12EDDEEB28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEEA28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift */; };
 		12EDDEED28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEEC28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift */; };
 		12EDDEF128B3DBE900D57DB2 /* CustomLocationEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */; };
+		12EDDEF328B4239900D57DB2 /* CustomLocationEntry_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEF228B4239900D57DB2 /* CustomLocationEntry_MapDelegate.swift */; };
+		12EDDEF528B423D700D57DB2 /* DragAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDEF428B423D700D57DB2 /* DragAnnotation.swift */; };
 		12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880A289E5B6100E3EA07 /* CDTripExt.swift */; };
 		12EF880D289E5B9500E3EA07 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */; };
 		12EF880F289E5BA600E3EA07 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */; };
@@ -231,6 +233,8 @@
 		12EDDEEA28B3DB1B00D57DB2 /* CustomLocationEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryViewModel.swift; sourceTree = "<group>"; };
 		12EDDEEC28B3DB2300D57DB2 /* CustomLocationEntryViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryViewModelType.swift; sourceTree = "<group>"; };
 		12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntryController.swift; sourceTree = "<group>"; };
+		12EDDEF228B4239900D57DB2 /* CustomLocationEntry_MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocationEntry_MapDelegate.swift; sourceTree = "<group>"; };
+		12EDDEF428B423D700D57DB2 /* DragAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnnotation.swift; sourceTree = "<group>"; };
 		12EF880A289E5B6100E3EA07 /* CDTripExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12EF880C289E5B9500E3EA07 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12EF880E289E5BA600E3EA07 /* CDLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
@@ -670,6 +674,7 @@
 		12EDDEE928B3DAFD00D57DB2 /* CustomLocationEntry */ = {
 			isa = PBXGroup;
 			children = (
+				12EDDEF428B423D700D57DB2 /* DragAnnotation.swift */,
 				12EDDEEE28B3DB2800D57DB2 /* ViewModel */,
 				12EDDEEF28B3DB2F00D57DB2 /* View */,
 			);
@@ -689,6 +694,7 @@
 			isa = PBXGroup;
 			children = (
 				12EDDEF028B3DBE900D57DB2 /* CustomLocationEntryController.swift */,
+				12EDDEF228B4239900D57DB2 /* CustomLocationEntry_MapDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1307,6 +1313,7 @@
 				123F7B68289DBBD60008444D /* TitledTextField.swift in Sources */,
 				1211078428A00F4C0046E8A9 /* AddedPlaceItem.swift in Sources */,
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
+				12EDDEF528B423D700D57DB2 /* DragAnnotation.swift in Sources */,
 				125C1A2028B2C5A1008B495D /* CLGeocoderExtension.swift in Sources */,
 				120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */,
 				12F781DC28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift in Sources */,
@@ -1356,6 +1363,7 @@
 				12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */,
 				123F7B70289DC61E0008444D /* TitledTextView.swift in Sources */,
 				12F13505289D98C800363CF6 /* BaseNavigationController.swift in Sources */,
+				12EDDEF328B4239900D57DB2 /* CustomLocationEntry_MapDelegate.swift in Sources */,
 				12F1350E289D9CB400363CF6 /* EditTripViewModel.swift in Sources */,
 				12F134B3289D723500363CF6 /* DependencyProtocols.swift in Sources */,
 				12F75618289EA2ED00773D46 /* LocationsStore.swift in Sources */,

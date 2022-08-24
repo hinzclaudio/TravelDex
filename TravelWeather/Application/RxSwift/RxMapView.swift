@@ -24,4 +24,14 @@ extension Reactive where Base: MKMapView {
         .asObserver()
     }
     
+    var nonAnimatedAnnotations: AnyObserver<[MKAnnotation]> {
+        Binder(base) { mapView, annotations in
+            mapView
+                .annotations
+                .forEach(mapView.removeAnnotation(_:))
+            mapView.showAnnotations(annotations, animated: false)
+        }
+        .asObserver()
+    }
+    
 }

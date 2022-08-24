@@ -21,6 +21,7 @@ enum SFSymbol: String {
     case map
     case camera
     case filledMappin = "pin.fill"
+    case magnifyingglass
     
     var image: UIImage {
         UIImage(systemName: rawValue)!

@@ -32,14 +32,23 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             .subscribe(onNext: { [weak self] trip in self?.coordinator?.displayMap(for: trip) })
     }
     
-    func addLocation(_ tapped: Observable<Void>) -> Disposable {
+    func searchLocation(_ tapped: Observable<Void>) -> Disposable {
         tapped
             .withLatestFrom(trip)
             .subscribe(onNext: { [weak self] trip in
-                self?.coordinator?
-                    .searchLocation(completion: { location in
-                        self?.dependencies.placesStore.add(location, to: trip)
-                    })
+                self?.coordinator?.searchLocation() { loc in
+                    self?.dependencies.placesStore.add(loc, to: trip)
+                }
+            })
+    }
+    
+    func addCustomLocation(_ tapped: Observable<Void>) -> Disposable {
+        tapped
+            .withLatestFrom(trip)
+            .subscribe(onNext: { [weak self] trip in
+                self?.coordinator?.addCustomLocation() { loc in
+                    self?.dependencies.placesStore.add(loc, to: trip)
+                }
             })
     }
     

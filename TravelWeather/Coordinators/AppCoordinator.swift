@@ -79,6 +79,17 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func addCustomLocation(completion: @escaping (Location) -> Void) {
+        let viewModel = CustomLocationEntryViewModel(dependencies: dependencies) { [weak self] loc in
+            self?.modalController?.dismiss(animated: true)
+            completion(loc)
+        }
+        viewModel.coorindator = self
+        let controller = CustomLocationEntryController(viewModel: viewModel)
+        presentModally(controller)
+    }
+    
+    
     func displayMap(for trip: Trip) {
         let vm = TripLocationDisplayViewModel(dependencies: dependencies, tripId: trip.id)
         presentMap(for: vm)
