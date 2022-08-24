@@ -59,6 +59,7 @@
 		1278602428B6281F00CAC061 /* AddPlacesCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602328B6281F00CAC061 /* AddPlacesCommentController.swift */; };
 		1278602728B6286400CAC061 /* AddPlacesCommentViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602628B6286400CAC061 /* AddPlacesCommentViewModelType.swift */; };
 		1278602928B6286F00CAC061 /* AddPlacesCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602828B6286F00CAC061 /* AddPlacesCommentViewModel.swift */; };
+		1278602B28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
 		12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
@@ -208,6 +209,7 @@
 		1278602328B6281F00CAC061 /* AddPlacesCommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentController.swift; sourceTree = "<group>"; };
 		1278602628B6286400CAC061 /* AddPlacesCommentViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelType.swift; sourceTree = "<group>"; };
 		1278602828B6286F00CAC061 /* AddPlacesCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModel.swift; sourceTree = "<group>"; };
+		1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelTests.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayAnnotation.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -399,6 +401,7 @@
 				12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */,
 				12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */,
 				12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */,
+				1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -450,8 +453,8 @@
 			isa = PBXGroup;
 			children = (
 				12F13501289D972500363CF6 /* GeneralStyleManager.swift */,
-				1278602128B6280600CAC061 /* AddPlacesComment */,
 				12F05EA8289E800800A0C4AB /* AddPlaces */,
+				1278602128B6280600CAC061 /* AddPlacesComment */,
 				12F13508289D9C1800363CF6 /* EditTrip */,
 				1267F13A28A5A1C70025071C /* LocationDisplay */,
 				12F7560B289EA0AE00773D46 /* LocationSearch */,
@@ -1398,6 +1401,7 @@
 			files = (
 				12EDDED628B36C4D00D57DB2 /* LocationSearchViewModelTests.swift in Sources */,
 				12EDDED428B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift in Sources */,
+				1278602B28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift in Sources */,
 				12EDDED028B36C2900D57DB2 /* AddPlacesViewModelTests.swift in Sources */,
 				12EDDED228B36C3800D57DB2 /* EditTripViewModelTests.swift in Sources */,
 				125C1A2228B2C718008B495D /* MockLocationAPI.swift in Sources */,

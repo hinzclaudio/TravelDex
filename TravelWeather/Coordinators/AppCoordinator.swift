@@ -68,6 +68,14 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func comment(on item: AddedPlaceItem) {
+        let vm = AddPlacesCommentViewModel(dependencies: dependencies, item: item)
+        vm.coordinator = self
+        let controller = AddPlacesCommentController(viewModel: vm)
+        presentBottomSheet(controller)
+    }
+    
+    
     func searchLocation(completion: @escaping (Location) -> Void) {
         let viewModel = LocationSearchViewModel(dependencies: dependencies) { [weak self] loc in
             self?.modalController?.dismiss(animated: true)
@@ -115,6 +123,18 @@ class AppCoordinator: CoordinatorType {
         let modalContainer = ModalNavigationContainer(rootViewController: viewController)
         GeneralStyleManager.styleModal(modalContainer.navigationBar)
         modalContainer.modalPresentationStyle = .automatic
+        navigationController.present(modalContainer, animated: true)
+        modalController = modalContainer
+    }
+    
+
+    private func presentBottomSheet(_ viewController: UIViewController) {
+        let modalContainer = ModalNavigationContainer(rootViewController: viewController)
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        modalContainer.modalPresentationStyle = .pageSheet
+        if let sheet = modalContainer.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
         navigationController.present(modalContainer, animated: true)
         modalController = modalContainer
     }

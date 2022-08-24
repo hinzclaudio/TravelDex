@@ -14,7 +14,7 @@ import RxCocoa
 protocol AddPlacesCommentViewModelType {
     
     // MARK: - Input
-    var comment: PublishSubject<String> { get }
+    var comment: PublishSubject<String?> { get }
     func confirm(_ tapped: Observable<Void>) -> Disposable
     
     

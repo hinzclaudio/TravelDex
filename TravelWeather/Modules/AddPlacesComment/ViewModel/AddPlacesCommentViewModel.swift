@@ -15,6 +15,7 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     
     typealias Dependencies = HasPlacesStore
     private let dependencies: Dependencies
+    weak var coordinator: AppCoordinator?
     
     init(dependencies: Dependencies, item: AddedPlaceItem) {
         self.dependencies = dependencies
@@ -26,17 +27,23 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     
     
     // MARK: - Input
-    let comment = PublishSubject<String>()
+    let comment = PublishSubject<String?>()
     
     func confirm(_ tapped: Observable<Void>) -> Disposable {
         tapped
-            .withLatestFrom(comment)
+            .debug("TAP")
+            .withLatestFrom(comment.nilIfEmpty)
+            .debug("COM")
             .withLatestFrom(addedPlace) { c, place in
                 place.visitedPlace.cloneBuilder()
                     .with(text: c)
                     .build()!
             }
-            .subscribe(onNext: { [weak self] in self?.dependencies.placesStore.update($0) })
+            .debug("PLA")
+            .subscribe(onNext: { [weak self] in
+                self?.coordinator?.modalController?.dismiss(animated: true)
+                self?.dependencies.placesStore.update($0)
+            })
     }
     
     
