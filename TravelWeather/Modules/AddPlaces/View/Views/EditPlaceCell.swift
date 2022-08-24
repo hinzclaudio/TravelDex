@@ -196,6 +196,8 @@ class EditPlaceCell: UIView {
         
         endPicker.autoPinEdge(.left, to: .right, of: endLabel, withOffset: Sizes.defaultMargin)
         endPicker.autoAlignAxis(.horizontal, toSameAxisOf: endLabel)
+        
+        customTextLabel.autoMatch(.width, to: .width, of: detailsStack)
     }
     
     func configure(for addedPlace: AddedPlaceItem, menu: UIMenu?) {
