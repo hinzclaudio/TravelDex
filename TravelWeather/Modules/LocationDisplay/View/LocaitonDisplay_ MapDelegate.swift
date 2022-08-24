@@ -19,8 +19,8 @@ extension LocationDisplayController: MKMapViewDelegate {
             let view = mapView.dequeueReusableAnnotationView(
                 withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier,
                 for: annotation
-            ) as! AddedPlaceAnnotationView
-            view.configure(for: annotation)
+            ) as! MKMarkerAnnotationView
+            view.annotation = annotation
             return view
         }
     }

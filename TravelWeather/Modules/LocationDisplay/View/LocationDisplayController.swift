@@ -56,7 +56,7 @@ class LocationDisplayController: UIViewController {
         
         mapView.delegate = self
         mapView.register(
-            AddedPlaceAnnotationView.self,
+            MKMarkerAnnotationView.self,
             forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier
         )
     }
