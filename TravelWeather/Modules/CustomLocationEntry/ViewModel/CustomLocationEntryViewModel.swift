@@ -13,14 +13,11 @@ import RxCocoa
 
 class CustomLocationEntryViewModel: CustomLocationEntryViewModelType {
     
-    weak var coorindator: AppCoordinator?
-    private let selection: (Location) -> Void
-    
     typealias Dependencies = HasLocationsStore & HasPlacesStore
     private let dependencies: Dependencies
+    private let selection: () -> Location
     
-    
-    init(dependencies: Dependencies, selection: @escaping (Location) -> Void) {
+    init(dependencies: Dependencies, selection: @escaping () -> Location) {
         self.dependencies = dependencies
         self.selection = selection
     }

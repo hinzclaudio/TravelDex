@@ -13,11 +13,7 @@ import RxSwift
 class AddPlacesController: ScrollableVStackController {
     
     let viewModel: AddPlacesViewModelType
-    
-    let searchLocationsTapped = PublishSubject<Void>()
-    let addCustomLocationsTapped = PublishSubject<Void>()
     let bag = DisposeBag()
-    
     
     // MARK: - Views
     let mapButton = UIBarButtonItem()
@@ -64,24 +60,6 @@ class AddPlacesController: ScrollableVStackController {
         navigationItem.title = "Add Places"
         view.backgroundColor = Colors.veryDark
         mapButton.image = SFSymbol.map.image
-        
-        let searchAction = UIAction(
-            title: "Search Locations",
-            image: SFSymbol.magnifyingglass.image,
-            handler: { [weak self] _ in
-                self?.searchLocationsTapped.onNext(())
-            }
-        )
-        
-        let addCustomAction = UIAction(
-            title: "Add Custom Location",
-            image: SFSymbol.map.image,
-            handler: { [weak self] _ in
-                self?.addCustomLocationsTapped.onNext(())
-            }
-        )
-    
-        addButton.menu = UIMenu(title: "Add Location", children: [searchAction, addCustomAction])
     }
     
     private func setAutoLayout() {
@@ -90,8 +68,6 @@ class AddPlacesController: ScrollableVStackController {
     }
     
     private func setupBinding() {
-        
-        
         viewModel.mapButton(mapButton.rx.tap.asObservable())
             .disposed(by: bag)
         
@@ -133,11 +109,9 @@ class AddPlacesController: ScrollableVStackController {
             })
             .disposed(by: bag)
         
+        let tappedAdd = addButton.rx.tap.asObservable()
         viewModel
-            .searchLocation(searchLocationsTapped.asObservable())
-            .disposed(by: bag)
-        viewModel
-            .addCustomLocation(addCustomLocationsTapped.asObservable())
+            .addLocation(tappedAdd)
             .disposed(by: bag)
     }
     
