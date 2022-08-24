@@ -91,8 +91,12 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     
     let _expandedItems = BehaviorRelay<Set<VisitedPlaceID>>(value: [])
     lazy var expandedItems: Driver<Set<VisitedPlaceID>> = {
-        _expandedItems
-            .asDriver()
+        _expandedItems.asDriver()
+    }()
+    
+    let _loadingImagesFor = BehaviorRelay<Set<VisitedPlaceID>>(value: [])
+    lazy var loadingImagesFor: Driver<Set<VisitedPlaceID>> = {
+        _loadingImagesFor.asDriver()
     }()
     
     
@@ -203,13 +207,22 @@ extension AddPlacesViewModel: PhotoPickerViewModelType {
         guard let place = pickingForItem.value?.visitedPlace, let result = results.first
         else { return }
         
-        result.itemProvider
+        var loading = _loadingImagesFor.value
+        loading.insert(place.id)
+        _loadingImagesFor.accept(loading)
+        
+        result
+            .itemProvider
             .loadObject(ofClass: UIImage.self) { [weak self] object, error in
+                var loading = self?._loadingImagesFor.value ?? []
+                loading.remove(place.id)
+                self?._loadingImagesFor.accept(loading)
+                
                 if let error = error {
                     assertionFailure("Error: \(error)")
                 } else if let img = object as? UIImage {
                     let updatedPlace = place.cloneBuilder()
-                        .with(picture: img.jpegData(compressionQuality: 0.5))
+                        .with(picture: img.jpegData(compressionQuality: 0.33))
                         .build()!
                     self?.dependencies.placesStore.update(updatedPlace)
                 } else {

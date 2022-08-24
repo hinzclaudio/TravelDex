@@ -16,6 +16,7 @@ class EditPlaceCell: UIView {
     let cellTapRecognizer = UITapGestureRecognizer()
     let imageTapRecognizer = UITapGestureRecognizer()
     let cellExpanded: PublishSubject<Bool> = .init()
+    let isLoading = BehaviorRelay(value: false)
     let bag = DisposeBag()
     
     // MARK: - Views
@@ -31,6 +32,7 @@ class EditPlaceCell: UIView {
     private let detailsStack = UIStackView.defaultContentStack()
     
     private let datesPictureContainer = UIView()
+    let loadingView = UIActivityIndicatorView()
     let picturePreview = UIImageView()
     private let startLabel = UILabel()
     let startPicker = UIDatePicker()
@@ -70,6 +72,7 @@ class EditPlaceCell: UIView {
         cellStack.addArrangedSubview(detailsStack)
         detailsStack.addArrangedSubview(datesPictureContainer)
         datesPictureContainer.addSubview(picturePreview)
+        datesPictureContainer.addSubview(loadingView)
         datesPictureContainer.addSubview(startLabel)
         datesPictureContainer.addSubview(startPicker)
         datesPictureContainer.addSubview(endLabel)
@@ -89,6 +92,27 @@ class EditPlaceCell: UIView {
                         delay: 0,
                         options: AnimationConstants.defaultOption) {
                             self?.detailsStack.isHidden = hidden
+                        }
+            })
+            .disposed(by: bag)
+        
+        isLoading
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] isLoading in
+                UIView
+                    .animate(
+                        withDuration: AnimationConstants.defaultDuration,
+                        delay: 0,
+                        options: AnimationConstants.defaultOption) {
+                            if isLoading {
+                                self?.picturePreview.isHidden = true
+                                self?.loadingView.isHidden = false
+                                self?.loadingView.startAnimating()
+                            } else {
+                                self?.picturePreview.isHidden = false
+                                self?.loadingView.isHidden = true
+                                self?.loadingView.stopAnimating()
+                            }
                         }
             })
             .disposed(by: bag)
@@ -114,6 +138,8 @@ class EditPlaceCell: UIView {
         picturePreview.clipsToBounds = true
         picturePreview.tintColor = Colors.black
         picturePreview.addGestureRecognizer(imageTapRecognizer)
+        
+        loadingView.isHidden = true
         
         customTextLabel.styleText(colored: Colors.black)
     }
@@ -150,6 +176,12 @@ class EditPlaceCell: UIView {
         picturePreview.autoPinEdge(.bottom, to: .bottom, of: datesPictureContainer)
         picturePreview.autoMatch(.width, to: .width, of: datesPictureContainer, withMultiplier: 0.25)
         picturePreview.autoMatch(.height, to: .width, of: picturePreview)
+        
+        loadingView.autoPinEdge(.top, to: .top, of: datesPictureContainer)
+        loadingView.autoPinEdge(.left, to: .left, of: datesPictureContainer)
+        loadingView.autoPinEdge(.bottom, to: .bottom, of: datesPictureContainer)
+        loadingView.autoMatch(.width, to: .width, of: datesPictureContainer, withMultiplier: 0.25)
+        loadingView.autoMatch(.height, to: .width, of: picturePreview)
         
         startLabel.autoPinEdge(.top, to: .top, of: datesPictureContainer)
         startLabel.autoPinEdge(.left, to: .right, of: picturePreview, withOffset: Sizes.defaultMargin)

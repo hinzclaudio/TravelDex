@@ -91,6 +91,12 @@ class AddPlacesController: ScrollableVStackController {
                         .subscribe(onNext: { d in self?.viewModel.setEnd(of: item, to: d) })
                         .disposed(by: cell.bag)
 
+                    self?.viewModel.loadingImagesFor
+                        .map { $0.contains(item.visitedPlace.id) }
+                        .distinctUntilChanged()
+                        .drive(cell.isLoading)
+                        .disposed(by: cell.bag)
+                    
                     self?.viewModel.expandedItems
                         .map { $0.contains(item.visitedPlace.id) }
                         .drive(cell.cellExpanded)
