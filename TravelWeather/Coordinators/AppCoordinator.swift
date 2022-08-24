@@ -7,6 +7,7 @@
 
 import UIKit
 import PhotosUI
+import DTPhotoViewerController
 
 
 
@@ -110,6 +111,13 @@ class AppCoordinator: CoordinatorType {
         controller.delegate = viewModel
         modalController = controller
         navigationController.present(controller, animated: true)
+    }
+    
+    
+    func photoViewer(from view: UIImageView?, image: UIImage?) {
+        let controller = DTPhotoViewerController(referencedView: view, image: image)
+        let presenter = modalController ?? navigationController
+        presenter.present(controller, animated: true)
     }
     
     

@@ -102,6 +102,11 @@ class AddPlacesController: ScrollableVStackController {
                             onNext: { isExp in self?.viewModel.set(item, expanded: !isExp) }
                         )
                         .disposed(by: cell.bag)
+                    cell.imageTapRecognizer.rx.tap
+                        .subscribe(
+                            onNext: { self?.viewModel.imageTapped(item, view: cell.picturePreview) }
+                        )
+                        .disposed(by: cell.bag)
 
                     self?.placesStack.addArrangedSubview(cell)
                     cell.autoMatch(.width, to: .width, of: self?.placesStack ?? UIView())

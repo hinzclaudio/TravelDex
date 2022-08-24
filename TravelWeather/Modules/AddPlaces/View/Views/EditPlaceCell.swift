@@ -14,6 +14,7 @@ import RxCocoa
 class EditPlaceCell: UIView {
     
     let cellTapRecognizer = UITapGestureRecognizer()
+    let imageTapRecognizer = UITapGestureRecognizer()
     let cellExpanded: PublishSubject<Bool> = .init()
     let bag = DisposeBag()
     
@@ -30,7 +31,7 @@ class EditPlaceCell: UIView {
     private let detailsStack = UIStackView.defaultContentStack()
     
     private let datesPictureContainer = UIView()
-    private let picturePreview = UIImageView()
+    let picturePreview = UIImageView()
     private let startLabel = UILabel()
     let startPicker = UIDatePicker()
     private let endLabel = UILabel()
@@ -109,8 +110,10 @@ class EditPlaceCell: UIView {
         endLabel.styleSmall(colored: Colors.black)
         endPicker.styleDayMonthYear()
         
-        picturePreview.tintColor = Colors.black
+        picturePreview.isUserInteractionEnabled = true
         picturePreview.clipsToBounds = true
+        picturePreview.tintColor = Colors.black
+        picturePreview.addGestureRecognizer(imageTapRecognizer)
         
         customTextLabel.styleText(colored: Colors.black)
     }

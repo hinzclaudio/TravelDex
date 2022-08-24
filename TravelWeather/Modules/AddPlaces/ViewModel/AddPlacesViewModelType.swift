@@ -19,6 +19,7 @@ protocol AddPlacesViewModelType {
     func set(_ item: AddedPlaceItem, expanded: Bool)
     func setStart(of item: AddedPlaceItem, to date: Date)
     func setEnd(of item: AddedPlaceItem, to date: Date)
+    func imageTapped(_ item: AddedPlaceItem, view: UIImageView)
     
     
     // MARK: - Output

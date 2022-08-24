@@ -67,6 +67,13 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         dependencies.placesStore.update(newPlace)
     }
     
+    func imageTapped(_ item: AddedPlaceItem, view: UIImageView) {
+        if let imgData = item.visitedPlace.picture {
+            let img = UIImage(data: imgData)
+            coordinator?.photoViewer(from: view, image: img)
+        }
+    }
+    
     
     // MARK: - Output
     lazy var trip: Driver<Trip> = {
