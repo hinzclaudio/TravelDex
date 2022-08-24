@@ -62,7 +62,7 @@ class TripsListController: UIViewController {
         navigationItem.title = "Trips"
         mapButton.image = SFSymbol.map.image
         searchController.searchBar.styleDefault()
-        searchController.hidesNavigationBarDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         view.backgroundColor = Colors.veryDark
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
