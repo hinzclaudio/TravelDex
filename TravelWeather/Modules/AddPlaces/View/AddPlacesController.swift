@@ -81,16 +81,15 @@ class AddPlacesController: ScrollableVStackController {
                 places.forEach { item in
                     let cell = EditPlaceCell()
                     cell.configure(for: item, menu: self?.viewModel.menu(for: item))
-
                     
                     cell.startPicker.rx.controlEvent(.editingDidEnd)
-                        .map { cell.startPicker.date }
+                        .map { [unowned cell] in cell.startPicker.date }
                         .filter { $0 != item.visitedPlace.start }
                         .subscribe(onNext: { d in self?.viewModel.setStart(of: item, to: d) })
                         .disposed(by: cell.bag)
 
                     cell.endPicker.rx.controlEvent(.editingDidEnd)
-                        .map { cell.endPicker.date }
+                        .map { [unowned cell] in cell.endPicker.date }
                         .filter { $0 != item.visitedPlace.end }
                         .subscribe(onNext: { d in self?.viewModel.setEnd(of: item, to: d) })
                         .disposed(by: cell.bag)
@@ -116,7 +115,7 @@ class AddPlacesController: ScrollableVStackController {
                     
                     cell.imageTapRecognizer.rx.tap
                         .subscribe(
-                            onNext: { self?.viewModel.imageTapped(item, view: cell.picturePreview) }
+                            onNext: { [unowned cell] in self?.viewModel.imageTapped(item, view: cell.picturePreview) }
                         )
                         .disposed(by: cell.bag)
 
