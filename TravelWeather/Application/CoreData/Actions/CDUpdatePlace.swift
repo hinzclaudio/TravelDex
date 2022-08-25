@@ -16,13 +16,14 @@ struct CDUpdatePlace: CDAction {
     
     
     func execute(in context: NSManagedObjectContext) {
+        let end: Date = (place.end < place.start) ? place.start : place.end
         if let cdPlace = fetchVisitedPlace(by: place.id, in: context) {
             cdPlace.safeInitNeglectRelationShips(
                 id: place.id,
                 text: place.text,
                 pictureData: place.picture,
                 start: place.start,
-                end: place.end
+                end: end
             )
         } else if let cdTrip = fetchTrip(by: place.tripId, in: context),
                   let cdLoc = fetchLocation(by: place.locationId, in: context) {
@@ -32,7 +33,7 @@ struct CDUpdatePlace: CDAction {
                 text: place.text,
                 pictureData: place.picture,
                 start: place.start,
-                end: place.end,
+                end: end,
                 location: cdLoc,
                 trip: cdTrip
             )
