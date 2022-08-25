@@ -50,8 +50,8 @@ class LocationsStore: LocationsStoreType {
             .map { cdLocs in cdLocs.map { $0.pureRepresentation } }
     }
     
-    func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]> {
-        let result = query
+    func locations(for query: Observable<String>) -> Observable<[Location]> {
+        query
             .flatMapLatest { [unowned self] search -> Observable<Event<[Location]>> in
                 if search.isEmpty {
                     return self.allLocations()
@@ -62,14 +62,14 @@ class LocationsStore: LocationsStoreType {
                         .materialize()
                 }
             }
-            .share()
-        
-        result
-            .compactMap { $0.event.error }
-            .bind(to: apiError)
-            .disposed(by: bag)
-        
-        return result
+            .do(onNext: { [unowned self] event in
+                switch event {
+                case .error(let error):
+                    self.apiError.onNext(error)
+                default:
+                    break
+                }
+            })
             .compactMap { $0.event.element }
     }
     

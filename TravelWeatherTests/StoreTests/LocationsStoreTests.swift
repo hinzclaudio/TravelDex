@@ -56,7 +56,7 @@ class LocationsStoreTests: XCTestCase {
     func testLocationsWithEmptyQueryReturnsAllLocations() throws {
         let _ = store.add(.of(MockLocationAPI.berlin, MockLocationAPI.bremen))
         let fetchedLocations = try store
-            .locations(for: .just(""), bag: DisposeBag())
+            .locations(for: .just(""))
             .filter { $0.count == 2 }
             .toBlocking(timeout: 5)
             .first()
@@ -67,7 +67,7 @@ class LocationsStoreTests: XCTestCase {
     
     func testSearchForLocationProducesAPIResult() throws {
         let fetchedLocations = try store
-            .locations(for: .just("Hamburg"), bag: DisposeBag())
+            .locations(for: .just("Hamburg"))
             .toBlocking(timeout: 5)
             .first()
         XCTAssertNotNil(fetchedLocations)
@@ -87,7 +87,7 @@ class LocationsStoreTests: XCTestCase {
         store.error.bind(to: recordedErrors)
             .disposed(by: bag)
         
-        let locations = try store.locations(for: .just("TEST"), bag: bag)
+        let locations = try store.locations(for: .just("TEST"))
             .toBlocking(timeout: 5)
             .first()
         

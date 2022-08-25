@@ -21,6 +21,6 @@ protocol LocationsStoreType {
     var error: Observable<Error> { get }
     
     func allLocations() -> Observable<[Location]>
-    func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]>
+    func locations(for query: Observable<String>) -> Observable<[Location]>
     
 }

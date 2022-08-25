@@ -33,7 +33,7 @@ class MockLocationsStore: LocationsStoreType {
     }
     
     private(set) var locationsForQueryCalled = false
-    func locations(for query: Observable<String>, bag: DisposeBag) -> Observable<[Location]> {
+    func locations(for query: Observable<String>) -> Observable<[Location]> {
         let mockAPI = MockLocationAPI()
         return query
             .do(onNext: { [weak self] _ in self?.locationsForQueryCalled = true })

@@ -23,7 +23,7 @@ class LocationSearchController: UIViewController {
     // MARK: - Views
     let searchController = UISearchController()
     let mapView = MKMapView()
-    let loadingView = UIActivityIndicatorView()
+    let addButton = UIButton(type: .system)
     
     
     
@@ -55,13 +55,19 @@ class LocationSearchController: UIViewController {
     private func addViews() {
         navigationItem.searchController = searchController
         view.addSubview(mapView)
+        view.addSubview(addButton)
     }
     
     private func configureViews() {
         navigationItem.title = "Search Locations"
         mapView.delegate = self
+        
         searchController.searchBar.styleDefault()
         searchController.hidesNavigationBarDuringPresentation = false
+        
+        addButton.styleBorderedButton()
+        addButton.setTitle("Add Location", for: .normal)
+        addButton.isHidden = true
     }
     
     private func setAutoLayout() {
@@ -69,6 +75,11 @@ class LocationSearchController: UIViewController {
         mapView.autoPinEdge(.left, to: .left, of: view)
         mapView.autoPinEdge(.right, to: .right, of: view)
         mapView.autoPinEdge(.bottom, to: .bottom, of: view)
+        
+        addButton.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
+        addButton.autoPinEdge(.left, to: .left, of: view, withOffset: 2 * Sizes.defaultMargin)
+        addButton.autoPinEdge(.right, to: .right, of: view, withOffset: -2 * Sizes.defaultMargin)
+        addButton.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 3 * Sizes.defaultMargin)
     }
     
     private func setupBinding() {
@@ -82,9 +93,31 @@ class LocationSearchController: UIViewController {
         let searchQuery = searchController.searchBar.rx
             .textDidEndEditing
             .map { [weak self] in self?.searchController.searchBar.text ?? "" }
+            .startWith("")
         
-        viewModel.annotations(for: searchQuery.startWith(""))
+        let annotations = viewModel
+            .annotations(for: searchQuery)
+        annotations
             .drive(mapView.rx.animatedAnnotations)
+            .disposed(by: bag)
+        
+        let oneAndOnlyAnnotation = annotations
+            .map { annotations -> MKAnnotation? in
+                if annotations.count == 1 {
+                    return annotations.first
+                } else {
+                    return nil
+                }
+            }
+        oneAndOnlyAnnotation
+            .map { $0 == nil }
+            .distinctUntilChanged()
+            .drive(addButton.rx.isHidden)
+            .disposed(by: bag)
+        addButton.rx.tap
+            .withLatestFrom(oneAndOnlyAnnotation)
+            .compactMap { a -> Location? in (a as? LocationSearchAnnotation)?.location }
+            .bind(to: selection)
             .disposed(by: bag)
     }
     
