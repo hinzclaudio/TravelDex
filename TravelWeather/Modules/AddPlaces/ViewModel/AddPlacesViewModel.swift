@@ -43,14 +43,10 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             })
     }
     
-    func set(_ item: AddedPlaceItem, expanded: Bool) {
-        var newItems = _expandedItems.value
-        if expanded {
-            newItems.insert(item.visitedPlace.id)
-        } else {
-            newItems.remove(item.visitedPlace.id)
-        }
-        _expandedItems.accept(newItems)
+    func headerTapped(_ tapped: Observable<Void>) -> Disposable {
+        tapped
+            .withLatestFrom(trip)
+            .subscribe(onNext: { [weak self] trip in self?.coordinator?.edit(trip) })
     }
     
     func setStart(of item: AddedPlaceItem, to date: Date) {
@@ -65,6 +61,16 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             .with(end: date)
             .build()!
         dependencies.placesStore.update(newPlace)
+    }
+    
+    func set(_ item: AddedPlaceItem, expanded: Bool) {
+        var newItems = _expandedItems.value
+        if expanded {
+            newItems.insert(item.visitedPlace.id)
+        } else {
+            newItems.remove(item.visitedPlace.id)
+        }
+        _expandedItems.accept(newItems)
     }
     
     func imageTapped(_ item: AddedPlaceItem, view: UIImageView) {

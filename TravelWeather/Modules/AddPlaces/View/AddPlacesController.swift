@@ -23,6 +23,8 @@ class AddPlacesController: ScrollableVStackController {
     let placesStack = UIStackView.defaultContentStack(withSpacing: 0)
     let saveButton = UIButton(type: .system)
     
+    let headerTapRecognizer = UITapGestureRecognizer()
+    
     
     
     init(viewModel: AddPlacesViewModelType) {
@@ -59,6 +61,7 @@ class AddPlacesController: ScrollableVStackController {
     private func configureViews() {
         navigationItem.title = "Add Places"
         view.backgroundColor = Colors.veryDark
+        headerView.addGestureRecognizer(headerTapRecognizer)
         mapButton.image = SFSymbol.map.image
     }
     
@@ -73,6 +76,9 @@ class AddPlacesController: ScrollableVStackController {
         
         viewModel.trip
             .drive(onNext: { [weak self] trip in self?.headerView.configure(for: trip) })
+            .disposed(by: bag)
+        
+        viewModel.headerTapped(headerTapRecognizer.rx.tap.asObservable())
             .disposed(by: bag)
 
         viewModel.addedPlaces
