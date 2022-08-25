@@ -71,6 +71,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         if let imgData = item.visitedPlace.picture {
             let img = UIImage(data: imgData)
             coordinator?.photoViewer(from: view, image: img)
+        } else {
+            addOrChangeImage(to: item)
         }
     }
     
