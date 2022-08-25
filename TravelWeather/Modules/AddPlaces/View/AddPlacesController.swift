@@ -82,11 +82,15 @@ class AddPlacesController: ScrollableVStackController {
                     let cell = EditPlaceCell()
                     cell.configure(for: item, menu: self?.viewModel.menu(for: item))
 
-                    cell.startPicker.rx.date
+                    
+                    cell.startPicker.rx.controlEvent(.editingDidEnd)
+                        .map { cell.startPicker.date }
                         .filter { $0 != item.visitedPlace.start }
                         .subscribe(onNext: { d in self?.viewModel.setStart(of: item, to: d) })
                         .disposed(by: cell.bag)
-                    cell.endPicker.rx.date
+
+                    cell.endPicker.rx.controlEvent(.editingDidEnd)
+                        .map { cell.endPicker.date }
                         .filter { $0 != item.visitedPlace.end }
                         .subscribe(onNext: { d in self?.viewModel.setEnd(of: item, to: d) })
                         .disposed(by: cell.bag)
@@ -101,6 +105,7 @@ class AddPlacesController: ScrollableVStackController {
                         .map { $0.contains(item.visitedPlace.id) }
                         .drive(cell.cellExpanded)
                         .disposed(by: cell.bag)
+                    
                     cell.cellTapRecognizer.rx.tap
                         .withLatestFrom(self?.viewModel.expandedItems ?? .just([]))
                         .map { $0.contains(item.visitedPlace.id) }
@@ -108,6 +113,7 @@ class AddPlacesController: ScrollableVStackController {
                             onNext: { isExp in self?.viewModel.set(item, expanded: !isExp) }
                         )
                         .disposed(by: cell.bag)
+                    
                     cell.imageTapRecognizer.rx.tap
                         .subscribe(
                             onNext: { self?.viewModel.imageTapped(item, view: cell.picturePreview) }
@@ -124,6 +130,15 @@ class AddPlacesController: ScrollableVStackController {
         viewModel
             .addLocation(tappedAdd)
             .disposed(by: bag)
+    }
+    
+    
+    @objc func didEndEditing(sender: UIDatePicker) {
+        print("TEST: End \(sender.date)")
+    }
+    
+    @objc func didChangeValue(sender: UIDatePicker) {
+        print("TEST: Value \(sender.date)")
     }
     
 }
