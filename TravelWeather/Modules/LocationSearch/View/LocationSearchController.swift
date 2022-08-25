@@ -79,9 +79,11 @@ class LocationSearchController: UIViewController {
         viewModel.select(selection)
             .disposed(by: bag)
         
-        let searchQuery = searchController.searchBar.rx.text.orEmpty
-            .asObservable()
-        viewModel.annotations(for: searchQuery)
+        let searchQuery = searchController.searchBar.rx
+            .textDidEndEditing
+            .map { [weak self] in self?.searchController.searchBar.text ?? "" }
+        
+        viewModel.annotations(for: searchQuery.startWith(""))
             .drive(mapView.rx.animatedAnnotations)
             .disposed(by: bag)
     }

@@ -34,11 +34,8 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     }()
     
     func annotations(for query: Observable<String>) -> Driver<[MKAnnotation]> {
-        let search = query
-            .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-        
-        return dependencies.locationsStore
-            .locations(for: search, bag: bag)
+        dependencies.locationsStore
+            .locations(for: query, bag: bag)
             .map { locations in
                 locations
                     .map { loc in LocationSearchAnnotation(loc: loc) }
