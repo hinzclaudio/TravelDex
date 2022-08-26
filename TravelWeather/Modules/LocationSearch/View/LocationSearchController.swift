@@ -16,6 +16,7 @@ class LocationSearchController: UIViewController {
     
     let viewModel: LocationSearchViewModelType
     
+    let mapTapGesture = UILongPressGestureRecognizer()
     let selection = PublishSubject<Location>()
     let bag = DisposeBag()
     
@@ -61,6 +62,7 @@ class LocationSearchController: UIViewController {
     private func configureViews() {
         navigationItem.title = "Search Locations"
         mapView.delegate = self
+        mapView.addGestureRecognizer(mapTapGesture)
         
         searchController.searchBar.styleDefault()
         searchController.hidesNavigationBarDuringPresentation = false
@@ -94,7 +96,6 @@ class LocationSearchController: UIViewController {
             .textDidEndEditing
             .map { [weak self] in self?.searchController.searchBar.text ?? "" }
             .startWith("")
-        
         let annotations = viewModel
             .annotations(for: searchQuery)
         annotations
@@ -118,6 +119,18 @@ class LocationSearchController: UIViewController {
             .withLatestFrom(oneAndOnlyAnnotation)
             .compactMap { a -> Location? in (a as? LocationSearchAnnotation)?.location }
             .bind(to: selection)
+            .disposed(by: bag)
+        
+        mapTapGesture.rx.event
+            .filter { $0.state == .began }
+            .map { [unowned mapView] gesture -> Coordinate in
+                let point = gesture.location(in: mapView)
+                let coord = mapView.convert(point, toCoordinateFrom: mapView)
+                return Coordinate(latitude: coord.latitude, longitude: coord.longitude)
+            }
+            .subscribe(onNext: { coordinate in
+                print("TAPPED: \(coordinate)")
+            })
             .disposed(by: bag)
     }
     
