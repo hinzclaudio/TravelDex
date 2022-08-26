@@ -5,6 +5,7 @@ target 'TravelWeather' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
   pod 'Sourcery'
   pod 'SwiftGen'
   pod 'PureLayout'

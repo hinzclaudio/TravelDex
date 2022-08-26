@@ -7,10 +7,11 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 
 
-class AddPlacesController: ScrollableVStackController {
+class AddPlacesController: UIViewController {
     
     let viewModel: AddPlacesViewModelType
     let bag = DisposeBag()
@@ -20,8 +21,7 @@ class AddPlacesController: ScrollableVStackController {
     let addButton = UIBarButtonItem(systemItem: .add)
     
     let headerView = TripCell()
-    let placesStack = UIStackView.defaultContentStack(withSpacing: 0)
-    let saveButton = UIButton(type: .system)
+    let tableView = UITableView()
     
     let headerTapRecognizer = UITapGestureRecognizer()
     
@@ -54,8 +54,8 @@ class AddPlacesController: ScrollableVStackController {
     
     private func addViews() {
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
-        contentStack.addArrangedSubview(headerView)
-        contentStack.addArrangedSubview(placesStack)
+        view.addSubview(tableView)
+        tableView.tableHeaderView = headerView
     }
     
     private func configureViews() {
@@ -63,77 +63,87 @@ class AddPlacesController: ScrollableVStackController {
         view.backgroundColor = Colors.veryDark
         headerView.addGestureRecognizer(headerTapRecognizer)
         mapButton.image = SFSymbol.map.image
+        
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
+        tableView.register(EditPlaceCell.self, forCellReuseIdentifier: EditPlaceCell.identifier)
     }
     
     private func setAutoLayout() {
         headerView.autoMatch(.width, to: .width, of: view)
-        placesStack.autoMatch(.width, to: .width, of: contentStack)
+        
+        tableView.autoPinEdge(toSuperviewSafeArea: .top)
+        tableView.autoPinEdge(.left, to: .left, of: view)
+        tableView.autoPinEdge(.right, to: .right, of: view)
+        tableView.autoPinEdge(.bottom, to: .bottom, of: view)
     }
     
     private func setupBinding() {
         viewModel.mapButton(mapButton.rx.tap.asObservable())
             .disposed(by: bag)
+        viewModel
+            .addLocation(addButton.rx.tap.asObservable())
+            .disposed(by: bag)
         
         viewModel.trip
-            .drive(onNext: { [weak self] trip in self?.headerView.configure(for: trip) })
-            .disposed(by: bag)
-        
-        viewModel.headerTapped(headerTapRecognizer.rx.tap.asObservable())
-            .disposed(by: bag)
-
-        viewModel.addedPlaces
-            .drive(onNext: { [weak self] places in
-                self?.placesStack.removeAllArrangedSubviews()
-                places.forEach { item in
-                    let cell = EditPlaceCell()
-                    cell.configure(for: item, menu: self?.viewModel.menu(for: item))
-                    
-                    cell.startPicker.rx.controlEvent(.editingDidEnd)
-                        .map { [unowned cell] in cell.startPicker.date }
-                        .filter { $0 != item.visitedPlace.start }
-                        .subscribe(onNext: { d in self?.viewModel.setStart(of: item, to: d) })
-                        .disposed(by: cell.bag)
-
-                    cell.endPicker.rx.controlEvent(.editingDidEnd)
-                        .map { [unowned cell] in cell.endPicker.date }
-                        .filter { $0 != item.visitedPlace.end }
-                        .subscribe(onNext: { d in self?.viewModel.setEnd(of: item, to: d) })
-                        .disposed(by: cell.bag)
-
-                    self?.viewModel.loadingImagesFor
-                        .map { $0.contains(item.visitedPlace.id) }
-                        .distinctUntilChanged()
-                        .drive(cell.isLoading)
-                        .disposed(by: cell.bag)
-                    
-                    self?.viewModel.expandedItems
-                        .map { $0.contains(item.visitedPlace.id) }
-                        .drive(cell.cellExpanded)
-                        .disposed(by: cell.bag)
-                    
-                    cell.cellTapRecognizer.rx.tap
-                        .withLatestFrom(self?.viewModel.expandedItems ?? .just([]))
-                        .map { $0.contains(item.visitedPlace.id) }
-                        .subscribe(
-                            onNext: { isExp in self?.viewModel.set(item, expanded: !isExp) }
-                        )
-                        .disposed(by: cell.bag)
-                    
-                    cell.imageTapRecognizer.rx.tap
-                        .subscribe(
-                            onNext: { [unowned cell] in self?.viewModel.imageTapped(item, view: cell.picturePreview) }
-                        )
-                        .disposed(by: cell.bag)
-
-                    self?.placesStack.addArrangedSubview(cell)
-                    cell.autoMatch(.width, to: .width, of: self?.placesStack ?? UIView())
-                }
+            .drive(onNext: { [weak self] trip in
+                self?.headerView.configure(for: trip)
+                self?.headerView.layoutIfNeeded()
             })
             .disposed(by: bag)
+        viewModel.headerTapped(headerTapRecognizer.rx.tap.asObservable())
+            .disposed(by: bag)
         
-        let tappedAdd = addButton.rx.tap.asObservable()
-        viewModel
-            .addLocation(tappedAdd)
+        viewModel.addedPlaces
+            .drive(
+                tableView.rx.items(
+                    cellIdentifier: EditPlaceCell.identifier,
+                    cellType: EditPlaceCell.self
+                )
+            ) { [unowned self] i, item, cell in
+                cell.configure(for: item, menu: self.viewModel.menu(for: item))
+                
+                cell.startPicker.rx.controlEvent(.editingDidEnd)
+                    .map { [unowned cell] in cell.startPicker.date }
+                    .filter { $0 != item.visitedPlace.start }
+                    .subscribe(onNext: { d in self.viewModel.setStart(of: item, to: d) })
+                    .disposed(by: cell.bag)
+                
+                cell.endPicker.rx.controlEvent(.editingDidEnd)
+                    .map { [unowned cell] in cell.endPicker.date }
+                    .filter { $0 != item.visitedPlace.end }
+                    .subscribe(onNext: { d in self.viewModel.setEnd(of: item, to: d) })
+                    .disposed(by: cell.bag)
+                
+                self.viewModel.loadingImagesFor
+                    .map { $0.contains(item.visitedPlace.id) }
+                    .distinctUntilChanged()
+                    .drive(cell.isLoading)
+                    .disposed(by: cell.bag)
+
+                self.viewModel.expandedItems
+                    .map { $0.contains(item.visitedPlace.id) }
+                    .drive(cell.cellExpanded)
+                    .disposed(by: cell.bag)
+
+                cell.cellTapRecognizer.rx.tap
+                    .withLatestFrom(self.viewModel.expandedItems)
+                    .map { $0.contains(item.visitedPlace.id) }
+                    .subscribe(onNext: { self.viewModel.set(item, expanded: !$0) })
+                    .disposed(by: cell.bag)
+                
+                cell.imageTapRecognizer.rx.tap
+                    .subscribe(
+                        onNext: { [unowned cell] in
+                            self.viewModel.imageTapped(item, view: cell.picturePreview)
+                        }
+                    )
+                    .disposed(by: cell.bag)
+            }
+            .disposed(by: bag)
+        
+        viewModel.expandedItems.asObservable()
+            .subscribe(onNext: { [unowned self] _ in self.tableView.reloadData() } )
             .disposed(by: bag)
     }
     

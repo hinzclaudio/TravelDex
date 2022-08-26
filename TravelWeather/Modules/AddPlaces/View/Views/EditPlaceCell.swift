@@ -11,13 +11,17 @@ import RxCocoa
 
 
 
-class EditPlaceCell: UIView {
+class EditPlaceCell: UITableViewCell {
+    static let identifier = "EditPlaceTableViewCell"
     
     let cellTapRecognizer = UITapGestureRecognizer()
     let imageTapRecognizer = UITapGestureRecognizer()
-    let cellExpanded: PublishSubject<Bool> = .init()
+    let cellExpanded = BehaviorRelay(value: false)
     let isLoading = BehaviorRelay(value: false)
-    let bag = DisposeBag()
+    
+    private let persistentBag = DisposeBag()
+    private(set) var bag = DisposeBag()
+    
     
     // MARK: - Views
     private let containerView = UIView()
@@ -38,16 +42,21 @@ class EditPlaceCell: UIView {
     let startPicker = UIDatePicker()
     private let endLabel = UILabel()
     let endPicker = UIDatePicker()
+    
     private let customTextLabel = UILabel()
     
     
-    override init(frame: CGRect = .zero) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
     
     required init?(coder: NSCoder) {
         fatalError("Not implemented.")
+    }
+    
+    override func prepareForReuse() {
+        bag = DisposeBag()
     }
     
     
@@ -60,7 +69,7 @@ class EditPlaceCell: UIView {
     }
     
     private func addViews() {
-        addSubview(containerView)
+        contentView.addSubview(containerView)
         containerView.addSubview(cellStack)
         
         cellStack.addArrangedSubview(mainView)
@@ -81,41 +90,28 @@ class EditPlaceCell: UIView {
     }
     
     private func configureViews() {
+        selectionStyle = .none
+        backgroundColor = .clear
+        
         containerView.addGestureRecognizer(cellTapRecognizer)
         cellExpanded
             .map { !$0 }
             .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] hidden in
-                UIView
-                    .animate(
-                        withDuration: AnimationConstants.defaultDuration,
-                        delay: 0,
-                        options: AnimationConstants.defaultOption) {
-                            self?.detailsStack.isHidden = hidden
-                        }
-            })
-            .disposed(by: bag)
+            .subscribe(onNext: { [weak self] in self?.detailsStack.isHidden = $0 })
+            .disposed(by: persistentBag)
         
         isLoading
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] isLoading in
-                UIView
-                    .animate(
-                        withDuration: AnimationConstants.defaultDuration,
-                        delay: 0,
-                        options: AnimationConstants.defaultOption) {
-                            if isLoading {
-                                self?.picturePreview.isHidden = true
-                                self?.loadingView.isHidden = false
-                                self?.loadingView.startAnimating()
-                            } else {
-                                self?.picturePreview.isHidden = false
-                                self?.loadingView.isHidden = true
-                                self?.loadingView.stopAnimating()
-                            }
-                        }
+                self?.picturePreview.isHidden = isLoading
+                self?.loadingView.isHidden = !isLoading
+                if isLoading {
+                    self?.loadingView.startAnimating()
+                } else {
+                    self?.loadingView.stopAnimating()
+                }
             })
-            .disposed(by: bag)
+            .disposed(by: persistentBag)
             
         titleLabel.styleHeadline2(colored: Colors.black)
         secLabel.styleSmall(colored: Colors.black)
@@ -145,10 +141,10 @@ class EditPlaceCell: UIView {
     }
     
     private func setAutoLayout() {
-        containerView.autoPinEdge(.top, to: .top, of: self, withOffset: 0.5 * Sizes.defaultMargin)
-        containerView.autoPinEdge(.left, to: .left, of: self, withOffset: Sizes.defaultMargin)
-        containerView.autoPinEdge(.right, to: .right, of: self, withOffset: -Sizes.defaultMargin)
-        containerView.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -0.5 * Sizes.defaultMargin)
+        containerView.autoPinEdge(.top, to: .top, of: contentView, withOffset: 0.5 * Sizes.defaultMargin)
+        containerView.autoPinEdge(.left, to: .left, of: contentView, withOffset: Sizes.defaultMargin)
+        containerView.autoPinEdge(.right, to: .right, of: contentView, withOffset: -Sizes.defaultMargin)
+        containerView.autoPinEdge(.bottom, to: .bottom, of: contentView, withOffset: -0.5 * Sizes.defaultMargin)
         
         cellStack.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
         cellStack.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
