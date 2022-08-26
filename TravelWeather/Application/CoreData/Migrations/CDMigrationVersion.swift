@@ -14,8 +14,7 @@ enum CDMigrationVersion: String, Equatable, CaseIterable {
     case version1 = "TravelWeather"
     
     static var current: CDMigrationVersion {
-        guard let latest = allCases.last
-        else { fatalError("No versions available.") }
+        guard let latest = allCases.last else { fatalError("No versions available.") }
         return latest
     }
     
