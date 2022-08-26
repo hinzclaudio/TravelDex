@@ -12,7 +12,7 @@ import CryptoSwift
 
 struct Colors {
     static let veryDark = UIColor(hex: "00182d")!
-    static let mediumDark = UIColor(hex: "4C5D6C")!
+    static let mediumDark = UIColor(hex: "37434E")!
     static let defaultWhite = UIColor(hex: "ecf3f0")!
     static let darkGreen = UIColor(hex: "3d5f5d")!
     static let lightGreen = UIColor(hex: "ADC4BD")!
