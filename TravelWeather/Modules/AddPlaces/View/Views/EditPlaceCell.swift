@@ -16,7 +16,7 @@ class EditPlaceCell: UITableViewCell {
     
     let cellTapRecognizer = UITapGestureRecognizer()
     let imageTapRecognizer = UITapGestureRecognizer()
-    let cellExpanded = BehaviorRelay(value: false)
+    private let cellExpanded = BehaviorRelay(value: false)
     let isLoading = BehaviorRelay(value: false)
     
     private let persistentBag = DisposeBag()
@@ -196,11 +196,11 @@ class EditPlaceCell: UITableViewCell {
         customTextLabel.autoMatch(.width, to: .width, of: detailsStack)
     }
     
-    func configure(for addedPlace: AddedPlaceItem, menu: UIMenu?) {
-        titleLabel.text = addedPlace.location.name
-        secLabel.text = addedPlace.location.supplementaryString
+    func configure(for viewModel: EditPlaceViewModel, menu: UIMenu?) {
+        titleLabel.text = viewModel.item.location.name
+        secLabel.text = viewModel.item.location.supplementaryString
         
-        if let imgData = addedPlace.visitedPlace.picture,
+        if let imgData = viewModel.item.visitedPlace.picture,
            let img = UIImage(data: imgData) {
             picturePreview.image = img
             picturePreview.clipsToBounds = true
@@ -211,10 +211,11 @@ class EditPlaceCell: UITableViewCell {
             picturePreview.contentMode = .scaleAspectFit
         }
         
-        customTextLabel.text = addedPlace.visitedPlace.text
-        startPicker.date = addedPlace.visitedPlace.start
-        endPicker.date = addedPlace.visitedPlace.end
+        customTextLabel.text = viewModel.item.visitedPlace.text
+        startPicker.date = viewModel.item.visitedPlace.start
+        endPicker.date = viewModel.item.visitedPlace.end
         optionsButton.menu = menu
+        cellExpanded.accept(viewModel.expanded)
     }
     
 }

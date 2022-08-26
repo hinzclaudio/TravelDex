@@ -86,37 +86,47 @@ class AddPlacesViewModelTests: XCTestCase {
         XCTAssertTrue(mockDependencies.mockPlacesStore.placesForTripCalled)
     }
     
-    func testExpandedItemsEmptyInitially() throws {
-        let expanded = try viewModel.expandedItems
+    func testViewModelReturnsOneAndOnlySection() throws {
+        let sections = try viewModel.addedPlaces
             .toBlocking(timeout: 5)
             .first()
-        XCTAssertNotNil(expanded)
-        XCTAssertEqual(expanded?.count, 0)
+        XCTAssertNotNil(sections)
+        XCTAssertEqual(sections?.count, 1)
     }
     
-    func testSetExpaneded() throws {
-        let testId = VisitedPlaceID()
-        viewModel.set(
-            AddedPlaceItem(
-                visitedPlace: VisitedPlace(
-                    id: testId,
-                    start: .now.addingTimeInterval(-86400),
-                    end: .now,
-                    tripId: TripID(),
-                    locationId: LocationID()
-                ),
-                location: MockLocationAPI
-                    .hamburg
-            ),
-            expanded: true
-        )
+    func testExpandedItemsEmptyInitially() throws {
+        let countOfExpandedItems = try viewModel.addedPlaces
+            .map { sections in
+                sections.first?.items
+                    .map { $0.expanded }
+                    .filter { $0 }
+                    .count ?? -1
+            }
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertEqual(countOfExpandedItems, 0)
+    }
+    
+    func testSetExpanded() throws {
+        let addedPlace = try viewModel.addedPlaces
+            .map { $0.first?.items ?? [] }
+            .compactMap { $0.first?.item }
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(addedPlace)
         
-        let expanded = try viewModel.expandedItems
+        viewModel.set(addedPlace!, expanded: true)
+        let expanded = try viewModel.addedPlaces
+            .map { $0.first?.items ?? [] }
+            .map { items in
+                items
+                    .filter { $0.expanded }
+                    .map { $0.item.visitedPlace.id }
+            }
             .filter { !$0.isEmpty }
             .toBlocking(timeout: 5)
             .first()
-        
-        XCTAssertEqual(expanded, [testId])
+        XCTAssertEqual(expanded, [addedPlace!.visitedPlace.id])
     }
     
     func testSetNotExpaneded() throws {
@@ -136,7 +146,9 @@ class AddPlacesViewModelTests: XCTestCase {
             expanded: false
         )
         
-        let expanded = try viewModel.expandedItems
+        let expanded = try viewModel.addedPlaces
+            .map { $0.first?.items ?? [] }
+            .map { items in items.filter { $0.expanded } }
             .toBlocking(timeout: 5)
             .first()
         

@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 
 
@@ -86,74 +87,63 @@ class AddPlacesController: UIViewController {
             .disposed(by: bag)
         
         viewModel.trip
-            .drive(onNext: { [weak self] trip in
-                self?.headerView.configure(for: trip)
-                self?.headerView.layoutIfNeeded()
+            .drive(onNext: { [unowned self] trip in
+                self.headerView.configure(for: trip)
+                self.headerView.layoutIfNeeded()
             })
             .disposed(by: bag)
         viewModel.headerTapped(headerTapRecognizer.rx.tap.asObservable())
             .disposed(by: bag)
         
-        viewModel.addedPlaces
-            .drive(
-                tableView.rx.items(
-                    cellIdentifier: EditPlaceCell.identifier,
-                    cellType: EditPlaceCell.self
+        let tableDataSource = RxTableViewSectionedAnimatedDataSource<AddedPlaceSection>(
+            configureCell: { [unowned self] dataSource, tableView, indexPath, vm in
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: EditPlaceCell.identifier,
+                    for: indexPath
+                ) as! EditPlaceCell
+                
+                cell.configure(
+                    for: vm,
+                    menu: self.viewModel.menu(for: vm.item)
                 )
-            ) { [unowned self] i, item, cell in
-                cell.configure(for: item, menu: self.viewModel.menu(for: item))
                 
                 cell.startPicker.rx.controlEvent(.editingDidEnd)
                     .map { [unowned cell] in cell.startPicker.date }
-                    .filter { $0 != item.visitedPlace.start }
-                    .subscribe(onNext: { d in self.viewModel.setStart(of: item, to: d) })
+                    .filter { $0 != vm.item.visitedPlace.start }
+                    .subscribe(onNext: { d in self.viewModel.setStart(of: vm.item, to: d) })
                     .disposed(by: cell.bag)
                 
                 cell.endPicker.rx.controlEvent(.editingDidEnd)
                     .map { [unowned cell] in cell.endPicker.date }
-                    .filter { $0 != item.visitedPlace.end }
-                    .subscribe(onNext: { d in self.viewModel.setEnd(of: item, to: d) })
+                    .filter { $0 != vm.item.visitedPlace.end }
+                    .subscribe(onNext: { d in self.viewModel.setEnd(of: vm.item, to: d) })
                     .disposed(by: cell.bag)
                 
                 self.viewModel.loadingImagesFor
-                    .map { $0.contains(item.visitedPlace.id) }
+                    .map { $0.contains(vm.item.visitedPlace.id) }
                     .distinctUntilChanged()
                     .drive(cell.isLoading)
                     .disposed(by: cell.bag)
 
-                self.viewModel.expandedItems
-                    .map { $0.contains(item.visitedPlace.id) }
-                    .drive(cell.cellExpanded)
-                    .disposed(by: cell.bag)
-
                 cell.cellTapRecognizer.rx.tap
-                    .withLatestFrom(self.viewModel.expandedItems)
-                    .map { $0.contains(item.visitedPlace.id) }
-                    .subscribe(onNext: { self.viewModel.set(item, expanded: !$0) })
+                    .subscribe(onNext: { self.viewModel.set(vm.item, expanded: !vm.expanded) })
                     .disposed(by: cell.bag)
                 
                 cell.imageTapRecognizer.rx.tap
                     .subscribe(
                         onNext: { [unowned cell] in
-                            self.viewModel.imageTapped(item, view: cell.picturePreview)
+                            self.viewModel.imageTapped(vm.item, view: cell.picturePreview)
                         }
                     )
                     .disposed(by: cell.bag)
+                
+                return cell
             }
-            .disposed(by: bag)
+        )
         
-        viewModel.expandedItems.asObservable()
-            .subscribe(onNext: { [unowned self] _ in self.tableView.reloadData() } )
+        viewModel.addedPlaces
+            .drive(tableView.rx.items(dataSource: tableDataSource))
             .disposed(by: bag)
-    }
-    
-    
-    @objc func didEndEditing(sender: UIDatePicker) {
-        print("TEST: End \(sender.date)")
-    }
-    
-    @objc func didChangeValue(sender: UIDatePicker) {
-        print("TEST: Value \(sender.date)")
     }
     
 }

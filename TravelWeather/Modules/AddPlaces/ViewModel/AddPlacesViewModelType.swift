@@ -27,12 +27,11 @@ protocol AddPlacesViewModelType {
     
     // MARK: - Output
     var trip: Driver<Trip> { get }
-    var addedPlaces: Driver<[AddedPlaceItem]> { get }
-    
-    // View State
-    var expandedItems: Driver<Set<VisitedPlaceID>> { get }
-    var loadingImagesFor: Driver<Set<VisitedPlaceID>> { get }
-    
+    var addedPlaces: Driver<[AddedPlaceSection]> { get }
     func menu(for item: AddedPlaceItem) -> UIMenu
+    
+    
+    // MARK: - View State
+    var loadingImagesFor: Driver<Set<VisitedPlaceID>> { get }
     
 }

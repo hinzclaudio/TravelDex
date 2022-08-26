@@ -91,16 +91,25 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             .asDriver(onErrorJustReturn: initialTrip)
     }()
     
-    lazy var addedPlaces: Driver<[AddedPlaceItem]> = {
-        dependencies.placesStore
-            .places(for: .just(initialTrip.id))
-            .asDriver(onErrorJustReturn: [])
+    lazy var addedPlaces: Driver<[AddedPlaceSection]> = {
+        let placesDriver: Driver<[AddedPlaceItem]> = dependencies.placesStore
+                .places(for: .just(initialTrip.id))
+                .asDriver(onErrorJustReturn: [])
+        let expandedDriver: Driver<Set<VisitedPlaceID>> = _expandedItems
+            .asDriver()
+        
+        return Driver.combineLatest(placesDriver, expandedDriver)
+            .map { [unowned self] places, expanded -> [AddedPlaceSection] in
+                let viewModels = places
+                    .map { item -> EditPlaceViewModel in
+                        let isExpanded = expanded.contains(item.visitedPlace.id)
+                        return EditPlaceViewModel(item: item, expanded: isExpanded)
+                    }
+                return [AddedPlaceSection(id: self.initialTrip.id, items: viewModels)]
+            }
     }()
     
     let _expandedItems = BehaviorRelay<Set<VisitedPlaceID>>(value: [])
-    lazy var expandedItems: Driver<Set<VisitedPlaceID>> = {
-        _expandedItems.asDriver()
-    }()
     
     let _loadingImagesFor = BehaviorRelay<Set<VisitedPlaceID>>(value: [])
     lazy var loadingImagesFor: Driver<Set<VisitedPlaceID>> = {

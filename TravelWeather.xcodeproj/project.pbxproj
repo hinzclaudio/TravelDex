@@ -67,6 +67,7 @@
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
 		12E063A5289C5422007B09BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A4289C5422007B09BE /* Assets.xcassets */; };
 		12E063A8289C5422007B09BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E063A6289C5422007B09BE /* LaunchScreen.storyboard */; };
+		12E8BFB928B8F115003A8559 /* EditPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E8BFB828B8F115003A8559 /* EditPlaceViewModel.swift */; };
 		12EDDED028B36C2900D57DB2 /* AddPlacesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */; };
 		12EDDED228B36C3800D57DB2 /* EditTripViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */; };
 		12EDDED428B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */; };
@@ -220,6 +221,7 @@
 		12E063A9289C5422007B09BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E063AE289C5422007B09BE /* TravelWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E063B8289C5422007B09BE /* TravelWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12E8BFB828B8F115003A8559 /* EditPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlaceViewModel.swift; sourceTree = "<group>"; };
 		12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesViewModelTests.swift; sourceTree = "<group>"; };
 		12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTripViewModelTests.swift; sourceTree = "<group>"; };
 		12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsDisplayViewModelTests.swift; sourceTree = "<group>"; };
@@ -735,6 +737,7 @@
 			children = (
 				12F05EAB289E803400A0C4AB /* AddPlacesViewModelType.swift */,
 				12F05EAD289E804700A0C4AB /* AddPlacesViewModel.swift */,
+				12E8BFB828B8F115003A8559 /* EditPlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1334,6 +1337,7 @@
 				12F13510289D9CE800363CF6 /* EditTripController.swift in Sources */,
 				1267F13E28A5A21D0025071C /* LocationDisplayViewModelType.swift in Sources */,
 				1211078B28A0382F0046E8A9 /* RxTapGesture.swift in Sources */,
+				12E8BFB928B8F115003A8559 /* EditPlaceViewModel.swift in Sources */,
 				1267F13428A591580025071C /* DateExt.swift in Sources */,
 				1260ED6C289D6E380008C9EE /* CDMigrator.swift in Sources */,
 				1278602928B6286F00CAC061 /* AddPlacesCommentViewModel.swift in Sources */,

@@ -13,6 +13,8 @@ import RxSwift
 
 class MockPlacesStore: PlacesStoreType {
     
+    static private let stableVisistedPlaceId = VisitedPlaceID()
+    
     private(set) var addLocationToTripCalled = false
     func add(_ location: Location, to trip: Trip) {
         addLocationToTripCalled = true
@@ -33,7 +35,7 @@ class MockPlacesStore: PlacesStoreType {
         .just([
             AddedPlaceItem(
                 visitedPlace: VisitedPlace(
-                    id: VisitedPlaceID(),
+                    id: MockPlacesStore.stableVisistedPlaceId,
                     start: .now.addingTimeInterval(-86400),
                     end: .now,
                     tripId: TripID(),
@@ -53,7 +55,7 @@ class MockPlacesStore: PlacesStoreType {
                 [
                     AddedPlaceItem(
                         visitedPlace: VisitedPlace(
-                            id: VisitedPlaceID(),
+                            id: MockPlacesStore.stableVisistedPlaceId,
                             start: .now.addingTimeInterval(-86400),
                             end: .now,
                             tripId: tripId,
