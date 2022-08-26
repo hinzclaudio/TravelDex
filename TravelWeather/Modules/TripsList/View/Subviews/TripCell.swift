@@ -62,21 +62,26 @@ class TripCell: UIView {
         
         let titleLabel = UILabel()
         titleLabel.styleHeadline1()
+        titleLabel.textAlignment = .center
         titleLabel.text = trip.title
         labelStack.addArrangedSubview(titleLabel)
+        titleLabel.autoMatch(.width, to: .width, of: labelStack)
         
         if let descr = trip.descr {
             let descrLabel = UILabel()
             descrLabel.styleText()
             descrLabel.text = descr
             labelStack.addArrangedSubview(descrLabel)
+            descrLabel.autoMatch(.width, to: .width, of: labelStack)
         }
         
         if let members = trip.members {
             let membersLabel = UILabel()
             membersLabel.styleSmall(lines: 0)
             membersLabel.text = members
+            membersLabel.textAlignment = .center
             labelStack.addArrangedSubview(membersLabel)
+            membersLabel.autoMatch(.width, to: .width, of: labelStack)
         }
     }
     
