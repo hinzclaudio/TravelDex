@@ -23,6 +23,7 @@ class TripsListController: UIViewController {
     let addButton = UIBarButtonItem(systemItem: .add)
     let searchController = UISearchController()
     let tableView = UITableView()
+    let addTripLabel = UILabel()
     
     
     init(viewModel: TripsListViewModelType) {
@@ -56,6 +57,7 @@ class TripsListController: UIViewController {
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         navigationItem.searchController = searchController
         view.addSubview(tableView)
+        view.addSubview(addTripLabel)
     }
     
     private func configureViews() {
@@ -64,9 +66,14 @@ class TripsListController: UIViewController {
         searchController.searchBar.styleDefault()
         navigationItem.hidesSearchBarWhenScrolling = false
         view.backgroundColor = Colors.veryDark
+        
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.register(TripsListTableCell.self, forCellReuseIdentifier: TripsListTableCell.identifier)
+        
+        addTripLabel.styleText()
+        addTripLabel.textAlignment = .center
+        addTripLabel.text = "You did not add any trips yet. Add a trip by tapping the plus icon!"
     }
     
     private func setAutoLayout() {
@@ -74,6 +81,11 @@ class TripsListController: UIViewController {
         tableView.autoPinEdge(.left, to: .left, of: view)
         tableView.autoPinEdge(.right, to: .right, of: view)
         tableView.autoPinEdge(.bottom, to: .bottom, of: view)
+        
+        addTripLabel.autoPinEdge(toSuperviewSafeArea: .top, withInset: 3 * Sizes.defaultMargin)
+        addTripLabel.autoPinEdge(toSuperviewSafeArea: .left, withInset: 3 * Sizes.defaultMargin)
+        addTripLabel.autoPinEdge(toSuperviewSafeArea: .right, withInset: 3 * Sizes.defaultMargin)
+        addTripLabel.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 3 * Sizes.defaultMargin)
     }
     
     private func setupBinding() {
@@ -87,6 +99,18 @@ class TripsListController: UIViewController {
         
         let searchQuery = searchController.searchBar.rx.text.orEmpty.asObservable()
         let trips = viewModel.trips(for: searchQuery)
+        
+        let tripsAvailable = trips
+            .map { !$0.isEmpty }
+            .distinctUntilChanged()
+        tripsAvailable
+            .map { !$0 }
+            .drive(tableView.rx.isHidden)
+            .disposed(by: bag)
+        tripsAvailable
+            .drive(addTripLabel.rx.isHidden)
+            .disposed(by: bag)
+        
         trips
             .drive(
                 tableView.rx.items(

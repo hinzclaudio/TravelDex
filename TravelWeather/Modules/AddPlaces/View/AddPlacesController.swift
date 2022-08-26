@@ -23,6 +23,7 @@ class AddPlacesController: UIViewController {
     
     let headerView = TripCell()
     let tableView = UITableView()
+    let addLocationsLabel = UILabel()
     
     let headerTapRecognizer = UITapGestureRecognizer()
     
@@ -56,6 +57,7 @@ class AddPlacesController: UIViewController {
     private func addViews() {
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         view.addSubview(tableView)
+        view.addSubview(addLocationsLabel)
         tableView.tableHeaderView = headerView
     }
     
@@ -68,6 +70,10 @@ class AddPlacesController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.register(EditPlaceCell.self, forCellReuseIdentifier: EditPlaceCell.identifier)
+        
+        addLocationsLabel.styleText()
+        addLocationsLabel.textAlignment = .center
+        addLocationsLabel.text = "You did not add any locations yet. Add a location by tapping the plus icon!"
     }
     
     private func setAutoLayout() {
@@ -77,6 +83,11 @@ class AddPlacesController: UIViewController {
         tableView.autoPinEdge(.left, to: .left, of: view)
         tableView.autoPinEdge(.right, to: .right, of: view)
         tableView.autoPinEdge(.bottom, to: .bottom, of: view)
+        
+        addLocationsLabel.autoPinEdge(toSuperviewSafeArea: .top, withInset: 3 * Sizes.defaultMargin)
+        addLocationsLabel.autoPinEdge(toSuperviewSafeArea: .left, withInset: 3 * Sizes.defaultMargin)
+        addLocationsLabel.autoPinEdge(toSuperviewSafeArea: .right, withInset: 3 * Sizes.defaultMargin)
+        addLocationsLabel.autoPinEdge(toSuperviewSafeArea: .bottom, withInset: 3 * Sizes.defaultMargin)
     }
     
     private func setupBinding() {
@@ -143,6 +154,18 @@ class AddPlacesController: UIViewController {
         
         viewModel.addedPlaces
             .drive(tableView.rx.items(dataSource: tableDataSource))
+            .disposed(by: bag)
+        
+        let addedPlacesAvailable = viewModel.addedPlaces
+            .map { sections in sections.reduce(into: 0, { $0 += $1.items.count }) }
+            .map { $0 > 0 }
+            .distinctUntilChanged()
+        addedPlacesAvailable
+            .map { !$0 }
+            .drive(tableView.rx.isHidden)
+            .disposed(by: bag)
+        addedPlacesAvailable
+            .drive(addLocationsLabel.rx.isHidden)
             .disposed(by: bag)
     }
     
