@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 
 
 
@@ -16,8 +17,8 @@ protocol LocationEntryViewModelType {
     var title: BehaviorRelay<String> { get }
     var region: BehaviorRelay<String?> { get }
     var country: BehaviorRelay<String?> { get }
+    var snapshot: Driver<UIImage?> { get }
     
     func confirm(_ tapped: Observable<Void>) -> Disposable
-    func geoCoding(requested: Observable<Void>) -> Disposable
     
 }

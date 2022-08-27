@@ -20,7 +20,7 @@ struct Sizes {
     static let defaultButtonHeight: CGFloat = 25
     static let defaultBorderButtonHeight: CGFloat = 50
     static let defaultIconButtonSIze = CGSize(width: 30, height: 30)
+    static let defaultSnapshotHeight = CGFloat(150)
     
-    static let mapPinSize = CGSize(width: 50, height: 50)
     static let smallImgPreview = CGSize(width: 50, height: 50)
 }

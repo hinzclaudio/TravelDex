@@ -8,6 +8,8 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
+import MapKit
 
 
 
@@ -28,6 +30,30 @@ class LocationEntryViewModel: LocationEntryViewModelType {
     let title = BehaviorRelay(value: "")
     let region = BehaviorRelay<String?>(value: nil)
     let country = BehaviorRelay<String?>(value: nil)
+    
+    
+    lazy var snapshot: Driver<UIImage?> = {
+        let wSpan: Double = 0.01
+        let wSize = Double(UIScreen.main.bounds.size.width - 2 * Sizes.defaultMargin)
+        let vSize = Sizes.defaultSnapshotHeight
+        let vSpan = (wSpan / wSize) * vSize
+        
+        let options = MKMapSnapshotter.Options()
+        options.size = CGSize(width: wSize, height: vSize)
+        options.region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(
+                latitude: coordinate.latitude,
+                longitude: coordinate.longitude
+            ),
+            span: MKCoordinateSpan(
+                latitudeDelta: wSpan,
+                longitudeDelta: vSpan
+            )
+        )
+        let snapshotter = MKMapSnapshotter(options: options)
+        return snapshotter.snapshot
+            .asDriver(onErrorJustReturn: nil)
+    }()
     
     func confirm(_ tapped: Observable<Void>) -> Disposable {
         let location = Observable.combineLatest(title, region, country)
@@ -53,10 +79,6 @@ class LocationEntryViewModel: LocationEntryViewModelType {
             addAction.dispose()
             coordinatorAction.dispose()
         }
-    }
-    
-    func geoCoding(requested: Observable<Void>) -> Disposable {
-        Disposables.create()
     }
     
 }

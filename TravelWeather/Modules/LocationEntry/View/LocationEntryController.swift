@@ -21,6 +21,7 @@ class LocationEntryController: ScrollableVStackController {
     let titleField = TitledTextField()
     let regionField = TitledTextField()
     let countryField = TitledTextField()
+    let snapshotView = UIImageView()
     let confirmButton = UIButton(type: .system)
     
     
@@ -55,6 +56,7 @@ class LocationEntryController: ScrollableVStackController {
         contentStack.addArrangedSubview(titleField)
         contentStack.addArrangedSubview(regionField)
         contentStack.addArrangedSubview(countryField)
+        contentStack.addArrangedSubview(snapshotView)
         contentStack.addArrangedSubview(confirmButton)
     }
     
@@ -65,6 +67,10 @@ class LocationEntryController: ScrollableVStackController {
         regionField.descrLabel.text = "(optional)"
         countryField.titleLabel.text = "Country"
         countryField.descrLabel.text = "(optional)"
+        
+        snapshotView.roundCorners()
+        snapshotView.contentMode = .scaleAspectFill
+        
         confirmButton.setTitle("Add Location", for: .normal)
         confirmButton.styleBorderedButton()
     }
@@ -75,8 +81,14 @@ class LocationEntryController: ScrollableVStackController {
         countryField.autoMatch(.width, to: .width, of: contentStack)
         
         contentStack.setCustomSpacing(2 * Sizes.defaultMargin, after: countryField)
+        snapshotView.autoSetDimension(.height, toSize: Sizes.defaultSnapshotHeight)
+        snapshotView.autoMatch(.width, to: .width, of: contentStack, withOffset: -2 * Sizes.defaultMargin)
+        
+        contentStack.setCustomSpacing(1.5 * Sizes.defaultMargin, after: snapshotView)
         confirmButton.autoMatch(.width, to: .width, of: contentStack, withOffset: -2 * Sizes.defaultMargin)
         confirmButton.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
+        
+        
     }
     
     private func setupBinding() {
@@ -102,6 +114,10 @@ class LocationEntryController: ScrollableVStackController {
         countryField.tf.rx.text.asObservable().nilIfEmpty
             .distinctUntilChanged()
             .bind(to: viewModel.country)
+            .disposed(by: bag)
+        
+        viewModel.snapshot
+            .drive(snapshotView.rx.image)
             .disposed(by: bag)
         
         viewModel.confirm(confirmButton.rx.tap.asObservable())
