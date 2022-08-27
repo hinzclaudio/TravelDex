@@ -15,29 +15,19 @@ import RxRelay
 class LocationSearchViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
-    var selectedLocations: BehaviorRelay<Location?>!
     var viewModel: LocationSearchViewModelType!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
-        self.selectedLocations = BehaviorRelay(value: nil)
-        self.viewModel = LocationSearchViewModel(
-            dependencies: mockDependencies,
-            selection: { [weak self] loc in self?.selectedLocations.accept(loc) }
-        )
+        self.viewModel = LocationSearchViewModel(dependencies: mockDependencies)
     }
     
     
-    func testSelectLocationIsCalled() throws {
+    func testSelectLocationIsAddedToStore() throws {
         let _ = viewModel
             .select(.just(MockLocationAPI.hamburg))
-        let selection = try selectedLocations
-            .compactMap { $0 }
-            .toBlocking(timeout: 5)
-            .first()
-        XCTAssertNotNil(selection)
-        XCTAssertEqual(selection, MockLocationAPI.hamburg)
+        XCTAssertTrue(mockDependencies.mockLocationsStore.addLocationCalled)
     }
     
     func testAnnotationsIsUpdatedFromStore() throws {
