@@ -44,7 +44,7 @@ class AppCoordinator: CoordinatorType {
         let viewModel = EditTripViewModel(dependencies: dependencies)
         viewModel.coordinator = self
         let controller = EditTripController(viewModel: viewModel)
-        presentModally(controller)
+        modalController = presentModally(controller)
     }
     
     
@@ -65,7 +65,7 @@ class AppCoordinator: CoordinatorType {
         let vm = EditTripViewModel(dependencies: dependencies, tripId: trip.id)
         vm.coordinator = self
         let controller = EditTripController(viewModel: vm)
-        presentModally(controller)
+        modalController = presentModally(controller)
     }
     
     
@@ -73,18 +73,28 @@ class AppCoordinator: CoordinatorType {
         let vm = AddPlacesCommentViewModel(dependencies: dependencies, item: item)
         vm.coordinator = self
         let controller = AddPlacesCommentController(viewModel: vm)
-        presentBottomSheet(controller)
+        modalController = presentBottomSheet(controller)
     }
     
     
     func searchLocation(completion: @escaping (Location) -> Void) {
-        let viewModel = LocationSearchViewModel(dependencies: dependencies) { [weak self] loc in
-            self?.modalController?.dismiss(animated: true)
-            completion(loc)
+        let modalContainer = ModalNavigationContainer()
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        
+        let coordinator = LocationSearchCoordinator(
+            dependencies: dependencies,
+            navigationController: modalContainer,
+            selectionHandler: completion
+        )
+        
+        self.store(coordinator: coordinator)
+        modalContainer.onDidDisappear = { [weak self, unowned coordinator] in
+            self?.free(coordinator: coordinator)
         }
-        viewModel.coordinator = self
-        let controller = LocationSearchController(viewModel: viewModel)
-        presentModally(controller)
+        coordinator.start()
+        
+        self.modalController = modalContainer
+        self.navigationController.present(modalContainer, animated: true)
     }
     
     
@@ -125,26 +135,5 @@ class AppCoordinator: CoordinatorType {
         let controller = LocationDisplayController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
-    
-    
-    private func presentModally(_ viewController: UIViewController) {
-        let modalContainer = ModalNavigationContainer(rootViewController: viewController)
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
-        modalContainer.modalPresentationStyle = .automatic
-        navigationController.present(modalContainer, animated: true)
-        modalController = modalContainer
-    }
-    
 
-    private func presentBottomSheet(_ viewController: UIViewController) {
-        let modalContainer = ModalNavigationContainer(rootViewController: viewController)
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
-        modalContainer.modalPresentationStyle = .pageSheet
-        if let sheet = modalContainer.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-        navigationController.present(modalContainer, animated: true)
-        modalController = modalContainer
-    }
-    
 }

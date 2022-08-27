@@ -12,9 +12,16 @@ import UIKit
 
 class ModalNavigationContainer: UINavigationController {
     
+    var onDidDisappear: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        onDidDisappear?()
     }
     
 }

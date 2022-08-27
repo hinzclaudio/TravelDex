@@ -15,6 +15,7 @@ protocol LocationSearchViewModelType {
     
     // MARK: - Input
     func select(_ location: Observable<Location>) -> Disposable
+    func longPress(_ coordinate: Observable<Coordinate>) -> Disposable
     
     
     // MARK: - Output
