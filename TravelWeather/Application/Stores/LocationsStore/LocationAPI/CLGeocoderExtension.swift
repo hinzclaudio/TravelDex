@@ -12,6 +12,13 @@ import CoreLocation
 
 
 extension CLGeocoder: LocationAPIType {
+    
+    func getLocation(for coordinate: Coordinate) -> Observable<Location> {
+        self.rx.clPlacemarks(for: coordinate)
+            .asLocations
+            .compactMap { $0.first }
+    }
+    
     func getLocations(search: String) -> Observable<[Location]> {
         self.rx
             .clPlacemarks(for: search)

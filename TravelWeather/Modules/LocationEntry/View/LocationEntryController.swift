@@ -61,6 +61,7 @@ class LocationEntryController: ScrollableVStackController {
     }
     
     private func configureViews() {
+        navigationItem.title = "Add Location"
         view.backgroundColor = Colors.veryDark
         titleField.titleLabel.text = "Title"
         regionField.titleLabel.text = "Region"

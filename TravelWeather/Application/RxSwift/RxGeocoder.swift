@@ -23,9 +23,32 @@ extension Reactive where Base == CLGeocoder {
                     observer.onCompleted()
                 } else {
                     assertionFailure("Something's missing...")
+                    observer.onCompleted()
                 }
             }
                 
+            return Disposables.create {
+                base.cancelGeocode()
+            }
+        }
+    }
+    
+    
+    func clPlacemarks(for coordinate: Coordinate) -> Observable<[CLPlacemark]> {
+        Observable.create { observer in
+            let loc = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            base.reverseGeocodeLocation(loc) { (placemarks, error) in
+                if let error = error {
+                    observer.onError(error)
+                } else if let placemarks = placemarks {
+                    observer.onNext(placemarks)
+                    observer.onCompleted()
+                } else {
+                    assertionFailure("Something's missing...")
+                    observer.onCompleted()
+                }
+            }
+            
             return Disposables.create {
                 base.cancelGeocode()
             }

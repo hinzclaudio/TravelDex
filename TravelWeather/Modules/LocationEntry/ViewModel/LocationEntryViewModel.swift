@@ -20,10 +20,28 @@ class LocationEntryViewModel: LocationEntryViewModelType {
     typealias Dependencies = HasLocationsStore
     private let dependencies: Dependencies
     private let coordinate: Coordinate
+    private let bag = DisposeBag()
+    
     
     init(dependencies: Dependencies, coordinate: Coordinate) {
         self.dependencies = dependencies
         self.coordinate = coordinate
+        
+        let location = self.dependencies.locationsStore.locations(for: .just(coordinate))
+            .share(replay: 1)
+        
+        location
+            .map { $0.name }
+            .bind(to: title)
+            .disposed(by: bag)
+        location
+            .map { $0.region }
+            .bind(to: region)
+            .disposed(by: bag)
+        location
+            .map { $0.country }
+            .bind(to: country)
+            .disposed(by: bag)
     }
     
     
