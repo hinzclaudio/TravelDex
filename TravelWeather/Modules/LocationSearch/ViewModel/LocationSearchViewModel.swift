@@ -14,16 +14,14 @@ import MapKit
 
 class LocationSearchViewModel: LocationSearchViewModelType {
     
-    weak var coordinator: AppCoordinator?
-    let selection: (Location) -> Void
+    weak var coordinator: LocationSearchCoordinator?
     
     typealias Dependencies = HasLocationsStore
     private let dependencies: Dependencies
     private let bag = DisposeBag()
     
-    init(dependencies: Dependencies, selection: @escaping (Location) -> Void) {
+    init(dependencies: Dependencies) {
         self.dependencies = dependencies
-        self.selection = selection
     }
     
     
@@ -45,12 +43,17 @@ class LocationSearchViewModel: LocationSearchViewModelType {
             .add(location)
         
         let selectionAction = location
-            .subscribe(onNext: { [weak self] in self?.selection($0) })
+            .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
         
         return Disposables.create {
             addLocationAction.dispose()
             selectionAction.dispose()
         }
+    }
+    
+    func longPress(_ coordinate: Observable<Coordinate>) -> Disposable {
+        coordinate
+            .subscribe(onNext: { [weak self] in self?.coordinator?.manualEntry(for: $0) })
     }
     
 }

@@ -23,6 +23,14 @@ protocol CoordinatorType: AnyObject {
 
 extension CoordinatorType {
     
+    func store(coordinator: CoordinatorType) {
+        childCoordinators.append(coordinator)
+    }
+
+    func free(coordinator: CoordinatorType) {
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
+    }
+    
     @discardableResult
     func presentModally(_ viewController: UIViewController) -> UIViewController {
         let modalContainer = ModalNavigationContainer(rootViewController: viewController)

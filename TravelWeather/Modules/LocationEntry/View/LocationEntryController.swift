@@ -20,7 +20,8 @@ class LocationEntryController: ScrollableVStackController {
     // MARK: - Views
     let titleField = TitledTextField()
     let regionField = TitledTextField()
-    let coiuntryField = TitledTextField()
+    let countryField = TitledTextField()
+    let confirmButton = UIButton(type: .system)
     
     
     
@@ -51,19 +52,60 @@ class LocationEntryController: ScrollableVStackController {
     }
     
     private func addViews() {
-        view.backgroundColor = Colors.darkRed
+        contentStack.addArrangedSubview(titleField)
+        contentStack.addArrangedSubview(regionField)
+        contentStack.addArrangedSubview(countryField)
+        contentStack.addArrangedSubview(confirmButton)
     }
     
     private func configureViews() {
-        
+        view.backgroundColor = Colors.veryDark
+        titleField.titleLabel.text = "Title"
+        regionField.titleLabel.text = "Region"
+        regionField.descrLabel.text = "(optional)"
+        countryField.titleLabel.text = "Country"
+        countryField.descrLabel.text = "(optional)"
+        confirmButton.setTitle("Add Location", for: .normal)
+        confirmButton.styleBorderedButton()
     }
     
     private func setAutoLayout() {
+        titleField.autoMatch(.width, to: .width, of: contentStack)
+        regionField.autoMatch(.width, to: .width, of: contentStack)
+        countryField.autoMatch(.width, to: .width, of: contentStack)
         
+        contentStack.setCustomSpacing(2 * Sizes.defaultMargin, after: countryField)
+        confirmButton.autoMatch(.width, to: .width, of: contentStack, withOffset: -2 * Sizes.defaultMargin)
+        confirmButton.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
     }
     
     private func setupBinding() {
+        viewModel.title
+            .bind(to: titleField.tf.rx.text)
+            .disposed(by: bag)
+        titleField.tf.rx.text.orEmpty
+            .distinctUntilChanged()
+            .bind(to: viewModel.title)
+            .disposed(by: bag)
         
+        viewModel.region
+            .bind(to: regionField.tf.rx.text)
+            .disposed(by: bag)
+        regionField.tf.rx.text.asObservable().nilIfEmpty
+            .distinctUntilChanged()
+            .bind(to: viewModel.region)
+            .disposed(by: bag)
+        
+        viewModel.country
+            .bind(to: countryField.tf.rx.text)
+            .disposed(by: bag)
+        countryField.tf.rx.text.asObservable().nilIfEmpty
+            .distinctUntilChanged()
+            .bind(to: viewModel.country)
+            .disposed(by: bag)
+        
+        viewModel.confirm(confirmButton.rx.tap.asObservable())
+            .disposed(by: bag)
     }
     
 }

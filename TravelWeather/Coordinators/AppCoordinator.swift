@@ -78,13 +78,23 @@ class AppCoordinator: CoordinatorType {
     
     
     func searchLocation(completion: @escaping (Location) -> Void) {
-        let viewModel = LocationSearchViewModel(dependencies: dependencies) { [weak self] loc in
-            self?.modalController?.dismiss(animated: true)
-            completion(loc)
+        let modalContainer = ModalNavigationContainer()
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        
+        let coordinator = LocationSearchCoordinator(
+            dependencies: dependencies,
+            navigationController: modalContainer,
+            selectionHandler: completion
+        )
+        
+        self.store(coordinator: coordinator)
+        modalContainer.onDidDisappear = { [weak self, unowned coordinator] in
+            self?.free(coordinator: coordinator)
         }
-        viewModel.coordinator = self
-        let controller = LocationSearchController(viewModel: viewModel)
-        modalController = presentModally(controller)
+        coordinator.start()
+        
+        self.modalController = modalContainer
+        self.navigationController.present(modalContainer, animated: true)
     }
     
     

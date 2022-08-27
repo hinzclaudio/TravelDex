@@ -121,16 +121,15 @@ class LocationSearchController: UIViewController {
             .bind(to: selection)
             .disposed(by: bag)
         
-        mapTapGesture.rx.event
+        let pressedCoordinate = mapTapGesture.rx.event
             .filter { $0.state == .began }
             .map { [unowned mapView] gesture -> Coordinate in
                 let point = gesture.location(in: mapView)
                 let coord = mapView.convert(point, toCoordinateFrom: mapView)
                 return Coordinate(latitude: coord.latitude, longitude: coord.longitude)
             }
-            .subscribe(onNext: { coordinate in
-                print("TAPPED: \(coordinate)")
-            })
+        viewModel
+            .longPress(pressedCoordinate)
             .disposed(by: bag)
     }
     
