@@ -62,6 +62,10 @@
 		1278602B28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */; };
 		12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */; };
 		12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */; };
+		12C2F41E28BA0F5000F0D522 /* LocationEntryViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2F41D28BA0F5000F0D522 /* LocationEntryViewModelType.swift */; };
+		12C2F42028BA0F6100F0D522 /* LocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2F41F28BA0F6100F0D522 /* LocationEntryViewModel.swift */; };
+		12C2F42228BA0FEA00F0D522 /* LocationEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2F42128BA0FEA00F0D522 /* LocationEntryController.swift */; };
+		12C2F42428BA11FF00F0D522 /* LocationSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C2F42328BA11FF00F0D522 /* LocationSearchCoordinator.swift */; };
 		12E06399289C541F007B09BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06398289C541F007B09BE /* AppDelegate.swift */; };
 		12E0639B289C541F007B09BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E0639A289C541F007B09BE /* SceneDelegate.swift */; };
 		12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */; };
@@ -212,6 +216,10 @@
 		1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelTests.swift; sourceTree = "<group>"; };
 		12A958DC28A586B000B82FC5 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12B36BE728A6C1C900E46E30 /* LocationDisplayAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDisplayAnnotation.swift; sourceTree = "<group>"; };
+		12C2F41D28BA0F5000F0D522 /* LocationEntryViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryViewModelType.swift; sourceTree = "<group>"; };
+		12C2F41F28BA0F6100F0D522 /* LocationEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryViewModel.swift; sourceTree = "<group>"; };
+		12C2F42128BA0FEA00F0D522 /* LocationEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryController.swift; sourceTree = "<group>"; };
+		12C2F42328BA11FF00F0D522 /* LocationSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchCoordinator.swift; sourceTree = "<group>"; };
 		12E06395289C541F007B09BE /* TravelWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E06398289C541F007B09BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12E0639A289C541F007B09BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -457,6 +465,7 @@
 				1278602128B6280600CAC061 /* AddPlacesComment */,
 				12F13508289D9C1800363CF6 /* EditTrip */,
 				1267F13A28A5A1C70025071C /* LocationDisplay */,
+				12C2F41A28BA0EF800F0D522 /* LocationEntry */,
 				12F7560B289EA0AE00773D46 /* LocationSearch */,
 				12F781E028A836920061AE51 /* PhotoPicker */,
 				12F134EE289D89A700363CF6 /* TripsList */,
@@ -639,6 +648,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		12C2F41A28BA0EF800F0D522 /* LocationEntry */ = {
+			isa = PBXGroup;
+			children = (
+				12C2F41B28BA0F3A00F0D522 /* ViewModel */,
+				12C2F41C28BA0F3F00F0D522 /* View */,
+			);
+			path = LocationEntry;
+			sourceTree = "<group>";
+		};
+		12C2F41B28BA0F3A00F0D522 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12C2F41D28BA0F5000F0D522 /* LocationEntryViewModelType.swift */,
+				12C2F41F28BA0F6100F0D522 /* LocationEntryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12C2F41C28BA0F3F00F0D522 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12C2F42128BA0FEA00F0D522 /* LocationEntryController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		12E0638C289C541F007B09BE = {
 			isa = PBXGroup;
 			children = (
@@ -766,6 +801,7 @@
 			children = (
 				12F134BB289D795C00363CF6 /* CoordinatorType.swift */,
 				12F134BD289D79C700363CF6 /* AppCoordinator.swift */,
+				12C2F42328BA11FF00F0D522 /* LocationSearchCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -1288,6 +1324,7 @@
 				12F134EB289D896300363CF6 /* CDLocation+CoreDataProperties.swift in Sources */,
 				12F134D5289D83C800363CF6 /* Trip.swift in Sources */,
 				12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */,
+				12C2F42428BA11FF00F0D522 /* LocationSearchCoordinator.swift in Sources */,
 				12F75613289EA17300773D46 /* LocationSearchController.swift in Sources */,
 				12F134E9289D896300363CF6 /* CDTrip+CoreDataProperties.swift in Sources */,
 				12F781E228A836AC0061AE51 /* PhotoPickerViewModelType.swift in Sources */,
@@ -1306,6 +1343,7 @@
 				1260ED61289D6D710008C9EE /* DefaultCDStack.swift in Sources */,
 				125C1A2028B2C5A1008B495D /* CLGeocoderExtension.swift in Sources */,
 				120A2320289FBA510092A2D5 /* Endpoint.swift in Sources */,
+				12C2F42028BA0F6100F0D522 /* LocationEntryViewModel.swift in Sources */,
 				12F781DC28A8279C0061AE51 /* AllPlacesDisplayViewModel.swift in Sources */,
 				123F7B6E289DBC640008444D /* Fonts.swift in Sources */,
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
@@ -1321,6 +1359,7 @@
 				12EDDEE428B3878100D57DB2 /* TripsListController_TableDelegate.swift in Sources */,
 				12F13502289D972500363CF6 /* GeneralStyleManager.swift in Sources */,
 				12F134FC289D922700363CF6 /* Sizes.swift in Sources */,
+				12C2F41E28BA0F5000F0D522 /* LocationEntryViewModelType.swift in Sources */,
 				12F75616289EA2E500773D46 /* LocationsStoreType.swift in Sources */,
 				1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */,
 				1219EF7228A90A10001AEED7 /* RxGeocoder.swift in Sources */,
@@ -1377,6 +1416,7 @@
 				12F134ED289D896300363CF6 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12EF880B289E5B6100E3EA07 /* CDTripExt.swift in Sources */,
 				12F134F6289D8A1900363CF6 /* TripsListController.swift in Sources */,
+				12C2F42228BA0FEA00F0D522 /* LocationEntryController.swift in Sources */,
 				12F7561A289EA8EF00773D46 /* UISearchBarExt.swift in Sources */,
 				12A958DD28A586B000B82FC5 /* CDDeleteVisistedPlace.swift in Sources */,
 				12F7560A289E9F1D00773D46 /* EditPlaceCell.swift in Sources */,
