@@ -125,7 +125,10 @@ class EditTripController: ScrollableVStackController {
                     title: t,
                     descr: d,
                     members: m,
-                    visitedLocations: trip?.visitedLocations ?? []
+                    visitedLocations: trip?.visitedLocations ?? [],
+                    pinColorRed: trip?.pinColorRed ?? Trip.defaultPinColorRed,
+                    pinColorGreen: trip?.pinColorGreen ?? Trip.defaultPinColorGreen,
+                    pinColorBlue: trip?.pinColorBlue ?? Trip.defaultPinColorBlue
                 )
             }
         

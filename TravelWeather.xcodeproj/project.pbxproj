@@ -18,6 +18,8 @@
 		1227677E28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */; };
 		1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */; };
 		1227BBA728BB4AA1007A406D /* LocationEntryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */; };
+		1227BBAA28BB798D007A406D /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA828BB798D007A406D /* CDTrip+CoreDataClass.swift */; };
+		1227BBAB28BB798D007A406D /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA928BB798D007A406D /* CDTrip+CoreDataProperties.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -108,8 +110,6 @@
 		12F134D7289D843200363CF6 /* VisitedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134D6289D843100363CF6 /* VisitedPlace.swift */; };
 		12F134D9289D846500363CF6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134D8289D846500363CF6 /* Location.swift */; };
 		12F134DB289D84CE00363CF6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134DA289D84CE00363CF6 /* Coordinate.swift */; };
-		12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134E0289D896300363CF6 /* CDTrip+CoreDataClass.swift */; };
-		12F134E9289D896300363CF6 /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134E1289D896300363CF6 /* CDTrip+CoreDataProperties.swift */; };
 		12F134EA289D896300363CF6 /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134E2289D896300363CF6 /* CDLocation+CoreDataClass.swift */; };
 		12F134EB289D896300363CF6 /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134E3289D896300363CF6 /* CDLocation+CoreDataProperties.swift */; };
 		12F134EC289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F134E4289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift */; };
@@ -173,6 +173,8 @@
 		1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController_MapDelegate.swift; sourceTree = "<group>"; };
 		1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchAnnotation.swift; sourceTree = "<group>"; };
 		1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryViewModelTests.swift; sourceTree = "<group>"; };
+		1227BBA828BB798D007A406D /* CDTrip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1227BBA928BB798D007A406D /* CDTrip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -268,8 +270,6 @@
 		12F134D6289D843100363CF6 /* VisitedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPlace.swift; sourceTree = "<group>"; };
 		12F134D8289D846500363CF6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		12F134DA289D84CE00363CF6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		12F134E0289D896300363CF6 /* CDTrip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataClass.swift"; sourceTree = "<group>"; };
-		12F134E1289D896300363CF6 /* CDTrip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12F134E2289D896300363CF6 /* CDLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		12F134E3289D896300363CF6 /* CDLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12F134E4289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDVisitedPlace+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -830,8 +830,8 @@
 		12F134DC289D855900363CF6 /* NSManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				12F134E0289D896300363CF6 /* CDTrip+CoreDataClass.swift */,
-				12F134E1289D896300363CF6 /* CDTrip+CoreDataProperties.swift */,
+				1227BBA828BB798D007A406D /* CDTrip+CoreDataClass.swift */,
+				1227BBA928BB798D007A406D /* CDTrip+CoreDataProperties.swift */,
 				12F134E2289D896300363CF6 /* CDLocation+CoreDataClass.swift */,
 				12F134E3289D896300363CF6 /* CDLocation+CoreDataProperties.swift */,
 				12F134E4289D896300363CF6 /* CDVisitedPlace+CoreDataClass.swift */,
@@ -1327,10 +1327,8 @@
 				12E063A3289C541F007B09BE /* TravelWeather.xcdatamodeld in Sources */,
 				12C2F42428BA11FF00F0D522 /* LocationSearchCoordinator.swift in Sources */,
 				12F75613289EA17300773D46 /* LocationSearchController.swift in Sources */,
-				12F134E9289D896300363CF6 /* CDTrip+CoreDataProperties.swift in Sources */,
 				12F781E228A836AC0061AE51 /* PhotoPickerViewModelType.swift in Sources */,
 				12F134D2289D83A100363CF6 /* TripsStoreType.swift in Sources */,
-				12F134E8289D896300363CF6 /* CDTrip+CoreDataClass.swift in Sources */,
 				120A232B289FC5A70092A2D5 /* CDUpdateLocations.swift in Sources */,
 				1278602428B6281F00CAC061 /* AddPlacesCommentController.swift in Sources */,
 				12747D4E28A6EC36005893B9 /* RxMapView.swift in Sources */,
@@ -1349,6 +1347,7 @@
 				123F7B65289DBB6D0008444D /* UIStackViewExt.swift in Sources */,
 				12F134B6289D726B00363CF6 /* DefaultAppDependencies.swift in Sources */,
 				12F75607289E971C00773D46 /* TripCell.swift in Sources */,
+				1227BBAA28BB798D007A406D /* CDTrip+CoreDataClass.swift in Sources */,
 				12F134D7289D843200363CF6 /* VisitedPlace.swift in Sources */,
 				1260ED64289D6DBE0008C9EE /* FileManagerExt.swift in Sources */,
 				12F134CF289D824200363CF6 /* TripsStore.swift in Sources */,
@@ -1388,6 +1387,7 @@
 				1267F13928A59BCD0025071C /* DatePickerExt.swift in Sources */,
 				1260ED72289D6EDA0008C9EE /* MarkterProtocols.swift in Sources */,
 				1260ED74289D6EE40008C9EE /* MarkerConformances.swift in Sources */,
+				1227BBAB28BB798D007A406D /* CDTrip+CoreDataProperties.swift in Sources */,
 				12F134F2289D89D200363CF6 /* TripsListViewModelType.swift in Sources */,
 				1227677E28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift in Sources */,
 				12B36BE828A6C1C900E46E30 /* LocationDisplayAnnotation.swift in Sources */,

@@ -18,12 +18,8 @@ class LocationDisplayAnnotation: NSObject, MKAnnotation {
         item.location.name
     }
     
-    var img: UIImage? {
-        if let data = item.visitedPlace.picture {
-            return UIImage(data: data)
-        } else {
-            return nil
-        }
+    var pinColor: UIColor {
+        item.pinColor
     }
     
     var coordinate: CLLocationCoordinate2D {

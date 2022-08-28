@@ -55,37 +55,47 @@ extension CDTrip {
     /// have been set correctly.
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
-        id: UUID,
-        title: String,
         descr: String?,
+        id: UUID,
         members: String?,
         pictureData: Data?,
+        title: String,
+        pinColorRed: Int16,
+        pinColorGreen: Int16,
+        pinColorBlue: Int16,
         visitedPlaces: NSSet
     ) {
-        self.id = id
-        self.title = title
         self.descr = descr
+        self.id = id
         self.members = members
         self.pictureData = pictureData
+        self.title = title
+        self.pinColorRed = pinColorRed
+        self.pinColorGreen = pinColorGreen
+        self.pinColorBlue = pinColorBlue
         self.visitedPlaces = visitedPlaces
     }
     /// Acts as a proper initializer that forces the compiler to check if all attributes
     /// have been set correctly.
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
-        id: UUID,
-        title: String,
         descr: String?,
+        id: UUID,
         members: String?,
         pictureData: Data?,
-        visitedPlaces: NSSet
+        title: String,
+        pinColorRed: Int16,
+        pinColorGreen: Int16,
+        pinColorBlue: Int16
     ) {
-        self.id = id
-        self.title = title
         self.descr = descr
+        self.id = id
         self.members = members
         self.pictureData = pictureData
-        self.visitedPlaces = visitedPlaces
+        self.title = title
+        self.pinColorRed = pinColorRed
+        self.pinColorGreen = pinColorGreen
+        self.pinColorBlue = pinColorBlue
     }
 }
 

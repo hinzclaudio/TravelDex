@@ -2,7 +2,7 @@
 //  CDTrip+CoreDataClass.swift
 //  TravelWeather
 //
-//  Created by Claudio Hinz on 05.08.22.
+//  Created by Claudio Hinz on 28.08.22.
 //
 //
 

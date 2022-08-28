@@ -21,7 +21,10 @@ extension CDTrip {
                 .asArray(of: CDVisitedPlace.self)!
                 .map { $0.id },
             start: startDate,
-            end: endDate
+            end: endDate,
+            pinColorRed: UInt8(pinColorRed),
+            pinColorGreen: UInt8(pinColorGreen),
+            pinColorBlue: UInt8(pinColorBlue)
         )
     }
     

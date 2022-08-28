@@ -2,7 +2,7 @@
 //  CDTrip+CoreDataProperties.swift
 //  TravelWeather
 //
-//  Created by Claudio Hinz on 05.08.22.
+//  Created by Claudio Hinz on 28.08.22.
 //
 //
 
@@ -16,11 +16,15 @@ extension CDTrip {
         return NSFetchRequest<CDTrip>(entityName: "CDTrip")
     }
 
-    @NSManaged public var id: UUID
-    @NSManaged public var title: String
     @NSManaged public var descr: String?
+    @NSManaged public var id: UUID
     @NSManaged public var members: String?
     @NSManaged public var pictureData: Data?
+    @NSManaged public var title: String
+    @NSManaged public var pinColorRed: Int16
+    @NSManaged public var pinColorGreen: Int16
+    @NSManaged public var pinColorBlue: Int16
+    // sourcery: relationship
     @NSManaged public var visitedPlaces: NSSet
 
 }

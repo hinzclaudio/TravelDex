@@ -62,7 +62,8 @@ class PlacesStore: PlacesStoreType {
                     .map { cdPlace in
                         AddedPlaceItem(
                             visitedPlace: cdPlace.pureRepresentation,
-                            location: cdPlace.location.pureRepresentation
+                            location: cdPlace.location.pureRepresentation,
+                            pinColor: cdPlace.trip.pureRepresentation.pinColor
                         )
                     }
             }
@@ -86,7 +87,8 @@ class PlacesStore: PlacesStoreType {
                             .map { cdPlace in
                                 AddedPlaceItem(
                                     visitedPlace: cdPlace.pureRepresentation,
-                                    location: cdPlace.location.pureRepresentation
+                                    location: cdPlace.location.pureRepresentation,
+                                    pinColor: cdPlace.trip.pureRepresentation.pinColor
                                 )
                             }
                     }
@@ -108,7 +110,8 @@ class PlacesStore: PlacesStoreType {
                         if let cdPlace = cdPlace {
                             return AddedPlaceItem(
                                 visitedPlace: cdPlace.pureRepresentation,
-                                location: cdPlace.location.pureRepresentation
+                                location: cdPlace.location.pureRepresentation,
+                                pinColor: cdPlace.trip.pureRepresentation.pinColor
                             )
                         } else {
                             return nil

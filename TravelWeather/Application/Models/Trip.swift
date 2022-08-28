@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 
 typealias TripID = UUID
@@ -18,6 +20,9 @@ struct Trip: Equatable, WithAutoBuilder {
     let visitedLocations: [UUID]
     let start: Date?
     let end: Date?
+    let pinColorRed: UInt8
+    let pinColorGreen: UInt8
+    let pinColorBlue: UInt8
     // sourcery:end: nonDefaultBuilderProperty
 
 // sourcery:inline:auto:Trip.AutoBuilderInit
@@ -29,7 +34,10 @@ struct Trip: Equatable, WithAutoBuilder {
         members: String? = nil, 
         visitedLocations: [UUID], 
         start: Date? = nil, 
-        end: Date? = nil
+        end: Date? = nil, 
+        pinColorRed: UInt8, 
+        pinColorGreen: UInt8, 
+        pinColorBlue: UInt8
     )
     {
         self.id = id
@@ -39,6 +47,9 @@ struct Trip: Equatable, WithAutoBuilder {
         self.visitedLocations = visitedLocations
         self.start = start
         self.end = end
+        self.pinColorRed = pinColorRed
+        self.pinColorGreen = pinColorGreen
+        self.pinColorBlue = pinColorBlue
     }
     static var builder: TripBuilder {
         TripBuilder()
@@ -52,6 +63,9 @@ struct Trip: Equatable, WithAutoBuilder {
             .with(visitedLocations: self.visitedLocations)
             .with(start: self.start)
             .with(end: self.end)
+            .with(pinColorRed: self.pinColorRed)
+            .with(pinColorGreen: self.pinColorGreen)
+            .with(pinColorBlue: self.pinColorBlue)
     }
 // sourcery:end
 }
@@ -80,6 +94,15 @@ class TripBuilder {
 
     private(set) var end: Date??
 
+
+    private(set) var pinColorRed: UInt8?
+
+
+    private(set) var pinColorGreen: UInt8?
+
+
+    private(set) var pinColorBlue: UInt8?
+
     func with(id: TripID) -> TripBuilder {
         self.id = id; return self
     }
@@ -101,6 +124,15 @@ class TripBuilder {
     func with(end: Date?) -> TripBuilder {
         self.end = end; return self
     }
+    func with(pinColorRed: UInt8) -> TripBuilder {
+        self.pinColorRed = pinColorRed; return self
+    }
+    func with(pinColorGreen: UInt8) -> TripBuilder {
+        self.pinColorGreen = pinColorGreen; return self
+    }
+    func with(pinColorBlue: UInt8) -> TripBuilder {
+        self.pinColorBlue = pinColorBlue; return self
+    }
     func build() -> Trip? {
         guard
             let id = self.id,
@@ -109,7 +141,10 @@ class TripBuilder {
             let members = self.members,
             let visitedLocations = self.visitedLocations,
             let start = self.start,
-            let end = self.end
+            let end = self.end,
+            let pinColorRed = self.pinColorRed,
+            let pinColorGreen = self.pinColorGreen,
+            let pinColorBlue = self.pinColorBlue
         else { return nil }
         return Trip(
             id: id,
@@ -118,8 +153,29 @@ class TripBuilder {
             members: members,
             visitedLocations: visitedLocations,
             start: start,
-            end: end
+            end: end,
+            pinColorRed: pinColorRed,
+            pinColorGreen: pinColorGreen,
+            pinColorBlue: pinColorBlue
         )
     }
 }
 // sourcery:end
+
+
+
+// MARK: - Extension
+extension Trip {
+    
+    static let defaultPinColorRed: UInt8 = 236
+    static let defaultPinColorGreen: UInt8 = 90
+    static let defaultPinColorBlue: UInt8 = 86
+    
+    var pinColor: UIColor {
+        let hexFmt = String(format:"%02X", pinColorRed) +
+                     String(format:"%02X", pinColorGreen) +
+                     String(format:"%02X", pinColorBlue)
+        return UIColor(hex: hexFmt)!
+    }
+    
+}

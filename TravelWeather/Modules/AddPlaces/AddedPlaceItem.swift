@@ -13,4 +13,5 @@ import RxDataSources
 struct AddedPlaceItem: Equatable {
     let visitedPlace: VisitedPlace
     let location: Location
+    let pinColor: UIColor
 }
