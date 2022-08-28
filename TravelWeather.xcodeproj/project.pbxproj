@@ -20,6 +20,7 @@
 		1227BBA728BB4AA1007A406D /* LocationEntryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */; };
 		1227BBAA28BB798D007A406D /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA828BB798D007A406D /* CDTrip+CoreDataClass.swift */; };
 		1227BBAB28BB798D007A406D /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA928BB798D007A406D /* CDTrip+CoreDataProperties.swift */; };
+		1227BBAD28BB8097007A406D /* ColoredPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBAC28BB8097007A406D /* ColoredPill.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -175,6 +176,7 @@
 		1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryViewModelTests.swift; sourceTree = "<group>"; };
 		1227BBA828BB798D007A406D /* CDTrip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1227BBA928BB798D007A406D /* CDTrip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1227BBAC28BB8097007A406D /* ColoredPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredPill.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -908,6 +910,7 @@
 			isa = PBXGroup;
 			children = (
 				123F7B73289DC7C30008444D /* PaddedTextField.swift */,
+				1227BBAC28BB8097007A406D /* ColoredPill.swift */,
 				1227677A28AED66A00207EEA /* AlertControllers */,
 				1267F13528A595DA0025071C /* ViewControllers */,
 			);
@@ -1407,6 +1410,7 @@
 				123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */,
 				1260ED68289D6E070008C9EE /* CDMigrationStep.swift in Sources */,
 				12EF8814289E621000E3EA07 /* CDUpdateTrip.swift in Sources */,
+				1227BBAD28BB8097007A406D /* ColoredPill.swift in Sources */,
 				12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */,
 				123F7B63289DBAA20008444D /* ScrollableVStackController.swift in Sources */,
 				12F05EB3289E815100A0C4AB /* PlacesStoreType.swift in Sources */,

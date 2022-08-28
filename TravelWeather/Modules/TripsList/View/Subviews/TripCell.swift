@@ -14,6 +14,7 @@ class TripCell: UIView {
     // MARK: - Views
     let containerView = UIView()
     let labelStack = UIStackView.defaultContentStack(withSpacing: 0.5 * Sizes.defaultMargin)
+    let colorPill = ColoredPill()
     
     
     override init(frame: CGRect = .zero) {
@@ -36,6 +37,7 @@ class TripCell: UIView {
     private func addViews() {
         self.addSubview(containerView)
         containerView.addSubview(labelStack)
+        containerView.addSubview(colorPill)
     }
     
     private func configureViews() {
@@ -53,7 +55,10 @@ class TripCell: UIView {
         labelStack.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
         labelStack.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
         labelStack.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
-        labelStack.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        
+        colorPill.autoPinEdge(.top, to: .bottom, of: labelStack, withOffset: Sizes.defaultMargin)
+        colorPill.autoAlignAxis(.vertical, toSameAxisOf: containerView)
+        colorPill.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
     }
     
     
@@ -83,6 +88,8 @@ class TripCell: UIView {
             labelStack.addArrangedSubview(membersLabel)
             membersLabel.autoMatch(.width, to: .width, of: labelStack)
         }
+        
+        colorPill.backgroundColor = trip.pinColor
     }
     
 }
