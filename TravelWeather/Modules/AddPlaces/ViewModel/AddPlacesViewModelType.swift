@@ -16,7 +16,6 @@ protocol AddPlacesViewModelType {
     // MARK: - Input
     func mapButton(_ tapped: Observable<Void>) -> Disposable
     func addLocation(_ tapped: Observable<Void>) -> Disposable
-    func headerTapped(_ tapped: Observable<Void>) -> Disposable
     
     func setStart(of item: AddedPlaceItem, to date: Date)
     func setEnd(of item: AddedPlaceItem, to date: Date)

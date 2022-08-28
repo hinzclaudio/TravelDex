@@ -125,7 +125,8 @@ class AppCoordinator: CoordinatorType {
     
     
     func pickColor(for trip: Trip) {
-        let vm = ColorSelectionViewModel(dependencies: dependencies)
+        let vm = ColorSelectionViewModel(dependencies: dependencies, trip: trip)
+        vm.coordinator = self
         let controller = ColorSelectionController(viewModel: vm)
         self.modalController = presentModally(controller)
     }

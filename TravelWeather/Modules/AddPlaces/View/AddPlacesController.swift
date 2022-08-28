@@ -25,8 +25,6 @@ class AddPlacesController: UIViewController {
     let tableView = UITableView()
     let addLocationsLabel = UILabel()
     
-    let headerTapRecognizer = UITapGestureRecognizer()
-    
     
     
     init(viewModel: AddPlacesViewModelType) {
@@ -64,7 +62,6 @@ class AddPlacesController: UIViewController {
     private func configureViews() {
         navigationItem.title = "Add Places"
         view.backgroundColor = Colors.veryDark
-        headerView.addGestureRecognizer(headerTapRecognizer)
         mapButton.image = SFSymbol.map.image
         
         tableView.backgroundColor = .clear
@@ -102,8 +99,6 @@ class AddPlacesController: UIViewController {
                 self.headerView.configure(for: trip)
                 self.headerView.layoutIfNeeded()
             })
-            .disposed(by: bag)
-        viewModel.headerTapped(headerTapRecognizer.rx.tap.asObservable())
             .disposed(by: bag)
         
         let tableDataSource = RxTableViewSectionedAnimatedDataSource<AddedPlaceSection>(

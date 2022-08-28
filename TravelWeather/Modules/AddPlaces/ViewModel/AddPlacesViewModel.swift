@@ -43,12 +43,6 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             })
     }
     
-    func headerTapped(_ tapped: Observable<Void>) -> Disposable {
-        tapped
-            .withLatestFrom(trip)
-            .subscribe(onNext: { [weak self] trip in self?.coordinator?.edit(trip) })
-    }
-    
     func setStart(of item: AddedPlaceItem, to date: Date) {
         let newPlace = item.visitedPlace.cloneBuilder()
             .with(start: date)

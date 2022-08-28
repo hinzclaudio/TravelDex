@@ -24,6 +24,8 @@
 		1227BBB228BB8913007A406D /* ColorSelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB128BB8913007A406D /* ColorSelectionViewModelType.swift */; };
 		1227BBB428BB892C007A406D /* ColorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB328BB892C007A406D /* ColorSelectionViewModel.swift */; };
 		1227BBB628BB8962007A406D /* ColorSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB528BB8962007A406D /* ColorSelectionController.swift */; };
+		1227BBB928BBE928007A406D /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB828BBE928007A406D /* ColorSelectionCell.swift */; };
+		1227BBBB28BBEB61007A406D /* ColorSelection_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBBA28BBEB61007A406D /* ColorSelection_CollectionView.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -183,6 +185,8 @@
 		1227BBB128BB8913007A406D /* ColorSelectionViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewModelType.swift; sourceTree = "<group>"; };
 		1227BBB328BB892C007A406D /* ColorSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewModel.swift; sourceTree = "<group>"; };
 		1227BBB528BB8962007A406D /* ColorSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionController.swift; sourceTree = "<group>"; };
+		1227BBB828BBE928007A406D /* ColorSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCell.swift; sourceTree = "<group>"; };
+		1227BBBA28BBEB61007A406D /* ColorSelection_CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelection_CollectionView.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -393,8 +397,18 @@
 			isa = PBXGroup;
 			children = (
 				1227BBB528BB8962007A406D /* ColorSelectionController.swift */,
+				1227BBBA28BBEB61007A406D /* ColorSelection_CollectionView.swift */,
+				1227BBB728BBE91A007A406D /* Subviews */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1227BBB728BBE91A007A406D /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				1227BBB828BBE928007A406D /* ColorSelectionCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		123F7B66289DBBC90008444D /* Subviews */ = {
@@ -1442,9 +1456,11 @@
 				12F134F9289D8B6600363CF6 /* CDObservable.swift in Sources */,
 				12F05EB0289E809100A0C4AB /* AddPlacesController.swift in Sources */,
 				1227BBB428BB892C007A406D /* ColorSelectionViewModel.swift in Sources */,
+				1227BBB928BBE928007A406D /* ColorSelectionCell.swift in Sources */,
 				123F7B74289DC7C30008444D /* PaddedTextField.swift in Sources */,
 				1260ED68289D6E070008C9EE /* CDMigrationStep.swift in Sources */,
 				12EF8814289E621000E3EA07 /* CDUpdateTrip.swift in Sources */,
+				1227BBBB28BBEB61007A406D /* ColorSelection_CollectionView.swift in Sources */,
 				1227BBB628BB8962007A406D /* ColorSelectionController.swift in Sources */,
 				1227BBAD28BB8097007A406D /* ColoredPill.swift in Sources */,
 				12F134AD289D70E200363CF6 /* AutoInitializable.generated.swift in Sources */,

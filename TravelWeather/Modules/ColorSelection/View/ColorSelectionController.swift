@@ -18,6 +18,7 @@ class ColorSelectionController: UIViewController {
     
     
     // MARK: - Views
+    let tripCell = TripCell()
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -51,24 +52,54 @@ class ColorSelectionController: UIViewController {
     }
     
     private func addViews() {
+        view.addSubview(tripCell)
         view.addSubview(collectionView)
     }
     
     private func configureViews() {
         navigationItem.title = "Color Selection"
         view.backgroundColor = Colors.veryDark
+        
         collectionView.backgroundColor = .clear
+        collectionView.register(ColorSelectionCell.self, forCellWithReuseIdentifier: ColorSelectionCell.identifier)
     }
     
     private func setAutoLayout() {
-        collectionView.autoPinEdge(toSuperviewSafeArea: .top)
-        collectionView.autoPinEdge(.right, to: .right , of: view)
-        collectionView.autoPinEdge(.left, to: .left, of: view)
+        tripCell.autoPinEdge(toSuperviewSafeArea: .top, withInset: Sizes.halfDefMargin)
+        tripCell.autoPinEdge(.left, to: .left, of: view)
+        tripCell.autoPinEdge(.right, to: .right, of: view)
+        
+        collectionView.autoPinEdge(.top, to: .bottom, of: tripCell, withOffset: Sizes.halfDefMargin)
+        collectionView.autoPinEdge(.left, to: .left, of: view, withOffset: Sizes.halfDefMargin)
+        collectionView.autoPinEdge(.right, to: .right , of: view, withOffset: -Sizes.halfDefMargin)
         collectionView.autoPinEdge(.bottom, to: .bottom, of: view)
     }
     
     private func setupBinding() {
+        viewModel.trip
+            .drive(onNext: { [unowned self] in self.tripCell.configure(for: $0) })
+            .disposed(by: bag)
         
+        collectionView.rx
+            .setDelegate(self)
+            .disposed(by: bag)
+        
+        viewModel.availableColors
+            .drive(
+                collectionView.rx
+                    .items(
+                        cellIdentifier: ColorSelectionCell.identifier,
+                        cellType: ColorSelectionCell.self
+                    )
+            ) { i, color, cell in
+                cell.color = color
+            }
+            .disposed(by: bag)
+        
+        let color = collectionView.rx.modelSelected(UIColor.self).asObservable()
+        viewModel
+            .select(color)
+            .disposed(by: bag)
     }
     
 }

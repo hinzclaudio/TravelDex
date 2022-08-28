@@ -13,6 +13,8 @@ import RxCocoa
 
 protocol ColorSelectionViewModelType {
     
-    
+    var trip: Driver<Trip> { get }
+    var availableColors: Driver<[UIColor]> { get }
+    func select(_ color: Observable<UIColor>) -> Disposable
     
 }
