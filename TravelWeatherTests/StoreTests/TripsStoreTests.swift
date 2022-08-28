@@ -44,7 +44,10 @@ class TripsStoreTests: XCTestCase {
             members: "Mocked Members",
             visitedLocations: [],
             start: .now.addingTimeInterval(-86400),
-            end: .now
+            end: .now,
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let _ = try add(mockedTrip: mockedTrip)
@@ -58,7 +61,10 @@ class TripsStoreTests: XCTestCase {
             members: "Mocked Members",
             visitedLocations: [],
             start: .now.addingTimeInterval(-86400),
-            end: .now
+            end: .now,
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let addedTrip = try add(mockedTrip: mockedTrip)
@@ -84,7 +90,10 @@ class TripsStoreTests: XCTestCase {
             members: "Mocked Members",
             visitedLocations: [],
             start: .now.addingTimeInterval(-86400),
-            end: .now
+            end: .now,
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let addedTrip = try add(mockedTrip: mockedTrip)
@@ -103,12 +112,18 @@ class TripsStoreTests: XCTestCase {
         let trip1 = Trip(
             id: TripID(),
             title: "Mocked Title 1",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         let trip2 = Trip(
             id: TripID(),
             title: "Mocked Title 2",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let _ = try add(mockedTrip: trip1)
@@ -136,12 +151,18 @@ class TripsStoreTests: XCTestCase {
         let trip1 = Trip(
             id: TripID(),
             title: "Mocked Title 1",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         let trip2 = Trip(
             id: TripID(),
             title: "Mocked Title 2",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let _ = try add(mockedTrip: trip1)
@@ -159,7 +180,10 @@ class TripsStoreTests: XCTestCase {
         let trip1 = Trip(
             id: TripID(),
             title: "Mocked Trip 1",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         let trip2 = trip1.cloneBuilder()
             .with(title: "Mocked Trip 2")
@@ -179,7 +203,14 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testFetchTripById() throws {
-        let mockedTrip = Trip(id: TripID(), title: "Mocked Title", visitedLocations: [])
+        let mockedTrip = Trip(
+            id: TripID(),
+            title: "Mocked Title",
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
+        )
         let _ = try add(mockedTrip: mockedTrip)
         
         let fetchedTrip = try store.trip(identifiedBy: .just(mockedTrip.id))

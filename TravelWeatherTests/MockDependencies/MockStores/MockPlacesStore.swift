@@ -41,7 +41,8 @@ class MockPlacesStore: PlacesStoreType {
                     tripId: TripID(),
                     locationId: MockLocationAPI.hamburg.id
                 ),
-                location: MockLocationAPI.hamburg
+                location: MockLocationAPI.hamburg,
+                pinColor: Trip.defaultPinColor
             )
         ])
         .do(onNext: { [weak self] _ in self?.allPlacesCalled = true })
@@ -61,7 +62,8 @@ class MockPlacesStore: PlacesStoreType {
                             tripId: tripId,
                             locationId: MockLocationAPI.hamburg.id
                         ),
-                        location: MockLocationAPI.hamburg
+                        location: MockLocationAPI.hamburg,
+                        pinColor: Trip.defaultPinColor
                     )
                 ]
             }
@@ -80,7 +82,8 @@ class MockPlacesStore: PlacesStoreType {
                         tripId: TripID(),
                         locationId: MockLocationAPI.hamburg.id
                     ),
-                    location: MockLocationAPI.hamburg
+                    location: MockLocationAPI.hamburg,
+                    pinColor: Trip.defaultPinColor
                 )
             }
     }

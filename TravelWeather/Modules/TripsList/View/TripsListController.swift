@@ -15,6 +15,7 @@ class TripsListController: UIViewController {
     let viewModel: TripsListViewModelType
     
     let editingIP = PublishSubject<IndexPath>()
+    let pickingColorIP = PublishSubject<IndexPath>()
     let deletionIP = PublishSubject<IndexPath>()
     let bag = DisposeBag()
     
@@ -141,6 +142,11 @@ class TripsListController: UIViewController {
         let tripEditing = editingIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
         viewModel.edit(tripEditing)
+            .disposed(by: bag)
+        
+        let tripColorPicking = pickingColorIP
+            .withLatestFrom(trips) { i, trips in trips[i.row] }
+        viewModel.pickColor(for: tripColorPicking)
             .disposed(by: bag)
     }
     

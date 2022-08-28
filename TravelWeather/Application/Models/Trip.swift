@@ -170,11 +170,19 @@ extension Trip {
     static let defaultPinColorRed: UInt8 = 236
     static let defaultPinColorGreen: UInt8 = 90
     static let defaultPinColorBlue: UInt8 = 86
+    static var defaultPinColor: UIColor {
+        .init(hex:
+                String(
+                    format:"%02X%02X%02X",
+                    defaultPinColorRed,
+                    defaultPinColorGreen,
+                    defaultPinColorBlue
+                )
+        )!
+    }
     
     var pinColor: UIColor {
-        let hexFmt = String(format:"%02X", pinColorRed) +
-                     String(format:"%02X", pinColorGreen) +
-                     String(format:"%02X", pinColorBlue)
+        let hexFmt = String(format:"%02X%02X%02X", pinColorRed, pinColorGreen, pinColorBlue)
         return UIColor(hex: hexFmt)!
     }
     

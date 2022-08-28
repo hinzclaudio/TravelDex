@@ -152,7 +152,10 @@ class PlacesStoreTests: XCTestCase {
         let trip = Trip(
             id: TripID(),
             title: "Mocked Trip Title",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         
         let action = CDUpdateTrip(trip: trip)

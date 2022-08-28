@@ -24,7 +24,14 @@ class EditTripViewModelTests: XCTestCase {
     
     
     func testUpdateTripIsForwardedToStore() throws {
-        let mockTrip = Trip(id: TripID(), title: "Mocked Title", visitedLocations: [])
+        let mockTrip = Trip(
+            id: TripID(),
+            title: "Mocked Title",
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
+        )
         let _ = viewModel.update(.just(mockTrip))
         XCTAssertTrue(mockDependencies.mockTripStore.addTripCalled)
     }

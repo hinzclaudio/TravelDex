@@ -45,6 +45,11 @@ class TripsListVieModel: TripsListViewModelType {
             .subscribe(onNext: { [weak self] in self?.coordinator?.edit($0) })
     }
     
+    func pickColor(for trip: Observable<Trip>) -> Disposable {
+        trip
+            .subscribe(onNext: { [weak self] in self?.coordinator?.pickColor(for: $0) })
+    }
+    
     func delete(_ trip: Observable<Trip>) -> Disposable {
         dependencies.tripsStore
             .delete(trip)

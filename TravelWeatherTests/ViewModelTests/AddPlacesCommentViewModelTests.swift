@@ -32,7 +32,9 @@ class AddPlacesCommentViewModelTests: XCTestCase {
                     locationId: MockLocationAPI.hamburg.id
                 ),
                 location: MockLocationAPI
-                    .hamburg
+                    .hamburg,
+                pinColor: Trip
+                    .defaultPinColor
             )
         )
     }

@@ -124,6 +124,13 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func pickColor(for trip: Trip) {
+        let vm = ColorSelectionViewModel(dependencies: dependencies)
+        let controller = ColorSelectionController(viewModel: vm)
+        self.modalController = presentModally(controller)
+    }
+    
+    
     func photoViewer(from view: UIImageView?, image: UIImage?) {
         let controller = DTPhotoViewerController(referencedView: view, image: image)
         let presenter = modalController ?? navigationController

@@ -14,6 +14,7 @@ enum SFSymbol: String {
     case plusCircle = "plus.circle"
     case gear
     case pencil
+    case paintpalette
     case squareAndPencil = "square.and.pencil"
     case trash
     case emptyImage = "doc.text.image"

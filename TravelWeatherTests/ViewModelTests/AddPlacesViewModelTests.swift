@@ -24,7 +24,10 @@ class AddPlacesViewModelTests: XCTestCase {
             trip: Trip(
                 id: TripID(),
                 title: "Mocked Trip",
-                visitedLocations: []
+                visitedLocations: [],
+                pinColorRed: Trip.defaultPinColorRed,
+                pinColorGreen: Trip.defaultPinColorGreen,
+                pinColorBlue: Trip.defaultPinColorBlue
             )
         )
     }
@@ -42,7 +45,9 @@ class AddPlacesViewModelTests: XCTestCase {
                         locationId: LocationID()
                     ),
                     location: MockLocationAPI
-                        .hamburg
+                        .hamburg,
+                    pinColor: Trip
+                        .defaultPinColor
                 ),
                 to: .now
             )
@@ -62,7 +67,9 @@ class AddPlacesViewModelTests: XCTestCase {
                         locationId: LocationID()
                     ),
                     location: MockLocationAPI
-                        .hamburg
+                        .hamburg,
+                    pinColor: Trip
+                        .defaultPinColor
                 ),
                 to: .now
             )
@@ -141,7 +148,9 @@ class AddPlacesViewModelTests: XCTestCase {
                     locationId: LocationID()
                 ),
                 location: MockLocationAPI
-                    .hamburg
+                    .hamburg,
+                pinColor: Trip
+                    .defaultPinColor
             ),
             expanded: false
         )

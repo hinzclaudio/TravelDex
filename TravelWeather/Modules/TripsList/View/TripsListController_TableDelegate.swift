@@ -21,10 +21,15 @@ extension TripsListController: UITableViewDelegate {
             identifier: NSNumber(value: Int64(indexPath.row)),
             previewProvider: nil,
             actionProvider: { [weak self] actions in
-                let editAction = UIAction(
+                let editTextAction = UIAction(
                     title: "Edit",
                     image: SFSymbol.pencil.image,
                     handler: { [weak self] _ in self?.editingIP.onNext(indexPath) }
+                )
+                let editColortAction = UIAction(
+                    title: "Pick Color",
+                    image: SFSymbol.paintpalette.image,
+                    handler: { [weak self] _ in self?.pickingColorIP.onNext(indexPath) }
                 )
                 let deleteAction = UIAction(
                     title: "Delete",
@@ -34,7 +39,7 @@ extension TripsListController: UITableViewDelegate {
                 )
                 return UIMenu(
                     title: "Menu",
-                    children: [editAction, deleteAction]
+                    children: [editTextAction, editColortAction, deleteAction]
                 )
             }
         )

@@ -36,7 +36,10 @@ class TripsListViewModelTests: XCTestCase {
         let trip = Trip(
             id: TripID(),
             title: "Mocked Title",
-            visitedLocations: []
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
         )
         let _ = viewModel.delete(.just(trip))
         XCTAssertTrue(mockDependencies.mockTripStore.deleteTripCalled)

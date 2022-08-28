@@ -26,14 +26,30 @@ class MockTripsStore: TripsStoreType {
     private(set) var tripsForSearchCalled = false
     func trips(forSearch query: String) -> Observable<[Trip]> {
         self.tripsForSearchCalled = true
-        let mockedTrip = Trip(id: TripID(), title: "Mocked Trip", visitedLocations: [])
+        let mockedTrip = Trip(
+            id: TripID(),
+            title: "Mocked Trip",
+            visitedLocations: [],
+            pinColorRed: Trip.defaultPinColorRed,
+            pinColorGreen: Trip.defaultPinColorGreen,
+            pinColorBlue: Trip.defaultPinColorBlue
+        )
         return .just([mockedTrip])
     }
     
     private(set) var tripIdentifiedByCalled = false
     func trip(identifiedBy id: Observable<UUID>) -> Observable<Trip?> {
         let mockedTrip = id
-            .map { id -> Trip? in Trip(id: id, title: "Mocked Trip", visitedLocations: []) }
+            .map { id -> Trip? in
+                Trip(
+                    id: id,
+                    title: "Mocked Trip",
+                    visitedLocations: [],
+                    pinColorRed: Trip.defaultPinColorRed,
+                    pinColorGreen: Trip.defaultPinColorGreen,
+                    pinColorBlue: Trip.defaultPinColorBlue
+                )
+            }
         
         return id
             .do(onNext: { [weak self] _ in self?.tripIdentifiedByCalled = true })

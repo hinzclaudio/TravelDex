@@ -19,6 +19,7 @@ protocol TripsListViewModelType {
     func select(_ trip: Observable<Trip>) -> Disposable
     func delete(_ trip: Observable<Trip>) -> Disposable
     func edit(_ trip: Observable<Trip>) -> Disposable
+    func pickColor(for trip: Observable<Trip>) -> Disposable
     
     
     // MARK: - Output
