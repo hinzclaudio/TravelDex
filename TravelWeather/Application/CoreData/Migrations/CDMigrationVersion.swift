@@ -12,6 +12,7 @@ import CoreData
 
 enum CDMigrationVersion: String, Equatable, CaseIterable {
     case version1 = "TravelWeather"
+    case version2 = "TravelWeather 2"
     
     static var current: CDMigrationVersion {
         guard let latest = allCases.last else { fatalError("No versions available.") }
@@ -21,6 +22,8 @@ enum CDMigrationVersion: String, Equatable, CaseIterable {
     var nextVersion: CDMigrationVersion? {
         switch self {
         case .version1:
+            return .version2
+        case .version2:
             return nil
         }
     }

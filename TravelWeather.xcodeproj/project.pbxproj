@@ -26,6 +26,7 @@
 		1227BBB628BB8962007A406D /* ColorSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB528BB8962007A406D /* ColorSelectionController.swift */; };
 		1227BBB928BBE928007A406D /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBB828BBE928007A406D /* ColorSelectionCell.swift */; };
 		1227BBBB28BBEB61007A406D /* ColorSelection_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBBA28BBEB61007A406D /* ColorSelection_CollectionView.swift */; };
+		1227BBBD28BBF752007A406D /* ColorSelectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBBC28BBF752007A406D /* ColorSelectionViewModelTests.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -187,6 +188,8 @@
 		1227BBB528BB8962007A406D /* ColorSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionController.swift; sourceTree = "<group>"; };
 		1227BBB828BBE928007A406D /* ColorSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCell.swift; sourceTree = "<group>"; };
 		1227BBBA28BBEB61007A406D /* ColorSelection_CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelection_CollectionView.swift; sourceTree = "<group>"; };
+		1227BBBC28BBF752007A406D /* ColorSelectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewModelTests.swift; sourceTree = "<group>"; };
+		1227BBBE28BBF792007A406D /* TravelWeather 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TravelWeather 2.xcdatamodel"; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -445,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */,
+				1227BBBC28BBF752007A406D /* ColorSelectionViewModelTests.swift */,
 				12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */,
 				12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */,
 				1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */,
@@ -1501,6 +1505,7 @@
 				1244569628B29786008C9FCE /* TripsStoreTests.swift in Sources */,
 				12EDDEE028B3728800D57DB2 /* MockPlacesStore.swift in Sources */,
 				12EDDEDE28B370D400D57DB2 /* MockTripsStore.swift in Sources */,
+				1227BBBD28BBF752007A406D /* ColorSelectionViewModelTests.swift in Sources */,
 				1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */,
 				1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */,
 				1227BBA728BB4AA1007A406D /* LocationEntryViewModelTests.swift in Sources */,
@@ -1862,9 +1867,10 @@
 		12E063A1289C541F007B09BE /* TravelWeather.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1227BBBE28BBF792007A406D /* TravelWeather 2.xcdatamodel */,
 				12E063A2289C541F007B09BE /* TravelWeather.xcdatamodel */,
 			);
-			currentVersion = 12E063A2289C541F007B09BE /* TravelWeather.xcdatamodel */;
+			currentVersion = 1227BBBE28BBF792007A406D /* TravelWeather 2.xcdatamodel */;
 			path = TravelWeather.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

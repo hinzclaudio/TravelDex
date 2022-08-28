@@ -15,6 +15,9 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="members" optional="YES" attributeType="String"/>
         <attribute name="pictureData" optional="YES" attributeType="Binary"/>
+        <attribute name="pinColorBlue" attributeType="Integer 16" minValueString="0" maxValueString="255" defaultValueString="86" usesScalarValueType="YES"/>
+        <attribute name="pinColorGreen" attributeType="Integer 16" minValueString="0" maxValueString="255" defaultValueString="90" usesScalarValueType="YES"/>
+        <attribute name="pinColorRed" attributeType="Integer 16" minValueString="0" maxValueString="255" defaultValueString="236" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="visitedPlaces" toMany="YES" deletionRule="Cascade" destinationEntity="CDVisitedPlace" inverseName="trip" inverseEntity="CDVisitedPlace"/>
     </entity>
@@ -29,7 +32,7 @@
     </entity>
     <elements>
         <element name="CDLocation" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="CDTrip" positionX="-54" positionY="45" width="128" height="119"/>
+        <element name="CDTrip" positionX="-54" positionY="45" width="128" height="164"/>
         <element name="CDVisitedPlace" positionX="-36" positionY="54" width="128" height="134"/>
     </elements>
 </model>
