@@ -73,7 +73,7 @@ class LocationsStore: LocationsStoreType {
             .compactMap { $0.event.element }
     }
     
-    func locations(for coordinate: Observable<Coordinate>) -> Observable<Location> {
+    func location(for coordinate: Observable<Coordinate>) -> Observable<Location> {
         coordinate
             .flatMapLatest { [unowned self] coordinate -> Observable<Event<Location>> in
                 self.locationAPI

@@ -74,6 +74,15 @@ class LocationsStoreTests: XCTestCase {
         XCTAssertEqual(fetchedLocations, [MockLocationAPI.hamburg])
     }
     
+    func testSearchForCoordinateProducesAPIResult() throws {
+        let fetchedLocation = try store
+            .location(for: .just(MockLocationAPI.hamburg.coordinate))
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(fetchedLocation)
+        XCTAssertEqual(fetchedLocation, MockLocationAPI.hamburg)
+    }
+    
     func testSearchWithErrorIsPublished() throws {
         self.store = LocationsStore(
             context: cdStack.storeContext,
@@ -97,6 +106,32 @@ class LocationsStoreTests: XCTestCase {
             .first()
         
         XCTAssertNil(locations)
+        XCTAssertNotNil(publishedError)
+    }
+    
+    func testReverseGeocodeErrorIsPublished() throws {
+        self.store = LocationsStore(
+            context: cdStack.storeContext,
+            dispatch: cdStack.dispatch(_:),
+            locationAPI: MockLocationErrorAPI()
+        )
+        
+        let bag = DisposeBag()
+        
+        let recordedErrors = BehaviorRelay<Error?>(value: nil)
+        store.error.bind(to: recordedErrors)
+            .disposed(by: bag)
+        
+        let location = try store.location(for: .just(MockLocationAPI.hamburg.coordinate))
+            .toBlocking(timeout: 5)
+            .first()
+        
+        let publishedError = try recordedErrors
+            .compactMap { $0 }
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNil(location)
         XCTAssertNotNil(publishedError)
     }
     

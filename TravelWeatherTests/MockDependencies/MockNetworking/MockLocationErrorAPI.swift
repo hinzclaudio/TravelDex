@@ -25,4 +25,11 @@ class MockLocationErrorAPI: LocationAPIType {
         }
     }
     
+    func getLocation(for coordinate: Coordinate) -> Observable<Location> {
+        Observable.create { observer in
+            observer.onError(MockError.mockedErrorCase)
+            return Disposables.create()
+        }
+    }
+    
 }

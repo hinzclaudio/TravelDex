@@ -27,7 +27,7 @@ class LocationEntryViewModel: LocationEntryViewModelType {
         self.dependencies = dependencies
         self.coordinate = coordinate
         
-        let location = self.dependencies.locationsStore.locations(for: .just(coordinate))
+        let location = self.dependencies.locationsStore.location(for: .just(coordinate))
             .share(replay: 1)
         
         location

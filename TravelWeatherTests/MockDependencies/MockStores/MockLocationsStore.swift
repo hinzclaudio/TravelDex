@@ -40,4 +40,12 @@ class MockLocationsStore: LocationsStoreType {
             .flatMapLatest { mockAPI.getLocations(search: $0) }
     }
     
+    private(set) var locationForCoordinateCalled = false
+    func location(for coordinate: Observable<Coordinate>) -> Observable<Location> {
+        let mockAPI = MockLocationAPI()
+        return coordinate
+            .do(onNext: { [weak self] _ in self?.locationForCoordinateCalled = true })
+            .flatMapLatest { mockAPI.getLocation(for: $0) }
+    }
+    
 }

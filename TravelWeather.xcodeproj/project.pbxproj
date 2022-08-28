@@ -17,6 +17,7 @@
 		1227677C28AED67B00207EEA /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227677B28AED67B00207EEA /* InfoManager.swift */; };
 		1227677E28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */; };
 		1227678328AEDE1600207EEA /* LocationSearchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */; };
+		1227BBA728BB4AA1007A406D /* LocationEntryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */; };
 		122D4BA1289D6F7B00BA627F /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4B9F289D6F7B00BA627F /* sourcery.sh */; };
 		122D4BA2289D6F7B00BA627F /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA0289D6F7B00BA627F /* swiftgen.sh */; };
 		122D4BA6289D6F8700BA627F /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */; };
@@ -171,6 +172,7 @@
 		1227677B28AED67B00207EEA /* InfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManager.swift; sourceTree = "<group>"; };
 		1227677D28AEDD7900207EEA /* LocationSearchController_MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController_MapDelegate.swift; sourceTree = "<group>"; };
 		1227678228AEDE1600207EEA /* LocationSearchAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchAnnotation.swift; sourceTree = "<group>"; };
+		1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEntryViewModelTests.swift; sourceTree = "<group>"; };
 		122D4B9F289D6F7B00BA627F /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
 		122D4BA0289D6F7B00BA627F /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		122D4BA3289D6F8700BA627F /* AutoInitializable.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoInitializable.stencil; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				12EDDECF28B36C2900D57DB2 /* AddPlacesViewModelTests.swift */,
 				12EDDED128B36C3800D57DB2 /* EditTripViewModelTests.swift */,
 				12EDDED328B36C4100D57DB2 /* LocationsDisplayViewModelTests.swift */,
+				1227BBA628BB4AA1007A406D /* LocationEntryViewModelTests.swift */,
 				12EDDED528B36C4D00D57DB2 /* LocationSearchViewModelTests.swift */,
 				12EDDED728B36C5700D57DB2 /* TripsListViewModelTests.swift */,
 				1278602A28B63C3D00CAC061 /* AddPlacesCommentViewModelTests.swift */,
@@ -1444,6 +1447,7 @@
 				12EDDEDE28B370D400D57DB2 /* MockTripsStore.swift in Sources */,
 				1244569A28B2A038008C9FCE /* PlacesStoreTests.swift in Sources */,
 				1244569028B293F8008C9FCE /* TestableCDStack.swift in Sources */,
+				1227BBA728BB4AA1007A406D /* LocationEntryViewModelTests.swift in Sources */,
 				12EDDED828B36C5700D57DB2 /* TripsListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

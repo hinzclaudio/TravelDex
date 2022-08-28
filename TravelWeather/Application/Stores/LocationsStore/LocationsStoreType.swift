@@ -22,6 +22,6 @@ protocol LocationsStoreType {
     
     func allLocations() -> Observable<[Location]>
     func locations(for query: Observable<String>) -> Observable<[Location]>
-    func locations(for coordinate: Observable<Coordinate>) -> Observable<Location>
+    func location(for coordinate: Observable<Coordinate>) -> Observable<Location>
     
 }

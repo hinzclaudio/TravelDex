@@ -23,6 +23,8 @@ class MockLocationAPI: LocationAPIType {
     static let hamburg = Location(
         id: LocationID(),
         name: "Hamburg",
+        region: "Hamburg",
+        country: "Germany",
         coordinate: Coordinate(latitude: 53.548, longitude: 9.991)
     )
     
@@ -45,6 +47,10 @@ class MockLocationAPI: LocationAPIType {
             allLocations
                 .filter { loc in loc.name.lowercased().contains(search.lowercased()) }
         }
+    }
+    
+    func getLocation(for coordinate: Coordinate) -> Observable<Location> {
+        .just(MockLocationAPI.hamburg)
     }
     
 }
