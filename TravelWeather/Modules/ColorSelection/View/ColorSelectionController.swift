@@ -41,6 +41,11 @@ class ColorSelectionController: UIViewController {
         setup()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.reloadData()
+    }
+    
     
     
     // MARK: - Setup
