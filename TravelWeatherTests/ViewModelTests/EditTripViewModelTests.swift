@@ -33,7 +33,7 @@ class EditTripViewModelTests: XCTestCase {
             pinColorBlue: Trip.defaultPinColorBlue
         )
         let _ = viewModel.update(.just(mockTrip))
-        XCTAssertTrue(mockDependencies.mockTripStore.addTripCalled)
+        XCTAssertTrue(mockDependencies.mockTripStore.updateTripCalled)
     }
     
 }

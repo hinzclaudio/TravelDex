@@ -13,9 +13,9 @@ import RxSwift
 
 class MockTripsStore: TripsStoreType {
     
-    private(set) var addTripCalled = false
+    private(set) var updateTripCalled = false
     func update(_ trip: Observable<Trip>) -> Disposable {
-        trip.subscribe(onNext: { [weak self] _ in self?.addTripCalled = true })
+        trip.subscribe(onNext: { [weak self] _ in self?.updateTripCalled = true })
     }
     
     private(set) var deleteTripCalled = false
