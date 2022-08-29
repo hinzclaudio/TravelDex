@@ -16,14 +16,14 @@ struct CDDeleteTrip: CDAction {
     
     
     func execute(in context: NSManagedObjectContext) throws {
-        guard let cdTrip = fetchTrip(by: trip.id, in: context)
+        guard let cdTrip = try fetchTrip(by: trip.id, in: context)
         else {
             assertionFailure("Something's missing...")
             return
         }
         
         context.delete(cdTrip)
-        fetchUnusedLocations(in: context)
+        try fetchUnusedLocations(in: context)
             .forEach(context.delete(_:))
     }
     

@@ -14,8 +14,8 @@ struct CDDeleteVisitedPlace: CDAction {
     
     let visitedPlaceId: UUID
     
-    func execute(in context: NSManagedObjectContext) {
-        guard let cdPlace = fetchVisitedPlace(by: visitedPlaceId, in: context)
+    func execute(in context: NSManagedObjectContext) throws {
+        guard let cdPlace = try fetchVisitedPlace(by: visitedPlaceId, in: context)
         else {
             assertionFailure("Something's missing...")
             return
@@ -23,7 +23,7 @@ struct CDDeleteVisitedPlace: CDAction {
         
         context.delete(cdPlace)
         
-        fetchUnusedLocations(in: context)
+        try fetchUnusedLocations(in: context)
             .forEach(context.delete(_:))
     }
     

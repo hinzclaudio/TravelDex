@@ -18,60 +18,35 @@ protocol CDAction {
 
 extension CDAction {
     
-    func fetchTrip(by id: UUID, in context: NSManagedObjectContext) -> CDTrip? {
+    func fetchTrip(by id: UUID, in context: NSManagedObjectContext) throws -> CDTrip? {
         let query = CDTrip.fetchRequest()
         query.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         query.fetchLimit = 1
-        do {
-            let fetched = try context.fetch(query)
-            return fetched.first
-        } catch {
-            handleCD(error)
-            return nil
-        }
+        let fetched = try context.fetch(query)
+        return fetched.first
     }
     
-    func fetchLocation(by id: UUID, in context: NSManagedObjectContext) -> CDLocation? {
+    func fetchLocation(by id: UUID, in context: NSManagedObjectContext) throws -> CDLocation? {
         let query = CDLocation.fetchRequest()
         query.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         query.fetchLimit = 1
-        do {
-            let fetched = try context.fetch(query)
-            return fetched.first
-        } catch {
-            handleCD(error)
-            return nil
-        }
+        let fetched = try context.fetch(query)
+        return fetched.first
     }
     
-    func fetchUnusedLocations(in context: NSManagedObjectContext) -> [CDLocation] {
+    func fetchUnusedLocations(in context: NSManagedObjectContext) throws -> [CDLocation] {
         let query = CDLocation.fetchRequest()
         query.predicate = NSPredicate(format: "visitedPlaces.@count == %d", 0)
-        do {
-            let locs = try context.fetch(query)
-            return locs
-        } catch {
-            handleCD(error)
-            return []
-        }
+        let locs = try context.fetch(query)
+        return locs
     }
     
-    func fetchVisitedPlace(by id: UUID, in context: NSManagedObjectContext) -> CDVisitedPlace? {
+    func fetchVisitedPlace(by id: UUID, in context: NSManagedObjectContext) throws -> CDVisitedPlace? {
         let query = CDVisitedPlace.fetchRequest()
         query.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         query.fetchLimit = 1
-        do {
-            let fetched = try context.fetch(query)
-            return fetched.first
-        } catch {
-            handleCD(error)
-            return nil
-        }
-    }
-    
-    
-    func handleCD(_ error: Error) {
-        assertionFailure("Something's wrong: \(error)")
+        let fetched = try context.fetch(query)
+        return fetched.first
     }
     
 }

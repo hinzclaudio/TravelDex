@@ -15,8 +15,8 @@ struct CDUpdateTrip: CDAction {
     let trip: Trip
     
     
-    func execute(in context: NSManagedObjectContext) {
-        if let cdTrip = fetchTrip(by: trip.id, in: context) {
+    func execute(in context: NSManagedObjectContext) throws {
+        if let cdTrip = try fetchTrip(by: trip.id, in: context) {
             cdTrip.safeInitNeglectRelationShips(
                 descr: trip.descr,
                 id: trip.id,

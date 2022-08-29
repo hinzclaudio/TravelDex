@@ -15,8 +15,8 @@ struct CDUpdateLocations: CDAction {
     let locations: [Location]
     
     
-    func execute(in context: NSManagedObjectContext) {
-        locations
+    func execute(in context: NSManagedObjectContext) throws {
+        try locations
             .forEach { loc in
                 let name: String
                 if loc.name.isEmpty {
@@ -25,7 +25,7 @@ struct CDUpdateLocations: CDAction {
                     name = loc.name
                 }
                 
-                if let cdLoc = fetchLocation(by: loc.id, in: context) {
+                if let cdLoc = try fetchLocation(by: loc.id, in: context) {
                     cdLoc.safeInitNeglectRelationShips(
                         id: loc.id,
                         latitude: loc.coordinate.latitude,
