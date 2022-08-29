@@ -207,7 +207,7 @@ extension AddPlacesViewModel: PhotoPickerViewModelType {
         var config = PHPickerConfiguration()
         config.selection = .default
         config.selectionLimit = 1
-        config.filter = nil
+        config.filter = PHPickerFilter.images
         return config
     }
     

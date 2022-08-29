@@ -1,4 +1,5 @@
 platform :ios, '15.0'
+plugin 'cocoapods-acknowledgements', :targets => ['TravelWeather'], :settings_bundle => true
 
 target 'TravelWeather' do
   use_frameworks!
@@ -24,4 +25,10 @@ target 'TravelWeather' do
   target 'TravelWeatherUITests' do
   end
 
+end
+
+
+post_install do | installer |
+  require 'fileutils'
+  FileUtils.cp_r('Pods/Pods-TravelWeather-metadata.plist', 'Settings.bundle/Pods-TravelWeather-settings-metadata.plist', :remove_destination => true)
 end
