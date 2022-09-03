@@ -14,6 +14,16 @@
 			<key>File</key>
 			<string>Pods-TravelDex-settings-metadata</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Key</key>
+			<string>version_preference</string>
+			<key>DefaultValue</key>
+			<string>x.x.x</string>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -1095,6 +1095,7 @@
 				15F7303B4B5A7F6CFDB4C822 /* [CP] Check Pods Manifest.lock */,
 				12DAB2FB28C3D3030066FE22 /* Sourcery */,
 				12DAB2FC28C3D32D0066FE22 /* SwiftGen */,
+				122414C928C3FAEC008B4402 /* CopyVersionNumber */,
 				12571EEE28BD4F6100CC2AD0 /* Sources */,
 				12571EEF28BD4F6100CC2AD0 /* Frameworks */,
 				12571EF028BD4F6100CC2AD0 /* Resources */,
@@ -1229,6 +1230,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		122414C928C3FAEC008B4402 /* CopyVersionNumber */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = CopyVersionNumber;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${BUILT_PRODUCTS_DIR}\"\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_PATH}\" )\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $buildVersion\" \"${WRAPPER_NAME}/Settings.bundle/Root.plist\"\n";
+		};
 		12DAB2FB28C3D3030066FE22 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
