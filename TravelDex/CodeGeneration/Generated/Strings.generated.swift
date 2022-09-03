@@ -47,6 +47,10 @@ internal enum Localizable {
   }
   /// End
   internal static let end = Localizable.tr("Localizable", "end", fallback: "End")
+  /// Your query did not produce any results.
+  internal static let errorCannotMatchLocation = Localizable.tr("Localizable", "error_cannot_match_location", fallback: "Your query did not produce any results.")
+  /// Error
+  internal static let errorTitle = Localizable.tr("Localizable", "error_title", fallback: "Error")
   /// (optional)
   internal static let locationCountryTfSubtitle = Localizable.tr("Localizable", "location_country_tf_subtitle", fallback: "(optional)")
   /// Country
@@ -65,6 +69,8 @@ internal enum Localizable {
   internal static let missingLocations = Localizable.tr("Localizable", "missing_locations", fallback: "You did not add any locations yet. Add a location by tapping the plus icon!")
   /// You did not add any trips yet. Add a trip by tapping the plus icon!
   internal static let missingTrips = Localizable.tr("Localizable", "missing_trips", fallback: "You did not add any trips yet. Add a trip by tapping the plus icon!")
+  /// OK
+  internal static let ok = Localizable.tr("Localizable", "ok", fallback: "OK")
   /// Search Locations
   internal static let searchLocationTitle = Localizable.tr("Localizable", "search_location_title", fallback: "Search Locations")
   /// Start
@@ -81,6 +87,8 @@ internal enum Localizable {
   internal static let tripNameTfTitle = Localizable.tr("Localizable", "trip_name_tf_title", fallback: "Title")
   /// Trips
   internal static let tripsListTitle = Localizable.tr("Localizable", "trips_list_title", fallback: "Trips")
+  /// An unknown error occured.
+  internal static let unknownErrorDescr = Localizable.tr("Localizable", "unknown_error_descr", fallback: "An unknown error occured.")
   /// Visited Places
   internal static let visistedPlaceTitle = Localizable.tr("Localizable", "visisted_place_title", fallback: "Visited Places")
   /// Visited Locations

@@ -41,3 +41,7 @@
 "action_change_image" = "Bild ändern";
 "action_show_on_map" = "Auf der Karte zeigen";
 "action_edit_comment" = "Beschreibung bearbeiten";
+"error_title" = "Fehler";
+"unknown_error_descr" = "Ein unbekannter Fehler ist aufgetreten.";
+"error_cannot_match_location" = "Ihre Suche erziehlte keine Ergebnisse.";
+"ok" = "OK";

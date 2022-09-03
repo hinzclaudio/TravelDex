@@ -20,7 +20,7 @@ class InfoManager {
         )
         alert.addAction(
             UIAlertAction(
-                title: "OK",
+                title: Localizable.ok,
                 style: .default,
                 handler: { _ in alert.dismiss(animated: true) }
             )
@@ -30,13 +30,16 @@ class InfoManager {
     
     
     static func makeFallbackErrorController() -> UIAlertController {
-        makeInfoController(title: "Error", message: "An unknown error occured.")
+        makeInfoController(title: Localizable.errorTitle, message: Localizable.unknownErrorDescr)
     }
     
     
     static func defaultErrorInfo(for error: Error) -> UIAlertController {
         if (error as NSError).code == CLError.Code.geocodeFoundNoResult.rawValue {
-            return makeInfoController(title: "Error", message: "Your query did not produce any results.")
+            return makeInfoController(
+                title: Localizable.errorTitle,
+                message: Localizable.errorCannotMatchLocation
+            )
         } else {
             return makeFallbackErrorController()
         }
