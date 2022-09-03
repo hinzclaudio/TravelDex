@@ -16,6 +16,9 @@ extension CDTrip {
         return NSFetchRequest<CDTrip>(entityName: "CDTrip")
     }
 
+    /// This dummy bit can be flipped in order to cause an NSFetchedResultsController to produce new results.
+    /// This is helpful when we are sorting trips by a to-many relationship
+    @NSManaged public var dummyBit: Bool
     @NSManaged public var descr: String?
     @NSManaged public var id: UUID
     @NSManaged public var members: String?

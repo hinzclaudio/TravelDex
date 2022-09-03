@@ -370,6 +370,15 @@
 			path = StringResources;
 			sourceTree = "<group>";
 		};
+		122414CF28C40B2E008B4402 /* PlacesActions */ = {
+			isa = PBXGroup;
+			children = (
+				12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */,
+				12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */,
+			);
+			path = PlacesActions;
+			sourceTree = "<group>";
+		};
 		12571EE928BD4F6100CC2AD0 = {
 			isa = PBXGroup;
 			children = (
@@ -550,11 +559,11 @@
 		12571F4E28BD505400CC2AD0 /* NSManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */,
 				12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */,
 				12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */,
-				12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */,
-				12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */,
 				12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */,
+				12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */,
 				12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */,
 			);
 			path = NSManagedObjects;
@@ -563,11 +572,10 @@
 		12571F5828BD505400CC2AD0 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */,
-				12571F5A28BD505400CC2AD0 /* TripActions */,
 				12571F5D28BD505400CC2AD0 /* CDAction.swift */,
+				12571F5A28BD505400CC2AD0 /* TripActions */,
+				122414CF28C40B2E008B4402 /* PlacesActions */,
 				12571F5E28BD505400CC2AD0 /* LocationActions */,
-				12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";

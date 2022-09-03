@@ -18,6 +18,7 @@ struct CDUpdatePlace: CDAction {
     func execute(in context: NSManagedObjectContext) throws {
         let end: Date = (place.end < place.start) ? place.start : place.end
         if let cdPlace = try fetchVisitedPlace(by: place.id, in: context) {
+            cdPlace.trip.dummyBit = !cdPlace.trip.dummyBit
             cdPlace.safeInitNeglectRelationShips(
                 id: place.id,
                 text: place.text,

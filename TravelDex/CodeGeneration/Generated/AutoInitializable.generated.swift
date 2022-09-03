@@ -55,6 +55,7 @@ extension CDTrip {
     /// have been set correctly.
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
+        dummyBit: Bool,
         descr: String?,
         id: UUID,
         members: String?,
@@ -65,6 +66,7 @@ extension CDTrip {
         pinColorBlue: Int16,
         visitedPlaces: NSSet
     ) {
+        self.dummyBit = dummyBit
         self.descr = descr
         self.id = id
         self.members = members
@@ -79,6 +81,7 @@ extension CDTrip {
     /// have been set correctly.
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
+        dummyBit: Bool,
         descr: String?,
         id: UUID,
         members: String?,
@@ -88,6 +91,7 @@ extension CDTrip {
         pinColorGreen: Int16,
         pinColorBlue: Int16
     ) {
+        self.dummyBit = dummyBit
         self.descr = descr
         self.id = id
         self.members = members
