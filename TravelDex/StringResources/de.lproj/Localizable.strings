@@ -10,8 +10,9 @@
 "missing_locations" = "Sie haben noch keine Orte hinzugefügt. Sie können Orte über den Plus-Button hinzufügen!";
 "start" = "Start";
 "end" = "Ende";
-"visisted_place_title" = "Was macht diesen Ort so besonders?";
+"visisted_place_title" = "Besuchte Orte";
 "comment_location_title" = "Geben Sie eine Beschreibung für %@ an";
+"comment_location_subtitle" = "Was hat diesen Ort besonders gemacht?";
 "color_selection_title" = "Farbwahl";
 "trip_name_tf_title" = "Titel";
 "trip_descr_tf_title" = "Beschreibung";

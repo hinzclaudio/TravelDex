@@ -10,8 +10,9 @@
 "missing_locations" = "You did not add any locations yet. Add a location by tapping the plus icon!";
 "start" = "Start";
 "end" = "End";
-"visisted_place_title" = "What made this place so special?";
+"visisted_place_title" = "Visited Places";
 "comment_location_title" = "Enter a Comment for %@";
+"comment_location_subtitle" = "What made this place so special?";
 "color_selection_title" = "Color Selection";
 "trip_name_tf_title" = "Title";
 "trip_descr_tf_title" = "Description";

@@ -39,6 +39,8 @@ internal enum Localizable {
   internal static let addTripTitle = Localizable.tr("Localizable", "add_trip_title", fallback: "Add Trip")
   /// Color Selection
   internal static let colorSelectionTitle = Localizable.tr("Localizable", "color_selection_title", fallback: "Color Selection")
+  /// What made this place so special?
+  internal static let commentLocationSubtitle = Localizable.tr("Localizable", "comment_location_subtitle", fallback: "What made this place so special?")
   /// Enter a Comment for %@
   internal static func commentLocationTitle(_ p1: Any) -> String {
     return Localizable.tr("Localizable", "comment_location_title", String(describing: p1), fallback: "Enter a Comment for %@")
@@ -79,8 +81,8 @@ internal enum Localizable {
   internal static let tripNameTfTitle = Localizable.tr("Localizable", "trip_name_tf_title", fallback: "Title")
   /// Trips
   internal static let tripsListTitle = Localizable.tr("Localizable", "trips_list_title", fallback: "Trips")
-  /// What made this place so special?
-  internal static let visistedPlaceTitle = Localizable.tr("Localizable", "visisted_place_title", fallback: "What made this place so special?")
+  /// Visited Places
+  internal static let visistedPlaceTitle = Localizable.tr("Localizable", "visisted_place_title", fallback: "Visited Places")
   /// Visited Locations
   internal static let visitedLocationsTitle = Localizable.tr("Localizable", "visited_locations_title", fallback: "Visited Locations")
 }

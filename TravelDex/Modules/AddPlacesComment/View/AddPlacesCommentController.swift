@@ -56,7 +56,7 @@ class AddPlacesCommentController: ScrollableVStackController {
     }
     
     private func configureViews() {
-        textView.descrLabel.text = Localizable.visistedPlaceTitle
+        textView.descrLabel.text = Localizable.commentLocationSubtitle
     }
     
     private func setAutoLayout() {
