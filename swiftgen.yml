@@ -12,7 +12,7 @@
 ##   SwiftGen will parse all `.strings` files found in that folder.
 strings:
   inputs:
-    - ./TravelDex/StringResources/en.lproj
+    - ./TravelDex/StringResources/en.lproj  
   outputs:
     - templateName: structured-swift5
       params:
