@@ -8,17 +8,11 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Acknowledgements</string>
-		</dict>
-		<dict>
-			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 			<key>Title</key>
 			<string>Acknowledgements</string>
 			<key>File</key>
-			<string>Pods-TravelWeather-settings-metadata</string>
+			<string>Pods-TravelDex-settings-metadata</string>
 		</dict>
 	</array>
 </dict>

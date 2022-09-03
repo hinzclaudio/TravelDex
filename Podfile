@@ -1,7 +1,7 @@
 platform :ios, '15.0'
-plugin 'cocoapods-acknowledgements', :targets => ['TravelWeather'], :settings_bundle => true
+plugin 'cocoapods-acknowledgements', :targets => ['TravelDex'], :settings_bundle => true
 
-target 'TravelWeather' do
+target 'TravelDex' do
   use_frameworks!
 
   pod 'RxSwift'
@@ -14,7 +14,7 @@ target 'TravelWeather' do
   pod 'IQKeyboardManager'
   pod 'DTPhotoViewerController'
 
-  target 'TravelWeatherTests' do
+  target 'TravelDexTests' do
     inherit! :search_paths
 
     pod 'RxBlocking'
@@ -22,13 +22,13 @@ target 'TravelWeather' do
 
   end
 
-  target 'TravelWeatherUITests' do
+  target 'TravelDexUITests' do
   end
 
 end
 
 
-post_install do | installer |
-  require 'fileutils'
-  FileUtils.cp_r('Pods/Pods-TravelWeather-metadata.plist', 'Settings.bundle/Pods-TravelWeather-settings-metadata.plist', :remove_destination => true)
-end
+#post_install do | installer |
+#  require 'fileutils'
+#  FileUtils.cp_r('Pods/Pods-TravelDex-metadata.plist', 'Settings.bundle/Pods-TravelDex-settings-metadata.plist', :remove_destination => true)
+#end
