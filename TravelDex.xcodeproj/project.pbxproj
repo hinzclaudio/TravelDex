@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0BA355DA76611C5CBEAF1087 /* Pods_TravelDex_TravelDexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA2E0FF524B164B91AA6E83 /* Pods_TravelDex_TravelDexUITests.framework */; };
+		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
+		122414C528C3E2CE008B4402 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
 		12571F0228BD4F6100CC2AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
 		12571F0528BD4F6100CC2AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
 		12571F7228BD505400CC2AD0 /* CDObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2C28BD505400CC2AD0 /* CDObservable.swift */; };
@@ -173,6 +175,9 @@
 
 /* Begin PBXFileReference section */
 		0448098B428158342C41259F /* Pods-TravelDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex.debug.xcconfig"; path = "Target Support Files/Pods-TravelDex/Pods-TravelDex.debug.xcconfig"; sourceTree = "<group>"; };
+		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
+		122414C628C3E2CE008B4402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		122414C828C3E2D1008B4402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12571EF228BD4F6100CC2AD0 /* TravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12571F0128BD4F6100CC2AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12571F0428BD4F6100CC2AD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -357,6 +362,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		122414B728C3DDC2008B4402 /* StringResources */ = {
+			isa = PBXGroup;
+			children = (
+				122414C728C3E2CE008B4402 /* Localizable.strings */,
+			);
+			path = StringResources;
+			sourceTree = "<group>";
+		};
 		12571EE928BD4F6100CC2AD0 = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +402,7 @@
 				12DAB30428C3D40E0066FE22 /* Lib */,
 				12DAB31328C3D42F0066FE22 /* Modules */,
 				12DAB38A28C3D49B0066FE22 /* Constants */,
+				122414B728C3DDC2008B4402 /* StringResources */,
 				12571F0128BD4F6100CC2AD0 /* Assets.xcassets */,
 				12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */,
 				12571F0628BD4F6100CC2AD0 /* Info.plist */,
@@ -618,6 +632,7 @@
 			children = (
 				12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */,
 				12DAB2E728C3D2D70066FE22 /* Images.generated.swift */,
+				122414B928C3DED3008B4402 /* Strings.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -717,8 +732,8 @@
 		12DAB31828C3D42F0066FE22 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				12DAB31928C3D42F0066FE22 /* Subviews */,
 				12DAB31C28C3D42F0066FE22 /* EditTripController.swift */,
+				12DAB31928C3D42F0066FE22 /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -769,8 +784,8 @@
 		12DAB32528C3D42F0066FE22 /* AddPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				12DAB32628C3D42F0066FE22 /* ViewModel */,
 				12DAB32A28C3D42F0066FE22 /* AddedPlaceItem.swift */,
+				12DAB32628C3D42F0066FE22 /* ViewModel */,
 				12DAB32B28C3D42F0066FE22 /* View */,
 			);
 			path = AddPlaces;
@@ -806,8 +821,8 @@
 		12DAB33028C3D42F0066FE22 /* LocationDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				12DAB33128C3D42F0066FE22 /* ViewModel */,
 				12DAB33628C3D42F0066FE22 /* LocationDisplayAnnotation.swift */,
+				12DAB33128C3D42F0066FE22 /* ViewModel */,
 				12DAB33728C3D42F0066FE22 /* View */,
 			);
 			path = LocationDisplay;
@@ -816,8 +831,8 @@
 		12DAB33128C3D42F0066FE22 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12DAB33228C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift */,
 				12DAB33328C3D42F0066FE22 /* LocationDisplayViewModelType.swift */,
+				12DAB33228C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift */,
 				12DAB33428C3D42F0066FE22 /* TripLocationDisplayViewModel.swift */,
 				12DAB33528C3D42F0066FE22 /* PlaceDisplayViewModel.swift */,
 			);
@@ -1165,6 +1180,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 12571EE928BD4F6100CC2AD0;
 			productRefGroup = 12571EF328BD4F6100CC2AD0 /* Products */;
@@ -1188,6 +1204,7 @@
 				12571F0528BD4F6100CC2AD0 /* LaunchScreen.storyboard in Resources */,
 				12DAB2F728C3D2D80066FE22 /* AutoInitializable.stencil in Resources */,
 				12DAB2F628C3D2D80066FE22 /* AutoBuilder.stencil in Resources */,
+				122414C528C3E2CE008B4402 /* Localizable.strings in Resources */,
 				12571F0228BD4F6100CC2AD0 /* Assets.xcassets in Resources */,
 				F2257932C93CB74984733056 /* Pods-TravelDex-metadata.plist in Resources */,
 				12DAB2F428C3D2D80066FE22 /* sourcery.sh in Resources */,
@@ -1454,6 +1471,7 @@
 				12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */,
 				12571F9F28BD505400CC2AD0 /* FileManagerExt.swift in Sources */,
 				12DAB37128C3D42F0066FE22 /* PlaceDisplayViewModel.swift in Sources */,
+				122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */,
 				12DAB36D28C3D42F0066FE22 /* GeneralStyleManager.swift in Sources */,
 				12571F7E28BD505400CC2AD0 /* TripsStore.swift in Sources */,
 				12571F9528BD505400CC2AD0 /* CDAction.swift in Sources */,
@@ -1538,6 +1556,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		122414C728C3E2CE008B4402 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				122414C628C3E2CE008B4402 /* en */,
+				122414C828C3E2D1008B4402 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1553,6 +1580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1599,7 +1627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1613,6 +1641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1653,7 +1682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1688,7 +1717,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1722,7 +1751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

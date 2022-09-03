@@ -31,7 +31,7 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     
     func confirm(_ tapped: Observable<Void>) -> Disposable {
         tapped
-            .withLatestFrom(comment.nilIfEmpty)
+            .withLatestFrom(comment.nilIfEmpty.startWith(nil))
             .withLatestFrom(addedPlace) { c, place in
                 place.visitedPlace.cloneBuilder()
                     .with(text: c)

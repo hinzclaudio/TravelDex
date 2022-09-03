@@ -118,51 +118,51 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         
         if item.visitedPlace.picture != nil {
             let updateImgAction = UIAction(
-                title: "Change Image",
+                title: Localizable.actionChangeImage,
                 image: SFSymbol.squareAndPencil.image
             ) { [weak self] _ in
                 self?.addOrChangeImage(to: item)
             }
             let delImgAction = UIAction(
-                title: "Remove Image",
+                title: Localizable.actionDeleteImage,
                 image: SFSymbol.trash.image,
                 attributes: .destructive
             ) { [weak self] _ in
                 self?.deleteImage(of: item)
             }
             imgMenu = UIMenu(
-                title: "Image",
+                title: Localizable.menuImageTitle,
                 options: .displayInline,
                 children: [updateImgAction, delImgAction]
             )
         } else {
             let addImgAction = UIAction(
-                title: "Add Image",
+                title: Localizable.actionAddImage,
                 image: SFSymbol.plus.image
             ) { [weak self] _ in
                 self?.addOrChangeImage(to: item)
             }
             imgMenu = UIMenu(
-                title: "Image",
+                title: Localizable.menuImageTitle,
                 options: .displayInline,
                 children: [addImgAction]
             )
         }
         
         let showOnMapAction = UIAction(
-            title: "Show on Map",
+            title: Localizable.actionShowOnMap,
             image: SFSymbol.map.image
         ) { [weak self] _ in
             self?.display(item)
         }
         let editTextAction = UIAction(
-            title: "Edit Comment",
+            title: Localizable.actionEditComment,
             image: SFSymbol.pencil.image
         ) { [weak self] _ in
             self?.coordinator?.comment(on: item)
         }
         let delAction = UIAction(
-            title: "Delete",
+            title: Localizable.actionDelete,
             image: SFSymbol.trash.image,
             attributes: .destructive
         ) { [weak self] _ in

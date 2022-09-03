@@ -62,7 +62,7 @@ class ColorSelectionController: UIViewController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Color Selection"
+        navigationItem.title = Localizable.colorSelectionTitle
         view.backgroundColor = Colors.veryDark
         
         collectionView.backgroundColor = .clear

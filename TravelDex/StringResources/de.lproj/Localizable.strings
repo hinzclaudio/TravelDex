@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  TravelDex
+
+  Created by Claudio Hinz on 03.09.22.
+  
+*/
+
+"add_places_title" = "Orte Hinzufügen";
+"missing_locations" = "Sie haben noch keine Orte hinzugefügt. Sie können Orte über den Plus-Button hinzufügen!";
+"start" = "Start";
+"end" = "Ende";
+"visisted_place_title" = "Was macht diesen Ort so besonders?";
+"comment_location_title" = "Geben Sie eine Beschreibung für %@ an";
+"color_selection_title" = "Farbwahl";
+"trip_name_tf_title" = "Titel";
+"trip_descr_tf_title" = "Beschreibung";
+"trip_descr_tf_subtitle" = "Beschreiben Sie Ihre Reise (optional)";
+"trip_members_tf_title" = "Mitreisende";
+"trip_members_tf_subtitle" = "Wer reiste mit Ihnen? (optional)";
+"add_trip_title" = "Reise Hinzufügen";
+"visited_locations_title" = "Besuchte Orte";
+"add_location_title" = "Ort Hinzufügen";
+"location_name_tf_title" = "Titel";
+"location_region_tf_title" = "Region";
+"location_region_tf_subtitle" = "(optional)";
+"location_country_tf_title" = "Land";
+"location_country_tf_subtitle" = "(optional)";
+"action_add_location" = "Ort hinzufügen";
+"search_location_title" = "Orte Suchen";
+"trips_list_title" = "Reisen";
+"missing_trips" = "Sie haben noch keine Reisen hinzugefügt. Sie können Reisen über den Plus-Button hinzufügen!";
+"action_edit" = "Bearbeiten";
+"action_pick_color" = "Farbe wählen";
+"action_delete" = "Löschen";
+"menu_title" = "Menü";
+"action_add_image" = "Bild hinzufügen";
+"menu_image_title" = "Bild";
+"action_delete_image" = "Bild löschen";
+"action_change_image" = "Bild ändern";
+"action_show_on_map" = "Auf der Karte zeigen";
+"action_edit_comment" = "Beschreibung bearbeiten";

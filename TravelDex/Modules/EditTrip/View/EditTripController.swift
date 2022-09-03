@@ -60,14 +60,14 @@ class EditTripController: ScrollableVStackController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Add Trip"
+        navigationItem.title = Localizable.addTripTitle
         view.backgroundColor = Colors.veryDark
         contentStack.spacing = 2 * Sizes.defaultMargin
-        titleTf.titleLabel.text = "Title"
-        descrTf.titleLabel.text = "Description"
-        descrTf.descrLabel.text = "What was your trip about? (optional)"
-        membersTf.titleLabel.text = "Fellow Travelers"
-        membersTf.descrLabel.text = "Who was travelling with you? (optional)"
+        titleTf.titleLabel.text = Localizable.tripNameTfTitle
+        descrTf.titleLabel.text = Localizable.tripDescrTfTitle
+        descrTf.descrLabel.text = Localizable.tripDescrTfSubtitle
+        membersTf.titleLabel.text = Localizable.tripMembersTfTitle
+        membersTf.descrLabel.text = Localizable.tripMembersTfSubtitle
         confirmButton.styleBorderedButton()
     }
     

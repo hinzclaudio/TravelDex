@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  TravelDex
+
+  Created by Claudio Hinz on 03.09.22.
+  
+*/
+
+"add_places_title" = "Add Places";
+"missing_locations" = "You did not add any locations yet. Add a location by tapping the plus icon!";
+"start" = "Start";
+"end" = "End";
+"visisted_place_title" = "What made this place so special?";
+"comment_location_title" = "Enter a Comment for %@";
+"color_selection_title" = "Color Selection";
+"trip_name_tf_title" = "Title";
+"trip_descr_tf_title" = "Description";
+"trip_descr_tf_subtitle" = "What was your trip about? (optional)";
+"trip_members_tf_title" = "Fellow Travelers";
+"trip_members_tf_subtitle" = "Who was travelling with you? (optional)";
+"add_trip_title" = "Add Trip";
+"visited_locations_title" = "Visited Locations";
+"add_location_title" = "Add Location";
+"location_name_tf_title" = "Title";
+"location_region_tf_title" = "Region";
+"location_region_tf_subtitle" = "(optional)";
+"location_country_tf_title" = "Country";
+"location_country_tf_subtitle" = "(optional)";
+"action_add_location" = "Add Location";
+"search_location_title" = "Search Locations";
+"trips_list_title" = "Trips";
+"missing_trips" = "You did not add any trips yet. Add a trip by tapping the plus icon!";
+"action_edit" = "Edit";
+"action_pick_color" = "Pick Color";
+"action_delete" = "Delete";
+"menu_title" = "Menu";
+"action_add_image" = "Add Image";
+"menu_image_title" = "Image";
+"action_delete_image" = "Delete Image";
+"action_change_image" = "Change Image";
+"action_show_on_map" = "Show on Map";
+"action_edit_comment" = "Edit Comment";

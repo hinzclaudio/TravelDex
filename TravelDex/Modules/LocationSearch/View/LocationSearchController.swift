@@ -60,7 +60,7 @@ class LocationSearchController: UIViewController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Search Locations"
+        navigationItem.title = Localizable.searchLocationTitle
         mapView.delegate = self
         mapView.addGestureRecognizer(mapTapGesture)
         
@@ -68,7 +68,7 @@ class LocationSearchController: UIViewController {
         searchController.hidesNavigationBarDuringPresentation = false
         
         addButton.styleBorderedButton()
-        addButton.setTitle("Add Location", for: .normal)
+        addButton.setTitle(Localizable.actionAddLocation, for: .normal)
         addButton.isHidden = true
     }
     

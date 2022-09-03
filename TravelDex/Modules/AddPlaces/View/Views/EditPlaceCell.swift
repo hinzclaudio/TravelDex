@@ -122,11 +122,11 @@ class EditPlaceCell: UITableViewCell {
         optionsButton.setImage(SFSymbol.gear.image, for: .normal)
         optionsButton.showsMenuAsPrimaryAction = true
         
-        startLabel.text = "Start"
+        startLabel.text = Localizable.start
         startLabel.styleSmall(colored: Colors.black)
         startPicker.styleDayMonthYear()
         
-        endLabel.text = "End"
+        endLabel.text = Localizable.end
         endLabel.styleSmall(colored: Colors.black)
         endPicker.styleDayMonthYear()
         

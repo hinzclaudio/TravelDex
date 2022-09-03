@@ -60,7 +60,7 @@ class AddPlacesController: UIViewController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Add Places"
+        navigationItem.title = Localizable.addPlacesTitle
         view.backgroundColor = Colors.veryDark
         mapButton.image = SFSymbol.map.image
         
@@ -70,7 +70,7 @@ class AddPlacesController: UIViewController {
         
         addLocationsLabel.styleText()
         addLocationsLabel.textAlignment = .center
-        addLocationsLabel.text = "You did not add any locations yet. Add a location by tapping the plus icon!"
+        addLocationsLabel.text = Localizable.missingLocations
     }
     
     private func setAutoLayout() {

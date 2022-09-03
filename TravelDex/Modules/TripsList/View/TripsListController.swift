@@ -62,7 +62,7 @@ class TripsListController: UIViewController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Trips"
+        navigationItem.title = Localizable.tripsListTitle
         mapButton.image = SFSymbol.map.image
         searchController.searchBar.styleDefault()
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -74,7 +74,7 @@ class TripsListController: UIViewController {
         
         addTripLabel.styleText()
         addTripLabel.textAlignment = .center
-        addTripLabel.text = "You did not add any trips yet. Add a trip by tapping the plus icon!"
+        addTripLabel.text = Localizable.missingTrips
     }
     
     private func setAutoLayout() {

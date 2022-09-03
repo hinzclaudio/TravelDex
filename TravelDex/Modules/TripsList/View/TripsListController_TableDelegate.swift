@@ -22,23 +22,23 @@ extension TripsListController: UITableViewDelegate {
             previewProvider: nil,
             actionProvider: { [weak self] actions in
                 let editTextAction = UIAction(
-                    title: "Edit",
+                    title: Localizable.actionEdit,
                     image: SFSymbol.pencil.image,
                     handler: { [weak self] _ in self?.editingIP.onNext(indexPath) }
                 )
                 let editColortAction = UIAction(
-                    title: "Pick Color",
+                    title: Localizable.actionPickColor,
                     image: SFSymbol.paintpalette.image,
                     handler: { [weak self] _ in self?.pickingColorIP.onNext(indexPath) }
                 )
                 let deleteAction = UIAction(
-                    title: "Delete",
+                    title: Localizable.actionDelete,
                     image: SFSymbol.trash.image,
                     attributes: .destructive,
                     handler: { _ in self?.deletionIP.onNext(indexPath) }
                 )
                 return UIMenu(
-                    title: "Menu",
+                    title: Localizable.menuTitle,
                     children: [editTextAction, editColortAction, deleteAction]
                 )
             }

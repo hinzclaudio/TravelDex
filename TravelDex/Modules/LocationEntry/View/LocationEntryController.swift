@@ -61,18 +61,18 @@ class LocationEntryController: ScrollableVStackController {
     }
     
     private func configureViews() {
-        navigationItem.title = "Add Location"
+        navigationItem.title = Localizable.addLocationTitle
         view.backgroundColor = Colors.veryDark
-        titleField.titleLabel.text = "Title"
-        regionField.titleLabel.text = "Region"
-        regionField.descrLabel.text = "(optional)"
-        countryField.titleLabel.text = "Country"
-        countryField.descrLabel.text = "(optional)"
+        titleField.titleLabel.text = Localizable.locationNameTfTitle
+        regionField.titleLabel.text = Localizable.locationRegionTfTitle
+        regionField.descrLabel.text = Localizable.locationRegionTfSubtitle
+        countryField.titleLabel.text = Localizable.locationCountryTfTitle
+        countryField.descrLabel.text = Localizable.locationCountryTfSubtitle
         
         snapshotView.roundCorners()
         snapshotView.contentMode = .scaleAspectFill
         
-        confirmButton.setTitle("Add Location", for: .normal)
+        confirmButton.setTitle(Localizable.actionAddLocation, for: .normal)
         confirmButton.styleBorderedButton()
     }
     

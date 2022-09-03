@@ -24,7 +24,7 @@ class AllPlacesDisplayViewModel: LocationDisplayViewModelType {
     
     
     lazy var controllerTitle: Driver<String> = {
-        .just("Visited Locations")
+        .just(Localizable.visistedPlaceTitle)
     }()
     
     lazy var annotations: Driver<[MKAnnotation]> = {

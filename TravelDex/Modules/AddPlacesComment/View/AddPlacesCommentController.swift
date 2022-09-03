@@ -56,7 +56,7 @@ class AddPlacesCommentController: ScrollableVStackController {
     }
     
     private func configureViews() {
-        textView.descrLabel.text = "What made this place so special?"
+        textView.descrLabel.text = Localizable.visistedPlaceTitle
     }
     
     private func setAutoLayout() {
@@ -65,7 +65,7 @@ class AddPlacesCommentController: ScrollableVStackController {
     
     private func setupBinding() {
         viewModel.addedPlace
-            .map { String(format: "Enter a Comment for %@", $0.location.name) }
+            .map { String(format: Localizable.commentLocationTitle($0.location.name)) }
             .drive(textView.titleLabel.rx.text)
             .disposed(by: bag)
         viewModel.addedPlace
