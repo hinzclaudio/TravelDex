@@ -20,6 +20,7 @@ class TripsListController: UIViewController {
     let bag = DisposeBag()
     
     // MARK: - Views
+    let storeButton = UIBarButtonItem()
     let mapButton = UIBarButtonItem()
     let addButton = UIBarButtonItem(systemItem: .add)
     let searchController = UISearchController()
@@ -55,6 +56,7 @@ class TripsListController: UIViewController {
     }
     
     private func addViews() {
+        navigationItem.setLeftBarButton(storeButton, animated: false)
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         navigationItem.searchController = searchController
         view.addSubview(tableView)
@@ -63,6 +65,7 @@ class TripsListController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.tripsListTitle
+        storeButton.image = SFSymbol.cart.image
         mapButton.image = SFSymbol.map.image
         searchController.searchBar.styleDefault()
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -96,6 +99,10 @@ class TripsListController: UIViewController {
         
         viewModel
             .addTapped(addButton.rx.tap.asObservable())
+            .disposed(by: bag)
+        
+        viewModel
+            .storeTapped(storeButton.rx.tap.asObservable())
             .disposed(by: bag)
         
         let searchQuery = searchController.searchBar.rx.text.orEmpty.asObservable()

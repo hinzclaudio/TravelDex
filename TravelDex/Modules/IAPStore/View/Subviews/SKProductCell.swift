@@ -13,9 +13,7 @@ import RxSwift
 
 class SKProductCell: UITableViewCell {
     static let identifier = "SKProductTableViewCell"
-    
-    private(set) var bag = DisposeBag()
-    
+
     // MARK: - Views
     let containerView = UIView()
     let labelStack = UIStackView.defaultContentStack(withSpacing: Sizes.halfDefMargin)
@@ -31,11 +29,6 @@ class SKProductCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("Not implemented.")
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        bag = DisposeBag()
     }
     
     
@@ -63,8 +56,6 @@ class SKProductCell: UITableViewCell {
         containerView.backgroundColor = Colors.lightSandRose
         titleLabel.styleHeadline3(colored: Colors.black)
         secLabel.styleSmall(colored: Colors.black)
-        buyButton.styleTextButton()
-        buyButton.setTitle(Localizable.actionPurchase, for: .normal)
         buyButton.contentHorizontalAlignment = .right
     }
     
@@ -87,9 +78,13 @@ class SKProductCell: UITableViewCell {
         buyButton.autoAlignAxis(.horizontal, toSameAxisOf: containerView)
     }
     
-    func configure(for product: Product, isPurchased: Bool = false) {
-        titleLabel.text = product.displayName
-        secLabel.text = product.displayPrice
+    func configure(for iapProduct: IAPProduct) {
+        titleLabel.text = iapProduct.product.displayName
+        secLabel.text = iapProduct.product.displayPrice
+        
+        buyButton.isEnabled = !iapProduct.isPurchased
+        buyButton.setTitle(iapProduct.isPurchased ? Localizable.statusPurchased : Localizable.actionPurchase, for: .normal)
+        buyButton.styleTextButton(colored: iapProduct.isPurchased ? Colors.gray : Colors.darkRed)
     }
     
 }

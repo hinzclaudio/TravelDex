@@ -21,6 +21,7 @@ enum SFSymbol: String {
     case calendar
     case map
     case camera
+    case cart
     case filledMappin = "pin.fill"
     
     var image: UIImage {

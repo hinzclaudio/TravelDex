@@ -6,7 +6,7 @@
   "products" : [
     {
       "displayPrice" : "0.99",
-      "familyShareable" : true,
+      "familyShareable" : false,
       "internalID" : "032ADF7B",
       "localizations" : [
         {
@@ -26,7 +26,7 @@
     }
   ],
   "settings" : {
-
+    "_askToBuyEnabled" : true
   },
   "subscriptionGroups" : [
 

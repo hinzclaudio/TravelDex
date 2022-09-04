@@ -77,6 +77,14 @@ class AppCoordinator: CoordinatorType {
     }
     
     
+    func selectStore() {
+        let viewModel = IAPStoreViewModel(dependencies: dependencies)
+        viewModel.coordinator = self
+        let controller = IAPStoreController(viewModel: viewModel)
+        presentModally(controller)
+    }
+    
+    
     func searchLocation(completion: @escaping (Location) -> Void) {
         let modalContainer = ModalNavigationContainer()
         GeneralStyleManager.styleModal(modalContainer.navigationBar)

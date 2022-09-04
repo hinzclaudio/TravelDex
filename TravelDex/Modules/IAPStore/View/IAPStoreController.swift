@@ -71,8 +71,12 @@ class IAPStoreController: UIViewController {
                     cellIdentifier: SKProductCell.identifier,
                     cellType: SKProductCell.self
                 )
-            ) { i, product, cell in
+            ) { [unowned self] i, product, cell in
                 cell.configure(for: product)
+                let purchase = cell.buyButton.rx.tap
+                    .withLatestFrom(self.viewModel.products) { _, prods in prods[i].product }
+                    .asObservable()
+                self.viewModel.purchase(product: purchase)
             }
             .disposed(by: bag)
     }

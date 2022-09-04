@@ -14,6 +14,7 @@ import RxCocoa
 
 protocol IAPStoreViewModelType {
     
-    var products: Driver<[Product]> { get }
+    func purchase(product: Observable<Product>)
+    var products: Driver<[IAPProduct]> { get }
     
 }

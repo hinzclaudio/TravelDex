@@ -79,6 +79,8 @@ internal enum Localizable {
   internal static let searchLocationTitle = Localizable.tr("Localizable", "search_location_title", fallback: "Search Locations")
   /// Start
   internal static let start = Localizable.tr("Localizable", "start", fallback: "Start")
+  /// Purchased
+  internal static let statusPurchased = Localizable.tr("Localizable", "status_purchased", fallback: "Purchased")
   /// What was your trip about? (optional)
   internal static let tripDescrTfSubtitle = Localizable.tr("Localizable", "trip_descr_tf_subtitle", fallback: "What was your trip about? (optional)")
   /// Description

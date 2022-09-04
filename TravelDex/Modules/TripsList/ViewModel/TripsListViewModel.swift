@@ -25,6 +25,11 @@ class TripsListVieModel: TripsListViewModelType {
     
     
     // MARK: - Input
+    func storeTapped(_ tap: Observable<Void>) -> Disposable {
+        tap
+            .subscribe(onNext: { [weak self] in self?.coordinator?.selectStore() })
+    }
+    
     func mapTapped(_ tap: Observable<Void>) -> Disposable {
         tap
             .subscribe(onNext: { [weak self] in self?.coordinator?.displayMap() })

@@ -20,6 +20,7 @@ struct Colors {
     static let black = UIColor(hex: "000000")!
     static let lightSandRose = UIColor(hex: "DCD8D9")!
     static let darkSandRose = UIColor(hex: "95888a")!
+    static let gray = UIColor.gray
     
     static var navBarColor: UIColor { mediumDark }
     

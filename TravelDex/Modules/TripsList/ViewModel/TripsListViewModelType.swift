@@ -14,6 +14,7 @@ import RxCocoa
 protocol TripsListViewModelType {
     
     // MARK: - Input
+    func storeTapped(_ tap: Observable<Void>) -> Disposable
     func mapTapped(_ tap: Observable<Void>) -> Disposable
     func addTapped(_ tap: Observable<Void>) -> Disposable
     func select(_ trip: Observable<Trip>) -> Disposable
