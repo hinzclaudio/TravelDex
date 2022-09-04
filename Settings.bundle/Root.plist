@@ -2,27 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-			<key>Title</key>
-			<string>Acknowledgements</string>
 			<key>File</key>
 			<string>Pods-TravelDex-settings-metadata</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
 		</dict>
 		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Version</string>
-			<key>Key</key>
-			<string>version_preference</string>
 			<key>DefaultValue</key>
 			<string>x.x.x</string>
+			<key>Key</key>
+			<string>version_preference</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
 		</dict>
 	</array>
 </dict>
