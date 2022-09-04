@@ -26,6 +26,8 @@ internal enum Localizable {
   internal static let actionEditComment = Localizable.tr("Localizable", "action_edit_comment", fallback: "Edit Comment")
   /// Pick Color
   internal static let actionPickColor = Localizable.tr("Localizable", "action_pick_color", fallback: "Pick Color")
+  /// Purchase
+  internal static let actionPurchase = Localizable.tr("Localizable", "action_purchase", fallback: "Purchase")
   /// Show on Map
   internal static let actionShowOnMap = Localizable.tr("Localizable", "action_show_on_map", fallback: "Show on Map")
   /// Add Location
@@ -51,6 +53,8 @@ internal enum Localizable {
   internal static let errorCannotMatchLocation = Localizable.tr("Localizable", "error_cannot_match_location", fallback: "Your query did not produce any results.")
   /// Error
   internal static let errorTitle = Localizable.tr("Localizable", "error_title", fallback: "Error")
+  /// In-App Purchases
+  internal static let iapStoreTitle = Localizable.tr("Localizable", "iap_store_title", fallback: "In-App Purchases")
   /// (optional)
   internal static let locationCountryTfSubtitle = Localizable.tr("Localizable", "location_country_tf_subtitle", fallback: "(optional)")
   /// Country

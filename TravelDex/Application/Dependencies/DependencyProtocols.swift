@@ -12,7 +12,8 @@ import Foundation
 protocol AppDependencies:
     HasTripsStore &
     HasPlacesStore &
-    HasLocationsStore
+    HasLocationsStore &
+    HasSKStore
 {}
 
 
@@ -27,4 +28,8 @@ protocol HasPlacesStore {
 
 protocol HasLocationsStore {
     var locationsStore: LocationsStoreType { get }
+}
+
+protocol HasSKStore {
+    var skStore: SKStoreType { get }
 }

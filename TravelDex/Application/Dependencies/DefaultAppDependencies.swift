@@ -18,6 +18,7 @@ class DefaultAppDependencies: AppDependencies {
     let tripsStore: TripsStoreType
     let placesStore: PlacesStoreType
     let locationsStore: LocationsStoreType
+    let skStore: SKStoreType
     
     init() {
         let cdStack = DefaultCDStack(modelName: "TravelDex")
@@ -39,6 +40,7 @@ class DefaultAppDependencies: AppDependencies {
             dispatch: cdStack.dispatch(_:),
             locationAPI: geoCoder
         )
+        self.skStore = SKStore()
     }
     
 }

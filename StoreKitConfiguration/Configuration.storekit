@@ -1,0 +1,38 @@
+{
+  "identifier" : "57CC9611",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : true,
+      "internalID" : "032ADF7B",
+      "localizations" : [
+        {
+          "description" : "Store more than three trips!",
+          "displayName" : "Premium",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Speichern Sie mehr als 3 Reisen!",
+          "displayName" : "Premium",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.hinzclaudio.TravelDex.premium",
+      "referenceName" : "Premium",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 2
+  }
+}

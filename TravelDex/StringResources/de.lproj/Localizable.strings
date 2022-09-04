@@ -45,3 +45,5 @@
 "unknown_error_descr" = "Ein unbekannter Fehler ist aufgetreten.";
 "error_cannot_match_location" = "Ihre Suche erziehlte keine Ergebnisse.";
 "ok" = "OK";
+"iap_store_title" = "In-App Käufe";
+"action_purchase" = "Kaufen";
