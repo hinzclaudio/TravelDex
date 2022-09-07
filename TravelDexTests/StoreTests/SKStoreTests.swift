@@ -19,6 +19,7 @@ import XCTest
 class SKStoreTests: XCTestCase {
     
     enum SKStoreError: Error {
+        case purchaseError
         case missingTransaction
     }
     
@@ -35,7 +36,6 @@ class SKStoreTests: XCTestCase {
         session.clearTransactions()
         session.resetToDefaultState()
         session.disableDialogs = true
-        session.askToBuyEnabled = false
     }
     
     func testProductsIsNonEmpty() throws {

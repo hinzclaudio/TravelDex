@@ -14,9 +14,13 @@ import StoreKit
 
 class MockSKStore: SKStoreType {
     
+    var purchaseThrows = false
     var purchaseProductCalled = false
     func purchase(_ product: Product) async throws {
         purchaseProductCalled = true
+        if purchaseThrows {
+            throw SKStoreTests.SKStoreError.purchaseError
+        }
     }
     
     var products: Observable<[Product]> {

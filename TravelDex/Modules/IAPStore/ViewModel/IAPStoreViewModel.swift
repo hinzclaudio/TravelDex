@@ -33,7 +33,7 @@ class IAPStoreViewModel: IAPStoreViewModelType {
                     do {
                         try await self.dependencies.skStore.purchase(product)
                     } catch {
-                        self.skError.onNext(error)
+                        self.skError.accept(error)
                     }
                 }
             }
@@ -62,10 +62,9 @@ class IAPStoreViewModel: IAPStoreViewModelType {
         .asDriver(onErrorJustReturn: [])
     }()
     
-    private let skError = PublishSubject<Error>()
+    private let skError = BehaviorRelay<Error?>(value: nil)
     lazy var errorAlert: Driver<UIAlertController> = {
         skError
-            .map { error -> Error? in error }
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }
             .map { error in InfoManager.defaultErrorInfo(for: error) }
