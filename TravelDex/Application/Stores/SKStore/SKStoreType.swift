@@ -14,7 +14,7 @@ import RxSwift
 protocol SKStoreType {
     
     // MARK: - Input
-    func purchase(product: Observable<Product>) async throws
+    func purchase(_ product: Product) async throws
     
     
     // MARK: - Output

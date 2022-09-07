@@ -23,10 +23,52 @@
       "productID" : "de.hinzclaudio.TravelDex.premium",
       "referenceName" : "Premium",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "4C5CD605",
+      "localizations" : [
+        {
+          "description" : "Show your appreciation!",
+          "displayName" : "Premium - Supporter Edition",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Zeigen Sie Ihre Unterstützung!",
+          "displayName" : "Premium - Unterstützer Edition",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.hinzclaudio.TravelDex.premiumSupporter",
+      "referenceName" : "Premium Supporter",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "A4AB1649",
+      "localizations" : [
+        {
+          "description" : "Buy the developer a beer!",
+          "displayName" : "Premium - Ultra Edition",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Spendieren Sie dem Entwickler ein Bier!",
+          "displayName" : "Premium - Ultra Edition",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "de.hinzclaudio.TravelDex.premiumUltra",
+      "referenceName" : "Premium Ultra",
+      "type" : "NonConsumable"
     }
   ],
   "settings" : {
-    "_askToBuyEnabled" : true
+    "_askToBuyEnabled" : false,
+    "_locale" : "de",
+    "_storefront" : "DEU"
   },
   "subscriptionGroups" : [
 

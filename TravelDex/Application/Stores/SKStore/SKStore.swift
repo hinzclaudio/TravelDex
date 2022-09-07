@@ -20,7 +20,7 @@ class SKStore: SKStoreType {
         self.updateListener = listenForTransactions()
         Task {
             await requestProducts()
-            updatePurchases()
+            await updatePurchases()
         }
     }
     
@@ -29,17 +29,15 @@ class SKStore: SKStoreType {
     
     
     // MARK: - Input
-    func purchase(product: Observable<Product>) async throws {
-        for try await p in product.values {
-            let result = try await p.purchase()
-            switch result {
-            case .success(let verification):
-                let transaction = verification.isVerified()
-                updatePurchases()
-                await transaction?.finish()
-            default:
-                break
-            }
+    func purchase(_ product: Product) async throws {
+        let result = try await product.purchase()
+        switch result {
+        case .success(let verification):
+            let transaction = verification.isVerified()
+            await updatePurchases()
+            await transaction?.finish()
+        default:
+            break
         }
     }
     
@@ -63,21 +61,23 @@ class SKStore: SKStoreType {
         }
     }
     
-    private func updatePurchases() {
-        StoreKit.Transaction.currentEntitlements.asObservable()
-            .compactMap { $0.isVerified() }
-            .withLatestFrom(products) { t, prods in prods.first(where: { $0.id == t.productID }) }
-            .compactMap { $0 }
-            .scan(into: [], accumulator: { $0.append($1) })
-            .bind(to: _purchasedProducts)
-            .disposed(by: bag)
+    private func updatePurchases() async {
+        var newPurchases = [Product]()
+        for await result in StoreKit.Transaction.currentEntitlements {
+            guard let transaction = result.isVerified(),
+                  let product = _products.value
+                .first(where: { $0.id == transaction.productID })
+            else { continue }
+            newPurchases.append(product)
+        }
+        _purchasedProducts.accept(newPurchases)
     }
     
     private func listenForTransactions() -> Task<Void, Error> {
         Task.detached { [weak self] in
-            for await result in Transaction.updates {
+            for await result in StoreKit.Transaction.updates {
                 guard let transaction = result.isVerified() else { continue }
-                self?.updatePurchases()
+                await self?.updatePurchases()
                 await transaction.finish()
             }
         }

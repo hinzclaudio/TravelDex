@@ -46,5 +46,6 @@
 "error_cannot_match_location" = "Your query did not produce any results.";
 "ok" = "OK";
 "iap_store_title" = "In-App Purchases";
-"action_purchase" = "Purchase";
 "status_purchased" = "Purchased";
+"iap_store_description" = "This app is developed by one person. I rely on your support for continuous development. Purchase any of the options below and you will receive the same premium features.";
+"action_restore" = "Restore Purchases";

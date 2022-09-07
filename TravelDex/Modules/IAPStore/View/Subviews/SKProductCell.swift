@@ -13,6 +13,8 @@ import RxSwift
 
 class SKProductCell: UITableViewCell {
     static let identifier = "SKProductTableViewCell"
+    
+    var bag = DisposeBag()
 
     // MARK: - Views
     let containerView = UIView()
@@ -29,6 +31,11 @@ class SKProductCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("Not implemented.")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bag = DisposeBag()
     }
     
     
@@ -54,7 +61,7 @@ class SKProductCell: UITableViewCell {
         contentView.backgroundColor = .clear
         containerView.roundCorners()
         containerView.backgroundColor = Colors.lightSandRose
-        titleLabel.styleHeadline3(colored: Colors.black)
+        titleLabel.styleText(colored: Colors.black)
         secLabel.styleSmall(colored: Colors.black)
         buyButton.contentHorizontalAlignment = .right
     }
@@ -80,10 +87,10 @@ class SKProductCell: UITableViewCell {
     
     func configure(for iapProduct: IAPProduct) {
         titleLabel.text = iapProduct.product.displayName
-        secLabel.text = iapProduct.product.displayPrice
+        secLabel.text = iapProduct.product.description
         
         buyButton.isEnabled = !iapProduct.isPurchased
-        buyButton.setTitle(iapProduct.isPurchased ? Localizable.statusPurchased : Localizable.actionPurchase, for: .normal)
+        buyButton.setTitle(iapProduct.isPurchased ? Localizable.statusPurchased : iapProduct.product.displayPrice, for: .normal)
         buyButton.styleTextButton(colored: iapProduct.isPurchased ? Colors.gray : Colors.darkRed)
     }
     

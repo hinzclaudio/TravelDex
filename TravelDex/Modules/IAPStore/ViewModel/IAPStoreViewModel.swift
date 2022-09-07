@@ -23,17 +23,30 @@ class IAPStoreViewModel: IAPStoreViewModelType {
         self.dependencies = dependencies
     }
     
-    func purchase(product: Observable<Product>) {
-        Task {
-            do {
-                try await dependencies.skStore.purchase(product: product)
-            } catch {
-                print("Error")
+    
+    
+    // MARK: - Input
+    func purchase(product: Observable<Product>) -> Disposable {
+        product.subscribe(
+            onNext: { [unowned self] product in
+                Task {
+                    do {
+                        try await self.dependencies.skStore.purchase(product)
+                    } catch {
+                        self.skError.onNext(error)
+                    }
+                }
             }
-        }
+        )
+    }
+    
+    func restorePurchases() {
+        // TODO: Implement
     }
     
     
+    
+    // MARK: - Output
     lazy var products: Driver<[IAPProduct]> = {
         Observable.combineLatest(
             dependencies.skStore.products,
@@ -49,6 +62,13 @@ class IAPStoreViewModel: IAPStoreViewModelType {
         .asDriver(onErrorJustReturn: [])
     }()
     
-    
+    private let skError = PublishSubject<Error>()
+    lazy var errorAlert: Driver<UIAlertController> = {
+        skError
+            .map { error -> Error? in error }
+            .asDriver(onErrorJustReturn: nil)
+            .compactMap { $0 }
+            .map { error in InfoManager.defaultErrorInfo(for: error) }
+    }()
     
 }

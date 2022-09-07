@@ -14,7 +14,13 @@ import RxCocoa
 
 protocol IAPStoreViewModelType {
     
-    func purchase(product: Observable<Product>)
+    // MARK: - Input
+    func purchase(product: Observable<Product>) -> Disposable
+    func restorePurchases()
+    
+    
+    // MARK: - Output
     var products: Driver<[IAPProduct]> { get }
+    var errorAlert: Driver<UIAlertController> { get }
     
 }

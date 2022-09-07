@@ -46,5 +46,6 @@
 "error_cannot_match_location" = "Ihre Suche erziehlte keine Ergebnisse.";
 "ok" = "OK";
 "iap_store_title" = "In-App Käufe";
-"action_purchase" = "Kaufen";
 "status_purchased" = "Gekauft";
+"iap_store_description" = "Diese App wird von einer Person entwickelt. Für eine kontinuierliche Entwicklung bin ich auf Ihre Unterstützung angewiesen. Hinter jeder der folgenden Optionen verstecken sich die gleichen Premium-Features.";
+"action_restore" = "Käufe Wiederherstellen";
