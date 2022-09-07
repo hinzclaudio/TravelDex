@@ -7,8 +7,6 @@
 
 import Foundation
 import XCTest
-import StoreKit
-import StoreKitTest
 @testable import TravelDex
 import SwiftUI
 
@@ -19,18 +17,11 @@ class IAPStoreViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
     var viewModel: IAPStoreViewModelType!
-    var session: SKTestSession!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
         self.viewModel = IAPStoreViewModel(dependencies: mockDependencies)
-        if session == nil {
-            session = try SKTestSession(configurationFileNamed: "Configuration")
-        }
-        session.clearTransactions()
-        session.resetToDefaultState()
-        session.disableDialogs = true
     }
     
     
