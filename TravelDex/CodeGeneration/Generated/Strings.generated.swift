@@ -53,8 +53,8 @@ internal enum Localizable {
   internal static let errorCannotMatchLocation = Localizable.tr("Localizable", "error_cannot_match_location", fallback: "Your query did not produce any results.")
   /// Error
   internal static let errorTitle = Localizable.tr("Localizable", "error_title", fallback: "Error")
-  /// This app is developed by one person. I rely on your support for continuous development. Purchase any of the options below and you will receive the same premium features.
-  internal static let iapStoreDescription = Localizable.tr("Localizable", "iap_store_description", fallback: "This app is developed by one person. I rely on your support for continuous development. Purchase any of the options below and you will receive the same premium features.")
+  /// This app is developed by one person. For continuous support I need some sort of support from the users. All of the purchases below are one time payments only. All of them enable the same features. You may decide what you want to pay.
+  internal static let iapStoreDescription = Localizable.tr("Localizable", "iap_store_description", fallback: "This app is developed by one person. For continuous support I need some sort of support from the users. All of the purchases below are one time payments only. All of them enable the same features. You may decide what you want to pay.")
   /// In-App Purchases
   internal static let iapStoreTitle = Localizable.tr("Localizable", "iap_store_title", fallback: "In-App Purchases")
   /// (optional)

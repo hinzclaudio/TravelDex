@@ -15,6 +15,7 @@ protocol SKStoreType {
     
     // MARK: - Input
     func purchase(_ product: Product) async throws
+    func sync() async throws 
     
     
     // MARK: - Output

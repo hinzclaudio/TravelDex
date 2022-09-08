@@ -23,6 +23,15 @@ class MockSKStore: SKStoreType {
         }
     }
     
+    var syncThrows = false
+    var syncCalled = false
+    func sync() async throws {
+        syncCalled = true
+        if syncThrows {
+            throw SKStoreTests.SKStoreError.syncError
+        }
+    }
+    
     var products: Observable<[Product]> {
         Observable.create { observer in
             let task = Task {

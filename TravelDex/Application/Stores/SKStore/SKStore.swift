@@ -41,6 +41,11 @@ class SKStore: SKStoreType {
         }
     }
     
+    func sync() async throws {
+        try await AppStore.sync()
+        await updatePurchases()
+    }
+    
     
     // MARK: - Output
     private let _products = BehaviorRelay<[Product]>(value: [])

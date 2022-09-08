@@ -47,5 +47,5 @@
 "ok" = "OK";
 "iap_store_title" = "In-App Purchases";
 "status_purchased" = "Purchased";
-"iap_store_description" = "This app is developed by one person. I rely on your support for continuous development. Purchase any of the options below and you will receive the same premium features.";
+"iap_store_description" = "This app is developed by one person. For continuous support I need some sort of support from the users. All of the purchases below are one time payments only. All of them enable the same features. You may decide what you want to pay.";
 "action_restore" = "Restore Purchases";

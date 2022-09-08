@@ -41,7 +41,13 @@ class IAPStoreViewModel: IAPStoreViewModelType {
     }
     
     func restorePurchases() {
-        // TODO: Implement
+        Task {
+            do {
+                try await dependencies.skStore.sync()
+            } catch {
+                self.skError.accept(error)
+            }
+        }
     }
     
     

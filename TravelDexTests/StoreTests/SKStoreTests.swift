@@ -21,6 +21,7 @@ class SKStoreTests: XCTestCase {
     enum SKStoreError: Error {
         case purchaseError
         case missingTransaction
+        case syncError
     }
     
     var session: SKTestSession!
@@ -149,6 +150,15 @@ class SKStoreTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testSyncDoesNotThrow() throws {
+        let expectation = XCTestExpectation(description: "Sync: No Throw")
+        Task {
+            try await store.sync()
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+    }
+    
     
     
     // MARK: - Helper
@@ -159,6 +169,14 @@ class SKStoreTests: XCTestCase {
             }
             .toBlocking(timeout: 5)
             .first()!
+    }
+    
+    
+    
+    // MARK: - TearDown
+    override func tearDownWithError() throws {
+        session.resetToDefaultState()
+        session.clearTransactions()
     }
     
 }

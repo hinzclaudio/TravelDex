@@ -65,6 +65,28 @@ class IAPStoreViewModelTests: XCTestCase {
         XCTAssertNotNil(errorAlert)
     }
     
+    func testSyncIsRelayedToStore() throws {
+        viewModel.restorePurchases()
+        
+        // Wait some time for the purchase to happen...
+        let _ = try viewModel.products
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertTrue(mockDependencies.mockSkStore.syncCalled)
+    }
+    
+    func testSyncErrorIsRelayyed() throws {
+        mockDependencies.mockSkStore.syncThrows = true
+        viewModel.restorePurchases()
+        
+        let errorAlert = try viewModel.errorAlert
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertNotNil(errorAlert)
+    }
+    
     
     
     // MARK: - Helpers
