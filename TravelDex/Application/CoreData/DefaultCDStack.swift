@@ -19,19 +19,8 @@ final class DefaultCDStack: CDStackType {
     }
     
 
-    private lazy var managedObjectModel: NSManagedObjectModel = {
-        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")
-        else { fatalError("Unable to Find Data Model") }
-        
-        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
-        else { fatalError("Unable to Load Data Model") }
-        
-        return managedObjectModel
-    }()
-
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        
+    private lazy var persistentContainer: NSPersistentContainer = {
+        // Migration
         do {
             let fm = FileManager.default
             let dirURL = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
@@ -44,13 +33,19 @@ final class DefaultCDStack: CDStackType {
             if migrator.requiresMigration(at: storeURL, to: .current) {
                 migrator.migrateStore(at: storeURL, toVersion: .current)
             }
-            
-            let _ = try coordinator.addPersistentStore(type: .sqlite, at: storeURL)
         } catch {
-            fatalError("Unable to add persistent store: \(error)")
+            fatalError("CDStack: \(error)")
         }
         
-        return coordinator
+        // Actually initialize the store
+        let container = NSPersistentContainer(name: modelName)
+        container.loadPersistentStores { storeDescr, error in
+            if let error = error {
+                fatalError("CDStack: \(error)")
+            }
+        }
+        
+        return container
     }()
     
     
@@ -58,7 +53,7 @@ final class DefaultCDStack: CDStackType {
     // MARK: - Contexts
     private(set) lazy var saveContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.persistentStoreCoordinator = persistentStoreCoordinator
+        context.persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
         return context
     }()
     
