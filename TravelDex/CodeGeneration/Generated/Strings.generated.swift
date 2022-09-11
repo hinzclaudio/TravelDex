@@ -77,6 +77,10 @@ internal enum Localizable {
   internal static let missingTrips = Localizable.tr("Localizable", "missing_trips", fallback: "You did not add any trips yet. Add a trip by tapping the plus icon!")
   /// OK
   internal static let ok = Localizable.tr("Localizable", "ok", fallback: "OK")
+  /// Unfortunately, this feature may only be used with the premium version of the app.
+  internal static let premiumDisabledMsg = Localizable.tr("Localizable", "premium_disabled_msg", fallback: "Unfortunately, this feature may only be used with the premium version of the app.")
+  /// Premium Feature
+  internal static let premiumDisabledTitle = Localizable.tr("Localizable", "premium_disabled_title", fallback: "Premium Feature")
   /// add as many locations per trip as you want.
   internal static let premiumInfoContent1 = Localizable.tr("Localizable", "premium_info_content1", fallback: "add as many locations per trip as you want.")
   /// choose colors for your trips.

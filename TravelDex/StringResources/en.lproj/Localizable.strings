@@ -54,4 +54,5 @@
 "premium_info_content1" = "add as many locations per trip as you want.";
 "premium_info_content2" = "choose colors for your trips.";
 "premium_info_content3" = "tell your friends that you support independent developers.";
-
+"premium_disabled_title" = "Premium Feature";
+"premium_disabled_msg" = "Unfortunately, this feature may only be used with the premium version of the app.";

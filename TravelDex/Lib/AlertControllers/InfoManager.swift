@@ -34,6 +34,11 @@ class InfoManager {
     }
     
     
+    static func makePremiumDisabledInfo() -> UIAlertController {
+        makeInfoController(title: Localizable.premiumDisabledTitle, message: Localizable.premiumDisabledMsg)
+    }
+    
+    
     static func defaultErrorInfo(for error: Error) -> UIAlertController {
         if (error as NSError).code == CLError.Code.geocodeFoundNoResult.rawValue {
             return makeInfoController(

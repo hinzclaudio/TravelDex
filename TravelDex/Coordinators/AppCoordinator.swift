@@ -8,6 +8,7 @@
 import UIKit
 import PhotosUI
 import DTPhotoViewerController
+import RxSwift
 
 
 
@@ -144,11 +145,20 @@ class AppCoordinator: CoordinatorType {
     }
     
     
-    func pickColor(for trip: Trip) {
-        let vm = ColorSelectionViewModel(dependencies: dependencies, trip: trip)
-        vm.coordinator = self
-        let controller = ColorSelectionController(viewModel: vm)
-        self.modalController = presentModally(controller)
+    func pickColor(for trip: Observable<Trip>) -> Disposable {
+        trip
+            .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
+            .subscribe(onNext: { [unowned self] trip, premiumEnabled in
+                if premiumEnabled {
+                    let vm = ColorSelectionViewModel(dependencies: self.dependencies, trip: trip)
+                    vm.coordinator = self
+                    let controller = ColorSelectionController(viewModel: vm)
+                    self.modalController = presentModally(controller)
+                } else {
+                    let info = InfoManager.makePremiumDisabledInfo()
+                    (self.modalController ?? self.navigationController).present(info, animated: true)
+                }
+            })
     }
     
     
