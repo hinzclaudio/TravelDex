@@ -23,6 +23,7 @@ enum SFSymbol: String {
     case camera
     case cart
     case filledMappin = "pin.fill"
+    case infoCircle = "info.circle"
     
     var image: UIImage {
         UIImage(systemName: rawValue)!

@@ -78,10 +78,22 @@ class AppCoordinator: CoordinatorType {
     
     
     func selectStore() {
-        let viewModel = IAPStoreViewModel(dependencies: dependencies)
-        viewModel.coordinator = self
-        let controller = IAPStoreController(viewModel: viewModel)
-        presentModally(controller)
+        let modalContainer = ModalNavigationContainer()
+        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        
+        let coordinator = PremiumStoreCoordinator(
+            dependencies: dependencies,
+            navigationController: modalContainer
+        )
+        
+        self.store(coordinator: coordinator)
+        modalContainer.onDidDisappear = { [weak self, unowned coordinator] in
+            self?.free(coordinator: coordinator)
+        }
+        coordinator.start()
+        
+        self.modalController = modalContainer
+        self.navigationController.present(modalContainer, animated: true)
     }
     
     

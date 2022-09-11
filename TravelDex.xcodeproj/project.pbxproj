@@ -73,6 +73,7 @@
 		12571FA428BD505400CC2AD0 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6F28BD505400CC2AD0 /* UILabelExt.swift */; };
 		12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7028BD505400CC2AD0 /* AppDelegate.swift */; };
 		12571FA628BD505400CC2AD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7128BD505400CC2AD0 /* SceneDelegate.swift */; };
+		1274130428CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */; };
 		12B37CB628C913070076C54C /* IAPStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
@@ -260,6 +261,7 @@
 		12571F6F28BD505400CC2AD0 /* UILabelExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		12571F7028BD505400CC2AD0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12571F7128BD505400CC2AD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreCoordinator.swift; sourceTree = "<group>"; };
 		12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
@@ -709,6 +711,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1274130228CDEC0900FCC8C1 /* ChildCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */,
+				1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */,
+			);
+			path = ChildCoordinators;
+			sourceTree = "<group>";
+		};
 		12DAB2E328C3D2D70066FE22 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,8 +764,8 @@
 			isa = PBXGroup;
 			children = (
 				12DAB2FE28C3D3DB0066FE22 /* CoordinatorType.swift */,
-				12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */,
 				12DAB30028C3D3DB0066FE22 /* AppCoordinator.swift */,
+				1274130228CDEC0900FCC8C1 /* ChildCoordinators */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -1548,6 +1559,7 @@
 				12DAB38228C3D42F0066FE22 /* LocationSearchViewModel.swift in Sources */,
 				12571F9D28BD505400CC2AD0 /* DatePickerExt.swift in Sources */,
 				12DAB37428C3D42F0066FE22 /* LocaitonDisplay_ MapDelegate.swift in Sources */,
+				1274130428CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift in Sources */,
 				12571F9E28BD505400CC2AD0 /* UIButtonExt.swift in Sources */,
 				12DAB39328C3D49B0066FE22 /* Fonts.swift in Sources */,
 				12571F7B28BD505400CC2AD0 /* CLGeocoderExtension.swift in Sources */,

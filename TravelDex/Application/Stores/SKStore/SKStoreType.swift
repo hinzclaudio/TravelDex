@@ -21,5 +21,6 @@ protocol SKStoreType {
     // MARK: - Output
     var products: Observable<[Product]> { get }
     var purchasedProducts: Observable<[Product]> { get }
+    var premiumFeaturesEnabled: Observable<Bool> { get }
     
 }

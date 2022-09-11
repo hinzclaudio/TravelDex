@@ -16,7 +16,7 @@ class IAPStoreViewModel: IAPStoreViewModelType {
     
     typealias Dependencies = HasSKStore
     private let dependencies: Dependencies
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: PremiumStoreCoordinator?
     
     
     init(dependencies: Dependencies) {
@@ -38,6 +38,11 @@ class IAPStoreViewModel: IAPStoreViewModelType {
                 }
             }
         )
+    }
+    
+    func info(_ tapped: Observable<Void>) -> Disposable {
+        tapped
+            .subscribe(onNext: { [weak self] in self?.coordinator?.displayInfo() })
     }
     
     func restorePurchases() {

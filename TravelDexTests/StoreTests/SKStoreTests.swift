@@ -159,6 +159,29 @@ class SKStoreTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
+    func testPremiumFeaturesDisabledInitially() throws {
+        let premiumEnabled = try store.premiumFeaturesEnabled
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertFalse(premiumEnabled ?? true)
+    }
+    
+    func testPremiumFeaturesEnabledIfProductsPurchased() throws {
+        let premium = try simplePremiumProduct()
+        
+        let expectation = XCTestExpectation(description: "Premium: Purchased")
+        Task {
+            try await store.purchase(premium)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5)
+        
+        let premiumEnabled = try store.premiumFeaturesEnabled
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertTrue(premiumEnabled ?? false)
+    }
+    
     
     
     // MARK: - Helper

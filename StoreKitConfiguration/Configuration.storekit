@@ -10,12 +10,12 @@
       "internalID" : "032ADF7B",
       "localizations" : [
         {
-          "description" : "Store more than three trips!",
+          "description" : "Enable all premium features!",
           "displayName" : "Premium",
           "locale" : "en_US"
         },
         {
-          "description" : "Speichern Sie mehr als 3 Reisen!",
+          "description" : "Alle Premium Features!",
           "displayName" : "Premium",
           "locale" : "de"
         }

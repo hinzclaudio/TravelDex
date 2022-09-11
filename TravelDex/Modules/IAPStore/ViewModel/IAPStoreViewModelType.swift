@@ -16,6 +16,7 @@ protocol IAPStoreViewModelType {
     
     // MARK: - Input
     func purchase(product: Observable<Product>) -> Disposable
+    func info(_ tapped: Observable<Void>) -> Disposable
     func restorePurchases()
     
     

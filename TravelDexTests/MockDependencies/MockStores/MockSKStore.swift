@@ -14,6 +14,7 @@ import StoreKit
 
 class MockSKStore: SKStoreType {
     
+    // MARK: - Input
     var purchaseThrows = false
     var purchaseProductCalled = false
     func purchase(_ product: Product) async throws {
@@ -32,6 +33,9 @@ class MockSKStore: SKStoreType {
         }
     }
     
+    
+    
+    // MARK: - Output
     var products: Observable<[Product]> {
         Observable.create { observer in
             let task = Task {
@@ -56,6 +60,12 @@ class MockSKStore: SKStoreType {
             observer.onCompleted()
             return Disposables.create()
         }
+    }
+    
+    var enablePremium = false
+    var premiumFeaturesEnabled: Observable<Bool> {
+        Observable
+            .just(enablePremium)
     }
     
 }

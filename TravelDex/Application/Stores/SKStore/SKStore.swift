@@ -53,6 +53,16 @@ class SKStore: SKStoreType {
     
     private let _purchasedProducts = BehaviorRelay<[Product]>(value: [])
     let purchasedProducts: Observable<[Product]>
+    
+    var premiumFeaturesEnabled: Observable<Bool> {
+        // Check if the purchases array contains a type of premium non-consumable
+        purchasedProducts
+            .map { purchases in
+                !purchases
+                    .filter { purchase in SKProductIDs.allPremiumIds.contains(purchase.id) }
+                    .isEmpty
+            }
+    }
 
     
     

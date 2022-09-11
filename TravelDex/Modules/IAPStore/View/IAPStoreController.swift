@@ -17,6 +17,7 @@ class IAPStoreController: UIViewController {
     let bag = DisposeBag()
     
     // MARK: - Views
+    let infoButton = UIBarButtonItem()
     let optionsButton = UIBarButtonItem()
     let headerView = IAPHeader()
     let tableView = UITableView()
@@ -49,6 +50,7 @@ class IAPStoreController: UIViewController {
     }
     
     private func addViews() {
+        navigationItem.setLeftBarButton(infoButton, animated: false)
         navigationItem.setRightBarButton(optionsButton, animated: false)
         tableView.tableHeaderView = headerView
         view.addSubview(tableView)
@@ -60,6 +62,8 @@ class IAPStoreController: UIViewController {
         tableView.register(SKProductCell.self, forCellReuseIdentifier: SKProductCell.identifier)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        
+        infoButton.image = SFSymbol.infoCircle.image
         
         let restoreAction = UIAction(
             title: Localizable.actionRestore,
@@ -83,6 +87,10 @@ class IAPStoreController: UIViewController {
     private func setupBinding() {
         viewModel.errorAlert.asObservable()
             .subscribe(onNext: { [weak self] in self?.present($0, animated: true) })
+            .disposed(by: bag)
+        
+        let tappedInfo = infoButton.rx.tap.asObservable()
+        viewModel.info(tappedInfo)
             .disposed(by: bag)
         
         viewModel.products
