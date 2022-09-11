@@ -13,7 +13,7 @@ import RxCocoa
 
 class EditTripViewModel: EditTripViewModelType {
     
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: AppCoordinatorType?
     
     typealias Dependencies = HasTripsStore
     private let dependencies: Dependencies

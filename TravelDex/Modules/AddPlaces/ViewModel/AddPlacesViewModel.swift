@@ -14,7 +14,7 @@ import PhotosUI
 
 class AddPlacesViewModel: AddPlacesViewModelType {
     
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: AppCoordinatorType?
 
     typealias Dependencies = HasTripsStore & HasPlacesStore
     let dependencies: Dependencies

@@ -13,7 +13,7 @@ import RxCocoa
 
 class ColorSelectionViewModel: ColorSelectionViewModelType {
     
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: AppCoordinatorType?
     
     typealias Dependencies = HasTripsStore
     private let dependencies: Dependencies
@@ -52,7 +52,7 @@ class ColorSelectionViewModel: ColorSelectionViewModelType {
             .update(updatedTrip)
         let coordinatorAction = updatedTrip
             .subscribe(
-                onNext: { [weak self] _ in self?.coordinator?.modalController?.dismiss(animated: true) }
+                onNext: { [weak self] _ in self?.coordinator?.dismissModalController() }
             )
         
         return Disposables.create {

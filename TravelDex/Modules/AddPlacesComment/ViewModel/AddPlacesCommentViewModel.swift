@@ -15,7 +15,7 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     
     typealias Dependencies = HasPlacesStore
     private let dependencies: Dependencies
-    weak var coordinator: AppCoordinator?
+    weak var coordinator: AppCoordinatorType?
     
     init(dependencies: Dependencies, item: AddedPlaceItem) {
         self.dependencies = dependencies
@@ -38,7 +38,7 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
                     .build()!
             }
             .subscribe(onNext: { [weak self] in
-                self?.coordinator?.modalController?.dismiss(animated: true)
+                self?.coordinator?.dismissModalController()
                 self?.dependencies.placesStore.update($0)
             })
     }

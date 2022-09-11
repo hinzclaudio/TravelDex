@@ -12,7 +12,7 @@ import RxSwift
 
 
 
-class AppCoordinator: CoordinatorType {
+class AppCoordinator: AppCoordinatorType {
     
     let window: UIWindow?
     var childCoordinators = [CoordinatorType]()
@@ -177,6 +177,11 @@ class AppCoordinator: CoordinatorType {
         let controller = DTPhotoViewerController(referencedView: view, image: image)
         let presenter = modalController ?? navigationController
         presenter.present(controller, animated: true)
+    }
+    
+    
+    func dismissModalController() {
+        modalController?.dismiss(animated: true)
     }
     
     
