@@ -22,6 +22,7 @@ class AppCoordinator: AppCoordinatorType {
     
     typealias Dependencies = AppDependencies
     private let dependencies: Dependencies
+    var animationsEnabled = true
     
     init(window: UIWindow?, dependencies: Dependencies) {
         self.window = window
@@ -50,7 +51,7 @@ class AppCoordinator: AppCoordinatorType {
     
     
     func didUpdate(_ trip: Trip) {
-        modalController?.dismiss(animated: true)
+        modalController?.dismiss(animated: animationsEnabled)
     }
     
     
@@ -58,7 +59,7 @@ class AppCoordinator: AppCoordinatorType {
         let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
         vm.coordinator = self
         let controller = AddPlacesController(viewModel: vm)
-        navigationController.pushViewController(controller, animated: true)
+        navigationController.pushViewController(controller, animated: animationsEnabled)
     }
     
     
@@ -94,7 +95,7 @@ class AppCoordinator: AppCoordinatorType {
         coordinator.start()
         
         self.modalController = modalContainer
-        self.navigationController.present(modalContainer, animated: true)
+        self.navigationController.present(modalContainer, animated: animationsEnabled)
     }
     
     
@@ -121,10 +122,10 @@ class AppCoordinator: AppCoordinatorType {
                     coordinator.start()
                     
                     self.modalController = modalContainer
-                    self.navigationController.present(modalContainer, animated: true)
+                    self.navigationController.present(modalContainer, animated: animationsEnabled)
                 } else {
                     let info = InfoManager.makeNumberOfPlacesExhaustedInfo()
-                    (self.modalController ?? self.navigationController).present(info, animated: true)
+                    (self.modalController ?? self.navigationController).present(info, animated: animationsEnabled)
                 }
             })
     }
@@ -152,7 +153,7 @@ class AppCoordinator: AppCoordinatorType {
         let controller = PHPickerViewController(configuration: viewModel.configuration)
         controller.delegate = viewModel
         modalController = controller
-        navigationController.present(controller, animated: true)
+        navigationController.present(controller, animated: animationsEnabled)
     }
     
     
@@ -167,7 +168,7 @@ class AppCoordinator: AppCoordinatorType {
                     self.modalController = presentModally(controller)
                 } else {
                     let info = InfoManager.makePremiumDisabledInfo()
-                    (self.modalController ?? self.navigationController).present(info, animated: true)
+                    (self.modalController ?? self.navigationController).present(info, animated: animationsEnabled)
                 }
             })
     }
@@ -176,18 +177,18 @@ class AppCoordinator: AppCoordinatorType {
     func photoViewer(from view: UIImageView?, image: UIImage?) {
         let controller = DTPhotoViewerController(referencedView: view, image: image)
         let presenter = modalController ?? navigationController
-        presenter.present(controller, animated: true)
+        presenter.present(controller, animated: animationsEnabled)
     }
     
     
     func dismissModalController() {
-        modalController?.dismiss(animated: true)
+        modalController?.dismiss(animated: animationsEnabled)
     }
     
     
     private func presentMap(for viewModel: LocationDisplayViewModelType) {
         let controller = LocationDisplayController(viewModel: viewModel)
-        navigationController.pushViewController(controller, animated: true)
+        navigationController.pushViewController(controller, animated: animationsEnabled)
     }
 
 }

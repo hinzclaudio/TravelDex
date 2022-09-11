@@ -20,6 +20,7 @@
 		1235390B28C4CAD000A7AD12 /* PremiumStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */; };
 		1235390D28C4CB6300A7AD12 /* PremiumStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */; };
 		1235391028C4CCA100A7AD12 /* SKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390F28C4CCA100A7AD12 /* SKProductCell.swift */; };
+		123C33A528CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */; };
 		12571F0228BD4F6100CC2AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
 		12571F0528BD4F6100CC2AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
 		12571F7228BD505400CC2AD0 /* CDObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2C28BD505400CC2AD0 /* CDObservable.swift */; };
@@ -211,6 +212,7 @@
 		1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModel.swift; sourceTree = "<group>"; };
 		1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreController.swift; sourceTree = "<group>"; };
 		1235390F28C4CCA100A7AD12 /* SKProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProductCell.swift; sourceTree = "<group>"; };
+		123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoPickerViewModel.swift; sourceTree = "<group>"; };
 		12571EF228BD4F6100CC2AD0 /* TravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12571F0128BD4F6100CC2AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12571F0428BD4F6100CC2AD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -477,6 +479,14 @@
 				1235390F28C4CCA100A7AD12 /* SKProductCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		123C33A328CE5F160095ABB5 /* MockViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */,
+			);
+			path = MockViewModels;
 			sourceTree = "<group>";
 		};
 		12571EE928BD4F6100CC2AD0 = {
@@ -1195,6 +1205,7 @@
 				12DAB3A328C3D55F0066FE22 /* CoreData */,
 				12DAB39F28C3D55F0066FE22 /* MockStores */,
 				12DAB3A628C3D55F0066FE22 /* MockNetworking */,
+				123C33A328CE5F160095ABB5 /* MockViewModels */,
 			);
 			path = MockDependencies;
 			sourceTree = "<group>";
@@ -1733,6 +1744,7 @@
 				12DAB3BC28C3D55F0066FE22 /* TripsStoreTests.swift in Sources */,
 				12F4214E28C8F4010063CFC0 /* SKStoreTests.swift in Sources */,
 				12DAB3AF28C3D55F0066FE22 /* AddPlacesCommentViewModelTests.swift in Sources */,
+				123C33A528CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift in Sources */,
 				12DAB3BB28C3D55F0066FE22 /* MockLocationAPI.swift in Sources */,
 				12DAB3B228C3D55F0066FE22 /* ColorSelectionViewModelTests.swift in Sources */,
 				12DAB3BA28C3D55F0066FE22 /* MockLocationErrorAPI.swift in Sources */,
