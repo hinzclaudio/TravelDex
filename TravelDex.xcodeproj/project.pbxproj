@@ -80,7 +80,8 @@
 		1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
 		12904FB628CE0F7A00192F11 /* SKNonPremiumConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */; };
 		12904FB928CE12E500192F11 /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB828CE12E500192F11 /* AppCoordinatorType.swift */; };
-		12B37CB628C913070076C54C /* IAPStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */; };
+		12904FBC28CE15B700192F11 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */; };
+		12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
 		12DAB2F328C3D2D80066FE22 /* Images.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E728C3D2D70066FE22 /* Images.generated.swift */; };
@@ -274,7 +275,8 @@
 		1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoBulletPointCell.swift; sourceTree = "<group>"; };
 		12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNonPremiumConfiguration.swift; sourceTree = "<group>"; };
 		12904FB828CE12E500192F11 /* AppCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorType.swift; sourceTree = "<group>"; };
-		12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModelTests.swift; sourceTree = "<group>"; };
+		12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
+		12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
 		12DAB2E728C3D2D70066FE22 /* Images.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.generated.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				12DAB39E28C3D55F0066FE22 /* MockDependencies */,
 				12DAB3A928C3D55F0066FE22 /* StoreTests */,
 				12DAB39528C3D55F0066FE22 /* ViewModelTests */,
+				12904FBA28CE158C00192F11 /* CoordinatorTests */,
 			);
 			path = TravelDexTests;
 			sourceTree = "<group>";
@@ -775,6 +778,14 @@
 				12904FB828CE12E500192F11 /* AppCoordinatorType.swift */,
 			);
 			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		12904FBA28CE158C00192F11 /* CoordinatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */,
+			);
+			path = CoordinatorTests;
 			sourceTree = "<group>";
 		};
 		12DAB2E328C3D2D70066FE22 /* CodeGeneration */ = {
@@ -1172,7 +1183,7 @@
 				12DAB39B28C3D55F0066FE22 /* ColorSelectionViewModelTests.swift */,
 				12DAB39C28C3D55F0066FE22 /* TripsListViewModelTests.swift */,
 				12DAB39D28C3D55F0066FE22 /* LocationsDisplayViewModelTests.swift */,
-				12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */,
+				12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -1726,12 +1737,13 @@
 				12DAB3B228C3D55F0066FE22 /* ColorSelectionViewModelTests.swift in Sources */,
 				12DAB3BA28C3D55F0066FE22 /* MockLocationErrorAPI.swift in Sources */,
 				12DAB3AD28C3D55F0066FE22 /* AddPlacesViewModelTests.swift in Sources */,
-				12B37CB628C913070076C54C /* IAPStoreViewModelTests.swift in Sources */,
+				12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */,
 				12DAB3B828C3D55F0066FE22 /* TestableCDStack.swift in Sources */,
 				12DAB3BD28C3D55F0066FE22 /* PlacesStoreTests.swift in Sources */,
 				12DAB3B028C3D55F0066FE22 /* LocationEntryViewModelTests.swift in Sources */,
 				12DAB3B528C3D55F0066FE22 /* MockLocationsStore.swift in Sources */,
 				12DAB3B928C3D55F0066FE22 /* MockDependencies.swift in Sources */,
+				12904FBC28CE15B700192F11 /* AppCoordinatorTests.swift in Sources */,
 				12DAB3B328C3D55F0066FE22 /* TripsListViewModelTests.swift in Sources */,
 				12DAB3BE28C3D55F0066FE22 /* LocationsStoreTests.swift in Sources */,
 				12DAB3B728C3D55F0066FE22 /* MockPlacesStore.swift in Sources */,

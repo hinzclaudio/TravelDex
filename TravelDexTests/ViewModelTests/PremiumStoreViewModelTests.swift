@@ -1,5 +1,5 @@
 //
-//  IAPStoreViewModelTests.swift
+//  PremiumStoreViewModelTests.swift
 //  TravelDexTests
 //
 //  Created by Claudio Hinz on 07.09.22.
@@ -12,7 +12,7 @@ import SwiftUI
 
 
 
-class IAPStoreViewModelTests: XCTestCase {
+class PremiumStoreViewModelTests: XCTestCase {
     
     
     var mockDependencies: MockDependencies!
