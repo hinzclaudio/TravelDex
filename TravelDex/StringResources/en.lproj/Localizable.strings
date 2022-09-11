@@ -56,3 +56,4 @@
 "premium_info_content3" = "tell your friends that you support independent developers.";
 "premium_disabled_title" = "Premium Feature";
 "premium_disabled_msg" = "Unfortunately, this feature may only be used with the premium version of the app.";
+"premium_places_exhausted" = "Unfortunately, you can only add up to %d locations with the free version of the app.";

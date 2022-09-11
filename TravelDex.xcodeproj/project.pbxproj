@@ -78,6 +78,7 @@
 		1274130B28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */; };
 		1274130D28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */; };
 		1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
+		12904FB628CE0F7A00192F11 /* SKNonPremiumConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */; };
 		12B37CB628C913070076C54C /* IAPStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
@@ -270,6 +271,7 @@
 		1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModelType.swift; sourceTree = "<group>"; };
 		1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModel.swift; sourceTree = "<group>"; };
 		1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoBulletPointCell.swift; sourceTree = "<group>"; };
+		12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNonPremiumConfiguration.swift; sourceTree = "<group>"; };
 		12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			children = (
 				123538F428C4B74C00A7AD12 /* Configuration.storekit */,
 				123538F828C4B7DA00A7AD12 /* SKProductIDs.swift */,
+				12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */,
 			);
 			path = StoreKitConfiguration;
 			sourceTree = "<group>";
@@ -1658,6 +1661,7 @@
 				12DAB36D28C3D42F0066FE22 /* GeneralStyleManager.swift in Sources */,
 				123538FC28C4BC1F00A7AD12 /* SKStoreType.swift in Sources */,
 				12571F7E28BD505400CC2AD0 /* TripsStore.swift in Sources */,
+				12904FB628CE0F7A00192F11 /* SKNonPremiumConfiguration.swift in Sources */,
 				12571F9528BD505400CC2AD0 /* CDAction.swift in Sources */,
 				12DAB31028C3D40E0066FE22 /* BaseNavigationController.swift in Sources */,
 				12DAB36B28C3D42F0066FE22 /* AddPlacesController.swift in Sources */,

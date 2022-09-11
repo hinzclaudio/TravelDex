@@ -98,24 +98,35 @@ class AppCoordinator: CoordinatorType {
     }
     
     
-    func searchLocation(completion: @escaping (Location) -> Void) {
-        let modalContainer = ModalNavigationContainer()
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
-        
-        let coordinator = LocationSearchCoordinator(
-            dependencies: dependencies,
-            navigationController: modalContainer,
-            selectionHandler: completion
-        )
-        
-        self.store(coordinator: coordinator)
-        modalContainer.onDidDisappear = { [weak self, unowned coordinator] in
-            self?.free(coordinator: coordinator)
-        }
-        coordinator.start()
-        
-        self.modalController = modalContainer
-        self.navigationController.present(modalContainer, animated: true)
+    func searchLocation(for trip: Observable<Trip>) -> Disposable {
+        trip.withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
+            .subscribe(onNext: { [unowned self] trip, premiumEnabled in
+                let canAddPlaces = premiumEnabled || trip.visitedLocations.count < SKNonPremiumConfiguration.maxLocationsPerTrip
+                if canAddPlaces {
+                    let modalContainer = ModalNavigationContainer()
+                    GeneralStyleManager.styleModal(modalContainer.navigationBar)
+                    
+                    let coordinator = LocationSearchCoordinator(
+                        dependencies: dependencies,
+                        navigationController: modalContainer,
+                        selectionHandler: { location in
+                            self.dependencies.placesStore.add(location, to: trip)
+                        }
+                    )
+                    
+                    self.store(coordinator: coordinator)
+                    modalContainer.onDidDisappear = { [unowned coordinator] in
+                        self.free(coordinator: coordinator)
+                    }
+                    coordinator.start()
+                    
+                    self.modalController = modalContainer
+                    self.navigationController.present(modalContainer, animated: true)
+                } else {
+                    let info = InfoManager.makeNumberOfPlacesExhaustedInfo()
+                    (self.modalController ?? self.navigationController).present(info, animated: true)
+                }
+            })
     }
     
     

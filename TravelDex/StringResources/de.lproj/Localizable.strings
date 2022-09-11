@@ -56,3 +56,4 @@
 "premium_info_content3" = "Ihren Freunden erzählen, dass Sie unabhängige Entwickler unterstützen.";
 "premium_disabled_title" = "Premium Feature";
 "premium_disabled_msg" = "Leider können Sie dieses Feature nur mit der Premium Version der App ntuzen.";
+"premium_places_exhausted" = "Leider können Sie mit der Gratis-Version nur bis zu %d Orte hinzufügen.";

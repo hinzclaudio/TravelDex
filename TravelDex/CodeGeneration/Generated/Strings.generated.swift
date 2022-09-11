@@ -91,6 +91,10 @@ internal enum Localizable {
   internal static let premiumInfoHeader = Localizable.tr("Localizable", "premium_info_header", fallback: "With premium features enabled, you will be able to ...")
   /// Premium Features
   internal static let premiumInfoTitle = Localizable.tr("Localizable", "premium_info_title", fallback: "Premium Features")
+  /// Unfortunately, you can only add up to %d locations with the free version of the app.
+  internal static func premiumPlacesExhausted(_ p1: Int) -> String {
+    return Localizable.tr("Localizable", "premium_places_exhausted", p1, fallback: "Unfortunately, you can only add up to %d locations with the free version of the app.")
+  }
   /// Search Locations
   internal static let searchLocationTitle = Localizable.tr("Localizable", "search_location_title", fallback: "Search Locations")
   /// Start

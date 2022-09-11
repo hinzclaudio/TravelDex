@@ -33,14 +33,8 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     }
     
     func addLocation(_ tapped: Observable<Void>) -> Disposable {
-        tapped
-            .withLatestFrom(trip)
-            .subscribe(onNext: { [weak self] trip in
-                self?.coordinator?
-                    .searchLocation(completion: { location in
-                        self?.dependencies.placesStore.add(location, to: trip)
-                    })
-            })
+        coordinator?
+            .searchLocation(for: tapped.withLatestFrom(trip)) ?? Disposables.create()
     }
     
     func setStart(of item: AddedPlaceItem, to date: Date) {

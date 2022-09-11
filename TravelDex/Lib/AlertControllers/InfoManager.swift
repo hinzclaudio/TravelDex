@@ -38,6 +38,13 @@ class InfoManager {
         makeInfoController(title: Localizable.premiumDisabledTitle, message: Localizable.premiumDisabledMsg)
     }
     
+    static func makeNumberOfPlacesExhaustedInfo() -> UIAlertController {
+        makeInfoController(
+            title: Localizable.premiumDisabledTitle,
+            message: Localizable.premiumPlacesExhausted(SKNonPremiumConfiguration.maxLocationsPerTrip)
+        )
+    }
+    
     
     static func defaultErrorInfo(for error: Error) -> UIAlertController {
         if (error as NSError).code == CLError.Code.geocodeFoundNoResult.rawValue {
