@@ -63,6 +63,8 @@ class PremiumStoreController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         
+        headerView.textLabel.text = Localizable.iapStoreDescription
+        
         infoButton.image = SFSymbol.infoCircle.image
         
         let restoreAction = UIAction(

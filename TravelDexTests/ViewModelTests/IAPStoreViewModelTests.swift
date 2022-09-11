@@ -90,7 +90,7 @@ class IAPStoreViewModelTests: XCTestCase {
     
     
     // MARK: - Helpers
-    func anyProduct(purchased: Bool = false) throws -> PremiumProdcut {
+    func anyProduct(purchased: Bool = false) throws -> PremiumProduct {
         try viewModel.products
             .compactMap { prods in prods.first(where: { $0.isPurchased == purchased }) }
             .toBlocking(timeout: 5)

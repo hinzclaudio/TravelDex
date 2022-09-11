@@ -44,7 +44,6 @@ class PremiumStoreHeader: UIView {
         containerView.backgroundColor = Colors.darkGreen
         
         textLabel.styleText()
-        textLabel.text = Localizable.iapStoreDescription
     }
     
     private func setAutoLayout() {

@@ -74,6 +74,10 @@
 		12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7028BD505400CC2AD0 /* AppDelegate.swift */; };
 		12571FA628BD505400CC2AD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7128BD505400CC2AD0 /* SceneDelegate.swift */; };
 		1274130428CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */; };
+		1274130728CDEF7300FCC8C1 /* PremiumInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */; };
+		1274130B28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */; };
+		1274130D28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */; };
+		1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
 		12B37CB628C913070076C54C /* IAPStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
@@ -262,6 +266,10 @@
 		12571F7028BD505400CC2AD0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12571F7128BD505400CC2AD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreCoordinator.swift; sourceTree = "<group>"; };
+		1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoController.swift; sourceTree = "<group>"; };
+		1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModelType.swift; sourceTree = "<group>"; };
+		1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModel.swift; sourceTree = "<group>"; };
+		1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoBulletPointCell.swift; sourceTree = "<group>"; };
 		12B37CB528C913070076C54C /* IAPStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
@@ -720,6 +728,41 @@
 			path = ChildCoordinators;
 			sourceTree = "<group>";
 		};
+		1274130528CDEF6200FCC8C1 /* PremiumInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1274130928CDEFA600FCC8C1 /* ViewModel */,
+				1274130828CDEFA200FCC8C1 /* View */,
+			);
+			path = PremiumInfo;
+			sourceTree = "<group>";
+		};
+		1274130828CDEFA200FCC8C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */,
+				1274131028CDF8A000FCC8C1 /* SubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1274130928CDEFA600FCC8C1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */,
+				1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1274131028CDF8A000FCC8C1 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		12DAB2E328C3D2D70066FE22 /* CodeGeneration */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,6 +854,7 @@
 				12DAB35528C3D42F0066FE22 /* LocationEntry */,
 				12DAB34D28C3D42F0066FE22 /* LocationSearch */,
 				12DAB32328C3D42F0066FE22 /* PhotoPicker */,
+				1274130528CDEF6200FCC8C1 /* PremiumInfo */,
 				1235390528C4CA8E00A7AD12 /* PremiumStore */,
 				12DAB33A28C3D42F0066FE22 /* TripsList */,
 			);
@@ -1537,6 +1581,7 @@
 				12DAB37A28C3D42F0066FE22 /* TripsListTableCell.swift in Sources */,
 				12DAB36128C3D42F0066FE22 /* TitledTextField.swift in Sources */,
 				12571F7D28BD505400CC2AD0 /* LocationsStoreType.swift in Sources */,
+				1274130B28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift in Sources */,
 				12DAB30328C3D3DB0066FE22 /* AppCoordinator.swift in Sources */,
 				12DAB30D28C3D40E0066FE22 /* InfoManager.swift in Sources */,
 				12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */,
@@ -1572,6 +1617,7 @@
 				12571F8D28BD505400CC2AD0 /* CDLocation+CoreDataClass.swift in Sources */,
 				12DAB37C28C3D42F0066FE22 /* ColorSelectionViewModel.swift in Sources */,
 				12DAB37628C3D42F0066FE22 /* TripsListViewModelType.swift in Sources */,
+				1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */,
 				12571F7728BD505400CC2AD0 /* RxTapGesture.swift in Sources */,
 				123538F928C4B7DA00A7AD12 /* SKProductIDs.swift in Sources */,
 				12DAB38528C3D42F0066FE22 /* LocationEntryViewModelType.swift in Sources */,
@@ -1604,6 +1650,7 @@
 				12571F8928BD505400CC2AD0 /* CDLocationExt.swift in Sources */,
 				12571F7F28BD505400CC2AD0 /* TripsStoreType.swift in Sources */,
 				12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */,
+				1274130728CDEF7300FCC8C1 /* PremiumInfoController.swift in Sources */,
 				1235390928C4CAC300A7AD12 /* PremiumStoreViewModelType.swift in Sources */,
 				12571F9F28BD505400CC2AD0 /* FileManagerExt.swift in Sources */,
 				12DAB37128C3D42F0066FE22 /* PlaceDisplayViewModel.swift in Sources */,
@@ -1636,6 +1683,7 @@
 				12571F9828BD505400CC2AD0 /* CDStackType.swift in Sources */,
 				12DAB31128C3D40E0066FE22 /* PaddedTextField.swift in Sources */,
 				12DAB37028C3D42F0066FE22 /* TripLocationDisplayViewModel.swift in Sources */,
+				1274130D28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift in Sources */,
 				12DAB35F28C3D42F0066FE22 /* EditTripViewModelType.swift in Sources */,
 				12DAB36A28C3D42F0066FE22 /* AddedPlaceItem.swift in Sources */,
 				12DAB36528C3D42F0066FE22 /* AddPlacesCommentController.swift in Sources */,

@@ -34,7 +34,9 @@ class PremiumStoreCoordinator: CoordinatorType {
     }
     
     func displayInfo() {
-        // TODO: Implement.
+        let viewModel = PremiumInfoViewModel()
+        let controller = PremiumInfoController(viewModel: viewModel)
+        navigationController.pushViewController(controller, animated: true)
     }
     
 }

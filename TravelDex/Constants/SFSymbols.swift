@@ -24,6 +24,7 @@ enum SFSymbol: String {
     case cart
     case filledMappin = "pin.fill"
     case infoCircle = "info.circle"
+    case infoCircleFill = "info.circle.fill"
     
     var image: UIImage {
         UIImage(systemName: rawValue)!

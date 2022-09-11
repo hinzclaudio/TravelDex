@@ -49,3 +49,9 @@
 "status_purchased" = "Purchased";
 "iap_store_description" = "This app is developed by one person. For continuous support I need some sort of support from the users. All of the purchases below are one time payments only. All of them enable the same features. You may decide what you want to pay.";
 "action_restore" = "Restore Purchases";
+"premium_info_title" = "Premium Features";
+"premium_info_header" = "With premium features enabled, you will be able to ...";
+"premium_info_content1" = "add as many locations per trip as you want.";
+"premium_info_content2" = "choose colors for your trips.";
+"premium_info_content3" = "tell your friends that you support independent developers.";
+
