@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0BA355DA76611C5CBEAF1087 /* Pods_TravelDex_TravelDexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA2E0FF524B164B91AA6E83 /* Pods_TravelDex_TravelDexUITests.framework */; };
-		1221F45828C4D74200BE20E3 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* IAPProduct.swift */; };
-		1221F45A28C4EF1200BE20E3 /* IAPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* IAPHeader.swift */; };
+		1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
+		1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
 		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
 		122414C528C3E2CE008B4402 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
 		123538F928C4B7DA00A7AD12 /* SKProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538F828C4B7DA00A7AD12 /* SKProductIDs.swift */; };
 		123538FC28C4BC1F00A7AD12 /* SKStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FB28C4BC1F00A7AD12 /* SKStoreType.swift */; };
 		123538FE28C4BC2C00A7AD12 /* SKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FD28C4BC2C00A7AD12 /* SKStore.swift */; };
 		1235390428C4BEB900A7AD12 /* VerificationResultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390328C4BEB900A7AD12 /* VerificationResultExt.swift */; };
-		1235390928C4CAC300A7AD12 /* IAPStoreViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390828C4CAC300A7AD12 /* IAPStoreViewModelType.swift */; };
-		1235390B28C4CAD000A7AD12 /* IAPStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* IAPStoreViewModel.swift */; };
-		1235390D28C4CB6300A7AD12 /* IAPStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* IAPStoreController.swift */; };
+		1235390928C4CAC300A7AD12 /* PremiumStoreViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390828C4CAC300A7AD12 /* PremiumStoreViewModelType.swift */; };
+		1235390B28C4CAD000A7AD12 /* PremiumStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */; };
+		1235390D28C4CB6300A7AD12 /* PremiumStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */; };
 		1235391028C4CCA100A7AD12 /* SKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390F28C4CCA100A7AD12 /* SKProductCell.swift */; };
 		12571F0228BD4F6100CC2AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
 		12571F0528BD4F6100CC2AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
@@ -190,8 +190,8 @@
 
 /* Begin PBXFileReference section */
 		0448098B428158342C41259F /* Pods-TravelDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex.debug.xcconfig"; path = "Target Support Files/Pods-TravelDex/Pods-TravelDex.debug.xcconfig"; sourceTree = "<group>"; };
-		1221F45728C4D74200BE20E3 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
-		1221F45928C4EF1200BE20E3 /* IAPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHeader.swift; sourceTree = "<group>"; };
+		1221F45728C4D74200BE20E3 /* PremiumProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProduct.swift; sourceTree = "<group>"; };
+		1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreHeader.swift; sourceTree = "<group>"; };
 		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
 		122414C628C3E2CE008B4402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		122414C828C3E2D1008B4402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -200,9 +200,9 @@
 		123538FB28C4BC1F00A7AD12 /* SKStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreType.swift; sourceTree = "<group>"; };
 		123538FD28C4BC2C00A7AD12 /* SKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStore.swift; sourceTree = "<group>"; };
 		1235390328C4BEB900A7AD12 /* VerificationResultExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResultExt.swift; sourceTree = "<group>"; };
-		1235390828C4CAC300A7AD12 /* IAPStoreViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModelType.swift; sourceTree = "<group>"; };
-		1235390A28C4CAD000A7AD12 /* IAPStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreViewModel.swift; sourceTree = "<group>"; };
-		1235390C28C4CB6300A7AD12 /* IAPStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPStoreController.swift; sourceTree = "<group>"; };
+		1235390828C4CAC300A7AD12 /* PremiumStoreViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModelType.swift; sourceTree = "<group>"; };
+		1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModel.swift; sourceTree = "<group>"; };
+		1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreController.swift; sourceTree = "<group>"; };
 		1235390F28C4CCA100A7AD12 /* SKProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProductCell.swift; sourceTree = "<group>"; };
 		12571EF228BD4F6100CC2AD0 /* TravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12571F0128BD4F6100CC2AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -427,21 +427,21 @@
 			path = SKStore;
 			sourceTree = "<group>";
 		};
-		1235390528C4CA8E00A7AD12 /* IAPStore */ = {
+		1235390528C4CA8E00A7AD12 /* PremiumStore */ = {
 			isa = PBXGroup;
 			children = (
-				1221F45728C4D74200BE20E3 /* IAPProduct.swift */,
+				1221F45728C4D74200BE20E3 /* PremiumProduct.swift */,
 				1235390628C4CAB200A7AD12 /* ViewModel */,
 				1235390728C4CAB800A7AD12 /* View */,
 			);
-			path = IAPStore;
+			path = PremiumStore;
 			sourceTree = "<group>";
 		};
 		1235390628C4CAB200A7AD12 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1235390828C4CAC300A7AD12 /* IAPStoreViewModelType.swift */,
-				1235390A28C4CAD000A7AD12 /* IAPStoreViewModel.swift */,
+				1235390828C4CAC300A7AD12 /* PremiumStoreViewModelType.swift */,
+				1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 		1235390728C4CAB800A7AD12 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1235390C28C4CB6300A7AD12 /* IAPStoreController.swift */,
+				1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */,
 				1235390E28C4CC9500A7AD12 /* Subviews */,
 			);
 			path = View;
@@ -458,7 +458,7 @@
 		1235390E28C4CC9500A7AD12 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				1221F45928C4EF1200BE20E3 /* IAPHeader.swift */,
+				1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */,
 				1235390F28C4CCA100A7AD12 /* SKProductCell.swift */,
 			);
 			path = Subviews;
@@ -807,11 +807,11 @@
 				12DAB31D28C3D42F0066FE22 /* AddPlacesComment */,
 				12DAB34428C3D42F0066FE22 /* ColorSelection */,
 				12DAB31428C3D42F0066FE22 /* EditTrip */,
-				1235390528C4CA8E00A7AD12 /* IAPStore */,
 				12DAB33028C3D42F0066FE22 /* LocationDisplay */,
 				12DAB35528C3D42F0066FE22 /* LocationEntry */,
 				12DAB34D28C3D42F0066FE22 /* LocationSearch */,
 				12DAB32328C3D42F0066FE22 /* PhotoPicker */,
+				1235390528C4CA8E00A7AD12 /* PremiumStore */,
 				12DAB33A28C3D42F0066FE22 /* TripsList */,
 			);
 			path = Modules;
@@ -1580,7 +1580,7 @@
 				12DAB36328C3D42F0066FE22 /* AddPlacesCommentViewModel.swift in Sources */,
 				12DAB36F28C3D42F0066FE22 /* LocationDisplayViewModelType.swift in Sources */,
 				12571FA628BD505400CC2AD0 /* SceneDelegate.swift in Sources */,
-				1235390B28C4CAD000A7AD12 /* IAPStoreViewModel.swift in Sources */,
+				1235390B28C4CAD000A7AD12 /* PremiumStoreViewModel.swift in Sources */,
 				12571FA328BD505400CC2AD0 /* DateExt.swift in Sources */,
 				12DAB37528C3D42F0066FE22 /* TripsListViewModel.swift in Sources */,
 				123538FE28C4BC2C00A7AD12 /* SKStore.swift in Sources */,
@@ -1604,7 +1604,7 @@
 				12571F8928BD505400CC2AD0 /* CDLocationExt.swift in Sources */,
 				12571F7F28BD505400CC2AD0 /* TripsStoreType.swift in Sources */,
 				12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */,
-				1235390928C4CAC300A7AD12 /* IAPStoreViewModelType.swift in Sources */,
+				1235390928C4CAC300A7AD12 /* PremiumStoreViewModelType.swift in Sources */,
 				12571F9F28BD505400CC2AD0 /* FileManagerExt.swift in Sources */,
 				12DAB37128C3D42F0066FE22 /* PlaceDisplayViewModel.swift in Sources */,
 				122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */,
@@ -1620,14 +1620,14 @@
 				12DAB39028C3D49B0066FE22 /* Sizes.swift in Sources */,
 				12571FA428BD505400CC2AD0 /* UILabelExt.swift in Sources */,
 				12571FA128BD505400CC2AD0 /* UISearchBarExt.swift in Sources */,
-				1221F45A28C4EF1200BE20E3 /* IAPHeader.swift in Sources */,
+				1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */,
 				1235391028C4CCA100A7AD12 /* SKProductCell.swift in Sources */,
 				12DAB36628C3D42F0066FE22 /* PhotoPickerViewModelType.swift in Sources */,
 				12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */,
-				1235390D28C4CB6300A7AD12 /* IAPStoreController.swift in Sources */,
+				1235390D28C4CB6300A7AD12 /* PremiumStoreController.swift in Sources */,
 				12DAB37E28C3D42F0066FE22 /* ColorSelection_CollectionView.swift in Sources */,
 				12DAB38328C3D42F0066FE22 /* LocationSearchController.swift in Sources */,
-				1221F45828C4D74200BE20E3 /* IAPProduct.swift in Sources */,
+				1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */,
 				12571F8028BD505400CC2AD0 /* PlacesStore.swift in Sources */,
 				12571F7228BD505400CC2AD0 /* CDObservable.swift in Sources */,
 				12DAB36228C3D42F0066FE22 /* EditTripController.swift in Sources */,

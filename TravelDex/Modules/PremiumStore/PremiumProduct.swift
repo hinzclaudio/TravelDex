@@ -1,5 +1,5 @@
 //
-//  IAPProduct.swift
+//  PremiumProduct.swift
 //  TravelDex
 //
 //  Created by Claudio Hinz on 04.09.22.
@@ -10,7 +10,7 @@ import StoreKit
 
 
 
-struct IAPProduct {
+struct PremiumProduct {
     let product: Product
     let isPurchased: Bool
 }

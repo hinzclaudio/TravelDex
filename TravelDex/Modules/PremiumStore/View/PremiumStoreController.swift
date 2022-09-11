@@ -1,5 +1,5 @@
 //
-//  IAPStoreController.swift
+//  PremiumStoreController.swift
 //  TravelDex
 //
 //  Created by Claudio Hinz on 04.09.22.
@@ -11,20 +11,20 @@ import RxCocoa
 
 
 
-class IAPStoreController: UIViewController {
+class PremiumStoreController: UIViewController {
     
-    let viewModel: IAPStoreViewModelType
+    let viewModel: PremiumStoreViewModelType
     let bag = DisposeBag()
     
     // MARK: - Views
     let infoButton = UIBarButtonItem()
     let optionsButton = UIBarButtonItem()
-    let headerView = IAPHeader()
+    let headerView = PremiumStoreHeader()
     let tableView = UITableView()
     
     
     
-    init(viewModel: IAPStoreViewModelType) {
+    init(viewModel: PremiumStoreViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -1,5 +1,5 @@
 //
-//  IAPStoreViewModel.swift
+//  PremiumStoreViewModel.swift
 //  TravelDex
 //
 //  Created by Claudio Hinz on 04.09.22.
@@ -12,7 +12,7 @@ import RxCocoa
 
 
 
-class IAPStoreViewModel: IAPStoreViewModelType {
+class PremiumStoreViewModel: PremiumStoreViewModelType {
     
     typealias Dependencies = HasSKStore
     private let dependencies: Dependencies
@@ -58,16 +58,16 @@ class IAPStoreViewModel: IAPStoreViewModelType {
     
     
     // MARK: - Output
-    lazy var products: Driver<[IAPProduct]> = {
+    lazy var products: Driver<[PremiumProduct]> = {
         Observable.combineLatest(
             dependencies.skStore.products,
             dependencies.skStore.purchasedProducts
         )
-        .map { availableProds, purchasedProds -> [IAPProduct] in
+        .map { availableProds, purchasedProds -> [PremiumProduct] in
             availableProds
                 .map { prod in
                     let isPurchased = purchasedProds.contains(where: { $0.id == prod.id })
-                    return IAPProduct(product: prod, isPurchased: isPurchased)
+                    return PremiumProduct(product: prod, isPurchased: isPurchased)
                 }
         }
         .asDriver(onErrorJustReturn: [])

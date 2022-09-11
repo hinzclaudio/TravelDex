@@ -85,7 +85,7 @@ class SKProductCell: UITableViewCell {
         buyButton.autoAlignAxis(.horizontal, toSameAxisOf: containerView)
     }
     
-    func configure(for iapProduct: IAPProduct) {
+    func configure(for iapProduct: PremiumProduct) {
         titleLabel.text = iapProduct.product.displayName
         secLabel.text = iapProduct.product.description
         

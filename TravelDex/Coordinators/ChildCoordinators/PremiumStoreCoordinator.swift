@@ -27,9 +27,9 @@ class PremiumStoreCoordinator: CoordinatorType {
     
     
     func start() {
-        let viewModel = IAPStoreViewModel(dependencies: dependencies)
+        let viewModel = PremiumStoreViewModel(dependencies: dependencies)
         viewModel.coordinator = self
-        let controller = IAPStoreController(viewModel: viewModel)
+        let controller = PremiumStoreController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: false)
     }
     

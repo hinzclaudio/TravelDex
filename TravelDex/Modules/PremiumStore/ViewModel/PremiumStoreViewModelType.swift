@@ -1,5 +1,5 @@
 //
-//  IAPStoreViewModelType.swift
+//  PremiumStoreViewModelType.swift
 //  TravelDex
 //
 //  Created by Claudio Hinz on 04.09.22.
@@ -12,7 +12,7 @@ import RxCocoa
 
 
 
-protocol IAPStoreViewModelType {
+protocol PremiumStoreViewModelType {
     
     // MARK: - Input
     func purchase(product: Observable<Product>) -> Disposable
@@ -21,7 +21,7 @@ protocol IAPStoreViewModelType {
     
     
     // MARK: - Output
-    var products: Driver<[IAPProduct]> { get }
+    var products: Driver<[PremiumProduct]> { get }
     var errorAlert: Driver<UIAlertController> { get }
     
 }

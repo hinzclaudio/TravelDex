@@ -16,12 +16,12 @@ class IAPStoreViewModelTests: XCTestCase {
     
     
     var mockDependencies: MockDependencies!
-    var viewModel: IAPStoreViewModelType!
+    var viewModel: PremiumStoreViewModelType!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
-        self.viewModel = IAPStoreViewModel(dependencies: mockDependencies)
+        self.viewModel = PremiumStoreViewModel(dependencies: mockDependencies)
     }
     
     
@@ -90,7 +90,7 @@ class IAPStoreViewModelTests: XCTestCase {
     
     
     // MARK: - Helpers
-    func anyProduct(purchased: Bool = false) throws -> IAPProduct {
+    func anyProduct(purchased: Bool = false) throws -> PremiumProdcut {
         try viewModel.products
             .compactMap { prods in prods.first(where: { $0.isPurchased == purchased }) }
             .toBlocking(timeout: 5)

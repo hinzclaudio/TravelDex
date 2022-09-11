@@ -1,5 +1,5 @@
 //
-//  IAPHeader.swift
+//  PremiumStoreHeader.swift
 //  TravelDex
 //
 //  Created by Claudio Hinz on 04.09.22.
@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class IAPHeader: UIView {
+class PremiumStoreHeader: UIView {
     
     // MARK: - Views
     let containerView = UIView()
