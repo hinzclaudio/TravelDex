@@ -59,7 +59,6 @@ extension CDTrip {
         descr: String?,
         id: UUID,
         members: String?,
-        pictureData: Data?,
         title: String,
         pinColorRed: Int16,
         pinColorGreen: Int16,
@@ -70,7 +69,6 @@ extension CDTrip {
         self.descr = descr
         self.id = id
         self.members = members
-        self.pictureData = pictureData
         self.title = title
         self.pinColorRed = pinColorRed
         self.pinColorGreen = pinColorGreen
@@ -85,7 +83,6 @@ extension CDTrip {
         descr: String?,
         id: UUID,
         members: String?,
-        pictureData: Data?,
         title: String,
         pinColorRed: Int16,
         pinColorGreen: Int16,
@@ -95,7 +92,6 @@ extension CDTrip {
         self.descr = descr
         self.id = id
         self.members = members
-        self.pictureData = pictureData
         self.title = title
         self.pinColorRed = pinColorRed
         self.pinColorGreen = pinColorGreen

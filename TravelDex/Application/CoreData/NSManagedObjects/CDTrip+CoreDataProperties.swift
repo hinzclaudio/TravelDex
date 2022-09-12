@@ -22,7 +22,6 @@ extension CDTrip {
     @NSManaged public var descr: String?
     @NSManaged public var id: UUID
     @NSManaged public var members: String?
-    @NSManaged public var pictureData: Data?
     @NSManaged public var title: String
     @NSManaged public var pinColorRed: Int16
     @NSManaged public var pinColorGreen: Int16

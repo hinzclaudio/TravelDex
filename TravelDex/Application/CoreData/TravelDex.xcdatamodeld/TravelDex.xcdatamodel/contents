@@ -15,7 +15,6 @@
         <attribute name="dummyBit" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="members" optional="YES" attributeType="String"/>
-        <attribute name="pictureData" optional="YES" attributeType="Binary"/>
         <attribute name="pinColorBlue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pinColorGreen" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pinColorRed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -33,7 +32,7 @@
     </entity>
     <elements>
         <element name="CDLocation" positionX="-54" positionY="54" width="128" height="149"/>
-        <element name="CDTrip" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="CDTrip" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="CDVisitedPlace" positionX="-36" positionY="90" width="128" height="134"/>
     </elements>
 </model>
