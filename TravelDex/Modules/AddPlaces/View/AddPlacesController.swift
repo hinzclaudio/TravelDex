@@ -63,6 +63,7 @@ class AddPlacesController: UIViewController {
         navigationItem.title = Localizable.addPlacesTitle
         view.backgroundColor = Colors.veryDark
         mapButton.image = SFSymbol.map.image
+        mapButton.accessibilityIdentifier = "MapButton"
         
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none

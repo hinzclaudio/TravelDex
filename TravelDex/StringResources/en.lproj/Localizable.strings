@@ -57,3 +57,12 @@
 "premium_disabled_title" = "Premium Feature";
 "premium_disabled_msg" = "Unfortunately, this feature may only be used with the premium version of the app.";
 "premium_places_exhausted" = "Unfortunately, you can only add up to %d locations with the free version of the app.";
+"mocked_trip_title1" = "Côte d’Azur";
+"mocked_trip_descr1" = "Wow, I still cannot believe I got to see the famous region in France. There was lot to discover and we got lucky with the weather.";
+"mocked_trip_members1" = "My Family";
+"mocked_trip_title2" = "Saxony";
+"mocked_trip_descr2" = "When money was tight, we decided to go and a trip inside of our beloved home country. Contrary to my expectations, Saxony has a lot to offer! While most of the buildings look old, they are certainly not...";
+"mocked_trip_members2" = "My Family";
+"mocked_trip_title3" = "Rurhgebiet";
+"mocked_trip_descr3" = "We got to see the famous Ruhrgebiet! The cities certainly aren't beautiful. But they do have culture. Some at least...";
+"mocked_trip_members3" = "My Girlfriend";

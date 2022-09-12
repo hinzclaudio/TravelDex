@@ -75,6 +75,24 @@ internal enum Localizable {
   internal static let missingLocations = Localizable.tr("Localizable", "missing_locations", fallback: "You did not add any locations yet. Add a location by tapping the plus icon!")
   /// You did not add any trips yet. Add a trip by tapping the plus icon!
   internal static let missingTrips = Localizable.tr("Localizable", "missing_trips", fallback: "You did not add any trips yet. Add a trip by tapping the plus icon!")
+  /// Wow, I still cannot believe I got to see the famous region in France. There was lot to discover and we got lucky with the weather.
+  internal static let mockedTripDescr1 = Localizable.tr("Localizable", "mocked_trip_descr1", fallback: "Wow, I still cannot believe I got to see the famous region in France. There was lot to discover and we got lucky with the weather.")
+  /// When money was tight, we decided to go and a trip inside of our beloved home country. Contrary to my expectations, Saxony has a lot to offer! While most of the buildings look old, they are certainly not...
+  internal static let mockedTripDescr2 = Localizable.tr("Localizable", "mocked_trip_descr2", fallback: "When money was tight, we decided to go and a trip inside of our beloved home country. Contrary to my expectations, Saxony has a lot to offer! While most of the buildings look old, they are certainly not...")
+  /// We got to see the famous Ruhrgebiet! The cities certainly aren't beautiful. But they do have culture. Some at least...
+  internal static let mockedTripDescr3 = Localizable.tr("Localizable", "mocked_trip_descr3", fallback: "We got to see the famous Ruhrgebiet! The cities certainly aren't beautiful. But they do have culture. Some at least...")
+  /// My Family
+  internal static let mockedTripMembers1 = Localizable.tr("Localizable", "mocked_trip_members1", fallback: "My Family")
+  /// My Family
+  internal static let mockedTripMembers2 = Localizable.tr("Localizable", "mocked_trip_members2", fallback: "My Family")
+  /// My Girlfriend
+  internal static let mockedTripMembers3 = Localizable.tr("Localizable", "mocked_trip_members3", fallback: "My Girlfriend")
+  /// Côte d’Azur
+  internal static let mockedTripTitle1 = Localizable.tr("Localizable", "mocked_trip_title1", fallback: "Côte d’Azur")
+  /// Saxony
+  internal static let mockedTripTitle2 = Localizable.tr("Localizable", "mocked_trip_title2", fallback: "Saxony")
+  /// Rurhgebiet
+  internal static let mockedTripTitle3 = Localizable.tr("Localizable", "mocked_trip_title3", fallback: "Rurhgebiet")
   /// OK
   internal static let ok = Localizable.tr("Localizable", "ok", fallback: "OK")
   /// Unfortunately, this feature may only be used with the premium version of the app.

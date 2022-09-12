@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let keyboardManager = IQKeyboardManager.shared()
-        keyboardManager.isEnableAutoToolbar = false
         keyboardManager.isEnabled = true
         return true
     }

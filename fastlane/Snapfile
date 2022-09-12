@@ -1,0 +1,19 @@
+# A list of devices you want to take the screenshots from
+devices([
+  "iPhone SE (3rd generation)",
+  "iPhone 13 Pro Max"
+])
+
+languages([
+  "en-US",
+  "de-DE"
+])
+
+scheme("TravelDexScreenshots")
+output_directory("./screenshots")
+clear_previous_screenshots(true)
+override_status_bar(true)
+erase_simulator(true)
+localize_simulator(true)
+clean(true)
+disable_slide_to_type(true)

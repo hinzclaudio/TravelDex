@@ -43,6 +43,9 @@ adhoc/
 # CocoaPods
 Pods/
 
+# Screenshots
+screenshots/
+
 # Other source repository archive directories 
 .hg
 .svn

@@ -33,4 +33,12 @@ The project makes use of Cocoapods and Bundler. The following lines of code, run
 bundle install
 bundle exec pod install
 ```
-Open TravelDex.xcworkspace and run the TravelDex target.
+Open TravelDex.xcworkspace and run the TravelDex target. 
+
+## Screenshots
+You may have stumbled upon the other target MockedTravelDex. Its sole purpose in life is to provide the application with some sample data upon start. Thus, the target shares most of its code with TravelDex - except for the SceneDelegate. Have a look at MockedSceneDelegate and you will get the idea...
+ 
+Run this from the root directory to create screenshots.
+```
+bundle exec fastlane snapshot
+```
