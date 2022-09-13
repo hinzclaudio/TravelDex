@@ -22,13 +22,8 @@ target 'TravelDex' do
 
   end
 
-  target 'TravelDexUITests' do
+  target 'MockedTravelDex' do
+    inherit! :search_paths
   end
 
 end
-
-
-#post_install do | installer |
-#  require 'fileutils'
-#  FileUtils.cp_r('Pods/Pods-TravelDex-metadata.plist', 'Settings.bundle/Pods-TravelDex-settings-metadata.plist', :remove_destination => true)
-#end
