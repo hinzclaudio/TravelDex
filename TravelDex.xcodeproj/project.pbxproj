@@ -217,7 +217,6 @@
 		12992FB828CFA96100E625E4 /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30828C3D40E0066FE22 /* ModalNavigationContainer.swift */; };
 		12992FB928CFA96100E625E4 /* LocationAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3A28BD505400CC2AD0 /* LocationAPIType.swift */; };
 		12992FBA28CFA96100E625E4 /* LocationSearchViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35028C3D42F0066FE22 /* LocationSearchViewModelType.swift */; };
-		12992FBC28CFA96100E625E4 /* Pods_TravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AEE8171C431924C5717185 /* Pods_TravelDex.framework */; };
 		12992FBE28CFA96100E625E4 /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2EA28C3D2D70066FE22 /* swiftgen.sh */; };
 		12992FBF28CFA96100E625E4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12992FC028CFA96100E625E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
@@ -319,9 +318,11 @@
 		12F4214E28C8F4010063CFC0 /* SKStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */; };
 		12F4214F28C8F40A0063CFC0 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 123538F428C4B74C00A7AD12 /* Configuration.storekit */; };
 		12F4215128C8F5F70063CFC0 /* MockSKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4215028C8F5F70063CFC0 /* MockSKStore.swift */; };
+		42958DA8C559840C36EF535D /* Pods_TravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E6C79C37B2C1C6185FAC49 /* Pods_TravelDex.framework */; };
 		A166CA3B290FF98737E0527E /* Pods_TravelDexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */; };
 		B09FA5CD98379F36B3724C61 /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
-		C5E90BF877C40D23C32FC1F5 /* Pods_TravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15AEE8171C431924C5717185 /* Pods_TravelDex.framework */; };
+		C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		CD90DFF2F350E1DA856E87E4 /* Pods_MockedTravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */; };
 		F2257932C93CB74984733056 /* Pods-TravelDex-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */; };
 /* End PBXBuildFile section */
 
@@ -525,13 +526,16 @@
 		12DAB3C028C3D61C0066FE22 /* TravelDex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDex.xcdatamodel; sourceTree = "<group>"; };
 		12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreTests.swift; sourceTree = "<group>"; };
 		12F4215028C8F5F70063CFC0 /* MockSKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSKStore.swift; sourceTree = "<group>"; };
-		15AEE8171C431924C5717185 /* Pods_TravelDex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		539A92A4F9B1EDCF3FAE5882 /* Pods-TravelDex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex.release.xcconfig"; path = "Target Support Files/Pods-TravelDex/Pods-TravelDex.release.xcconfig"; sourceTree = "<group>"; };
 		62D3695E7C8C1537F9678070 /* Pods-TravelDex-TravelDexUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex-TravelDexUITests.debug.xcconfig"; path = "Target Support Files/Pods-TravelDex-TravelDexUITests/Pods-TravelDex-TravelDexUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7CA2E0FF524B164B91AA6E83 /* Pods_TravelDex_TravelDexUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDex_TravelDexUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8032F25EDC0BC4FC02DDDF2B /* Pods-TravelDexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDexTests.release.xcconfig"; path = "Target Support Files/Pods-TravelDexTests/Pods-TravelDexTests.release.xcconfig"; sourceTree = "<group>"; };
 		808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		853C9B0222FCB7EAE186FEF0 /* Pods-MockedTravelDex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MockedTravelDex.release.xcconfig"; path = "Target Support Files/Pods-MockedTravelDex/Pods-MockedTravelDex.release.xcconfig"; sourceTree = "<group>"; };
 		A523A9FEA206EC529D520805 /* Pods-TravelDexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDexTests.debug.xcconfig"; path = "Target Support Files/Pods-TravelDexTests/Pods-TravelDexTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD5A381729FBFBBF25634DDA /* Pods-MockedTravelDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MockedTravelDex.debug.xcconfig"; path = "Target Support Files/Pods-MockedTravelDex/Pods-MockedTravelDex.debug.xcconfig"; sourceTree = "<group>"; };
+		C3E6C79C37B2C1C6185FAC49 /* Pods_TravelDex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelDex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MockedTravelDex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelDex-metadata.plist"; sourceTree = "<group>"; };
 		D958A9E222EA0CF392E93199 /* Pods-TravelDex-TravelDexUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex-TravelDexUITests.release.xcconfig"; path = "Target Support Files/Pods-TravelDex-TravelDexUITests/Pods-TravelDex-TravelDexUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Pods-TravelDex-settings-metadata.plist"; path = "../Settings.bundle/Pods-TravelDex-settings-metadata.plist"; sourceTree = "<group>"; };
@@ -542,7 +546,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E90BF877C40D23C32FC1F5 /* Pods_TravelDex.framework in Frameworks */,
+				C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */,
+				42958DA8C559840C36EF535D /* Pods_TravelDex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +570,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12992FBC28CFA96100E625E4 /* Pods_TravelDex.framework in Frameworks */,
+				CD90DFF2F350E1DA856E87E4 /* Pods_MockedTravelDex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1436,6 +1441,8 @@
 				8032F25EDC0BC4FC02DDDF2B /* Pods-TravelDexTests.release.xcconfig */,
 				D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */,
 				E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */,
+				AD5A381729FBFBBF25634DDA /* Pods-MockedTravelDex.debug.xcconfig */,
+				853C9B0222FCB7EAE186FEF0 /* Pods-MockedTravelDex.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1443,9 +1450,10 @@
 		868A1067202669C13763641F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15AEE8171C431924C5717185 /* Pods_TravelDex.framework */,
 				7CA2E0FF524B164B91AA6E83 /* Pods_TravelDex_TravelDexUITests.framework */,
 				808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */,
+				C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */,
+				C3E6C79C37B2C1C6185FAC49 /* Pods_TravelDex.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1525,7 +1533,6 @@
 				12992FBB28CFA96100E625E4 /* Frameworks */,
 				12992FBD28CFA96100E625E4 /* Resources */,
 				12992FC828CFA96100E625E4 /* CopyVersionNumber */,
-				12992FC928CFA96100E625E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1670,7 +1677,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TravelDex-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MockedTravelDex-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1731,23 +1738,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"${BUILT_PRODUCTS_DIR}\"\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_PATH}\" )\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $buildVersion\" \"${WRAPPER_NAME}/Settings.bundle/Root.plist\"\n";
-		};
-		12992FC928CFA96100E625E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		12DAB2FB28C3D3030066FE22 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2348,9 +2338,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R64UUKWT68;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelDex/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
@@ -2369,9 +2361,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development de.hinzclaudio.TravelDex";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2382,9 +2379,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R64UUKWT68;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelDex/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
@@ -2403,9 +2402,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore de.hinzclaudio.TravelDex";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2489,7 +2493,7 @@
 		};
 		12992FCB28CFA96100E625E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0448098B428158342C41259F /* Pods-TravelDex.debug.xcconfig */;
+			baseConfigurationReference = AD5A381729FBFBBF25634DDA /* Pods-MockedTravelDex.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2523,7 +2527,7 @@
 		};
 		12992FCC28CFA96100E625E4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 539A92A4F9B1EDCF3FAE5882 /* Pods-TravelDex.release.xcconfig */;
+			baseConfigurationReference = 853C9B0222FCB7EAE186FEF0 /* Pods-MockedTravelDex.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
