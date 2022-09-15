@@ -1,7 +1,8 @@
 # A list of devices you want to take the screenshots from
 devices([
-  "iPhone SE (3rd generation)",
-  "iPhone 13 Pro Max"
+  "iPhone 8 Plus", 
+  "iPhone 13 Pro Max",
+  "iPhone 14 Pro Max"
 ])
 
 languages([
@@ -17,3 +18,4 @@ erase_simulator(true)
 localize_simulator(true)
 clean(true)
 disable_slide_to_type(true)
+concurrent_simulators(false)

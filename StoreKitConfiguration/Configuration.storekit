@@ -67,14 +67,14 @@
   ],
   "settings" : {
     "_askToBuyEnabled" : false,
-    "_locale" : "de",
-    "_storefront" : "DEU"
+    "_locale" : "en_US",
+    "_storefront" : "USA"
   },
   "subscriptionGroups" : [
 
   ],
   "version" : {
-    "major" : 1,
-    "minor" : 2
+    "major" : 2,
+    "minor" : 0
   }
 }

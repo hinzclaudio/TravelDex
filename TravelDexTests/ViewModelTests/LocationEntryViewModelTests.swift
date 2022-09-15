@@ -53,7 +53,7 @@ class LocationEntryViewModelTests: XCTestCase {
     func testSnapshotDoesReturnImage() throws {
         let snapshot = try viewModel.snapshot
             .compactMap { $0 }
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertNotNil(snapshot)
     }

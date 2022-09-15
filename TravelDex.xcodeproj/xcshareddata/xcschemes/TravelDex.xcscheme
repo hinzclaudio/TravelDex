@@ -43,16 +43,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12571F1428BD4F6200CC2AD0"
-               BuildableName = "TravelDexUITests.xctest"
-               BlueprintName = "TravelDexUITests"
-               ReferencedContainer = "container:TravelDex.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1298247F28CFA127001C8D6E"
                BuildableName = "TravelDexScreenshots.xctest"
                BlueprintName = "TravelDexScreenshots"

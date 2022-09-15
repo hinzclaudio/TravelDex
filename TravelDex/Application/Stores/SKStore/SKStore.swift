@@ -36,8 +36,12 @@ class SKStore: SKStoreType {
             let transaction = verification.isVerified()
             await updatePurchases()
             await transaction?.finish()
-        default:
-            break
+        case .pending:
+            print("SKStore: result pending")
+        case .userCancelled:
+            print("SKStore: cancelled")
+        @unknown default:
+            print("SKStore: unkown event")
         }
     }
     
@@ -56,12 +60,13 @@ class SKStore: SKStoreType {
     
     var premiumFeaturesEnabled: Observable<Bool> {
         // Check if the purchases array contains a type of premium non-consumable
-        purchasedProducts
-            .map { purchases in
-                !purchases
-                    .filter { purchase in SKProductIDs.allPremiumIds.contains(purchase.id) }
-                    .isEmpty
-            }
+        // purchasedProducts
+        //   .map { purchases in
+        //        !purchases
+        //            .filter { purchase in SKProductIDs.allPremiumIds.contains(purchase.id) }
+        //            .isEmpty
+        //    }
+        .just(true)
     }
 
     
