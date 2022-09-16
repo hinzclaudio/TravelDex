@@ -60,13 +60,12 @@ class SKStore: SKStoreType {
     
     var premiumFeaturesEnabled: Observable<Bool> {
         // Check if the purchases array contains a type of premium non-consumable
-        // purchasedProducts
-        //   .map { purchases in
-        //        !purchases
-        //            .filter { purchase in SKProductIDs.allPremiumIds.contains(purchase.id) }
-        //            .isEmpty
-        //    }
-        .just(true)
+        purchasedProducts
+            .map { purchases in
+                !purchases
+                    .filter { purchase in SKProductIDs.allPremiumIds.contains(purchase.id) }
+                    .isEmpty
+            }
     }
 
     
