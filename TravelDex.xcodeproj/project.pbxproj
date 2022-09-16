@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1201FF4428D4DD9500525C33 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1201FF4328D4DD9500525C33 /* StoreKit.framework */; };
 		1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
 		1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
-		1222A8AC28D0FFC900F5B7B4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1222A8AB28D0FFC900F5B7B4 /* StoreKit.framework */; };
 		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
 		122414C528C3E2CE008B4402 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
 		123538F928C4B7DA00A7AD12 /* SKProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538F828C4B7DA00A7AD12 /* SKProductIDs.swift */; };
@@ -353,9 +353,9 @@
 
 /* Begin PBXFileReference section */
 		0448098B428158342C41259F /* Pods-TravelDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelDex.debug.xcconfig"; path = "Target Support Files/Pods-TravelDex/Pods-TravelDex.debug.xcconfig"; sourceTree = "<group>"; };
+		1201FF4328D4DD9500525C33 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		1221F45728C4D74200BE20E3 /* PremiumProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProduct.swift; sourceTree = "<group>"; };
 		1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreHeader.swift; sourceTree = "<group>"; };
-		1222A8AB28D0FFC900F5B7B4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
 		122414C628C3E2CE008B4402 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		122414C828C3E2D1008B4402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -548,7 +548,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1222A8AC28D0FFC900F5B7B4 /* StoreKit.framework in Frameworks */,
+				1201FF4428D4DD9500525C33 /* StoreKit.framework in Frameworks */,
 				C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */,
 				42958DA8C559840C36EF535D /* Pods_TravelDex.framework in Frameworks */,
 			);
@@ -1453,7 +1453,7 @@
 		868A1067202669C13763641F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1222A8AB28D0FFC900F5B7B4 /* StoreKit.framework */,
+				1201FF4328D4DD9500525C33 /* StoreKit.framework */,
 				7CA2E0FF524B164B91AA6E83 /* Pods_TravelDex_TravelDexUITests.framework */,
 				808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */,
 				C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */,
