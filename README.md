@@ -36,6 +36,8 @@ bundle exec pod install
 Open TravelDex.xcworkspace and run the TravelDex target. 
 
 ## Screenshots
+<img src = "Resources/screenshot_trips.png" width ="200" /> <img src = "Resources/screenshot_places.png" width ="200" /> <img src = "Resources/screenshot_map.png" width ="200" />
+
 You may have stumbled upon the other target MockedTravelDex. Its sole purpose in life is to provide the application with some sample data upon start. Thus, the target shares most of its code with TravelDex - except for the SceneDelegate. Have a look at MockedSceneDelegate and you will get the idea...
  
 Run this from the root directory to create screenshots.
