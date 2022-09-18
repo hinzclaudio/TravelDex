@@ -1,3 +1,5 @@
+<img src = "Resources/screenshot_trips.png" width ="200" /> <img src = "Resources/screenshot_places.png" width ="200" /> <img src = "Resources/screenshot_map.png" width ="200" />
+
 # TravelDex
 
 ## Introduction
@@ -42,6 +44,3 @@ Run this from the root directory to create screenshots.
 ```
 bundle exec fastlane snapshot
 ```
-
-The result will look similar to these screenshots:
-<img src = "Resources/screenshot_trips.png" width ="200" /> <img src = "Resources/screenshot_places.png" width ="200" /> <img src = "Resources/screenshot_map.png" width ="200" />
