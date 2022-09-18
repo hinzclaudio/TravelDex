@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1340"
+   LastUpgradeVersion = "1400"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1298247F28CFA127001C8D6E"
+               BlueprintIdentifier = "126E1A2C28D7A9120037C77F"
                BuildableName = "TravelDexScreenshots.xctest"
                BlueprintName = "TravelDexScreenshots"
                ReferencedContainer = "container:TravelDex.xcodeproj">
@@ -29,10 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1298247F28CFA127001C8D6E"
+               BlueprintIdentifier = "126E1A2C28D7A9120037C77F"
                BuildableName = "TravelDexScreenshots.xctest"
                BlueprintName = "TravelDexScreenshots"
                ReferencedContainer = "container:TravelDex.xcodeproj">
@@ -60,7 +61,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1298247F28CFA127001C8D6E"
+            BlueprintIdentifier = "126E1A2C28D7A9120037C77F"
             BuildableName = "TravelDexScreenshots.xctest"
             BlueprintName = "TravelDexScreenshots"
             ReferencedContainer = "container:TravelDex.xcodeproj">

@@ -74,161 +74,163 @@
 		12571FA428BD505400CC2AD0 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6F28BD505400CC2AD0 /* UILabelExt.swift */; };
 		12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7028BD505400CC2AD0 /* AppDelegate.swift */; };
 		12571FA628BD505400CC2AD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7128BD505400CC2AD0 /* SceneDelegate.swift */; };
+		126E1A3A28D7A9290037C77F /* TravelDexScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126E1A3828D7A9290037C77F /* TravelDexScreenshots.swift */; };
+		126E1A3B28D7A9290037C77F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126E1A3928D7A9290037C77F /* SnapshotHelper.swift */; };
+		126FCF3C28D7A9CF00B17BA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
+		126FCF3D28D7A9D000B17BA9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
+		126FCF3E28D7AA1800B17BA9 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
 		1274130428CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */; };
 		1274130728CDEF7300FCC8C1 /* PremiumInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */; };
 		1274130B28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */; };
 		1274130D28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */; };
 		1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
+		128237B828D7A5A500EAA276 /* MockSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128237B728D7A5A500EAA276 /* MockSceneDelegate.swift */; };
 		12904FB628CE0F7A00192F11 /* SKNonPremiumConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */; };
 		12904FB928CE12E500192F11 /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB828CE12E500192F11 /* AppCoordinatorType.swift */; };
 		12904FBC28CE15B700192F11 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */; };
-		1298248328CFA127001C8D6E /* TravelDexScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298248228CFA127001C8D6E /* TravelDexScreenshots.swift */; };
-		1298248C28CFA167001C8D6E /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298248B28CFA167001C8D6E /* SnapshotHelper.swift */; };
-		1298248F28CFA24B001C8D6E /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 1298248E28CFA24B001C8D6E /* Snapfile */; };
-		12992F3028CFA53F00E625E4 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
-		12992F3128CFA54300E625E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
-		12992F3728CFA96100E625E4 /* CDUpdateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5C28BD505400CC2AD0 /* CDUpdateTrip.swift */; };
-		12992F3828CFA96100E625E4 /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */; };
-		12992F3928CFA96100E625E4 /* LocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35828C3D42F0066FE22 /* LocationEntryViewModel.swift */; };
-		12992F3A28CFA96100E625E4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6428BD505400CC2AD0 /* Trip.swift */; };
-		12992F3B28CFA96100E625E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6328BD505400CC2AD0 /* Location.swift */; };
-		12992F3C28CFA96100E625E4 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34228C3D42F0066FE22 /* TripCell.swift */; };
-		12992F3D28CFA96100E625E4 /* Images.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E728C3D2D70066FE22 /* Images.generated.swift */; };
-		12992F3E28CFA96100E625E4 /* LocationDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33828C3D42F0066FE22 /* LocationDisplayController.swift */; };
-		12992F3F28CFA96100E625E4 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2FE28C3D3DB0066FE22 /* CoordinatorType.swift */; };
-		12992F4028CFA96100E625E4 /* VerificationResultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390328C4BEB900A7AD12 /* VerificationResultExt.swift */; };
-		12992F4128CFA96100E625E4 /* DependencyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3428BD505400CC2AD0 /* DependencyProtocols.swift */; };
-		12992F4228CFA96100E625E4 /* DefaultAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3328BD505400CC2AD0 /* DefaultAppDependencies.swift */; };
-		12992F4328CFA96100E625E4 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */; };
-		12992F4428CFA96100E625E4 /* CDHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4B28BD505400CC2AD0 /* CDHelperExt.swift */; };
-		12992F4528CFA96100E625E4 /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34C28C3D42F0066FE22 /* ColorSelectionCell.swift */; };
-		12992F4628CFA96100E625E4 /* TripsListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34328C3D42F0066FE22 /* TripsListTableCell.swift */; };
-		12992F4728CFA96100E625E4 /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31B28C3D42F0066FE22 /* TitledTextField.swift */; };
-		12992F4828CFA96100E625E4 /* LocationsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3B28BD505400CC2AD0 /* LocationsStoreType.swift */; };
-		12992F4928CFA96100E625E4 /* PremiumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */; };
-		12992F4A28CFA96100E625E4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30028C3D3DB0066FE22 /* AppCoordinator.swift */; };
-		12992F4B28CFA96100E625E4 /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30628C3D40E0066FE22 /* InfoManager.swift */; };
-		12992F4C28CFA96100E625E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7028BD505400CC2AD0 /* AppDelegate.swift */; };
-		12992F4D28CFA96100E625E4 /* TitledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31A28C3D42F0066FE22 /* TitledTextView.swift */; };
-		12992F4E28CFA96100E625E4 /* ColorSelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34628C3D42F0066FE22 /* ColorSelectionViewModelType.swift */; };
-		12992F4F28CFA96100E625E4 /* CDVisitedPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */; };
-		12992F5028CFA96100E625E4 /* CDMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4628BD505400CC2AD0 /* CDMigrator.swift */; };
-		12992F5128CFA96100E625E4 /* CDMigrationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4528BD505400CC2AD0 /* CDMigrationStep.swift */; };
-		12992F5228CFA96100E625E4 /* EditTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31628C3D42F0066FE22 /* EditTripViewModel.swift */; };
-		12992F5328CFA96100E625E4 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4A28BD505400CC2AD0 /* CDTripExt.swift */; };
-		12992F5428CFA96100E625E4 /* TripsListController_TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34028C3D42F0066FE22 /* TripsListController_TableDelegate.swift */; };
-		12992F5528CFA96100E625E4 /* CDUpdatePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */; };
-		12992F5628CFA96100E625E4 /* MarkerConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2F028C3D2D80066FE22 /* MarkerConformances.swift */; };
-		12992F5728CFA96100E625E4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38F28C3D49B0066FE22 /* Colors.swift */; };
-		12992F5828CFA96100E625E4 /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4728BD505400CC2AD0 /* DefaultCDStack.swift */; };
-		12992F5928CFA96100E625E4 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */; };
-		12992F5A28CFA96100E625E4 /* AddPlacesCommentViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32028C3D42F0066FE22 /* AddPlacesCommentViewModelType.swift */; };
-		12992F5B28CFA96100E625E4 /* LocationSearchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34E28C3D42F0066FE22 /* LocationSearchAnnotation.swift */; };
-		12992F5C28CFA96100E625E4 /* UIStackViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6D28BD505400CC2AD0 /* UIStackViewExt.swift */; };
-		12992F5D28CFA96100E625E4 /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35128C3D42F0066FE22 /* LocationSearchViewModel.swift */; };
-		12992F5E28CFA96100E625E4 /* DatePickerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6828BD505400CC2AD0 /* DatePickerExt.swift */; };
-		12992F5F28CFA96100E625E4 /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33928C3D42F0066FE22 /* LocaitonDisplay_ MapDelegate.swift */; };
-		12992F6028CFA96100E625E4 /* PremiumStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */; };
-		12992F6128CFA96100E625E4 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6928BD505400CC2AD0 /* UIButtonExt.swift */; };
-		12992F6228CFA96100E625E4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38E28C3D49B0066FE22 /* Fonts.swift */; };
-		12992F6328CFA96100E625E4 /* CLGeocoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3928BD505400CC2AD0 /* CLGeocoderExtension.swift */; };
-		12992F6428CFA96100E625E4 /* RxString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2D28BD505400CC2AD0 /* RxString.swift */; };
-		12992F6528CFA96100E625E4 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6B28BD505400CC2AD0 /* UIViewExt.swift */; };
-		12992F6628CFA96100E625E4 /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3728BD505400CC2AD0 /* LocationsStore.swift */; };
-		12992F6728CFA96100E625E4 /* CDVisitedPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */; };
-		12992F6828CFA96100E625E4 /* LocationSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */; };
-		12992F6928CFA96100E625E4 /* MKMapSnapshotterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35B28C3D42F0066FE22 /* MKMapSnapshotterExtension.swift */; };
-		12992F6A28CFA96100E625E4 /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */; };
-		12992F6B28CFA96100E625E4 /* ColorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34728C3D42F0066FE22 /* ColorSelectionViewModel.swift */; };
-		12992F6C28CFA96100E625E4 /* TripsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33D28C3D42F0066FE22 /* TripsListViewModelType.swift */; };
-		12992F6D28CFA96100E625E4 /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
-		12992F6E28CFA96100E625E4 /* RxTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3128BD505400CC2AD0 /* RxTapGesture.swift */; };
-		12992F6F28CFA96100E625E4 /* SKProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538F828C4B7DA00A7AD12 /* SKProductIDs.swift */; };
-		12992F7028CFA96100E625E4 /* LocationEntryViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35728C3D42F0066FE22 /* LocationEntryViewModelType.swift */; };
-		12992F7128CFA96100E625E4 /* ScrollableVStackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30928C3D40E0066FE22 /* ScrollableVStackController.swift */; };
-		12992F7228CFA96100E625E4 /* CDMigrationVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4428BD505400CC2AD0 /* CDMigrationVersion.swift */; };
-		12992F7328CFA96100E625E4 /* AddPlacesCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31F28C3D42F0066FE22 /* AddPlacesCommentViewModel.swift */; };
-		12992F7428CFA96100E625E4 /* LocationDisplayViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33328C3D42F0066FE22 /* LocationDisplayViewModelType.swift */; };
-		12992F7628CFA96100E625E4 /* PremiumStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */; };
-		12992F7728CFA96100E625E4 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6E28BD505400CC2AD0 /* DateExt.swift */; };
-		12992F7828CFA96100E625E4 /* TripsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33C28C3D42F0066FE22 /* TripsListViewModel.swift */; };
-		12992F7928CFA96100E625E4 /* SKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FD28C4BC2C00A7AD12 /* SKStore.swift */; };
-		12992F7A28CFA96100E625E4 /* EditPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32E28C3D42F0066FE22 /* EditPlaceCell.swift */; };
-		12992F7B28CFA96100E625E4 /* TravelDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3BF28C3D61C0066FE22 /* TravelDex.xcdatamodeld */; };
-		12992F7C28CFA96100E625E4 /* ColorSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34928C3D42F0066FE22 /* ColorSelectionController.swift */; };
-		12992F7D28CFA96100E625E4 /* PlacesStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4128BD505400CC2AD0 /* PlacesStoreType.swift */; };
-		12992F7E28CFA96100E625E4 /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */; };
-		12992F7F28CFA96100E625E4 /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */; };
-		12992F8028CFA96100E625E4 /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33628C3D42F0066FE22 /* LocationDisplayAnnotation.swift */; };
-		12992F8128CFA96100E625E4 /* SnapshotProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35A28C3D42F0066FE22 /* SnapshotProviderType.swift */; };
-		12992F8228CFA96100E625E4 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3028BD505400CC2AD0 /* ActivityIndicator.swift */; };
-		12992F8328CFA96100E625E4 /* CDDeleteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5B28BD505400CC2AD0 /* CDDeleteTrip.swift */; };
-		12992F8428CFA96100E625E4 /* AllPlacesDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33228C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift */; };
-		12992F8528CFA96100E625E4 /* LocationEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35D28C3D42F0066FE22 /* LocationEntryController.swift */; };
-		12992F8628CFA96100E625E4 /* AddPlacesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32828C3D42F0066FE22 /* AddPlacesViewModelType.swift */; };
-		12992F8728CFA96100E625E4 /* MarkterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2EF28C3D2D80066FE22 /* MarkterProtocols.swift */; };
-		12992F8828CFA96100E625E4 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */; };
-		12992F8928CFA96100E625E4 /* ColoredPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30C28C3D40E0066FE22 /* ColoredPill.swift */; };
-		12992F8A28CFA96100E625E4 /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */; };
-		12992F8B28CFA96100E625E4 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */; };
-		12992F8C28CFA96100E625E4 /* TripsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3E28BD505400CC2AD0 /* TripsStoreType.swift */; };
-		12992F8D28CFA96100E625E4 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */; };
-		12992F8E28CFA96100E625E4 /* PremiumInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */; };
-		12992F8F28CFA96100E625E4 /* PremiumStoreViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390828C4CAC300A7AD12 /* PremiumStoreViewModelType.swift */; };
-		12992F9028CFA96100E625E4 /* FileManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6A28BD505400CC2AD0 /* FileManagerExt.swift */; };
-		12992F9128CFA96100E625E4 /* PlaceDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33528C3D42F0066FE22 /* PlaceDisplayViewModel.swift */; };
-		12992F9228CFA96100E625E4 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
-		12992F9328CFA96100E625E4 /* GeneralStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32F28C3D42F0066FE22 /* GeneralStyleManager.swift */; };
-		12992F9428CFA96100E625E4 /* SKStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FB28C4BC1F00A7AD12 /* SKStoreType.swift */; };
-		12992F9528CFA96100E625E4 /* TripsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3D28BD505400CC2AD0 /* TripsStore.swift */; };
-		12992F9628CFA96100E625E4 /* SKNonPremiumConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */; };
-		12992F9728CFA96100E625E4 /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5D28BD505400CC2AD0 /* CDAction.swift */; };
-		12992F9828CFA96100E625E4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30A28C3D40E0066FE22 /* BaseNavigationController.swift */; };
-		12992F9928CFA96100E625E4 /* AddPlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32C28C3D42F0066FE22 /* AddPlacesController.swift */; };
-		12992F9A28CFA96100E625E4 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6528BD505400CC2AD0 /* Coordinate.swift */; };
-		12992F9B28CFA96100E625E4 /* RxGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2F28BD505400CC2AD0 /* RxGeocoder.swift */; };
-		12992F9C28CFA96100E625E4 /* LocationSearchController_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35428C3D42F0066FE22 /* LocationSearchController_MapDelegate.swift */; };
-		12992F9D28CFA96100E625E4 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38B28C3D49B0066FE22 /* Sizes.swift */; };
-		12992F9E28CFA96100E625E4 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6F28BD505400CC2AD0 /* UILabelExt.swift */; };
-		12992F9F28CFA96100E625E4 /* UISearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6C28BD505400CC2AD0 /* UISearchBarExt.swift */; };
-		12992FA028CFA96100E625E4 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
-		12992FA128CFA96100E625E4 /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB828CE12E500192F11 /* AppCoordinatorType.swift */; };
-		12992FA228CFA96100E625E4 /* SKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390F28C4CCA100A7AD12 /* SKProductCell.swift */; };
-		12992FA328CFA96100E625E4 /* PhotoPickerViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32428C3D42F0066FE22 /* PhotoPickerViewModelType.swift */; };
-		12992FA428CFA96100E625E4 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
-		12992FA528CFA96100E625E4 /* PremiumStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */; };
-		12992FA628CFA96100E625E4 /* ColorSelection_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34A28C3D42F0066FE22 /* ColorSelection_CollectionView.swift */; };
-		12992FA728CFA96100E625E4 /* LocationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35328C3D42F0066FE22 /* LocationSearchController.swift */; };
-		12992FA828CFA96100E625E4 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
-		12992FA928CFA96100E625E4 /* PlacesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4028BD505400CC2AD0 /* PlacesStore.swift */; };
-		12992FAA28CFA96100E625E4 /* CDObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2C28BD505400CC2AD0 /* CDObservable.swift */; };
-		12992FAB28CFA96100E625E4 /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31C28C3D42F0066FE22 /* EditTripController.swift */; };
-		12992FAC28CFA96100E625E4 /* EditPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32728C3D42F0066FE22 /* EditPlaceViewModel.swift */; };
-		12992FAD28CFA96100E625E4 /* TripsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33F28C3D42F0066FE22 /* TripsListController.swift */; };
-		12992FAE28CFA96100E625E4 /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6128BD505400CC2AD0 /* CDStackType.swift */; };
-		12992FAF28CFA96100E625E4 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30B28C3D40E0066FE22 /* PaddedTextField.swift */; };
-		12992FB028CFA96100E625E4 /* TripLocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33428C3D42F0066FE22 /* TripLocationDisplayViewModel.swift */; };
-		12992FB128CFA96100E625E4 /* PremiumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */; };
-		12992FB228CFA96100E625E4 /* EditTripViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31728C3D42F0066FE22 /* EditTripViewModelType.swift */; };
-		12992FB328CFA96100E625E4 /* AddedPlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32A28C3D42F0066FE22 /* AddedPlaceItem.swift */; };
-		12992FB428CFA96100E625E4 /* AddPlacesCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32228C3D42F0066FE22 /* AddPlacesCommentController.swift */; };
-		12992FB528CFA96100E625E4 /* VisitedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6628BD505400CC2AD0 /* VisitedPlace.swift */; };
-		12992FB628CFA96100E625E4 /* RxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2E28BD505400CC2AD0 /* RxMapView.swift */; };
-		12992FB728CFA96100E625E4 /* AddPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32928C3D42F0066FE22 /* AddPlacesViewModel.swift */; };
-		12992FB828CFA96100E625E4 /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30828C3D40E0066FE22 /* ModalNavigationContainer.swift */; };
-		12992FB928CFA96100E625E4 /* LocationAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3A28BD505400CC2AD0 /* LocationAPIType.swift */; };
-		12992FBA28CFA96100E625E4 /* LocationSearchViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35028C3D42F0066FE22 /* LocationSearchViewModelType.swift */; };
-		12992FBE28CFA96100E625E4 /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2EA28C3D2D70066FE22 /* swiftgen.sh */; };
-		12992FBF28CFA96100E625E4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
-		12992FC028CFA96100E625E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
-		12992FC128CFA96100E625E4 /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2ED28C3D2D80066FE22 /* AutoInitializable.stencil */; };
-		12992FC228CFA96100E625E4 /* AutoBuilder.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2EC28C3D2D80066FE22 /* AutoBuilder.stencil */; };
-		12992FC328CFA96100E625E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 122414C728C3E2CE008B4402 /* Localizable.strings */; };
-		12992FC428CFA96100E625E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
-		12992FC528CFA96100E625E4 /* Pods-TravelDex-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */; };
-		12992FC628CFA96100E625E4 /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E928C3D2D70066FE22 /* sourcery.sh */; };
-		12992FC728CFA96100E625E4 /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
-		12992FD128CFA9A400E625E4 /* MockSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12992FCF28CFA99A00E625E4 /* MockSceneDelegate.swift */; };
+		129F319928D7A4D60092FA8E /* CDUpdateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5C28BD505400CC2AD0 /* CDUpdateTrip.swift */; };
+		129F319A28D7A4D60092FA8E /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */; };
+		129F319B28D7A4D60092FA8E /* LocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35828C3D42F0066FE22 /* LocationEntryViewModel.swift */; };
+		129F319C28D7A4D60092FA8E /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6428BD505400CC2AD0 /* Trip.swift */; };
+		129F319D28D7A4D60092FA8E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6328BD505400CC2AD0 /* Location.swift */; };
+		129F319E28D7A4D60092FA8E /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34228C3D42F0066FE22 /* TripCell.swift */; };
+		129F319F28D7A4D60092FA8E /* Images.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E728C3D2D70066FE22 /* Images.generated.swift */; };
+		129F31A028D7A4D60092FA8E /* LocationDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33828C3D42F0066FE22 /* LocationDisplayController.swift */; };
+		129F31A128D7A4D60092FA8E /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2FE28C3D3DB0066FE22 /* CoordinatorType.swift */; };
+		129F31A228D7A4D60092FA8E /* VerificationResultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390328C4BEB900A7AD12 /* VerificationResultExt.swift */; };
+		129F31A328D7A4D60092FA8E /* DependencyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3428BD505400CC2AD0 /* DependencyProtocols.swift */; };
+		129F31A428D7A4D60092FA8E /* DefaultAppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3328BD505400CC2AD0 /* DefaultAppDependencies.swift */; };
+		129F31A528D7A4D60092FA8E /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */; };
+		129F31A628D7A4D60092FA8E /* CDHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4B28BD505400CC2AD0 /* CDHelperExt.swift */; };
+		129F31A728D7A4D60092FA8E /* ColorSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34C28C3D42F0066FE22 /* ColorSelectionCell.swift */; };
+		129F31A828D7A4D60092FA8E /* TripsListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34328C3D42F0066FE22 /* TripsListTableCell.swift */; };
+		129F31A928D7A4D60092FA8E /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31B28C3D42F0066FE22 /* TitledTextField.swift */; };
+		129F31AA28D7A4D60092FA8E /* LocationsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3B28BD505400CC2AD0 /* LocationsStoreType.swift */; };
+		129F31AB28D7A4D60092FA8E /* PremiumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */; };
+		129F31AC28D7A4D60092FA8E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30028C3D3DB0066FE22 /* AppCoordinator.swift */; };
+		129F31AD28D7A4D60092FA8E /* InfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30628C3D40E0066FE22 /* InfoManager.swift */; };
+		129F31AE28D7A4D60092FA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F7028BD505400CC2AD0 /* AppDelegate.swift */; };
+		129F31AF28D7A4D60092FA8E /* TitledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31A28C3D42F0066FE22 /* TitledTextView.swift */; };
+		129F31B028D7A4D60092FA8E /* ColorSelectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34628C3D42F0066FE22 /* ColorSelectionViewModelType.swift */; };
+		129F31B128D7A4D60092FA8E /* CDVisitedPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */; };
+		129F31B228D7A4D60092FA8E /* CDMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4628BD505400CC2AD0 /* CDMigrator.swift */; };
+		129F31B328D7A4D60092FA8E /* CDMigrationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4528BD505400CC2AD0 /* CDMigrationStep.swift */; };
+		129F31B428D7A4D60092FA8E /* EditTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31628C3D42F0066FE22 /* EditTripViewModel.swift */; };
+		129F31B528D7A4D60092FA8E /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4A28BD505400CC2AD0 /* CDTripExt.swift */; };
+		129F31B628D7A4D60092FA8E /* TripsListController_TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34028C3D42F0066FE22 /* TripsListController_TableDelegate.swift */; };
+		129F31B728D7A4D60092FA8E /* CDUpdatePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */; };
+		129F31B828D7A4D60092FA8E /* MarkerConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2F028C3D2D80066FE22 /* MarkerConformances.swift */; };
+		129F31B928D7A4D60092FA8E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38F28C3D49B0066FE22 /* Colors.swift */; };
+		129F31BA28D7A4D60092FA8E /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4728BD505400CC2AD0 /* DefaultCDStack.swift */; };
+		129F31BB28D7A4D60092FA8E /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */; };
+		129F31BC28D7A4D60092FA8E /* AddPlacesCommentViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32028C3D42F0066FE22 /* AddPlacesCommentViewModelType.swift */; };
+		129F31BD28D7A4D60092FA8E /* LocationSearchAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34E28C3D42F0066FE22 /* LocationSearchAnnotation.swift */; };
+		129F31BE28D7A4D60092FA8E /* UIStackViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6D28BD505400CC2AD0 /* UIStackViewExt.swift */; };
+		129F31BF28D7A4D60092FA8E /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35128C3D42F0066FE22 /* LocationSearchViewModel.swift */; };
+		129F31C028D7A4D60092FA8E /* DatePickerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6828BD505400CC2AD0 /* DatePickerExt.swift */; };
+		129F31C128D7A4D60092FA8E /* LocaitonDisplay_ MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33928C3D42F0066FE22 /* LocaitonDisplay_ MapDelegate.swift */; };
+		129F31C228D7A4D60092FA8E /* PremiumStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */; };
+		129F31C328D7A4D60092FA8E /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6928BD505400CC2AD0 /* UIButtonExt.swift */; };
+		129F31C428D7A4D60092FA8E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38E28C3D49B0066FE22 /* Fonts.swift */; };
+		129F31C528D7A4D60092FA8E /* CLGeocoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3928BD505400CC2AD0 /* CLGeocoderExtension.swift */; };
+		129F31C628D7A4D60092FA8E /* RxString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2D28BD505400CC2AD0 /* RxString.swift */; };
+		129F31C728D7A4D60092FA8E /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6B28BD505400CC2AD0 /* UIViewExt.swift */; };
+		129F31C828D7A4D60092FA8E /* LocationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3728BD505400CC2AD0 /* LocationsStore.swift */; };
+		129F31C928D7A4D60092FA8E /* CDVisitedPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */; };
+		129F31CA28D7A4D60092FA8E /* LocationSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */; };
+		129F31CB28D7A4D60092FA8E /* MKMapSnapshotterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35B28C3D42F0066FE22 /* MKMapSnapshotterExtension.swift */; };
+		129F31CC28D7A4D60092FA8E /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */; };
+		129F31CD28D7A4D60092FA8E /* ColorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34728C3D42F0066FE22 /* ColorSelectionViewModel.swift */; };
+		129F31CE28D7A4D60092FA8E /* TripsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33D28C3D42F0066FE22 /* TripsListViewModelType.swift */; };
+		129F31CF28D7A4D60092FA8E /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
+		129F31D028D7A4D60092FA8E /* RxTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3128BD505400CC2AD0 /* RxTapGesture.swift */; };
+		129F31D128D7A4D60092FA8E /* SKProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538F828C4B7DA00A7AD12 /* SKProductIDs.swift */; };
+		129F31D228D7A4D60092FA8E /* LocationEntryViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35728C3D42F0066FE22 /* LocationEntryViewModelType.swift */; };
+		129F31D328D7A4D60092FA8E /* ScrollableVStackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30928C3D40E0066FE22 /* ScrollableVStackController.swift */; };
+		129F31D428D7A4D60092FA8E /* CDMigrationVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4428BD505400CC2AD0 /* CDMigrationVersion.swift */; };
+		129F31D528D7A4D60092FA8E /* AddPlacesCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31F28C3D42F0066FE22 /* AddPlacesCommentViewModel.swift */; };
+		129F31D628D7A4D60092FA8E /* LocationDisplayViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33328C3D42F0066FE22 /* LocationDisplayViewModelType.swift */; };
+		129F31D828D7A4D60092FA8E /* PremiumStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */; };
+		129F31D928D7A4D60092FA8E /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6E28BD505400CC2AD0 /* DateExt.swift */; };
+		129F31DA28D7A4D60092FA8E /* TripsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33C28C3D42F0066FE22 /* TripsListViewModel.swift */; };
+		129F31DB28D7A4D60092FA8E /* SKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FD28C4BC2C00A7AD12 /* SKStore.swift */; };
+		129F31DC28D7A4D60092FA8E /* EditPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32E28C3D42F0066FE22 /* EditPlaceCell.swift */; };
+		129F31DD28D7A4D60092FA8E /* TravelDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3BF28C3D61C0066FE22 /* TravelDex.xcdatamodeld */; };
+		129F31DE28D7A4D60092FA8E /* ColorSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34928C3D42F0066FE22 /* ColorSelectionController.swift */; };
+		129F31DF28D7A4D60092FA8E /* PlacesStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4128BD505400CC2AD0 /* PlacesStoreType.swift */; };
+		129F31E028D7A4D60092FA8E /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */; };
+		129F31E128D7A4D60092FA8E /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */; };
+		129F31E228D7A4D60092FA8E /* LocationDisplayAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33628C3D42F0066FE22 /* LocationDisplayAnnotation.swift */; };
+		129F31E328D7A4D60092FA8E /* SnapshotProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35A28C3D42F0066FE22 /* SnapshotProviderType.swift */; };
+		129F31E428D7A4D60092FA8E /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3028BD505400CC2AD0 /* ActivityIndicator.swift */; };
+		129F31E528D7A4D60092FA8E /* CDDeleteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5B28BD505400CC2AD0 /* CDDeleteTrip.swift */; };
+		129F31E628D7A4D60092FA8E /* AllPlacesDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33228C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift */; };
+		129F31E728D7A4D60092FA8E /* LocationEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35D28C3D42F0066FE22 /* LocationEntryController.swift */; };
+		129F31E828D7A4D60092FA8E /* AddPlacesViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32828C3D42F0066FE22 /* AddPlacesViewModelType.swift */; };
+		129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2EF28C3D2D80066FE22 /* MarkterProtocols.swift */; };
+		129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */; };
+		129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30C28C3D40E0066FE22 /* ColoredPill.swift */; };
+		129F31EC28D7A4D60092FA8E /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */; };
+		129F31ED28D7A4D60092FA8E /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */; };
+		129F31EE28D7A4D60092FA8E /* TripsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3E28BD505400CC2AD0 /* TripsStoreType.swift */; };
+		129F31EF28D7A4D60092FA8E /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */; };
+		129F31F028D7A4D60092FA8E /* PremiumInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */; };
+		129F31F128D7A4D60092FA8E /* PremiumStoreViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390828C4CAC300A7AD12 /* PremiumStoreViewModelType.swift */; };
+		129F31F228D7A4D60092FA8E /* FileManagerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6A28BD505400CC2AD0 /* FileManagerExt.swift */; };
+		129F31F328D7A4D60092FA8E /* PlaceDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33528C3D42F0066FE22 /* PlaceDisplayViewModel.swift */; };
+		129F31F428D7A4D60092FA8E /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
+		129F31F528D7A4D60092FA8E /* GeneralStyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32F28C3D42F0066FE22 /* GeneralStyleManager.swift */; };
+		129F31F628D7A4D60092FA8E /* SKStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123538FB28C4BC1F00A7AD12 /* SKStoreType.swift */; };
+		129F31F728D7A4D60092FA8E /* TripsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3D28BD505400CC2AD0 /* TripsStore.swift */; };
+		129F31F828D7A4D60092FA8E /* SKNonPremiumConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */; };
+		129F31F928D7A4D60092FA8E /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5D28BD505400CC2AD0 /* CDAction.swift */; };
+		129F31FA28D7A4D60092FA8E /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30A28C3D40E0066FE22 /* BaseNavigationController.swift */; };
+		129F31FB28D7A4D60092FA8E /* AddPlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32C28C3D42F0066FE22 /* AddPlacesController.swift */; };
+		129F31FC28D7A4D60092FA8E /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6528BD505400CC2AD0 /* Coordinate.swift */; };
+		129F31FD28D7A4D60092FA8E /* RxGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2F28BD505400CC2AD0 /* RxGeocoder.swift */; };
+		129F31FE28D7A4D60092FA8E /* LocationSearchController_MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35428C3D42F0066FE22 /* LocationSearchController_MapDelegate.swift */; };
+		129F31FF28D7A4D60092FA8E /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38B28C3D49B0066FE22 /* Sizes.swift */; };
+		129F320028D7A4D60092FA8E /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6F28BD505400CC2AD0 /* UILabelExt.swift */; };
+		129F320128D7A4D60092FA8E /* UISearchBarExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6C28BD505400CC2AD0 /* UISearchBarExt.swift */; };
+		129F320228D7A4D60092FA8E /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
+		129F320328D7A4D60092FA8E /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB828CE12E500192F11 /* AppCoordinatorType.swift */; };
+		129F320428D7A4D60092FA8E /* SKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390F28C4CCA100A7AD12 /* SKProductCell.swift */; };
+		129F320528D7A4D60092FA8E /* PhotoPickerViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32428C3D42F0066FE22 /* PhotoPickerViewModelType.swift */; };
+		129F320628D7A4D60092FA8E /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
+		129F320728D7A4D60092FA8E /* PremiumStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */; };
+		129F320828D7A4D60092FA8E /* ColorSelection_CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34A28C3D42F0066FE22 /* ColorSelection_CollectionView.swift */; };
+		129F320928D7A4D60092FA8E /* LocationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35328C3D42F0066FE22 /* LocationSearchController.swift */; };
+		129F320A28D7A4D60092FA8E /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
+		129F320B28D7A4D60092FA8E /* PlacesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4028BD505400CC2AD0 /* PlacesStore.swift */; };
+		129F320C28D7A4D60092FA8E /* CDObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2C28BD505400CC2AD0 /* CDObservable.swift */; };
+		129F320D28D7A4D60092FA8E /* EditTripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31C28C3D42F0066FE22 /* EditTripController.swift */; };
+		129F320E28D7A4D60092FA8E /* EditPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32728C3D42F0066FE22 /* EditPlaceViewModel.swift */; };
+		129F320F28D7A4D60092FA8E /* TripsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33F28C3D42F0066FE22 /* TripsListController.swift */; };
+		129F321028D7A4D60092FA8E /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6128BD505400CC2AD0 /* CDStackType.swift */; };
+		129F321128D7A4D60092FA8E /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30B28C3D40E0066FE22 /* PaddedTextField.swift */; };
+		129F321228D7A4D60092FA8E /* TripLocationDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33428C3D42F0066FE22 /* TripLocationDisplayViewModel.swift */; };
+		129F321328D7A4D60092FA8E /* PremiumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */; };
+		129F321428D7A4D60092FA8E /* EditTripViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB31728C3D42F0066FE22 /* EditTripViewModelType.swift */; };
+		129F321528D7A4D60092FA8E /* AddedPlaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32A28C3D42F0066FE22 /* AddedPlaceItem.swift */; };
+		129F321628D7A4D60092FA8E /* AddPlacesCommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32228C3D42F0066FE22 /* AddPlacesCommentController.swift */; };
+		129F321728D7A4D60092FA8E /* VisitedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6628BD505400CC2AD0 /* VisitedPlace.swift */; };
+		129F321828D7A4D60092FA8E /* RxMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2E28BD505400CC2AD0 /* RxMapView.swift */; };
+		129F321928D7A4D60092FA8E /* AddPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32928C3D42F0066FE22 /* AddPlacesViewModel.swift */; };
+		129F321A28D7A4D60092FA8E /* ModalNavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30828C3D40E0066FE22 /* ModalNavigationContainer.swift */; };
+		129F321B28D7A4D60092FA8E /* LocationAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3A28BD505400CC2AD0 /* LocationAPIType.swift */; };
+		129F321C28D7A4D60092FA8E /* LocationSearchViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35028C3D42F0066FE22 /* LocationSearchViewModelType.swift */; };
+		129F321E28D7A4D60092FA8E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1201FF4328D4DD9500525C33 /* StoreKit.framework */; };
+		129F321F28D7A4D60092FA8E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		129F322028D7A4D60092FA8E /* Pods_TravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E6C79C37B2C1C6185FAC49 /* Pods_TravelDex.framework */; };
+		129F322228D7A4D60092FA8E /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2EA28C3D2D70066FE22 /* swiftgen.sh */; };
+		129F322328D7A4D60092FA8E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
+		129F322428D7A4D60092FA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
+		129F322528D7A4D60092FA8E /* AutoInitializable.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2ED28C3D2D80066FE22 /* AutoInitializable.stencil */; };
+		129F322628D7A4D60092FA8E /* AutoBuilder.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2EC28C3D2D80066FE22 /* AutoBuilder.stencil */; };
+		129F322828D7A4D60092FA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
+		129F322928D7A4D60092FA8E /* Pods-TravelDex-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */; };
+		129F322A28D7A4D60092FA8E /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E928C3D2D70066FE22 /* sourcery.sh */; };
+		129F322B28D7A4D60092FA8E /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
 		12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
@@ -323,7 +325,6 @@
 		A166CA3B290FF98737E0527E /* Pods_TravelDexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */; };
 		B09FA5CD98379F36B3724C61 /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
 		C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		CD90DFF2F350E1DA856E87E4 /* Pods_MockedTravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */; };
 		F2257932C93CB74984733056 /* Pods-TravelDex-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */; };
 /* End PBXBuildFile section */
 
@@ -335,18 +336,11 @@
 			remoteGlobalIDString = 12571EF128BD4F6100CC2AD0;
 			remoteInfo = TravelDex;
 		};
-		1298248628CFA127001C8D6E /* PBXContainerItemProxy */ = {
+		126E1A3328D7A9130037C77F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 12571EEA28BD4F6100CC2AD0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 12571EF128BD4F6100CC2AD0;
-			remoteInfo = TravelDex;
-		};
-		12992FD228CFABE300E625E4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 12571EEA28BD4F6100CC2AD0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 12992F3228CFA96100E625E4;
+			remoteGlobalIDString = 129F319428D7A4D60092FA8E;
 			remoteInfo = MockedTravelDex;
 		};
 /* End PBXContainerItemProxy section */
@@ -425,20 +419,21 @@
 		12571F6F28BD505400CC2AD0 /* UILabelExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		12571F7028BD505400CC2AD0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12571F7128BD505400CC2AD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		126E1A2D28D7A9120037C77F /* TravelDexScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelDexScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		126E1A3828D7A9290037C77F /* TravelDexScreenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelDexScreenshots.swift; sourceTree = "<group>"; };
+		126E1A3928D7A9290037C77F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreCoordinator.swift; sourceTree = "<group>"; };
 		1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoController.swift; sourceTree = "<group>"; };
 		1274130A28CDEFB200FCC8C1 /* PremiumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModelType.swift; sourceTree = "<group>"; };
 		1274130C28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoViewModel.swift; sourceTree = "<group>"; };
 		1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumInfoBulletPointCell.swift; sourceTree = "<group>"; };
+		128237B728D7A5A500EAA276 /* MockSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSceneDelegate.swift; sourceTree = "<group>"; };
 		12904FB528CE0F7A00192F11 /* SKNonPremiumConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKNonPremiumConfiguration.swift; sourceTree = "<group>"; };
 		12904FB828CE12E500192F11 /* AppCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorType.swift; sourceTree = "<group>"; };
 		12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
-		1298248028CFA127001C8D6E /* TravelDexScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelDexScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1298248228CFA127001C8D6E /* TravelDexScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDexScreenshots.swift; sourceTree = "<group>"; };
-		1298248B28CFA167001C8D6E /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1298248E28CFA24B001C8D6E /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
-		12992FCD28CFA96100E625E4 /* MockedTravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockedTravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		12992FCF28CFA99A00E625E4 /* MockSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSceneDelegate.swift; sourceTree = "<group>"; };
+		129F323128D7A4D60092FA8E /* MockedTravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockedTravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		129F323228D7A4D60092FA8E /* MockedTravelDexInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MockedTravelDexInfo.plist; path = /Users/hinzclaudio/CodingProjects/TravelDex/MockedTravelDexInfo.plist; sourceTree = "<absolute>"; };
 		12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
@@ -562,18 +557,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1298247D28CFA127001C8D6E /* Frameworks */ = {
+		126E1A2A28D7A9120037C77F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		12992FBB28CFA96100E625E4 /* Frameworks */ = {
+		129F321D28D7A4D60092FA8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD90DFF2F350E1DA856E87E4 /* Pods_MockedTravelDex.framework in Frameworks */,
+				129F321E28D7A4D60092FA8E /* StoreKit.framework in Frameworks */,
+				129F321F28D7A4D60092FA8E /* (null) in Frameworks */,
+				129F322028D7A4D60092FA8E /* Pods_TravelDex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,8 +664,9 @@
 				12DAB2E128BD522D0066FE22 /* Settings.bundle */,
 				123538F328C4B73B00A7AD12 /* StoreKitConfiguration */,
 				12571EF428BD4F6100CC2AD0 /* TravelDex */,
+				128237B628D7A57800EAA276 /* MockedTravelDex */,
 				12571F0E28BD4F6200CC2AD0 /* TravelDexTests */,
-				1298248128CFA127001C8D6E /* TravelDexScreenshots */,
+				126E1A2E28D7A9130037C77F /* TravelDexScreenshots */,
 				1298248D28CFA24B001C8D6E /* fastlane */,
 				12571EF328BD4F6100CC2AD0 /* Products */,
 				378BBED359A80052BD443F5F /* Pods */,
@@ -681,8 +679,8 @@
 			children = (
 				12571EF228BD4F6100CC2AD0 /* TravelDex.app */,
 				12571F0B28BD4F6200CC2AD0 /* TravelDexTests.xctest */,
-				1298248028CFA127001C8D6E /* TravelDexScreenshots.xctest */,
-				12992FCD28CFA96100E625E4 /* MockedTravelDex.app */,
+				129F323128D7A4D60092FA8E /* MockedTravelDex.app */,
+				126E1A2D28D7A9120037C77F /* TravelDexScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -720,7 +718,6 @@
 			children = (
 				12571F7028BD505400CC2AD0 /* AppDelegate.swift */,
 				12571F7128BD505400CC2AD0 /* SceneDelegate.swift */,
-				12992FCF28CFA99A00E625E4 /* MockSceneDelegate.swift */,
 				12571F4228BD505400CC2AD0 /* CoreData */,
 				12571F2B28BD505400CC2AD0 /* RxSwift */,
 				12571F3228BD505400CC2AD0 /* Dependencies */,
@@ -904,6 +901,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		126E1A2E28D7A9130037C77F /* TravelDexScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				126E1A3928D7A9290037C77F /* SnapshotHelper.swift */,
+				126E1A3828D7A9290037C77F /* TravelDexScreenshots.swift */,
+			);
+			path = TravelDexScreenshots;
+			sourceTree = "<group>";
+		};
 		1274130228CDEC0900FCC8C1 /* ChildCoordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -948,6 +954,15 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		128237B628D7A57800EAA276 /* MockedTravelDex */ = {
+			isa = PBXGroup;
+			children = (
+				128237B728D7A5A500EAA276 /* MockSceneDelegate.swift */,
+				129F323228D7A4D60092FA8E /* MockedTravelDexInfo.plist */,
+			);
+			path = MockedTravelDex;
+			sourceTree = "<group>";
+		};
 		12904FB728CE12D500192F11 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,15 +978,6 @@
 				12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */,
 			);
 			path = CoordinatorTests;
-			sourceTree = "<group>";
-		};
-		1298248128CFA127001C8D6E /* TravelDexScreenshots */ = {
-			isa = PBXGroup;
-			children = (
-				1298248B28CFA167001C8D6E /* SnapshotHelper.swift */,
-				1298248228CFA127001C8D6E /* TravelDexScreenshots.swift */,
-			);
-			path = TravelDexScreenshots;
 			sourceTree = "<group>";
 		};
 		1298248D28CFA24B001C8D6E /* fastlane */ = {
@@ -1507,36 +1513,36 @@
 			productReference = 12571F0B28BD4F6200CC2AD0 /* TravelDexTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1298247F28CFA127001C8D6E /* TravelDexScreenshots */ = {
+		126E1A2C28D7A9120037C77F /* TravelDexScreenshots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1298248828CFA127001C8D6E /* Build configuration list for PBXNativeTarget "TravelDexScreenshots" */;
+			buildConfigurationList = 126E1A3528D7A9130037C77F /* Build configuration list for PBXNativeTarget "TravelDexScreenshots" */;
 			buildPhases = (
-				1298247C28CFA127001C8D6E /* Sources */,
-				1298247D28CFA127001C8D6E /* Frameworks */,
-				1298247E28CFA127001C8D6E /* Resources */,
+				126E1A2928D7A9120037C77F /* Sources */,
+				126E1A2A28D7A9120037C77F /* Frameworks */,
+				126E1A2B28D7A9120037C77F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1298248728CFA127001C8D6E /* PBXTargetDependency */,
-				12992FD328CFABE300E625E4 /* PBXTargetDependency */,
+				126E1A3428D7A9130037C77F /* PBXTargetDependency */,
 			);
 			name = TravelDexScreenshots;
 			productName = TravelDexScreenshots;
-			productReference = 1298248028CFA127001C8D6E /* TravelDexScreenshots.xctest */;
+			productReference = 126E1A2D28D7A9120037C77F /* TravelDexScreenshots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		12992F3228CFA96100E625E4 /* MockedTravelDex */ = {
+		129F319428D7A4D60092FA8E /* MockedTravelDex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 12992FCA28CFA96100E625E4 /* Build configuration list for PBXNativeTarget "MockedTravelDex" */;
+			buildConfigurationList = 129F322E28D7A4D60092FA8E /* Build configuration list for PBXNativeTarget "MockedTravelDex" */;
 			buildPhases = (
-				12992F3328CFA96100E625E4 /* [CP] Check Pods Manifest.lock */,
-				12992F3428CFA96100E625E4 /* Sourcery */,
-				12992F3528CFA96100E625E4 /* SwiftGen */,
-				12992F3628CFA96100E625E4 /* Sources */,
-				12992FBB28CFA96100E625E4 /* Frameworks */,
-				12992FBD28CFA96100E625E4 /* Resources */,
-				12992FC828CFA96100E625E4 /* CopyVersionNumber */,
+				129F319528D7A4D60092FA8E /* [CP] Check Pods Manifest.lock */,
+				129F319628D7A4D60092FA8E /* Sourcery */,
+				129F319728D7A4D60092FA8E /* SwiftGen */,
+				129F319828D7A4D60092FA8E /* Sources */,
+				129F321D28D7A4D60092FA8E /* Frameworks */,
+				129F322128D7A4D60092FA8E /* Resources */,
+				129F322C28D7A4D60092FA8E /* CopyVersionNumber */,
+				129F322D28D7A4D60092FA8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1544,7 +1550,7 @@
 			);
 			name = MockedTravelDex;
 			productName = TravelDex;
-			productReference = 12992FCD28CFA96100E625E4 /* MockedTravelDex.app */;
+			productReference = 129F323128D7A4D60092FA8E /* MockedTravelDex.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1554,7 +1560,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					12571EF128BD4F6100CC2AD0 = {
@@ -1564,9 +1570,10 @@
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 12571EF128BD4F6100CC2AD0;
 					};
-					1298247F28CFA127001C8D6E = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = 12992F3228CFA96100E625E4;
+					126E1A2C28D7A9120037C77F = {
+						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
+						TestTargetID = 129F319428D7A4D60092FA8E;
 					};
 				};
 			};
@@ -1585,9 +1592,9 @@
 			projectRoot = "";
 			targets = (
 				12571EF128BD4F6100CC2AD0 /* TravelDex */,
-				12992F3228CFA96100E625E4 /* MockedTravelDex */,
+				129F319428D7A4D60092FA8E /* MockedTravelDex */,
 				12571F0A28BD4F6200CC2AD0 /* TravelDexTests */,
-				1298247F28CFA127001C8D6E /* TravelDexScreenshots */,
+				126E1A2C28D7A9120037C77F /* TravelDexScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -1618,29 +1625,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1298247E28CFA127001C8D6E /* Resources */ = {
+		126E1A2B28D7A9120037C77F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1298248F28CFA24B001C8D6E /* Snapfile in Resources */,
-				12992F3128CFA54300E625E4 /* Localizable.strings in Resources */,
+				126FCF3D28D7A9D000B17BA9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		12992FBD28CFA96100E625E4 /* Resources */ = {
+		129F322128D7A4D60092FA8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12992FBE28CFA96100E625E4 /* swiftgen.sh in Resources */,
-				12992FBF28CFA96100E625E4 /* Settings.bundle in Resources */,
-				12992FC028CFA96100E625E4 /* LaunchScreen.storyboard in Resources */,
-				12992FC128CFA96100E625E4 /* AutoInitializable.stencil in Resources */,
-				12992FC228CFA96100E625E4 /* AutoBuilder.stencil in Resources */,
-				12992FC328CFA96100E625E4 /* Localizable.strings in Resources */,
-				12992FC428CFA96100E625E4 /* Assets.xcassets in Resources */,
-				12992FC528CFA96100E625E4 /* Pods-TravelDex-metadata.plist in Resources */,
-				12992FC628CFA96100E625E4 /* sourcery.sh in Resources */,
-				12992FC728CFA96100E625E4 /* Pods-TravelDex-settings-metadata.plist in Resources */,
+				129F322228D7A4D60092FA8E /* swiftgen.sh in Resources */,
+				129F322328D7A4D60092FA8E /* Settings.bundle in Resources */,
+				129F322428D7A4D60092FA8E /* LaunchScreen.storyboard in Resources */,
+				129F322528D7A4D60092FA8E /* AutoInitializable.stencil in Resources */,
+				129F322628D7A4D60092FA8E /* AutoBuilder.stencil in Resources */,
+				126FCF3C28D7A9CF00B17BA9 /* Localizable.strings in Resources */,
+				129F322828D7A4D60092FA8E /* Assets.xcassets in Resources */,
+				129F322928D7A4D60092FA8E /* Pods-TravelDex-metadata.plist in Resources */,
+				129F322A28D7A4D60092FA8E /* sourcery.sh in Resources */,
+				129F322B28D7A4D60092FA8E /* Pods-TravelDex-settings-metadata.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1666,7 +1672,7 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"${BUILT_PRODUCTS_DIR}\"\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_PATH}\" )\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $buildVersion\" \"${WRAPPER_NAME}/Settings.bundle/Root.plist\"\n";
 		};
-		12992F3328CFA96100E625E4 /* [CP] Check Pods Manifest.lock */ = {
+		129F319528D7A4D60092FA8E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1681,14 +1687,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MockedTravelDex-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TravelDex-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		12992F3428CFA96100E625E4 /* Sourcery */ = {
+		129F319628D7A4D60092FA8E /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1706,7 +1712,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"TravelDex/CodeGeneration/Scripts/sourcery.sh\"\n";
 		};
-		12992F3528CFA96100E625E4 /* SwiftGen */ = {
+		129F319728D7A4D60092FA8E /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1724,7 +1730,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"TravelDex/CodeGeneration/Scripts/swiftgen.sh\"\n";
 		};
-		12992FC828CFA96100E625E4 /* CopyVersionNumber */ = {
+		129F322C28D7A4D60092FA8E /* CopyVersionNumber */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 12;
@@ -1742,6 +1748,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"${BUILT_PRODUCTS_DIR}\"\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_PATH}\" )\n/usr/libexec/PlistBuddy -c \"Set PreferenceSpecifiers:1:DefaultValue $buildVersion\" \"${WRAPPER_NAME}/Settings.bundle/Root.plist\"\n";
+		};
+		129F322D28D7A4D60092FA8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		12DAB2FB28C3D3030066FE22 /* Sourcery */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2029,152 +2052,152 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1298247C28CFA127001C8D6E /* Sources */ = {
+		126E1A2928D7A9120037C77F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12992F3028CFA53F00E625E4 /* Strings.generated.swift in Sources */,
-				1298248328CFA127001C8D6E /* TravelDexScreenshots.swift in Sources */,
-				1298248C28CFA167001C8D6E /* SnapshotHelper.swift in Sources */,
+				126FCF3E28D7AA1800B17BA9 /* Strings.generated.swift in Sources */,
+				126E1A3A28D7A9290037C77F /* TravelDexScreenshots.swift in Sources */,
+				126E1A3B28D7A9290037C77F /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		12992F3628CFA96100E625E4 /* Sources */ = {
+		129F319828D7A4D60092FA8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12992F3728CFA96100E625E4 /* CDUpdateTrip.swift in Sources */,
-				12992F3828CFA96100E625E4 /* CDLocation+CoreDataProperties.swift in Sources */,
-				12992F3928CFA96100E625E4 /* LocationEntryViewModel.swift in Sources */,
-				12992F3A28CFA96100E625E4 /* Trip.swift in Sources */,
-				12992F3B28CFA96100E625E4 /* Location.swift in Sources */,
-				12992F3C28CFA96100E625E4 /* TripCell.swift in Sources */,
-				12992F3D28CFA96100E625E4 /* Images.generated.swift in Sources */,
-				12992F3E28CFA96100E625E4 /* LocationDisplayController.swift in Sources */,
-				12992F3F28CFA96100E625E4 /* CoordinatorType.swift in Sources */,
-				12992F4028CFA96100E625E4 /* VerificationResultExt.swift in Sources */,
-				12992F4128CFA96100E625E4 /* DependencyProtocols.swift in Sources */,
-				12992F4228CFA96100E625E4 /* DefaultAppDependencies.swift in Sources */,
-				12992F4328CFA96100E625E4 /* SFSymbols.swift in Sources */,
-				12992F4428CFA96100E625E4 /* CDHelperExt.swift in Sources */,
-				12992F4528CFA96100E625E4 /* ColorSelectionCell.swift in Sources */,
-				12992F4628CFA96100E625E4 /* TripsListTableCell.swift in Sources */,
-				12992F4728CFA96100E625E4 /* TitledTextField.swift in Sources */,
-				12992F4828CFA96100E625E4 /* LocationsStoreType.swift in Sources */,
-				12992F4928CFA96100E625E4 /* PremiumInfoViewModelType.swift in Sources */,
-				12992F4A28CFA96100E625E4 /* AppCoordinator.swift in Sources */,
-				12992F4B28CFA96100E625E4 /* InfoManager.swift in Sources */,
-				12992F4C28CFA96100E625E4 /* AppDelegate.swift in Sources */,
-				12992F4D28CFA96100E625E4 /* TitledTextView.swift in Sources */,
-				12992F4E28CFA96100E625E4 /* ColorSelectionViewModelType.swift in Sources */,
-				12992F4F28CFA96100E625E4 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
-				12992F5028CFA96100E625E4 /* CDMigrator.swift in Sources */,
-				12992F5128CFA96100E625E4 /* CDMigrationStep.swift in Sources */,
-				12992F5228CFA96100E625E4 /* EditTripViewModel.swift in Sources */,
-				12992F5328CFA96100E625E4 /* CDTripExt.swift in Sources */,
-				12992F5428CFA96100E625E4 /* TripsListController_TableDelegate.swift in Sources */,
-				12992F5528CFA96100E625E4 /* CDUpdatePlace.swift in Sources */,
-				12992F5628CFA96100E625E4 /* MarkerConformances.swift in Sources */,
-				12992F5728CFA96100E625E4 /* Colors.swift in Sources */,
-				12992F5828CFA96100E625E4 /* DefaultCDStack.swift in Sources */,
-				12992F5928CFA96100E625E4 /* AnimationConstants.swift in Sources */,
-				12992F5A28CFA96100E625E4 /* AddPlacesCommentViewModelType.swift in Sources */,
-				12992F5B28CFA96100E625E4 /* LocationSearchAnnotation.swift in Sources */,
-				12992F5C28CFA96100E625E4 /* UIStackViewExt.swift in Sources */,
-				12992F5D28CFA96100E625E4 /* LocationSearchViewModel.swift in Sources */,
-				12992F5E28CFA96100E625E4 /* DatePickerExt.swift in Sources */,
-				12992F5F28CFA96100E625E4 /* LocaitonDisplay_ MapDelegate.swift in Sources */,
-				12992F6028CFA96100E625E4 /* PremiumStoreCoordinator.swift in Sources */,
-				12992F6128CFA96100E625E4 /* UIButtonExt.swift in Sources */,
-				12992F6228CFA96100E625E4 /* Fonts.swift in Sources */,
-				12992F6328CFA96100E625E4 /* CLGeocoderExtension.swift in Sources */,
-				12992F6428CFA96100E625E4 /* RxString.swift in Sources */,
-				12992F6528CFA96100E625E4 /* UIViewExt.swift in Sources */,
-				12992F6628CFA96100E625E4 /* LocationsStore.swift in Sources */,
-				12992F6728CFA96100E625E4 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
-				12992F6828CFA96100E625E4 /* LocationSearchCoordinator.swift in Sources */,
-				12992F6928CFA96100E625E4 /* MKMapSnapshotterExtension.swift in Sources */,
-				12992F6A28CFA96100E625E4 /* CDLocation+CoreDataClass.swift in Sources */,
-				12992F6B28CFA96100E625E4 /* ColorSelectionViewModel.swift in Sources */,
-				12992F6C28CFA96100E625E4 /* TripsListViewModelType.swift in Sources */,
-				12992F6D28CFA96100E625E4 /* PremiumInfoBulletPointCell.swift in Sources */,
-				12992F6E28CFA96100E625E4 /* RxTapGesture.swift in Sources */,
-				12992F6F28CFA96100E625E4 /* SKProductIDs.swift in Sources */,
-				12992F7028CFA96100E625E4 /* LocationEntryViewModelType.swift in Sources */,
-				12992F7128CFA96100E625E4 /* ScrollableVStackController.swift in Sources */,
-				12992F7228CFA96100E625E4 /* CDMigrationVersion.swift in Sources */,
-				12992F7328CFA96100E625E4 /* AddPlacesCommentViewModel.swift in Sources */,
-				12992F7428CFA96100E625E4 /* LocationDisplayViewModelType.swift in Sources */,
-				12992F7628CFA96100E625E4 /* PremiumStoreViewModel.swift in Sources */,
-				12992F7728CFA96100E625E4 /* DateExt.swift in Sources */,
-				12992F7828CFA96100E625E4 /* TripsListViewModel.swift in Sources */,
-				12992F7928CFA96100E625E4 /* SKStore.swift in Sources */,
-				12992F7A28CFA96100E625E4 /* EditPlaceCell.swift in Sources */,
-				12992F7B28CFA96100E625E4 /* TravelDex.xcdatamodeld in Sources */,
-				12992F7C28CFA96100E625E4 /* ColorSelectionController.swift in Sources */,
-				12992F7D28CFA96100E625E4 /* PlacesStoreType.swift in Sources */,
-				12992F7E28CFA96100E625E4 /* CDTrip+CoreDataClass.swift in Sources */,
-				12992F7F28CFA96100E625E4 /* CDTrip+CoreDataProperties.swift in Sources */,
-				12992F8028CFA96100E625E4 /* LocationDisplayAnnotation.swift in Sources */,
-				12992F8128CFA96100E625E4 /* SnapshotProviderType.swift in Sources */,
-				12992F8228CFA96100E625E4 /* ActivityIndicator.swift in Sources */,
-				12992F8328CFA96100E625E4 /* CDDeleteTrip.swift in Sources */,
-				12992F8428CFA96100E625E4 /* AllPlacesDisplayViewModel.swift in Sources */,
-				12992F8528CFA96100E625E4 /* LocationEntryController.swift in Sources */,
-				12992F8628CFA96100E625E4 /* AddPlacesViewModelType.swift in Sources */,
-				12992F8728CFA96100E625E4 /* MarkterProtocols.swift in Sources */,
-				12992F8828CFA96100E625E4 /* CDDeleteVisistedPlace.swift in Sources */,
-				12992F8928CFA96100E625E4 /* ColoredPill.swift in Sources */,
-				12992F8A28CFA96100E625E4 /* CDUpdateLocations.swift in Sources */,
-				12992F8B28CFA96100E625E4 /* CDLocationExt.swift in Sources */,
-				12992F8C28CFA96100E625E4 /* TripsStoreType.swift in Sources */,
-				12992F8D28CFA96100E625E4 /* CDVisitedPlaceExt.swift in Sources */,
-				12992F8E28CFA96100E625E4 /* PremiumInfoController.swift in Sources */,
-				12992F8F28CFA96100E625E4 /* PremiumStoreViewModelType.swift in Sources */,
-				12992F9028CFA96100E625E4 /* FileManagerExt.swift in Sources */,
-				12992F9128CFA96100E625E4 /* PlaceDisplayViewModel.swift in Sources */,
-				12992F9228CFA96100E625E4 /* Strings.generated.swift in Sources */,
-				12992F9328CFA96100E625E4 /* GeneralStyleManager.swift in Sources */,
-				12992F9428CFA96100E625E4 /* SKStoreType.swift in Sources */,
-				12992F9528CFA96100E625E4 /* TripsStore.swift in Sources */,
-				12992F9628CFA96100E625E4 /* SKNonPremiumConfiguration.swift in Sources */,
-				12992F9728CFA96100E625E4 /* CDAction.swift in Sources */,
-				12992F9828CFA96100E625E4 /* BaseNavigationController.swift in Sources */,
-				12992F9928CFA96100E625E4 /* AddPlacesController.swift in Sources */,
-				12992F9A28CFA96100E625E4 /* Coordinate.swift in Sources */,
-				12992F9B28CFA96100E625E4 /* RxGeocoder.swift in Sources */,
-				12992F9C28CFA96100E625E4 /* LocationSearchController_MapDelegate.swift in Sources */,
-				12992F9D28CFA96100E625E4 /* Sizes.swift in Sources */,
-				12992F9E28CFA96100E625E4 /* UILabelExt.swift in Sources */,
-				12992F9F28CFA96100E625E4 /* UISearchBarExt.swift in Sources */,
-				12992FA028CFA96100E625E4 /* PremiumStoreHeader.swift in Sources */,
-				12992FD128CFA9A400E625E4 /* MockSceneDelegate.swift in Sources */,
-				12992FA128CFA96100E625E4 /* AppCoordinatorType.swift in Sources */,
-				12992FA228CFA96100E625E4 /* SKProductCell.swift in Sources */,
-				12992FA328CFA96100E625E4 /* PhotoPickerViewModelType.swift in Sources */,
-				12992FA428CFA96100E625E4 /* AutoInitializable.generated.swift in Sources */,
-				12992FA528CFA96100E625E4 /* PremiumStoreController.swift in Sources */,
-				12992FA628CFA96100E625E4 /* ColorSelection_CollectionView.swift in Sources */,
-				12992FA728CFA96100E625E4 /* LocationSearchController.swift in Sources */,
-				12992FA828CFA96100E625E4 /* PremiumProduct.swift in Sources */,
-				12992FA928CFA96100E625E4 /* PlacesStore.swift in Sources */,
-				12992FAA28CFA96100E625E4 /* CDObservable.swift in Sources */,
-				12992FAB28CFA96100E625E4 /* EditTripController.swift in Sources */,
-				12992FAC28CFA96100E625E4 /* EditPlaceViewModel.swift in Sources */,
-				12992FAD28CFA96100E625E4 /* TripsListController.swift in Sources */,
-				12992FAE28CFA96100E625E4 /* CDStackType.swift in Sources */,
-				12992FAF28CFA96100E625E4 /* PaddedTextField.swift in Sources */,
-				12992FB028CFA96100E625E4 /* TripLocationDisplayViewModel.swift in Sources */,
-				12992FB128CFA96100E625E4 /* PremiumInfoViewModel.swift in Sources */,
-				12992FB228CFA96100E625E4 /* EditTripViewModelType.swift in Sources */,
-				12992FB328CFA96100E625E4 /* AddedPlaceItem.swift in Sources */,
-				12992FB428CFA96100E625E4 /* AddPlacesCommentController.swift in Sources */,
-				12992FB528CFA96100E625E4 /* VisitedPlace.swift in Sources */,
-				12992FB628CFA96100E625E4 /* RxMapView.swift in Sources */,
-				12992FB728CFA96100E625E4 /* AddPlacesViewModel.swift in Sources */,
-				12992FB828CFA96100E625E4 /* ModalNavigationContainer.swift in Sources */,
-				12992FB928CFA96100E625E4 /* LocationAPIType.swift in Sources */,
-				12992FBA28CFA96100E625E4 /* LocationSearchViewModelType.swift in Sources */,
+				129F319928D7A4D60092FA8E /* CDUpdateTrip.swift in Sources */,
+				129F319A28D7A4D60092FA8E /* CDLocation+CoreDataProperties.swift in Sources */,
+				129F319B28D7A4D60092FA8E /* LocationEntryViewModel.swift in Sources */,
+				129F319C28D7A4D60092FA8E /* Trip.swift in Sources */,
+				129F319D28D7A4D60092FA8E /* Location.swift in Sources */,
+				129F319E28D7A4D60092FA8E /* TripCell.swift in Sources */,
+				129F319F28D7A4D60092FA8E /* Images.generated.swift in Sources */,
+				129F31A028D7A4D60092FA8E /* LocationDisplayController.swift in Sources */,
+				129F31A128D7A4D60092FA8E /* CoordinatorType.swift in Sources */,
+				129F31A228D7A4D60092FA8E /* VerificationResultExt.swift in Sources */,
+				129F31A328D7A4D60092FA8E /* DependencyProtocols.swift in Sources */,
+				129F31A428D7A4D60092FA8E /* DefaultAppDependencies.swift in Sources */,
+				129F31A528D7A4D60092FA8E /* SFSymbols.swift in Sources */,
+				129F31A628D7A4D60092FA8E /* CDHelperExt.swift in Sources */,
+				129F31A728D7A4D60092FA8E /* ColorSelectionCell.swift in Sources */,
+				129F31A828D7A4D60092FA8E /* TripsListTableCell.swift in Sources */,
+				129F31A928D7A4D60092FA8E /* TitledTextField.swift in Sources */,
+				129F31AA28D7A4D60092FA8E /* LocationsStoreType.swift in Sources */,
+				129F31AB28D7A4D60092FA8E /* PremiumInfoViewModelType.swift in Sources */,
+				129F31AC28D7A4D60092FA8E /* AppCoordinator.swift in Sources */,
+				129F31AD28D7A4D60092FA8E /* InfoManager.swift in Sources */,
+				129F31AE28D7A4D60092FA8E /* AppDelegate.swift in Sources */,
+				129F31AF28D7A4D60092FA8E /* TitledTextView.swift in Sources */,
+				129F31B028D7A4D60092FA8E /* ColorSelectionViewModelType.swift in Sources */,
+				129F31B128D7A4D60092FA8E /* CDVisitedPlace+CoreDataClass.swift in Sources */,
+				129F31B228D7A4D60092FA8E /* CDMigrator.swift in Sources */,
+				129F31B328D7A4D60092FA8E /* CDMigrationStep.swift in Sources */,
+				129F31B428D7A4D60092FA8E /* EditTripViewModel.swift in Sources */,
+				129F31B528D7A4D60092FA8E /* CDTripExt.swift in Sources */,
+				129F31B628D7A4D60092FA8E /* TripsListController_TableDelegate.swift in Sources */,
+				129F31B728D7A4D60092FA8E /* CDUpdatePlace.swift in Sources */,
+				129F31B828D7A4D60092FA8E /* MarkerConformances.swift in Sources */,
+				129F31B928D7A4D60092FA8E /* Colors.swift in Sources */,
+				129F31BA28D7A4D60092FA8E /* DefaultCDStack.swift in Sources */,
+				129F31BB28D7A4D60092FA8E /* AnimationConstants.swift in Sources */,
+				129F31BC28D7A4D60092FA8E /* AddPlacesCommentViewModelType.swift in Sources */,
+				129F31BD28D7A4D60092FA8E /* LocationSearchAnnotation.swift in Sources */,
+				129F31BE28D7A4D60092FA8E /* UIStackViewExt.swift in Sources */,
+				129F31BF28D7A4D60092FA8E /* LocationSearchViewModel.swift in Sources */,
+				129F31C028D7A4D60092FA8E /* DatePickerExt.swift in Sources */,
+				129F31C128D7A4D60092FA8E /* LocaitonDisplay_ MapDelegate.swift in Sources */,
+				129F31C228D7A4D60092FA8E /* PremiumStoreCoordinator.swift in Sources */,
+				129F31C328D7A4D60092FA8E /* UIButtonExt.swift in Sources */,
+				129F31C428D7A4D60092FA8E /* Fonts.swift in Sources */,
+				128237B828D7A5A500EAA276 /* MockSceneDelegate.swift in Sources */,
+				129F31C528D7A4D60092FA8E /* CLGeocoderExtension.swift in Sources */,
+				129F31C628D7A4D60092FA8E /* RxString.swift in Sources */,
+				129F31C728D7A4D60092FA8E /* UIViewExt.swift in Sources */,
+				129F31C828D7A4D60092FA8E /* LocationsStore.swift in Sources */,
+				129F31C928D7A4D60092FA8E /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
+				129F31CA28D7A4D60092FA8E /* LocationSearchCoordinator.swift in Sources */,
+				129F31CB28D7A4D60092FA8E /* MKMapSnapshotterExtension.swift in Sources */,
+				129F31CC28D7A4D60092FA8E /* CDLocation+CoreDataClass.swift in Sources */,
+				129F31CD28D7A4D60092FA8E /* ColorSelectionViewModel.swift in Sources */,
+				129F31CE28D7A4D60092FA8E /* TripsListViewModelType.swift in Sources */,
+				129F31CF28D7A4D60092FA8E /* PremiumInfoBulletPointCell.swift in Sources */,
+				129F31D028D7A4D60092FA8E /* RxTapGesture.swift in Sources */,
+				129F31D128D7A4D60092FA8E /* SKProductIDs.swift in Sources */,
+				129F31D228D7A4D60092FA8E /* LocationEntryViewModelType.swift in Sources */,
+				129F31D328D7A4D60092FA8E /* ScrollableVStackController.swift in Sources */,
+				129F31D428D7A4D60092FA8E /* CDMigrationVersion.swift in Sources */,
+				129F31D528D7A4D60092FA8E /* AddPlacesCommentViewModel.swift in Sources */,
+				129F31D628D7A4D60092FA8E /* LocationDisplayViewModelType.swift in Sources */,
+				129F31D828D7A4D60092FA8E /* PremiumStoreViewModel.swift in Sources */,
+				129F31D928D7A4D60092FA8E /* DateExt.swift in Sources */,
+				129F31DA28D7A4D60092FA8E /* TripsListViewModel.swift in Sources */,
+				129F31DB28D7A4D60092FA8E /* SKStore.swift in Sources */,
+				129F31DC28D7A4D60092FA8E /* EditPlaceCell.swift in Sources */,
+				129F31DD28D7A4D60092FA8E /* TravelDex.xcdatamodeld in Sources */,
+				129F31DE28D7A4D60092FA8E /* ColorSelectionController.swift in Sources */,
+				129F31DF28D7A4D60092FA8E /* PlacesStoreType.swift in Sources */,
+				129F31E028D7A4D60092FA8E /* CDTrip+CoreDataClass.swift in Sources */,
+				129F31E128D7A4D60092FA8E /* CDTrip+CoreDataProperties.swift in Sources */,
+				129F31E228D7A4D60092FA8E /* LocationDisplayAnnotation.swift in Sources */,
+				129F31E328D7A4D60092FA8E /* SnapshotProviderType.swift in Sources */,
+				129F31E428D7A4D60092FA8E /* ActivityIndicator.swift in Sources */,
+				129F31E528D7A4D60092FA8E /* CDDeleteTrip.swift in Sources */,
+				129F31E628D7A4D60092FA8E /* AllPlacesDisplayViewModel.swift in Sources */,
+				129F31E728D7A4D60092FA8E /* LocationEntryController.swift in Sources */,
+				129F31E828D7A4D60092FA8E /* AddPlacesViewModelType.swift in Sources */,
+				129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */,
+				129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */,
+				129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */,
+				129F31EC28D7A4D60092FA8E /* CDUpdateLocations.swift in Sources */,
+				129F31ED28D7A4D60092FA8E /* CDLocationExt.swift in Sources */,
+				129F31EE28D7A4D60092FA8E /* TripsStoreType.swift in Sources */,
+				129F31EF28D7A4D60092FA8E /* CDVisitedPlaceExt.swift in Sources */,
+				129F31F028D7A4D60092FA8E /* PremiumInfoController.swift in Sources */,
+				129F31F128D7A4D60092FA8E /* PremiumStoreViewModelType.swift in Sources */,
+				129F31F228D7A4D60092FA8E /* FileManagerExt.swift in Sources */,
+				129F31F328D7A4D60092FA8E /* PlaceDisplayViewModel.swift in Sources */,
+				129F31F428D7A4D60092FA8E /* Strings.generated.swift in Sources */,
+				129F31F528D7A4D60092FA8E /* GeneralStyleManager.swift in Sources */,
+				129F31F628D7A4D60092FA8E /* SKStoreType.swift in Sources */,
+				129F31F728D7A4D60092FA8E /* TripsStore.swift in Sources */,
+				129F31F828D7A4D60092FA8E /* SKNonPremiumConfiguration.swift in Sources */,
+				129F31F928D7A4D60092FA8E /* CDAction.swift in Sources */,
+				129F31FA28D7A4D60092FA8E /* BaseNavigationController.swift in Sources */,
+				129F31FB28D7A4D60092FA8E /* AddPlacesController.swift in Sources */,
+				129F31FC28D7A4D60092FA8E /* Coordinate.swift in Sources */,
+				129F31FD28D7A4D60092FA8E /* RxGeocoder.swift in Sources */,
+				129F31FE28D7A4D60092FA8E /* LocationSearchController_MapDelegate.swift in Sources */,
+				129F31FF28D7A4D60092FA8E /* Sizes.swift in Sources */,
+				129F320028D7A4D60092FA8E /* UILabelExt.swift in Sources */,
+				129F320128D7A4D60092FA8E /* UISearchBarExt.swift in Sources */,
+				129F320228D7A4D60092FA8E /* PremiumStoreHeader.swift in Sources */,
+				129F320328D7A4D60092FA8E /* AppCoordinatorType.swift in Sources */,
+				129F320428D7A4D60092FA8E /* SKProductCell.swift in Sources */,
+				129F320528D7A4D60092FA8E /* PhotoPickerViewModelType.swift in Sources */,
+				129F320628D7A4D60092FA8E /* AutoInitializable.generated.swift in Sources */,
+				129F320728D7A4D60092FA8E /* PremiumStoreController.swift in Sources */,
+				129F320828D7A4D60092FA8E /* ColorSelection_CollectionView.swift in Sources */,
+				129F320928D7A4D60092FA8E /* LocationSearchController.swift in Sources */,
+				129F320A28D7A4D60092FA8E /* PremiumProduct.swift in Sources */,
+				129F320B28D7A4D60092FA8E /* PlacesStore.swift in Sources */,
+				129F320C28D7A4D60092FA8E /* CDObservable.swift in Sources */,
+				129F320D28D7A4D60092FA8E /* EditTripController.swift in Sources */,
+				129F320E28D7A4D60092FA8E /* EditPlaceViewModel.swift in Sources */,
+				129F320F28D7A4D60092FA8E /* TripsListController.swift in Sources */,
+				129F321028D7A4D60092FA8E /* CDStackType.swift in Sources */,
+				129F321128D7A4D60092FA8E /* PaddedTextField.swift in Sources */,
+				129F321228D7A4D60092FA8E /* TripLocationDisplayViewModel.swift in Sources */,
+				129F321328D7A4D60092FA8E /* PremiumInfoViewModel.swift in Sources */,
+				129F321428D7A4D60092FA8E /* EditTripViewModelType.swift in Sources */,
+				129F321528D7A4D60092FA8E /* AddedPlaceItem.swift in Sources */,
+				129F321628D7A4D60092FA8E /* AddPlacesCommentController.swift in Sources */,
+				129F321728D7A4D60092FA8E /* VisitedPlace.swift in Sources */,
+				129F321828D7A4D60092FA8E /* RxMapView.swift in Sources */,
+				129F321928D7A4D60092FA8E /* AddPlacesViewModel.swift in Sources */,
+				129F321A28D7A4D60092FA8E /* ModalNavigationContainer.swift in Sources */,
+				129F321B28D7A4D60092FA8E /* LocationAPIType.swift in Sources */,
+				129F321C28D7A4D60092FA8E /* LocationSearchViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2186,15 +2209,10 @@
 			target = 12571EF128BD4F6100CC2AD0 /* TravelDex */;
 			targetProxy = 12571F0C28BD4F6200CC2AD0 /* PBXContainerItemProxy */;
 		};
-		1298248728CFA127001C8D6E /* PBXTargetDependency */ = {
+		126E1A3428D7A9130037C77F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 12571EF128BD4F6100CC2AD0 /* TravelDex */;
-			targetProxy = 1298248628CFA127001C8D6E /* PBXContainerItemProxy */;
-		};
-		12992FD328CFABE300E625E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 12992F3228CFA96100E625E4 /* MockedTravelDex */;
-			targetProxy = 12992FD228CFABE300E625E4 /* PBXContainerItemProxy */;
+			target = 129F319428D7A4D60092FA8E /* MockedTravelDex */;
+			targetProxy = 126E1A3328D7A9130037C77F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2467,32 +2485,47 @@
 			};
 			name = Release;
 		};
-		1298248928CFA127001C8D6E /* Debug */ = {
+		126E1A3628D7A9130037C77F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDexScreenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MockedTravelDex;
 			};
 			name = Debug;
 		};
-		1298248A28CFA127001C8D6E /* Release */ = {
+		126E1A3728D7A9130037C77F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDexScreenshots;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2503,22 +2536,25 @@
 			};
 			name = Release;
 		};
-		12992FCB28CFA96100E625E4 /* Debug */ = {
+		129F322F28D7A4D60092FA8E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD5A381729FBFBBF25634DDA /* Pods-MockedTravelDex.debug.xcconfig */;
+			baseConfigurationReference = 0448098B428158342C41259F /* Pods-TravelDex.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R64UUKWT68;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelDex/Info.plist;
+				INFOPLIST_FILE = MockedTravelDexInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -2531,28 +2567,36 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development de.hinzclaudio.TravelDex";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		12992FCC28CFA96100E625E4 /* Release */ = {
+		129F323028D7A4D60092FA8E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 853C9B0222FCB7EAE186FEF0 /* Pods-MockedTravelDex.release.xcconfig */;
+			baseConfigurationReference = 539A92A4F9B1EDCF3FAE5882 /* Pods-TravelDex.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R64UUKWT68;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelDex/Info.plist;
+				INFOPLIST_FILE = MockedTravelDexInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -2565,9 +2609,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore de.hinzclaudio.TravelDex";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -2601,20 +2650,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1298248828CFA127001C8D6E /* Build configuration list for PBXNativeTarget "TravelDexScreenshots" */ = {
+		126E1A3528D7A9130037C77F /* Build configuration list for PBXNativeTarget "TravelDexScreenshots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1298248928CFA127001C8D6E /* Debug */,
-				1298248A28CFA127001C8D6E /* Release */,
+				126E1A3628D7A9130037C77F /* Debug */,
+				126E1A3728D7A9130037C77F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		12992FCA28CFA96100E625E4 /* Build configuration list for PBXNativeTarget "MockedTravelDex" */ = {
+		129F322E28D7A4D60092FA8E /* Build configuration list for PBXNativeTarget "MockedTravelDex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12992FCB28CFA96100E625E4 /* Debug */,
-				12992FCC28CFA96100E625E4 /* Release */,
+				129F322F28D7A4D60092FA8E /* Debug */,
+				129F323028D7A4D60092FA8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

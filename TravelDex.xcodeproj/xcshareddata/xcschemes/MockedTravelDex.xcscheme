@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1340"
+   LastUpgradeVersion = "1400"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12992F3228CFA96100E625E4"
+               BlueprintIdentifier = "129F319428D7A4D60092FA8E"
                BuildableName = "MockedTravelDex.app"
                BlueprintName = "MockedTravelDex"
                ReferencedContainer = "container:TravelDex.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "12992F3228CFA96100E625E4"
+            BlueprintIdentifier = "129F319428D7A4D60092FA8E"
             BuildableName = "MockedTravelDex.app"
             BlueprintName = "MockedTravelDex"
             ReferencedContainer = "container:TravelDex.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "12992F3228CFA96100E625E4"
+            BlueprintIdentifier = "129F319428D7A4D60092FA8E"
             BuildableName = "MockedTravelDex.app"
             BlueprintName = "MockedTravelDex"
             ReferencedContainer = "container:TravelDex.xcodeproj">
