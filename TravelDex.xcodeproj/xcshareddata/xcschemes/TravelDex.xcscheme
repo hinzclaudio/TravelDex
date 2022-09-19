@@ -43,7 +43,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1298247F28CFA127001C8D6E"
+               BlueprintIdentifier = "126E1A2C28D7A9120037C77F"
                BuildableName = "TravelDexScreenshots.xctest"
                BlueprintName = "TravelDexScreenshots"
                ReferencedContainer = "container:TravelDex.xcodeproj">
@@ -55,7 +55,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "en"
+      language = "de"
       region = "DE"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"

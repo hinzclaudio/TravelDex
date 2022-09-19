@@ -66,3 +66,5 @@
 "mocked_trip_title3" = "Rurhgebiet";
 "mocked_trip_descr3" = "We got to see the famous Ruhrgebiet! The cities certainly aren't beautiful. But they do have culture. Some at least...";
 "mocked_trip_members3" = "My Girlfriend";
+"action_add_trip" = "Add Trip";
+"action_save" = "Save";

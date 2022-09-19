@@ -14,6 +14,8 @@ internal enum Localizable {
   internal static let actionAddImage = Localizable.tr("Localizable", "action_add_image", fallback: "Add Image")
   /// Add Location
   internal static let actionAddLocation = Localizable.tr("Localizable", "action_add_location", fallback: "Add Location")
+  /// Add Trip
+  internal static let actionAddTrip = Localizable.tr("Localizable", "action_add_trip", fallback: "Add Trip")
   /// Change Image
   internal static let actionChangeImage = Localizable.tr("Localizable", "action_change_image", fallback: "Change Image")
   /// Delete
@@ -28,6 +30,8 @@ internal enum Localizable {
   internal static let actionPickColor = Localizable.tr("Localizable", "action_pick_color", fallback: "Pick Color")
   /// Restore Purchases
   internal static let actionRestore = Localizable.tr("Localizable", "action_restore", fallback: "Restore Purchases")
+  /// Save
+  internal static let actionSave = Localizable.tr("Localizable", "action_save", fallback: "Save")
   /// Show on Map
   internal static let actionShowOnMap = Localizable.tr("Localizable", "action_show_on_map", fallback: "Show on Map")
   /// Add Location

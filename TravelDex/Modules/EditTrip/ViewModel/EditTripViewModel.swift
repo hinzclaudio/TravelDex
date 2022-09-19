@@ -47,9 +47,9 @@ class EditTripViewModel: EditTripViewModelType {
     
     lazy var confirmButtonTitle: Driver<String> = {
         if let tripId = tripId {
-            return .just("Update Trip")
+            return .just(Localizable.actionSave)
         } else {
-            return .just("Add Trip")
+            return .just(Localizable.actionAddTrip)
         }
     }()
     
