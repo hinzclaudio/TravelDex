@@ -73,7 +73,9 @@ class SKStore: SKStoreType {
     // MARK: - Private Implementation
     private func requestProducts() async {
         do {
-            let availableProducts = try await Product.products(for: SKProductIDs.allCases.map(\.rawValue))
+            let availableProducts = try await Product
+                .products(for: SKProductIDs.allCases.map(\.rawValue))
+                .sorted(by: { prod1, prod2 in prod1.price <= prod2.price })
             _products.accept(availableProducts)
         } catch {
             assertionFailure("Something's wrong: \(error)")
