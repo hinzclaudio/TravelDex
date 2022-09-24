@@ -9,7 +9,21 @@ import Foundation
 
 
 
+
+enum FileManagementError: Error {
+    case missingDirectory
+}
+
+
 extension FileManager {
+    
+    func getDocumentDirectoryURL() throws -> URL {
+        if let url = urls(for: .documentDirectory, in: .userDomainMask).first {
+            return url
+        } else {
+            throw FileManagementError.missingDirectory
+        }
+    }
     
     func ensureDirectoryExists(at url: URL) throws {
         var isDir: ObjCBool = false

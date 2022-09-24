@@ -13,6 +13,7 @@ target 'TravelDex' do
   pod 'CryptoSwift'
   pod 'IQKeyboardManager'
   pod 'DTPhotoViewerController'
+  pod 'ZIPFoundation'
 
   target 'TravelDexTests' do
     inherit! :search_paths

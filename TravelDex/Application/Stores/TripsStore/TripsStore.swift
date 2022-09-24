@@ -36,6 +36,10 @@ class TripsStore: TripsStoreType {
             .subscribe(onNext: { [weak self] in self?.dispatch($0) })
     }
     
+    func export(_ trip: Observable<Trip>) -> Observable<URL> {
+        .empty()
+    }
+    
     
     // MARK: - Output
     func trips(forSearch query: String = "") -> Observable<[Trip]> {
@@ -50,22 +54,8 @@ class TripsStore: TripsStoreType {
         return CDObservable(fetchRequest: tripsQuery, context: context)
             .map { trips in
                 trips
-                    .sorted { cdTrip0, cdTrip1 in
-                        let start0 = cdTrip0.startDate
-                        let start1 = cdTrip1.startDate
-                        if let start0 = start0, let start1 = start1 {
-                            return start0 < start1
-                        } else if start0 != nil {
-                            return true
-                        } else if start1 != nil {
-                            return false
-                        } else {
-                            return cdTrip0.title.localizedStandardCompare(cdTrip1.title) == .orderedAscending
-                        }
-                    }
-                    .map { trip in
-                        trip.pureRepresentation
-                    }
+                    .sortedByPlaces
+                    .map { trip in trip.pureRepresentation }
             }
     }
     
