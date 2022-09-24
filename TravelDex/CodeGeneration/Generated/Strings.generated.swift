@@ -14,10 +14,12 @@ internal enum Localizable {
   internal static let actionAddImage = Localizable.tr("Localizable", "action_add_image", fallback: "Add Image")
   /// Add Location
   internal static let actionAddLocation = Localizable.tr("Localizable", "action_add_location", fallback: "Add Location")
-  /// Add Trip
-  internal static let actionAddTrip = Localizable.tr("Localizable", "action_add_trip", fallback: "Add Trip")
+  /// Add trip
+  internal static let actionAddTrip = Localizable.tr("Localizable", "action_add_trip", fallback: "Add trip")
   /// Change Image
   internal static let actionChangeImage = Localizable.tr("Localizable", "action_change_image", fallback: "Change Image")
+  /// Create a trip
+  internal static let actionCreateTrip = Localizable.tr("Localizable", "action_create_trip", fallback: "Create a trip")
   /// Delete
   internal static let actionDelete = Localizable.tr("Localizable", "action_delete", fallback: "Delete")
   /// Delete Image
@@ -26,6 +28,8 @@ internal enum Localizable {
   internal static let actionEdit = Localizable.tr("Localizable", "action_edit", fallback: "Edit")
   /// Edit Comment
   internal static let actionEditComment = Localizable.tr("Localizable", "action_edit_comment", fallback: "Edit Comment")
+  /// Import a trip
+  internal static let actionImportTrip = Localizable.tr("Localizable", "action_import_trip", fallback: "Import a trip")
   /// Pick Color
   internal static let actionPickColor = Localizable.tr("Localizable", "action_pick_color", fallback: "Pick Color")
   /// Restore Purchases
@@ -107,8 +111,10 @@ internal enum Localizable {
   internal static let premiumInfoContent1 = Localizable.tr("Localizable", "premium_info_content1", fallback: "add as many locations per trip as you want.")
   /// choose colors for your trips.
   internal static let premiumInfoContent2 = Localizable.tr("Localizable", "premium_info_content2", fallback: "choose colors for your trips.")
+  /// import and export trips.
+  internal static let premiumInfoContent3 = Localizable.tr("Localizable", "premium_info_content3", fallback: "import and export trips.")
   /// tell your friends that you support independent developers.
-  internal static let premiumInfoContent3 = Localizable.tr("Localizable", "premium_info_content3", fallback: "tell your friends that you support independent developers.")
+  internal static let premiumInfoContent4 = Localizable.tr("Localizable", "premium_info_content4", fallback: "tell your friends that you support independent developers.")
   /// With premium features enabled, you will be able to ...
   internal static let premiumInfoHeader = Localizable.tr("Localizable", "premium_info_header", fallback: "With premium features enabled, you will be able to ...")
   /// Premium Features

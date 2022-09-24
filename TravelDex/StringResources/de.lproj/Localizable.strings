@@ -53,7 +53,8 @@
 "premium_info_header" = "Wenn Sie die Premium Features gekauft haben, können Sie ...";
 "premium_info_content1" = "so viele Orte zu Reisen hinzufügen wie Sie wollen.";
 "premium_info_content2" = "Farben für Ihre Reisen wählen.";
-"premium_info_content3" = "Ihren Freunden erzählen, dass Sie unabhängige Entwickler unterstützen.";
+"premium_info_content3" = "Reisen importieren und exportieren.";
+"premium_info_content4" = "Ihren Freunden erzählen, dass Sie unabhängige Entwickler unterstützen.";
 "premium_disabled_title" = "Premium Feature";
 "premium_disabled_msg" = "Leider können Sie dieses Feature nur mit der Premium Version der App ntuzen.";
 "premium_places_exhausted" = "Leider können Sie mit der Gratis-Version nur bis zu %d Orte hinzufügen.";
@@ -66,5 +67,7 @@
 "mocked_trip_title3" = "Rurhgebiet";
 "mocked_trip_descr3" = "Wir haben das berühmte Ruhrgebiet besucht! Die Städte sind bestimmt nicht schön. Aber sie haben Kultur. Manchmal zumindest...";
 "mocked_trip_members3" = "Meine Freundin";
-"action_add_trip" = "Reise Hinzufügen";
+"action_add_trip" = "Reise hinzufügen";
 "action_save" = "Speichern";
+"action_create_trip" = "Reise erstellen";
+"action_import_trip" = "Reise importieren";

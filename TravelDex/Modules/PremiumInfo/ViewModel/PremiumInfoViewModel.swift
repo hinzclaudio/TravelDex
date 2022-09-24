@@ -17,7 +17,8 @@ class PremiumInfoViewModel: PremiumInfoViewModelType {
         .just([
             Localizable.premiumInfoContent1,
             Localizable.premiumInfoContent2,
-            Localizable.premiumInfoContent3
+            Localizable.premiumInfoContent3,
+            Localizable.premiumInfoContent4
         ])
     }()
     

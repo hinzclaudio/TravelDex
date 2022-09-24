@@ -53,7 +53,8 @@
 "premium_info_header" = "With premium features enabled, you will be able to ...";
 "premium_info_content1" = "add as many locations per trip as you want.";
 "premium_info_content2" = "choose colors for your trips.";
-"premium_info_content3" = "tell your friends that you support independent developers.";
+"premium_info_content3" = "import and export trips.";
+"premium_info_content4" = "tell your friends that you support independent developers.";
 "premium_disabled_title" = "Premium Feature";
 "premium_disabled_msg" = "Unfortunately, this feature may only be used with the premium version of the app.";
 "premium_places_exhausted" = "Unfortunately, you can only add up to %d locations with the free version of the app.";
@@ -66,5 +67,7 @@
 "mocked_trip_title3" = "Rurhgebiet";
 "mocked_trip_descr3" = "We got to see the famous Ruhrgebiet! The cities certainly aren't beautiful. But they do have culture. Some at least...";
 "mocked_trip_members3" = "My Girlfriend";
-"action_add_trip" = "Add Trip";
+"action_add_trip" = "Add trip";
 "action_save" = "Save";
+"action_create_trip" = "Create a trip";
+"action_import_trip" = "Import a trip";

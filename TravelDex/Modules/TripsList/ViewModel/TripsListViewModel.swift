@@ -15,7 +15,7 @@ class TripsListVieModel: TripsListViewModelType {
     
     weak var coordinator: AppCoordinatorType?
     
-    typealias Dependencies = HasTripsStore
+    typealias Dependencies = HasTripsStore & HasSKStore
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
@@ -36,8 +36,11 @@ class TripsListVieModel: TripsListViewModelType {
     }
     
     func addTapped(_ tap: Observable<Void>) -> Disposable {
-        tap
-            .subscribe(onNext: { [weak self] in self?.coordinator?.goToAddTrip() })
+        coordinator?.goToAddTrip(when: tap) ?? Disposables.create()
+    }
+    
+    func importTapped(_ tap: Observable<Void>) -> Disposable {
+        coordinator?.goToImportTrip(when: tap) ?? Disposables.create()
     }
     
     func select(_ trip: Observable<Trip>) -> Disposable {
@@ -62,9 +65,18 @@ class TripsListVieModel: TripsListViewModelType {
     
 
     // MARK: - Output
+    lazy var tripsIsEmpty: Driver<Bool> = {
+        dependencies.tripsStore.trips(forSearch: "")
+            .map { $0.isEmpty }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
+    }()
+    
     func trips(for search: Observable<String>) -> Driver<[Trip]> {
         search
-            .flatMapLatest { [unowned self] query in self.dependencies.tripsStore.trips(forSearch: query) }
+            .flatMapLatest { [unowned self] query in
+                self.dependencies.tripsStore.trips(forSearch: query)
+            }
             .asDriver(onErrorJustReturn: [])
     }
     

@@ -65,7 +65,8 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testGoToAddTripPresentsEditTripController() {
-        coordinator.goToAddTrip()
+        let _ = coordinator
+            .goToAddTrip(when: .just(()))
         let editTripExists = allViewControllers
             .contains(where: { $0 is EditTripController })
         XCTAssertTrue(editTripExists)

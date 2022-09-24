@@ -14,6 +14,8 @@ class TripsListController: UIViewController {
     
     let viewModel: TripsListViewModelType
     
+    let addTap = PublishSubject<Void>()
+    let importTap = PublishSubject<Void>()
     let editingIP = PublishSubject<IndexPath>()
     let pickingColorIP = PublishSubject<IndexPath>()
     let deletionIP = PublishSubject<IndexPath>()
@@ -78,6 +80,26 @@ class TripsListController: UIViewController {
         addTripLabel.styleText()
         addTripLabel.textAlignment = .center
         addTripLabel.text = Localizable.missingTrips
+        
+        addButton.menu = UIMenu(
+            title: Localizable.menuTitle,
+            children: [
+                UIAction(
+                    title: Localizable.actionCreateTrip,
+                    image: SFSymbol.plus.image,
+                    handler: { [unowned self] _ in
+                        self.addTap.onNext(())
+                    }
+                ),
+                UIAction(
+                    title: Localizable.actionImportTrip,
+                    image: SFSymbol.download.image,
+                    handler: { [unowned self] _ in
+                        self.importTap.onNext(())
+                    }
+                )
+            ]
+        )
     }
     
     private func setAutoLayout() {
@@ -98,27 +120,26 @@ class TripsListController: UIViewController {
             .disposed(by: bag)
         
         viewModel
-            .addTapped(addButton.rx.tap.asObservable())
-            .disposed(by: bag)
-        
-        viewModel
             .storeTapped(storeButton.rx.tap.asObservable())
             .disposed(by: bag)
         
-        let searchQuery = searchController.searchBar.rx.text.orEmpty.asObservable()
-        let trips = viewModel.trips(for: searchQuery)
+        viewModel.addTapped(addTap)
+            .disposed(by: bag)
         
-        let tripsAvailable = trips
-            .map { !$0.isEmpty }
-            .distinctUntilChanged()
-        tripsAvailable
-            .map { !$0 }
+        viewModel.importTapped(importTap)
+            .disposed(by: bag)
+        
+        viewModel.tripsIsEmpty
             .drive(tableView.rx.isHidden)
             .disposed(by: bag)
-        tripsAvailable
+        viewModel.tripsIsEmpty
+            .map { !$0 }
             .drive(addTripLabel.rx.isHidden)
             .disposed(by: bag)
         
+        let searchQuery = searchController.searchBar.rx.text.orEmpty
+            .asObservable()
+        let trips = viewModel.trips(for: searchQuery)
         trips
             .drive(
                 tableView.rx.items(

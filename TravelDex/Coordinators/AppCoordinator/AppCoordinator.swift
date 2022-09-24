@@ -42,11 +42,28 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     
-    func goToAddTrip() {
-        let viewModel = EditTripViewModel(dependencies: dependencies)
-        viewModel.coordinator = self
-        let controller = EditTripController(viewModel: viewModel)
-        modalController = presentModally(controller)
+    func goToAddTrip(when tapped: Observable<Void>) -> Disposable {
+        tapped
+            .subscribe(onNext: { [unowned self] in
+                let viewModel = EditTripViewModel(dependencies: self.dependencies)
+                viewModel.coordinator = self
+                let controller = EditTripController(viewModel: viewModel)
+                self.modalController = self.presentModally(controller)
+            })
+    }
+    
+    
+    func goToImportTrip(when tapped: Observable<Void>) -> Disposable {
+        tapped.withLatestFrom(dependencies.skStore.premiumFeaturesEnabled)
+            .subscribe(onNext: { [unowned self] premiumEnabled in
+                if premiumEnabled {
+                    // TODO: Present some new screen...
+                } else {
+                    let info = InfoManager.makePremiumDisabledInfo()
+                    (self.modalController ?? self.navigationController)
+                        .present(info, animated: animationsEnabled)
+                }
+            })
     }
     
     

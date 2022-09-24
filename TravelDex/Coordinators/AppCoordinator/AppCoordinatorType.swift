@@ -20,7 +20,8 @@ protocol AppCoordinatorType: CoordinatorType {
     func pickPhoto(_ viewModel: PhotoPickerViewModelType, for visitedPlace: VisitedPlace)
     func photoViewer(from view: UIImageView?, image: UIImage?)
     
-    func goToAddTrip()
+    func goToAddTrip(when tapped: Observable<Void>) -> Disposable
+    func goToImportTrip(when tapped: Observable<Void>) -> Disposable
     func didUpdate(_ trip: Trip)
     func select(_ trip: Trip)
     func edit(_ trip: Trip)
