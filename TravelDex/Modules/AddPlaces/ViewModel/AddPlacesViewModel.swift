@@ -23,6 +23,20 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     init(dependencies: Dependencies, trip: Trip) {
         self.dependencies = dependencies
         self.initialTrip = trip
+        
+        // We want to look for any places that have some kind of attachment (text or pic).
+        // Any of those items should be displayed in an expanded state initially.
+        let _ = dependencies.placesStore
+            .places(for: .just(trip.id))
+            .take(1)
+            .map { places in
+                places
+                    .map(\.visitedPlace)
+                    .filter { $0.text != nil || $0.picture != nil }
+                    .map(\.id)
+            }
+            .map { Set($0) }
+            .bind(to: _expandedItems)
     }
     
     
