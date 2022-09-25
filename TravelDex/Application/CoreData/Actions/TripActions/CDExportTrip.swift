@@ -26,7 +26,7 @@ struct CDExportTrip: CDAction {
         do {
             let exportFormat = try cdTrip.exportFormat(using: context)
             let fm = FileManager.default
-            let fileName = cdTrip.title + ".tdex"
+            let fileName = cdTrip.title.lettersOnly + ".tdex"
             let docDirURL = try fm.getDocumentDirectoryURL()
             let archiveURL = docDirURL.appendingPathComponent(fileName)
             
