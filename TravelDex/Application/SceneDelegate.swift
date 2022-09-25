@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,6 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.appCoordinator.start()
         
         window!.makeKeyAndVisible()
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let urlContext = URLContexts.first,
+              urlContext.url.scheme == "file"
+        else { return }
+        let _ = appCoordinator?
+            .handle(importForFileAt: .just(urlContext.url), inPlace: urlContext.options.openInPlace)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

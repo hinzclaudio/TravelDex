@@ -14,7 +14,7 @@ extension TripsListViewModel: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let pickedFileURL = urls.first else { return }
         let importedTrip = dependencies.tripsStore
-            .importData(from: pickedFileURL)
+            .importData(from: pickedFileURL, inPlace: true)
             .materialize()
             .do(onNext: { [weak self] in self?._errors.accept($0.error) })
             .compactMap { $0.element }

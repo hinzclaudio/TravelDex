@@ -54,10 +54,10 @@ class TripsStore: TripsStoreType {
             }
     }
     
-    func importData(from fileURL: URL) -> Observable<Trip> {
+    func importData(from fileURL: URL, inPlace: Bool) -> Observable<Trip> {
         Observable
             .create { observer in
-                let action = CDImportTrip(fileURL: fileURL) { result in
+                let action = CDImportTrip(fileURL: fileURL, inPlace: inPlace) { result in
                     switch result {
                     case .success(let trip):
                         observer.onNext(trip)

@@ -14,16 +14,24 @@ import ZIPFoundation
 struct CDImportTrip: CDAction {
     
     let fileURL: URL
+    let inPlace: Bool
     let completion: (Result<Trip, Error>) -> Void
     
     func execute(in context: NSManagedObjectContext) throws {
         do {
-            guard fileURL.startAccessingSecurityScopedResource()
-            else { throw FileManagementError.unknown }
-            defer { fileURL.stopAccessingSecurityScopedResource() }
-            
             let fm = FileManager.default
             let tempDirURL = fm.temporaryDirectory
+            
+            var fileURL = fileURL
+            if inPlace {
+                guard fileURL.startAccessingSecurityScopedResource()
+                else { throw FileManagementError.unknown }
+            } else {
+                let tmpURL = fm.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+                try fm.copyItem(at: fileURL, to: tmpURL)
+                fileURL = tmpURL
+            }
+            
             let extractionURL = tempDirURL.appendingPathComponent(UUID().uuidString)
             try fm.unzipItem(at: fileURL, to: extractionURL)
             
@@ -40,6 +48,7 @@ struct CDImportTrip: CDAction {
             
             let contentsURL = extractionURL.appendingPathComponent(ExportConstants.contentsFileName)
             let contentsData = try Data(contentsOf: contentsURL)
+            fileURL.stopAccessingSecurityScopedResource()
             
             // Decode the export.
             let jsonCoder = JSONDecoder()
@@ -113,6 +122,7 @@ struct CDImportTrip: CDAction {
             }
             
         } catch {
+            fileURL.stopAccessingSecurityScopedResource()
             DispatchQueue.main.async {
                 completion(.failure(error))
             }

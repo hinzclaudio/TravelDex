@@ -15,6 +15,7 @@ protocol AppCoordinatorType: CoordinatorType {
     func selectStore()
     func comment(on item: AddedPlaceItem)
     
+    func handle(importForFileAt url: Observable<URL>, inPlace: Bool) -> Disposable
     func dismissModalController()
     
     func pickPhoto(_ viewModel: PhotoPickerViewModelType, for visitedPlace: VisitedPlace)
