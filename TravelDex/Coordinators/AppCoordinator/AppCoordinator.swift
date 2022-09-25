@@ -67,6 +67,17 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     
+    func share(exportAt url: Observable<URL>) -> Disposable {
+        url
+            .subscribe(onNext: { [weak self] fileURL in
+                let controller = UIActivityViewController(activityItems: [fileURL], applicationActivities: nil)
+                self?.modalController = controller
+                (self?.navigationController ?? self?.modalController)?
+                    .present(controller, animated: self?.animationsEnabled ?? false)
+            })
+    }
+    
+    
     func didUpdate(_ trip: Trip) {
         modalController?.dismiss(animated: animationsEnabled)
     }

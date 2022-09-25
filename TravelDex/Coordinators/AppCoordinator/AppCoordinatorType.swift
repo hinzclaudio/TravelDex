@@ -22,6 +22,7 @@ protocol AppCoordinatorType: CoordinatorType {
     
     func goToAddTrip(when tapped: Observable<Void>) -> Disposable
     func goToImportTrip(when tapped: Observable<Void>) -> Disposable
+    func share(exportAt url: Observable<URL>) -> Disposable
     func didUpdate(_ trip: Trip)
     func select(_ trip: Trip)
     func edit(_ trip: Trip)

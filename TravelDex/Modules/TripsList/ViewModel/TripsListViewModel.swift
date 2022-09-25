@@ -43,6 +43,21 @@ class TripsListVieModel: TripsListViewModelType {
         coordinator?.goToImportTrip(when: tap) ?? Disposables.create()
     }
     
+    func export(_ trip: Observable<Trip>) -> Disposable {
+        let exportFile = trip
+            .flatMapLatest { [unowned self] trip in
+                self.dependencies.tripsStore
+                    .export(trip)
+                    .materialize()
+            }
+            .do(onNext: { [weak self] in
+                guard let error = $0.error else { return }
+                print("ERROR: \(error)")
+            })
+            .compactMap(\.element)
+        return coordinator?.share(exportAt: exportFile) ?? Disposables.create()
+    }
+    
     func select(_ trip: Observable<Trip>) -> Disposable {
         trip
             .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })

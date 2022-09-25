@@ -11,7 +11,6 @@
 		1206331A28DF966600FA05F8 /* TripExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331928DF966600FA05F8 /* TripExport.swift */; };
 		1206331C28DF969300FA05F8 /* VisitedPlaceExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */; };
 		1206331E28DF980A00FA05F8 /* CDExportTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331D28DF980A00FA05F8 /* CDExportTrip.swift */; };
-		1206332028DFB81200FA05F8 /* ResultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331F28DFB81200FA05F8 /* ResultExt.swift */; };
 		1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
 		1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
 		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
@@ -355,7 +354,6 @@
 		1206331928DF966600FA05F8 /* TripExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripExport.swift; sourceTree = "<group>"; };
 		1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPlaceExport.swift; sourceTree = "<group>"; };
 		1206331D28DF980A00FA05F8 /* CDExportTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDExportTrip.swift; sourceTree = "<group>"; };
-		1206331F28DFB81200FA05F8 /* ResultExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExt.swift; sourceTree = "<group>"; };
 		1221F45728C4D74200BE20E3 /* PremiumProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProduct.swift; sourceTree = "<group>"; };
 		1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreHeader.swift; sourceTree = "<group>"; };
 		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
@@ -915,7 +913,6 @@
 				12571F6D28BD505400CC2AD0 /* UIStackViewExt.swift */,
 				12571F6E28BD505400CC2AD0 /* DateExt.swift */,
 				12571F6F28BD505400CC2AD0 /* UILabelExt.swift */,
-				1206331F28DFB81200FA05F8 /* ResultExt.swift */,
 				1235390328C4BEB900A7AD12 /* VerificationResultExt.swift */,
 			);
 			path = Extensions;
@@ -2011,7 +2008,6 @@
 				12DAB36228C3D42F0066FE22 /* EditTripController.swift in Sources */,
 				12DAB36728C3D42F0066FE22 /* EditPlaceViewModel.swift in Sources */,
 				12DAB37728C3D42F0066FE22 /* TripsListController.swift in Sources */,
-				1206332028DFB81200FA05F8 /* ResultExt.swift in Sources */,
 				12571F9828BD505400CC2AD0 /* CDStackType.swift in Sources */,
 				12DAB31128C3D40E0066FE22 /* PaddedTextField.swift in Sources */,
 				12DAB37028C3D42F0066FE22 /* TripLocationDisplayViewModel.swift in Sources */,

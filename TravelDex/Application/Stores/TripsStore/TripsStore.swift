@@ -36,8 +36,22 @@ class TripsStore: TripsStoreType {
             .subscribe(onNext: { [weak self] in self?.dispatch($0) })
     }
     
-    func export(_ trip: Observable<Trip>) -> Observable<URL> {
-        .empty()
+    func export(_ trip: Trip) -> Observable<URL> {
+        Observable
+            .create { [weak self] observer in
+                self?.dispatch(
+                    CDExportTrip(tripId: trip.id) { result in
+                        switch result {
+                        case .success(let url):
+                            observer.onNext(url)
+                            observer.onCompleted()
+                        case .failure(let error):
+                            observer.onError(error)
+                        }
+                    }
+                )
+                return Disposables.create()
+            }
     }
     
     

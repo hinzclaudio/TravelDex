@@ -176,6 +176,13 @@ class TripsListController: UIViewController {
             .withLatestFrom(trips) { i, trips in trips[i.row] }
         viewModel.pickColor(for: tripColorPicking)
             .disposed(by: bag)
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { t in
+            let trip: Trip = try! self.tableView.rx.model(at: IndexPath(row: 0, section: 0))
+            self.viewModel
+                .export(.just(trip))
+                .disposed(by: self.bag)
+        }
     }
     
 }
