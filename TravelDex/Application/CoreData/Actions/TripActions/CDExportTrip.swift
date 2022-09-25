@@ -27,8 +27,8 @@ struct CDExportTrip: CDAction {
             let exportFormat = try cdTrip.exportFormat(using: context)
             let fm = FileManager.default
             let fileName = cdTrip.title.lettersOnly + ".tdex"
-            let docDirURL = try fm.getDocumentDirectoryURL()
-            let archiveURL = docDirURL.appendingPathComponent(fileName)
+            let temporaryDirURL = fm.temporaryDirectory
+            let archiveURL = temporaryDirURL.appendingPathComponent(fileName)
             
             // Remove any archives that were created previously
             let fileExists: Bool
@@ -42,7 +42,7 @@ struct CDExportTrip: CDAction {
             }
             
             // Create a temporary directory
-            let srcDirURL = docDirURL.appendingPathComponent(UUID().uuidString)
+            let srcDirURL = temporaryDirURL.appendingPathComponent(UUID().uuidString)
             try fm.ensureDirectoryExists(at: srcDirURL)
             
             // First, let's write the actual json to disk.
