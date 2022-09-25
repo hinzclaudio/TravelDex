@@ -11,7 +11,7 @@ import RxCocoa
 
 
 
-protocol TripsListViewModelType {
+protocol TripsListViewModelType: UIDocumentPickerDelegate {
     
     // MARK: - Input
     func storeTapped(_ tap: Observable<Void>) -> Disposable

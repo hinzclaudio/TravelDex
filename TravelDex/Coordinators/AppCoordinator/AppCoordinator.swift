@@ -35,7 +35,7 @@ class AppCoordinator: AppCoordinatorType {
         navigationController.modalPresentationStyle = .automatic
         
         GeneralStyleManager.style(navigationController.navigationBar)
-        let viewModel = TripsListVieModel(dependencies: dependencies)
+        let viewModel = TripsListViewModel(dependencies: dependencies)
         let controller = TripsListController(viewModel: viewModel)
         viewModel.coordinator = self
         navigationController.pushViewController(controller, animated: false)
@@ -53,15 +53,20 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     
-    func goToImportTrip(when tapped: Observable<Void>) -> Disposable {
-        tapped.withLatestFrom(dependencies.skStore.premiumFeaturesEnabled)
-            .subscribe(onNext: { [unowned self] premiumEnabled in
+    func goToImportTrip(_ viewModel: TripsListViewModelType, when tapped: Observable<Void>) -> Disposable {
+        tapped
+            .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled)
+            .subscribe(onNext: { [unowned self, weak viewModel] premiumEnabled in
                 if premiumEnabled {
-                    // TODO: Present some new screen...
+                    let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.data])
+                    controller.allowsMultipleSelection = false
+                    controller.delegate = viewModel
+                    (self.modalController ?? self.navigationController)
+                        .present(controller, animated: self.animationsEnabled)
                 } else {
                     let info = InfoManager.makePremiumDisabledInfo()
                     (self.modalController ?? self.navigationController)
-                        .present(info, animated: animationsEnabled)
+                        .present(info, animated: self.animationsEnabled)
                 }
             })
     }

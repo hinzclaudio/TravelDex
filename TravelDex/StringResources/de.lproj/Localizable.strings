@@ -72,3 +72,5 @@
 "action_create_trip" = "Reise erstellen";
 "action_import_trip" = "Reise importieren";
 "action_export_trip" = "Teilen";
+"error_data_corrupted" = "Die Daten dieser Datei scheinen kaputt zu sein. Stellen Sie sicher, dass Sie eine .tdex Datei importieren.";
+"error_already_imported" = "Diese Reise wurde bereits importiert.";

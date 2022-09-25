@@ -11,15 +11,16 @@ import RxCocoa
 
 
 
-class TripsListVieModel: TripsListViewModelType {
+class TripsListViewModel: NSObject, TripsListViewModelType {
     
     weak var coordinator: AppCoordinatorType?
     
     typealias Dependencies = HasTripsStore & HasSKStore
-    private let dependencies: Dependencies
+    let dependencies: Dependencies
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
+        super.init()
     }
     
     
@@ -40,7 +41,7 @@ class TripsListVieModel: TripsListViewModelType {
     }
     
     func importTapped(_ tap: Observable<Void>) -> Disposable {
-        coordinator?.goToImportTrip(when: tap) ?? Disposables.create()
+        coordinator?.goToImportTrip(self, when: tap) ?? Disposables.create()
     }
     
     func export(_ trip: Observable<Trip>) -> Disposable {
@@ -102,7 +103,7 @@ class TripsListVieModel: TripsListViewModelType {
             .asDriver(onErrorJustReturn: false)
     }()
     
-    private let _errors = BehaviorRelay<Error?>(value: nil)
+    let _errors = BehaviorRelay<Error?>(value: nil)
     lazy var errorController: Driver<UIAlertController> = {
         _errors
             .asDriver(onErrorJustReturn: nil)

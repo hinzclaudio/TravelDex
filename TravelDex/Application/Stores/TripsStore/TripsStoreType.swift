@@ -17,6 +17,7 @@ protocol TripsStoreType {
     func delete(_ trip: Observable<Trip>) -> Disposable
     /// This should return a URL that points to a location where the export can be found.
     func export(_ trip: Trip) -> Observable<URL>
+    func importData(from fileURL: URL) -> Observable<Trip>
     
     
     // MARK: - Output

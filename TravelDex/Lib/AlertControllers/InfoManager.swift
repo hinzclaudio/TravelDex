@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import ZIPFoundation
 
 
 
@@ -33,9 +34,16 @@ class InfoManager {
         makeInfoController(title: Localizable.errorTitle, message: Localizable.unknownErrorDescr)
     }
     
-    
     static func makePremiumDisabledInfo() -> UIAlertController {
         makeInfoController(title: Localizable.premiumDisabledTitle, message: Localizable.premiumDisabledMsg)
+    }
+    
+    static func makeDataCorruptedError() -> UIAlertController {
+        makeInfoController(title: Localizable.errorTitle, message: Localizable.errorDataCorrupted)
+    }
+    
+    static func makeAlreadyImportedError() -> UIAlertController {
+        makeInfoController(title: Localizable.errorTitle, message: Localizable.errorAlreadyImported)
     }
     
     static func makeNumberOfPlacesExhaustedInfo() -> UIAlertController {
@@ -54,6 +62,24 @@ class InfoManager {
             )
         } else if (error as? PremiumStoreError) == .premiumFeaturesUnavailable {
             return makePremiumDisabledInfo()
+        } else if let fileError = error as? FileManagementError {
+            switch fileError {
+            case .missingDirectory:
+                return makeFallbackErrorController()
+            case .unknown:
+                return makeFallbackErrorController()
+            case .dataCorrupted:
+                return makeDataCorruptedError()
+            case .alreadyImported:
+                return makeAlreadyImportedError()
+            }
+        } else if let zipError = error as? Archive.ArchiveError {
+            switch zipError {
+            case .unreadableArchive:
+                return makeDataCorruptedError()
+            default:
+                return makeFallbackErrorController()
+            }
         } else {
             return makeFallbackErrorController()
         }

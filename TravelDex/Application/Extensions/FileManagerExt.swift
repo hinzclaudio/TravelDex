@@ -13,6 +13,8 @@ import Foundation
 enum FileManagementError: Error {
     case missingDirectory
     case unknown
+    case dataCorrupted
+    case alreadyImported
 }
 
 

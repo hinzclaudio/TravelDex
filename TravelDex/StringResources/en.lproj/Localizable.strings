@@ -72,3 +72,5 @@
 "action_create_trip" = "Create a trip";
 "action_import_trip" = "Import a trip";
 "action_export_trip" = "Share";
+"error_data_corrupted" = "The files data seems to be corrupted. Make sure you open a .tdex file!";
+"error_already_imported" = "This trip was already imported.";

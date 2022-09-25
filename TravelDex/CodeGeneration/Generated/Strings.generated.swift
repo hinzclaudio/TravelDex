@@ -59,8 +59,12 @@ internal enum Localizable {
   }
   /// End
   internal static let end = Localizable.tr("Localizable", "end", fallback: "End")
+  /// This trip was already imported.
+  internal static let errorAlreadyImported = Localizable.tr("Localizable", "error_already_imported", fallback: "This trip was already imported.")
   /// Your query did not produce any results.
   internal static let errorCannotMatchLocation = Localizable.tr("Localizable", "error_cannot_match_location", fallback: "Your query did not produce any results.")
+  /// The files data seems to be corrupted. Make sure you open a .tdex file!
+  internal static let errorDataCorrupted = Localizable.tr("Localizable", "error_data_corrupted", fallback: "The files data seems to be corrupted. Make sure you open a .tdex file!")
   /// Error
   internal static let errorTitle = Localizable.tr("Localizable", "error_title", fallback: "Error")
   /// This app is developed by one person. For continuous support I need some sort of support from the users. All of the purchases below are one time payments only. All of them enable the same features. You may decide what you want to pay.

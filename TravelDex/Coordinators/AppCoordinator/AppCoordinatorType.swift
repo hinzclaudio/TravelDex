@@ -21,7 +21,7 @@ protocol AppCoordinatorType: CoordinatorType {
     func photoViewer(from view: UIImageView?, image: UIImage?)
     
     func goToAddTrip(when tapped: Observable<Void>) -> Disposable
-    func goToImportTrip(when tapped: Observable<Void>) -> Disposable
+    func goToImportTrip(_ viewModel: TripsListViewModelType, when tapped: Observable<Void>) -> Disposable
     func share(exportAt url: Observable<URL>) -> Disposable
     func didUpdate(_ trip: Trip)
     func select(_ trip: Trip)

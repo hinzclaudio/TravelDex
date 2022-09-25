@@ -54,6 +54,23 @@ class TripsStore: TripsStoreType {
             }
     }
     
+    func importData(from fileURL: URL) -> Observable<Trip> {
+        Observable
+            .create { observer in
+                let action = CDImportTrip(fileURL: fileURL) { result in
+                    switch result {
+                    case .success(let trip):
+                        observer.onNext(trip)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+                }
+                self.dispatch(action)
+                return Disposables.create()
+            }
+    }
+    
     
     // MARK: - Output
     func trips(forSearch query: String = "") -> Observable<[Trip]> {
