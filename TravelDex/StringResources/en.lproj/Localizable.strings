@@ -71,3 +71,4 @@
 "action_save" = "Save";
 "action_create_trip" = "Create a trip";
 "action_import_trip" = "Import a trip";
+"action_export_trip" = "Share";

@@ -71,3 +71,4 @@
 "action_save" = "Speichern";
 "action_create_trip" = "Reise erstellen";
 "action_import_trip" = "Reise importieren";
+"action_export_trip" = "Teilen";

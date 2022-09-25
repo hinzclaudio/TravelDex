@@ -45,15 +45,22 @@ class TripsListVieModel: TripsListViewModelType {
     
     func export(_ trip: Observable<Trip>) -> Disposable {
         let exportFile = trip
-            .flatMapLatest { [unowned self] trip in
-                self.dependencies.tripsStore
-                    .export(trip)
-                    .materialize()
+            .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
+            .flatMapLatest { [unowned self] trip, premiumEnabled in
+                if premiumEnabled {
+                    return self.dependencies.tripsStore
+                        .export(trip)
+                        .materialize()
+                } else {
+                    return Observable
+                        .create { observer in
+                            observer.onError(PremiumStoreError.premiumFeaturesUnavailable)
+                            return Disposables.create()
+                        }
+                        .materialize()
+                }
             }
-            .do(onNext: { [weak self] in
-                guard let error = $0.error else { return }
-                print("ERROR: \(error)")
-            })
+            .do(onNext: { [weak self] in self?._errors.accept($0.error) })
             .compactMap(\.element)
         return coordinator?.share(exportAt: exportFile) ?? Disposables.create()
     }
@@ -78,15 +85,8 @@ class TripsListVieModel: TripsListViewModelType {
     }
     
     
-
-    // MARK: - Output
-    lazy var tripsIsEmpty: Driver<Bool> = {
-        dependencies.tripsStore.trips(forSearch: "")
-            .map { $0.isEmpty }
-            .distinctUntilChanged()
-            .asDriver(onErrorJustReturn: false)
-    }()
     
+    // MARK: - Output
     func trips(for search: Observable<String>) -> Driver<[Trip]> {
         search
             .flatMapLatest { [unowned self] query in
@@ -94,5 +94,20 @@ class TripsListVieModel: TripsListViewModelType {
             }
             .asDriver(onErrorJustReturn: [])
     }
+    
+    lazy var tripsIsEmpty: Driver<Bool> = {
+        dependencies.tripsStore.trips(forSearch: "")
+            .map { $0.isEmpty }
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: false)
+    }()
+    
+    private let _errors = BehaviorRelay<Error?>(value: nil)
+    lazy var errorController: Driver<UIAlertController> = {
+        _errors
+            .asDriver(onErrorJustReturn: nil)
+            .compactMap { $0 }
+            .map(InfoManager.defaultErrorInfo(for:))
+    }()
     
 }

@@ -52,6 +52,8 @@ class InfoManager {
                 title: Localizable.errorTitle,
                 message: Localizable.errorCannotMatchLocation
             )
+        } else if (error as? PremiumStoreError) == .premiumFeaturesUnavailable {
+            return makePremiumDisabledInfo()
         } else {
             return makeFallbackErrorController()
         }

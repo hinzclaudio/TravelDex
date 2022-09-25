@@ -26,9 +26,8 @@ protocol TripsListViewModelType {
     
     
     // MARK: - Output
-    var tripsIsEmpty: Driver<Bool> { get }
     func trips(for search: Observable<String>) -> Driver<[Trip]>
-    
-    
+    var tripsIsEmpty: Driver<Bool> { get }
+    var errorController: Driver<UIAlertController> { get }
     
 }

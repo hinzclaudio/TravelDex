@@ -28,6 +28,8 @@ internal enum Localizable {
   internal static let actionEdit = Localizable.tr("Localizable", "action_edit", fallback: "Edit")
   /// Edit Comment
   internal static let actionEditComment = Localizable.tr("Localizable", "action_edit_comment", fallback: "Edit Comment")
+  /// Share
+  internal static let actionExportTrip = Localizable.tr("Localizable", "action_export_trip", fallback: "Share")
   /// Import a trip
   internal static let actionImportTrip = Localizable.tr("Localizable", "action_import_trip", fallback: "Import a trip")
   /// Pick Color

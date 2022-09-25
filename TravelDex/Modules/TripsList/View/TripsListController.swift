@@ -16,6 +16,7 @@ class TripsListController: UIViewController {
     
     let addTap = PublishSubject<Void>()
     let importTap = PublishSubject<Void>()
+    let exportIP = PublishSubject<IndexPath>()
     let editingIP = PublishSubject<IndexPath>()
     let pickingColorIP = PublishSubject<IndexPath>()
     let deletionIP = PublishSubject<IndexPath>()
@@ -177,12 +178,14 @@ class TripsListController: UIViewController {
         viewModel.pickColor(for: tripColorPicking)
             .disposed(by: bag)
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { t in
-            let trip: Trip = try! self.tableView.rx.model(at: IndexPath(row: 0, section: 0))
-            self.viewModel
-                .export(.just(trip))
-                .disposed(by: self.bag)
-        }
+        let tripExport = exportIP
+            .withLatestFrom(trips) { i, trips in trips[i.row] }
+        viewModel.export(tripExport)
+            .disposed(by: bag)
+        
+        viewModel.errorController.asObservable()
+            .subscribe(onNext: { [weak self] alert in self?.present(alert, animated: true) })
+            .disposed(by: bag)
     }
     
 }

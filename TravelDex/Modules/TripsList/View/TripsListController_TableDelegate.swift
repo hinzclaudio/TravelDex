@@ -21,6 +21,11 @@ extension TripsListController: UITableViewDelegate {
             identifier: NSNumber(value: Int64(indexPath.row)),
             previewProvider: nil,
             actionProvider: { [weak self] actions in
+                let exportAction = UIAction(
+                    title: Localizable.actionExportTrip,
+                    image: SFSymbol.export.image,
+                    handler: { [weak self] _ in self?.exportIP.onNext(indexPath) }
+                )
                 let editTextAction = UIAction(
                     title: Localizable.actionEdit,
                     image: SFSymbol.pencil.image,
@@ -39,7 +44,7 @@ extension TripsListController: UITableViewDelegate {
                 )
                 return UIMenu(
                     title: Localizable.menuTitle,
-                    children: [editTextAction, editColortAction, deleteAction]
+                    children: [exportAction, editTextAction, editColortAction, deleteAction]
                 )
             }
         )

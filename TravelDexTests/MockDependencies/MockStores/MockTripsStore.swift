@@ -13,6 +13,12 @@ import RxSwift
 
 class MockTripsStore: TripsStoreType {
     
+    private(set) var exportTripCalled = false
+    func export(_ trip: TravelDex.Trip) -> Observable<URL> {
+        exportTripCalled = true
+        return .empty()
+    }
+    
     private(set) var updateTripCalled = false
     func update(_ trip: Observable<Trip>) -> Disposable {
         trip.subscribe(onNext: { [weak self] _ in self?.updateTripCalled = true })

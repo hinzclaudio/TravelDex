@@ -54,17 +54,17 @@ extension CDTrip {
         
         let places = try context.fetch(placesQuery)
         return TripExport(
+            id: id,
             title: title,
             descr: descr,
             members: members,
-            picturePath: nil,
             places: places
                 .map { cdPlace -> VisitedPlaceExport in
                     VisitedPlaceExport(
+                        id: cdPlace.id,
                         text: cdPlace.text,
                         start: cdPlace.start,
                         end: cdPlace.end,
-                        picturePath: nil,
                         locationName: cdPlace.location.name,
                         locationRegion: cdPlace.location.region,
                         locationCountry: cdPlace.location.country,

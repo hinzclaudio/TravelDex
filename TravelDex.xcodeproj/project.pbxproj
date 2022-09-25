@@ -11,6 +11,13 @@
 		1206331A28DF966600FA05F8 /* TripExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331928DF966600FA05F8 /* TripExport.swift */; };
 		1206331C28DF969300FA05F8 /* VisitedPlaceExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */; };
 		1206331E28DF980A00FA05F8 /* CDExportTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331D28DF980A00FA05F8 /* CDExportTrip.swift */; };
+		1206332328E0527600FA05F8 /* ExportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332228E0527600FA05F8 /* ExportConstants.swift */; };
+		1206332528E05ED000FA05F8 /* PremiumStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332428E05ED000FA05F8 /* PremiumStoreError.swift */; };
+		1206332628E0612400FA05F8 /* CDExportTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331D28DF980A00FA05F8 /* CDExportTrip.swift */; };
+		1206332728E0612D00FA05F8 /* ExportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332228E0527600FA05F8 /* ExportConstants.swift */; };
+		1206332828E0612D00FA05F8 /* TripExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331928DF966600FA05F8 /* TripExport.swift */; };
+		1206332928E0612D00FA05F8 /* VisitedPlaceExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */; };
+		1206332A28E0614D00FA05F8 /* PremiumStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332428E05ED000FA05F8 /* PremiumStoreError.swift */; };
 		1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
 		1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
 		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
@@ -354,6 +361,8 @@
 		1206331928DF966600FA05F8 /* TripExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripExport.swift; sourceTree = "<group>"; };
 		1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedPlaceExport.swift; sourceTree = "<group>"; };
 		1206331D28DF980A00FA05F8 /* CDExportTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDExportTrip.swift; sourceTree = "<group>"; };
+		1206332228E0527600FA05F8 /* ExportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportConstants.swift; sourceTree = "<group>"; };
+		1206332428E05ED000FA05F8 /* PremiumStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreError.swift; sourceTree = "<group>"; };
 		1221F45728C4D74200BE20E3 /* PremiumProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProduct.swift; sourceTree = "<group>"; };
 		1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreHeader.swift; sourceTree = "<group>"; };
 		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
@@ -588,6 +597,7 @@
 			children = (
 				1206331928DF966600FA05F8 /* TripExport.swift */,
 				1206331B28DF969300FA05F8 /* VisitedPlaceExport.swift */,
+				1206332228E0527600FA05F8 /* ExportConstants.swift */,
 			);
 			path = "Import+Export";
 			sourceTree = "<group>";
@@ -632,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				1221F45728C4D74200BE20E3 /* PremiumProduct.swift */,
+				1206332428E05ED000FA05F8 /* PremiumStoreError.swift */,
 				1235390628C4CAB200A7AD12 /* ViewModel */,
 				1235390728C4CAB800A7AD12 /* View */,
 			);
@@ -1901,6 +1912,7 @@
 				12DAB39128C3D49B0066FE22 /* SFSymbols.swift in Sources */,
 				12571F8828BD505400CC2AD0 /* CDHelperExt.swift in Sources */,
 				12DAB37F28C3D42F0066FE22 /* ColorSelectionCell.swift in Sources */,
+				1206332328E0527600FA05F8 /* ExportConstants.swift in Sources */,
 				12DAB37A28C3D42F0066FE22 /* TripsListTableCell.swift in Sources */,
 				12DAB36128C3D42F0066FE22 /* TitledTextField.swift in Sources */,
 				12571F7D28BD505400CC2AD0 /* LocationsStoreType.swift in Sources */,
@@ -1933,6 +1945,7 @@
 				12DAB39328C3D49B0066FE22 /* Fonts.swift in Sources */,
 				12571F7B28BD505400CC2AD0 /* CLGeocoderExtension.swift in Sources */,
 				12571F7328BD505400CC2AD0 /* RxString.swift in Sources */,
+				1206332528E05ED000FA05F8 /* PremiumStoreError.swift in Sources */,
 				12571FA028BD505400CC2AD0 /* UIViewExt.swift in Sources */,
 				12571F7A28BD505400CC2AD0 /* LocationsStore.swift in Sources */,
 				12571F8F28BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
@@ -2116,6 +2129,7 @@
 				129F31C528D7A4D60092FA8E /* CLGeocoderExtension.swift in Sources */,
 				129F31C628D7A4D60092FA8E /* RxString.swift in Sources */,
 				129F31C728D7A4D60092FA8E /* UIViewExt.swift in Sources */,
+				1206332A28E0614D00FA05F8 /* PremiumStoreError.swift in Sources */,
 				129F31C828D7A4D60092FA8E /* LocationsStore.swift in Sources */,
 				129F31C928D7A4D60092FA8E /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				129F31CA28D7A4D60092FA8E /* LocationSearchCoordinator.swift in Sources */,
@@ -2134,6 +2148,7 @@
 				129F31D828D7A4D60092FA8E /* PremiumStoreViewModel.swift in Sources */,
 				129F31D928D7A4D60092FA8E /* DateExt.swift in Sources */,
 				129F31DA28D7A4D60092FA8E /* TripsListViewModel.swift in Sources */,
+				1206332928E0612D00FA05F8 /* VisitedPlaceExport.swift in Sources */,
 				129F31DB28D7A4D60092FA8E /* SKStore.swift in Sources */,
 				129F31DC28D7A4D60092FA8E /* EditPlaceCell.swift in Sources */,
 				129F31DD28D7A4D60092FA8E /* TravelDex.xcdatamodeld in Sources */,
@@ -2151,6 +2166,7 @@
 				129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */,
 				129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */,
 				129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */,
+				1206332728E0612D00FA05F8 /* ExportConstants.swift in Sources */,
 				129F31EC28D7A4D60092FA8E /* CDUpdateLocations.swift in Sources */,
 				129F31ED28D7A4D60092FA8E /* CDLocationExt.swift in Sources */,
 				129F31EE28D7A4D60092FA8E /* TripsStoreType.swift in Sources */,
@@ -2176,6 +2192,7 @@
 				129F320228D7A4D60092FA8E /* PremiumStoreHeader.swift in Sources */,
 				129F320328D7A4D60092FA8E /* AppCoordinatorType.swift in Sources */,
 				129F320428D7A4D60092FA8E /* SKProductCell.swift in Sources */,
+				1206332828E0612D00FA05F8 /* TripExport.swift in Sources */,
 				129F320528D7A4D60092FA8E /* PhotoPickerViewModelType.swift in Sources */,
 				129F320628D7A4D60092FA8E /* AutoInitializable.generated.swift in Sources */,
 				129F320728D7A4D60092FA8E /* PremiumStoreController.swift in Sources */,
@@ -2183,6 +2200,7 @@
 				129F320928D7A4D60092FA8E /* LocationSearchController.swift in Sources */,
 				129F320A28D7A4D60092FA8E /* PremiumProduct.swift in Sources */,
 				129F320B28D7A4D60092FA8E /* PlacesStore.swift in Sources */,
+				1206332628E0612400FA05F8 /* CDExportTrip.swift in Sources */,
 				129F320C28D7A4D60092FA8E /* CDObservable.swift in Sources */,
 				129F320D28D7A4D60092FA8E /* EditTripController.swift in Sources */,
 				129F320E28D7A4D60092FA8E /* EditPlaceViewModel.swift in Sources */,

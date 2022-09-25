@@ -45,18 +45,34 @@ struct CDExportTrip: CDAction {
             let srcDirURL = docDirURL.appendingPathComponent(UUID().uuidString)
             try fm.ensureDirectoryExists(at: srcDirURL)
             
-            // Now we want to write all data to srcDirURL before zipping it.
+            // First, let's write the actual json to disk.
             let jsonCoder = JSONEncoder()
             jsonCoder.dateEncodingStrategy = .iso8601
             jsonCoder.outputFormatting = [.prettyPrinted, .withoutEscapingSlashes]
             let jsonData = try jsonCoder.encode(exportFormat)
-            let contentsURL = srcDirURL.appendingPathComponent("content.json")
+            let contentsURL = srcDirURL.appendingPathComponent(ExportConstants.contentsFileName)
             try jsonData.write(to: contentsURL)
+            
+            // Now we want to export all of the trips pictures.
+            var imgDataURLs = [URL]()
+            try cdTrip.visitedPlaces
+                .asArray(of: CDVisitedPlace.self)!
+                .forEach { cdPlace in
+                    guard let data = cdPlace.pictureData else { return }
+                    let dataURL = srcDirURL.appendingPathComponent(cdPlace.id.uuidString + ".jpg")
+                    try data.write(to: dataURL)
+                    imgDataURLs.append(dataURL)
+                }
             
             // Actually zip the directory and delete the src dir.
             guard let archive = Archive(url: archiveURL, accessMode: .create)
             else { throw FileManagementError.unknown }
-            try archive.addEntry(with: "content.json", fileURL: contentsURL)
+            try archive.addEntry(with: ExportConstants.contentsFileName, fileURL: contentsURL)
+            try imgDataURLs
+                .forEach { imgURL in
+                    try archive.addEntry(with: imgURL.lastPathComponent, fileURL: imgURL)
+                }
+            
             try fm.removeItem(at: srcDirURL)
             
             DispatchQueue.main.async {
