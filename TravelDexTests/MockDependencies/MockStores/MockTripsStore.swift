@@ -19,6 +19,21 @@ class MockTripsStore: TripsStoreType {
         return .empty()
     }
     
+    private(set) var importDataCalled = false
+    func importData(from fileURL: URL, inPlace: Bool) -> Observable<Trip> {
+        importDataCalled = true
+        return .just(
+            Trip(
+                id: TripID(),
+                title: "Mock Title",
+                visitedLocations: [],
+                pinColorRed: Trip.defaultPinColorRed,
+                pinColorGreen: Trip.defaultPinColorGreen,
+                pinColorBlue: Trip.defaultPinColorGreen
+            )
+        )
+    }
+    
     private(set) var updateTripCalled = false
     func update(_ trip: Observable<Trip>) -> Disposable {
         trip.subscribe(onNext: { [weak self] _ in self?.updateTripCalled = true })

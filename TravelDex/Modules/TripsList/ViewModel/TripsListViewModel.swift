@@ -18,8 +18,9 @@ class TripsListViewModel: NSObject, TripsListViewModelType {
     typealias Dependencies = HasTripsStore & HasSKStore
     let dependencies: Dependencies
     
-    init(dependencies: Dependencies) {
+    init(dependencies: Dependencies, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
+        self.coordinator = coordinator
         super.init()
     }
     

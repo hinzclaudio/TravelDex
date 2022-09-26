@@ -20,9 +20,10 @@ class AddPlacesViewModel: AddPlacesViewModelType {
     let dependencies: Dependencies
     let initialTrip: Trip
     
-    init(dependencies: Dependencies, trip: Trip) {
+    init(dependencies: Dependencies, trip: Trip, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
         self.initialTrip = trip
+        self.coordinator = coordinator
         
         // We want to look for any places that have some kind of attachment (text or pic).
         // Any of those items should be displayed in an expanded state initially.

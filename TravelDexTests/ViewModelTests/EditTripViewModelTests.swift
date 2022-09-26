@@ -14,25 +14,31 @@ import XCTest
 class EditTripViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
+    var mockCoordinator: MockAppCoordinator!
     var viewModel: EditTripViewModelType!
+    
+    let someTrip = Trip(
+        id: TripID(),
+        title: "Mocked Title",
+        visitedLocations: [],
+        pinColorRed: Trip.defaultPinColorRed,
+        pinColorGreen: Trip.defaultPinColorGreen,
+        pinColorBlue: Trip.defaultPinColorBlue
+    )
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
-        self.viewModel = EditTripViewModel(dependencies: mockDependencies)
+        self.mockCoordinator = MockAppCoordinator()
+        self.viewModel = EditTripViewModel(
+            dependencies: mockDependencies,
+            coordinator: mockCoordinator
+        )
     }
     
     
     func testUpdateTripIsForwardedToStore() throws {
-        let mockTrip = Trip(
-            id: TripID(),
-            title: "Mocked Title",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        let _ = viewModel.update(.just(mockTrip))
+        let _ = viewModel.update(.just(someTrip))
         XCTAssertTrue(mockDependencies.mockTripStore.updateTripCalled)
     }
     

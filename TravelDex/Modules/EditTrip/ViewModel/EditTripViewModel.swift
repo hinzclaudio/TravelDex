@@ -19,8 +19,9 @@ class EditTripViewModel: EditTripViewModelType {
     private let dependencies: Dependencies
     private let tripId: TripID?
     
-    init(dependencies: Dependencies, tripId: TripID? = nil) {
+    init(dependencies: Dependencies, tripId: TripID? = nil, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
+        self.coordinator = coordinator
         self.tripId = tripId
     }
     

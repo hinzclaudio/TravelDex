@@ -14,21 +14,34 @@ import XCTest
 class AddPlacesViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
+    var mockCoordinator: MockAppCoordinator!
     var viewModel: AddPlacesViewModelType!
+    
+    let someTrip = Trip(
+        id: TripID(),
+        title: "Mocked Trip",
+        visitedLocations: [],
+        pinColorRed: Trip.defaultPinColorRed,
+        pinColorGreen: Trip.defaultPinColorGreen,
+        pinColorBlue: Trip.defaultPinColorBlue
+    )
+    
+    let somePlace = VisitedPlace(
+        id: VisitedPlaceID(),
+        start: .now.addingTimeInterval(-86400),
+        end: .now,
+        tripId: TripID(),
+        locationId: LocationID()
+    )
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
+        self.mockCoordinator = MockAppCoordinator()
         self.viewModel = AddPlacesViewModel(
             dependencies: mockDependencies,
-            trip: Trip(
-                id: TripID(),
-                title: "Mocked Trip",
-                visitedLocations: [],
-                pinColorRed: Trip.defaultPinColorRed,
-                pinColorGreen: Trip.defaultPinColorGreen,
-                pinColorBlue: Trip.defaultPinColorBlue
-            )
+            trip: someTrip,
+            coordinator: mockCoordinator
         )
     }
     
@@ -37,17 +50,9 @@ class AddPlacesViewModelTests: XCTestCase {
         viewModel
             .setStart(
                 of: AddedPlaceItem(
-                    visitedPlace: VisitedPlace(
-                        id: VisitedPlaceID(),
-                        start: .now.addingTimeInterval(-86400),
-                        end: .now,
-                        tripId: TripID(),
-                        locationId: LocationID()
-                    ),
-                    location: MockLocationAPI
-                        .hamburg,
-                    pinColor: Trip
-                        .defaultPinColor
+                    visitedPlace: somePlace,
+                    location: MockLocationAPI.hamburg,
+                    pinColor: Trip.defaultPinColor
                 ),
                 to: .now
             )
@@ -59,17 +64,9 @@ class AddPlacesViewModelTests: XCTestCase {
         viewModel
             .setEnd(
                 of: AddedPlaceItem(
-                    visitedPlace: VisitedPlace(
-                        id: VisitedPlaceID(),
-                        start: .now.addingTimeInterval(-86400),
-                        end: .now,
-                        tripId: TripID(),
-                        locationId: LocationID()
-                    ),
-                    location: MockLocationAPI
-                        .hamburg,
-                    pinColor: Trip
-                        .defaultPinColor
+                    visitedPlace: somePlace,
+                    location: MockLocationAPI.hamburg,
+                    pinColor: Trip.defaultPinColor
                 ),
                 to: .now
             )
@@ -140,17 +137,9 @@ class AddPlacesViewModelTests: XCTestCase {
         let testId = VisitedPlaceID()
         viewModel.set(
             AddedPlaceItem(
-                visitedPlace: VisitedPlace(
-                    id: testId,
-                    start: .now.addingTimeInterval(-86400),
-                    end: .now,
-                    tripId: TripID(),
-                    locationId: LocationID()
-                ),
-                location: MockLocationAPI
-                    .hamburg,
-                pinColor: Trip
-                    .defaultPinColor
+                visitedPlace: somePlace,
+                location: MockLocationAPI.hamburg,
+                pinColor: Trip.defaultPinColor
             ),
             expanded: false
         )
@@ -162,6 +151,20 @@ class AddPlacesViewModelTests: XCTestCase {
             .first()
         
         XCTAssertEqual(expanded, [])
+    }
+    
+    
+    // MARK: - Routing Tests
+    func testMapTappedCoordinatorIsNotified() {
+        XCTAssertFalse(mockCoordinator.displayMapForTripCalled)
+        let _ = viewModel.mapButton(.just(()))
+        XCTAssertTrue(mockCoordinator.displayMapForTripCalled)
+    }
+    
+    func testAddTappedCoordinatorIsNotified() {
+        XCTAssertFalse(mockCoordinator.searchLocationForTripCalled)
+        let _ = viewModel.addLocation(.just(()))
+        XCTAssertTrue(mockCoordinator.searchLocationForTripCalled)
     }
     
 }

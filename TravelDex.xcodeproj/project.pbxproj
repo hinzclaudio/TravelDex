@@ -20,6 +20,7 @@
 		1206332A28E0614D00FA05F8 /* PremiumStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332428E05ED000FA05F8 /* PremiumStoreError.swift */; };
 		1206332C28E07B4C00FA05F8 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332B28E07B4C00FA05F8 /* StringExt.swift */; };
 		1206332D28E07B4C00FA05F8 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332B28E07B4C00FA05F8 /* StringExt.swift */; };
+		1219E73128E2159000A21023 /* MockAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219E73028E2159000A21023 /* MockAppCoordinator.swift */; };
 		1221F45828C4D74200BE20E3 /* PremiumProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45728C4D74200BE20E3 /* PremiumProduct.swift */; };
 		1221F45A28C4EF1200BE20E3 /* PremiumStoreHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */; };
 		122414BA28C3DED3008B4402 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122414B928C3DED3008B4402 /* Strings.generated.swift */; };
@@ -370,6 +371,7 @@
 		1206332228E0527600FA05F8 /* ExportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportConstants.swift; sourceTree = "<group>"; };
 		1206332428E05ED000FA05F8 /* PremiumStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreError.swift; sourceTree = "<group>"; };
 		1206332B28E07B4C00FA05F8 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		1219E73028E2159000A21023 /* MockAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppCoordinator.swift; sourceTree = "<group>"; };
 		1221F45728C4D74200BE20E3 /* PremiumProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumProduct.swift; sourceTree = "<group>"; };
 		1221F45928C4EF1200BE20E3 /* PremiumStoreHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreHeader.swift; sourceTree = "<group>"; };
 		122414B928C3DED3008B4402 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
@@ -609,6 +611,14 @@
 				1206332228E0527600FA05F8 /* ExportConstants.swift */,
 			);
 			path = "Import+Export";
+			sourceTree = "<group>";
+		};
+		1219E72E28E2157400A21023 /* MockCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				1219E73028E2159000A21023 /* MockAppCoordinator.swift */,
+			);
+			path = MockCoordinators;
 			sourceTree = "<group>";
 		};
 		122414B728C3DDC2008B4402 /* StringResources */ = {
@@ -1434,6 +1444,7 @@
 				12DAB3A528C3D55F0066FE22 /* MockDependencies.swift */,
 				12DAB3A328C3D55F0066FE22 /* CoreData */,
 				12DAB39F28C3D55F0066FE22 /* MockStores */,
+				1219E72E28E2157400A21023 /* MockCoordinators */,
 				12DAB3A628C3D55F0066FE22 /* MockNetworking */,
 				123C33A328CE5F160095ABB5 /* MockViewModels */,
 			);
@@ -2066,6 +2077,7 @@
 				12DAB3BB28C3D55F0066FE22 /* MockLocationAPI.swift in Sources */,
 				12DAB3B228C3D55F0066FE22 /* ColorSelectionViewModelTests.swift in Sources */,
 				12DAB3BA28C3D55F0066FE22 /* MockLocationErrorAPI.swift in Sources */,
+				1219E73128E2159000A21023 /* MockAppCoordinator.swift in Sources */,
 				12DAB3AD28C3D55F0066FE22 /* AddPlacesViewModelTests.swift in Sources */,
 				12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */,
 				12DAB3B828C3D55F0066FE22 /* TestableCDStack.swift in Sources */,

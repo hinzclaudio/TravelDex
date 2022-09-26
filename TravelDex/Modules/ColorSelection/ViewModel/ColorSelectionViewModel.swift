@@ -18,8 +18,9 @@ class ColorSelectionViewModel: ColorSelectionViewModelType {
     typealias Dependencies = HasTripsStore
     private let dependencies: Dependencies
     
-    init(dependencies: Dependencies, trip: Trip) {
+    init(dependencies: Dependencies, trip: Trip, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
+        self.coordinator = coordinator
         self.trip = dependencies.tripsStore
             .trip(identifiedBy: .just(trip.id))
             .compactMap { $0 }

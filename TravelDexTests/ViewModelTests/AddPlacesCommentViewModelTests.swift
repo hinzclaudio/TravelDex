@@ -16,26 +16,29 @@ import RxBlocking
 class AddPlacesCommentViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
+    var mockCoordinator: MockAppCoordinator!
     var viewModel: AddPlacesCommentViewModelType!
+    
+    let somePlace = VisitedPlace(
+        id: VisitedPlaceID(),
+        start: .now.addingTimeInterval(-86400),
+        end: .now,
+        tripId: TripID(),
+        locationId: MockLocationAPI.hamburg.id
+    )
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
+        self.mockCoordinator = MockAppCoordinator()
         self.viewModel = AddPlacesCommentViewModel(
             dependencies: mockDependencies,
             item: AddedPlaceItem(
-                visitedPlace: VisitedPlace(
-                    id: VisitedPlaceID(),
-                    start: .now.addingTimeInterval(-86400),
-                    end: .now,
-                    tripId: TripID(),
-                    locationId: MockLocationAPI.hamburg.id
-                ),
-                location: MockLocationAPI
-                    .hamburg,
-                pinColor: Trip
-                    .defaultPinColor
-            )
+                visitedPlace: somePlace,
+                location: MockLocationAPI.hamburg,
+                pinColor: Trip.defaultPinColor
+            ),
+            coordinator: mockCoordinator
         )
     }
     
@@ -46,6 +49,12 @@ class AddPlacesCommentViewModelTests: XCTestCase {
             .first()
         XCTAssertNotNil(place)
         XCTAssertTrue(mockDependencies.mockPlacesStore.placeIdentifiedByCalled)
+    }
+    
+    func testConfirmCoordinatorIsNotified() throws {
+        XCTAssertFalse(mockCoordinator.dismissModalControllerCalled)
+        let _ = viewModel.confirm(.just(()))
+        XCTAssertTrue(mockCoordinator.dismissModalControllerCalled)
     }
     
 }

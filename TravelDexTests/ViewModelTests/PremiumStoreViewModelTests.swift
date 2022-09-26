@@ -75,7 +75,7 @@ class PremiumStoreViewModelTests: XCTestCase {
         XCTAssertTrue(mockDependencies.mockSkStore.syncCalled)
     }
     
-    func testSyncErrorIsRelayyed() throws {
+    func testSyncErrorIsRelayed() throws {
         mockDependencies.mockSkStore.syncThrows = true
         viewModel.restorePurchases()
         

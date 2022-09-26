@@ -17,8 +17,9 @@ class AddPlacesCommentViewModel: AddPlacesCommentViewModelType {
     private let dependencies: Dependencies
     weak var coordinator: AppCoordinatorType?
     
-    init(dependencies: Dependencies, item: AddedPlaceItem) {
+    init(dependencies: Dependencies, item: AddedPlaceItem, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
+        self.coordinator = coordinator
         self.addedPlace = dependencies.placesStore
             .place(identifiedBy: .just(item.visitedPlace.id))
             .compactMap { $0 }

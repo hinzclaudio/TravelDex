@@ -17,6 +17,19 @@ class TripsStoreTests: XCTestCase {
     var cdStack: CDStackType!
     var store: TripsStoreType!
     
+    let someTrip = Trip(
+        id: TripID(),
+        title: "Mocked Trip",
+        descr: "Mocked Description",
+        members: "Mocked Members",
+        visitedLocations: [],
+        start: .now.addingTimeInterval(-86400),
+        end: .now,
+        pinColorRed: Trip.defaultPinColorRed,
+        pinColorGreen: Trip.defaultPinColorGreen,
+        pinColorBlue: Trip.defaultPinColorBlue
+    )
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.cdStack = TestableCDStack()
@@ -37,37 +50,11 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testAddTripProducesCorrectResult() throws {
-        let mockedTrip = Trip(
-            id: TripID(),
-            title: "Mocked Trip",
-            descr: "Mocked Description",
-            members: "Mocked Members",
-            visitedLocations: [],
-            start: .now.addingTimeInterval(-86400),
-            end: .now,
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        
-        let _ = try add(mockedTrip: mockedTrip)
+        let _ = try add(mockedTrip: someTrip)
     }
     
     func testAddTripTwiceIsOnlyUpdated() throws {
-        let mockedTrip = Trip(
-            id: TripID(),
-            title: "Mocked Trip",
-            descr: "Mocked Description",
-            members: "Mocked Members",
-            visitedLocations: [],
-            start: .now.addingTimeInterval(-86400),
-            end: .now,
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        
-        let addedTrip = try add(mockedTrip: mockedTrip)
+        let addedTrip = try add(mockedTrip: someTrip)
         let updatedTrip = addedTrip.cloneBuilder()
             .with(title: "Different Mocked Title")
             .build()!
@@ -83,21 +70,7 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testDeleteTripProducesCorrectResult() throws {
-        let mockedTrip = Trip(
-            id: TripID(),
-            title: "Mocked Trip",
-            descr: "Mocked Description",
-            members: "Mocked Members",
-            visitedLocations: [],
-            start: .now.addingTimeInterval(-86400),
-            end: .now,
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        
-        let addedTrip = try add(mockedTrip: mockedTrip)
-        
+        let addedTrip = try add(mockedTrip: someTrip)
         let _ = store.delete(.just(addedTrip))
         let fetchedTrips = try store.trips(forSearch: addedTrip.title)
             .filter { $0.isEmpty }
@@ -109,22 +82,11 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testSearchProducesCorrectResult() throws {
-        let trip1 = Trip(
-            id: TripID(),
-            title: "Mocked Title 1",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        let trip2 = Trip(
-            id: TripID(),
-            title: "Mocked Title 2",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
+        let trip1 = someTrip
+        let trip2 = someTrip.cloneBuilder()
+            .with(id: TripID())
+            .with(title: "Mocked Title 2")
+            .build()!
         
         let _ = try add(mockedTrip: trip1)
         let _ = try add(mockedTrip: trip2)
@@ -148,22 +110,11 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testEmptySearchProducesAllResults() throws {
-        let trip1 = Trip(
-            id: TripID(),
-            title: "Mocked Title 1",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        let trip2 = Trip(
-            id: TripID(),
-            title: "Mocked Title 2",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
+        let trip1 = someTrip
+        let trip2 = someTrip.cloneBuilder()
+            .with(id: TripID())
+            .with(title: "Mocked Title 2")
+            .build()!
         
         let _ = try add(mockedTrip: trip1)
         let _ = try add(mockedTrip: trip2)
@@ -177,16 +128,9 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testSameTripIdIsNotAddedTwice() throws {
-        let trip1 = Trip(
-            id: TripID(),
-            title: "Mocked Trip 1",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        let trip2 = trip1.cloneBuilder()
-            .with(title: "Mocked Trip 2")
+        let trip1 = someTrip
+        let trip2 = someTrip.cloneBuilder()
+            .with(title: "Mocked Title 2")
             .build()!
         
         let _ = try add(mockedTrip: trip1)
@@ -203,23 +147,15 @@ class TripsStoreTests: XCTestCase {
     }
     
     func testFetchTripById() throws {
-        let mockedTrip = Trip(
-            id: TripID(),
-            title: "Mocked Title",
-            visitedLocations: [],
-            pinColorRed: Trip.defaultPinColorRed,
-            pinColorGreen: Trip.defaultPinColorGreen,
-            pinColorBlue: Trip.defaultPinColorBlue
-        )
-        let _ = try add(mockedTrip: mockedTrip)
+        let _ = try add(mockedTrip: someTrip)
         
-        let fetchedTrip = try store.trip(identifiedBy: .just(mockedTrip.id))
+        let fetchedTrip = try store.trip(identifiedBy: .just(someTrip.id))
             .toBlocking(timeout: 5)
             .first()!
         
         XCTAssertNotNil(fetchedTrip)
-        XCTAssertEqual(fetchedTrip?.id, mockedTrip.id)
-        XCTAssertEqual(fetchedTrip?.title, mockedTrip.title)
+        XCTAssertEqual(fetchedTrip?.id, someTrip.id)
+        XCTAssertEqual(fetchedTrip?.title, someTrip.title)
     }
     
     

@@ -35,9 +35,8 @@ class AppCoordinator: AppCoordinatorType {
         navigationController.modalPresentationStyle = .automatic
         
         GeneralStyleManager.style(navigationController.navigationBar)
-        let viewModel = TripsListViewModel(dependencies: dependencies)
+        let viewModel = TripsListViewModel(dependencies: dependencies, coordinator: self)
         let controller = TripsListController(viewModel: viewModel)
-        viewModel.coordinator = self
         navigationController.pushViewController(controller, animated: false)
     }
     
@@ -45,8 +44,7 @@ class AppCoordinator: AppCoordinatorType {
     func goToAddTrip(when tapped: Observable<Void>) -> Disposable {
         tapped
             .subscribe(onNext: { [unowned self] in
-                let viewModel = EditTripViewModel(dependencies: self.dependencies)
-                viewModel.coordinator = self
+                let viewModel = EditTripViewModel(dependencies: self.dependencies, coordinator: self)
                 let controller = EditTripController(viewModel: viewModel)
                 self.modalController = self.presentModally(controller)
             })
@@ -115,24 +113,21 @@ class AppCoordinator: AppCoordinatorType {
     
     
     func select(_ trip: Trip) {
-        let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip)
-        vm.coordinator = self
+        let vm = AddPlacesViewModel(dependencies: dependencies, trip: trip, coordinator: self)
         let controller = AddPlacesController(viewModel: vm)
         navigationController.pushViewController(controller, animated: animationsEnabled)
     }
     
     
     func edit(_ trip: Trip) {
-        let vm = EditTripViewModel(dependencies: dependencies, tripId: trip.id)
-        vm.coordinator = self
+        let vm = EditTripViewModel(dependencies: dependencies, tripId: trip.id, coordinator: self)
         let controller = EditTripController(viewModel: vm)
         modalController = presentModally(controller)
     }
     
     
     func comment(on item: AddedPlaceItem) {
-        let vm = AddPlacesCommentViewModel(dependencies: dependencies, item: item)
-        vm.coordinator = self
+        let vm = AddPlacesCommentViewModel(dependencies: dependencies, item: item, coordinator: self)
         let controller = AddPlacesCommentController(viewModel: vm)
         modalController = presentBottomSheet(controller)
     }
@@ -221,8 +216,11 @@ class AppCoordinator: AppCoordinatorType {
             .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
             .subscribe(onNext: { [unowned self] trip, premiumEnabled in
                 if premiumEnabled {
-                    let vm = ColorSelectionViewModel(dependencies: self.dependencies, trip: trip)
-                    vm.coordinator = self
+                    let vm = ColorSelectionViewModel(
+                        dependencies: self.dependencies,
+                        trip: trip,
+                        coordinator: self
+                    )
                     let controller = ColorSelectionController(viewModel: vm)
                     self.modalController = presentModally(controller)
                 } else {

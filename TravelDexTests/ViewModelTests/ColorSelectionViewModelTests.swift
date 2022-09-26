@@ -14,21 +14,26 @@ import XCTest
 class ColorSelectionViewModelTests: XCTestCase {
     
     var mockDependencies: MockDependencies!
+    var mockCoordinator: MockAppCoordinator!
     var viewModel: ColorSelectionViewModelType!
+    
+    let someTrip = Trip(
+        id: TripID(),
+        title: "Mocked Trip",
+        visitedLocations: [],
+        pinColorRed: Trip.defaultPinColorRed,
+        pinColorGreen: Trip.defaultPinColorGreen,
+        pinColorBlue: Trip.defaultPinColorBlue
+    )
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.mockDependencies = MockDependencies()
+        self.mockCoordinator = MockAppCoordinator()
         self.viewModel = ColorSelectionViewModel(
             dependencies: mockDependencies,
-            trip: Trip(
-                id: TripID(),
-                title: "Mocked Trip",
-                visitedLocations: [],
-                pinColorRed: Trip.defaultPinColorRed,
-                pinColorGreen: Trip.defaultPinColorGreen,
-                pinColorBlue: Trip.defaultPinColorBlue
-            )
+            trip: someTrip,
+            coordinator: mockCoordinator
         )
     }
     
@@ -51,6 +56,12 @@ class ColorSelectionViewModelTests: XCTestCase {
     func testSelectionForwardsToStore() throws {
         let _ = viewModel.select(.just(.green))
         XCTAssertTrue(mockDependencies.mockTripStore.updateTripCalled)
+    }
+    
+    func testSelectionCoordinatorIsNotified() throws {
+        XCTAssertFalse(mockCoordinator.dismissModalControllerCalled)
+        let _ = viewModel.select(.just(.red))
+        XCTAssertTrue(mockCoordinator.dismissModalControllerCalled)
     }
     
 }
