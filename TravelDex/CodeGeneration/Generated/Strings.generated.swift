@@ -105,8 +105,8 @@ internal enum Localizable {
   internal static let mockedTripTitle1 = Localizable.tr("Localizable", "mocked_trip_title1", fallback: "Côte d’Azur")
   /// Saxony
   internal static let mockedTripTitle2 = Localizable.tr("Localizable", "mocked_trip_title2", fallback: "Saxony")
-  /// Rurhgebiet
-  internal static let mockedTripTitle3 = Localizable.tr("Localizable", "mocked_trip_title3", fallback: "Rurhgebiet")
+  /// Ruhrgebiet
+  internal static let mockedTripTitle3 = Localizable.tr("Localizable", "mocked_trip_title3", fallback: "Ruhrgebiet")
   /// OK
   internal static let ok = Localizable.tr("Localizable", "ok", fallback: "OK")
   /// Unfortunately, this feature may only be used with the premium version of the app.

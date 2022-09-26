@@ -338,12 +338,12 @@
 		12F5A68128E086360081EDCA /* TripsListViewModel_PickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F5A67F28E086360081EDCA /* TripsListViewModel_PickerDelegate.swift */; };
 		12F5A68328E0873C0081EDCA /* CDImportTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F5A68228E0873C0081EDCA /* CDImportTrip.swift */; };
 		12F5A68428E0873C0081EDCA /* CDImportTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F5A68228E0873C0081EDCA /* CDImportTrip.swift */; };
-		42958DA8C559840C36EF535D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		42958DA8C559840C36EF535D /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		765781AAD63223BBC3B73A47 /* Pods_TravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F642A34825423BCC71581D /* Pods_TravelDex.framework */; };
 		90DE82A54366EC42C724E6D7 /* Pods_MockedTravelDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7786794DD385B7F9106808D /* Pods_MockedTravelDex.framework */; };
 		A166CA3B290FF98737E0527E /* Pods_TravelDexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 808284569B640CC5BAE44E43 /* Pods_TravelDexTests.framework */; };
 		B09FA5CD98379F36B3724C61 /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
-		C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		C5E90BF877C40D23C32FC1F5 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		F2257932C93CB74984733056 /* Pods-TravelDex-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4186C1882F73E04FEF791DC /* Pods-TravelDex-metadata.plist */; };
 /* End PBXBuildFile section */
 
@@ -574,8 +574,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1201FF4428D4DD9500525C33 /* StoreKit.framework in Frameworks */,
-				C5E90BF877C40D23C32FC1F5 /* (null) in Frameworks */,
-				42958DA8C559840C36EF535D /* (null) in Frameworks */,
+				C5E90BF877C40D23C32FC1F5 /* BuildFile in Frameworks */,
+				42958DA8C559840C36EF535D /* BuildFile in Frameworks */,
 				765781AAD63223BBC3B73A47 /* Pods_TravelDex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1607,6 +1607,7 @@
 				129F321D28D7A4D60092FA8E /* Frameworks */,
 				129F322128D7A4D60092FA8E /* Resources */,
 				129F322C28D7A4D60092FA8E /* CopyVersionNumber */,
+				93F39B120F7EF388BF0DFC0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1910,6 +1911,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelDex/Pods-TravelDex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93F39B120F7EF388BF0DFC0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MockedTravelDex/Pods-MockedTravelDex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MockedTravelDex/Pods-MockedTravelDex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MockedTravelDex/Pods-MockedTravelDex-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E69ECE35009F1258F8E22296 /* [CP] Embed Pods Frameworks */ = {
@@ -2613,11 +2631,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
+				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MockedTravelDexInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
@@ -2635,10 +2652,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.MockedTravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development de.hinzclaudio.TravelDex";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2655,11 +2671,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = R64UUKWT68;
+				DEVELOPMENT_TEAM = R64UUKWT68;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MockedTravelDexInfo.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TravelDex;
@@ -2677,10 +2692,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
+				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.MockedTravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore de.hinzclaudio.TravelDex";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
