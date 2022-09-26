@@ -158,6 +158,51 @@ class TripsStoreTests: XCTestCase {
         XCTAssertEqual(fetchedTrip?.title, someTrip.title)
     }
     
+    func testImportValidDataProducesCorrectResult() throws {
+        let trip = try store
+            .importData(from: validExportURL, inPlace: true)
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(trip)
+        XCTAssertEqual(trip?.id, TripID(uuidString: "C66E59CB-E829-4DEA-AAC0-8CAC06C90F95")!)
+        XCTAssertEqual(trip?.title, "AFRICA")
+        XCTAssertEqual(trip?.descr, "DESCRIPTION")
+        XCTAssertEqual(trip?.members, "MEMBERS")
+        XCTAssertEqual(trip?.visitedLocations.count, 2)
+        XCTAssertEqual(trip?.pinColorRed, Trip.defaultPinColorRed)
+        XCTAssertEqual(trip?.pinColorGreen, Trip.defaultPinColorGreen)
+        XCTAssertEqual(trip?.pinColorBlue, Trip.defaultPinColorBlue)
+    }
+    
+    func testImportInvalidDataThrowsError() throws {
+        XCTAssertThrowsError(
+            try store
+                .importData(from: invalidExportURL, inPlace: true)
+                .toBlocking(timeout: 5)
+                .first()!
+        )
+    }
+    
+    func testExportTripProducesCorrectResult() throws {
+        let trip = try add(
+            mockedTrip:
+                someTrip.cloneBuilder()
+                    .with(title: "MOCKTITLE")
+                    .build()!
+        )
+        let exportURL = try store.export(trip)
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertNotNil(exportURL)
+        
+        if let export = exportURL {
+            let data = try Data(contentsOf: export)
+            XCTAssertGreaterThan(data.count, 0)
+            XCTAssertEqual(export.scheme, "file")
+            XCTAssertEqual(export.lastPathComponent, "MOCKTITLE.tdex")
+        }
+    }
+    
     
     
     // MARK: - Helper
@@ -175,6 +220,16 @@ class TripsStoreTests: XCTestCase {
         XCTAssertEqual(mockedTrip.visitedLocations, addedTrip?.visitedLocations)
         
         return addedTrip!
+    }
+    
+    var validExportURL: URL {
+        Bundle(for: type(of: self))
+            .url(forResource: "AFRICA", withExtension: "tdex")!
+    }
+    
+    var invalidExportURL: URL {
+        Bundle(for: type(of: self))
+            .url(forResource: "AFRICA_INVALID", withExtension: "tdex")!
     }
     
 }

@@ -156,6 +156,21 @@ class AppCoordinatorTests: XCTestCase {
         XCTAssertTrue(addLocExists)
     }
     
+    func testHandleImportIfPremiumEnabled() throws {
+        dependencies.mockSkStore.enablePremium = true
+        let _ = coordinator.handle(importForFileAt: .just(validExportURL), inPlace: true)
+        let addPlacesExists = allViewControllers
+            .contains(where: { $0 is AddPlacesController })
+        XCTAssertTrue(addPlacesExists)
+    }
+    
+    func testHandleImportIfPremiumDisabled() throws {
+        dependencies.mockSkStore.enablePremium = false
+        let _ = coordinator.handle(importForFileAt: .just(validExportURL), inPlace: true)
+        let addPlacesExists = allViewControllers
+            .contains(where: { $0 is AddPlacesController })
+        XCTAssertFalse(addPlacesExists)
+    }
     
     
     // MARK: - Helper
@@ -194,6 +209,11 @@ class AppCoordinatorTests: XCTestCase {
             pinColor: Trip
                 .defaultPinColor
         )
+    }
+    
+    var validExportURL: URL {
+        Bundle(for: type(of: self))
+            .url(forResource: "AFRICA", withExtension: "tdex")!
     }
     
 }
