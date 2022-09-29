@@ -3,7 +3,7 @@
 # TravelDex
 
 ## Introduction
-TravelDex is an application I wrote to demonstrate my current programming skills. At the same time I tried to - and will continue to - build something that is of worth to other people. 
+TravelDex is an application I wrote to demonstrate my current programming abilities. However, I did try to build something useful - something that I would want to use myself. Feel free to check the project out on the [AppStore](https://apps.apple.com/app/traveldex/id1644759587)!
 
 So what is TravelDex exactly? TravelDex aims to help you with remembering your beloved trips around the world. The app allows you to add locations to trips, comment on any locations you have visited and even enables you to see everything you have done so far on a map. You may build the project yourself or check it out on the Apple App Store in the near future.
 
