@@ -42,7 +42,7 @@ class SKStoreTests: XCTestCase {
     func testProductsIsNonEmpty() throws {
         let products = try store.products
             .filter { !$0.isEmpty }
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertNotNil(products)
         XCTAssertEqual(products?.count, 3)
@@ -52,7 +52,7 @@ class SKStoreTests: XCTestCase {
         XCTAssertThrowsError(
             try store.purchasedProducts
                 .filter { !$0.isEmpty }
-                .toBlocking(timeout: 5)
+                .toBlocking(timeout: 10)
                 .first()
         )
     }
@@ -65,11 +65,11 @@ class SKStoreTests: XCTestCase {
             try await store.purchase(premium)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
         
         let products = try store.purchasedProducts
             .filter { !$0.isEmpty }
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertNotNil(products)
         XCTAssertEqual(products?.count, 1)
@@ -84,12 +84,12 @@ class SKStoreTests: XCTestCase {
             try await store.purchase(premium)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
         
         XCTAssertThrowsError(
             try store.purchasedProducts
                 .filter { !$0.isEmpty }
-                .toBlocking(timeout: 5)
+                .toBlocking(timeout: 10)
                 .first()
         )
     }
@@ -102,17 +102,19 @@ class SKStoreTests: XCTestCase {
             try await store.purchase(premium)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        
+        wait(for: [expectation], timeout: 10)
         
         guard let transaction = session.allTransactions().first
         else { throw SKStoreError.missingTransaction }
+        
         XCTAssertTrue(transaction.pendingAskToBuyConfirmation)
         
         try session.approveAskToBuyTransaction(identifier: transaction.identifier)
         
         let purchases = try store.purchasedProducts
             .filter { !$0.isEmpty }
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertNotNil(purchases)
         XCTAssertEqual(purchases?.count, 1)
@@ -147,7 +149,7 @@ class SKStoreTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
     }
     
     func testSyncDoesNotThrow() throws {
@@ -156,12 +158,12 @@ class SKStoreTests: XCTestCase {
             try await store.sync()
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
     }
     
     func testPremiumFeaturesDisabledInitially() throws {
         let premiumEnabled = try store.premiumFeaturesEnabled
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertFalse(premiumEnabled ?? true)
     }
@@ -174,10 +176,10 @@ class SKStoreTests: XCTestCase {
             try await store.purchase(premium)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: 10)
         
         let premiumEnabled = try store.premiumFeaturesEnabled
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()
         XCTAssertTrue(premiumEnabled ?? false)
     }
@@ -190,7 +192,7 @@ class SKStoreTests: XCTestCase {
             .compactMap { prods in
                 prods.first(where: { $0.id == SKProductIDs.premium.rawValue })
             }
-            .toBlocking(timeout: 5)
+            .toBlocking(timeout: 10)
             .first()!
     }
     
