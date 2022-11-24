@@ -15,8 +15,12 @@ import RxCocoa
 class SKStore: SKStoreType {
     
     init() {
-        self.products = _products.asObservable()
-        self.purchasedProducts = _purchasedProducts.asObservable()
+        self.products = _products
+            .compactMap({ $0 })
+            .asObservable()
+        self.purchasedProducts = _purchasedProducts
+            .compactMap({ $0 })
+            .asObservable()
         self.updateListener = listenForTransactions()
         Task {
             await requestProducts()
@@ -52,10 +56,10 @@ class SKStore: SKStoreType {
     
     
     // MARK: - Output
-    private let _products = BehaviorRelay<[Product]>(value: [])
+    private let _products = BehaviorRelay<[Product]?>(value: nil)
     let products: Observable<[Product]>
     
-    private let _purchasedProducts = BehaviorRelay<[Product]>(value: [])
+    private let _purchasedProducts = BehaviorRelay<[Product]?>(value: nil)
     let purchasedProducts: Observable<[Product]>
     
     var premiumFeaturesEnabled: Observable<Bool> {
@@ -86,7 +90,7 @@ class SKStore: SKStoreType {
         var newPurchases = [Product]()
         for await result in StoreKit.Transaction.currentEntitlements {
             guard let transaction = result.isVerified(),
-                  let product = _products.value
+                  let product = _products.value?
                 .first(where: { $0.id == transaction.productID })
             else { continue }
             newPurchases.append(product)
