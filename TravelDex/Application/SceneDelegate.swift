@@ -28,10 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let urlContext = connectionOptions.urlContexts.first,
            urlContext.url.scheme == "file" {
             let _ = appCoordinator
-                .handle(
-                    importForFileAt: .just(urlContext.url),
-                    inPlace: urlContext.options.openInPlace
-                )
+                .handle(importForFileAt: urlContext.url, inPlace: urlContext.options.openInPlace)
         }
     }
     
@@ -40,10 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               urlContext.url.scheme == "file"
         else { return }
         let _ = appCoordinator
-            .handle(
-                importForFileAt: .just(urlContext.url),
-                inPlace: urlContext.options.openInPlace
-            )
+            .handle(importForFileAt: urlContext.url, inPlace: urlContext.options.openInPlace)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

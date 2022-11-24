@@ -158,7 +158,7 @@ class AppCoordinatorTests: XCTestCase {
     
     func testHandleImportIfPremiumEnabled() throws {
         dependencies.mockSkStore.enablePremium = true
-        let _ = coordinator.handle(importForFileAt: .just(validExportURL), inPlace: true)
+        let _ = coordinator.handle(importForFileAt: validExportURL, inPlace: true)
         let addPlacesExists = allViewControllers
             .contains(where: { $0 is AddPlacesController })
         XCTAssertTrue(addPlacesExists)
@@ -166,7 +166,7 @@ class AppCoordinatorTests: XCTestCase {
     
     func testHandleImportIfPremiumDisabled() throws {
         dependencies.mockSkStore.enablePremium = false
-        let _ = coordinator.handle(importForFileAt: .just(validExportURL), inPlace: true)
+        let _ = coordinator.handle(importForFileAt: validExportURL, inPlace: true)
         let addPlacesExists = allViewControllers
             .contains(where: { $0 is AddPlacesController })
         XCTAssertFalse(addPlacesExists)

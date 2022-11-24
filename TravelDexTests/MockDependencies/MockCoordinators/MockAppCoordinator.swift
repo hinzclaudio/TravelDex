@@ -32,9 +32,9 @@ class MockAppCoordinator: AppCoordinatorType {
     }
     
     private(set) var importForFileAtCalled = false
-    func handle(importForFileAt url: Observable<URL>, inPlace: Bool) -> Disposable {
-        url
-            .subscribe(onNext: { [weak self] _ in self?.importForFileAtCalled = true })
+    func handle(importForFileAt url: URL, inPlace: Bool) -> Disposable {
+        importForFileAtCalled = true
+        return Disposables.create()
     }
     
     private(set) var dismissModalControllerCalled = false

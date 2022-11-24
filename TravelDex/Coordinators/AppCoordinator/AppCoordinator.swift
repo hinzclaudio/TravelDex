@@ -70,17 +70,17 @@ class AppCoordinator: AppCoordinatorType {
     }
     
     
-    func handle(importForFileAt url: Observable<URL>, inPlace: Bool) -> Disposable {
-        url
-            .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
-            .flatMapLatest { [unowned self] fileURL, premiumEnabled in
+    func handle(importForFileAt url: URL, inPlace: Bool) -> Disposable {
+        dependencies.skStore.premiumFeaturesEnabled
+            .flatMapLatest { [unowned self] premiumEnabled in
                 if premiumEnabled {
                     return self.dependencies.tripsStore
-                        .importData(from: fileURL, inPlace: inPlace)
+                        .importData(from: url, inPlace: inPlace)
                 } else {
                     throw PremiumStoreError.premiumFeaturesUnavailable
                 }
             }
+            .observe(on: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] trip in
                     self?.dismissModalController()
