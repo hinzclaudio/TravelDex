@@ -18,7 +18,6 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     
     typealias Dependencies = HasLocationsStore
     private let dependencies: Dependencies
-    private let bag = DisposeBag()
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies

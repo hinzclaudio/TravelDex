@@ -18,7 +18,9 @@ class AddPlacesViewModel: AddPlacesViewModelType {
 
     typealias Dependencies = HasTripsStore & HasPlacesStore
     let dependencies: Dependencies
+    
     let initialTrip: Trip
+    let bag = DisposeBag()
     
     init(dependencies: Dependencies, trip: Trip, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
@@ -27,7 +29,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         
         // We want to look for any places that have some kind of attachment (text or pic).
         // Any of those items should be displayed in an expanded state initially.
-        let _ = dependencies.placesStore
+        dependencies.placesStore
             .places(for: .just(trip.id))
             .take(1)
             .map { places in
@@ -38,6 +40,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
             }
             .map { Set($0) }
             .bind(to: _expandedItems)
+            .disposed(by: bag)
     }
     
     
