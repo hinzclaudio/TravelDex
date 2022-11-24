@@ -17,6 +17,9 @@ class PremiumStoreController: UIViewController {
     let bag = DisposeBag()
     
     // MARK: - Views
+    let loadingOverlay = UIView()
+    let activityIndicator = UIActivityIndicatorView()
+    
     let infoButton = UIBarButtonItem()
     let optionsButton = UIBarButtonItem()
     let headerView = PremiumStoreHeader()
@@ -54,6 +57,8 @@ class PremiumStoreController: UIViewController {
         navigationItem.setRightBarButton(optionsButton, animated: false)
         tableView.tableHeaderView = headerView
         view.addSubview(tableView)
+        
+        loadingOverlay.addSubview(activityIndicator)
     }
     
     private func configureViews() {
@@ -73,6 +78,9 @@ class PremiumStoreController: UIViewController {
         )
         optionsButton.menu = UIMenu(title: Localizable.menuTitle, children: [restoreAction])
         optionsButton.image = SFSymbol.gear.image
+        
+        loadingOverlay.backgroundColor = Colors.veryDark
+        activityIndicator.transform = .init(scaleX: 1.5, y: 1.5)
     }
     
     private func setAutoLayout() {
@@ -110,6 +118,32 @@ class PremiumStoreController: UIViewController {
                     .purchase(product: purchase)
                     .disposed(by: cell.bag)
             }
+            .disposed(by: bag)
+        
+        viewModel.isPurchasing
+            .drive(onNext: { [unowned self] isPurchasing in
+                if isPurchasing {
+                    self.view.addSubview(loadingOverlay)
+                    self.view.bringSubviewToFront(loadingOverlay)
+                    self.loadingOverlay.frame = view.frame
+                    self.loadingOverlay.alpha = 0
+                    self.activityIndicator.center = self.loadingOverlay.center
+                    self.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: AnimationConstants.defaultDuration) {
+                        self.loadingOverlay.alpha = 1
+                    }
+                } else {
+                    self.activityIndicator.stopAnimating()
+                    if self.loadingOverlay.superview != nil{
+                        UIView.animate(withDuration: AnimationConstants.defaultDuration) {
+                            self.loadingOverlay.alpha = 0
+                        } completion: { completed in
+                            guard completed else { return }
+                            self.loadingOverlay.removeFromSuperview()
+                        }
+                    }
+                }
+            })
             .disposed(by: bag)
     }
     

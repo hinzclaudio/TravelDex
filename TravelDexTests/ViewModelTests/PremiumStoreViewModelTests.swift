@@ -13,7 +13,6 @@ import XCTest
 
 class PremiumStoreViewModelTests: XCTestCase {
     
-    
     var mockDependencies: MockDependencies!
     var viewModel: PremiumStoreViewModelType!
     
@@ -86,13 +85,63 @@ class PremiumStoreViewModelTests: XCTestCase {
         XCTAssertNotNil(errorAlert)
     }
     
+    func testIsPurchasingFalseInitially() throws {
+        let initialValue = try viewModel.isPurchasing
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertEqual(initialValue, false)
+    }
+    
+    func testIsPurchasingTrueWhilePurchasing() throws {
+        let product = try anyProduct()
+        let _ = viewModel
+            .purchase(product: .just(product.product))
+        let isPurchasing = try viewModel.isPurchasing
+            .filter { $0 == true }
+            .toBlocking(timeout: 5)
+            .first()
+        XCTAssertEqual(isPurchasing, true)
+    }
+    
+    func testIsPurchasingFalseAfterSuccessfullPurchase() throws {
+        mockDependencies.mockSkStore.purchaseThrows = false
+        let product = try anyProduct()
+        let _ = viewModel
+            .purchase(product: .just(product.product))
+        
+        // Wait for the purchase to happen.
+        let _ = try anyProduct()
+        
+        let isPurchasing = try viewModel.isPurchasing
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertEqual(isPurchasing, false)
+    }
+    
+    func testIsPurchasingFalseAfterFailedPurchase() throws {
+        mockDependencies.mockSkStore.purchaseThrows = true
+        let product = try anyProduct()
+        let _ = viewModel
+            .purchase(product: .just(product.product))
+        
+        // Wait for the purchase to happen.
+        let _ = try anyProduct()
+        
+        let isPurchasing = try viewModel.isPurchasing
+            .toBlocking(timeout: 5)
+            .first()
+        
+        XCTAssertEqual(isPurchasing, false)
+    }
+    
     
     
     // MARK: - Helpers
-    func anyProduct(purchased: Bool = false) throws -> PremiumProduct {
+    func anyProduct() throws -> PremiumProduct {
         try viewModel.products
-            .compactMap { prods in prods.first(where: { $0.isPurchased == purchased }) }
-            .toBlocking(timeout: 5)
+            .compactMap { prods in prods.first }
+            .toBlocking(timeout: 10)
             .first()!
     }
     

@@ -29,12 +29,15 @@ class PremiumStoreViewModel: PremiumStoreViewModelType {
     func purchase(product: Observable<Product>) -> Disposable {
         product.subscribe(
             onNext: { [unowned self] product in
+                guard !self._isPurchasing.value else { return }
                 Task {
+                    await MainActor.run { self._isPurchasing.accept(true) }
                     do {
                         try await self.dependencies.skStore.purchase(product)
                     } catch {
                         self.skError.accept(error)
                     }
+                    await MainActor.run { self._isPurchasing.accept(false) }
                 }
             }
         )
@@ -58,6 +61,11 @@ class PremiumStoreViewModel: PremiumStoreViewModelType {
     
     
     // MARK: - Output
+    private let _isPurchasing = BehaviorRelay(value: false)
+    var isPurchasing: Driver<Bool> {
+        _isPurchasing.asDriver()
+    }
+    
     lazy var products: Driver<[PremiumProduct]> = {
         Observable.combineLatest(
             dependencies.skStore.products,

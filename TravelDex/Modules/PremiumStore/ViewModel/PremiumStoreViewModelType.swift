@@ -21,6 +21,7 @@ protocol PremiumStoreViewModelType {
     
     
     // MARK: - Output
+    var isPurchasing: Driver<Bool> { get }
     var products: Driver<[PremiumProduct]> { get }
     var errorAlert: Driver<UIAlertController> { get }
     
