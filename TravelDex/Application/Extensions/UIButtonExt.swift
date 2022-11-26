@@ -19,11 +19,11 @@ extension UIButton {
     }
     
     func styleBorderedButton() {
-        backgroundColor = Colors.darkRed
+        backgroundColor = Asset.TDColors.buttonBackground.color
         titleLabel?.font = Fonts.button
-        setTitleColor(Colors.defaultWhite, for: .normal)
+        setTitleColor(Asset.TDColors.white.color, for: .normal)
         titleLabel?.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
-        layer.borderColor = Colors.darkSandRose.cgColor
+        layer.borderColor = Asset.TDColors.text.color.cgColor
         layer.borderWidth = 1
         roundCorners()
     }

@@ -11,7 +11,7 @@ import UIKit
 
 extension UILabel {
     
-    func styleHeadline1(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline1(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline2
@@ -19,7 +19,7 @@ extension UILabel {
     }
     
     
-    func styleHeadline2(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline2(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline2
@@ -27,7 +27,7 @@ extension UILabel {
     }
     
     
-    func styleHeadline3(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleHeadline3(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.headline3
@@ -35,7 +35,7 @@ extension UILabel {
     }
     
     
-    func styleButtonText(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleButtonText(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.button
@@ -43,7 +43,7 @@ extension UILabel {
     }
     
     
-    func styleText(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleText(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.text
@@ -51,7 +51,7 @@ extension UILabel {
     }
     
     
-    func styleSmall(colored c: UIColor = Colors.defaultWhite, lines: Int = 0) {
+    func styleSmall(colored c: UIColor = Asset.TDColors.text.color, lines: Int = 0) {
         numberOfLines = lines
         textColor = c
         font = Fonts.small

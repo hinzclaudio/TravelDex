@@ -48,8 +48,8 @@ class TitledTextView: UIView {
         titleLabel.styleHeadline2()
         descrLabel.styleSmall()
         textView.font = Fonts.text
-        textView.backgroundColor = Colors.defaultWhite
-        textView.textColor = Colors.veryDark
+        textView.backgroundColor = Asset.TDColors.textInputBackground.color
+        textView.textColor = Asset.TDColors.text.color
         textView.roundCorners()
         textView.delegate = self
     }

@@ -45,7 +45,6 @@ class TripsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setNeedsStatusBarAppearanceUpdate()
     }
     
     
@@ -71,11 +70,10 @@ class TripsListController: UIViewController {
         storeButton.image = SFSymbol.cart.image
         mapButton.image = SFSymbol.map.image
         searchController.searchBar.styleDefault()
-        navigationItem.hidesSearchBarWhenScrolling = false
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         
         tableView.backgroundColor = .clear
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.register(TripsListTableCell.self, forCellReuseIdentifier: TripsListTableCell.identifier)
         
         addTripLabel.styleText()

@@ -61,7 +61,7 @@ class EditTripController: ScrollableVStackController {
     
     private func configureViews() {
         navigationItem.title = Localizable.addTripTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         contentStack.spacing = 2 * Sizes.defaultMargin
         titleTf.titleLabel.text = Localizable.tripNameTfTitle
         descrTf.titleLabel.text = Localizable.tripDescrTfTitle

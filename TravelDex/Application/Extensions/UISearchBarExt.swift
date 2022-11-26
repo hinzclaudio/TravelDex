@@ -12,8 +12,8 @@ import UIKit
 extension UISearchBar {
     
     func styleDefault() {
-        searchTextField.textColor = Colors.black
-        searchTextField.backgroundColor = Colors.defaultWhite
+        searchTextField.textColor = Asset.TDColors.text.color
+        searchTextField.backgroundColor = Asset.TDColors.background.color
     }
     
 }

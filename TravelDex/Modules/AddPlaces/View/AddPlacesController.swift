@@ -61,7 +61,7 @@ class AddPlacesController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.addPlacesTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         mapButton.image = SFSymbol.map.image
         mapButton.accessibilityIdentifier = "MapButton"
         

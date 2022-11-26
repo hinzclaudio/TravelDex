@@ -34,7 +34,7 @@ extension CoordinatorType {
     @discardableResult
     func presentModally(_ viewController: UIViewController) -> UIViewController {
         let modalContainer = ModalNavigationContainer(rootViewController: viewController)
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        GeneralStyleManager.style(modalContainer.navigationBar)
         modalContainer.modalPresentationStyle = .automatic
         navigationController.present(modalContainer, animated: true)
         return modalContainer
@@ -43,7 +43,7 @@ extension CoordinatorType {
     @discardableResult
     func presentBottomSheet(_ viewController: UIViewController) -> UIViewController {
         let modalContainer = ModalNavigationContainer(rootViewController: viewController)
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        GeneralStyleManager.style(modalContainer.navigationBar)
         modalContainer.modalPresentationStyle = .pageSheet
         if let sheet = modalContainer.sheetPresentationController {
             sheet.detents = [.medium()]

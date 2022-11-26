@@ -50,8 +50,8 @@ class TitledTextField: UIView {
         descrLabel.styleSmall()
         tf.roundCorners()
         tf.font = Fonts.text
-        tf.backgroundColor = Colors.defaultWhite
-        tf.textColor = Colors.veryDark
+        tf.backgroundColor = Asset.TDColors.textInputBackground.color
+        tf.textColor = Asset.TDColors.text.color
         tf.returnKeyType = .done
         tf.delegate = self
     }

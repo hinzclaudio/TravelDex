@@ -16,7 +16,7 @@ class AppCoordinator: AppCoordinatorType {
     
     let window: UIWindow?
     var childCoordinators = [CoordinatorType]()
-    var navigationController: UINavigationController = BaseNavigationController()
+    var navigationController = UINavigationController()
     weak var modalController: UIViewController?
     private var pickerViewModel: PhotoPickerViewModelType?
     
@@ -33,6 +33,7 @@ class AppCoordinator: AppCoordinatorType {
     func start() {
         window?.rootViewController = navigationController
         navigationController.modalPresentationStyle = .automatic
+        navigationController.navigationBar.prefersLargeTitles = true
         
         GeneralStyleManager.style(navigationController.navigationBar)
         let viewModel = TripsListViewModel(dependencies: dependencies, coordinator: self)
@@ -135,7 +136,7 @@ class AppCoordinator: AppCoordinatorType {
     
     func selectStore() {
         let modalContainer = ModalNavigationContainer()
-        GeneralStyleManager.styleModal(modalContainer.navigationBar)
+        GeneralStyleManager.style(modalContainer.navigationBar)
         
         let coordinator = PremiumStoreCoordinator(
             dependencies: dependencies,
@@ -159,7 +160,7 @@ class AppCoordinator: AppCoordinatorType {
                 let canAddPlaces = premiumEnabled || trip.visitedLocations.count < SKNonPremiumConfiguration.maxLocationsPerTrip
                 if canAddPlaces {
                     let modalContainer = ModalNavigationContainer()
-                    GeneralStyleManager.styleModal(modalContainer.navigationBar)
+                    GeneralStyleManager.style(modalContainer.navigationBar)
                     
                     let coordinator = LocationSearchCoordinator(
                         dependencies: dependencies,

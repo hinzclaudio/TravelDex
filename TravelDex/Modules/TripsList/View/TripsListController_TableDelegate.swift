@@ -49,35 +49,5 @@ extension TripsListController: UITableViewDelegate {
             }
         )
     }
-    
-    
-    func tableView(
-        _ tableView: UITableView,
-        previewForHighlightingContextMenuWithConfiguration configuration: UIContextMenuConfiguration
-    ) -> UITargetedPreview? {
-        makeTargetedPreview(for: configuration)
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration
-    ) -> UITargetedPreview? {
-        makeTargetedPreview(for: configuration)
-    }
-    
-    private func makeTargetedPreview(for config: UIContextMenuConfiguration) -> UITargetedPreview? {
-        guard let identifier = config.identifier as? NSNumber,
-              let cell = tableView.cellForRow(at: IndexPath(row: identifier.intValue, section: 0)),
-              let tripCell = cell as? TripsListTableCell
-        else {
-            assertionFailure("Something's missing...")
-            return nil
-        }
-
-        let parameters = UIPreviewParameters()
-        parameters.backgroundColor = .clear
-
-        return UITargetedPreview(view: tripCell.view.containerView, parameters: parameters)
-    }
 
 }

@@ -22,8 +22,6 @@ struct Colors {
     static let darkSandRose = UIColor(hex: "95888a")!
     static let gray = UIColor.gray
     
-    static var navBarColor: UIColor { mediumDark }
-    
     static var pickerColors: [UIColor] {
         [
             UIColor(hex: "2e521d")!, UIColor(hex: "4D8B31")!, UIColor(hex: "6ebf49")!,

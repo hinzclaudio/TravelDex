@@ -12,7 +12,6 @@ import UIKit
 class TripCell: UIView {
     
     // MARK: - Views
-    let containerView = UIView()
     let labelStack = UIStackView.defaultContentStack(withSpacing: 0.5 * Sizes.defaultMargin)
     let colorPill = ColoredPill()
     
@@ -35,30 +34,25 @@ class TripCell: UIView {
     }
     
     private func addViews() {
-        self.addSubview(containerView)
-        containerView.addSubview(labelStack)
-        containerView.addSubview(colorPill)
+        self.addSubview(labelStack)
+        self.addSubview(colorPill)
     }
     
     private func configureViews() {
         backgroundColor = .clear
-        containerView.roundCorners()
-        containerView.backgroundColor = Colors.darkGreen
     }
     
     private func setAutoLayout() {
-        containerView.autoPinEdge(.top, to: .top, of: self, withOffset: 0.5 * Sizes.defaultMargin)
-        containerView.autoPinEdge(.left, to: .left, of: self, withOffset: Sizes.defaultMargin)
-        containerView.autoPinEdge(.right, to: .right, of: self, withOffset: -Sizes.defaultMargin)
-        containerView.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -0.5 * Sizes.defaultMargin)
+        let vMargin = 1.5 * Sizes.defaultMargin
         
-        labelStack.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
-        labelStack.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
-        labelStack.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
+        colorPill.autoPinEdge(.top, to: .top, of: self, withOffset: vMargin)
+        colorPill.autoPinEdge(.left, to: .left, of: self, withOffset: Sizes.defaultMargin)
+        colorPill.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -vMargin)
         
-        colorPill.autoPinEdge(.top, to: .bottom, of: labelStack, withOffset: Sizes.defaultMargin)
-        colorPill.autoAlignAxis(.vertical, toSameAxisOf: containerView)
-        colorPill.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        labelStack.autoPinEdge(.top, to: .top, of: self, withOffset: vMargin)
+        labelStack.autoPinEdge(.left, to: .right, of: colorPill, withOffset: Sizes.defaultMargin)
+        labelStack.autoPinEdge(.right, to: .right, of: self, withOffset: -Sizes.defaultMargin)
+        labelStack.autoPinEdge(.bottom, to: .bottom, of: self, withOffset: -vMargin)
     }
     
     
@@ -67,7 +61,6 @@ class TripCell: UIView {
         
         let titleLabel = UILabel()
         titleLabel.styleHeadline1()
-        titleLabel.textAlignment = .center
         titleLabel.text = trip.title
         labelStack.addArrangedSubview(titleLabel)
         titleLabel.autoMatch(.width, to: .width, of: labelStack)
@@ -84,7 +77,6 @@ class TripCell: UIView {
             let membersLabel = UILabel()
             membersLabel.styleSmall(lines: 0)
             membersLabel.text = members
-            membersLabel.textAlignment = .center
             labelStack.addArrangedSubview(membersLabel)
             membersLabel.autoMatch(.width, to: .width, of: labelStack)
         }

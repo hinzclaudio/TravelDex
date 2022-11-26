@@ -35,13 +35,13 @@ class ColoredPill: UIView {
     
     private func configureViews() {
         roundCorners(radius: Sizes.defaultCornerRadius / 2)
-        layer.borderColor = Colors.defaultWhite.cgColor
+        layer.borderColor = Asset.TDColors.white.color.cgColor
         layer.borderWidth = 1.5
         backgroundColor = .red
     }
     
     private func setAutoLayout() {
-        autoSetDimensions(to: Sizes.colorPillSize)
+        self.autoSetDimension(.width, toSize: Sizes.colorPillWidth)
     }
     
 }

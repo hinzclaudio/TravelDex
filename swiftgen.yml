@@ -31,7 +31,7 @@ xcassets:
     - templateName: swift5
       params:
         forceProvidesNamespaces: true
-      output: ./TravelDex/CodeGeneration/Generated/Images.generated.swift
+      output: ./TravelDex/CodeGeneration/Generated/Assets.generated.swift
 
 
 ## Generate constants for your storyboards and XIBs.
