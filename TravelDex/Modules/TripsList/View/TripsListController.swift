@@ -160,6 +160,9 @@ class TripsListController: UIViewController {
             .select(tripSelection)
             .disposed(by: bag)
         
+        tableView.rx.itemDeleted
+            .bind(to: deletionIP)
+            .disposed(by: bag)
         let tripDeletion = deletionIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
             .asObservable()
