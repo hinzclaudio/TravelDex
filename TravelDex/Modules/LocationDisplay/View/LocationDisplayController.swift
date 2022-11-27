@@ -52,7 +52,7 @@ class LocationDisplayController: UIViewController {
     }
     
     private func configureViews() {
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         
         mapView.delegate = self
         mapView.register(

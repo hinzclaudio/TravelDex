@@ -61,6 +61,7 @@ class LocationSearchController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.searchLocationTitle
+        view.backgroundColor = Asset.TDColors.background.color
         mapView.delegate = self
         mapView.addGestureRecognizer(mapTapGesture)
         

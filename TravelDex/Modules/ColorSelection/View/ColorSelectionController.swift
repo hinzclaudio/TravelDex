@@ -63,7 +63,7 @@ class ColorSelectionController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.colorSelectionTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         
         collectionView.backgroundColor = .clear
         collectionView.register(ColorSelectionCell.self, forCellWithReuseIdentifier: ColorSelectionCell.identifier)

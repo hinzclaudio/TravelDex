@@ -50,7 +50,7 @@ class AddPlacesCommentController: ScrollableVStackController {
     }
     
     private func addViews() {
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         navigationItem.rightBarButtonItem = doneButton
         contentStack.addArrangedSubview(textView)
     }

@@ -61,6 +61,7 @@ class TripsListController: UIViewController {
         navigationItem.setLeftBarButton(storeButton, animated: false)
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         view.addSubview(tableView)
         view.addSubview(addTripLabel)
     }
