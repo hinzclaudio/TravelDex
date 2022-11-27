@@ -82,7 +82,7 @@ class SKProductCell: UITableViewCell {
         
         buyButton.isEnabled = !iapProduct.isPurchased
         buyButton.setTitle(iapProduct.isPurchased ? Localizable.statusPurchased : iapProduct.product.displayPrice, for: .normal)
-        buyButton.styleTextButton(colored: iapProduct.isPurchased ? Asset.TDColors.disabled.color : Asset.TDColors.buttonText.color)
+        buyButton.styleTextButton(colored: iapProduct.isPurchased ? Asset.TDColors.disabled.color : Asset.TDColors.button.color)
     }
     
 }

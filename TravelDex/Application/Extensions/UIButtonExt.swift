@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
     
-    func styleTextButton(colored c: UIColor = Asset.TDColors.buttonText.color) {
+    func styleTextButton(colored c: UIColor = Asset.TDColors.icon.color) {
         backgroundColor = .clear
         titleLabel?.font = Fonts.button
         setTitleColor(c, for: .normal)
@@ -19,12 +19,10 @@ extension UIButton {
     }
     
     func styleBorderedButton() {
-        backgroundColor = Asset.TDColors.buttonBackground.color
+        backgroundColor = Asset.TDColors.button.color
         titleLabel?.font = Fonts.button
         setTitleColor(Asset.TDColors.white.color, for: .normal)
         titleLabel?.autoSetDimension(.height, toSize: Sizes.defaultBorderButtonHeight)
-        layer.borderColor = Asset.TDColors.text.color.cgColor
-        layer.borderWidth = 1
         roundCorners()
     }
     
