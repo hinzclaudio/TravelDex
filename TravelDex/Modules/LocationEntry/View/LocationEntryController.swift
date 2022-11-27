@@ -62,7 +62,7 @@ class LocationEntryController: ScrollableVStackController {
     
     private func configureViews() {
         navigationItem.title = Localizable.addLocationTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         titleField.titleLabel.text = Localizable.locationNameTfTitle
         regionField.titleLabel.text = Localizable.locationRegionTfTitle
         regionField.descrLabel.text = Localizable.locationRegionTfSubtitle
