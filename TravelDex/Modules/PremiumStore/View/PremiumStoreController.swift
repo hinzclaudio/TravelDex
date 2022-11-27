@@ -63,9 +63,9 @@ class PremiumStoreController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.iapStoreTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         tableView.register(SKProductCell.self, forCellReuseIdentifier: SKProductCell.identifier)
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.backgroundColor = .clear
         
         headerView.textLabel.text = Localizable.iapStoreDescription
@@ -79,7 +79,7 @@ class PremiumStoreController: UIViewController {
         optionsButton.menu = UIMenu(title: Localizable.menuTitle, children: [restoreAction])
         optionsButton.image = SFSymbol.gear.image
         
-        loadingOverlay.backgroundColor = Colors.veryDark
+        loadingOverlay.backgroundColor = Asset.TDColors.background.color
         activityIndicator.transform = .init(scaleX: 1.5, y: 1.5)
     }
     

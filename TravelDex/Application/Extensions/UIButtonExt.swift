@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
     
-    func styleTextButton(colored c: UIColor = Colors.darkRed) {
+    func styleTextButton(colored c: UIColor = Asset.TDColors.buttonText.color) {
         backgroundColor = .clear
         titleLabel?.font = Fonts.button
         setTitleColor(c, for: .normal)

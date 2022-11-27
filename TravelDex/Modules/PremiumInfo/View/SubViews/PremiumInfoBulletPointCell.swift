@@ -17,7 +17,6 @@ class PremiumInfoBulletPointCell: UITableViewCell {
     }
     
     // MARK: - Views
-    private let containerView = UIView()
     private let infoIcon = UIImageView()
     private let infoLabel = UILabel()
     
@@ -41,41 +40,32 @@ class PremiumInfoBulletPointCell: UITableViewCell {
     }
     
     private func addViews() {
-        contentView.addSubview(containerView)
-        containerView.addSubview(infoIcon)
-        containerView.addSubview(infoLabel)
+        contentView.addSubview(infoIcon)
+        contentView.addSubview(infoLabel)
     }
     
     private func configureViews() {
         selectionStyle = .none
         backgroundColor = .clear
-        contentView.backgroundColor = .clear
-        
-        containerView.roundCorners()
-        containerView.backgroundColor = Colors.lightSandRose
+        contentView.backgroundColor = Asset.TDColors.background.color
         
         infoIcon.image = SFSymbol.infoCircle.image
         infoIcon.contentMode = .scaleAspectFit
-        infoIcon.tintColor = Colors.black
+        infoIcon.tintColor = Asset.TDColors.disabled.color
         
-        infoLabel.styleText(colored: Colors.black)
+        infoLabel.styleText()
         infoLabel.text = text
     }
     
     private func setAutoLayout() {
-        containerView.autoPinEdge(.top, to: .top, of: contentView, withOffset: Sizes.halfDefMargin)
-        containerView.autoPinEdge(.left, to: .left, of: contentView, withOffset: Sizes.defaultMargin)
-        containerView.autoPinEdge(.right, to: .right, of: contentView, withOffset: -Sizes.defaultMargin)
-        containerView.autoPinEdge(.bottom, to: .bottom, of: contentView, withOffset: -Sizes.halfDefMargin)
-        
-        infoIcon.autoPinEdge(.left, to: .left, of: containerView, withOffset: Sizes.defaultMargin)
-        infoIcon.autoAlignAxis(.horizontal, toSameAxisOf: containerView)
+        infoIcon.autoPinEdge(.left, to: .left, of: contentView, withOffset: Sizes.defaultMargin)
+        infoIcon.autoAlignAxis(.horizontal, toSameAxisOf: contentView)
         infoIcon.autoSetDimensions(to: Sizes.defaultIconButtonSIze)
         
-        infoLabel.autoPinEdge(.top, to: .top, of: containerView, withOffset: Sizes.defaultMargin)
+        infoLabel.autoPinEdge(.top, to: .top, of: contentView, withOffset: Sizes.defaultMargin)
         infoLabel.autoPinEdge(.left, to: .right, of: infoIcon, withOffset: Sizes.defaultMargin)
-        infoLabel.autoPinEdge(.right, to: .right, of: containerView, withOffset: -Sizes.defaultMargin)
-        infoLabel.autoPinEdge(.bottom, to: .bottom, of: containerView, withOffset: -Sizes.defaultMargin)
+        infoLabel.autoPinEdge(.right, to: .right, of: contentView, withOffset: -Sizes.defaultMargin)
+        infoLabel.autoPinEdge(.bottom, to: .bottom, of: contentView, withOffset: -Sizes.defaultMargin)
     }
     
 }

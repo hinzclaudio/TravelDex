@@ -26,6 +26,9 @@ internal enum Asset {
   internal enum TDColors {
     internal static let background = ColorAsset(name: "background")
     internal static let buttonBackground = ColorAsset(name: "buttonBackground")
+    internal static let buttonText = ColorAsset(name: "buttonText")
+    internal static let disabled = ColorAsset(name: "disabled")
+    internal static let headerBackground = ColorAsset(name: "headerBackground")
     internal static let icon = ColorAsset(name: "icon")
     internal static let text = ColorAsset(name: "text")
     internal static let textInputBackground = ColorAsset(name: "textInputBackground")

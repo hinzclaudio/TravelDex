@@ -41,7 +41,7 @@ class PremiumStoreHeader: UIView {
     private func configureViews() {
         backgroundColor = .clear
         containerView.roundCorners()
-        containerView.backgroundColor = Colors.darkGreen
+        containerView.backgroundColor = Asset.TDColors.headerBackground.color
         
         textLabel.styleText()
     }

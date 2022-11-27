@@ -54,12 +54,12 @@ class PremiumInfoController: UIViewController {
     
     private func configureViews() {
         navigationItem.title = Localizable.premiumInfoTitle
-        view.backgroundColor = Colors.veryDark
+        view.backgroundColor = Asset.TDColors.background.color
         
         headerView.textLabel.text = Localizable.premiumInfoHeader
         
         tableView.register(PremiumInfoBulletPointCell.self, forCellReuseIdentifier: PremiumInfoBulletPointCell.identifier)
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         tableView.backgroundColor = .clear
     }
     
