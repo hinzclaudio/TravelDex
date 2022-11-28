@@ -30,7 +30,9 @@ class ColorSelectionViewModel: ColorSelectionViewModelType {
     
     let trip: Driver<Trip>
     
-    let availableColors: Driver<[UIColor]> = .just(Colors.pickerColors)
+    let availableColors: Driver<[UIColor]> = {
+        .just(ColorSelectionConstants.allColors)
+    }()
     
     func select(_ color: Observable<UIColor>) -> Disposable {
         let updatedTrip = color

@@ -1,8 +1,8 @@
 //
-//  Colors.swift
+//  ColorSelectionConstants.swift
 //  TravelDex
 //
-//  Created by Claudio Hinz on 05.08.22.
+//  Created by Claudio Hinz on 28.11.22.
 //
 
 import UIKit
@@ -10,11 +10,9 @@ import CryptoSwift
 
 
 
-struct Colors {
-    static let black = UIColor(hex: "000000")!
-    static let lightSandRose = UIColor(hex: "DCD8D9")!
+struct ColorSelectionConstants {
     
-    static var pickerColors: [UIColor] {
+    static var allColors: [UIColor] {
         [
             UIColor(hex: "2e521d")!, UIColor(hex: "4D8B31")!, UIColor(hex: "6ebf49")!,
             UIColor(hex: "dd1e19")!, Trip.defaultPinColor, UIColor(hex: "f49d9b")!,
@@ -44,6 +42,3 @@ extension UIColor {
     }
     
 }
-
-
-

@@ -134,7 +134,6 @@
 		129F31B628D7A4D60092FA8E /* TripsListController_TableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34028C3D42F0066FE22 /* TripsListController_TableDelegate.swift */; };
 		129F31B728D7A4D60092FA8E /* CDUpdatePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */; };
 		129F31B828D7A4D60092FA8E /* MarkerConformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2F028C3D2D80066FE22 /* MarkerConformances.swift */; };
-		129F31B928D7A4D60092FA8E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38F28C3D49B0066FE22 /* Colors.swift */; };
 		129F31BA28D7A4D60092FA8E /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4728BD505400CC2AD0 /* DefaultCDStack.swift */; };
 		129F31BB28D7A4D60092FA8E /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */; };
 		129F31BC28D7A4D60092FA8E /* AddPlacesCommentViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB32028C3D42F0066FE22 /* AddPlacesCommentViewModelType.swift */; };
@@ -244,6 +243,9 @@
 		129F322B28D7A4D60092FA8E /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
 		12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */; };
 		12D3521B2932A7EE00F48C30 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3521A2932A7EE00F48C30 /* Assets.generated.swift */; };
+		12D3C2A429349EE400B92D70 /* ColorSelectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */; };
+		12D3C2A529349FE600B92D70 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3521A2932A7EE00F48C30 /* Assets.generated.swift */; };
+		12D3C2A62934A01200B92D70 /* ColorSelectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */; };
 		12DAB2E228BD522D0066FE22 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E128BD522D0066FE22 /* Settings.bundle */; };
 		12DAB2F228C3D2D80066FE22 /* AutoInitializable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */; };
 		12DAB2F428C3D2D80066FE22 /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E928C3D2D70066FE22 /* sourcery.sh */; };
@@ -308,7 +310,6 @@
 		12DAB39128C3D49B0066FE22 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */; };
 		12DAB39228C3D49B0066FE22 /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */; };
 		12DAB39328C3D49B0066FE22 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38E28C3D49B0066FE22 /* Fonts.swift */; };
-		12DAB39428C3D49B0066FE22 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB38F28C3D49B0066FE22 /* Colors.swift */; };
 		12DAB3AD28C3D55F0066FE22 /* AddPlacesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB39628C3D55F0066FE22 /* AddPlacesViewModelTests.swift */; };
 		12DAB3AE28C3D55F0066FE22 /* EditTripViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB39728C3D55F0066FE22 /* EditTripViewModelTests.swift */; };
 		12DAB3AF28C3D55F0066FE22 /* AddPlacesCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB39828C3D55F0066FE22 /* AddPlacesCommentViewModelTests.swift */; };
@@ -461,6 +462,7 @@
 		129F323228D7A4D60092FA8E /* MockedTravelDexInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MockedTravelDexInfo.plist; path = /Users/hinzclaudio/CodingProjects/TravelDex/MockedTravelDexInfo.plist; sourceTree = "<absolute>"; };
 		12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModelTests.swift; sourceTree = "<group>"; };
 		12D3521A2932A7EE00F48C30 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
+		12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionConstants.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		12DAB2E628C3D2D70066FE22 /* AutoInitializable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInitializable.generated.swift; sourceTree = "<group>"; };
 		12DAB2E928C3D2D70066FE22 /* sourcery.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = sourcery.sh; sourceTree = "<group>"; };
@@ -525,7 +527,6 @@
 		12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		12DAB38E28C3D49B0066FE22 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		12DAB38F28C3D49B0066FE22 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		12DAB39628C3D55F0066FE22 /* AddPlacesViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlacesViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB39728C3D55F0066FE22 /* EditTripViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTripViewModelTests.swift; sourceTree = "<group>"; };
 		12DAB39828C3D55F0066FE22 /* AddPlacesCommentViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlacesCommentViewModelTests.swift; sourceTree = "<group>"; };
@@ -1321,6 +1322,7 @@
 		12DAB34428C3D42F0066FE22 /* ColorSelection */ = {
 			isa = PBXGroup;
 			children = (
+				12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */,
 				12DAB34528C3D42F0066FE22 /* ViewModel */,
 				12DAB34828C3D42F0066FE22 /* View */,
 			);
@@ -1425,7 +1427,6 @@
 				12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */,
 				12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */,
 				12DAB38E28C3D49B0066FE22 /* Fonts.swift */,
-				12DAB38F28C3D49B0066FE22 /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1972,6 +1973,7 @@
 				12DAB30328C3D3DB0066FE22 /* AppCoordinator.swift in Sources */,
 				12DAB30D28C3D40E0066FE22 /* InfoManager.swift in Sources */,
 				12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */,
+				12D3C2A429349EE400B92D70 /* ColorSelectionConstants.swift in Sources */,
 				12DAB36028C3D42F0066FE22 /* TitledTextView.swift in Sources */,
 				12DAB37B28C3D42F0066FE22 /* ColorSelectionViewModelType.swift in Sources */,
 				12571F8C28BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
@@ -1982,7 +1984,6 @@
 				12DAB37828C3D42F0066FE22 /* TripsListController_TableDelegate.swift in Sources */,
 				12571F9228BD505400CC2AD0 /* CDUpdatePlace.swift in Sources */,
 				12DAB2FA28C3D2D80066FE22 /* MarkerConformances.swift in Sources */,
-				12DAB39428C3D49B0066FE22 /* Colors.swift in Sources */,
 				1206332C28E07B4C00FA05F8 /* StringExt.swift in Sources */,
 				1206331A28DF966600FA05F8 /* TripExport.swift in Sources */,
 				12571F8528BD505400CC2AD0 /* DefaultCDStack.swift in Sources */,
@@ -2168,7 +2169,6 @@
 				129F31B628D7A4D60092FA8E /* TripsListController_TableDelegate.swift in Sources */,
 				129F31B728D7A4D60092FA8E /* CDUpdatePlace.swift in Sources */,
 				129F31B828D7A4D60092FA8E /* MarkerConformances.swift in Sources */,
-				129F31B928D7A4D60092FA8E /* Colors.swift in Sources */,
 				129F31BA28D7A4D60092FA8E /* DefaultCDStack.swift in Sources */,
 				1206332D28E07B4C00FA05F8 /* StringExt.swift in Sources */,
 				129F31BB28D7A4D60092FA8E /* AnimationConstants.swift in Sources */,
@@ -2232,6 +2232,7 @@
 				129F31F228D7A4D60092FA8E /* FileManagerExt.swift in Sources */,
 				129F31F328D7A4D60092FA8E /* PlaceDisplayViewModel.swift in Sources */,
 				129F31F428D7A4D60092FA8E /* Strings.generated.swift in Sources */,
+				12D3C2A62934A01200B92D70 /* ColorSelectionConstants.swift in Sources */,
 				129F31F528D7A4D60092FA8E /* GeneralStyleManager.swift in Sources */,
 				129F31F628D7A4D60092FA8E /* SKStoreType.swift in Sources */,
 				129F31F728D7A4D60092FA8E /* TripsStore.swift in Sources */,
@@ -2250,6 +2251,7 @@
 				1206332828E0612D00FA05F8 /* TripExport.swift in Sources */,
 				129F320528D7A4D60092FA8E /* PhotoPickerViewModelType.swift in Sources */,
 				129F320628D7A4D60092FA8E /* AutoInitializable.generated.swift in Sources */,
+				12D3C2A529349FE600B92D70 /* Assets.generated.swift in Sources */,
 				129F320728D7A4D60092FA8E /* PremiumStoreController.swift in Sources */,
 				129F320828D7A4D60092FA8E /* ColorSelection_CollectionView.swift in Sources */,
 				129F320928D7A4D60092FA8E /* LocationSearchController.swift in Sources */,

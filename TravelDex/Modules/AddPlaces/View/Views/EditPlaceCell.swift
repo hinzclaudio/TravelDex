@@ -113,31 +113,31 @@ class EditPlaceCell: UITableViewCell {
             })
             .disposed(by: persistentBag)
             
-        titleLabel.styleHeadline2(colored: Colors.black)
-        secLabel.styleSmall(colored: Colors.black)
+        titleLabel.styleHeadline2()
+        secLabel.styleSmall()
         containerView.roundCorners()
-        containerView.backgroundColor = Colors.lightSandRose
+        containerView.backgroundColor = Asset.TDColors.headerBackground.color
         
-        optionsButton.tintColor = Colors.black
+        optionsButton.tintColor = Asset.TDColors.icon.color
         optionsButton.setImage(SFSymbol.gear.image, for: .normal)
         optionsButton.showsMenuAsPrimaryAction = true
         
         startLabel.text = Localizable.start
-        startLabel.styleSmall(colored: Colors.black)
+        startLabel.styleSmall()
         startPicker.styleDayMonthYear()
         
         endLabel.text = Localizable.end
-        endLabel.styleSmall(colored: Colors.black)
+        endLabel.styleSmall()
         endPicker.styleDayMonthYear()
         
         picturePreview.isUserInteractionEnabled = true
         picturePreview.clipsToBounds = true
-        picturePreview.tintColor = Colors.black
+        picturePreview.tintColor = Asset.TDColors.disabled.color
         picturePreview.addGestureRecognizer(imageTapRecognizer)
         
         loadingView.isHidden = true
         
-        customTextLabel.styleText(colored: Colors.black)
+        customTextLabel.styleText()
     }
     
     private func setAutoLayout() {
