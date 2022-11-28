@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         let appDependencies = DefaultAppDependencies()
         self.dependencies = appDependencies
-        setupMockData(using: appDependencies)
+        setupMockData(using: appDependencies, randomIds: false)
+        
         self.appCoordinator = AppCoordinator(window: window, dependencies: dependencies)
         self.appCoordinator.start()
         
@@ -55,9 +56,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // TODO: Save the applications state
     }
     
-    func setupMockData(using dependencies: DefaultAppDependencies) {
+    func setupMockData(using dependencies: DefaultAppDependencies, randomIds: Bool) {
         let trip1 = Trip(
-            id: TripID(uuidString: "afb5b5f4-a608-4f44-bc50-eac56e0b116d")!,
+            id: randomIds ? UUID() : TripID(uuidString: "afb5b5f4-a608-4f44-bc50-eac56e0b116d")!,
             title: Localizable.mockedTripTitle1,
             descr: Localizable.mockedTripDescr1,
             members: Localizable.mockedTripMembers1,
@@ -69,35 +70,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             pinColorBlue: Trip.defaultPinColorBlue
         )
         let trip2 = trip1.cloneBuilder()
-            .with(id: TripID(uuidString: "360855b1-8ec1-46db-aa91-d7b886f565bc")!)
+            .with(id: randomIds ? UUID() : TripID(uuidString: "360855b1-8ec1-46db-aa91-d7b886f565bc")!)
             .with(title: Localizable.mockedTripTitle2)
             .with(descr: Localizable.mockedTripDescr2)
             .with(members: Localizable.mockedTripMembers2)
             .build()!
         let trip3 = trip1.cloneBuilder()
-            .with(id: TripID(uuidString: "74093a99-7853-4d90-9aff-ef9fc724de1d")!)
+            .with(id: randomIds ? UUID() : TripID(uuidString: "74093a99-7853-4d90-9aff-ef9fc724de1d")!)
             .with(title: Localizable.mockedTripTitle3)
             .with(descr: Localizable.mockedTripDescr3)
             .with(members: Localizable.mockedTripMembers3)
             .build()!
         
         let bochum  = Location(
-            id: LocationID(uuidString: "22252040-df98-4dee-a05f-3c8120d7e7ae")!,
+            id: randomIds ? UUID() : LocationID(uuidString: "22252040-df98-4dee-a05f-3c8120d7e7ae")!,
             name: "Bochum", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.483403, longitude: 7.218664)
         )
         let essen = Location(
-            id: LocationID(uuidString: "2a0c179b-c6ad-4aa9-aa46-f0db4717c073")!,
+            id: randomIds ? UUID() : LocationID(uuidString: "2a0c179b-c6ad-4aa9-aa46-f0db4717c073")!,
             name: "Essen", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.457310, longitude: 7.011961)
         )
         let dortmund = Location(
-            id: LocationID(uuidString: "9ea2fe1f-6780-413d-99aa-4b45cc588806")!,
+            id: randomIds ? UUID() : LocationID(uuidString: "9ea2fe1f-6780-413d-99aa-4b45cc588806")!,
             name: "Dortmund", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.513784, longitude: 7.464763)
         )
         let witten = Location(
-            id: LocationID(uuidString: "b67f62f5-f871-405e-8284-10c241781120")!,
+            id: randomIds ? UUID() : LocationID(uuidString: "b67f62f5-f871-405e-8284-10c241781120")!,
             name: "Witten", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.439118, longitude: 7.336871)
         )

@@ -66,7 +66,7 @@ class PremiumInfoController: UIViewController {
     private func setAutoLayout() {
         headerView.autoMatch(.width, to: .width, of: view)
         
-        tableView.autoPinEdge(toSuperviewSafeArea: .top)
+        tableView.autoPinEdge(.top, to: .top, of: view)
         tableView.autoPinEdge(.left, to: .left, of: view)
         tableView.autoPinEdge(.right, to: .right, of: view)
         tableView.autoPinEdge(.bottom, to: .bottom, of: view)

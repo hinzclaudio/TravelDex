@@ -61,17 +61,18 @@ class TripsListController: UIViewController {
         navigationItem.setLeftBarButton(storeButton, animated: false)
         navigationItem.setRightBarButtonItems([addButton, mapButton], animated: false)
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
         view.addSubview(tableView)
         view.addSubview(addTripLabel)
     }
     
     private func configureViews() {
         navigationItem.title = Localizable.tripsListTitle
+        view.backgroundColor = Asset.TDColors.background.color
+        
         storeButton.image = SFSymbol.cart.image
         mapButton.image = SFSymbol.map.image
+        
         searchController.searchBar.styleDefault()
-        view.backgroundColor = Asset.TDColors.background.color
         
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .singleLine
@@ -103,7 +104,7 @@ class TripsListController: UIViewController {
     }
     
     private func setAutoLayout() {
-        tableView.autoPinEdge(toSuperviewSafeArea: .top)
+        tableView.autoPinEdge(.top, to: .top, of: view)
         tableView.autoPinEdge(.left, to: .left, of: view)
         tableView.autoPinEdge(.right, to: .right, of: view)
         tableView.autoPinEdge(.bottom, to: .bottom, of: view)
