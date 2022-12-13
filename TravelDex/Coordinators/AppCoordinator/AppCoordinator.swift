@@ -7,7 +7,6 @@
 
 import UIKit
 import PhotosUI
-import DTPhotoViewerController
 import RxSwift
 
 
@@ -229,13 +228,6 @@ class AppCoordinator: AppCoordinatorType {
                     (self.modalController ?? self.navigationController).present(info, animated: animationsEnabled)
                 }
             })
-    }
-    
-    
-    func photoViewer(from view: UIImageView?, image: UIImage?) {
-        let controller = DTPhotoViewerController(referencedView: view, image: image)
-        let presenter = modalController ?? navigationController
-        presenter.present(controller, animated: animationsEnabled)
     }
     
     

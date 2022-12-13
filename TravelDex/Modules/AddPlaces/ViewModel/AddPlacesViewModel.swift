@@ -12,13 +12,14 @@ import PhotosUI
 
 
 
-class AddPlacesViewModel: AddPlacesViewModelType {
+class AddPlacesViewModel: NSObject, AddPlacesViewModelType {
     
     weak var coordinator: AppCoordinatorType?
 
     typealias Dependencies = HasTripsStore & HasPlacesStore
     let dependencies: Dependencies
     
+    let documentInteractionController = UIDocumentInteractionController()
     let initialTrip: Trip
     let bag = DisposeBag()
     
@@ -26,6 +27,7 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         self.dependencies = dependencies
         self.initialTrip = trip
         self.coordinator = coordinator
+        super.init()
         
         // We want to look for any places that have some kind of attachment (text or pic).
         // Any of those items should be displayed in an expanded state initially.
@@ -79,10 +81,21 @@ class AddPlacesViewModel: AddPlacesViewModelType {
         _expandedItems.accept(newItems)
     }
     
-    func imageTapped(_ item: AddedPlaceItem, view: UIImageView) {
-        if let imgData = item.visitedPlace.picture {
-            let img = UIImage(data: imgData)
-            coordinator?.photoViewer(from: view, image: img)
+    func imageTapped(_ item: AddedPlaceItem) {
+        if let imgData = item.visitedPlace.picture,
+           let img = UIImage(data: imgData),
+           let data = img.jpegData(compressionQuality: 1) {
+            do {
+                let fileURL = FileManager.default.temporaryDirectory
+                    .appendingPathComponent(Localizable.defaultImageName, conformingTo: .image)
+                    .appendingPathExtension("jpeg")
+                try data.write(to: fileURL)
+                documentInteractionController.delegate = self
+                documentInteractionController.url = fileURL
+                documentInteractionController.presentPreview(animated: true)
+            } catch {
+                assertionFailure("Something's wrong: \(error)")
+            }
         } else {
             addOrChangeImage(to: item)
         }
@@ -253,6 +266,17 @@ extension AddPlacesViewModel: PhotoPickerViewModelType {
                 }
             }
         
+    }
+    
+}
+
+
+
+// MARK: - UIDocumentInteractionController
+extension AddPlacesViewModel: UIDocumentInteractionControllerDelegate {
+
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        coordinator?.navigationController.topViewController ?? UIViewController()
     }
     
 }

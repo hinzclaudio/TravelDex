@@ -19,7 +19,6 @@ protocol AppCoordinatorType: CoordinatorType {
     func dismissModalController()
     
     func pickPhoto(_ viewModel: PhotoPickerViewModelType, for visitedPlace: VisitedPlace)
-    func photoViewer(from view: UIImageView?, image: UIImage?)
     
     func goToAddTrip(when tapped: Observable<Void>) -> Disposable
     func goToImportTrip(_ viewModel: TripsListViewModelType, when tapped: Observable<Void>) -> Disposable

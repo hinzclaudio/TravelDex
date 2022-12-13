@@ -57,6 +57,8 @@ internal enum Localizable {
   internal static func commentLocationTitle(_ p1: Any) -> String {
     return Localizable.tr("Localizable", "comment_location_title", String(describing: p1), fallback: "Enter a Comment for %@")
   }
+  /// travel_dex_img
+  internal static let defaultImageName = Localizable.tr("Localizable", "default_image_name", fallback: "travel_dex_img")
   /// End
   internal static let end = Localizable.tr("Localizable", "end", fallback: "End")
   /// This trip was already imported.

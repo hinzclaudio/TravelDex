@@ -138,9 +138,7 @@ class AddPlacesController: UIViewController {
                 
                 cell.imageTapRecognizer.rx.tap
                     .subscribe(
-                        onNext: { [unowned cell] in
-                            self.viewModel.imageTapped(vm.item, view: cell.picturePreview)
-                        }
+                        onNext: { [unowned self] in self.viewModel.imageTapped(vm.item) }
                     )
                     .disposed(by: cell.bag)
                 

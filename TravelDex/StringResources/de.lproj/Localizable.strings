@@ -74,3 +74,4 @@
 "action_export_trip" = "Teilen";
 "error_data_corrupted" = "Die Daten dieser Datei scheinen kaputt zu sein. Stellen Sie sicher, dass Sie eine .tdex Datei importieren.";
 "error_already_imported" = "Diese Reise wurde bereits importiert.";
+"default_image_name" = "travel_dex_img";

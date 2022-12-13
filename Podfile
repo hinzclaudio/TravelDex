@@ -11,7 +11,6 @@ def common_pods
   pod 'PureLayout'
   pod 'CryptoSwift'
   pod 'IQKeyboardManager'
-  pod 'DTPhotoViewerController'
   pod 'ZIPFoundation'
 end
 
