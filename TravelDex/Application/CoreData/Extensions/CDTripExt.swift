@@ -65,12 +65,11 @@ extension CDTrip {
                         text: cdPlace.text,
                         start: cdPlace.start,
                         end: cdPlace.end,
-                        locationName: cdPlace.location.name,
-                        locationRegion: cdPlace.location.region,
-                        locationCountry: cdPlace.location.country,
-                        locationTimezone: cdPlace.location.timezoneIdentifier,
-                        locationLatitude: cdPlace.location.latitude,
-                        locationLongitude: cdPlace.location.longitude
+                        locationName: cdPlace.name,
+                        locationRegion: cdPlace.region,
+                        locationCountry: cdPlace.country,
+                        locationLatitude: cdPlace.latitude,
+                        locationLongitude: cdPlace.longitude
                     )
                 }
         )

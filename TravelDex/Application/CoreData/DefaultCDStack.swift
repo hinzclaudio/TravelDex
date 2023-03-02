@@ -20,7 +20,6 @@ final class DefaultCDStack: CDStackType {
     
 
     private lazy var persistentContainer: NSPersistentContainer = {
-        // Migration
         do {
             let fm = FileManager.default
             let dirURL = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
@@ -38,12 +37,22 @@ final class DefaultCDStack: CDStackType {
         }
         
         // Actually initialize the store
-        let container = NSPersistentContainer(name: modelName)
+        let container = NSPersistentCloudKitContainer(name: modelName)
+        if let description = container.persistentStoreDescriptions.first {
+            description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+            description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        } else {
+            assertionFailure("Something's missing...")
+        }
+        
         container.loadPersistentStores { storeDescr, error in
             if let error = error {
                 fatalError("CDStack: \(error)")
             }
         }
+        
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.automaticallyMergesChangesFromParent = true
         
         return container
     }()
@@ -54,18 +63,14 @@ final class DefaultCDStack: CDStackType {
     private(set) lazy var saveContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
-        return context
-    }()
-    
-    private(set) lazy var storeContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent = saveContext
+        context.automaticallyMergesChangesFromParent = true
         return context
     }()
     
     private(set) lazy var reducerContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent = storeContext
+        context.parent = saveContext
+        context.automaticallyMergesChangesFromParent = true
         return context
     }()
     
@@ -88,24 +93,6 @@ final class DefaultCDStack: CDStackType {
         }
     }
     
-    
-    private func saveStoreContext(completion: @escaping (Error?) -> Void) {
-        storeContext.perform {
-            guard self.storeContext.hasChanges else {
-                completion(nil)
-                return
-            }
-            do {
-                try self.storeContext.save()
-                print("CDStack: MERGED STORECONTEXT")
-                completion(nil)
-            } catch {
-                completion(error)
-            }
-        }
-    }
-    
-    
     private func savePersistentStore(completion: @escaping (Error?) -> Void) {
          saveContext.perform {
             guard self.saveContext.hasChanges else {
@@ -114,7 +101,7 @@ final class DefaultCDStack: CDStackType {
             }
             do {
                 try self.saveContext.save()
-                print("CDStack: Saved TO SQLITE")
+                print("CDStack: SAVED TO SQLITE")
                 completion(nil)
             } catch {
                 completion(error)
@@ -129,16 +116,10 @@ final class DefaultCDStack: CDStackType {
                 assertionFailure("Something's wrong: \(error!)")
                 return
             }
-            self.saveStoreContext { error in
+            self.savePersistentStore { error in
                 guard error == nil else {
                     assertionFailure("Something's wrong: \(error!)")
                     return
-                }
-                self.savePersistentStore { error in
-                    guard error == nil else {
-                        assertionFailure("Something's wrong: \(error!)")
-                        return
-                    }
                 }
             }
         }

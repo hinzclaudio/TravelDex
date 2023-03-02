@@ -28,15 +28,15 @@ class DefaultAppDependencies: AppDependencies {
         self.geoCoder = geoCoder
         
         self.tripsStore = TripsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:)
         )
         self.placesStore = PlacesStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:)
         )
         self.locationsStore = LocationsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:),
             locationAPI: geoCoder
         )

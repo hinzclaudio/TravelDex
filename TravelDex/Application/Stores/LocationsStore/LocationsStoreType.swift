@@ -13,10 +13,6 @@ import RxCocoa
 
 protocol LocationsStoreType {
     
-    // MARK: - Input
-    func add(_ location: Observable<Location>) -> Disposable
-    
-    
     // MARK: - Output
     var error: Observable<Error> { get }
     

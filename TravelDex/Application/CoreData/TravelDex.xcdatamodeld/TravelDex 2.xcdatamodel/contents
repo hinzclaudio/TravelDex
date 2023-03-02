@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDTrip" representedClassName="CDTrip" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String"/>
+        <attribute name="dummyBit" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="members" optional="YES" attributeType="String"/>
+        <attribute name="pinColorBlue" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pinColorGreen" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pinColorRed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString=""/>
+        <relationship name="visitedPlaces" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDVisitedPlace" inverseName="trip" inverseEntity="CDVisitedPlace"/>
+    </entity>
+    <entity name="CDVisitedPlace" representedClassName="CDVisitedPlace" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="end" attributeType="Date" defaultDateTimeInterval="318693654000" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="pictureData" optional="YES" attributeType="Binary"/>
+        <attribute name="region" optional="YES" attributeType="String"/>
+        <attribute name="start" attributeType="Date" defaultDateTimeInterval="318693654000" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTrip" inverseName="visitedPlaces" inverseEntity="CDTrip"/>
+    </entity>
+</model>

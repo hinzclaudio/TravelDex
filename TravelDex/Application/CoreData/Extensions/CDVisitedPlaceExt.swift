@@ -18,8 +18,16 @@ extension CDVisitedPlace {
             picture: pictureData,
             start: start,
             end: end,
-            tripId: trip.id,
-            locationId: location.id
+            tripId: trip?.id,
+            location: Location(
+                name: name,
+                region: region,
+                country: country,
+                coordinate: Coordinate(
+                    latitude: latitude,
+                    longitude: longitude
+                )
+            )
         )
     }
     

@@ -17,8 +17,8 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
     let picture: Data?
     let start: Date
     let end: Date
-    let tripId: UUID
-    let locationId: LocationID
+    let tripId: TripID?
+    let location: Location
     // sourcery:end: nonDefaultBuilderProperty
 
 // sourcery:inline:auto:VisitedPlace.AutoBuilderInit
@@ -29,8 +29,8 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
         picture: Data? = nil, 
         start: Date, 
         end: Date, 
-        tripId: UUID, 
-        locationId: LocationID
+        tripId: TripID? = nil, 
+        location: Location
     )
     {
         self.id = id
@@ -39,7 +39,7 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
         self.start = start
         self.end = end
         self.tripId = tripId
-        self.locationId = locationId
+        self.location = location
     }
     static var builder: VisitedPlaceBuilder {
         VisitedPlaceBuilder()
@@ -52,7 +52,7 @@ struct VisitedPlace: Equatable, WithAutoBuilder {
             .with(start: self.start)
             .with(end: self.end)
             .with(tripId: self.tripId)
-            .with(locationId: self.locationId)
+            .with(location: self.location)
     }
 // sourcery:end
 }
@@ -76,10 +76,10 @@ class VisitedPlaceBuilder {
     private(set) var end: Date?
 
 
-    private(set) var tripId: UUID?
+    private(set) var tripId: TripID??
 
 
-    private(set) var locationId: LocationID?
+    private(set) var location: Location?
 
     func with(id: VisitedPlaceID) -> VisitedPlaceBuilder {
         self.id = id; return self
@@ -96,11 +96,11 @@ class VisitedPlaceBuilder {
     func with(end: Date) -> VisitedPlaceBuilder {
         self.end = end; return self
     }
-    func with(tripId: UUID) -> VisitedPlaceBuilder {
+    func with(tripId: TripID?) -> VisitedPlaceBuilder {
         self.tripId = tripId; return self
     }
-    func with(locationId: LocationID) -> VisitedPlaceBuilder {
-        self.locationId = locationId; return self
+    func with(location: Location) -> VisitedPlaceBuilder {
+        self.location = location; return self
     }
     func build() -> VisitedPlace? {
         guard
@@ -110,7 +110,7 @@ class VisitedPlaceBuilder {
             let start = self.start,
             let end = self.end,
             let tripId = self.tripId,
-            let locationId = self.locationId
+            let location = self.location
         else { return nil }
         return VisitedPlace(
             id: id,
@@ -119,7 +119,7 @@ class VisitedPlaceBuilder {
             start: start,
             end: end,
             tripId: tripId,
-            locationId: locationId
+            location: location
         )
     }
 }

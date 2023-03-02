@@ -61,18 +61,14 @@
 		12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */; };
 		12571F8728BD505400CC2AD0 /* CDTripExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4A28BD505400CC2AD0 /* CDTripExt.swift */; };
 		12571F8828BD505400CC2AD0 /* CDHelperExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4B28BD505400CC2AD0 /* CDHelperExt.swift */; };
-		12571F8928BD505400CC2AD0 /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */; };
 		12571F8B28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */; };
 		12571F8C28BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */; };
-		12571F8D28BD505400CC2AD0 /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */; };
 		12571F8E28BD505400CC2AD0 /* CDTrip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */; };
 		12571F8F28BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */; };
-		12571F9028BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */; };
 		12571F9228BD505400CC2AD0 /* CDUpdatePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */; };
 		12571F9328BD505400CC2AD0 /* CDDeleteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5B28BD505400CC2AD0 /* CDDeleteTrip.swift */; };
 		12571F9428BD505400CC2AD0 /* CDUpdateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5C28BD505400CC2AD0 /* CDUpdateTrip.swift */; };
 		12571F9528BD505400CC2AD0 /* CDAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5D28BD505400CC2AD0 /* CDAction.swift */; };
-		12571F9628BD505400CC2AD0 /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */; };
 		12571F9728BD505400CC2AD0 /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */; };
 		12571F9828BD505400CC2AD0 /* CDStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6128BD505400CC2AD0 /* CDStackType.swift */; };
 		12571F9928BD505400CC2AD0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6328BD505400CC2AD0 /* Location.swift */; };
@@ -104,7 +100,6 @@
 		12904FB928CE12E500192F11 /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FB828CE12E500192F11 /* AppCoordinatorType.swift */; };
 		12904FBC28CE15B700192F11 /* AppCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */; };
 		129F319928D7A4D60092FA8E /* CDUpdateTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5C28BD505400CC2AD0 /* CDUpdateTrip.swift */; };
-		129F319A28D7A4D60092FA8E /* CDLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */; };
 		129F319B28D7A4D60092FA8E /* LocationEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35828C3D42F0066FE22 /* LocationEntryViewModel.swift */; };
 		129F319C28D7A4D60092FA8E /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6428BD505400CC2AD0 /* Trip.swift */; };
 		129F319D28D7A4D60092FA8E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6328BD505400CC2AD0 /* Location.swift */; };
@@ -152,7 +147,6 @@
 		129F31C928D7A4D60092FA8E /* CDVisitedPlace+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */; };
 		129F31CA28D7A4D60092FA8E /* LocationSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */; };
 		129F31CB28D7A4D60092FA8E /* MKMapSnapshotterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB35B28C3D42F0066FE22 /* MKMapSnapshotterExtension.swift */; };
-		129F31CC28D7A4D60092FA8E /* CDLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */; };
 		129F31CD28D7A4D60092FA8E /* ColorSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB34728C3D42F0066FE22 /* ColorSelectionViewModel.swift */; };
 		129F31CE28D7A4D60092FA8E /* TripsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB33D28C3D42F0066FE22 /* TripsListViewModelType.swift */; };
 		129F31CF28D7A4D60092FA8E /* PremiumInfoBulletPointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130E28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift */; };
@@ -183,8 +177,6 @@
 		129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB2EF28C3D2D80066FE22 /* MarkterProtocols.swift */; };
 		129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */; };
 		129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB30C28C3D40E0066FE22 /* ColoredPill.swift */; };
-		129F31EC28D7A4D60092FA8E /* CDUpdateLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */; };
-		129F31ED28D7A4D60092FA8E /* CDLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */; };
 		129F31EE28D7A4D60092FA8E /* TripsStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F3E28BD505400CC2AD0 /* TripsStoreType.swift */; };
 		129F31EF28D7A4D60092FA8E /* CDVisitedPlaceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */; };
 		129F31F028D7A4D60092FA8E /* PremiumInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274130628CDEF7300FCC8C1 /* PremiumInfoController.swift */; };
@@ -329,6 +321,8 @@
 		12DAB3BD28C3D55F0066FE22 /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3AB28C3D55F0066FE22 /* PlacesStoreTests.swift */; };
 		12DAB3BE28C3D55F0066FE22 /* LocationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3AC28C3D55F0066FE22 /* LocationsStoreTests.swift */; };
 		12DAB3C128C3D61C0066FE22 /* TravelDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3BF28C3D61C0066FE22 /* TravelDex.xcdatamodeld */; };
+		12E49B3F29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */; };
+		12E49B4029B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */; };
 		12F4214E28C8F4010063CFC0 /* SKStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */; };
 		12F4214F28C8F40A0063CFC0 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 123538F428C4B74C00A7AD12 /* Configuration.storekit */; };
 		12F4215128C8F5F70063CFC0 /* MockSKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4215028C8F5F70063CFC0 /* MockSKStore.swift */; };
@@ -417,18 +411,14 @@
 		12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDVisitedPlaceExt.swift; sourceTree = "<group>"; };
 		12571F4A28BD505400CC2AD0 /* CDTripExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDTripExt.swift; sourceTree = "<group>"; };
 		12571F4B28BD505400CC2AD0 /* CDHelperExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDHelperExt.swift; sourceTree = "<group>"; };
-		12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDLocationExt.swift; sourceTree = "<group>"; };
 		12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDVisitedPlace+CoreDataClass.swift"; sourceTree = "<group>"; };
-		12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		12571F5228BD505400CC2AD0 /* CDTrip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDTrip+CoreDataClass.swift"; sourceTree = "<group>"; };
 		12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDVisitedPlace+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		12571F5928BD505400CC2AD0 /* CDUpdatePlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUpdatePlace.swift; sourceTree = "<group>"; };
 		12571F5B28BD505400CC2AD0 /* CDDeleteTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDeleteTrip.swift; sourceTree = "<group>"; };
 		12571F5C28BD505400CC2AD0 /* CDUpdateTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUpdateTrip.swift; sourceTree = "<group>"; };
 		12571F5D28BD505400CC2AD0 /* CDAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDAction.swift; sourceTree = "<group>"; };
-		12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDUpdateLocations.swift; sourceTree = "<group>"; };
 		12571F6028BD505400CC2AD0 /* CDDeleteVisistedPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDeleteVisistedPlace.swift; sourceTree = "<group>"; };
 		12571F6128BD505400CC2AD0 /* CDStackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStackType.swift; sourceTree = "<group>"; };
 		12571F6328BD505400CC2AD0 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -546,6 +536,8 @@
 		12DAB3AB28C3D55F0066FE22 /* PlacesStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesStoreTests.swift; sourceTree = "<group>"; };
 		12DAB3AC28C3D55F0066FE22 /* LocationsStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsStoreTests.swift; sourceTree = "<group>"; };
 		12DAB3C028C3D61C0066FE22 /* TravelDex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDex.xcdatamodel; sourceTree = "<group>"; };
+		12E49B3629B12E3B008C9EE0 /* TravelDex 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TravelDex 2.xcdatamodel"; sourceTree = "<group>"; };
+		12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingV1ToV2.xcmappingmodel; sourceTree = "<group>"; };
 		12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreTests.swift; sourceTree = "<group>"; };
 		12F4215028C8F5F70063CFC0 /* MockSKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSKStore.swift; sourceTree = "<group>"; };
 		12F5A67F28E086360081EDCA /* TripsListViewModel_PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListViewModel_PickerDelegate.swift; sourceTree = "<group>"; };
@@ -875,6 +867,7 @@
 				12571F4428BD505400CC2AD0 /* CDMigrationVersion.swift */,
 				12571F4528BD505400CC2AD0 /* CDMigrationStep.swift */,
 				12571F4628BD505400CC2AD0 /* CDMigrator.swift */,
+				12E49B3D29B133A7008C9EE0 /* MappingModels */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -885,7 +878,6 @@
 				12571F4928BD505400CC2AD0 /* CDVisitedPlaceExt.swift */,
 				12571F4A28BD505400CC2AD0 /* CDTripExt.swift */,
 				12571F4B28BD505400CC2AD0 /* CDHelperExt.swift */,
-				12571F4C28BD505400CC2AD0 /* CDLocationExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -897,8 +889,6 @@
 				12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */,
 				12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */,
 				12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */,
-				12571F5128BD505400CC2AD0 /* CDLocation+CoreDataClass.swift */,
-				12571F5428BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift */,
 			);
 			path = NSManagedObjects;
 			sourceTree = "<group>";
@@ -909,7 +899,6 @@
 				12571F5D28BD505400CC2AD0 /* CDAction.swift */,
 				12571F5A28BD505400CC2AD0 /* TripActions */,
 				122414CF28C40B2E008B4402 /* PlacesActions */,
-				12571F5E28BD505400CC2AD0 /* LocationActions */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -923,14 +912,6 @@
 				12F5A68228E0873C0081EDCA /* CDImportTrip.swift */,
 			);
 			path = TripActions;
-			sourceTree = "<group>";
-		};
-		12571F5E28BD505400CC2AD0 /* LocationActions */ = {
-			isa = PBXGroup;
-			children = (
-				12571F5F28BD505400CC2AD0 /* CDUpdateLocations.swift */,
-			);
-			path = LocationActions;
 			sourceTree = "<group>";
 		};
 		12571F6228BD505400CC2AD0 /* Models */ = {
@@ -1502,6 +1483,14 @@
 			path = StoreTests;
 			sourceTree = "<group>";
 		};
+		12E49B3D29B133A7008C9EE0 /* MappingModels */ = {
+			isa = PBXGroup;
+			children = (
+				12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */,
+			);
+			path = MappingModels;
+			sourceTree = "<group>";
+		};
 		378BBED359A80052BD443F5F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1953,7 +1942,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12571F9428BD505400CC2AD0 /* CDUpdateTrip.swift in Sources */,
-				12571F9028BD505400CC2AD0 /* CDLocation+CoreDataProperties.swift in Sources */,
 				12DAB38628C3D42F0066FE22 /* LocationEntryViewModel.swift in Sources */,
 				12571F9A28BD505400CC2AD0 /* Trip.swift in Sources */,
 				12571F9928BD505400CC2AD0 /* Location.swift in Sources */,
@@ -2007,7 +1995,6 @@
 				12571F8F28BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				12DAB30228C3D3DB0066FE22 /* LocationSearchCoordinator.swift in Sources */,
 				12DAB38828C3D42F0066FE22 /* MKMapSnapshotterExtension.swift in Sources */,
-				12571F8D28BD505400CC2AD0 /* CDLocation+CoreDataClass.swift in Sources */,
 				12DAB37C28C3D42F0066FE22 /* ColorSelectionViewModel.swift in Sources */,
 				12DAB37628C3D42F0066FE22 /* TripsListViewModelType.swift in Sources */,
 				1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */,
@@ -2026,6 +2013,7 @@
 				12DAB36C28C3D42F0066FE22 /* EditPlaceCell.swift in Sources */,
 				12DAB3C128C3D61C0066FE22 /* TravelDex.xcdatamodeld in Sources */,
 				12DAB37D28C3D42F0066FE22 /* ColorSelectionController.swift in Sources */,
+				12E49B3F29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				12571F8128BD505400CC2AD0 /* PlacesStoreType.swift in Sources */,
 				12571F8E28BD505400CC2AD0 /* CDTrip+CoreDataClass.swift in Sources */,
 				12571F8B28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift in Sources */,
@@ -2042,8 +2030,6 @@
 				12571F9728BD505400CC2AD0 /* CDDeleteVisistedPlace.swift in Sources */,
 				12DAB31228C3D40E0066FE22 /* ColoredPill.swift in Sources */,
 				12D3521B2932A7EE00F48C30 /* Assets.generated.swift in Sources */,
-				12571F9628BD505400CC2AD0 /* CDUpdateLocations.swift in Sources */,
-				12571F8928BD505400CC2AD0 /* CDLocationExt.swift in Sources */,
 				12571F7F28BD505400CC2AD0 /* TripsStoreType.swift in Sources */,
 				12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */,
 				1274130728CDEF7300FCC8C1 /* PremiumInfoController.swift in Sources */,
@@ -2140,7 +2126,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				129F319928D7A4D60092FA8E /* CDUpdateTrip.swift in Sources */,
-				129F319A28D7A4D60092FA8E /* CDLocation+CoreDataProperties.swift in Sources */,
 				129F319B28D7A4D60092FA8E /* LocationEntryViewModel.swift in Sources */,
 				129F319C28D7A4D60092FA8E /* Trip.swift in Sources */,
 				129F319D28D7A4D60092FA8E /* Location.swift in Sources */,
@@ -2192,7 +2177,6 @@
 				129F31C928D7A4D60092FA8E /* CDVisitedPlace+CoreDataProperties.swift in Sources */,
 				129F31CA28D7A4D60092FA8E /* LocationSearchCoordinator.swift in Sources */,
 				129F31CB28D7A4D60092FA8E /* MKMapSnapshotterExtension.swift in Sources */,
-				129F31CC28D7A4D60092FA8E /* CDLocation+CoreDataClass.swift in Sources */,
 				129F31CD28D7A4D60092FA8E /* ColorSelectionViewModel.swift in Sources */,
 				129F31CE28D7A4D60092FA8E /* TripsListViewModelType.swift in Sources */,
 				129F31CF28D7A4D60092FA8E /* PremiumInfoBulletPointCell.swift in Sources */,
@@ -2213,6 +2197,7 @@
 				129F31DE28D7A4D60092FA8E /* ColorSelectionController.swift in Sources */,
 				129F31DF28D7A4D60092FA8E /* PlacesStoreType.swift in Sources */,
 				129F31E028D7A4D60092FA8E /* CDTrip+CoreDataClass.swift in Sources */,
+				12E49B4029B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				129F31E128D7A4D60092FA8E /* CDTrip+CoreDataProperties.swift in Sources */,
 				129F31E228D7A4D60092FA8E /* LocationDisplayAnnotation.swift in Sources */,
 				129F31E328D7A4D60092FA8E /* SnapshotProviderType.swift in Sources */,
@@ -2225,8 +2210,6 @@
 				129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */,
 				129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */,
 				1206332728E0612D00FA05F8 /* ExportConstants.swift in Sources */,
-				129F31EC28D7A4D60092FA8E /* CDUpdateLocations.swift in Sources */,
-				129F31ED28D7A4D60092FA8E /* CDLocationExt.swift in Sources */,
 				129F31EE28D7A4D60092FA8E /* TripsStoreType.swift in Sources */,
 				129F31EF28D7A4D60092FA8E /* CDVisitedPlaceExt.swift in Sources */,
 				129F31F028D7A4D60092FA8E /* PremiumInfoController.swift in Sources */,
@@ -2462,7 +2445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2505,7 +2488,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.hinzclaudio.TravelDex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2748,9 +2731,10 @@
 		12DAB3BF28C3D61C0066FE22 /* TravelDex.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				12E49B3629B12E3B008C9EE0 /* TravelDex 2.xcdatamodel */,
 				12DAB3C028C3D61C0066FE22 /* TravelDex.xcdatamodel */,
 			);
-			currentVersion = 12DAB3C028C3D61C0066FE22 /* TravelDex.xcdatamodel */;
+			currentVersion = 12E49B3629B12E3B008C9EE0 /* TravelDex 2.xcdatamodel */;
 			path = TravelDex.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

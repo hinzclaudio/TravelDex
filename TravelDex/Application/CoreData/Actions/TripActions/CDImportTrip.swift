@@ -89,30 +89,18 @@ struct CDImportTrip: CDAction {
                     }
                     
                     let cdPlace = CDVisitedPlace(context: context)
-                    let cdLoc = try! fetchSimilarLocation(
-                        coordinate: Coordinate(
-                            latitude: placeExport.locationLatitude,
-                            longitude: placeExport.locationLongitude
-                        ),
-                        in: context
-                    )
                     cdPlace.safeInit(
+                        end: placeExport.end,
                         id: placeExport.id,
-                        text: placeExport.text,
                         pictureData: pictureData,
                         start: placeExport.start,
-                        end: placeExport.end,
-                        location: cdLoc ?? CDLocation(context: context),
+                        text: placeExport.text,
+                        region: placeExport.locationRegion,
+                        name: placeExport.locationName,
+                        latitude: placeExport.locationLatitude,
+                        longitude: placeExport.locationLongitude,
+                        country: placeExport.locationCountry,
                         trip: cdTrip
-                    )
-                    cdPlace.location.safeInitNeglectRelationShips(
-                        id: cdLoc?.id ?? UUID(),
-                        latitude: cdLoc?.latitude ?? placeExport.locationLatitude,
-                        longitude: cdLoc?.longitude ?? placeExport.locationLongitude,
-                        name: cdLoc?.name ?? placeExport.locationName,
-                        region: cdLoc?.region ?? placeExport.locationRegion,
-                        country: cdLoc?.country ?? placeExport.locationCountry,
-                        timezoneIdentifier: cdLoc?.timezoneIdentifier ?? placeExport.locationTimezone
                     )
                 }
             

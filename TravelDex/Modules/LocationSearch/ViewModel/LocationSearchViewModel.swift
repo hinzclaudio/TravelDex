@@ -38,16 +38,8 @@ class LocationSearchViewModel: LocationSearchViewModelType {
     }
     
     func select(_ location: Observable<Location>) -> Disposable {
-        let addLocationAction = dependencies.locationsStore
-            .add(location)
-        
-        let selectionAction = location
+        location
             .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
-        
-        return Disposables.create {
-            addLocationAction.dispose()
-            selectionAction.dispose()
-        }
     }
     
     func longPress(_ coordinate: Observable<Coordinate>) -> Disposable {

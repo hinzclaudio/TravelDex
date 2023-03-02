@@ -17,7 +17,6 @@ struct VisitedPlaceExport: Codable {
     let locationName: String
     let locationRegion: String?
     let locationCountry: String?
-    let locationTimezone: String?
     let locationLatitude: Double
     let locationLongitude: Double
 }

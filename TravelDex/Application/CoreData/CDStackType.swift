@@ -13,7 +13,6 @@ import CoreData
 protocol CDStackType {
     
     var saveContext: NSManagedObjectContext { get }
-    var storeContext: NSManagedObjectContext { get }
     var reducerContext: NSManagedObjectContext { get }
     
     func save()

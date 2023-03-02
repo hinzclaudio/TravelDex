@@ -3,52 +3,6 @@
 import Foundation
 
 
-extension CDLocation {
-
-    /// Acts as a proper initializer that forces the compiler to check if all attributes
-    /// have been set correctly.
-    /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
-    func safeInit(
-        id: UUID,
-        latitude: Double,
-        longitude: Double,
-        name: String,
-        region: String?,
-        country: String?,
-        timezoneIdentifier: String?,
-        visitedPlaces: NSSet
-    ) {
-        self.id = id
-        self.latitude = latitude
-        self.longitude = longitude
-        self.name = name
-        self.region = region
-        self.country = country
-        self.timezoneIdentifier = timezoneIdentifier
-        self.visitedPlaces = visitedPlaces
-    }
-    /// Acts as a proper initializer that forces the compiler to check if all attributes
-    /// have been set correctly.
-    /// - note: This init does not concern itself with relationships. You will have to set these yourself.
-    func safeInitNeglectRelationShips(
-        id: UUID,
-        latitude: Double,
-        longitude: Double,
-        name: String,
-        region: String?,
-        country: String?,
-        timezoneIdentifier: String?
-    ) {
-        self.id = id
-        self.latitude = latitude
-        self.longitude = longitude
-        self.name = name
-        self.region = region
-        self.country = country
-        self.timezoneIdentifier = timezoneIdentifier
-    }
-}
-
 extension CDTrip {
 
     /// Acts as a proper initializer that forces the compiler to check if all attributes
@@ -105,37 +59,55 @@ extension CDVisitedPlace {
     /// have been set correctly.
     /// - note: If you want to copy values from another entity, you may want to check __copied(valuesFrom:)__ 
     func safeInit(
+        end: Date,
         id: UUID,
-        text: String?,
         pictureData: Data?,
         start: Date,
-        end: Date,
-        location: CDLocation,
-        trip: CDTrip
+        text: String?,
+        region: String?,
+        name: String,
+        latitude: Double,
+        longitude: Double,
+        country: String?,
+        trip: CDTrip?
     ) {
+        self.end = end
         self.id = id
-        self.text = text
         self.pictureData = pictureData
         self.start = start
-        self.end = end
-        self.location = location
+        self.text = text
+        self.region = region
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.country = country
         self.trip = trip
     }
     /// Acts as a proper initializer that forces the compiler to check if all attributes
     /// have been set correctly.
     /// - note: This init does not concern itself with relationships. You will have to set these yourself.
     func safeInitNeglectRelationShips(
+        end: Date,
         id: UUID,
-        text: String?,
         pictureData: Data?,
         start: Date,
-        end: Date
+        text: String?,
+        region: String?,
+        name: String,
+        latitude: Double,
+        longitude: Double,
+        country: String?
     ) {
+        self.end = end
         self.id = id
-        self.text = text
         self.pictureData = pictureData
         self.start = start
-        self.end = end
+        self.text = text
+        self.region = region
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.country = country
     }
 }
 

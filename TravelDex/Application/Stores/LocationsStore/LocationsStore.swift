@@ -31,23 +31,20 @@ class LocationsStore: LocationsStoreType {
     
     var apiError = PublishSubject<Error>()
     var error: Observable<Error> { apiError }
-    
-    
-    func add(_ location: Observable<Location>) -> Disposable {
-        location
-            .map { CDUpdateLocations(locations: [$0]) }
-            .subscribe(onNext: { [weak self] in self?.dispatch($0) })
-    }
+
     
     func allLocations() -> Observable<[Location]> {
-        let query = CDLocation.fetchRequest()
+        let query = CDVisitedPlace.fetchRequest()
         query.sortDescriptors = [
             NSSortDescriptor(key: "country", ascending: true),
             NSSortDescriptor(key: "name", ascending: true)
         ]
         
         return CDObservable(fetchRequest: query, context: context)
-            .map { cdLocs in cdLocs.map { $0.pureRepresentation } }
+            .map { cdPlaces in
+                cdPlaces
+                    .map(\.pureRepresentation.location)
+            }
     }
     
     func locations(for query: Observable<String>) -> Observable<[Location]> {

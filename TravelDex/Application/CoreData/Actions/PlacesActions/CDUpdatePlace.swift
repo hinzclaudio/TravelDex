@@ -18,24 +18,33 @@ struct CDUpdatePlace: CDAction {
     func execute(in context: NSManagedObjectContext) throws {
         let end: Date = (place.end < place.start) ? place.start : place.end
         if let cdPlace = try fetchVisitedPlace(by: place.id, in: context) {
-            cdPlace.trip.dummyBit = !cdPlace.trip.dummyBit
+            cdPlace.trip?.dummyBit.toggle()
             cdPlace.safeInitNeglectRelationShips(
+                end: end,
                 id: place.id,
-                text: place.text,
                 pictureData: place.picture,
                 start: place.start,
-                end: end
+                text: place.text,
+                region: place.location.region,
+                name: place.location.name,
+                latitude: place.location.coordinate.latitude,
+                longitude: place.location.coordinate.longitude,
+                country: place.location.country
             )
-        } else if let cdTrip = try fetchTrip(by: place.tripId, in: context),
-                  let cdLoc = try fetchLocation(by: place.locationId, in: context) {
+        } else if let tripId = place.tripId,
+                  let cdTrip = try fetchTrip(by: tripId, in: context) {
             let cdPlace = CDVisitedPlace(context: context)
             cdPlace.safeInit(
+                end: end,
                 id: place.id,
-                text: place.text,
                 pictureData: place.picture,
                 start: place.start,
-                end: end,
-                location: cdLoc,
+                text: place.text,
+                region: place.location.region,
+                name: place.location.name,
+                latitude: place.location.coordinate.latitude,
+                longitude: place.location.coordinate.longitude,
+                country: place.location.country,
                 trip: cdTrip
             )
         } else {

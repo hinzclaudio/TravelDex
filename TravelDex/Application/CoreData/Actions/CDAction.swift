@@ -32,36 +32,6 @@ extension CDAction {
     }
     
     
-    
-    // MARK: - Locations
-    func fetchSimilarLocation(coordinate: Coordinate, in context: NSManagedObjectContext) throws -> CDLocation? {
-        let query = CDLocation.fetchRequest()
-        query.predicate = NSPredicate(
-            format: "abs(latitude - %f) < 0.0005 AND abs(longitude - %f) < 0.0005",
-            coordinate.latitude, coordinate.longitude
-        )
-        query.fetchLimit = 1
-        let fetched = try context.fetch(query)
-        return fetched.first
-    }
-    
-    func fetchLocation(by id: UUID, in context: NSManagedObjectContext) throws -> CDLocation? {
-        let query = CDLocation.fetchRequest()
-        query.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        query.fetchLimit = 1
-        let fetched = try context.fetch(query)
-        return fetched.first
-    }
-    
-    func fetchUnusedLocations(in context: NSManagedObjectContext) throws -> [CDLocation] {
-        let query = CDLocation.fetchRequest()
-        query.predicate = NSPredicate(format: "visitedPlaces.@count == %d", 0)
-        let locs = try context.fetch(query)
-        return locs
-    }
-    
-    
-    
     // MARK: - Places
     func fetchVisitedPlace(by id: UUID, in context: NSManagedObjectContext) throws -> CDVisitedPlace? {
         let query = CDVisitedPlace.fetchRequest()

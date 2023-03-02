@@ -79,15 +79,13 @@ extension Observable where Element == [CLPlacemark] {
                         }
                         
                         return Location(
-                            id: LocationID(),
                             name: mark.name ?? "",
                             region: regionString,
                             country: mark.country,
                             coordinate: Coordinate(
                                 latitude: mark.location!.coordinate.latitude,
                                 longitude: mark.location!.coordinate.longitude
-                            ),
-                            timezoneIdentifier: mark.timeZone?.identifier
+                            )
                         )
                     }
             }

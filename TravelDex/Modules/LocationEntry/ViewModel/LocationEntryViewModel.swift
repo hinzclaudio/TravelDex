@@ -77,26 +77,17 @@ class LocationEntryViewModel: LocationEntryViewModelType {
         let location = Observable.combineLatest(title, region, country)
             .map { [unowned self] t, r, c in
                 Location(
-                    id: LocationID(),
                     name: t,
                     region: r,
                     country: c,
-                    coordinate: self.coordinate,
-                    timezoneIdentifier: nil
+                    coordinate: self.coordinate
                 )
             }
             .share(replay: 1)
         
         let confirmedLocation = tapped.withLatestFrom(location)
-        let addAction = dependencies.locationsStore
-            .add(confirmedLocation)
-        let coordinatorAction = confirmedLocation
+        return confirmedLocation
             .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
-        
-        return Disposables.create {
-            addAction.dispose()
-            coordinatorAction.dispose()
-        }
     }
     
 }

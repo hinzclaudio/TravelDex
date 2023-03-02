@@ -32,7 +32,12 @@ class PlacesStore: PlacesStoreType {
             start: .now,
             end: .now,
             tripId: trip.id,
-            locationId: location.id
+            location: Location(
+                name: location.name,
+                region: location.region,
+                country: location.country,
+                coordinate: location.coordinate
+            )
         )
         dispatch(CDUpdatePlace(place: place))
     }
@@ -53,7 +58,7 @@ class PlacesStore: PlacesStoreType {
         let query = CDVisitedPlace.fetchRequest()
         query.sortDescriptors = [
             NSSortDescriptor(key: "start", ascending: true),
-            NSSortDescriptor(key: "location.name", ascending: true)
+            NSSortDescriptor(key: "name", ascending: true)
         ]
         
         return CDObservable(fetchRequest: query, context: context)
@@ -62,8 +67,8 @@ class PlacesStore: PlacesStoreType {
                     .map { cdPlace in
                         AddedPlaceItem(
                             visitedPlace: cdPlace.pureRepresentation,
-                            location: cdPlace.location.pureRepresentation,
-                            pinColor: cdPlace.trip.pureRepresentation.pinColor
+                            location: cdPlace.pureRepresentation.location,
+                            pinColor: cdPlace.trip?.pureRepresentation.pinColor ?? Trip.defaultPinColor
                         )
                     }
             }
@@ -76,7 +81,7 @@ class PlacesStore: PlacesStoreType {
                 query.predicate = NSPredicate(format: "trip.id == %@", tripId as CVarArg)
                 query.sortDescriptors = [
                     NSSortDescriptor(key: "start", ascending: true),
-                    NSSortDescriptor(key: "location.name", ascending: true)
+                    NSSortDescriptor(key: "name", ascending: true)
                 ]
                 return query
             }
@@ -87,8 +92,8 @@ class PlacesStore: PlacesStoreType {
                             .map { cdPlace in
                                 AddedPlaceItem(
                                     visitedPlace: cdPlace.pureRepresentation,
-                                    location: cdPlace.location.pureRepresentation,
-                                    pinColor: cdPlace.trip.pureRepresentation.pinColor
+                                    location: cdPlace.pureRepresentation.location,
+                                    pinColor: cdPlace.trip?.pureRepresentation.pinColor ?? Trip.defaultPinColor
                                 )
                             }
                     }
@@ -110,8 +115,8 @@ class PlacesStore: PlacesStoreType {
                         if let cdPlace = cdPlace {
                             return AddedPlaceItem(
                                 visitedPlace: cdPlace.pureRepresentation,
-                                location: cdPlace.location.pureRepresentation,
-                                pinColor: cdPlace.trip.pureRepresentation.pinColor
+                                location: cdPlace.pureRepresentation.location,
+                                pinColor: cdPlace.trip?.pureRepresentation.pinColor ?? Trip.defaultPinColor
                             )
                         } else {
                             return nil
