@@ -49,7 +49,7 @@ extension CDTrip {
         placesQuery.predicate = NSPredicate(format: "trip.id == %@", id as CVarArg)
         placesQuery.sortDescriptors = [
             NSSortDescriptor(key: "start", ascending: true),
-            NSSortDescriptor(key: "location.name", ascending: true)
+            NSSortDescriptor(key: "name", ascending: true)
         ]
         
         let places = try context.fetch(placesQuery)
