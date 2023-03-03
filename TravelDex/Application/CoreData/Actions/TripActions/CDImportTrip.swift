@@ -81,18 +81,19 @@ struct CDImportTrip: CDAction {
             export.places
                 .forEach { placeExport in
                     let possibleJpegFile = placeExport.id.uuidString + ".jpg"
-                    var pictureData: Data?
+                    var imageAttachment: CDImageAttachment?
                     if contents.contains(possibleJpegFile),
                        let data = try? Data(contentsOf: extractionURL.appendingPathComponent(possibleJpegFile)),
-                       UIImage(data: data) != nil {
-                        pictureData = data
+                       let orgImage = UIImage(data: data) {
+                        let imgData = orgImage.jpegData(compressionQuality: ImageConstants.defaultJPEGCompression) ?? data
+                        imageAttachment = CDImageAttachment(context: context)
+                        imageAttachment?.safeInitNeglectRelationShips(imageData: imgData)
                     }
                     
                     let cdPlace = CDVisitedPlace(context: context)
                     cdPlace.safeInit(
                         end: placeExport.end,
                         id: placeExport.id,
-                        pictureData: pictureData,
                         start: placeExport.start,
                         text: placeExport.text,
                         region: placeExport.locationRegion,
@@ -100,7 +101,8 @@ struct CDImportTrip: CDAction {
                         latitude: placeExport.locationLatitude,
                         longitude: placeExport.locationLongitude,
                         country: placeExport.locationCountry,
-                        trip: cdTrip
+                        trip: cdTrip,
+                        image: imageAttachment
                     )
                 }
             

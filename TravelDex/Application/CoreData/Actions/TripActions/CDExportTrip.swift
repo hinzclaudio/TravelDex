@@ -58,7 +58,7 @@ struct CDExportTrip: CDAction {
             try cdTrip.visitedPlaces
                 .asArray(of: CDVisitedPlace.self)!
                 .forEach { cdPlace in
-                    guard let data = cdPlace.pictureData else { return }
+                    guard let data = cdPlace.image?.imageData else { return }
                     let dataURL = srcDirURL.appendingPathComponent(cdPlace.id.uuidString + ".jpg")
                     try data.write(to: dataURL)
                     imgDataURLs.append(dataURL)

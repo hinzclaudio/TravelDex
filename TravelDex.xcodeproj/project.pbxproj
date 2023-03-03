@@ -35,7 +35,17 @@
 		1235390B28C4CAD000A7AD12 /* PremiumStoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */; };
 		1235390D28C4CB6300A7AD12 /* PremiumStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */; };
 		1235391028C4CCA100A7AD12 /* SKProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235390F28C4CCA100A7AD12 /* SKProductCell.swift */; };
+		123608FD29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608FB29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift */; };
+		123608FE29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608FB29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift */; };
+		123608FF29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608FC29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift */; };
+		1236090029B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123608FC29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift */; };
+		1236090629B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */; };
+		1236090729B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */; };
 		123C33A528CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */; };
+		1255ECAA29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */; };
+		1255ECAB29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */; };
+		1255ECAD29B381700073C864 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECAC29B381700073C864 /* ImageConstants.swift */; };
+		1255ECAE29B381700073C864 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECAC29B381700073C864 /* ImageConstants.swift */; };
 		12571F0228BD4F6100CC2AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0128BD4F6100CC2AD0 /* Assets.xcassets */; };
 		12571F0528BD4F6100CC2AD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12571F0328BD4F6100CC2AD0 /* LaunchScreen.storyboard */; };
 		12571F7228BD505400CC2AD0 /* CDObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12571F2C28BD505400CC2AD0 /* CDObservable.swift */; };
@@ -321,8 +331,6 @@
 		12DAB3BD28C3D55F0066FE22 /* PlacesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3AB28C3D55F0066FE22 /* PlacesStoreTests.swift */; };
 		12DAB3BE28C3D55F0066FE22 /* LocationsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3AC28C3D55F0066FE22 /* LocationsStoreTests.swift */; };
 		12DAB3C128C3D61C0066FE22 /* TravelDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12DAB3BF28C3D61C0066FE22 /* TravelDex.xcdatamodeld */; };
-		12E49B3F29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */; };
-		12E49B4029B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */; };
 		12F4214E28C8F4010063CFC0 /* SKStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */; };
 		12F4214F28C8F40A0063CFC0 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 123538F428C4B74C00A7AD12 /* Configuration.storekit */; };
 		12F4215128C8F5F70063CFC0 /* MockSKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4215028C8F5F70063CFC0 /* MockSKStore.swift */; };
@@ -382,7 +390,12 @@
 		1235390A28C4CAD000A7AD12 /* PremiumStoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModel.swift; sourceTree = "<group>"; };
 		1235390C28C4CB6300A7AD12 /* PremiumStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreController.swift; sourceTree = "<group>"; };
 		1235390F28C4CCA100A7AD12 /* SKProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProductCell.swift; sourceTree = "<group>"; };
+		123608FB29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageAttachment+CoreDataClass.swift"; sourceTree = "<group>"; };
+		123608FC29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageAttachmentCreationPolicy.swift; sourceTree = "<group>"; };
 		123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoPickerViewModel.swift; sourceTree = "<group>"; };
+		1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingV1ToV2.xcmappingmodel; sourceTree = "<group>"; };
+		1255ECAC29B381700073C864 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		12571EF228BD4F6100CC2AD0 /* TravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12571F0128BD4F6100CC2AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12571F0428BD4F6100CC2AD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -537,7 +550,6 @@
 		12DAB3AC28C3D55F0066FE22 /* LocationsStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsStoreTests.swift; sourceTree = "<group>"; };
 		12DAB3C028C3D61C0066FE22 /* TravelDex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelDex.xcdatamodel; sourceTree = "<group>"; };
 		12E49B3629B12E3B008C9EE0 /* TravelDex 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TravelDex 2.xcdatamodel"; sourceTree = "<group>"; };
-		12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingV1ToV2.xcmappingmodel; sourceTree = "<group>"; };
 		12F4214D28C8F4010063CFC0 /* SKStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreTests.swift; sourceTree = "<group>"; };
 		12F4215028C8F5F70063CFC0 /* MockSKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSKStore.swift; sourceTree = "<group>"; };
 		12F5A67F28E086360081EDCA /* TripsListViewModel_PickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListViewModel_PickerDelegate.swift; sourceTree = "<group>"; };
@@ -696,6 +708,14 @@
 				1235390F28C4CCA100A7AD12 /* SKProductCell.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		1236090429B35B7100C12235 /* CustomPolicies */ = {
+			isa = PBXGroup;
+			children = (
+				1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */,
+			);
+			path = CustomPolicies;
 			sourceTree = "<group>";
 		};
 		123C33A328CE5F160095ABB5 /* MockViewModels */ = {
@@ -868,6 +888,7 @@
 				12571F4528BD505400CC2AD0 /* CDMigrationStep.swift */,
 				12571F4628BD505400CC2AD0 /* CDMigrator.swift */,
 				12E49B3D29B133A7008C9EE0 /* MappingModels */,
+				1236090429B35B7100C12235 /* CustomPolicies */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -889,6 +910,8 @@
 				12571F4F28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift */,
 				12571F5028BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift */,
 				12571F5328BD505400CC2AD0 /* CDVisitedPlace+CoreDataProperties.swift */,
+				123608FB29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift */,
+				123608FC29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift */,
 			);
 			path = NSManagedObjects;
 			sourceTree = "<group>";
@@ -1407,6 +1430,7 @@
 			isa = PBXGroup;
 			children = (
 				12DAB38B28C3D49B0066FE22 /* Sizes.swift */,
+				1255ECAC29B381700073C864 /* ImageConstants.swift */,
 				12DAB38C28C3D49B0066FE22 /* SFSymbols.swift */,
 				12DAB38D28C3D49B0066FE22 /* AnimationConstants.swift */,
 				12DAB38E28C3D49B0066FE22 /* Fonts.swift */,
@@ -1486,7 +1510,7 @@
 		12E49B3D29B133A7008C9EE0 /* MappingModels */ = {
 			isa = PBXGroup;
 			children = (
-				12E49B3E29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel */,
+				1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */,
 			);
 			path = MappingModels;
 			sourceTree = "<group>";
@@ -1948,6 +1972,7 @@
 				12DAB37928C3D42F0066FE22 /* TripCell.swift in Sources */,
 				12DAB37328C3D42F0066FE22 /* LocationDisplayController.swift in Sources */,
 				12DAB30128C3D3DB0066FE22 /* CoordinatorType.swift in Sources */,
+				1255ECAD29B381700073C864 /* ImageConstants.swift in Sources */,
 				1235390428C4BEB900A7AD12 /* VerificationResultExt.swift in Sources */,
 				12571F7928BD505400CC2AD0 /* DependencyProtocols.swift in Sources */,
 				12571F7828BD505400CC2AD0 /* DefaultAppDependencies.swift in Sources */,
@@ -2000,6 +2025,8 @@
 				1274130F28CDF39F00FCC8C1 /* PremiumInfoBulletPointCell.swift in Sources */,
 				12571F7728BD505400CC2AD0 /* RxTapGesture.swift in Sources */,
 				123538F928C4B7DA00A7AD12 /* SKProductIDs.swift in Sources */,
+				123608FF29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift in Sources */,
+				1236090629B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */,
 				12DAB38528C3D42F0066FE22 /* LocationEntryViewModelType.swift in Sources */,
 				12DAB30F28C3D40E0066FE22 /* ScrollableVStackController.swift in Sources */,
 				12571F8228BD505400CC2AD0 /* CDMigrationVersion.swift in Sources */,
@@ -2013,7 +2040,6 @@
 				12DAB36C28C3D42F0066FE22 /* EditPlaceCell.swift in Sources */,
 				12DAB3C128C3D61C0066FE22 /* TravelDex.xcdatamodeld in Sources */,
 				12DAB37D28C3D42F0066FE22 /* ColorSelectionController.swift in Sources */,
-				12E49B3F29B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				12571F8128BD505400CC2AD0 /* PlacesStoreType.swift in Sources */,
 				12571F8E28BD505400CC2AD0 /* CDTrip+CoreDataClass.swift in Sources */,
 				12571F8B28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift in Sources */,
@@ -2022,6 +2048,7 @@
 				12DAB38728C3D42F0066FE22 /* SnapshotProviderType.swift in Sources */,
 				12571F7628BD505400CC2AD0 /* ActivityIndicator.swift in Sources */,
 				12571F9328BD505400CC2AD0 /* CDDeleteTrip.swift in Sources */,
+				1255ECAA29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				12DAB36E28C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift in Sources */,
 				12DAB38928C3D42F0066FE22 /* LocationEntryController.swift in Sources */,
 				1206331C28DF969300FA05F8 /* VisitedPlaceExport.swift in Sources */,
@@ -2063,6 +2090,7 @@
 				12DAB36228C3D42F0066FE22 /* EditTripController.swift in Sources */,
 				12DAB36728C3D42F0066FE22 /* EditPlaceViewModel.swift in Sources */,
 				12DAB37728C3D42F0066FE22 /* TripsListController.swift in Sources */,
+				123608FD29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */,
 				12571F9828BD505400CC2AD0 /* CDStackType.swift in Sources */,
 				12DAB31128C3D40E0066FE22 /* PaddedTextField.swift in Sources */,
 				12DAB37028C3D42F0066FE22 /* TripLocationDisplayViewModel.swift in Sources */,
@@ -2132,6 +2160,7 @@
 				129F319E28D7A4D60092FA8E /* TripCell.swift in Sources */,
 				129F31A028D7A4D60092FA8E /* LocationDisplayController.swift in Sources */,
 				129F31A128D7A4D60092FA8E /* CoordinatorType.swift in Sources */,
+				1255ECAE29B381700073C864 /* ImageConstants.swift in Sources */,
 				129F31A228D7A4D60092FA8E /* VerificationResultExt.swift in Sources */,
 				129F31A328D7A4D60092FA8E /* DependencyProtocols.swift in Sources */,
 				129F31A428D7A4D60092FA8E /* DefaultAppDependencies.swift in Sources */,
@@ -2184,6 +2213,8 @@
 				129F31D128D7A4D60092FA8E /* SKProductIDs.swift in Sources */,
 				129F31D228D7A4D60092FA8E /* LocationEntryViewModelType.swift in Sources */,
 				129F31D328D7A4D60092FA8E /* ScrollableVStackController.swift in Sources */,
+				1236090029B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift in Sources */,
+				1236090729B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */,
 				129F31D428D7A4D60092FA8E /* CDMigrationVersion.swift in Sources */,
 				129F31D528D7A4D60092FA8E /* AddPlacesCommentViewModel.swift in Sources */,
 				129F31D628D7A4D60092FA8E /* LocationDisplayViewModelType.swift in Sources */,
@@ -2197,7 +2228,6 @@
 				129F31DE28D7A4D60092FA8E /* ColorSelectionController.swift in Sources */,
 				129F31DF28D7A4D60092FA8E /* PlacesStoreType.swift in Sources */,
 				129F31E028D7A4D60092FA8E /* CDTrip+CoreDataClass.swift in Sources */,
-				12E49B4029B133D4008C9EE0 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				129F31E128D7A4D60092FA8E /* CDTrip+CoreDataProperties.swift in Sources */,
 				129F31E228D7A4D60092FA8E /* LocationDisplayAnnotation.swift in Sources */,
 				129F31E328D7A4D60092FA8E /* SnapshotProviderType.swift in Sources */,
@@ -2206,6 +2236,7 @@
 				129F31E628D7A4D60092FA8E /* AllPlacesDisplayViewModel.swift in Sources */,
 				129F31E728D7A4D60092FA8E /* LocationEntryController.swift in Sources */,
 				129F31E828D7A4D60092FA8E /* AddPlacesViewModelType.swift in Sources */,
+				1255ECAB29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */,
 				129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */,
 				129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */,
 				129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */,
@@ -2247,6 +2278,7 @@
 				129F320D28D7A4D60092FA8E /* EditTripController.swift in Sources */,
 				129F320E28D7A4D60092FA8E /* EditPlaceViewModel.swift in Sources */,
 				129F320F28D7A4D60092FA8E /* TripsListController.swift in Sources */,
+				123608FE29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */,
 				129F321028D7A4D60092FA8E /* CDStackType.swift in Sources */,
 				129F321128D7A4D60092FA8E /* PaddedTextField.swift in Sources */,
 				129F321228D7A4D60092FA8E /* TripLocationDisplayViewModel.swift in Sources */,

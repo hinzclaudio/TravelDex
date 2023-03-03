@@ -22,7 +22,6 @@ struct CDUpdatePlace: CDAction {
             cdPlace.safeInitNeglectRelationShips(
                 end: end,
                 id: place.id,
-                pictureData: place.picture,
                 start: place.start,
                 text: place.text,
                 region: place.location.region,
@@ -31,22 +30,33 @@ struct CDUpdatePlace: CDAction {
                 longitude: place.location.coordinate.longitude,
                 country: place.location.country
             )
+            if let image = place.picture {
+                let attachment = CDImageAttachment(context: context)
+                attachment.safeInit(imageData: image, visitedPlace: cdPlace)
+            } else if let attachment = cdPlace.image {
+                context.delete(attachment)
+            }
+            
         } else if let tripId = place.tripId,
                   let cdTrip = try fetchTrip(by: tripId, in: context) {
             let cdPlace = CDVisitedPlace(context: context)
-            cdPlace.safeInit(
+            cdPlace.safeInitNeglectRelationShips(
                 end: end,
                 id: place.id,
-                pictureData: place.picture,
                 start: place.start,
                 text: place.text,
                 region: place.location.region,
                 name: place.location.name,
                 latitude: place.location.coordinate.latitude,
                 longitude: place.location.coordinate.longitude,
-                country: place.location.country,
-                trip: cdTrip
+                country: place.location.country
             )
+            cdPlace.trip = cdTrip
+            if let image = place.picture {
+                let attachment = CDImageAttachment(context: context)
+                attachment.safeInit(imageData: image, visitedPlace: cdPlace)
+            }
+            
         } else {
             assertionFailure("Something's missing...")
         }

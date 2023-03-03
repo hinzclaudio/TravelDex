@@ -15,7 +15,7 @@ extension CDVisitedPlace {
         VisitedPlace(
             id: id,
             text: text,
-            picture: pictureData,
+            picture: image?.imageData,
             start: start,
             end: end,
             tripId: trip?.id,

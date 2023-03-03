@@ -18,7 +18,6 @@ extension CDVisitedPlace {
     
     @NSManaged public var end: Date
     @NSManaged public var id: UUID
-    @NSManaged public var pictureData: Data?
     @NSManaged public var start: Date
     @NSManaged public var text: String?
     @NSManaged public var region: String?
@@ -28,6 +27,8 @@ extension CDVisitedPlace {
     @NSManaged public var country: String?
     // sourcery: relationship
     @NSManaged public var trip: CDTrip?
+    // sourcery: relationship
+    @NSManaged public var image: CDImageAttachment?
 
 }
 
