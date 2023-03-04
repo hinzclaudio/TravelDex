@@ -58,15 +58,4 @@ class LocationEntryViewModelTests: XCTestCase {
         XCTAssertNotNil(snapshot)
     }
     
-    func testDoesAddNewLocOnConfirm() throws {
-        // Wait for autocomplete
-        let _ = try viewModel.title
-            .filter { !$0.isEmpty }
-            .toBlocking(timeout: 5)
-            .first()
-        let _ = viewModel
-            .confirm(.just(()))
-        XCTAssertTrue(mockDependencies.mockLocationsStore.addLocationCalled)   
-    }
-
 }

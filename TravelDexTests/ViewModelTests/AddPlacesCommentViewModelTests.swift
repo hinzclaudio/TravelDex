@@ -24,7 +24,7 @@ class AddPlacesCommentViewModelTests: XCTestCase {
         start: .now.addingTimeInterval(-86400),
         end: .now,
         tripId: TripID(),
-        locationId: MockLocationAPI.hamburg.id
+        location: MockLocationAPI.hamburg
     )
     
     override func setUpWithError() throws {
@@ -35,7 +35,6 @@ class AddPlacesCommentViewModelTests: XCTestCase {
             dependencies: mockDependencies,
             item: AddedPlaceItem(
                 visitedPlace: somePlace,
-                location: MockLocationAPI.hamburg,
                 pinColor: Trip.defaultPinColor
             ),
             coordinator: mockCoordinator

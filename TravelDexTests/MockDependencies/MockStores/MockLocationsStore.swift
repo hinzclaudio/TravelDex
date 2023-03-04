@@ -19,12 +19,6 @@ class MockLocationsStore: LocationsStoreType {
             return Disposables.create()
         }
     
-    private(set) var addLocationCalled = false
-    func add(_ location: Observable<Location>) -> Disposable {
-        location
-            .subscribe(onNext: { [weak self] _ in self?.addLocationCalled = true })
-    }
-    
     private(set) var allLocationsCalled = false
     func allLocations() -> Observable<[Location]> {
         Observable

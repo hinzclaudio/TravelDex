@@ -83,22 +83,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             .build()!
         
         let bochum  = Location(
-            id: randomIds ? UUID() : LocationID(uuidString: "22252040-df98-4dee-a05f-3c8120d7e7ae")!,
             name: "Bochum", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.483403, longitude: 7.218664)
         )
         let essen = Location(
-            id: randomIds ? UUID() : LocationID(uuidString: "2a0c179b-c6ad-4aa9-aa46-f0db4717c073")!,
             name: "Essen", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.457310, longitude: 7.011961)
         )
         let dortmund = Location(
-            id: randomIds ? UUID() : LocationID(uuidString: "9ea2fe1f-6780-413d-99aa-4b45cc588806")!,
             name: "Dortmund", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.513784, longitude: 7.464763)
         )
         let witten = Location(
-            id: randomIds ? UUID() : LocationID(uuidString: "b67f62f5-f871-405e-8284-10c241781120")!,
             name: "Witten", region: "Ruhrgebiet", country: "Germany",
             coordinate: Coordinate(latitude: 51.439118, longitude: 7.336871)
         )
@@ -106,9 +102,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         [trip1, trip2, trip3]
             .map { CDUpdateTrip(trip: $0) }
             .forEach(dependencies.cdStack.dispatch(_:))
-        dependencies.cdStack.dispatch(
-            CDUpdateLocations(locations: [bochum, essen, dortmund, witten])
-        )
         
         let day = TimeInterval(86400)
         let visitedWitten = VisitedPlace(
@@ -118,7 +111,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             start: .now.addingTimeInterval(-7 * day),
             end: .now.addingTimeInterval(-5 * day),
             tripId: trip3.id,
-            locationId: witten.id
+            location: witten
         )
         let visitedEssen = VisitedPlace(
             id: VisitedPlaceID(uuidString: "87796c9e-ccbc-4a32-9e1e-bf415c420967")!,
@@ -127,7 +120,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             start: .now.addingTimeInterval(-5 * day),
             end: .now.addingTimeInterval(-3 * day),
             tripId: trip3.id,
-            locationId: essen.id
+            location: essen
         )
         let visitedDortmund = VisitedPlace(
             id: VisitedPlaceID(uuidString: "ce1e698b-a7f7-4d0b-8fcc-3928b9b31cd8")!,
@@ -136,7 +129,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             start: .now.addingTimeInterval(-3 * day),
             end: .now.addingTimeInterval(-2 * day),
             tripId: trip3.id,
-            locationId: dortmund.id
+            location: dortmund
         )
         let visitedBochum = VisitedPlace(
             id: VisitedPlaceID(uuidString: "216dcd52-2732-4bbf-b637-b13650f24589")!,
@@ -145,7 +138,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             start: .now.addingTimeInterval(-2 * day),
             end: .now,
             tripId: trip3.id,
-            locationId: bochum.id
+            location: bochum
         )
         
         [visitedEssen, visitedBochum, visitedWitten, visitedDortmund]

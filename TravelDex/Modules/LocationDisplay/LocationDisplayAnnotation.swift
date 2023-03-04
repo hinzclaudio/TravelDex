@@ -15,7 +15,7 @@ class LocationDisplayAnnotation: NSObject, MKAnnotation {
     let item: AddedPlaceItem
     
     var title: String? {
-        item.location.name
+        item.visitedPlace.location.name
     }
     
     var pinColor: UIColor {
@@ -24,8 +24,8 @@ class LocationDisplayAnnotation: NSObject, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
-            latitude: item.location.coordinate.latitude,
-            longitude: item.location.coordinate.longitude
+            latitude: item.visitedPlace.location.coordinate.latitude,
+            longitude: item.visitedPlace.location.coordinate.longitude
         )
     }
     

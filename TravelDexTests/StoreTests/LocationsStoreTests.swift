@@ -24,7 +24,7 @@ class LocationsStoreTests: XCTestCase {
         self.cdStack = TestableCDStack()
         let mockAPI = MockLocationAPI()
         self.store = LocationsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:),
             locationAPI: mockAPI
         )
@@ -40,29 +40,16 @@ class LocationsStoreTests: XCTestCase {
         XCTAssertEqual(locs?.count, 0)
     }
     
-    func testAddLocationProducesCorrectResult() throws {
-        let berlin = MockLocationAPI.berlin
-        let _ = store.add(.just(berlin))
-        let fetchedLocation = try store
-            .allLocations()
-            .compactMap { $0.first }
-            .toBlocking(timeout: 5)
-            .first()
-        
-        XCTAssertNotNil(fetchedLocation)
-        XCTAssertEqual(fetchedLocation, berlin)
-    }
     
     func testLocationsWithEmptyQueryReturnsAllLocations() throws {
-        let _ = store.add(.of(MockLocationAPI.berlin, MockLocationAPI.bremen))
         let fetchedLocations = try store
             .locations(for: .just(""))
-            .filter { $0.count == 2 }
+            .filter { $0.count == 0 }
             .toBlocking(timeout: 5)
             .first()
         
         XCTAssertNotNil(fetchedLocations)
-        XCTAssertEqual(fetchedLocations, [MockLocationAPI.berlin, MockLocationAPI.bremen])
+        XCTAssertEqual(fetchedLocations, [])
     }
     
     func testSearchForLocationProducesAPIResult() throws {
@@ -85,7 +72,7 @@ class LocationsStoreTests: XCTestCase {
     
     func testSearchWithErrorIsPublished() throws {
         self.store = LocationsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:),
             locationAPI: MockLocationErrorAPI()
         )
@@ -111,7 +98,7 @@ class LocationsStoreTests: XCTestCase {
     
     func testReverseGeocodeErrorIsPublished() throws {
         self.store = LocationsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:),
             locationAPI: MockLocationErrorAPI()
         )

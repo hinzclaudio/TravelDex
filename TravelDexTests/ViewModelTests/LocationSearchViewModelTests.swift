@@ -24,12 +24,6 @@ class LocationSearchViewModelTests: XCTestCase {
     }
     
     
-    func testSelectLocationIsAddedToStore() throws {
-        let _ = viewModel
-            .select(.just(MockLocationAPI.hamburg))
-        XCTAssertTrue(mockDependencies.mockLocationsStore.addLocationCalled)
-    }
-    
     func testAnnotationsIsUpdatedFromStore() throws {
         let annotations = try viewModel.annotations(for: .just(""))
             .toBlocking(timeout: 5)

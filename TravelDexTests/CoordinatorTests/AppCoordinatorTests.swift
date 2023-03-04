@@ -191,7 +191,7 @@ class AppCoordinatorTests: XCTestCase {
             start: .now,
             end: .now,
             tripId: TripID(),
-            locationId: LocationID()
+            location: MockLocationAPI.hamburg
         )
     }
     
@@ -202,10 +202,8 @@ class AppCoordinatorTests: XCTestCase {
                 start: .now,
                 end: .now,
                 tripId: TripID(),
-                locationId: LocationID()
+                location: MockLocationAPI.hamburg
             ),
-            location: MockLocationAPI
-                .hamburg,
             pinColor: Trip
                 .defaultPinColor
         )

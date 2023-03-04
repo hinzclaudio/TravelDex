@@ -65,7 +65,7 @@ class AddPlacesCommentController: ScrollableVStackController {
     
     private func setupBinding() {
         viewModel.addedPlace
-            .map { String(format: Localizable.commentLocationTitle($0.location.name)) }
+            .map { String(format: Localizable.commentLocationTitle($0.visitedPlace.location.name)) }
             .drive(textView.titleLabel.rx.text)
             .disposed(by: bag)
         viewModel.addedPlace

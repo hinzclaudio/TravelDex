@@ -197,8 +197,8 @@ class EditPlaceCell: UITableViewCell {
     }
     
     func configure(for viewModel: EditPlaceViewModel, menu: UIMenu?) {
-        titleLabel.text = viewModel.item.location.name
-        secLabel.text = viewModel.item.location.supplementaryString
+        titleLabel.text = viewModel.item.visitedPlace.location.name
+        secLabel.text = viewModel.item.visitedPlace.location.supplementaryString
         
         if let imgData = viewModel.item.visitedPlace.picture,
            let img = UIImage(data: imgData) {

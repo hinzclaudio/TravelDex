@@ -34,7 +34,7 @@ class TripsStoreTests: XCTestCase {
         try super.setUpWithError()
         self.cdStack = TestableCDStack()
         self.store = TripsStore(
-            context: cdStack.storeContext,
+            context: cdStack.saveContext,
             dispatch: cdStack.dispatch(_:)
         )
     }

@@ -15,13 +15,11 @@ class MockLocationAPI: LocationAPIType {
     
     // MARK: - Class Funcs
     static let berlin = Location(
-        id: LocationID(),
         name: "Berlin",
         coordinate: Coordinate(latitude: 52.529, longitude: 13.381)
     )
     
     static let hamburg = Location(
-        id: LocationID(),
         name: "Hamburg",
         region: "Hamburg",
         country: "Germany",
@@ -29,7 +27,6 @@ class MockLocationAPI: LocationAPIType {
     )
     
     static let bremen = Location(
-        id: LocationID(),
         name: "Bremen",
         coordinate: Coordinate(latitude: 53.082, longitude: 8.816)
     )

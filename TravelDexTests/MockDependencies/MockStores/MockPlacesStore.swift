@@ -39,9 +39,8 @@ class MockPlacesStore: PlacesStoreType {
                     start: .now.addingTimeInterval(-86400),
                     end: .now,
                     tripId: TripID(),
-                    locationId: MockLocationAPI.hamburg.id
+                    location: MockLocationAPI.hamburg
                 ),
-                location: MockLocationAPI.hamburg,
                 pinColor: Trip.defaultPinColor
             )
         ])
@@ -60,9 +59,8 @@ class MockPlacesStore: PlacesStoreType {
                             start: .now.addingTimeInterval(-86400),
                             end: .now,
                             tripId: tripId,
-                            locationId: MockLocationAPI.hamburg.id
+                            location: MockLocationAPI.hamburg
                         ),
-                        location: MockLocationAPI.hamburg,
                         pinColor: Trip.defaultPinColor
                     )
                 ]
@@ -80,9 +78,8 @@ class MockPlacesStore: PlacesStoreType {
                         start: .now.addingTimeInterval(-86400),
                         end: .now,
                         tripId: TripID(),
-                        locationId: MockLocationAPI.hamburg.id
+                        location: MockLocationAPI.hamburg
                     ),
-                    location: MockLocationAPI.hamburg,
                     pinColor: Trip.defaultPinColor
                 )
             }

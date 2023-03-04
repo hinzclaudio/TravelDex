@@ -31,7 +31,10 @@ class AddPlacesViewModelTests: XCTestCase {
         start: .now.addingTimeInterval(-86400),
         end: .now,
         tripId: TripID(),
-        locationId: LocationID()
+        location: Location(
+            name: "Test Location",
+            coordinate: Coordinate(latitude: 1, longitude: 2)
+        )
     )
     
     override func setUpWithError() throws {
@@ -51,7 +54,6 @@ class AddPlacesViewModelTests: XCTestCase {
             .setStart(
                 of: AddedPlaceItem(
                     visitedPlace: somePlace,
-                    location: MockLocationAPI.hamburg,
                     pinColor: Trip.defaultPinColor
                 ),
                 to: .now
@@ -65,7 +67,6 @@ class AddPlacesViewModelTests: XCTestCase {
             .setEnd(
                 of: AddedPlaceItem(
                     visitedPlace: somePlace,
-                    location: MockLocationAPI.hamburg,
                     pinColor: Trip.defaultPinColor
                 ),
                 to: .now
@@ -138,7 +139,6 @@ class AddPlacesViewModelTests: XCTestCase {
         viewModel.set(
             AddedPlaceItem(
                 visitedPlace: somePlace,
-                location: MockLocationAPI.hamburg,
                 pinColor: Trip.defaultPinColor
             ),
             expanded: false

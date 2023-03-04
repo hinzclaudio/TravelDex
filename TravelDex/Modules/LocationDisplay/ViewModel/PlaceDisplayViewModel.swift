@@ -34,7 +34,7 @@ class PlaceDisplayViewModel: LocationDisplayViewModelType {
     
     lazy var controllerTitle: Driver<String> = {
         visitedPlace
-            .map { $0?.location.name ?? "" }
+            .compactMap(\.?.visitedPlace.location.name)
             .asDriver(onErrorJustReturn: "")
     }()
     

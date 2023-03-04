@@ -194,7 +194,7 @@ class AddPlacesViewModel: NSObject, AddPlacesViewModelType {
             self?.delete(item)
         }
         return UIMenu(
-            title: item.location.name,
+            title: item.visitedPlace.location.name,
             children: [imgMenu, showOnMapAction, editTextAction, delAction]
         )
     }

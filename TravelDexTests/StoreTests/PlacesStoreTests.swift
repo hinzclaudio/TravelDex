@@ -14,7 +14,7 @@ import XCTest
 class PlacesStoreTests: XCTestCase {
     
     var trip: Trip!
-    var locations: [Location]!
+    var locations = MockLocationAPI.mockedLocations
     
     var cdStack: CDStackType!
     var store: PlacesStoreType!
@@ -23,9 +23,8 @@ class PlacesStoreTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         self.cdStack = TestableCDStack()
-        self.store = PlacesStore(context: cdStack.storeContext, dispatch: cdStack.dispatch(_:))
+        self.store = PlacesStore(context: cdStack.saveContext, dispatch: cdStack.dispatch(_:))
         self.trip = try self.prepareTrip()
-        self.locations = try prepareLocations()
     }
     
     
@@ -55,8 +54,7 @@ class PlacesStoreTests: XCTestCase {
             .first()
         
         XCTAssertNotNil(addedPlace)
-        XCTAssertEqual(addedPlace?.location.id, berlin.id)
-        XCTAssertEqual(addedPlace?.location.coordinate, berlin.coordinate)
+        XCTAssertEqual(addedPlace?.visitedPlace.location.coordinate, berlin.coordinate)
         XCTAssertEqual(addedPlace?.visitedPlace.tripId, trip.id)
     }
     
@@ -165,28 +163,13 @@ class PlacesStoreTests: XCTestCase {
         query.predicate = NSPredicate(format: "id == %@", trip.id as CVarArg)
         query.fetchLimit = 1
         
-        let fetchedTrip = try CDObservable(fetchRequest: query, context: cdStack.storeContext)
+        let fetchedTrip = try CDObservable(fetchRequest: query, context: cdStack.saveContext)
             .compactMap { $0.first?.pureRepresentation }
             .toBlocking(timeout: 5)
             .first()
         
         XCTAssertNotNil(fetchedTrip)
         return fetchedTrip!
-    }
-    
-    func prepareLocations() throws -> [Location] {
-        let action = CDUpdateLocations(locations: MockLocationAPI.mockedLocations)
-        cdStack.dispatch(action)
-        
-        let query = CDLocation.fetchRequest()
-        let fetchedLocations =  try CDObservable(fetchRequest: query, context: cdStack.storeContext)
-            .filter { $0.count == 3 }
-            .compactMap { cdLocs in cdLocs.map { $0.pureRepresentation } }
-            .toBlocking(timeout: 5)
-            .first()
-        
-        XCTAssertNotNil(fetchedLocations)
-        return fetchedLocations!
     }
     
     func location(titled t: String) -> Location {
