@@ -36,14 +36,12 @@ class LocationSearchCoordinator: CoordinatorType {
         navigationController.pushViewController(controller, animated: false)
     }
     
-    
     func manualEntry(for coordinate: Coordinate) {
         let viewModel = LocationEntryViewModel(dependencies: dependencies, coordinate: coordinate)
         viewModel.coordinator = self
         let controller = LocationEntryController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }
-    
     
     func select(_ location: Location) {
         selectionHandler(location)

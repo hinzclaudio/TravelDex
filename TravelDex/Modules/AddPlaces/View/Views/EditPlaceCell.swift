@@ -159,7 +159,7 @@ class EditPlaceCell: UITableViewCell {
         
         optionsButton.autoPinEdge(.right, to: .right, of: mainView)
         optionsButton.autoAlignAxis(.horizontal, toSameAxisOf: mainView)
-        optionsButton.autoSetDimensions(to: Sizes.defaultIconButtonSIze)
+        optionsButton.autoSetDimensions(to: Sizes.defaultIconButtonSize)
         
         titleLabel.autoMatch(.width, to: .width, of: labelsStack)
         secLabel.autoMatch(.width, to: .width, of: labelsStack)

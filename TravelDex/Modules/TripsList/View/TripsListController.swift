@@ -7,19 +7,19 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 
 
 class TripsListController: UIViewController {
     
     let viewModel: TripsListViewModelType
-    
-    let addTap = PublishSubject<Void>()
-    let importTap = PublishSubject<Void>()
-    let exportIP = PublishSubject<IndexPath>()
-    let editingIP = PublishSubject<IndexPath>()
-    let pickingColorIP = PublishSubject<IndexPath>()
-    let deletionIP = PublishSubject<IndexPath>()
+    let addTap = PublishRelay<Void>()
+    let importTap = PublishRelay<Void>()
+    let exportIP = PublishRelay<IndexPath>()
+    let editingIP = PublishRelay<IndexPath>()
+    let pickingColorIP = PublishRelay<IndexPath>()
+    let deletionIP = PublishRelay<IndexPath>()
     let bag = DisposeBag()
     
     // MARK: - Views
@@ -45,6 +45,7 @@ class TripsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel.onDidLoad()
     }
     
     
@@ -89,14 +90,14 @@ class TripsListController: UIViewController {
                     title: Localizable.actionCreateTrip,
                     image: SFSymbol.plus.image,
                     handler: { [unowned self] _ in
-                        self.addTap.onNext(())
+                        self.addTap.accept(())
                     }
                 ),
                 UIAction(
                     title: Localizable.actionImportTrip,
                     image: SFSymbol.download.image,
                     handler: { [unowned self] _ in
-                        self.importTap.onNext(())
+                        self.importTap.accept(())
                     }
                 )
             ]
@@ -116,18 +117,18 @@ class TripsListController: UIViewController {
     }
     
     private func setupBinding() {
-        viewModel
-            .mapTapped(mapButton.rx.tap.asObservable())
+        mapButton.rx.tap
+            .bind(to: viewModel.mapTapped)
             .disposed(by: bag)
         
-        viewModel
-            .storeTapped(storeButton.rx.tap.asObservable())
+        storeButton.rx.tap
+            .bind(to: viewModel.storeTapped)
+            .disposed(by: bag)
+
+        addTap.bind(to: viewModel.addTapped)
             .disposed(by: bag)
         
-        viewModel.addTapped(addTap)
-            .disposed(by: bag)
-        
-        viewModel.importTapped(importTap)
+        importTap.bind(to: viewModel.importTapped)
             .disposed(by: bag)
         
         viewModel.tripsIsEmpty
@@ -147,8 +148,11 @@ class TripsListController: UIViewController {
                     cellIdentifier: TripsListTableCell.identifier,
                     cellType: TripsListTableCell.self
                 )
-            ) { i, trip, cell in
+            ) { [weak self] i, trip, cell in
                 cell.configure(for: trip)
+                cell.view.button.rx.tap
+                    .subscribe(onNext: { self?.viewModel.shareTrip.accept(trip) })
+                    .disposed(by: cell.bag)
             }
             .disposed(by: bag)
     
@@ -156,34 +160,32 @@ class TripsListController: UIViewController {
             .setDelegate(self)
             .disposed(by: bag)
         
-        let tripSelection = tableView.rx.modelSelected(Trip.self)
-            .asObservable()
-        viewModel
-            .select(tripSelection)
+        tableView.rx.itemSelected
+            .withLatestFrom(trips) { $1[$0.row] }
+            .bind(to: viewModel.selectTrip)
             .disposed(by: bag)
-        
         tableView.rx.itemDeleted
             .bind(to: deletionIP)
             .disposed(by: bag)
-        let tripDeletion = deletionIP
+        
+        deletionIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
-            .asObservable()
-        viewModel.delete(tripDeletion)
+            .bind(to: viewModel.deleteTrip)
             .disposed(by: bag)
         
-        let tripEditing = editingIP
+        editingIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
-        viewModel.edit(tripEditing)
+            .bind(to: viewModel.editTrip)
             .disposed(by: bag)
         
-        let tripColorPicking = pickingColorIP
+        pickingColorIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
-        viewModel.pickColor(for: tripColorPicking)
+            .bind(to: viewModel.pickColorForTrip)
             .disposed(by: bag)
         
-        let tripExport = exportIP
+        exportIP
             .withLatestFrom(trips) { i, trips in trips[i.row] }
-        viewModel.export(tripExport)
+            .bind(to: viewModel.exportTrip)
             .disposed(by: bag)
         
         viewModel.errorController.asObservable()

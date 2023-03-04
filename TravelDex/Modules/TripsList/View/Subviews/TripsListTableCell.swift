@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 
 
@@ -15,6 +16,7 @@ class TripsListTableCell: UITableViewCell {
     
     // MARK: - Views
     let view = TripCell()
+    private(set) var bag = DisposeBag()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,6 +28,10 @@ class TripsListTableCell: UITableViewCell {
         fatalError("Not implemented.")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bag = DisposeBag()
+    }
     
     // MARK: - Setup
     private func setup() {

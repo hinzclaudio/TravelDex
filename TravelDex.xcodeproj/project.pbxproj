@@ -20,6 +20,12 @@
 		1206332A28E0614D00FA05F8 /* PremiumStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332428E05ED000FA05F8 /* PremiumStoreError.swift */; };
 		1206332C28E07B4C00FA05F8 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332B28E07B4C00FA05F8 /* StringExt.swift */; };
 		1206332D28E07B4C00FA05F8 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1206332B28E07B4C00FA05F8 /* StringExt.swift */; };
+		120D248A29B67A43007FCA0B /* CKStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D248929B67A43007FCA0B /* CKStoreType.swift */; };
+		120D248B29B67A43007FCA0B /* CKStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D248929B67A43007FCA0B /* CKStoreType.swift */; };
+		120D248D29B67A4D007FCA0B /* CKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D248C29B67A4D007FCA0B /* CKStore.swift */; };
+		120D248E29B67A4D007FCA0B /* CKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D248C29B67A4D007FCA0B /* CKStore.swift */; };
+		121443E929BA87D100238467 /* CKShareInfo.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121443E829BA87D100238467 /* CKShareInfo.Status.swift */; };
+		121443EA29BA87D100238467 /* CKShareInfo.Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121443E829BA87D100238467 /* CKShareInfo.Status.swift */; };
 		1219E73128E2159000A21023 /* MockAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219E73028E2159000A21023 /* MockAppCoordinator.swift */; };
 		1219E73428E2238700A21023 /* AFRICA.tdex in Resources */ = {isa = PBXBuildFile; fileRef = 1219E73328E2238700A21023 /* AFRICA.tdex */; };
 		1219E73628E2276800A21023 /* AFRICA_INVALID.tdex in Resources */ = {isa = PBXBuildFile; fileRef = 1219E73528E2276800A21023 /* AFRICA_INVALID.tdex */; };
@@ -42,6 +48,15 @@
 		1236090629B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */; };
 		1236090729B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */; };
 		123C33A528CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */; };
+		123CE28E29BA85BB003FF74F /* CKShareInfo.EditorRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6A29BA57B6006D540E /* CKShareInfo.EditorRole.swift */; };
+		123CE28F29BA85BB003FF74F /* CKShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6629BA571D006D540E /* CKShareInfo.swift */; };
+		123CE29029BA85BB003FF74F /* CKShareInfo.Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6D29BA587A006D540E /* CKShareInfo.Member.swift */; };
+		123CE29129BA85BB003FF74F /* CKShareInfo.EditorRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6A29BA57B6006D540E /* CKShareInfo.EditorRole.swift */; };
+		123CE29229BA85BB003FF74F /* CKShareInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6629BA571D006D540E /* CKShareInfo.swift */; };
+		123CE29329BA85BB003FF74F /* CKShareInfo.Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1298AD6D29BA587A006D540E /* CKShareInfo.Member.swift */; };
+		12445E8E29BC89D200F61309 /* ShareCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12445E8D29BC89D200F61309 /* ShareCoordinator.swift */; };
+		12445E8F29BC89D200F61309 /* ShareCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12445E8D29BC89D200F61309 /* ShareCoordinator.swift */; };
+		12445E9129BC8A8900F61309 /* MockCKStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12445E9029BC8A8900F61309 /* MockCKStore.swift */; };
 		1255ECAA29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */; };
 		1255ECAB29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */; };
 		1255ECAD29B381700073C864 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255ECAC29B381700073C864 /* ImageConstants.swift */; };
@@ -244,6 +259,12 @@
 		129F322A28D7A4D60092FA8E /* sourcery.sh in Resources */ = {isa = PBXBuildFile; fileRef = 12DAB2E928C3D2D70066FE22 /* sourcery.sh */; };
 		129F322B28D7A4D60092FA8E /* Pods-TravelDex-settings-metadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = E678A41FBE4F3FB01E7A7383 /* Pods-TravelDex-settings-metadata.plist */; };
 		12B37CB628C913070076C54C /* PremiumStoreViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */; };
+		12C4A4C729BC9040007719BE /* ShareOverviewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4C629BC9040007719BE /* ShareOverviewViewModelType.swift */; };
+		12C4A4C829BC9040007719BE /* ShareOverviewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4C629BC9040007719BE /* ShareOverviewViewModelType.swift */; };
+		12C4A4CA29BC904B007719BE /* ShareOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4C929BC904B007719BE /* ShareOverviewViewModel.swift */; };
+		12C4A4CB29BC904B007719BE /* ShareOverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4C929BC904B007719BE /* ShareOverviewViewModel.swift */; };
+		12C4A4CD29BC90F2007719BE /* ShareOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4CC29BC90F2007719BE /* ShareOverviewController.swift */; };
+		12C4A4CE29BC90F2007719BE /* ShareOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C4A4CC29BC90F2007719BE /* ShareOverviewController.swift */; };
 		12D3521B2932A7EE00F48C30 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3521A2932A7EE00F48C30 /* Assets.generated.swift */; };
 		12D3C2A429349EE400B92D70 /* ColorSelectionConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */; };
 		12D3C2A529349FE600B92D70 /* Assets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D3521A2932A7EE00F48C30 /* Assets.generated.swift */; };
@@ -373,6 +394,9 @@
 		1206332228E0527600FA05F8 /* ExportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportConstants.swift; sourceTree = "<group>"; };
 		1206332428E05ED000FA05F8 /* PremiumStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreError.swift; sourceTree = "<group>"; };
 		1206332B28E07B4C00FA05F8 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		120D248929B67A43007FCA0B /* CKStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKStoreType.swift; sourceTree = "<group>"; };
+		120D248C29B67A4D007FCA0B /* CKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKStore.swift; sourceTree = "<group>"; };
+		121443E829BA87D100238467 /* CKShareInfo.Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKShareInfo.Status.swift; sourceTree = "<group>"; };
 		1219E73028E2159000A21023 /* MockAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppCoordinator.swift; sourceTree = "<group>"; };
 		1219E73328E2238700A21023 /* AFRICA.tdex */ = {isa = PBXFileReference; lastKnownFileType = file; path = AFRICA.tdex; sourceTree = "<group>"; };
 		1219E73528E2276800A21023 /* AFRICA_INVALID.tdex */ = {isa = PBXFileReference; lastKnownFileType = file; path = AFRICA_INVALID.tdex; sourceTree = "<group>"; };
@@ -394,6 +418,8 @@
 		123608FC29B2301A00C12235 /* CDImageAttachment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDImageAttachment+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1236090529B35C2100C12235 /* CDImageAttachmentCreationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageAttachmentCreationPolicy.swift; sourceTree = "<group>"; };
 		123C33A428CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoPickerViewModel.swift; sourceTree = "<group>"; };
+		12445E8D29BC89D200F61309 /* ShareCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCoordinator.swift; sourceTree = "<group>"; };
+		12445E9029BC8A8900F61309 /* MockCKStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCKStore.swift; sourceTree = "<group>"; };
 		1255ECA929B36A380073C864 /* MappingV1ToV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingV1ToV2.xcmappingmodel; sourceTree = "<group>"; };
 		1255ECAC29B381700073C864 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		12571EF228BD4F6100CC2AD0 /* TravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -461,9 +487,15 @@
 		12904FB828CE12E500192F11 /* AppCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorType.swift; sourceTree = "<group>"; };
 		12904FBB28CE15B700192F11 /* AppCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTests.swift; sourceTree = "<group>"; };
 		1298248E28CFA24B001C8D6E /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
+		1298AD6629BA571D006D540E /* CKShareInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKShareInfo.swift; sourceTree = "<group>"; };
+		1298AD6A29BA57B6006D540E /* CKShareInfo.EditorRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKShareInfo.EditorRole.swift; sourceTree = "<group>"; };
+		1298AD6D29BA587A006D540E /* CKShareInfo.Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKShareInfo.Member.swift; sourceTree = "<group>"; };
 		129F323128D7A4D60092FA8E /* MockedTravelDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockedTravelDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		129F323228D7A4D60092FA8E /* MockedTravelDexInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MockedTravelDexInfo.plist; path = /Users/hinzclaudio/CodingProjects/TravelDex/MockedTravelDexInfo.plist; sourceTree = "<absolute>"; };
 		12B37CB528C913070076C54C /* PremiumStoreViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumStoreViewModelTests.swift; sourceTree = "<group>"; };
+		12C4A4C629BC9040007719BE /* ShareOverviewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOverviewViewModelType.swift; sourceTree = "<group>"; };
+		12C4A4C929BC904B007719BE /* ShareOverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOverviewViewModel.swift; sourceTree = "<group>"; };
+		12C4A4CC29BC90F2007719BE /* ShareOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOverviewController.swift; sourceTree = "<group>"; };
 		12D3521A2932A7EE00F48C30 /* Assets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.generated.swift; sourceTree = "<group>"; };
 		12D3C2A329349EE400B92D70 /* ColorSelectionConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionConstants.swift; sourceTree = "<group>"; };
 		12DAB2E128BD522D0066FE22 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -617,6 +649,15 @@
 				1206332228E0527600FA05F8 /* ExportConstants.swift */,
 			);
 			path = "Import+Export";
+			sourceTree = "<group>";
+		};
+		120D248829B67A24007FCA0B /* CKStore */ = {
+			isa = PBXGroup;
+			children = (
+				120D248929B67A43007FCA0B /* CKStoreType.swift */,
+				120D248C29B67A4D007FCA0B /* CKStore.swift */,
+			);
+			path = CKStore;
 			sourceTree = "<group>";
 		};
 		1219E72E28E2157400A21023 /* MockCoordinators */ = {
@@ -822,6 +863,7 @@
 		12571F3528BD505400CC2AD0 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				120D248829B67A24007FCA0B /* CKStore */,
 				123538FA28C4BC0D00A7AD12 /* SKStore */,
 				12571F3628BD505400CC2AD0 /* LocationsStore */,
 				12571F3C28BD505400CC2AD0 /* TripsStore */,
@@ -944,6 +986,7 @@
 				12571F6428BD505400CC2AD0 /* Trip.swift */,
 				12571F6528BD505400CC2AD0 /* Coordinate.swift */,
 				12571F6628BD505400CC2AD0 /* VisitedPlace.swift */,
+				1298AD6929BA57A7006D540E /* Shares */,
 				1206331828DF965B00FA05F8 /* Import+Export */,
 			);
 			path = Models;
@@ -980,6 +1023,7 @@
 			children = (
 				12DAB2FF28C3D3DB0066FE22 /* LocationSearchCoordinator.swift */,
 				1274130328CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift */,
+				12445E8D29BC89D200F61309 /* ShareCoordinator.swift */,
 			);
 			path = ChildCoordinators;
 			sourceTree = "<group>";
@@ -1051,6 +1095,43 @@
 				1298248E28CFA24B001C8D6E /* Snapfile */,
 			);
 			path = fastlane;
+			sourceTree = "<group>";
+		};
+		1298AD6929BA57A7006D540E /* Shares */ = {
+			isa = PBXGroup;
+			children = (
+				1298AD6629BA571D006D540E /* CKShareInfo.swift */,
+				1298AD6D29BA587A006D540E /* CKShareInfo.Member.swift */,
+				1298AD6A29BA57B6006D540E /* CKShareInfo.EditorRole.swift */,
+				121443E829BA87D100238467 /* CKShareInfo.Status.swift */,
+			);
+			path = Shares;
+			sourceTree = "<group>";
+		};
+		12C4A4C329BC900F007719BE /* ShareOverview */ = {
+			isa = PBXGroup;
+			children = (
+				12C4A4C429BC9025007719BE /* ViewModel */,
+				12C4A4C529BC902D007719BE /* View */,
+			);
+			path = ShareOverview;
+			sourceTree = "<group>";
+		};
+		12C4A4C429BC9025007719BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				12C4A4C629BC9040007719BE /* ShareOverviewViewModelType.swift */,
+				12C4A4C929BC904B007719BE /* ShareOverviewViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		12C4A4C529BC902D007719BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12C4A4CC29BC90F2007719BE /* ShareOverviewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		12DAB2E328C3D2D70066FE22 /* CodeGeneration */ = {
@@ -1145,6 +1226,7 @@
 				12DAB32328C3D42F0066FE22 /* PhotoPicker */,
 				1274130528CDEF6200FCC8C1 /* PremiumInfo */,
 				1235390528C4CA8E00A7AD12 /* PremiumStore */,
+				12C4A4C329BC900F007719BE /* ShareOverview */,
 				12DAB33A28C3D42F0066FE22 /* TripsList */,
 			);
 			path = Modules;
@@ -1319,8 +1401,8 @@
 		12DAB34128C3D42F0066FE22 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				12DAB34228C3D42F0066FE22 /* TripCell.swift */,
 				12DAB34328C3D42F0066FE22 /* TripsListTableCell.swift */,
+				12DAB34228C3D42F0066FE22 /* TripCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1475,6 +1557,7 @@
 				12DAB3A128C3D55F0066FE22 /* MockTripsStore.swift */,
 				12DAB3A228C3D55F0066FE22 /* MockPlacesStore.swift */,
 				12F4215028C8F5F70063CFC0 /* MockSKStore.swift */,
+				12445E9029BC8A8900F61309 /* MockCKStore.swift */,
 			);
 			path = MockStores;
 			sourceTree = "<group>";
@@ -1990,6 +2073,7 @@
 				12571FA528BD505400CC2AD0 /* AppDelegate.swift in Sources */,
 				12D3C2A429349EE400B92D70 /* ColorSelectionConstants.swift in Sources */,
 				12DAB36028C3D42F0066FE22 /* TitledTextView.swift in Sources */,
+				123CE29229BA85BB003FF74F /* CKShareInfo.swift in Sources */,
 				12DAB37B28C3D42F0066FE22 /* ColorSelectionViewModelType.swift in Sources */,
 				12571F8C28BD505400CC2AD0 /* CDVisitedPlace+CoreDataClass.swift in Sources */,
 				12571F8428BD505400CC2AD0 /* CDMigrator.swift in Sources */,
@@ -2000,13 +2084,16 @@
 				12571F9228BD505400CC2AD0 /* CDUpdatePlace.swift in Sources */,
 				12DAB2FA28C3D2D80066FE22 /* MarkerConformances.swift in Sources */,
 				1206332C28E07B4C00FA05F8 /* StringExt.swift in Sources */,
+				121443E929BA87D100238467 /* CKShareInfo.Status.swift in Sources */,
 				1206331A28DF966600FA05F8 /* TripExport.swift in Sources */,
 				12571F8528BD505400CC2AD0 /* DefaultCDStack.swift in Sources */,
 				12DAB39228C3D49B0066FE22 /* AnimationConstants.swift in Sources */,
 				12DAB36428C3D42F0066FE22 /* AddPlacesCommentViewModelType.swift in Sources */,
 				12DAB38028C3D42F0066FE22 /* LocationSearchAnnotation.swift in Sources */,
 				12571FA228BD505400CC2AD0 /* UIStackViewExt.swift in Sources */,
+				120D248A29B67A43007FCA0B /* CKStoreType.swift in Sources */,
 				12DAB38228C3D42F0066FE22 /* LocationSearchViewModel.swift in Sources */,
+				12445E8E29BC89D200F61309 /* ShareCoordinator.swift in Sources */,
 				12571F9D28BD505400CC2AD0 /* DatePickerExt.swift in Sources */,
 				12DAB37428C3D42F0066FE22 /* LocaitonDisplay_ MapDelegate.swift in Sources */,
 				1274130428CDEC2000FCC8C1 /* PremiumStoreCoordinator.swift in Sources */,
@@ -2043,12 +2130,15 @@
 				12571F8128BD505400CC2AD0 /* PlacesStoreType.swift in Sources */,
 				12571F8E28BD505400CC2AD0 /* CDTrip+CoreDataClass.swift in Sources */,
 				12571F8B28BD505400CC2AD0 /* CDTrip+CoreDataProperties.swift in Sources */,
+				12C4A4CA29BC904B007719BE /* ShareOverviewViewModel.swift in Sources */,
 				12DAB37228C3D42F0066FE22 /* LocationDisplayAnnotation.swift in Sources */,
 				1206331E28DF980A00FA05F8 /* CDExportTrip.swift in Sources */,
 				12DAB38728C3D42F0066FE22 /* SnapshotProviderType.swift in Sources */,
 				12571F7628BD505400CC2AD0 /* ActivityIndicator.swift in Sources */,
 				12571F9328BD505400CC2AD0 /* CDDeleteTrip.swift in Sources */,
+				12C4A4CD29BC90F2007719BE /* ShareOverviewController.swift in Sources */,
 				1255ECAA29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */,
+				120D248D29B67A4D007FCA0B /* CKStore.swift in Sources */,
 				12DAB36E28C3D42F0066FE22 /* AllPlacesDisplayViewModel.swift in Sources */,
 				12DAB38928C3D42F0066FE22 /* LocationEntryController.swift in Sources */,
 				1206331C28DF969300FA05F8 /* VisitedPlaceExport.swift in Sources */,
@@ -2060,6 +2150,7 @@
 				12571F7F28BD505400CC2AD0 /* TripsStoreType.swift in Sources */,
 				12571F8628BD505400CC2AD0 /* CDVisitedPlaceExt.swift in Sources */,
 				1274130728CDEF7300FCC8C1 /* PremiumInfoController.swift in Sources */,
+				123CE29329BA85BB003FF74F /* CKShareInfo.Member.swift in Sources */,
 				1235390928C4CAC300A7AD12 /* PremiumStoreViewModelType.swift in Sources */,
 				12571F9F28BD505400CC2AD0 /* FileManagerExt.swift in Sources */,
 				12DAB37128C3D42F0066FE22 /* PlaceDisplayViewModel.swift in Sources */,
@@ -2093,7 +2184,9 @@
 				123608FD29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */,
 				12571F9828BD505400CC2AD0 /* CDStackType.swift in Sources */,
 				12DAB31128C3D40E0066FE22 /* PaddedTextField.swift in Sources */,
+				12C4A4C729BC9040007719BE /* ShareOverviewViewModelType.swift in Sources */,
 				12DAB37028C3D42F0066FE22 /* TripLocationDisplayViewModel.swift in Sources */,
+				123CE29129BA85BB003FF74F /* CKShareInfo.EditorRole.swift in Sources */,
 				1274130D28CDEFD300FCC8C1 /* PremiumInfoViewModel.swift in Sources */,
 				12DAB35F28C3D42F0066FE22 /* EditTripViewModelType.swift in Sources */,
 				12DAB36A28C3D42F0066FE22 /* AddedPlaceItem.swift in Sources */,
@@ -2116,6 +2209,7 @@
 				12F4215128C8F5F70063CFC0 /* MockSKStore.swift in Sources */,
 				12DAB3B428C3D55F0066FE22 /* LocationsDisplayViewModelTests.swift in Sources */,
 				12DAB3BC28C3D55F0066FE22 /* TripsStoreTests.swift in Sources */,
+				12445E9129BC8A8900F61309 /* MockCKStore.swift in Sources */,
 				12F4214E28C8F4010063CFC0 /* SKStoreTests.swift in Sources */,
 				12DAB3AF28C3D55F0066FE22 /* AddPlacesCommentViewModelTests.swift in Sources */,
 				123C33A528CE5F2A0095ABB5 /* MockPhotoPickerViewModel.swift in Sources */,
@@ -2178,6 +2272,7 @@
 				129F31AF28D7A4D60092FA8E /* TitledTextView.swift in Sources */,
 				129F31B028D7A4D60092FA8E /* ColorSelectionViewModelType.swift in Sources */,
 				129F31B128D7A4D60092FA8E /* CDVisitedPlace+CoreDataClass.swift in Sources */,
+				123CE28F29BA85BB003FF74F /* CKShareInfo.swift in Sources */,
 				129F31B228D7A4D60092FA8E /* CDMigrator.swift in Sources */,
 				129F31B328D7A4D60092FA8E /* CDMigrationStep.swift in Sources */,
 				129F31B428D7A4D60092FA8E /* EditTripViewModel.swift in Sources */,
@@ -2188,13 +2283,16 @@
 				129F31BA28D7A4D60092FA8E /* DefaultCDStack.swift in Sources */,
 				1206332D28E07B4C00FA05F8 /* StringExt.swift in Sources */,
 				129F31BB28D7A4D60092FA8E /* AnimationConstants.swift in Sources */,
+				121443EA29BA87D100238467 /* CKShareInfo.Status.swift in Sources */,
 				129F31BC28D7A4D60092FA8E /* AddPlacesCommentViewModelType.swift in Sources */,
 				129F31BD28D7A4D60092FA8E /* LocationSearchAnnotation.swift in Sources */,
 				129F31BE28D7A4D60092FA8E /* UIStackViewExt.swift in Sources */,
 				129F31BF28D7A4D60092FA8E /* LocationSearchViewModel.swift in Sources */,
 				129F31C028D7A4D60092FA8E /* DatePickerExt.swift in Sources */,
 				129F31C128D7A4D60092FA8E /* LocaitonDisplay_ MapDelegate.swift in Sources */,
+				120D248B29B67A43007FCA0B /* CKStoreType.swift in Sources */,
 				129F31C228D7A4D60092FA8E /* PremiumStoreCoordinator.swift in Sources */,
+				12445E8F29BC89D200F61309 /* ShareCoordinator.swift in Sources */,
 				129F31C328D7A4D60092FA8E /* UIButtonExt.swift in Sources */,
 				129F31C428D7A4D60092FA8E /* Fonts.swift in Sources */,
 				128237B828D7A5A500EAA276 /* MockSceneDelegate.swift in Sources */,
@@ -2231,12 +2329,15 @@
 				129F31E128D7A4D60092FA8E /* CDTrip+CoreDataProperties.swift in Sources */,
 				129F31E228D7A4D60092FA8E /* LocationDisplayAnnotation.swift in Sources */,
 				129F31E328D7A4D60092FA8E /* SnapshotProviderType.swift in Sources */,
+				12C4A4CB29BC904B007719BE /* ShareOverviewViewModel.swift in Sources */,
 				129F31E428D7A4D60092FA8E /* ActivityIndicator.swift in Sources */,
 				129F31E528D7A4D60092FA8E /* CDDeleteTrip.swift in Sources */,
 				129F31E628D7A4D60092FA8E /* AllPlacesDisplayViewModel.swift in Sources */,
 				129F31E728D7A4D60092FA8E /* LocationEntryController.swift in Sources */,
 				129F31E828D7A4D60092FA8E /* AddPlacesViewModelType.swift in Sources */,
+				12C4A4CE29BC90F2007719BE /* ShareOverviewController.swift in Sources */,
 				1255ECAB29B36A380073C864 /* MappingV1ToV2.xcmappingmodel in Sources */,
+				120D248E29B67A4D007FCA0B /* CKStore.swift in Sources */,
 				129F31E928D7A4D60092FA8E /* MarkterProtocols.swift in Sources */,
 				129F31EA28D7A4D60092FA8E /* CDDeleteVisistedPlace.swift in Sources */,
 				129F31EB28D7A4D60092FA8E /* ColoredPill.swift in Sources */,
@@ -2248,6 +2349,7 @@
 				129F31F228D7A4D60092FA8E /* FileManagerExt.swift in Sources */,
 				129F31F328D7A4D60092FA8E /* PlaceDisplayViewModel.swift in Sources */,
 				129F31F428D7A4D60092FA8E /* Strings.generated.swift in Sources */,
+				123CE29029BA85BB003FF74F /* CKShareInfo.Member.swift in Sources */,
 				12D3C2A62934A01200B92D70 /* ColorSelectionConstants.swift in Sources */,
 				129F31F528D7A4D60092FA8E /* GeneralStyleManager.swift in Sources */,
 				129F31F628D7A4D60092FA8E /* SKStoreType.swift in Sources */,
@@ -2281,7 +2383,9 @@
 				123608FE29B2301A00C12235 /* CDImageAttachment+CoreDataClass.swift in Sources */,
 				129F321028D7A4D60092FA8E /* CDStackType.swift in Sources */,
 				129F321128D7A4D60092FA8E /* PaddedTextField.swift in Sources */,
+				12C4A4C829BC9040007719BE /* ShareOverviewViewModelType.swift in Sources */,
 				129F321228D7A4D60092FA8E /* TripLocationDisplayViewModel.swift in Sources */,
+				123CE28E29BA85BB003FF74F /* CKShareInfo.EditorRole.swift in Sources */,
 				129F321328D7A4D60092FA8E /* PremiumInfoViewModel.swift in Sources */,
 				129F321428D7A4D60092FA8E /* EditTripViewModelType.swift in Sources */,
 				129F321528D7A4D60092FA8E /* AddedPlaceItem.swift in Sources */,

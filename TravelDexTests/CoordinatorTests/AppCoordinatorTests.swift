@@ -108,7 +108,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testPickColorUnavailableIfNotPremium() throws {
-        dependencies.mockSkStore.enablePremium = false
+        dependencies.mockSkStore.enablePremium.accept(false)
         let _ = coordinator.pickColor(for: .just(mockTrip))
         let colorSelectionExists = allViewControllers
             .contains(where: { $0 is ColorSelectionController })
@@ -116,7 +116,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testPickColorAvailableIfPremium() throws {
-        dependencies.mockSkStore.enablePremium = true
+        dependencies.mockSkStore.enablePremium.accept(true)
         let _ = coordinator.pickColor(for: .just(mockTrip))
         let colorSelectionExists = allViewControllers
             .contains(where: { $0 is ColorSelectionController })
@@ -124,7 +124,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testSearchLocationAvailableForNonPremium() throws {
-        dependencies.mockSkStore.enablePremium = false
+        dependencies.mockSkStore.enablePremium.accept(false)
         let trip = mockTrip.cloneBuilder()
             .with(visitedLocations: [UUID(), UUID(), UUID()])
             .build()! // Non-premium users are allowed a maximum of 5 locations per trip, so one more is ok.
@@ -135,7 +135,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testSearchLocationUnavailableForNonPremiumWithLimitReached() throws {
-        dependencies.mockSkStore.enablePremium = false
+        dependencies.mockSkStore.enablePremium.accept(false)
         let trip = mockTrip.cloneBuilder()
             .with(visitedLocations: [UUID(), UUID(), UUID(), UUID(), UUID()])
             .build()! // Non-premium users are allowed a maximum of 5 locations per trip
@@ -146,7 +146,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testSearchLocationAvailableIfPremium() throws {
-        dependencies.mockSkStore.enablePremium = true
+        dependencies.mockSkStore.enablePremium.accept(true)
         let trip = mockTrip.cloneBuilder()
             .with(visitedLocations: [UUID(), UUID(), UUID(), UUID(), UUID()])
             .build()! // Non-premium users are allowed a maximum of 5 locations per trip
@@ -157,7 +157,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testHandleImportIfPremiumEnabled() throws {
-        dependencies.mockSkStore.enablePremium = true
+        dependencies.mockSkStore.enablePremium.accept(true)
         let _ = coordinator.handle(importForFileAt: validExportURL, inPlace: true)
         let addPlacesExists = allViewControllers
             .contains(where: { $0 is AddPlacesController })
@@ -165,7 +165,7 @@ class AppCoordinatorTests: XCTestCase {
     }
     
     func testHandleImportIfPremiumDisabled() throws {
-        dependencies.mockSkStore.enablePremium = false
+        dependencies.mockSkStore.enablePremium.accept(false)
         let _ = coordinator.handle(importForFileAt: validExportURL, inPlace: true)
         let addPlacesExists = allViewControllers
             .contains(where: { $0 is AddPlacesController })

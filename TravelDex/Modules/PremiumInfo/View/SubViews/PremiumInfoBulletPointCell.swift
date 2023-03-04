@@ -60,7 +60,7 @@ class PremiumInfoBulletPointCell: UITableViewCell {
     private func setAutoLayout() {
         infoIcon.autoPinEdge(.left, to: .left, of: contentView, withOffset: Sizes.defaultMargin)
         infoIcon.autoAlignAxis(.horizontal, toSameAxisOf: contentView)
-        infoIcon.autoSetDimensions(to: Sizes.defaultIconButtonSIze)
+        infoIcon.autoSetDimensions(to: Sizes.defaultIconButtonSize)
         
         infoLabel.autoPinEdge(.top, to: .top, of: contentView, withOffset: Sizes.defaultMargin)
         infoLabel.autoPinEdge(.left, to: .right, of: infoIcon, withOffset: Sizes.defaultMargin)

@@ -13,7 +13,8 @@ protocol AppDependencies:
     HasTripsStore &
     HasPlacesStore &
     HasLocationsStore &
-    HasSKStore
+    HasSKStore &
+    HasCKStore
 {}
 
 
@@ -32,4 +33,8 @@ protocol HasLocationsStore {
 
 protocol HasSKStore {
     var skStore: SKStoreType { get }
+}
+
+protocol HasCKStore {
+    var ckStore: CKStoreType { get }
 }

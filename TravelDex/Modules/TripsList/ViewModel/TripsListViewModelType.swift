@@ -14,15 +14,19 @@ import RxCocoa
 protocol TripsListViewModelType: UIDocumentPickerDelegate {
     
     // MARK: - Input
-    func storeTapped(_ tap: Observable<Void>) -> Disposable
-    func mapTapped(_ tap: Observable<Void>) -> Disposable
-    func addTapped(_ tap: Observable<Void>) -> Disposable
-    func importTapped(_ tap: Observable<Void>) -> Disposable
-    func export(_ trip: Observable<Trip>) -> Disposable
-    func select(_ trip: Observable<Trip>) -> Disposable
-    func delete(_ trip: Observable<Trip>) -> Disposable
-    func edit(_ trip: Observable<Trip>) -> Disposable
-    func pickColor(for trip: Observable<Trip>) -> Disposable
+    var storeTapped: PublishRelay<Void> { get }
+    var mapTapped: PublishRelay<Void> { get }
+    var addTapped: PublishRelay<Void> { get }
+    var importTapped: PublishRelay<Void> { get }
+    
+    var exportTrip: PublishRelay<Trip> { get }
+    var shareTrip: PublishRelay<Trip> { get }
+    var selectTrip: PublishRelay<Trip> { get }
+    var deleteTrip: PublishRelay<Trip> { get }
+    var editTrip: PublishRelay<Trip> { get }
+    var pickColorForTrip: PublishRelay<Trip> { get }
+    
+    func onDidLoad()
     
     
     // MARK: - Output

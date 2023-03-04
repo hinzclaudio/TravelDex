@@ -26,6 +26,7 @@ protocol AppCoordinatorType: CoordinatorType {
     func didUpdate(_ trip: Trip)
     func select(_ trip: Trip)
     func edit(_ trip: Trip)
+    func shareOverview(forTrip trip: Trip)
     
     func pickColor(for trip: Observable<Trip>) -> Disposable
     func searchLocation(for trip: Observable<Trip>) -> Disposable

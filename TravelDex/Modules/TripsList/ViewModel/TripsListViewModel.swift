@@ -16,7 +16,8 @@ class TripsListViewModel: NSObject, TripsListViewModelType {
     weak var coordinator: AppCoordinatorType?
     
     typealias Dependencies = HasTripsStore & HasSKStore
-    let dependencies: Dependencies
+    internal let dependencies: Dependencies
+    internal let bag = DisposeBag()
     
     init(dependencies: Dependencies, coordinator: AppCoordinatorType) {
         self.dependencies = dependencies
@@ -27,26 +28,34 @@ class TripsListViewModel: NSObject, TripsListViewModelType {
     
     
     // MARK: - Input
-    func storeTapped(_ tap: Observable<Void>) -> Disposable {
-        tap
+    public let storeTapped = PublishRelay<Void>()
+    public let mapTapped = PublishRelay<Void>()
+    public let addTapped = PublishRelay<Void>()
+    public let importTapped = PublishRelay<Void>()
+    public let exportTrip = PublishRelay<Trip>()
+    public let shareTrip = PublishRelay<Trip>()
+    public let selectTrip = PublishRelay<Trip>()
+    public let deleteTrip = PublishRelay<Trip>()
+    public let editTrip = PublishRelay<Trip>()
+    public let pickColorForTrip = PublishRelay<Trip>()
+    
+    public func onDidLoad() {
+        storeTapped
             .subscribe(onNext: { [weak self] in self?.coordinator?.selectStore() })
-    }
-    
-    func mapTapped(_ tap: Observable<Void>) -> Disposable {
-        tap
+            .disposed(by: bag)
+        
+        mapTapped
             .subscribe(onNext: { [weak self] in self?.coordinator?.displayMap() })
-    }
-    
-    func addTapped(_ tap: Observable<Void>) -> Disposable {
-        coordinator?.goToAddTrip(when: tap) ?? Disposables.create()
-    }
-    
-    func importTapped(_ tap: Observable<Void>) -> Disposable {
-        coordinator?.goToImportTrip(self, when: tap) ?? Disposables.create()
-    }
-    
-    func export(_ trip: Observable<Trip>) -> Disposable {
-        let exportFile = trip
+            .disposed(by: bag)
+        
+        coordinator?
+            .goToAddTrip(when: addTapped.asObservable())
+            .disposed(by: bag)
+       
+        coordinator?.goToImportTrip(self, when: importTapped.asObservable())
+            .disposed(by: bag)
+        
+        let exportFile = exportTrip
             .withLatestFrom(dependencies.skStore.premiumFeaturesEnabled) { ($0, $1) }
             .flatMapLatest { [unowned self] trip, premiumEnabled in
                 if premiumEnabled {
@@ -64,32 +73,31 @@ class TripsListViewModel: NSObject, TripsListViewModelType {
             }
             .do(onNext: { [weak self] in self?._errors.accept($0.error) })
             .compactMap(\.element)
-        return coordinator?.share(exportAt: exportFile) ?? Disposables.create()
-    }
-    
-    func select(_ trip: Observable<Trip>) -> Disposable {
-        trip
-            .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
-    }
-    
-    func edit(_ trip: Observable<Trip>) -> Disposable {
-        trip
+        coordinator?.share(exportAt: exportFile)
+            .disposed(by: bag)
+                
+        shareTrip
+            .subscribe(onNext: { [weak self] in self?.coordinator?.shareOverview(forTrip: $0) })
+            .disposed(by: bag)
+                
+        selectTrip
+                .subscribe(onNext: { [weak self] in self?.coordinator?.select($0) })
+                .disposed(by: bag)
+                
+        editTrip
             .subscribe(onNext: { [weak self] in self?.coordinator?.edit($0) })
+            .disposed(by: bag)
+        
+        coordinator?.pickColor(for: pickColorForTrip.asObservable())
+            .disposed(by: bag)
+                
+        dependencies.tripsStore.delete(deleteTrip.asObservable())
+            .disposed(by: bag)
     }
-    
-    func pickColor(for trip: Observable<Trip>) -> Disposable {
-        coordinator?.pickColor(for: trip) ?? Disposables.create()
-    }
-    
-    func delete(_ trip: Observable<Trip>) -> Disposable {
-        dependencies.tripsStore
-            .delete(trip)
-    }
-    
     
     
     // MARK: - Output
-    func trips(for search: Observable<String>) -> Driver<[Trip]> {
+    public func trips(for search: Observable<String>) -> Driver<[Trip]> {
         search
             .flatMapLatest { [unowned self] query in
                 self.dependencies.tripsStore.trips(forSearch: query)
@@ -97,15 +105,15 @@ class TripsListViewModel: NSObject, TripsListViewModelType {
             .asDriver(onErrorJustReturn: [])
     }
     
-    lazy var tripsIsEmpty: Driver<Bool> = {
+    public lazy var tripsIsEmpty: Driver<Bool> = {
         dependencies.tripsStore.trips(forSearch: "")
             .map { $0.isEmpty }
             .distinctUntilChanged()
             .asDriver(onErrorJustReturn: false)
     }()
     
-    let _errors = BehaviorRelay<Error?>(value: nil)
-    lazy var errorController: Driver<UIAlertController> = {
+    internal let _errors = BehaviorRelay<Error?>(value: nil)
+    public lazy var errorController: Driver<UIAlertController> = {
         _errors
             .asDriver(onErrorJustReturn: nil)
             .compactMap { $0 }

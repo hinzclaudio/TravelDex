@@ -12,6 +12,10 @@ import CoreData
 
 protocol CDStackType {
     
+    var persistentContainer: NSPersistentCloudKitContainer { get }
+    var privateStore: NSPersistentStore { get }
+    var sharedStore: NSPersistentStore { get }
+    
     var saveContext: NSManagedObjectContext { get }
     var reducerContext: NSManagedObjectContext { get }
     

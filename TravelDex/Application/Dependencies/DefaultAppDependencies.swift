@@ -19,9 +19,10 @@ class DefaultAppDependencies: AppDependencies {
     let placesStore: PlacesStoreType
     let locationsStore: LocationsStoreType
     let skStore: SKStoreType
+    let ckStore: CKStoreType
     
     init() {
-        let cdStack = DefaultCDStack(modelName: "TravelDex")
+        let cdStack = DefaultCDStack(modelName: "TravelDex", containerIdentifier: "iCloud.TravelDex.app")
         let geoCoder = CLGeocoder()
         
         self.cdStack = cdStack
@@ -41,6 +42,7 @@ class DefaultAppDependencies: AppDependencies {
             locationAPI: geoCoder
         )
         self.skStore = SKStore()
+        self.ckStore = CKStore(cdStack: cdStack)
     }
     
 }

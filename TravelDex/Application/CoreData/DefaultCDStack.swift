@@ -7,47 +7,92 @@
 
 import Foundation
 import CoreData
+import CloudKit
 
 
 
 final class DefaultCDStack: CDStackType {
+
+    public let modelName: String
+    public let containerIdentifier: String
     
-    let modelName: String
-    
-    init(modelName: String) {
+    init(modelName: String, containerIdentifier: String) {
         self.modelName = modelName
+        self.containerIdentifier = containerIdentifier
     }
     
 
-    private lazy var persistentContainer: NSPersistentContainer = {
+    private(set) lazy var persistentContainer: NSPersistentCloudKitContainer = {
+        var privateStoreURL: URL!
+        var sharedStoreURL: URL!
+        
+        /*
+         Perform any migrations that need to happen...
+         */
         do {
             let fm = FileManager.default
             let dirURL = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
             try fm.ensureDirectoryExists(at: dirURL)
             
-            let storeName = modelName.appending(".sqlite")
-            let storeURL = dirURL.appendingPathComponent(storeName)
+            let privateStoreName = modelName.appending(".sqlite")
+            privateStoreURL = dirURL.appendingPathComponent(privateStoreName)
+            
+            let sharedStoreName = modelName.appending(".shared.sqlite")
+            sharedStoreURL = dirURL.appendingPathComponent(sharedStoreName)
             
             let migrator = CDMigrator()
-            if migrator.requiresMigration(at: storeURL, to: .current) {
-                migrator.migrateStore(at: storeURL, toVersion: .current)
+            if migrator.requiresMigration(at: privateStoreURL, to: .current) {
+                migrator.migrateStore(at: privateStoreURL, toVersion: .current)
+            }
+            if migrator.requiresMigration(at: sharedStoreURL, to: .current) {
+                migrator.migrateStore(at: sharedStoreURL, toVersion: .current)
             }
         } catch {
             fatalError("CDStack: \(error)")
         }
         
-        // Actually initialize the store
+        /*
+         Now we actually create the container and configure it with two
+         store descriptions:
+         - A private store for data where the user is the owner of the data
+         - A shared store for data that is shared with this user.
+         */
         let container = NSPersistentCloudKitContainer(name: modelName)
-        if let description = container.persistentStoreDescriptions.first {
-            description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
-            description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
-        } else {
-            assertionFailure("Something's missing...")
+        guard let privateStoreDescription = container.persistentStoreDescriptions.first else {
+            fatalError("Something's missing...")
         }
+        privateStoreDescription.url = privateStoreURL
+        privateStoreDescription.setOption(
+            true as NSNumber, forKey: NSPersistentHistoryTrackingKey
+        )
+        privateStoreDescription.setOption(
+            true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey
+        )
+
+        let cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
+        cloudKitContainerOptions.databaseScope = .private
+        privateStoreDescription.cloudKitContainerOptions = cloudKitContainerOptions
+
+        guard let sharedStoreDescription = privateStoreDescription.copy() as? NSPersistentStoreDescription else {
+            fatalError("Something's missing....")
+        }
+        sharedStoreDescription.url = sharedStoreURL
+        let sharedStoreOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
+        sharedStoreOptions.databaseScope = .shared
+        sharedStoreDescription.cloudKitContainerOptions = sharedStoreOptions
+        container.persistentStoreDescriptions.append(sharedStoreDescription)
         
         container.loadPersistentStores { storeDescr, error in
             if let error = error {
                 fatalError("CDStack: \(error)")
+            }
+            guard let cloudKitContainerOptions = storeDescr.cloudKitContainerOptions else { return }
+            if cloudKitContainerOptions.databaseScope == .private {
+                self._privateStore = container.persistentStoreCoordinator
+                    .persistentStore(for: storeDescr.url!)
+            } else if cloudKitContainerOptions.databaseScope  == .shared {
+                self._sharedStore = container.persistentStoreCoordinator
+                    .persistentStore(for: storeDescr.url!)
             }
         }
         
@@ -57,7 +102,15 @@ final class DefaultCDStack: CDStackType {
         return container
     }()
     
+    private var _privateStore: NSPersistentStore?
+    public var privateStore: NSPersistentStore {
+        _privateStore!
+    }
     
+    private var _sharedStore: NSPersistentStore?
+    public var sharedStore: NSPersistentStore {
+        _sharedStore!
+    }
     
     // MARK: - Contexts
     private(set) lazy var saveContext: NSManagedObjectContext = {
@@ -73,7 +126,6 @@ final class DefaultCDStack: CDStackType {
         context.automaticallyMergesChangesFromParent = true
         return context
     }()
-    
     
     
     // MARK: Saving / Merging
@@ -101,7 +153,7 @@ final class DefaultCDStack: CDStackType {
             }
             do {
                 try self.saveContext.save()
-                print("CDStack: SAVED TO SQLITE")
+                print("CDStack: SAVED TO PERSISTENT STORE")
                 completion(nil)
             } catch {
                 completion(error)
@@ -109,8 +161,7 @@ final class DefaultCDStack: CDStackType {
         }
     }
     
-    
-    func save() {
+    public func save() {
         saveReducerContext { error in
             guard error == nil else {
                 assertionFailure("Something's wrong: \(error!)")
@@ -126,9 +177,8 @@ final class DefaultCDStack: CDStackType {
     }
     
     
-    
     // MARK: - Actions
-    func dispatch(_ action: CDAction) {
+    public func dispatch(_ action: CDAction) {
         reducerContext.perform {
             do {
                 try action.execute(in: self.reducerContext)
@@ -139,8 +189,7 @@ final class DefaultCDStack: CDStackType {
         }
     }
     
-    
-    func handle(_ error: Error) {
+    private func handle(_ error: Error) {
         assertionFailure("Someting's wrong: \(error)")
     }
     

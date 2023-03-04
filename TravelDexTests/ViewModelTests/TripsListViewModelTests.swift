@@ -35,6 +35,7 @@ class TripsListViewModelTests: XCTestCase {
             dependencies: mockDependencies,
             coordinator: mockCoordinator
         )
+        viewModel.onDidLoad()
     }
     
     
@@ -48,26 +49,26 @@ class TripsListViewModelTests: XCTestCase {
     }
     
     func testDeleteTripsIsForwardedToStore() throws {
-        let _ = viewModel.delete(.just(someTrip))
+        viewModel.deleteTrip.accept(someTrip)
         XCTAssertTrue(mockDependencies.mockTripStore.deleteTripCalled)
     }
     
     func testExportIsForwardedToStoreIfPremiumEnabled() throws {
-        mockDependencies.mockSkStore.enablePremium = true
-        let _ = viewModel.export(.just(someTrip))
+        mockDependencies.mockSkStore.enablePremium.accept(true)
+        viewModel.exportTrip.accept(someTrip)
         sleep(1)
         XCTAssertTrue(mockDependencies.mockTripStore.exportTripCalled)
     }
     
     func testExportIsNotForwardedToStoreIfPremiumDisabled() throws {
-        mockDependencies.mockSkStore.enablePremium = false
-        let _ = viewModel.export(.just(someTrip))
+        mockDependencies.mockSkStore.enablePremium.accept(false)
+        viewModel.exportTrip.accept(someTrip)
         XCTAssertFalse(mockDependencies.mockTripStore.exportTripCalled)
     }
     
     func testExportProducesErrorIfPremiumDisabled() throws {
-        mockDependencies.mockSkStore.enablePremium = false
-        let _ = viewModel.export(.just(someTrip))
+        mockDependencies.mockSkStore.enablePremium.accept(false)
+        viewModel.exportTrip.accept(someTrip)
         let errorAlert = try viewModel.errorController
             .toBlocking(timeout: 5)
             .first()
@@ -78,37 +79,37 @@ class TripsListViewModelTests: XCTestCase {
     // MARK: - Routing Tests
     func testStoreTappedCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.selectStoreCalled)
-        let _ = viewModel.storeTapped(.just(()))
+        viewModel.storeTapped.accept(())
         XCTAssertTrue(mockCoordinator.selectStoreCalled)
     }
     
     func testMapTappedCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.displayMapCalled)
-        let _ = viewModel.mapTapped(.just(()))
+        viewModel.mapTapped.accept(())
         XCTAssertTrue(mockCoordinator.displayMapCalled)
     }
     
     func testAddTappedCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.goToAddTripCalled)
-        let _ = viewModel.addTapped(.just(()))
+        viewModel.addTapped.accept(())
         XCTAssertTrue(mockCoordinator.goToAddTripCalled)
     }
     
     func testSelectTripCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.selectTripCalled)
-        let _ = viewModel.select(.just(someTrip))
+        viewModel.selectTrip.accept(someTrip)
         XCTAssertTrue(mockCoordinator.selectTripCalled)
     }
     
     func testEditTripCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.editTripCalled)
-        let _ = viewModel.edit(.just(someTrip))
+        viewModel.editTrip.accept(someTrip)
         XCTAssertTrue(mockCoordinator.editTripCalled)
     }
     
     func testPickColorCoordinatorIsNotified() {
         XCTAssertFalse(mockCoordinator.pickColorForTripCalled)
-        let _ = viewModel.pickColor(for: .just(someTrip))
+        viewModel.pickColorForTrip.accept(someTrip)
         XCTAssertTrue(mockCoordinator.pickColorForTripCalled)
     }
     

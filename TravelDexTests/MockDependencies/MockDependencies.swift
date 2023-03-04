@@ -16,10 +16,12 @@ class MockDependencies: AppDependencies {
     let mockPlacesStore = MockPlacesStore()
     let mockLocationsStore = MockLocationsStore()
     let mockSkStore = MockSKStore()
+    let mockCkStore = MockCKStore()
     
     var tripsStore: TripsStoreType { mockTripStore }
     var placesStore: PlacesStoreType { mockPlacesStore }
     var locationsStore: LocationsStoreType { mockLocationsStore }
     var skStore: SKStoreType { mockSkStore }
+    var ckStore: CKStoreType { mockCkStore }
     
 }

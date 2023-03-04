@@ -15,6 +15,14 @@ class TestableCDStack: CDStackType {
     
     let modelName = "TravelDex"
     
+    var privateStore: NSPersistentStore {
+        fatalError("Unavailable in test environment!")
+    }
+    
+    var sharedStore: NSPersistentStore {
+        fatalError("Unavailable in test environment!")
+    }
+    
     
     // MARK: - Model + Container
     private lazy var managedObjectModel: NSManagedObjectModel = {
@@ -28,11 +36,11 @@ class TestableCDStack: CDStackType {
     }()
     
     
-    private lazy var container: NSPersistentContainer = {
+    public lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
 
-        let container = NSPersistentContainer(
+        let container = NSPersistentCloudKitContainer(
             name: modelName,
             managedObjectModel: managedObjectModel
         )
@@ -44,6 +52,8 @@ class TestableCDStack: CDStackType {
             }
         }
         
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        
         return container
     }()
     
@@ -51,18 +61,12 @@ class TestableCDStack: CDStackType {
     
     // MARK: - NSManaged Contexts
     private(set) lazy var saveContext: NSManagedObjectContext = {
-        container.viewContext
-    }()
-    
-    private(set) lazy var storeContext: NSManagedObjectContext = {
-        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent = saveContext
-        return context
+        persistentContainer.viewContext
     }()
     
     private(set) lazy var reducerContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        context.parent = storeContext
+        context.parent = saveContext
         return context
     }()
     
@@ -76,17 +80,10 @@ class TestableCDStack: CDStackType {
                 catch { assertionFailure("Error: \(error)") }
             }
             
-            self.storeContext.perform {
-                if self.storeContext.hasChanges {
-                    do { try self.storeContext.save() }
+            self.saveContext.perform {
+                if self.saveContext.hasChanges {
+                    do { try self.saveContext.save() }
                     catch { assertionFailure("Error: \(error)") }
-                }
-                
-                self.saveContext.perform {
-                    if self.saveContext.hasChanges {
-                        do { try self.saveContext.save() }
-                        catch { assertionFailure("Error: \(error)") }
-                    }
                 }
             }
         }

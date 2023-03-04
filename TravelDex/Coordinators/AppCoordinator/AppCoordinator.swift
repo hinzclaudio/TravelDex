@@ -125,6 +125,25 @@ class AppCoordinator: AppCoordinatorType {
         modalController = presentModally(controller)
     }
     
+    func shareOverview(forTrip trip: Trip) {
+        let modalContainer = ModalNavigationContainer()
+        GeneralStyleManager.style(modalContainer.navigationBar)
+        
+        let coordinator = ShareCoordinator(
+            dependencies: dependencies,
+            navigationController: modalContainer,
+            trip: trip
+        )
+        
+        self.store(coordinator: coordinator)
+        modalContainer.onDidDisappear = { [weak self, unowned coordinator] in
+            self?.free(coordinator: coordinator)
+        }
+        coordinator.start()
+        
+        self.modalController = modalContainer
+        self.navigationController.present(modalContainer, animated: animationsEnabled)
+    }
     
     func comment(on item: AddedPlaceItem) {
         let vm = AddPlacesCommentViewModel(dependencies: dependencies, item: item, coordinator: self)

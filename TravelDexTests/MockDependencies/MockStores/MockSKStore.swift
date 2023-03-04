@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 import StoreKit
 @testable import TravelDex
 
@@ -62,10 +63,9 @@ class MockSKStore: SKStoreType {
         }
     }
     
-    var enablePremium = false
+    let enablePremium = BehaviorRelay(value: false)
     var premiumFeaturesEnabled: Observable<Bool> {
-        Observable
-            .just(enablePremium)
+        enablePremium.asObservable()
     }
     
 }
